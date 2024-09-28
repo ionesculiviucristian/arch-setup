@@ -1,0 +1,38 @@
+#!/bin/bash
+
+set -eu
+
+sudo -v
+
+# https://wiki.archlinux.org/title/Official_repositories#Enabling_multilib
+sudo sed -i '/\[multilib\]/,/Include =/ s/^#//' /etc/pacman.conf
+
+sudo pacman -Syu
+
+# ==========================================
+# Install hardware / misc
+# ==========================================
+
+sudo pacman -S --noconfirm \
+  amd-ucode \
+  lib32-nvidia-utils \
+  nvidia-container-toolkit \
+  nvidia-open-dkms \
+  nvidia-settings \
+  nvidia-util \
+  steam
+
+# ==========================================
+# Setup NVIDIA Container Toolkit
+# ==========================================
+
+sudo nvidia-ctk runtime configure --runtime=docker
+sudo systemctl restart docker
+
+# ==========================================
+# Update system settings
+# ==========================================
+
+# https://wiki.archlinux.org/title/Gaming#Increase_vm.max_map_count
+echo "vm.max_map_count = 2147483642" | sudo tee /etc/sysctl.d/80-gamecompatibility.conf
+sudo sysctl --system

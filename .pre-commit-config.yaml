@@ -1,0 +1,7 @@
+repos:
+  - repo: local
+    hooks:
+      - id: generate-bash-aliases-help
+        name: Generate bash aliases help
+        entry: python generate_bash_aliases_help.py
+        language: system
