@@ -1,0 +1,10 @@
+blesh-git
+brave-bin
+downgrade
+gita
+papirus-folders
+papirus-icon-theme
+postman-bin
+tdrop
+visual-studio-code-bin
+zoom

@@ -1,0 +1,102 @@
+{
+  "aur": [
+    {
+      "description": "Highly configurable GPL-licensed FTP server software",
+      "label": "ProFTPD",
+      "name": "proftpd",
+      "source_url": "https://github.com/proftpd/proftpd",
+      "url": "http://www.proftpd.org"
+    },
+    {
+      "description": "XP-Pen (Official) Linux utility for legacy XPPen Tablets",
+      "label": "XP-Pen",
+      "name": "xppenlinux-v3",
+      "source_url": "https://aur.archlinux.org/packages/xppenlinux-v3",
+      "url": "https://www.xp-pen.com"
+    }
+  ],
+  "drivers": [
+    {
+      "description": "Microcode update image for AMD CPUs",
+      "label": "AMD microcode",
+      "name": "amd-ucode",
+      "source_url": "https://gitlab.com/kernel-firmware/linux-firmware",
+      "url": "https://archlinux.org/packages/core/any/amd-ucode"
+    },
+    {
+      "description": "NVIDIA drivers utilities (32-bit)",
+      "label": "NVIDIA utils (32-bit)",
+      "name": "lib32-nvidia-utils",
+      "source_url": "https://archlinux.org/packages/multilib/x86_64/lib32-nvidia-utils",
+      "url": "http://www.nvidia.com"
+    },
+    {
+      "description": "The NVIDIA Container Toolkit is a collection of libraries and utilities enabling users to build and run GPU-accelerated containers",
+      "label": "NVIDIA Container Toolkit",
+      "name": "nvidia-container-toolkit",
+      "source_url": "https://archlinux.org/packages/extra/x86_64/nvidia-container-toolkit",
+      "url": "https://www.nvidia.com"
+    },
+    {
+      "description": "NVIDIA open kernel modules - module sources",
+      "label": "NVIDIA open DKMS",
+      "name": "nvidia-open-dkms",
+      "source_url": "https://archlinux.org/packages/extra/x86_64/nvidia-open-dkms",
+      "url": "https://www.nvidia.com"
+    },
+    {
+      "description": "Tool for configuring the NVIDIA graphics driver",
+      "label": "NVIDIA settings",
+      "name": "nvidia-settings",
+      "source_url": "https://archlinux.org/packages/extra/x86_64/nvidia-settings",
+      "url": "https://www.nvidia.com"
+    },
+    {
+      "description": "NVIDIA drivers utilities",
+      "label": "NVIDIA utils",
+      "name": "nvidia-utils",
+      "source_url": "https://archlinux.org/packages/extra/x86_64/nvidia-utils",
+      "url": "https://www.nvidia.com"
+    }
+  ],
+  "official": [
+    {
+      "description": "The free and open source 3D creation suite",
+      "label": "Blender",
+      "name": "blender",
+      "source_url": "https://github.com/blender/blender",
+      "url": "https://www.blender.org",
+      "optional": ["hip-runtime-amd", "hiprt"]
+    },
+    {
+      "description": "The Free & Open Source Image Editor",
+      "label": "Gimp",
+      "name": "gimp",
+      "source_url": "https://github.com/GNOME/gimp",
+      "url": "https://www.gimp.org"
+    },
+    {
+      "description": "Krita is a free and open source cross-platform application that offers an end-to-end solution for creating digital art files from scratch built on the KDE and Qt frameworks",
+      "label": "Krita",
+      "name": "krita",
+      "source_url": "https://invent.kde.org/graphics/krita",
+      "url": "https://krita.org/en",
+      "optional": ["kimageformats5", "poppler-qt5"]
+    },
+    {
+      "description": "Free and open source software for video recording and live streaming",
+      "label": "OBS Studio",
+      "name": "obs-studio",
+      "source_url": "https://github.com/obsproject/obs-studio",
+      "url": "https://obsproject.com",
+      "optional": ["v4l2loopback-dkms"]
+    },
+    {
+      "description": "Solaar is a Linux manager for many Logitech keyboards, mice, and trackpads that connect wirelessly to a USB Unifying, Bolt, Lightspeed, or Nano receiver",
+      "label": "Solaar",
+      "name": "solaar",
+      "source_url": "https://github.com/pwr-Solaar/Solaar",
+      "url": "https://pwr-solaar.github.io/Solaar"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+amd-ucode
+lib32-nvidia-utils
+nvidia-container-toolkit
+nvidia-open-dkms
+nvidia-settings
+nvidia-utils

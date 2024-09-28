@@ -1,0 +1,37 @@
+## Import Bitwarden secrets
+
+```bash
+# Make sure you understand what this setup does before running it
+./setups/base/secrets.sh bitwarden@mail.com
+./setups/base/official/git.sh
+```
+
+## Setup SSH
+
+```bash
+# Make sure you understand what this setup does before running it
+./setups/base/system/ssh.sh
+```
+
+## Setup AdGuard Home
+
+```bash
+# Make sure you understand what this setup does before running it
+./setups/base/official/adguardhome.sh
+```
+
+## Additional notes
+
+Install kitty terminfo on the remote server when connecting via SSH
+
+```bash
+cd ~
+curl -O https://raw.githubusercontent.com/kovidgoyal/kitty/master/terminfo/kitty.terminfo
+tic -x kitty.terminfo
+```
+
+## Development
+
+```bash
+npm i
+```

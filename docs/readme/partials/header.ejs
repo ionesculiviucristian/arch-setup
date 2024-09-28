@@ -1,0 +1,54 @@
+# Arch setup
+
+| [![Preview 1](./assets/preview1.png)](./assets/preview1.png) | [![Preview 2](./assets/preview2.png)](./assets/preview2.png) | [![Preview 3](./assets/preview3.png)](./assets/preview3.png) |
+|:---:|:---:|:---:|
+
+Wallpapers from [wallpapercave.com](https://wallpapercave.com/)
+
+## Table of Contents
+
+- [About this project](#about-this-project)
+- [Installation](#installation)
+- [Base workstation](#base-workstation)
+  - [Official Arch packages](#official-arch-packages-base)
+  - [External packages](#external-packages-base)
+  - [AUR packages](#aur-packages-base)
+- [B450 I AORUS PRO WIFI workstation](#b450-i-aorus-pro-wifi-workstation)
+  - [Official Arch packages](#official-arch-packages-b450-i-aorus-pro-wifi-workstation)
+  - [Drivers](#drivers-b450-i-aorus-pro-wifi-workstation)
+- [Browser plugins](#browser-plugins)
+  - [Brave plugins](#brave-plugins)
+  - [Firefox plugins](#firefox-plugins)
+- [Available aliases](#available-aliases)
+- [Import Bitwarden secrets](#import-bitwarden-secrets)
+- [Setup SSH](#setup-ssh)
+- [Setup AdGuard Home](#setup-adguard-home)
+- [Additional notes](#additional-notes)
+- [Development](#development)
+
+## About this project
+
+This is a personal Arch Linux setup designed to streamline the installation and configuration of both general-purpose and workstation-specific environments. It provides a modular, reproducible, and well-documented system tailored for daily productivity, development, and media work.
+
+The repository includes:
+
+- Automated setup scripts for clean installs  
+- Curated lists of essential Arch, AUR, and external packages  
+- Workstation-specific configurations (e.g., B450 I AORUS PRO WIFI)  
+- Theming, aliases, and plugin selections for browsers and terminals  
+- Support for private dotfiles and secure secrets setup  
+
+This project serves as both a starting point and a living reference for managing and maintaining a reliable Arch-based workstation.
+
+## Installation
+
+```bash
+# Setup base workstation
+./install.sh
+
+# Post reboot setup
+./setups/base/post_reboot.sh
+
+# Setup B450 I AORUS PRO WIFI workstation
+./install_b450-i-aorus-pro-wifi/install.sh
+```

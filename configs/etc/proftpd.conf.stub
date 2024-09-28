@@ -1,0 +1,24 @@
+ServerName     "ProFTPD"
+ServerType     standalone
+
+Port           21
+UseIPv6        off
+
+DefaultAddress 127.0.0.1
+
+MaxInstances   30
+
+User           $USER
+Group          $GROUP
+
+DefaultRoot    ~
+
+AllowOverwrite on
+
+<Global>
+  Umask 022
+</Global>
+
+<Limit LOGIN>
+  AllowAll
+</Limit>
