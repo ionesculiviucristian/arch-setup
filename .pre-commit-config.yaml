@@ -1,0 +1,15 @@
+repos:
+  - repo: local
+    hooks:
+      - id: generate-bash-aliases-help-file
+        name: Generate bash aliases help file
+        entry: python ./scripts/generate_bash_aliases_help.py
+        language: system
+      - id: generate-packages-lists
+        name: Generate package lists
+        entry: ./scripts/generate_package_lists.sh
+        language: system
+      - id: generate-readme-file
+        name: Generate README.md file
+        entry: node ./scripts/generate-readme.js
+        language: system

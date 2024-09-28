@@ -1,0 +1,276 @@
+{
+  "brave": {
+    "url": "https://chromewebstore.google.com/detail",
+    "categories": [
+      {
+        "name": "interface",
+        "label": "Interface",
+        "plugins": [
+          {
+            "description": "Soothing pastel theme for Google Chrome - Catppuccin Mocha",
+            "id": "catppuccin-chrome-theme-m/bkkmolkhemgaeaeggcmfbghljjjoofoh",
+            "name": "Catppuccin Chrome Theme - Mocha",
+            "extra": []
+          },
+          {
+            "description": "Redesign your favorite websites with Stylus, an actively developed and community driven userstyles manager",
+            "id": "stylus/clngdbkpkpeebahjckkjfobafhncgmne",
+            "name": "Stylus",
+            "extra": [
+              {
+                "description": "Soothing pastel userstyles",
+                "url": "https://github.com/catppuccin/userstyles/releases/download/all-userstyles-export/import.json",
+                "name": "Catppuccin Userstyles"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "github",
+        "label": "GitHub",
+        "plugins": [
+          {
+            "description": "Replace the file/folder icons on github file browsers with icons representing the file's type and which tool it is used by",
+            "id": "material-icons-for-github/bggfcpfjbdkhfhfmkjpbhnkhnpjjeomc",
+            "name": "Material Icons for GitHub",
+            "extra": []
+          },
+          {
+            "description": "GitHub on steroids",
+            "id": "octotree-github-code-tree/bkhaagjahfmjljalopjnoealnfndnagc",
+            "name": "Octotree - GitHub code tree",
+            "extra": []
+          }
+        ]
+      },
+      {
+        "name": "youtube",
+        "label": "YouTube",
+        "plugins": [
+          {
+            "description": "Take control of YouTube and boost your user experience!",
+            "id": "enhancer-for-youtube/ponfpcnoihfmfllpaingbgckeeldkhle",
+            "name": "Enhancer for YouTube™",
+            "extra": []
+          },
+          {
+            "description": "Returns ability to see dislike statistics on youtube",
+            "id": "return-youtube-dislike/gebbhagfogifgggkldgodflihgfeippi",
+            "name": "Return YouTube Dislike",
+            "extra": []
+          },
+          {
+            "description": "Easily skip YouTube video sponsors",
+            "id": "sponsorblock-for-youtube/mnjggcdmjocbbbhaepdhchncahnbgone",
+            "name": "SponsorBlock for YouTube - Skip Sponsorships",
+            "extra": []
+          }
+        ]
+      },
+      {
+        "name": "misc",
+        "label": "Misc",
+        "plugins": [
+          {
+            "description": "Augmented Steam is a browser extension by IsThereAnyDeal that improves your experience on the Steam platform by providing helpful information and tons of customization options",
+            "id": "augmented-steam/dnhpnfgdlenaccegplpojghhmaamnnfp",
+            "name": "Augmented Steam",
+            "extra": []
+          },
+          {
+            "description": "At home, at work, or on the go, Bitwarden easily secures all your passwords, passkeys, and sensitive information",
+            "id": "bitwarden-password-manage/nngceckbapebfimnlniiiahkandclblb",
+            "name": "Bitwarden Password Manager",
+            "extra": []
+          },
+          {
+            "description": "Boost browsing productivity with mouse gestures! Super Drag, Wheel & more for effortless navigation",
+            "id": "crxmouse-mouse-gestures/jlgkpaicikihijadgifklkbpdajbkhjo",
+            "name": "CrxMouse: Mouse Gestures",
+            "extra": []
+          },
+          {
+            "description": "Google Translate",
+            "id": "google-translate/aapbdbdomjkkjkaonfhkkikfgjllcleb",
+            "name": "Google Translate",
+            "extra": []
+          },
+          {
+            "description": "Multitask efficiently by controlling browser functions from the Plasma desktop",
+            "id": "plasma-integration/cimiefiiaegbelhefglklhhakcgmhkai",
+            "name": "Plasma Integration",
+            "extra": []
+          },
+          {
+            "description": "Pricy is your best friend when buying online",
+            "id": "pricy/jnpfnacconjipomhfkphknjfmcnhagpb",
+            "name": "Pricy",
+            "extra": []
+          },
+          {
+            "description": "A super handy QR Code Generator",
+            "id": "qr-code-generator/afpbjjgbdimpioenaedcjgkaigggcdpp",
+            "name": "QR Code Generator",
+            "extra": []
+          }
+        ]
+      }
+    ]
+  },
+  "firefox": {
+    "url": "https://addons.mozilla.org/en-US/firefox/addon",
+    "categories": [
+      {
+        "name": "interface",
+        "label": "Interface",
+        "plugins": [
+          {
+            "description": "Build, save and share beautiful Firefox themes",
+            "id": "firefox-color",
+            "name": "Firefox Color",
+            "extra": [
+              {
+                "description": "Soothing pastel theme for Firefox (Official)",
+                "id": "catppuccin-mocha-mauve-git",
+                "name": "Catppuccin Mocha - Mauve"
+              }
+            ]
+          },
+          {
+            "description": "Redesign your favorite websites with Stylus, an actively developed and community driven userstyles manager",
+            "id": "styl-us",
+            "name": "Stylus",
+            "extra": [
+              {
+                "description": "Soothing pastel userstyles",
+                "url": "https://github.com/catppuccin/userstyles/releases/download/all-userstyles-export/import.json",
+                "name": "Catppuccin Userstyles"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "github",
+        "label": "GitHub",
+        "plugins": [
+          {
+            "description": "Replace the file/folder icons on github file browsers with icons representing the file's type and which tool it is used by",
+            "id": "material-icons-for-github",
+            "name": "Material Icons for GitHub",
+            "extra": []
+          },
+          {
+            "description": "GitHub on steroids",
+            "id": "octotree",
+            "name": "Octotree - GitHub code tree",
+            "extra": []
+          }
+        ]
+      },
+      {
+        "name": "development",
+        "label": "Development",
+        "plugins": [
+          {
+            "description": "Lighthouse is an open-source, automated tool for improving the performance, quality, and correctness of your web apps",
+            "id": "google-lighthouse",
+            "name": "Google Lighthouse",
+            "extra": []
+          },
+          {
+            "description": "View JSON documents in the browser",
+            "id": "jsonview",
+            "name": "JSONView",
+            "extra": []
+          },
+          {
+            "description": "React Developer Tools is a tool that allows you to inspect a React tree, including the component hierarchy, props, state, and more",
+            "id": "react-devtools",
+            "name": "React Developer Tools",
+            "extra": []
+          },
+          {
+            "description": "DevTools extension for debugging Vue.js applications",
+            "id": "visbug",
+            "name": "VisBug",
+            "extra": []
+          },
+          {
+            "description": "DevTools extension for debugging Vue.js applications",
+            "id": "vue-js-devtools",
+            "name": "Vue.js devtools",
+            "extra": []
+          }
+        ]
+      },
+      {
+        "name": "youtube",
+        "label": "YouTube",
+        "plugins": [
+          {
+            "description": "Take control of YouTube and boost your user experience!",
+            "id": "enhancer-for-youtube",
+            "name": "Enhancer for YouTube™",
+            "extra": []
+          },
+          {
+            "description": "Returns ability to see dislike statistics on youtube",
+            "id": "return-youtube-dislikes",
+            "name": "Return YouTube Dislike",
+            "extra": []
+          },
+          {
+            "description": "Easily skip YouTube video sponsors",
+            "id": "sponsorblock",
+            "name": "SponsorBlock - Skip Sponsorships on YouTube",
+            "extra": []
+          }
+        ]
+      },
+      {
+        "name": "misc",
+        "label": "Misc",
+        "plugins": [
+          {
+            "description": "At home, at work, or on the go, Bitwarden easily secures all your passwords, passkeys, and sensitive information",
+            "id": "bitwarden-password-manager",
+            "name": "Bitwarden Password Manager",
+            "extra": []
+          },
+          {
+            "description": "Finally, an efficient wide-spectrum content blocker",
+            "id": "ublock-origin",
+            "name": "uBlock Origin",
+            "extra": []
+          },
+          {
+            "description": "Navigate, operate, and browse faster with mouse gestures!",
+            "id": "gesturefy",
+            "name": "Gesturefy",
+            "extra": []
+          },
+          {
+            "description": "Google Translate",
+            "id": "google-translate-right-clicks",
+            "name": "Google Translate",
+            "extra": []
+          },
+          {
+            "description": "This add-on allows you to quickly generate a QR code offline with the URL of the open tab or any (selected) other text!",
+            "id": "offline-qr-code-generator",
+            "name": "Offline QR Code Generator",
+            "extra": []
+          },
+          {
+            "description": "Multitask efficiently by controlling browser functions from the Plasma desktop",
+            "id": "plasma-integration",
+            "name": "Plasma Integration",
+            "extra": []
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+## Import Bitwarden secrets
+
+```bash
+./setups/secrets.sh
+./setups/official/git.sh
+```
+
+## Development
+
+Install pre commit hooks
+
+```bash
+pipx install pre-commit
+pre-commit install
+```
+
+Install kitty terminfo when connecting via SSH
+
+```bash
+cd ~
+curl -O https://raw.githubusercontent.com/kovidgoyal/kitty/master/terminfo/kitty.terminfo
+tic -x kitty.terminfo
+```
