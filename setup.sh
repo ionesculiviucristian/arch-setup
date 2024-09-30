@@ -13,6 +13,30 @@ fc-cache -f -v
 
 sudo pacman -Syu
 
+sudo pacman -S nvidia nvidia-utils lib32-nvidia-utils nvidia-settings
+
+# https://wiki.archlinux.org/title/NVIDIA#pacman_hook
+sudo tee /etc/pacman.d/hooks/nvidia.hook > /dev/null <<EOF
+[Trigger]
+Operation=Install
+Operation=Upgrade
+Operation=Remove
+Type=Package
+# Uncomment the installed NVIDIA package
+Target=nvidia
+#Target=nvidia-open
+#Target=nvidia-lts
+# If running a different kernel, modify below to match
+Target=linux
+
+[Action]
+Description=Updating NVIDIA module in initcpio
+Depends=mkinitcpio
+When=PostTransaction
+NeedsTargets
+Exec=/bin/sh -c 'while read -r trg; do case \$trg in linux*) exit 0; esac; done; /usr/bin/mkinitcpio -P'
+EOF
+
 sudo pacman -S --noconfirm \
   firefox \
   neovim \
@@ -21,11 +45,15 @@ sudo pacman -S --noconfirm \
   docker-compose \
   keepassxc \
   qbittorrent \
-  python-pip
+  steam
 
 sudo systemctl start docker.service
 sudo systemctl enable docker.service
 sudo usermod -aG docker $USER
+
+# https://wiki.archlinux.org/title/Gaming#Increase_vm.max_map_count
+echo "vm.max_map_count = 2147483642" | sudo tee /etc/sysctl.d/80-gamecompatibility.conf > /dev/null
+sudo sysctl --system
 
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
