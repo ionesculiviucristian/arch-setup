@@ -38,14 +38,24 @@ Exec=/bin/sh -c 'while read -r trg; do case \$trg in linux*) exit 0; esac; done;
 EOF
 
 sudo pacman -S --noconfirm \
+  base-devel \
+  btop \
+  dnsmasq \
   firefox \
+  git \
   neovim \
   code \
   docker \
   docker-compose \
+  jq \
   keepassxc \
   qbittorrent \
-  steam
+  nvidia-container-toolkit \
+  steam \
+  smplayer \
+  transmission-qt \
+  tree
+  # virtualbox virtualbox-host-dkms 
 
 sudo systemctl start docker.service
 sudo systemctl enable docker.service
@@ -65,4 +75,21 @@ nvm install 22
 nvm use 22
 nvm install-latest-npm
 
+cd ~/.repos
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
 
+yay -Syu apache-tools amd-ucode
+
+git config --global user.name "Ionescu Liviu Cristian"
+git config --global user.email "$(echo bGl2aXVAcHVycGxlY2F0LWxhYnMuY29t | base64 --decode)"
+git config --global init.defaultBranch main
+git config --global core.editor "code --wait --new-window"
+git config --global diff.tool vscode
+git config --global difftool.vscode.cmd 'code --wait --diff $LOCAL $REMOTE'
+git config --global merge.tool vscode
+git config --global mergetool.vscode.cmd 'code --wait $MERGED'
+
+sudo nvidia-ctk runtime configure --runtime=docker
+sudo systemctl restart docker
