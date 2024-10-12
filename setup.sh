@@ -41,6 +41,7 @@ sudo pacman -S --noconfirm \
   base-devel \
   btop \
   dnsmasq \
+  fastfetch \
   firefox \
   git \
   neovim \
@@ -51,6 +52,7 @@ sudo pacman -S --noconfirm \
   keepassxc \
   qbittorrent \
   nvidia-container-toolkit \
+  nvtop \
   steam \
   smplayer \
   transmission-qt \
