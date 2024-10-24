@@ -38,11 +38,15 @@ Exec=/bin/sh -c 'while read -r trg; do case \$trg in linux*) exit 0; esac; done;
 EOF
 
 sudo pacman -S --noconfirm \
+  atuin \
   base-devel \
+  bat \
   btop \
   dnsmasq \
+  eza \
   fastfetch \
   firefox \
+  fzf \
   git \
   neovim \
   code \
@@ -51,13 +55,17 @@ sudo pacman -S --noconfirm \
   jq \
   keepassxc \
   qbittorrent \
+  ncdu \
   nvidia-container-toolkit \
   nvtop \
   steam \
   smplayer \
   transmission-qt \
-  tree
+  tree \
+  yakuake
   # virtualbox virtualbox-host-dkms 
+
+echo 'eval "$(atuin init bash)"' >> ~/.bashrc
 
 sudo systemctl start docker.service
 sudo systemctl enable docker.service
