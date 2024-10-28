@@ -61,12 +61,17 @@ sudo pacman -S --noconfirm \
   steam \
   smplayer \
   transmission-qt \
-  tree \
-  yakuake
+  tree
   # virtualbox virtualbox-host-dkms 
 
+curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+
+# Setup atuin
+curl https://raw.githubusercontent.com/rcaloras/bash-preexec/master/bash-preexec.sh -o ~/.bash-preexec.sh
+echo '[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh' >> ~/.bashrc
 echo 'eval "$(atuin init bash)"' >> ~/.bashrc
 
+# Setup Docker
 sudo systemctl start docker.service
 sudo systemctl enable docker.service
 sudo usermod -aG docker $USER
