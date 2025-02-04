@@ -101,6 +101,10 @@ makepkg -si
 
 yay -Syu apache-tools amd-ucode
 
+git clone https://github.com/fboender/multi-git-status.git
+cd multi-git-status
+sudo make install
+
 git config --global user.name "Ionescu Liviu Cristian"
 git config --global user.email "$(echo bGl2aXVAcHVycGxlY2F0LWxhYnMuY29t | base64 --decode)"
 git config --global init.defaultBranch main
