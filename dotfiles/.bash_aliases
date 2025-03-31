@@ -145,6 +145,15 @@ function de() {
 }
 complete -o nospace -F _complete_container de
 
+# @info Execute printenv in a running container
+# @group docker
+# @param <CONTAINER>
+# @param [COMMAND] {sh}
+function denv() {
+    docker exec "$1" printenv
+}
+complete -o nospace -F _complete_container de
+
 # @info Execute a command in a running container, as root
 # @group docker
 # @param <CONTAINER>
@@ -292,6 +301,15 @@ function dce() {
     docker compose exec "$1" sh -c "${2:-sh}"
 }
 complete -o nospace -F _complete_service dce
+
+# @info Execute printenv in a running container
+# @group docker_compose
+# @param <SERVICE>
+# @param [COMMAND] {sh}
+function dcenv() {
+    docker compose exec "$1" printenv
+}
+complete -o nospace -F _complete_service dcenv
 
 # @info Execute a command in a running container, as root
 # @group docker_compose

@@ -20,6 +20,7 @@
 ## Docker
 
 - `de <CONTAINER> [COMMAND] {sh}`: Execute a command in a running container
+- `denv <CONTAINER> [COMMAND] {sh}`: Execute printenv in a running container
 - `der <CONTAINER> [COMMAND] {sh}`: Execute a command in a running container, as root
 - `di <NAME|ID>`: Return low-level information on Docker objects
 - `dimg`: List images
@@ -43,6 +44,7 @@
 - `dcd <SERVICE...>`: Stop and remove containers, networks
 - `dcdv <SERVICE...>`: Stop and remove containers, networks including volumes
 - `dce <SERVICE> [COMMAND] {sh}`: Execute a command in a running container
+- `dcenv <SERVICE> [COMMAND] {sh}`: Execute printenv in a running container
 - `dcer <SERVICE> [COMMAND] {sh}`: Execute a command in a running container, as root
 - `dci <SERVICE>`: Return low-level information on Docker objects
 - `dcl <SERVICE...>`: View output from containers
