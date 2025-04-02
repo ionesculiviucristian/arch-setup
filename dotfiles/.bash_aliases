@@ -613,15 +613,15 @@ alias backup='zip "$HOME/.backups/$(basename "$PWD" | tr "[:upper:]" "[:lower:]"
 
 # @info Runs Firefox using the guest profile
 # @group misc
-alias ffg="firefox -P guest"
+alias ffg="firefox -P guest &"
 
 # @info Runs Firefox using the personal profile
 # @group misc
-alias ffp="firefox -P personal"
+alias ffp="firefox -P personal &"
 
 # @info Runs Firefox using the work profile
 # @group misc
-alias ffw="firefox -P work"
+alias ffw="firefox -P work &"
 
 # @info Tail all journal entries
 # @group misc
