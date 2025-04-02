@@ -71,6 +71,7 @@ sudo pacman -S --noconfirm \
   nvtop \
   obs-studio \
   qbittorrent \
+  rsync \
   smplayer \
   starship \
   thunderbird \

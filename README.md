@@ -49,6 +49,7 @@ After system reboot
 - [nvtop](https://github.com/Syllo/nvtop): GPU & Accelerator process monitoring for AMD, Apple, Huawei, Intel, NVIDIA and Qualcomm
 - [OBS Studio](https://obsproject.com/): Free and open source software for video recording and live streaming
 - [qBittorrent](https://www.qbittorrent.org/): The qBittorrent project aims to provide an open-source software alternative to µTorrent
+- [rsync](https://rsync.samba.org/): rsync is an open source utility that provides fast incremental file transfer
 - [SMPlayer](https://www.smplayer.info/): Free Media Player with built-in codecs
 - [starship](https://starship.rs/): The minimal, blazing-fast, and infinitely customizable prompt for any shell!
 - [Thunderbird](https://www.thunderbird.net/en-US/): The email and productivity app that maximizes your freedoms
