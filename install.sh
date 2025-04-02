@@ -35,6 +35,7 @@ fc-cache -f -v
 # ==========================================
 
 sudo pacman -S --noconfirm \
+  alacritty \
   atuin \
   bat \
   blender \
@@ -46,6 +47,7 @@ sudo pacman -S --noconfirm \
   docker-compose \
   eza \
   fastfetch \
+  fd \
   filezilla \
   firefox \
   flatpak \
@@ -58,6 +60,7 @@ sudo pacman -S --noconfirm \
   libreoffice-fresh \
   linux-headers \
   linux-lts-headers \
+  lsof \
   ncdu \
   neovim \
   net-tools \
@@ -65,11 +68,15 @@ sudo pacman -S --noconfirm \
   obs-studio \
   qbittorrent \
   smplayer \
+  starship \
   thunderbird \
+  tmux \
   tree \
+  unzip \
   virtualbox \
   virtualbox-guest-iso \
-  virtualbox-host-dkms
+  virtualbox-host-dkms \
+  zoxide
 
 # ==========================================
 # Install mgitstatus
@@ -99,6 +106,17 @@ nvm install-latest-npm
 
 curl -sSL https://install.python-poetry.org | python3 -
 echo "export PATH=${HOME}/.local/share/pypoetry/venv/bin:\$PATH" > ~/.bashrc
+
+# ==========================================
+# Setup Alacritty
+# ==========================================
+
+mkdir ~/.config/alacritty
+cp dotfiles/.config/alacritty/alacritty.toml ~/.config/alacritty
+kwriteconfig6 --file ~/.config/kdeglobals --group General --key TerminalApplication "alacritty"
+kwriteconfig6 --file ~/.config/kdeglobals --group General --key TerminalService "Alacritty.desktop"
+# kquitapp6 plasmashell
+# kstart plasmashell
 
 # ==========================================
 # Setup atuin
@@ -136,3 +154,11 @@ git config --global merge.tool vscode
 git config --global mergetool.vscode.cmd 'code --wait $MERGED'
 git config --global user.email "${GIT_USER_EMAIL:-developer@mailpit.localdev}"
 git config --global user.name "${GIT_USER_NAME:-Developer}"
+
+# ==========================================
+# Setup starship
+# ==========================================
+
+echo 'eval "$(starship init bash)"' >> ~/.bashrc
+cp dotfiles/.local/share/konsole/Starship.profile ~/.local/share/konsole
+kwriteconfig6 --file ~/.config/konsolerc --group "Desktop Entry" --key DefaultProfile Starship.profile
