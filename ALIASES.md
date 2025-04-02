@@ -15,7 +15,7 @@
 
 - `pkgi <PACKAGE...>`: Install packages
 - `pkgr <PACKAGE...>`: Remove packages
-- `pkgu`: Upgrade system
+- `pkgu`: Update packages
 
 ## Docker
 

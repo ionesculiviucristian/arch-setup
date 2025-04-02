@@ -15,7 +15,7 @@ function aliases() {
 	echo -e "\n${GC}Packages manager${NC}\n"
 	echo -e "  ${AC}pkgi${NC} <PACKAGE...>: Install packages"
 	echo -e "  ${AC}pkgr${NC} <PACKAGE...>: Remove packages"
-	echo -e "  ${AC}pkgu${NC}: Upgrade system"
+	echo -e "  ${AC}pkgu${NC}: Update packages"
 	echo -e "\n${GC}Docker${NC}\n"
 	echo -e "  ${AC}de${NC} <CONTAINER> [COMMAND] {sh}: Execute a command in a running container"
 	echo -e "  ${AC}denv${NC} <CONTAINER> [COMMAND] {sh}: Execute printenv in a running container"

@@ -96,7 +96,7 @@ function pkgr() {
     esac
 }
 
-# @info Upgrade system
+# @info Update packages
 # @group pkgmgr
 function pkgu() {
     case "$PACKAGE_MANAGER" in
