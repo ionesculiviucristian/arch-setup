@@ -96,7 +96,7 @@
 
 ## Misc
 
-- `backup`: Backup files from current directory to `~/.backups`
+- `backup`: Backup files from current directory to `~/Backups`
 - `ffg`: Runs Firefox using the guest profile
 - `ffp`: Runs Firefox using the personal profile
 - `ffw`: Runs Firefox using the work profile

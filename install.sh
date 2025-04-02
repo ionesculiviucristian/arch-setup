@@ -19,7 +19,11 @@ sudo pacman -Syu
 
 mkdir -p ~/.local/share/fonts
 mkdir ~/.repos
+mkdir ~/Backups
 mkdir ~/Projects
+
+./add_places_entry.sh /home/liviu/Backups "Backups"
+./add_places_entry.sh /home/liviu/Projects "Projects"
 
 # ==========================================
 # Install fonts

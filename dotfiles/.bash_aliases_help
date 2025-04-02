@@ -84,7 +84,7 @@ function aliases() {
 	echo -e "  ${AC}projc${NC} <NAME>: Create a new project in \`~/Projects\`"
 	echo -e "  ${AC}projo${NC} <NAME>: Open a project found in \`~/Projects\` with code editor"
 	echo -e "\n${GC}Misc${NC}\n"
-	echo -e "  ${AC}backup${NC}: Backup files from current directory to \`~/.backups\`"
+	echo -e "  ${AC}backup${NC}: Backup files from current directory to \`~/Backups\`"
 	echo -e "  ${AC}ffg${NC}: Runs Firefox using the guest profile"
 	echo -e "  ${AC}ffp${NC}: Runs Firefox using the personal profile"
 	echo -e "  ${AC}ffw${NC}: Runs Firefox using the work profile"

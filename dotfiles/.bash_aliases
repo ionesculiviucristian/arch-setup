@@ -607,9 +607,9 @@ complete -o nospace -F _complete_projects projo
 # Misc
 # ======================================
 
-# @info Backup files from current directory to \`~/.backups\`
+# @info Backup files from current directory to \`~/Backups\`
 # @group misc
-alias backup='zip "$HOME/.backups/$(basename "$PWD" | tr "[:upper:]" "[:lower:]" | tr " " "-")-$(date +%Y%m%d%H%M%S).zip" -r .'
+alias backup='zip "$HOME/Backups/$(basename "$PWD" | tr "[:upper:]" "[:lower:]" | tr " " "-")-$(date +%Y%m%d%H%M%S).zip" -r .'
 
 # @info Runs Firefox using the guest profile
 # @group misc
