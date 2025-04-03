@@ -164,6 +164,15 @@ git config --global user.name "${GIT_USER_NAME:-Developer}"
 # Setup starship
 # ==========================================
 
-echo 'eval "$(starship init bash)"' >> ~/.bashrc
 cp dotfiles/.local/share/konsole/Starship.profile ~/.local/share/konsole
 kwriteconfig6 --file ~/.config/konsolerc --group "Desktop Entry" --key DefaultProfile Starship.profile
+echo 'eval "$(starship init bash)"' >> ~/.bashrc
+
+# ==========================================
+# Setup Arch
+# ==========================================
+
+# Update GRUB settings
+sudo sed -i 's/^#GRUB_SAVEDEFAULT=true/GRUB_SAVEDEFAULT=true/' /etc/default/grub
+sudo sed -i 's/^#GRUB_DISABLE_SUBMENU=y/GRUB_DISABLE_SUBMENU=y/' /etc/default/grub
+sudo grub-mkconfig -o /boot/grub/grub.cfg
