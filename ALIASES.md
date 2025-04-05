@@ -65,11 +65,11 @@
 - `gibd <BRANCH>`: Delete merged branch
 - `gibdf <BRANCH>`: Delete non-merged branch
 - `gibr <OLD BRANCH> <NEW BRANCH>`: Rename branch
-- `gic <MESSAGE>`: Stage and commit all files from current directory
-- `gica <MESSAGE>`: Amend commit
+- `gic [MESSAGE] {WIP}`: Stage and commit all files from current directory
+- `gica [MESSAGE] {WIP}`: Amend commit
 - `gico <BRANCH>`: Checkout branch
-- `gicpu <MESSAGE>`: Stage, commit and push all files from current directory
-- `gicpuf <MESSAGE>`: Stage, commit and force push with lease all files from current directory
+- `gicpu [MESSAGE] {WIP}`: Stage, commit and push all files from current directory
+- `gicpuf [MESSAGE] {WIP}`: Stage, commit and force push with lease all files from current directory
 - `gif`: Download objects and refs from another repository
 - `gil`: Show commit logs
 - `gim <BRANCH...>`: Join two or more development histories together

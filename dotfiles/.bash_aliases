@@ -457,30 +457,30 @@ complete -o nospace -F _complete_branches gibr
 
 # @info Stage and commit all files from current directory
 # @group git
-# @param <MESSAGE>
+# @param [MESSAGE] {WIP}
 function gic() {
-    git add . && git commit -m "$1"
+    git add . && git commit -m "${1:-WIP}"
 }
 
 # @info Amend commit
 # @group git
-# @param <MESSAGE>
+# @param [MESSAGE] {WIP}
 function gica() {
-    git commit --amend -m "$1"
+    git commit --amend -m "${1:-WIP}"
 }
 
 # @info Stage, commit and push all files from current directory
 # @group git
-# @param <MESSAGE>
+# @param [MESSAGE] {WIP}
 function gicpu() {
-    git add . && git commit -m "$1" && git push
+    git add . && git commit -m "${1:-WIP}" && git push
 }
 
 # @info Stage, commit and force push with lease all files from current directory
 # @group git
-# @param <MESSAGE>
+# @param [MESSAGE] {WIP}
 function gicpuf() {
-    git add . && git commit -m "$1" && git push --force-with-lease
+    git add . && git commit -m "${1:-WIP}" && git push --force-with-lease
 }
 
 # @info Checkout branch
