@@ -1,5 +1,4 @@
 #!/bin/bash
-
 set -eu
 
 if [ -f .env ]; then
@@ -29,10 +28,8 @@ mkdir ~/Projects
 # Install fonts
 # ==========================================
 
-wget -q https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.tar.xz -O ~/.local/share/fonts/JetBrainsMono.tar.xz
-tar -xf ~/.local/share/fonts/JetBrainsMono.tar.xz -C ~/.local/share/fonts
-rm ~/.local/share/fonts/JetBrainsMono.tar.xz
-fc-cache -f -v
+./install_font.sh https://github.com/eigilnikolajsen/commit-mono/releases/download/v1.143/CommitMono-1.143.zip
+./install_font.sh https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.tar.xz
 
 # ==========================================
 # Install official packages
@@ -87,7 +84,7 @@ sudo pacman -S --noconfirm \
 # Install mgitstatus
 # ==========================================
 
-git clone https://github.com/fboender/multi-git-status.git ~/.repos
+git clone https://github.com/fboender/multi-git-status.git ~/.repos/multi-git-status
 cd ~/.repos/multi-git-status
 sudo make install
 
@@ -127,8 +124,14 @@ kwriteconfig6 --file ~/.config/kdeglobals --group General --key TerminalService 
 # Setup atuin
 # ==========================================
 
-wget -qO ~/.bash-preexec.sh https://raw.githubusercontent.com/rcaloras/bash-preexec/master/bash-preexec.sh
-echo '[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh' >> ~/.bashrc
+git clone --recursive https://github.com/akinomyoga/ble.sh.git ~/.repos/ble.sh
+cd ~/.repos/ble.sh
+make
+make INSDIR="${HOME}/.local/share/blesh" install
+touch ${HOME}/.blerc
+
+echo '[[ $- == *i* ]] && source "${HOME}/.local/share/blesh/ble.sh" --rcfile "${HOME}/.blerc"' >> ~/.bashrc
+echo '[[ ! ${BLE_VERSION-} ]] || ble-attach' >> ~/.bashrc
 echo 'eval "$(atuin init bash)"' >> ~/.bashrc
 
 # ==========================================
