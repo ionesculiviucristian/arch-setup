@@ -143,14 +143,6 @@ sudo systemctl enable docker.service
 sudo usermod -aG docker ${USER}
 
 # ==========================================
-# Setup firefox
-# ==========================================
-
-firefox -CreateProfile guest
-firefox -CreateProfile personal
-firefox -CreateProfile work
-
-# ==========================================
 # Setup git
 # ==========================================
 

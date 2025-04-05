@@ -21,6 +21,7 @@ After system reboot
 - [Atuin](https://github.com/atuinsh/atuin): Magical shell history
 - [bat](https://github.com/sharkdp/bat): A cat(1) clone with wings
 - [Blender](https://www.blender.org/): The free and open source 3D creation suite
+- [Brave](https://brave.com/): The browser that puts you first
 - [Btop++](https://github.com/aristocratos/btop): A monitor of resources
 - [Visual Studio Code](https://code.visualstudio.com/): Visual Studio Code combines the simplicity of a source code editor with powerful developer tooling, like IntelliSense code completion and debugging
 - [DKMS](https://github.com/dell/dkms): Dynamic Kernel Modules System
