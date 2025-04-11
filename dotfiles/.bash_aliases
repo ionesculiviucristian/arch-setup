@@ -641,3 +641,13 @@ fi
 if [ -f ~/.bash_aliases_private ]; then
     . ~/.bash_aliases_private
 fi
+
+ALIASES_DIR="${HOME}/.bash_aliases.d"
+
+if [[ -d "${ALIASES_DIR}" ]]; then
+    for ALIASES_FILE in "${ALIASES_DIR}"/{,.}*.sh; do
+        if [[ -f "${ALIASES_FILE}" && -r "${ALIASES_FILE}" ]]; then
+            source "${ALIASES_FILE}"
+        fi
+    done
+fi

@@ -16,6 +16,7 @@ sudo pacman -Syu
 # Create directories
 # ==========================================
 
+mkdir ~/.bash_aliases.d
 mkdir -p ~/.local/share/fonts
 mkdir ~/.repos
 mkdir ~/Backups
