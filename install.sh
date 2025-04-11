@@ -42,6 +42,7 @@ sudo pacman -S --noconfirm \
   blender \
   btop \
   code \
+  direnv \
   dkms \
   dnsmasq \
   docker \
@@ -133,6 +134,12 @@ touch ${HOME}/.blerc
 echo '[[ $- == *i* ]] && source "${HOME}/.local/share/blesh/ble.sh" --rcfile "${HOME}/.blerc"' >> ~/.bashrc
 echo '[[ ! ${BLE_VERSION-} ]] || ble-attach' >> ~/.bashrc
 echo 'eval "$(atuin init bash)"' >> ~/.bashrc
+
+# ==========================================
+# Setup direnv
+# ==========================================
+
+echo 'eval "$(direnv hook bash)"' >> ~/.bashrc
 
 # ==========================================
 # Setup docker

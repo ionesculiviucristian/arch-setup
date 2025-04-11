@@ -24,6 +24,7 @@ After system reboot
 - [Brave](https://brave.com/): The browser that puts you first
 - [Btop++](https://github.com/aristocratos/btop): A monitor of resources
 - [Visual Studio Code](https://code.visualstudio.com/): Visual Studio Code combines the simplicity of a source code editor with powerful developer tooling, like IntelliSense code completion and debugging
+- [direnv](https://direnv.net/): direnv is an extension for your shell. It augments existing shells with a new feature that can load and unload environment variables depending on the current directory
 - [DKMS](https://github.com/dell/dkms): Dynamic Kernel Modules System
 - [dnsmasq](https://thekelleys.org.uk/dnsmasq/doc.html): Provides network infrastructure for small networks: DNS, DHCP, router advertisement and network boot
 - [Docker](https://www.docker.com/): An open platform for developing, shipping, and running applications
