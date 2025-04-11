@@ -176,6 +176,7 @@ echo 'eval "$(starship init bash)"' >> ~/.bashrc
 # ==========================================
 
 # Update GRUB settings
+sudo sed -i 's/^GRUB_DEFAULT=0/GRUB_DEFAULT=saved/' /etc/default/grub
 sudo sed -i 's/^#GRUB_SAVEDEFAULT=true/GRUB_SAVEDEFAULT=true/' /etc/default/grub
 sudo sed -i 's/^#GRUB_DISABLE_SUBMENU=y/GRUB_DISABLE_SUBMENU=y/' /etc/default/grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
