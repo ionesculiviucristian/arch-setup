@@ -18,8 +18,7 @@ sudo pacman -S --noconfirm \
   nvidia-container-toolkit \
   nvidia-open-dkms \
   nvidia-settings \
-  nvidia-util \
-  steam
+  nvidia-util
 
 # https://www.xp-pen.com/download/deco-03.html
 wget https://download01.xp-pen.com/file/2024/06/XPPenLinux3.4.9-240607.tar.gz
@@ -33,11 +32,3 @@ rm -rf XPPenLinux*
 
 sudo nvidia-ctk runtime configure --runtime=docker
 sudo systemctl restart docker
-
-# ==========================================
-# Update system settings
-# ==========================================
-
-# https://wiki.archlinux.org/title/Gaming#Increase_vm.max_map_count
-echo "vm.max_map_count = 2147483642" | sudo tee /etc/sysctl.d/80-gamecompatibility.conf
-sudo sysctl --system
