@@ -19,13 +19,13 @@
 
 ## Docker
 
-- `de <CONTAINER> [COMMAND] {sh}`: Execute a command in a running container
-- `denv <CONTAINER> [COMMAND] {sh}`: Execute printenv in a running container
-- `der <CONTAINER> [COMMAND] {sh}`: Execute a command in a running container, as root
+- `dex <CONTAINER> [COMMAND] {sh}`: Execute a command in a running container
+- `dexenv <CONTAINER> [COMMAND] {sh}`: Execute printenv in a running container
+- `dexr <CONTAINER> [COMMAND] {sh}`: Execute a command in a running container, as root
 - `di <NAME|ID>`: Return low-level information on Docker objects
-- `dimg`: List images
-- `dimga`: List all docker images
-- `dimgf <PATTERN>`: Filter docker images
+- `dimls`: List images
+- `dimlsa`: List all docker images
+- `dimlsf <PATTERN>`: Filter docker images
 - `dl <CONTAINER>`: Fetch the logs of a container
 - `dlclr`: Empty the log files from all containers
 - `dlsz`: List all container log files ordered by their size
@@ -35,7 +35,6 @@
 - `dpsf <PATTERN>`: Filter running containers list using grep pattern
 - `ds <CONTAINER...>`: Stop one or more running containers
 - `dsa`: Stop all running containers
-- `dstats`: Display a live stream of running containers resource usage statistics
 
 ## Docker compose
 
@@ -43,9 +42,9 @@
 - `dcb <SERVICE...>`: Build or rebuild services
 - `dcd <SERVICE...>`: Stop and remove containers, networks
 - `dcdv <SERVICE...>`: Stop and remove containers, networks including volumes
-- `dce <SERVICE> [COMMAND] {sh}`: Execute a command in a running container
-- `dcenv <SERVICE> [COMMAND] {sh}`: Execute printenv in a running container
-- `dcer <SERVICE> [COMMAND] {sh}`: Execute a command in a running container, as root
+- `dcex <SERVICE> [COMMAND] {sh}`: Execute a command in a running container
+- `dcexenv <SERVICE> [COMMAND] {sh}`: Execute printenv in a running container
+- `dcexr <SERVICE> [COMMAND] {sh}`: Execute a command in a running container, as root
 - `dci <SERVICE>`: Return low-level information on Docker objects
 - `dcl <SERVICE...>`: View output from containers
 - `dcps <SERVICE...>`: List containers

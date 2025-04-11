@@ -140,7 +140,7 @@ _complete_container() {
 # @group docker
 # @param <CONTAINER>
 # @param [COMMAND] {sh}
-function de() {
+function dex() {
     docker exec -it "$1" sh -c "${2:-sh}"
 }
 complete -o nospace -F _complete_container de
@@ -149,7 +149,7 @@ complete -o nospace -F _complete_container de
 # @group docker
 # @param <CONTAINER>
 # @param [COMMAND] {sh}
-function denv() {
+function dexenv() {
     docker exec "$1" printenv
 }
 complete -o nospace -F _complete_container de
@@ -158,7 +158,7 @@ complete -o nospace -F _complete_container de
 # @group docker
 # @param <CONTAINER>
 # @param [COMMAND] {sh}
-function der() {
+function dexr() {
     docker exec -it --user root "$1" sh -c "${2:-sh}"
 }
 complete -o nospace -F _complete_container der
@@ -173,20 +173,20 @@ complete -o nospace -F _complete_container di
 
 # @info List images
 # @group docker
-function dimg() {
+function dimls() {
     docker image ls
 }
 
 # @info List all docker images
 # @group docker
-function dimga() {
+function dimlsa() {
     docker image ls --all
 }
 
 # @info Filter docker images
 # @group docker
 # @param <PATTERN>
-function dimgf() {
+function dimlsf() {
     docker image ls | grep "$1"
 }
 
@@ -239,10 +239,6 @@ complete -F _complete_containers ds
 # @info Stop all running containers
 # @group docker
 alias dsa='docker stop $(docker ps --all --quiet)'
-
-# @info Display a live stream of running containers resource usage statistics
-# @group docker
-alias dstats="docker stats"
 
 # ======================================
 # Docker compose
@@ -297,7 +293,7 @@ complete -F _complete_services dcdv
 # @group docker_compose
 # @param <SERVICE>
 # @param [COMMAND] {sh}
-function dce() {
+function dcex() {
     docker compose exec "$1" sh -c "${2:-sh}"
 }
 complete -o nospace -F _complete_service dce
@@ -306,7 +302,7 @@ complete -o nospace -F _complete_service dce
 # @group docker_compose
 # @param <SERVICE>
 # @param [COMMAND] {sh}
-function dcenv() {
+function dcexenv() {
     docker compose exec "$1" printenv
 }
 complete -o nospace -F _complete_service dcenv
@@ -315,7 +311,7 @@ complete -o nospace -F _complete_service dcenv
 # @group docker_compose
 # @param <SERVICE>
 # @param [COMMAND] {sh}
-function dcer() {
+function dcexr() {
     docker compose exec --user root "$1" sh -c "${2:-sh}"
 }
 complete -o nospace -F _complete_service dcer
