@@ -82,7 +82,6 @@ After system reboot
 - [NVIDIA open DKMS](https://archlinux.org/packages/extra/x86_64/nvidia-open-dkms/): NVIDIA open kernel modules - module sources
 - [NVIDIA settings](https://archlinux.org/packages/extra/x86_64/nvidia-settings/): Tool for configuring the NVIDIA graphics driver
 - [NVIDIA utils](https://archlinux.org/packages/extra/x86_64/nvidia-utils/): NVIDIA drivers utilities
-- [Steam](https://store.steampowered.com/): The ultimate destination for playing, discussing, and creating games
 
 ## Available aliases
 
