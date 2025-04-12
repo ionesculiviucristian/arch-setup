@@ -4,7 +4,14 @@
 
 alias df="df --print-type --human-readable --all --total"
 alias du="du --all --total --human-readable | sort --human-numeric-sort"
-alias ll="ls -l --all --human-readable"
+
+function ll() {
+  if command -v eza >/dev/null 2>&1; then
+    eza --long --all --group --group-directories-first --git
+  else
+    ls -l --all --human-readable
+  fi
+}
 
 # ======================================
 # File system
