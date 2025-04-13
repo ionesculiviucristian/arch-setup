@@ -10,6 +10,10 @@
 - `.2`: Go up two directory levels
 - `.3`: Go up three directory levels
 - `.4`: Go up four directory levels
+- `files`: Show a sorted list of file and folder sizes
+- `ll`: Show a detailed list of all files and folders
+- `space`: Show disk space for all filesystems
+- `tree`: Print out a directory structure in a tree-like
 
 ## Packages manager
 

@@ -1,19 +1,4 @@
 # ======================================
-# System overrides
-# ======================================
-
-alias df="df --print-type --human-readable --all --total"
-alias du="du --all --total --human-readable | sort --human-numeric-sort"
-
-function ll() {
-  if command -v eza >/dev/null 2>&1; then
-    eza --long --all --group --group-directories-first --git
-  else
-    ls -l --all --human-readable
-  fi
-}
-
-# ======================================
 # File system
 # ======================================
 
@@ -48,6 +33,24 @@ alias .3="cd ../../../"
 # @info Go up four directory levels
 # @group files
 alias .4="cd ../../../../"
+
+# @info Show a sorted list of file and folder sizes
+# @group files
+function files() {
+    du --all --total --human-readable "$@" | sort --human-numeric-sort
+}
+
+# @info Show a detailed list of all files and folders
+# @group files
+alias ll="eza --long --all --group --group-directories-first --git"
+
+# @info Show disk space for all filesystems
+# @group files
+alias space="df --print-type --human-readable --all --total"
+
+# @info Print out a directory structure in a tree-like
+# @group files
+alias tree="eza --tree"
 
 # ======================================
 # Package manager

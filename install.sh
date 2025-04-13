@@ -75,12 +75,24 @@ sudo pacman -S --noconfirm \
   starship \
   thunderbird \
   tmux \
-  tree \
   unzip \
   virtualbox \
   virtualbox-guest-iso \
   virtualbox-host-dkms \
   zoxide
+
+# ==========================================
+# Install ble.sh
+# ==========================================
+
+git clone --recursive https://github.com/akinomyoga/ble.sh.git ~/.repos/ble.sh
+cd ~/.repos/ble.sh
+make
+make INSDIR="${HOME}/.local/share/blesh" install
+touch ${HOME}/.blerc
+
+echo '[[ $- == *i* ]] && source "${HOME}/.local/share/blesh/ble.sh" --rcfile "${HOME}/.blerc"' >> ~/.bashrc
+echo '[[ ! ${BLE_VERSION-} ]] || ble-attach' >> ~/.bashrc
 
 # ==========================================
 # Install mgitstatus
@@ -119,21 +131,11 @@ mkdir ~/.config/alacritty
 cp dotfiles/.config/alacritty/alacritty.toml ~/.config/alacritty
 kwriteconfig6 --file ~/.config/kdeglobals --group General --key TerminalApplication "alacritty"
 kwriteconfig6 --file ~/.config/kdeglobals --group General --key TerminalService "Alacritty.desktop"
-# kquitapp6 plasmashell
-# kstart plasmashell
 
 # ==========================================
 # Setup atuin
 # ==========================================
 
-git clone --recursive https://github.com/akinomyoga/ble.sh.git ~/.repos/ble.sh
-cd ~/.repos/ble.sh
-make
-make INSDIR="${HOME}/.local/share/blesh" install
-touch ${HOME}/.blerc
-
-echo '[[ $- == *i* ]] && source "${HOME}/.local/share/blesh/ble.sh" --rcfile "${HOME}/.blerc"' >> ~/.bashrc
-echo '[[ ! ${BLE_VERSION-} ]] || ble-attach' >> ~/.bashrc
 echo 'eval "$(atuin init bash)"' >> ~/.bashrc
 
 # ==========================================
@@ -172,10 +174,10 @@ kwriteconfig6 --file ~/.config/konsolerc --group "Desktop Entry" --key DefaultPr
 echo 'eval "$(starship init bash)"' >> ~/.bashrc
 
 # ==========================================
-# Setup Arch
+# Setup system
 # ==========================================
 
-# Update GRUB settings
+# Setup GRUB
 sudo sed -i 's/^GRUB_DEFAULT=0/GRUB_DEFAULT=saved/' /etc/default/grub
 sudo sed -i 's/^#GRUB_SAVEDEFAULT=true/GRUB_SAVEDEFAULT=true/' /etc/default/grub
 sudo sed -i 's/^#GRUB_DISABLE_SUBMENU=y/GRUB_DISABLE_SUBMENU=y/' /etc/default/grub

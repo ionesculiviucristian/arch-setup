@@ -20,6 +20,7 @@ After system reboot
 - [Alacritty](https://alacritty.org/): Alacritty is a modern terminal emulator that comes with sensible defaults, but allows for extensive configuration
 - [Atuin](https://github.com/atuinsh/atuin): Magical shell history
 - [bat](https://github.com/sharkdp/bat): A cat(1) clone with wings
+- [ble.sh](https://github.com/akinomyoga/ble.sh): Bash Line Editor―a line editor written in pure Bash with syntax highlighting, auto suggestions, vim modes, etc. for Bash interactive sessions
 - [Blender](https://www.blender.org/): The free and open source 3D creation suite
 - [Brave](https://brave.com/): The browser that puts you first
 - [Btop++](https://github.com/aristocratos/btop): A monitor of resources
@@ -56,7 +57,6 @@ After system reboot
 - [starship](https://starship.rs/): The minimal, blazing-fast, and infinitely customizable prompt for any shell!
 - [Thunderbird](https://www.thunderbird.net/en-US/): The email and productivity app that maximizes your freedoms
 - [tmux](https://github.com/tmux/tmux): tmux is a terminal multiplexer
-- [tree](https://gitlab.com/OldManProgrammer/unix-tree): A handy little utility to display a tree view of directories
 - [unzip](https://infozip.sourceforge.net/UnZip.html): UnZip is an extraction utility for archives compressed in .zip format (also called "zipfiles")
 - [VirtualBox](https://www.virtualbox.org/): VirtualBox is a general-purpose full virtualization software for x86_64 hardware
 - [VirtualBox Guest Additions ISO](https://archlinux.org/packages/extra/any/virtualbox-guest-iso/): Consist of device drivers and system applications that optimize the guest operating system for better performance and usability
