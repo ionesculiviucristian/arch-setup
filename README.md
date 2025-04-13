@@ -19,6 +19,7 @@ After system reboot
 
 - [Alacritty](https://alacritty.org/): Alacritty is a modern terminal emulator that comes with sensible defaults, but allows for extensive configuration
 - [Atuin](https://github.com/atuinsh/atuin): Magical shell history
+- [bash-completion](https://github.com/scop/bash-completion): Programmable completion functions for bash
 - [bat](https://github.com/sharkdp/bat): A cat(1) clone with wings
 - [ble.sh](https://github.com/akinomyoga/ble.sh): Bash Line Editor―a line editor written in pure Bash with syntax highlighting, auto suggestions, vim modes, etc. for Bash interactive sessions
 - [Blender](https://www.blender.org/): The free and open source 3D creation suite

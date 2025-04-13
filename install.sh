@@ -39,6 +39,7 @@ mkdir ~/Projects
 sudo pacman -S --noconfirm \
   alacritty \
   atuin \
+  bash-completion \
   bat \
   blender \
   btop \
