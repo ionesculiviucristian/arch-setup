@@ -636,6 +636,13 @@ function portsf() {
     netstat --tcp --udp --listening --programs | grep ":${1}"
 }
 
+# @info Pretty prints a json file
+# @group misc
+# @param <FILE>
+function ppjson() {
+    jq . ${1} | bat -l json
+}
+
 # @info Source \`~/.bashrc\`
 # @group misc
 alias src="source ${HOME}/.bashrc"
