@@ -153,7 +153,7 @@ _complete_container() {
 function dex() {
     docker exec -it "$1" sh -c "${2:-sh}"
 }
-complete -o nospace -F _complete_container de
+complete -o nospace -F _complete_container dex
 
 # @info Execute printenv in a running container
 # @group docker
@@ -162,7 +162,7 @@ complete -o nospace -F _complete_container de
 function dexenv() {
     docker exec "$1" printenv
 }
-complete -o nospace -F _complete_container de
+complete -o nospace -F _complete_container dexenv
 
 # @info Execute a command in a running container, as root
 # @group docker
@@ -171,7 +171,7 @@ complete -o nospace -F _complete_container de
 function dexr() {
     docker exec -it --user root "$1" sh -c "${2:-sh}"
 }
-complete -o nospace -F _complete_container der
+complete -o nospace -F _complete_container dexr
 
 # @info Return low-level information on Docker objects
 # @group docker
@@ -306,7 +306,7 @@ complete -F _complete_services dcdv
 function dcex() {
     docker compose exec "$1" sh -c "${2:-sh}"
 }
-complete -o nospace -F _complete_service dce
+complete -o nospace -F _complete_service dcex
 
 # @info Execute printenv in a running container
 # @group docker_compose
@@ -315,7 +315,7 @@ complete -o nospace -F _complete_service dce
 function dcexenv() {
     docker compose exec "$1" printenv
 }
-complete -o nospace -F _complete_service dcenv
+complete -o nospace -F _complete_service dcexenv
 
 # @info Execute a command in a running container, as root
 # @group docker_compose
@@ -324,7 +324,7 @@ complete -o nospace -F _complete_service dcenv
 function dcexr() {
     docker compose exec --user root "$1" sh -c "${2:-sh}"
 }
-complete -o nospace -F _complete_service dcer
+complete -o nospace -F _complete_service dcexr
 
 # @info Return low-level information on Docker objects
 # @group docker_compose
