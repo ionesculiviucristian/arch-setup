@@ -9,23 +9,16 @@ cp .env.example .env
 ./install_aliases.sh
 ```
 
-After system reboot
-
-```bash
-./post_reboot.sh
-```
-
 ## Official Arch packages
 
 - [Alacritty](https://alacritty.org/): Alacritty is a modern terminal emulator that comes with sensible defaults, but allows for extensive configuration
 - [Atuin](https://github.com/atuinsh/atuin): Magical shell history
+- [base-devel](https://archlinux.org/packages/core/any/base-devel/): Basic tools to build Arch Linux packages
 - [bash-completion](https://github.com/scop/bash-completion): Programmable completion functions for bash
 - [bat](https://github.com/sharkdp/bat): A cat(1) clone with wings
 - [ble.sh](https://github.com/akinomyoga/ble.sh): Bash Line Editor―a line editor written in pure Bash with syntax highlighting, auto suggestions, vim modes, etc. for Bash interactive sessions
 - [Blender](https://www.blender.org/): The free and open source 3D creation suite
-- [Brave](https://brave.com/): The browser that puts you first
 - [Btop++](https://github.com/aristocratos/btop): A monitor of resources
-- [Visual Studio Code](https://code.visualstudio.com/): Visual Studio Code combines the simplicity of a source code editor with powerful developer tooling, like IntelliSense code completion and debugging
 - [direnv](https://direnv.net/): direnv is an extension for your shell. It augments existing shells with a new feature that can load and unload environment variables depending on the current directory
 - [DKMS](https://github.com/dell/dkms): Dynamic Kernel Modules System
 - [dnsmasq](https://thekelleys.org.uk/dnsmasq/doc.html): Provides network infrastructure for small networks: DNS, DHCP, router advertisement and network boot
@@ -36,7 +29,6 @@ After system reboot
 - [fd](https://github.com/sharkdp/fd): A simple, fast and user-friendly alternative to 'find'
 - [Filezilla](https://filezilla-project.org/): The free FTP solution
 - [Firefox](https://www.mozilla.org/en-US/firefox/): A free, Open Source web browser
-- [Flatpak](https://flatpak.org/): The future of apps on Linux
 - [fzf](https://github.com/junegunn/fzf): A command-line fuzzy finder
 - [Gimp](https://www.gimp.org/): The Free & Open Source Image Editor
 - [git](https://git-scm.com/): A free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency
@@ -62,6 +54,7 @@ After system reboot
 - [VirtualBox](https://www.virtualbox.org/): VirtualBox is a general-purpose full virtualization software for x86_64 hardware
 - [VirtualBox Guest Additions ISO](https://archlinux.org/packages/extra/any/virtualbox-guest-iso/): Consist of device drivers and system applications that optimize the guest operating system for better performance and usability
 - [VirtualBox Host DKMS](https://archlinux.org/packages/extra/x86_64/virtualbox-host-dkms/): VirtualBox Host kernel modules sources
+- [Yay](https://github.com/Jguer/yay): Yet another Yogurt - An AUR Helper written in Go
 - [zoxide](https://github.com/ajeetdsouza/zoxide): A smarter cd command. Supports all major shells
 
 ## External packages
@@ -70,10 +63,12 @@ After system reboot
 - [Node Version Manager](https://github.com/nvm-sh/nvm): POSIX-compliant bash script to manage multiple active node.js versions
 - [Poetry](https://python-poetry.org/): Python packaging and dependency management made easy
 
-## Flatpack packages
+## AUR packages
 
-- [Spotify](https://flathub.org/apps/com.spotify.Client): Online music streaming service
-- [Postman](https://flathub.org/apps/com.getpostman.Postman): Platform for building and using APIs management made easy
+- [Brave](https://aur.archlinux.org/packages/brave-bin): The browser that puts you first
+- [Postman](https://aur.archlinux.org/packages/postman-bin): Platform for building and using APIs management made easy
+- [Spotify](https://aur.archlinux.org/packages/spotify): Online music streaming service
+- [Visual Studio Code](https://aur.archlinux.org/packages/visual-studio-code-bin): Visual Studio Code combines the simplicity of a source code editor with powerful developer tooling, like IntelliSense code completion and debugging
 
 ## Hardware / misc
 

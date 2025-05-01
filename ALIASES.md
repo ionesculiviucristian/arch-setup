@@ -104,4 +104,5 @@
 - `logsb`: View all journal entries since last boot
 - `ports`: Lists listening TCP/UDP sockets
 - `portsf <PORT>`: Filter listening TCP/UDP sockets
+- `ppjson <FILE>`: Pretty prints a json file
 - `src`: Source `~/.bashrc`

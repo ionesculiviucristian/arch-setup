@@ -92,5 +92,6 @@ function aliases() {
 	echo -e "  ${AC}logsb${NC}: View all journal entries since last boot"
 	echo -e "  ${AC}ports${NC}: Lists listening TCP/UDP sockets"
 	echo -e "  ${AC}portsf${NC} <PORT>: Filter listening TCP/UDP sockets"
+	echo -e "  ${AC}ppjson${NC} <FILE>: Pretty prints a json file"
 	echo -e "  ${AC}src${NC}: Source \`~/.bashrc\`"
 }

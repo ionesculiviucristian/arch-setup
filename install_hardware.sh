@@ -6,13 +6,11 @@ sudo -v
 # https://wiki.archlinux.org/title/Official_repositories#Enabling_multilib
 sudo sed -i '/\[multilib\]/,/Include =/ s/^#//' /etc/pacman.conf
 
-sudo pacman -Syu
-
 # ==========================================
 # Install hardware / misc
 # ==========================================
 
-sudo pacman -S --noconfirm \
+sudo pacman -Syu --noconfirm \
   amd-ucode \
   lib32-nvidia-utils \
   nvidia-container-toolkit \

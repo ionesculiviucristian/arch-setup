@@ -10,8 +10,6 @@ fi
 
 sudo -v
 
-sudo pacman -Syu
-
 # ==========================================
 # Create directories
 # ==========================================
@@ -36,9 +34,10 @@ mkdir ~/Projects
 # Install official packages
 # ==========================================
 
-sudo pacman -S --noconfirm \
+sudo pacman -Syu --noconfirm \
   alacritty \
   atuin \
+  base-devel \
   bash-completion \
   bat \
   blender \
@@ -54,7 +53,6 @@ sudo pacman -S --noconfirm \
   fd \
   filezilla \
   firefox \
-  flatpak \
   fzf \
   gimp \
   git \
@@ -123,6 +121,24 @@ nvm install-latest-npm
 
 curl -sSL https://install.python-poetry.org | python3 -
 echo "export PATH=${HOME}/.local/share/pypoetry/venv/bin:\$PATH" > ~/.bashrc
+
+# ==========================================
+# Install yay
+# ==========================================
+
+git clone https://aur.archlinux.org/yay.git ~/.repos
+cd yay
+makepkg -si
+
+# ==========================================
+# Install AUR packages
+# ==========================================
+
+yay -Syu --noconfirm \
+  brave-bin \
+  postman-bin \
+  spotify \
+  visual-studio-code-bin 
 
 # ==========================================
 # Setup Alacritty
