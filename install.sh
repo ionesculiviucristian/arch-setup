@@ -34,7 +34,7 @@ mkdir ~/Projects
 # Install official packages
 # ==========================================
 
-sudo pacman -Syu --noconfirm \
+sudo pacman -Syu --needed --noconfirm \
   alacritty \
   atuin \
   base-devel \
@@ -134,7 +134,7 @@ makepkg -si
 # Install AUR packages
 # ==========================================
 
-yay -Syu --noconfirm \
+yay -Syu --needed --noconfirm \
   brave-bin \
   postman-bin \
   spotify \
