@@ -158,7 +158,6 @@ complete -o nospace -F _complete_container dex
 # @info Execute printenv in a running container
 # @group docker
 # @param <CONTAINER>
-# @param [COMMAND] {sh}
 function dexenv() {
     docker exec "$1" printenv
 }
@@ -311,7 +310,6 @@ complete -o nospace -F _complete_service dcex
 # @info Execute printenv in a running container
 # @group docker_compose
 # @param <SERVICE>
-# @param [COMMAND] {sh}
 function dcexenv() {
     docker compose exec "$1" printenv
 }
