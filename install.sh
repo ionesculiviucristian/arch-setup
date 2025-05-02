@@ -48,6 +48,7 @@ sudo pacman -Syu --needed --noconfirm \
   dnsmasq \
   docker \
   docker-compose \
+  expac \
   eza \
   fastfetch \
   fd \
@@ -191,10 +192,9 @@ kwriteconfig6 --file ~/.config/konsolerc --group "Desktop Entry" --key DefaultPr
 echo 'eval "$(starship init bash)"' >> ~/.bashrc
 
 # ==========================================
-# Setup system
+# Setup GRUB
 # ==========================================
 
-# Setup GRUB
 sudo sed -i 's/^GRUB_DEFAULT=0/GRUB_DEFAULT=saved/' /etc/default/grub
 sudo sed -i 's/^#GRUB_SAVEDEFAULT=true/GRUB_SAVEDEFAULT=true/' /etc/default/grub
 sudo sed -i 's/^#GRUB_DISABLE_SUBMENU=y/GRUB_DISABLE_SUBMENU=y/' /etc/default/grub

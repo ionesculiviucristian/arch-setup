@@ -58,6 +58,8 @@ alias tree="eza --tree"
 
 if command -v apt > /dev/null; then
     PACKAGE_MANAGER="apt"
+elif command -v yay > /dev/null; then
+    PACKAGE_MANAGER="yay"
 elif command -v pacman > /dev/null; then
     PACKAGE_MANAGER="pacman"
 elif command -v zypper > /dev/null; then
@@ -73,6 +75,9 @@ function pkgi() {
     case "$PACKAGE_MANAGER" in
         apt)
              sudo apt update && sudo apt install "$@"
+            ;;
+        yay)
+            yay -Sy "$@"
             ;;
         pacman)
             sudo pacman -Sy "$@"
@@ -94,8 +99,11 @@ function pkgr() {
         apt)
             sudo apt purge "$@" && sudo apt autoremove
             ;;
+        yay)
+            yay -Rns "$@" && yay -Qdtq | xargs -r yay -Rns
+            ;;
         pacman)
-            sudo pacman -Rns "$@" && sudo pacman -Qtdq | sudo pacman -Rns -
+            sudo pacman -Rns "$@" && pacman -Qdtq | sudo xargs -r pacman -Rns
             ;;
         zypper)
             sudo zypper remove "$@" && sudo zypper clean --all
@@ -113,11 +121,27 @@ function pkgu() {
         apt)
             sudo apt update && sudo apt upgrade
             ;;
+        yay)
+            yay -Syu
+            ;;
         pacman)
             sudo pacman -Syu
             ;;
         zypper)
             sudo zypper refresh && sudo zypper update
+            ;;
+        *)
+            echo "Unsupported package manager"
+            ;;
+    esac
+}
+
+# @info List package sizes with their dependencies
+# @group pkgmgr
+function pkgl() {
+    case "$PACKAGE_MANAGER" in
+        yay|pacman)
+            expac -H M '%m\t%n' | sort -h
             ;;
         *)
             echo "Unsupported package manager"

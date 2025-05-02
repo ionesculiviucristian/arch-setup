@@ -24,6 +24,7 @@ cp .env.example .env
 - [dnsmasq](https://thekelleys.org.uk/dnsmasq/doc.html): Provides network infrastructure for small networks: DNS, DHCP, router advertisement and network boot
 - [Docker](https://www.docker.com/): An open platform for developing, shipping, and running applications
 - [Docker Compose](https://github.com/docker/compose): Define and run multi-container applications with Docker
+- [expac](https://github.com/falconindy/expac): alpm data extraction utility
 - [eza](https://github.com/eza-community/eza): A modern alternative to ls
 - [fastfetch](https://github.com/fastfetch-cli/fastfetch): A maintained, feature-rich and performance oriented, neofetch like system information tool
 - [fd](https://github.com/sharkdp/fd): A simple, fast and user-friendly alternative to 'find'
@@ -54,7 +55,6 @@ cp .env.example .env
 - [VirtualBox](https://www.virtualbox.org/): VirtualBox is a general-purpose full virtualization software for x86_64 hardware
 - [VirtualBox Guest Additions ISO](https://archlinux.org/packages/extra/any/virtualbox-guest-iso/): Consist of device drivers and system applications that optimize the guest operating system for better performance and usability
 - [VirtualBox Host DKMS](https://archlinux.org/packages/extra/x86_64/virtualbox-host-dkms/): VirtualBox Host kernel modules sources
-- [Yay](https://github.com/Jguer/yay): Yet another Yogurt - An AUR Helper written in Go
 - [zoxide](https://github.com/ajeetdsouza/zoxide): A smarter cd command. Supports all major shells
 
 ## External packages
@@ -62,6 +62,7 @@ cp .env.example .env
 - [mgitstatus](https://github.com/fboender/multi-git-status): Show uncommitted, untracked and unpushed changes for multiple Git repos
 - [Node Version Manager](https://github.com/nvm-sh/nvm): POSIX-compliant bash script to manage multiple active node.js versions
 - [Poetry](https://python-poetry.org/): Python packaging and dependency management made easy
+- [Yay](https://github.com/Jguer/yay): Yet another Yogurt - An AUR Helper written in Go
 
 ## AUR packages
 

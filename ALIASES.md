@@ -18,6 +18,7 @@
 ## Packages manager
 
 - `pkgi <PACKAGE...>`: Install packages
+- `pkgl`: List package sizes with their dependencies
 - `pkgr <PACKAGE...>`: Remove packages
 - `pkgu`: Update packages
 

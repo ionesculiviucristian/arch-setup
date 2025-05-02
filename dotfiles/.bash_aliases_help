@@ -18,6 +18,7 @@ function aliases() {
 	echo -e "  ${AC}tree${NC}: Print out a directory structure in a tree-like"
 	echo -e "\n${GC}Packages manager${NC}\n"
 	echo -e "  ${AC}pkgi${NC} <PACKAGE...>: Install packages"
+	echo -e "  ${AC}pkgl${NC}: List package sizes with their dependencies"
 	echo -e "  ${AC}pkgr${NC} <PACKAGE...>: Remove packages"
 	echo -e "  ${AC}pkgu${NC}: Update packages"
 	echo -e "\n${GC}Docker${NC}\n"

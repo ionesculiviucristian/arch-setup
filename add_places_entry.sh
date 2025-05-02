@@ -1,5 +1,4 @@
 #!/bin/bash
-
 set -eu
 
 PLACE_PATH="$1"
