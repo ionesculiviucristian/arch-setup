@@ -79,6 +79,7 @@ sudo pacman -Syu --needed --noconfirm \
   virtualbox \
   virtualbox-guest-iso \
   virtualbox-host-dkms \
+  zip \
   zoxide
 
 # ==========================================

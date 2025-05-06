@@ -55,6 +55,7 @@ cp .env.example .env
 - [VirtualBox](https://www.virtualbox.org/): VirtualBox is a general-purpose full virtualization software for x86_64 hardware
 - [VirtualBox Guest Additions ISO](https://archlinux.org/packages/extra/any/virtualbox-guest-iso/): Consist of device drivers and system applications that optimize the guest operating system for better performance and usability
 - [VirtualBox Host DKMS](https://archlinux.org/packages/extra/x86_64/virtualbox-host-dkms/): VirtualBox Host kernel modules sources
+- [zip](https://infozip.sourceforge.net/Zip.html): Zip is a compression and file packaging/archive utility
 - [zoxide](https://github.com/ajeetdsouza/zoxide): A smarter cd command. Supports all major shells
 
 ## External packages
