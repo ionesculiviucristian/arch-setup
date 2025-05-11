@@ -146,7 +146,33 @@ yay -Syu --needed --noconfirm \
 # Setup atuin
 # ==========================================
 
+mkdir ~/.config/atuin/themes
+wget -qO \
+  ~/.config/atuin/themes/catppuccin-mocha-mauve.toml \
+  https://raw.githubusercontent.com/catppuccin/atuin/refs/heads/main/themes/mocha/catppuccin-mocha-mauve.toml 
+cp dotfiles/.config/atuin/config.toml ~/.config/atuin/config.toml
 echo 'eval "$(atuin init bash)"' >> ~/.bashrc
+
+# ==========================================
+# Setup bat
+# ==========================================
+
+mkdir -p "$(bat --config-dir)/themes"
+wget -qO \
+  "$(bat --config-dir)/themes" \
+  https://github.com/catppuccin/bat/raw/main/themes/Catppuccin%20Mocha.tmTheme
+bat cache --build
+cp dotfiles/.config/bat/config ~/.config/bat/config
+
+# ==========================================
+# Setup btop
+# ==========================================
+
+mkdir -p ~/.config/btop/themes
+wget -qO \
+  ~/.config/btop/themes/catppuccin_mocha.theme \
+  https://raw.githubusercontent.com/catppuccin/btop/refs/heads/main/themes/catppuccin_mocha.theme
+cp dotfiles/.config/btop/btop.conf ~/.config/btop/btop.conf
 
 # ==========================================
 # Setup direnv
@@ -179,18 +205,47 @@ git config --global user.name "${GIT_USER_NAME:-Developer}"
 # Setup kitty
 # ==========================================
 
-mkdir ~/.config/kitty
+mkdir -p ~/.config/kitty/themes
+wget -qO \
+  ~/.config/kitty/themes/mocha.conf \
+  https://raw.githubusercontent.com/catppuccin/kitty/refs/heads/main/themes/mocha.conf
 cp dotfiles/.config/kitty/kitty.conf ~/.config/kitty
 kwriteconfig6 --file ~/.config/kdeglobals --group General --key TerminalApplication "kitty"
 kwriteconfig6 --file ~/.config/kdeglobals --group General --key TerminalService "kitty.desktop"
 
 # ==========================================
-# Setup starship
+# Setup Konsole
 # ==========================================
 
 cp dotfiles/.local/share/konsole/Starship.profile ~/.local/share/konsole
 kwriteconfig6 --file ~/.config/konsolerc --group "Desktop Entry" --key DefaultProfile Starship.profile
+
+# ==========================================
+# Setup starship
+# ==========================================
+
+mkdir -p ~/.config/starship/themes
+wget -qO \
+  ~/.config/starship/themes/mocha.conf \
+  https://raw.githubusercontent.com/catppuccin/starship/refs/heads/main/themes/mocha.toml
+cp dotfiles/.config/starship/config.toml ~/.config/starship/config.toml
+touch ~/config/.starship.toml
+cat \
+  ~/.config/starship/config.toml \
+  ~/.config/starship/themes/mocha.conf \
+  > ~/.config/.starship.toml
 echo 'eval "$(starship init bash)"' >> ~/.bashrc
+
+# ==========================================
+# Setup tmux
+# ==========================================
+
+mkdir -p ~/.config/tmux/plugins/catppuccin
+git clone -b v2.1.0 https://github.com/catppuccin/tmux.git ~/.config/tmux/plugins/catppuccin/tmux
+git clone https://github.com/tmux-plugins/tmux-cpu ~/.config/tmux/plugins/tmux-plugins/tmux-cpu
+git clone https://github.com/tmux-plugins/tmux-battery ~/.config/tmux/plugins/tmux-plugins/tmux-battery
+cp dotfiles/.tmux.conf ~/.tmux.conf
+tmux source ~/.tmux.conf
 
 # ==========================================
 # Setup GRUB
