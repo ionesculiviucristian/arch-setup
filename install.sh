@@ -35,7 +35,6 @@ mkdir ~/Projects
 # ==========================================
 
 sudo pacman -Syu --needed --noconfirm \
-  alacritty \
   atuin \
   base-devel \
   bash-completion \
@@ -59,6 +58,7 @@ sudo pacman -Syu --needed --noconfirm \
   git \
   jq \
   keepassxc \
+  kitty \
   krita \
   libreoffice-fresh \
   linux-headers \
@@ -143,15 +143,6 @@ yay -Syu --needed --noconfirm \
   visual-studio-code-bin 
 
 # ==========================================
-# Setup Alacritty
-# ==========================================
-
-mkdir ~/.config/alacritty
-cp dotfiles/.config/alacritty/alacritty.toml ~/.config/alacritty
-kwriteconfig6 --file ~/.config/kdeglobals --group General --key TerminalApplication "alacritty"
-kwriteconfig6 --file ~/.config/kdeglobals --group General --key TerminalService "Alacritty.desktop"
-
-# ==========================================
 # Setup atuin
 # ==========================================
 
@@ -183,6 +174,15 @@ git config --global merge.tool vscode
 git config --global mergetool.vscode.cmd 'code --wait $MERGED'
 git config --global user.email "${GIT_USER_EMAIL:-developer@mailpit.localdev}"
 git config --global user.name "${GIT_USER_NAME:-Developer}"
+
+# ==========================================
+# Setup kitty
+# ==========================================
+
+mkdir ~/.config/kitty
+cp dotfiles/.config/kitty/kitty.conf ~/.config/kitty
+kwriteconfig6 --file ~/.config/kdeglobals --group General --key TerminalApplication "kitty"
+kwriteconfig6 --file ~/.config/kdeglobals --group General --key TerminalService "kitty.desktop"
 
 # ==========================================
 # Setup starship
