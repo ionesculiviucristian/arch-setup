@@ -34,7 +34,8 @@ cp .env.example .env
 - [git](https://git-scm.com/): A free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency
 - [jq](https://github.com/jqlang/jq): Command-line JSON processor
 - [KeePassXC](https://keepassxc.org/): Cross-platform Password Manager
-- [kitty](https://sw.kovidgoyal.net/kitty/index.html#): The fast, feature-rich, GPU based terminal emulator
+- [kitty](https://sw.kovidgoyal.net/kitty/index.html): The fast, feature-rich, GPU based terminal emulator
+- [kpackage](https://archlinux.org/packages/extra/x86_64/kpackage/): Framework that lets applications manage user installable packages of non-binary assets
 - [Krita](https://krita.org/en/): A professional FREE and open source painting program
 - [LibreOffice](https://www.libreoffice.org/): A private, free and open source office suite
 - [Linux headers](https://archlinux.org/packages/core/x86_64/linux-headers/): Headers and scripts for building modules for the Linux kernel

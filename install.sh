@@ -59,6 +59,7 @@ sudo pacman -Syu --needed --noconfirm \
   jq \
   keepassxc \
   kitty \
+  kpackage \
   krita \
   libreoffice-fresh \
   linux-headers \
@@ -255,3 +256,11 @@ sudo sed -i 's/^GRUB_DEFAULT=0/GRUB_DEFAULT=saved/' /etc/default/grub
 sudo sed -i 's/^#GRUB_SAVEDEFAULT=true/GRUB_SAVEDEFAULT=true/' /etc/default/grub
 sudo sed -i 's/^#GRUB_DISABLE_SUBMENU=y/GRUB_DISABLE_SUBMENU=y/' /etc/default/grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
+
+# ==========================================
+# Setup Catppuccin theme
+# ==========================================
+
+git clone --depth=1 https://github.com/catppuccin/kde ~/.repos/catppuccin-kde
+cd ~/.repos/catppuccin-kde
+./install.sh
