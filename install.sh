@@ -146,7 +146,7 @@ yay -Syu --needed --noconfirm \
 # Setup atuin
 # ==========================================
 
-mkdir ~/.config/atuin/themes
+mkdir -p ~/.config/atuin/themes
 wget -qO \
   ~/.config/atuin/themes/catppuccin-mocha-mauve.toml \
   https://raw.githubusercontent.com/catppuccin/atuin/refs/heads/main/themes/mocha/catppuccin-mocha-mauve.toml 
@@ -157,9 +157,9 @@ echo 'eval "$(atuin init bash)"' >> ~/.bashrc
 # Setup bat
 # ==========================================
 
-mkdir -p "$(bat --config-dir)/themes"
+mkdir -p ~/.config/bat/themes
 wget -qO \
-  "$(bat --config-dir)/themes" \
+  ~/.config/bat/themes/Catppuccin\ Mocha.tmTheme \
   https://github.com/catppuccin/bat/raw/main/themes/Catppuccin%20Mocha.tmTheme
 bat cache --build
 cp dotfiles/.config/bat/config ~/.config/bat/config
@@ -229,7 +229,7 @@ wget -qO \
   ~/.config/starship/themes/mocha.conf \
   https://raw.githubusercontent.com/catppuccin/starship/refs/heads/main/themes/mocha.toml
 cp dotfiles/.config/starship/config.toml ~/.config/starship/config.toml
-touch ~/config/.starship.toml
+touch ~/.config/.starship.toml
 cat \
   ~/.config/starship/config.toml \
   ~/.config/starship/themes/mocha.conf \
