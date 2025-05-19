@@ -87,6 +87,15 @@ cp .env.example .env
 
 For a list off all available aliases, click [here](./ALIASES.md) or run `aliases` after installation
 
+## Firefox plugins
+
+- [Firefox Color](https://addons.mozilla.org/en-GB/firefox/addon/firefox-color/)
+- [Catppuccin Mocha - Mauve](https://addons.mozilla.org/en-GB/firefox/addon/catppuccin-mocha-mauve-git)
+
+## Brave plugins
+
+- [Catppuccin Chrome Theme - Mocha](https://chromewebstore.google.com/detail/catppuccin-chrome-theme-m/bkkmolkhemgaeaeggcmfbghljjjoofoh)
+
 ## Additional notes
 
 Install pre commit hooks
