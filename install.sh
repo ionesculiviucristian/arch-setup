@@ -74,6 +74,7 @@ sudo pacman -Syu --needed --noconfirm \
   rsync \
   smplayer \
   starship \
+  superfile \
   thunderbird \
   tmux \
   unzip \
@@ -115,7 +116,8 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 nvm install --no-progress 18
 nvm install --no-progress 20
 nvm install --no-progress 22
-nvm use 22
+nvm install --no-progress 24
+nvm use 24
 nvm install-latest-npm
 
 # ==========================================
@@ -218,6 +220,9 @@ kwriteconfig6 --file ~/.config/kdeglobals --group General --key TerminalService 
 # Setup Konsole
 # ==========================================
 
+wget -qO \
+  ~/.local/share/konsole/catppuccin-mocha.colorscheme \
+  https://raw.githubusercontent.com/catppuccin/konsole/refs/heads/main/themes/catppuccin-mocha.colorscheme
 cp dotfiles/.local/share/konsole/Starship.profile ~/.local/share/konsole
 kwriteconfig6 --file ~/.config/konsolerc --group "Desktop Entry" --key DefaultProfile Starship.profile
 
@@ -237,6 +242,16 @@ cat \
   > ~/.config/.starship.toml
 echo 'eval "$(starship init bash)"' >> ~/.bashrc
 
+# ==========================================
+# Setup superfile
+# ==========================================
+
+mkdir -p ~/.config/superfile/theme
+wget -qO \
+  ~/.config/superfile/theme/catppuccin-mocha-mauve.toml \
+  https://raw.githubusercontent.com/catppuccin/superfile/refs/heads/main/themes/mocha/catppuccin-mocha-mauve.toml
+cp dotfiles/.config/superfile/config.toml ~/.config/superfile/config.toml
+   
 # ==========================================
 # Setup tmux
 # ==========================================
@@ -263,4 +278,4 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 git clone --depth=1 https://github.com/catppuccin/kde ~/.repos/catppuccin-kde
 cd ~/.repos/catppuccin-kde
-./install.sh
+./install.sh 1 4 2

@@ -50,6 +50,7 @@ cp .env.example .env
 - [rsync](https://rsync.samba.org/): rsync is an open source utility that provides fast incremental file transfer
 - [SMPlayer](https://www.smplayer.info/): Free Media Player with built-in codecs
 - [starship](https://starship.rs/): The minimal, blazing-fast, and infinitely customizable prompt for any shell!
+- [superfile](https://superfile.netlify.app/): superfile is a very fancy and modern terminal file manager that can complete the file operations you need!!
 - [Thunderbird](https://www.thunderbird.net/en-US/): The email and productivity app that maximizes your freedoms
 - [tmux](https://github.com/tmux/tmux): tmux is a terminal multiplexer
 - [unzip](https://infozip.sourceforge.net/UnZip.html): UnZip is an extraction utility for archives compressed in .zip format (also called "zipfiles")
