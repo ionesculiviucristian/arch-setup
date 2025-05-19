@@ -2,14 +2,15 @@ import re
 from collections import defaultdict
 
 group_labels = {
-    "pkgmgr": "Packages manager",
-    "docker": "Docker",
     "docker_compose": "Docker compose",
-    "git": "git",
+    "docker": "Docker",
     "files": "File system",
+    "git": "git",
     "misc": "Misc",
+    "pkgmgr": "Packages manager",
     "poetry": "poetry",
     "projects": "Projects",
+    "tmux": "tmux",
 }
 
 

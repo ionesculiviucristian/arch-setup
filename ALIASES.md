@@ -92,6 +92,14 @@
 - `poi`: Install project dependencies
 - `pos`: Spawn a shell within the virtual environment
 
+## tmux
+
+- `tas [SESSION]`: Attach to a session
+- `tks <SESSION>`: Kill/delete a session
+- `tksrv`: Kill/delete all sessions
+- `tls`: Show all sessions
+- `tns [SESSION]`: Start a new session
+
 ## Projects
 
 - `proj`: Set the current working directory to `~/Projects`

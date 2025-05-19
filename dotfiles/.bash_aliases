@@ -599,6 +599,59 @@ alias poi="poetry install"
 alias pos="poetry shell"
 
 # ======================================
+# tmux
+# ======================================
+
+_complete_sessions() {
+    if [[ ${COMP_CWORD} -ge 2 ]]; then
+        COMPREPLY=()
+        return 0
+    fi
+    local SESSIONS=$(tmux list-sessions 2>/dev/null | cut -d: -f1)
+    COMPREPLY=($(compgen -W "${SESSIONS}" -- "${COMP_WORDS[COMP_CWORD]}"))
+}
+
+# @info Attach to a session
+# @group tmux
+# @param [SESSION]
+function tas() {
+    if [ -z "$1" ]; then
+        tmux attach
+    else
+        tmux attach -t "$1"
+    fi
+}
+complete -o nospace -F _complete_sessions tas
+
+# @info Kill/delete a session
+# @group tmux
+# @param <SESSION>
+function tks() {
+    tmux kill-session -t "$1"
+}
+complete -o nospace -F _complete_sessions tks
+
+# @info Kill/delete all sessions
+# @group tmux
+alias tksrv="tmux kill-server"
+
+# @info Show all sessions
+# @group tmux
+alias tls="tmux list-sessions"
+
+# @info Start a new session
+# @group tmux
+# @param [SESSION]
+function tns() {
+    if [ -z "$1" ]; then
+        tmux new-session
+    else
+        tmux new-session -s "$1"
+    fi
+}
+complete -o nospace -F _complete_sessions tns
+
+# ======================================
 # Projects
 # ======================================
 
