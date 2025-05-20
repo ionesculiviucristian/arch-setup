@@ -146,6 +146,7 @@ yay -Syu --needed --noconfirm \
   brave-bin \
   postman-bin \
   spotify \
+  tdrop \
   visual-studio-code-bin 
 
 # ==========================================
