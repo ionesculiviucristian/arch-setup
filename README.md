@@ -17,6 +17,7 @@ cp .env.example .env
 - [bat](https://github.com/sharkdp/bat): A cat(1) clone with wings
 - [ble.sh](https://github.com/akinomyoga/ble.sh): Bash Line Editor―a line editor written in pure Bash with syntax highlighting, auto suggestions, vim modes, etc. for Bash interactive sessions
 - [Blender](https://www.blender.org/): The free and open source 3D creation suite
+- [broot](https://dystroy.org/broot/): A new way to see and navigate directory trees
 - [Btop++](https://github.com/aristocratos/btop): A monitor of resources
 - [direnv](https://direnv.net/): direnv is an extension for your shell. It augments existing shells with a new feature that can load and unload environment variables depending on the current directory
 - [DKMS](https://github.com/dell/dkms): Dynamic Kernel Modules System
@@ -47,12 +48,14 @@ cp .env.example .env
 - [nvtop](https://github.com/Syllo/nvtop): GPU & Accelerator process monitoring for AMD, Apple, Huawei, Intel, NVIDIA and Qualcomm
 - [OBS Studio](https://obsproject.com/): Free and open source software for video recording and live streaming
 - [qBittorrent](https://www.qbittorrent.org/): The qBittorrent project aims to provide an open-source software alternative to µTorrent
+- [ripgrep](https://github.com/BurntSushi/ripgrep): ripgrep recursively searches directories for a regex pattern while respecting your gitignore
 - [rsync](https://rsync.samba.org/): rsync is an open source utility that provides fast incremental file transfer
 - [SMPlayer](https://www.smplayer.info/): Free Media Player with built-in codecs
 - [starship](https://starship.rs/): The minimal, blazing-fast, and infinitely customizable prompt for any shell!
 - [superfile](https://superfile.netlify.app/): superfile is a very fancy and modern terminal file manager that can complete the file operations you need!!
 - [Thunderbird](https://www.thunderbird.net/en-US/): The email and productivity app that maximizes your freedoms
 - [tmux](https://github.com/tmux/tmux): tmux is a terminal multiplexer
+- [tmuxp](https://tmuxp.git-pull.com/): Session manager for tmux, which allows users to save and load tmux sessions through simple configuration files
 - [unzip](https://infozip.sourceforge.net/UnZip.html): UnZip is an extraction utility for archives compressed in .zip format (also called "zipfiles")
 - [VirtualBox](https://www.virtualbox.org/): VirtualBox is a general-purpose full virtualization software for x86_64 hardware
 - [VirtualBox Guest Additions ISO](https://archlinux.org/packages/extra/any/virtualbox-guest-iso/): Consist of device drivers and system applications that optimize the guest operating system for better performance and usability

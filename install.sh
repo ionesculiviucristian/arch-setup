@@ -40,6 +40,7 @@ sudo pacman -Syu --needed --noconfirm \
   bash-completion \
   bat \
   blender \
+  broot \
   btop \
   code \
   direnv \
@@ -71,12 +72,14 @@ sudo pacman -Syu --needed --noconfirm \
   nvtop \
   obs-studio \
   qbittorrent \
+  ripgrep \
   rsync \
   smplayer \
   starship \
   superfile \
   thunderbird \
   tmux \
+  tmuxp \
   unzip \
   virtualbox \
   virtualbox-guest-iso \
