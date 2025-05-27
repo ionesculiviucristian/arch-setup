@@ -150,6 +150,35 @@ yay -Syu --needed --noconfirm \
   visual-studio-code-bin 
 
 # ==========================================
+# Setup GRUB
+# ==========================================
+
+sudo sed -i 's/^GRUB_DEFAULT=0/GRUB_DEFAULT=saved/' /etc/default/grub
+sudo sed -i 's/^#GRUB_SAVEDEFAULT=true/GRUB_SAVEDEFAULT=true/' /etc/default/grub
+sudo sed -i 's/^#GRUB_DISABLE_SUBMENU=y/GRUB_DISABLE_SUBMENU=y/' /etc/default/grub
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+
+# ==========================================
+# Setup Konsole
+# ==========================================
+
+wget -qO \
+  ~/.local/share/konsole/catppuccin-mocha.colorscheme \
+  https://raw.githubusercontent.com/catppuccin/konsole/refs/heads/main/themes/catppuccin-mocha.colorscheme
+cp dotfiles/.local/share/konsole/Starship.profile ~/.local/share/konsole
+kwriteconfig6 --file ~/.config/konsolerc --group "Desktop Entry" --key DefaultProfile Starship.profile
+
+# ==========================================
+# Setup Night Color
+# ==========================================
+
+kwriteconfig6 --file ~/.config/kwinrc --group "NightColor" --key Active true
+kwriteconfig6 --file ~/.config/kwinrc --group "NightColor" --key DayTemperature 5700
+kwriteconfig6 --file ~/.config/kwinrc --group "NightColor" --key LatitudeAuto 45.65
+kwriteconfig6 --file ~/.config/kwinrc --group "NightColor" --key LongitudeAuto 25.63
+kwriteconfig6 --file ~/.config/kwinrc --group "NightColor" --key NightTemperature 3500
+
+# ==========================================
 # Setup atuin
 # ==========================================
 
@@ -180,6 +209,15 @@ wget -qO \
   ~/.config/btop/themes/catppuccin_mocha.theme \
   https://raw.githubusercontent.com/catppuccin/btop/refs/heads/main/themes/catppuccin_mocha.theme
 cp dotfiles/.config/btop/btop.conf ~/.config/btop/btop.conf
+
+# ==========================================
+# Setup Catppuccin theme
+# ==========================================
+
+git clone --depth=1 https://github.com/catppuccin/kde ~/.repos/catppuccin-kde
+cd ~/.repos/catppuccin-kde
+./install.sh 1 4 2
+
 
 # ==========================================
 # Setup direnv
@@ -221,16 +259,6 @@ kwriteconfig6 --file ~/.config/kdeglobals --group General --key TerminalApplicat
 kwriteconfig6 --file ~/.config/kdeglobals --group General --key TerminalService "kitty.desktop"
 
 # ==========================================
-# Setup Konsole
-# ==========================================
-
-wget -qO \
-  ~/.local/share/konsole/catppuccin-mocha.colorscheme \
-  https://raw.githubusercontent.com/catppuccin/konsole/refs/heads/main/themes/catppuccin-mocha.colorscheme
-cp dotfiles/.local/share/konsole/Starship.profile ~/.local/share/konsole
-kwriteconfig6 --file ~/.config/konsolerc --group "Desktop Entry" --key DefaultProfile Starship.profile
-
-# ==========================================
 # Setup starship
 # ==========================================
 
@@ -266,20 +294,3 @@ git clone https://github.com/tmux-plugins/tmux-cpu ~/.config/tmux/plugins/tmux-p
 git clone https://github.com/tmux-plugins/tmux-battery ~/.config/tmux/plugins/tmux-plugins/tmux-battery
 cp dotfiles/.tmux.conf ~/.tmux.conf
 tmux source ~/.tmux.conf
-
-# ==========================================
-# Setup GRUB
-# ==========================================
-
-sudo sed -i 's/^GRUB_DEFAULT=0/GRUB_DEFAULT=saved/' /etc/default/grub
-sudo sed -i 's/^#GRUB_SAVEDEFAULT=true/GRUB_SAVEDEFAULT=true/' /etc/default/grub
-sudo sed -i 's/^#GRUB_DISABLE_SUBMENU=y/GRUB_DISABLE_SUBMENU=y/' /etc/default/grub
-sudo grub-mkconfig -o /boot/grub/grub.cfg
-
-# ==========================================
-# Setup Catppuccin theme
-# ==========================================
-
-git clone --depth=1 https://github.com/catppuccin/kde ~/.repos/catppuccin-kde
-cd ~/.repos/catppuccin-kde
-./install.sh 1 4 2
