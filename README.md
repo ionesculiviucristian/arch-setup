@@ -38,6 +38,7 @@ cp .env.example .env
 - [kitty](https://sw.kovidgoyal.net/kitty/index.html): The fast, feature-rich, GPU based terminal emulator
 - [kpackage](https://archlinux.org/packages/extra/x86_64/kpackage/): Framework that lets applications manage user installable packages of non-binary assets
 - [Krita](https://krita.org/en/): A professional FREE and open source painting program
+- [less](https://www.greenwoodsoftware.com/less/): Less is a free, open-source file pager
 - [LibreOffice](https://www.libreoffice.org/): A private, free and open source office suite
 - [Linux headers](https://archlinux.org/packages/core/x86_64/linux-headers/): Headers and scripts for building modules for the Linux kernel
 - [Linux LTS headers](https://archlinux.org/packages/core/x86_64/linux-lts-headers/): Headers and scripts for building modules for the LTS Linux kernel

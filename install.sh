@@ -62,6 +62,7 @@ sudo pacman -Syu --needed --noconfirm \
   kitty \
   kpackage \
   krita \
+  less \
   libreoffice-fresh \
   linux-headers \
   linux-lts-headers \
