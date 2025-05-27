@@ -90,7 +90,7 @@ cp .env.example .env
 
 ## Available aliases
 
-For a list off all available aliases, click [here](./ALIASES.md) or run `aliases` after installation
+For a list off all available aliases, [click here to view it](./ALIASES.md) or run `aliases` after installation
 
 ## Firefox plugins
 
