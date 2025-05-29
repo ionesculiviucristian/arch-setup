@@ -76,6 +76,7 @@ sudo pacman -Syu --needed --noconfirm \
   ripgrep \
   rsync \
   smplayer \
+  solaar \
   starship \
   superfile \
   thunderbird \
