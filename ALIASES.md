@@ -63,12 +63,6 @@
 
 ## git
 
-- `gib`: List branches
-- `gibc <NAME>`: Create branch
-- `gibco <NAME>`: Create and checkout branch
-- `gibd <BRANCH>`: Delete merged branch
-- `gibdf <BRANCH>`: Delete non-merged branch
-- `gibr <OLD BRANCH> <NEW BRANCH>`: Rename branch
 - `gic [MESSAGE] {WIP}`: Stage and commit all files from current directory
 - `gica [MESSAGE] {WIP}`: Amend commit
 - `gico <BRANCH>`: Checkout branch
@@ -76,11 +70,13 @@
 - `gicpuf [MESSAGE] {WIP}`: Stage, commit and force push with lease all files from current directory
 - `gif`: Download objects and refs from another repository
 - `gil`: Show commit logs
+- `gilsb`: List branches
 - `gim <BRANCH...>`: Join two or more development histories together
 - `gip`: Fetch from and integrate with another repository or a local branch
 - `gipr`: Fetch from and integrate with another repository or a local branch using rebase
 - `gipu`: Update remote refs along with associated objects
 - `gipuf`: Force update with lease remote refs along with associated objects
+- `girb <OLD BRANCH> <NEW BRANCH>`: Rename branch
 - `girh <SHA1>`: Hard reset current HEAD to the specified state
 - `gis`: Stash the changes in a dirty working directory away
 - `gisp`: Remove a single stashed state from the stash list and apply it on top of the current working tree state

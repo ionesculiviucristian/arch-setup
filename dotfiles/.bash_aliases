@@ -440,49 +440,6 @@ _complete_branches() {
     COMPREPLY=($(compgen -W "${BRANCHES}" -- "$2"))
 }
 
-# @info List branches
-# @group git
-alias gib="git branch"
-
-# @info Create branch
-# @group git
-# @param <NAME>
-function gibc() {
-    git branch "$1"
-}
-
-# @info Create and checkout branch
-# @group git
-# @param <NAME>
-function gibco() {
-    git checkout -b "$1"
-}
-
-# @info Delete merged branch
-# @group git
-# @param <BRANCH>
-function gibd() {
-    git branch -d "$1"
-}
-complete -o nospace -F _complete_branches gibd
-
-# @info Delete non-merged branch
-# @group git
-# @param <BRANCH>
-function gibdf() {
-    git branch -D "$1"
-}
-complete -o nospace -F _complete_branches gibdf
-
-# @info Rename branch
-# @group git
-# @param <OLD BRANCH>
-# @param <NEW BRANCH>
-function gibr() {
-    git branch -m "$1" "$2"
-}
-complete -o nospace -F _complete_branches gibr
-
 # @info Stage and commit all files from current directory
 # @group git
 # @param [MESSAGE] {WIP}
@@ -496,6 +453,14 @@ function gic() {
 function gica() {
     git commit --amend -m "${1:-WIP}"
 }
+
+# @info Checkout branch
+# @group git
+# @param <BRANCH>
+function gico() {
+    git checkout "$1"
+}
+complete -o nospace -F _complete_branches gico
 
 # @info Stage, commit and push all files from current directory
 # @group git
@@ -511,14 +476,6 @@ function gicpuf() {
     git add . && git commit -m "${1:-WIP}" && git push --force-with-lease
 }
 
-# @info Checkout branch
-# @group git
-# @param <BRANCH>
-function gico() {
-    git checkout "$1"
-}
-complete -o nospace -F _complete_branches gico
-
 # @info Download objects and refs from another repository
 # @group git
 alias gif="git fetch"
@@ -526,6 +483,10 @@ alias gif="git fetch"
 # @info Show commit logs
 # @group git
 alias gil='git log --graph --pretty=format:"%C(cyan)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(magenta)<%an>%Creset" --abbrev-commit --date=relative'
+
+# @info List branches
+# @group git
+alias gilsb="git branch"
 
 # @info Join two or more development histories together
 # @group git
@@ -551,6 +512,15 @@ alias gipu="git push"
 # @group git
 alias gipuf="git push --force-with-lease"
 
+# @info Rename branch
+# @group git
+# @param <OLD BRANCH>
+# @param <NEW BRANCH>
+function girb() {
+    git branch -m "$1" "$2"
+}
+complete -o nospace -F _complete_branches girb
+
 # @info Hard reset current HEAD to the specified state
 # @group git
 # @param <SHA1>
@@ -561,6 +531,14 @@ function girh() {
         git reset --hard "$1"
     fi
 }
+
+# @info Stash the changes in a dirty working directory away
+# @group git
+alias gis="git stash"
+
+# @info Remove a single stashed state from the stash list and apply it on top of the current working tree state
+# @group git
+alias gisp="git stash pop"
 
 # @info Squash commits
 # @group git
@@ -577,14 +555,6 @@ function gisq() {
 function gisqa() {
     git reset --soft $(git rev-list --max-parents=0 HEAD) && git commit --amend -m "${1:-First commit}"
 }
-
-# @info Stash the changes in a dirty working directory away
-# @group git
-alias gis="git stash"
-
-# @info Remove a single stashed state from the stash list and apply it on top of the current working tree state
-# @group git
-alias gisp="git stash pop"
 
 # ======================================
 # poetry
