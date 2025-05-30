@@ -220,7 +220,6 @@ git clone --depth=1 https://github.com/catppuccin/kde ~/.repos/catppuccin-kde
 cd ~/.repos/catppuccin-kde
 ./install.sh 1 4 2
 
-
 # ==========================================
 # Setup direnv
 # ==========================================
@@ -259,6 +258,7 @@ wget -qO \
 cp dotfiles/.config/kitty/kitty.conf ~/.config/kitty
 kwriteconfig6 --file ~/.config/kdeglobals --group General --key TerminalApplication "kitty"
 kwriteconfig6 --file ~/.config/kdeglobals --group General --key TerminalService "kitty.desktop"
+echo '[ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"' >> ~/.bashrc
 
 # ==========================================
 # Setup starship
