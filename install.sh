@@ -42,7 +42,6 @@ sudo pacman -Syu --needed --noconfirm \
   blender \
   broot \
   btop \
-  code \
   direnv \
   dkms \
   dnsmasq \
@@ -136,8 +135,8 @@ echo "export PATH=${HOME}/.local/share/pypoetry/venv/bin:\$PATH" > ~/.bashrc
 # Install yay
 # ==========================================
 
-git clone https://aur.archlinux.org/yay.git ~/.repos
-cd yay
+git clone https://aur.archlinux.org/yay.git ~/.repos/yay
+cd ~/.repos/yay
 makepkg -si
 
 # ==========================================
