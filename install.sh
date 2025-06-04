@@ -66,11 +66,15 @@ sudo pacman -Syu --needed --noconfirm \
   linux-headers \
   linux-lts-headers \
   lsof \
+  mkcert \
   ncdu \
   neovim \
   net-tools \
+  nss \
+  ntfs-3g \
   nvtop \
   obs-studio \
+  partitionmanager \
   qbittorrent \
   ripgrep \
   rsync \
@@ -258,6 +262,12 @@ cp dotfiles/.config/kitty/kitty.conf ~/.config/kitty
 kwriteconfig6 --file ~/.config/kdeglobals --group General --key TerminalApplication "kitty"
 kwriteconfig6 --file ~/.config/kdeglobals --group General --key TerminalService "kitty.desktop"
 echo '[ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"' >> ~/.bashrc
+
+# ==========================================
+# Setup mkcert
+# ==========================================
+
+mkcert -install
 
 # ==========================================
 # Setup starship

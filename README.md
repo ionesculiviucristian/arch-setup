@@ -43,11 +43,15 @@ cp .env.example .env
 - [Linux headers](https://archlinux.org/packages/core/x86_64/linux-headers/): Headers and scripts for building modules for the Linux kernel
 - [Linux LTS headers](https://archlinux.org/packages/core/x86_64/linux-lts-headers/): Headers and scripts for building modules for the LTS Linux kernel
 - [lsof](https://github.com/lsof-org/lsof): LiSt Open Files
+- [mkcert](https://github.com/FiloSottile/mkcert): A simple zero-config tool to make locally trusted development certificates with any names you'd like
 - [ncdu](https://dev.yorhel.nl/ncdu): Disk usage analyzer with an ncurses interface
 - [neovim](https://neovim.io/): Hyperextensible Vim-based text editor
 - [net-tools](https://sourceforge.net/projects/net-tools/): The collection of base networking utilities for Linux
+- [Network Security Services (NSS)](https://firefox-source-docs.mozilla.org/security/nss/index.html): Network Security Services (NSS) is a set of libraries designed to support cross-platform development of security-enabled client and server applications
+- [NTFS-3G](https://github.com/tuxera/ntfs-3g): NTFS-3G Safe Read/Write NTFS Driver
 - [nvtop](https://github.com/Syllo/nvtop): GPU & Accelerator process monitoring for AMD, Apple, Huawei, Intel, NVIDIA and Qualcomm
 - [OBS Studio](https://obsproject.com/): Free and open source software for video recording and live streaming
+- [KDE Partition Manager](https://apps.kde.org/partitionmanager/): KDE Partition Manager is a utility to help you manage the disks, partitions, and file systems on your computer
 - [qBittorrent](https://www.qbittorrent.org/): The qBittorrent project aims to provide an open-source software alternative to µTorrent
 - [ripgrep](https://github.com/BurntSushi/ripgrep): ripgrep recursively searches directories for a regex pattern while respecting your gitignore
 - [rsync](https://rsync.samba.org/): rsync is an open source utility that provides fast incremental file transfer
