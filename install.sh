@@ -149,6 +149,7 @@ makepkg -si
 
 yay -Syu --needed --noconfirm \
   brave-bin \
+  papirus-icon-theme \
   postman-bin \
   spotify \
   tdrop \
@@ -222,6 +223,13 @@ cp dotfiles/.config/btop/btop.conf ~/.config/btop/btop.conf
 git clone --depth=1 https://github.com/catppuccin/kde ~/.repos/catppuccin-kde
 cd ~/.repos/catppuccin-kde
 ./install.sh 1 4 2
+
+# ==========================================
+# Setup Papirus icon theme
+# ==========================================
+
+wget -qO- https://git.io/papirus-folders-install | sh
+papirus-folders -C violet --theme Papirus-Dark
 
 # ==========================================
 # Setup direnv
