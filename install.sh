@@ -229,6 +229,7 @@ cd ~/.repos/catppuccin-kde
 # ==========================================
 
 wget -qO- https://git.io/papirus-folders-install | sh
+kwriteconfig6 --file ~/.config/kdeglobals --group Icons --key Theme "Papirus-Dark"
 papirus-folders -C violet --theme Papirus-Dark
 
 # ==========================================
