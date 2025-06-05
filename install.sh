@@ -180,8 +180,9 @@ kwriteconfig6 --file ~/.config/konsolerc --group "Desktop Entry" --key DefaultPr
 
 kwriteconfig6 --file ~/.config/kwinrc --group "NightColor" --key Active true
 kwriteconfig6 --file ~/.config/kwinrc --group "NightColor" --key DayTemperature 5700
-kwriteconfig6 --file ~/.config/kwinrc --group "NightColor" --key LatitudeAuto 45.65
-kwriteconfig6 --file ~/.config/kwinrc --group "NightColor" --key LongitudeAuto 25.63
+kwriteconfig6 --file ~/.config/kwinrc --group "NightColor" --key LatitudeFixed 45.65
+kwriteconfig6 --file ~/.config/kwinrc --group "NightColor" --key LongitudeFixed 25.63
+kwriteconfig6 --file ~/.config/kwinrc --group "NightColor" --key Mode "Location"
 kwriteconfig6 --file ~/.config/kwinrc --group "NightColor" --key NightTemperature 3500
 
 # ==========================================
