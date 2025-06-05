@@ -117,7 +117,7 @@ sudo make install
 # Install nvm
 # ==========================================
 
-wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | bash
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "${NVM_DIR}/nvm.sh" ] && \. "${NVM_DIR}/nvm.sh"
 
@@ -238,6 +238,15 @@ sudo systemctl enable docker.service
 sudo usermod -aG docker ${USER}
 
 # ==========================================
+# Setup NVIDIA Container Toolkit
+# ==========================================
+
+if command -v nvidia-ctk >/dev/null 2>&1; then
+    sudo nvidia-ctk runtime configure --runtime=docker
+    sudo systemctl restart docker
+fi
+
+# ==========================================
 # Setup git
 # ==========================================
 
@@ -300,8 +309,7 @@ cp dotfiles/.config/superfile/config.toml ~/.config/superfile/config.toml
 # ==========================================
 
 mkdir -p ~/.config/tmux/plugins/catppuccin
-git clone -b v2.1.0 https://github.com/catppuccin/tmux.git ~/.config/tmux/plugins/catppuccin/tmux
+git clone -b v2.1.3 https://github.com/catppuccin/tmux.git ~/.config/tmux/plugins/catppuccin/tmux
 git clone https://github.com/tmux-plugins/tmux-cpu ~/.config/tmux/plugins/tmux-plugins/tmux-cpu
 git clone https://github.com/tmux-plugins/tmux-battery ~/.config/tmux/plugins/tmux-plugins/tmux-battery
 cp dotfiles/.tmux.conf ~/.tmux.conf
-tmux source ~/.tmux.conf
