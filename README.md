@@ -4,8 +4,9 @@
 
 ```bash
 cp .env.example .env
-./install.sh
+
 ./install_hardware.sh
+./install.sh
 ./install_aliases.sh
 ```
 
@@ -113,4 +114,10 @@ Install pre commit hooks
 ```bash
 pip install pre-commit
 pre-commit install
+```
+
+Update github repos & themes
+
+```bash
+./update_repos.sh
 ```
