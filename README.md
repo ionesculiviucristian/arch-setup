@@ -121,3 +121,11 @@ Update github repos & themes
 ```bash
 ./update_repos.sh
 ```
+
+Install kitty terminfo on remote users, if need it
+
+```bash
+cd ~
+curl -O https://raw.githubusercontent.com/kovidgoyal/kitty/master/terminfo/kitty.terminfo
+tic -x kitty.terminfo
+```
