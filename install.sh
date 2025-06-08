@@ -8,8 +8,6 @@ else
     exit 1
 fi
 
-sudo -v
-
 # ==========================================
 # Create directories
 # ==========================================
@@ -19,6 +17,8 @@ mkdir -p ~/.local/share/fonts
 mkdir ~/.repos
 mkdir ~/Backups
 mkdir ~/Projects
+
+cp ./dotfiles/.bashrc ~/.bashrc
 
 ./add_places_entry.sh /home/liviu/Backups "Backups"
 ./add_places_entry.sh /home/liviu/Projects "Projects"

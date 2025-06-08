@@ -38,6 +38,8 @@ function aliases() {
 	echo -e "  ${AC}dpsf${NC} <PATTERN>: Filter running containers list using grep pattern"
 	echo -e "  ${AC}ds${NC} <CONTAINER...>: Stop one or more running containers"
 	echo -e "  ${AC}dsa${NC}: Stop all running containers"
+	echo -e "  ${AC}dvls${NC}: List volumes"
+	echo -e "  ${AC}dvlsf${NC} <PATTERN>: Filter docker volumes"
 	echo -e "\n${GC}Docker compose${NC}\n"
 	echo -e "  ${AC}dc${NC}: Define and run multi-container applications with Docker"
 	echo -e "  ${AC}dcb${NC} <SERVICE...>: Build or rebuild services"
