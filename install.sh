@@ -133,7 +133,7 @@ nvm install-latest-npm
 # ==========================================
 
 curl -sSL https://install.python-poetry.org | python3 -
-echo "export PATH=${HOME}/.local/share/pypoetry/venv/bin:\$PATH" >> ~/.bashrc
+echo "export PATH=${HOME}/.local/share/pypoetry/venv/bin/poetry:\$PATH" >> ~/.bashrc
 
 # ==========================================
 # Install yay
