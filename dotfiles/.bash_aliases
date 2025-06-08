@@ -273,6 +273,17 @@ complete -F _complete_containers ds
 # @group docker
 alias dsa='docker stop $(docker ps --all --quiet)'
 
+# @info List volumes
+# @group docker
+alias dvls="docker volume ls"
+
+# @info Filter docker volumes
+# @group docker
+# @param <PATTERN>
+function dvlsf() {
+    docker volume ls | grep "$1"
+}
+
 # ======================================
 # Docker compose
 # ======================================
@@ -310,7 +321,7 @@ complete -F _complete_services dcb
 # @group docker_compose
 # @param <SERVICE...>
 function dcd() {
-    docker compose down --remove-orphans "$@"
+    docker compose stop "$@" && docker compose rm --force "$@"
 }
 complete -F _complete_services dcd
 
@@ -318,7 +329,27 @@ complete -F _complete_services dcd
 # @group docker_compose
 # @param <SERVICE...>
 function dcdv() {
-    docker compose down --remove-orphans --volumes "$@"
+    local services=("$@")
+    local volumes=()
+
+    for service in "${services[@]}"; do
+        local container_id
+        container_id=$(docker compose ps -q "${service}")
+
+        local container_volumes
+        container_volumes=$(docker inspect "${container_id}" --format '{{ range .Mounts }}{{ if eq .Type "volume" }}{{ .Name }} {{ end }}{{ end }}')
+
+        for container_volume in ${container_volumes}; do
+            volumes+=("${container_volume}")
+        done
+    done
+
+    docker compose stop "${services[@]}"
+    docker compose rm --force --volumes "${services[@]}"
+
+    for volume in "${volumes[@]}"; do
+        docker volume rm "${volume}"
+    done
 }
 complete -F _complete_services dcdv
 
@@ -399,7 +430,7 @@ complete -F _complete_services dcrl
 # @group docker_compose
 # @param <SERVICE...>
 function dcu() {
-    docker compose up --detach "$@"
+    docker compose up --remove-orphans --detach "$@"
 }
 complete -F _complete_services dcu
 
@@ -407,7 +438,7 @@ complete -F _complete_services dcu
 # @group docker_compose
 # @param <SERVICE...>
 function dcub() {
-    docker compose up --detach --build "$@"
+    docker compose up --remove-orphans --detach --build "$@"
 }
 complete -F _complete_services dcub
 
@@ -415,7 +446,7 @@ complete -F _complete_services dcub
 # @group docker_compose
 # @param <SERVICE...>
 function dcuf() {
-    docker compose up --detach --force-recreate "$@"
+    docker compose up --remove-orphans --detach --force-recreate "$@"
 }
 complete -F _complete_services dcuf
 
@@ -423,7 +454,7 @@ complete -F _complete_services dcuf
 # @group docker_compose
 # @param <SERVICE...>
 function dcul() {
-    docker compose up --detach "$@" && docker compose logs --follow --tail 1000 "$@"
+    docker compose up --remove-orphans --detach "$@" && docker compose logs --follow --tail 1000 "$@"
 }
 complete -F _complete_services dcul
 

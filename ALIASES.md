@@ -40,6 +40,8 @@
 - `dpsf <PATTERN>`: Filter running containers list using grep pattern
 - `ds <CONTAINER...>`: Stop one or more running containers
 - `dsa`: Stop all running containers
+- `dvls`: List volumes
+- `dvlsf <PATTERN>`: Filter docker volumes
 
 ## Docker compose
 
