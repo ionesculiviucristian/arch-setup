@@ -34,6 +34,8 @@
 - `dl <CONTAINER>`: Fetch the logs of a container
 - `dlclr`: Empty the log files from all containers
 - `dlsz`: List all container log files ordered by their size
+- `dnls`: List networks
+- `dnlsf <PATTERN>`: Filter docker networks
 - `dps`: List running containers
 - `dpsa`: List all containers
 - `dpsaf <PATTERN>`: Filter all containers list using grep pattern
@@ -47,8 +49,8 @@
 
 - `dc`: Define and run multi-container applications with Docker
 - `dcb <SERVICE...>`: Build or rebuild services
-- `dcd <SERVICE...>`: Stop and remove containers, networks
-- `dcdv <SERVICE...>`: Stop and remove containers, networks including volumes
+- `dcd <SERVICE...>`: Stop and remove containers
+- `dcdv <SERVICE...>`: Stop and remove containers, including volumes
 - `dcex <SERVICE> [COMMAND] {sh}`: Execute a command in a running container
 - `dcexenv <SERVICE>`: Execute printenv in a running container
 - `dcexr <SERVICE> [COMMAND] {sh}`: Execute a command in a running container, as root
