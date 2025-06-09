@@ -239,6 +239,17 @@ alias dlclr='docker ps -aq | xargs --replace={} sh -c "sudo truncate --size=0 \$
 # @group docker
 alias dlsz='sudo du -ch $(docker inspect --format="{{.LogPath}}" $(docker ps --all --quiet)) | sort -h'
 
+# @info List networks
+# @group docker
+alias dnls="docker network ls"
+
+# @info Filter docker networks
+# @group docker
+# @param <PATTERN>
+function dnlsf() {
+    docker network ls | grep "$1"
+}
+
 # @info List running containers
 # @group docker
 alias dps="docker ps"
@@ -317,7 +328,7 @@ function dcb() {
 }
 complete -F _complete_services dcb
 
-# @info Stop and remove containers, networks
+# @info Stop and remove containers
 # @group docker_compose
 # @param <SERVICE...>
 function dcd() {
@@ -325,7 +336,7 @@ function dcd() {
 }
 complete -F _complete_services dcd
 
-# @info Stop and remove containers, networks including volumes
+# @info Stop and remove containers, including volumes
 # @group docker_compose
 # @param <SERVICE...>
 function dcdv() {
