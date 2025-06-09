@@ -16,7 +16,7 @@ group_labels = {
 
 def get_aliases():
     aliases = []
-    with open("./dotfiles/.bash_aliases") as stream:
+    with open("./configs/.bash_aliases") as stream:
         alias = {}
         line_no = 1
         for line in stream:
@@ -60,7 +60,7 @@ def get_aliases():
 
 
 def generate_bash_info(grouped_aliases):
-    with open("./dotfiles/.bash_aliases_help", "w") as stream:
+    with open("./configs/.bash_aliases_help", "w") as stream:
         stream.write("GC='\\033[0;36m'\n")
         stream.write("AC='\\033[0;32m'\n")
         stream.write("NC='\\033[0m'\n\n")
