@@ -18,7 +18,7 @@ mkdir ~/.repos
 mkdir ~/Backups
 mkdir ~/Projects
 
-cp ./dotfiles/.bashrc ~/.bashrc
+cp ./configs/.bashrc ~/.bashrc
 
 ./add_places_entry.sh /home/liviu/Backups "Backups"
 ./add_places_entry.sh /home/liviu/Projects "Projects"
@@ -171,7 +171,7 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 wget -qO \
   ~/.local/share/konsole/catppuccin-mocha.colorscheme \
   https://raw.githubusercontent.com/catppuccin/konsole/refs/heads/main/themes/catppuccin-mocha.colorscheme
-cp dotfiles/.local/share/konsole/Starship.profile ~/.local/share/konsole
+cp configs/.local/share/konsole/Starship.profile ~/.local/share/konsole
 kwriteconfig6 --file ~/.config/konsolerc --group "Desktop Entry" --key DefaultProfile Starship.profile
 
 # ==========================================
@@ -193,7 +193,7 @@ mkdir -p ~/.config/atuin/themes
 wget -qO \
   ~/.config/atuin/themes/catppuccin-mocha-mauve.toml \
   https://raw.githubusercontent.com/catppuccin/atuin/refs/heads/main/themes/mocha/catppuccin-mocha-mauve.toml 
-cp dotfiles/.config/atuin/config.toml ~/.config/atuin/config.toml
+cp configs/.config/atuin/config.toml ~/.config/atuin/config.toml
 echo 'eval "$(atuin init bash)"' >> ~/.bashrc
 
 # ==========================================
@@ -205,7 +205,7 @@ wget -qO \
   ~/.config/bat/themes/Catppuccin\ Mocha.tmTheme \
   https://github.com/catppuccin/bat/raw/main/themes/Catppuccin%20Mocha.tmTheme
 bat cache --build
-cp dotfiles/.config/bat/config ~/.config/bat/config
+cp configs/.config/bat/config ~/.config/bat/config
 
 # ==========================================
 # Setup btop
@@ -215,7 +215,7 @@ mkdir -p ~/.config/btop/themes
 wget -qO \
   ~/.config/btop/themes/catppuccin_mocha.theme \
   https://raw.githubusercontent.com/catppuccin/btop/refs/heads/main/themes/catppuccin_mocha.theme
-cp dotfiles/.config/btop/btop.conf ~/.config/btop/btop.conf
+cp configs/.config/btop/btop.conf ~/.config/btop/btop.conf
 
 # ==========================================
 # Setup Catppuccin theme
@@ -243,6 +243,7 @@ echo 'eval "$(direnv hook bash)"' >> ~/.bashrc
 # Setup docker
 # ==========================================
 
+sudo cp configs/etc/docker/daemon.json /etc/docker/daemon.json
 sudo systemctl start docker.service
 sudo systemctl enable docker.service
 sudo usermod -aG docker ${USER}
@@ -277,7 +278,7 @@ mkdir -p ~/.config/kitty/themes
 wget -qO \
   ~/.config/kitty/themes/mocha.conf \
   https://raw.githubusercontent.com/catppuccin/kitty/refs/heads/main/themes/mocha.conf
-cp dotfiles/.config/kitty/kitty.conf ~/.config/kitty
+cp configs/.config/kitty/kitty.conf ~/.config/kitty
 kwriteconfig6 --file ~/.config/kdeglobals --group General --key TerminalApplication "kitty"
 kwriteconfig6 --file ~/.config/kdeglobals --group General --key TerminalService "kitty.desktop"
 echo '[ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"' >> ~/.bashrc
@@ -296,7 +297,7 @@ mkdir -p ~/.config/starship/themes
 wget -qO \
   ~/.config/starship/themes/mocha.conf \
   https://raw.githubusercontent.com/catppuccin/starship/refs/heads/main/themes/mocha.toml
-cp dotfiles/.config/starship/config.toml ~/.config/starship/config.toml
+cp configs/.config/starship/config.toml ~/.config/starship/config.toml
 touch ~/.config/.starship.toml
 cat \
   ~/.config/starship/config.toml \
@@ -312,7 +313,7 @@ mkdir -p ~/.config/superfile/theme
 wget -qO \
   ~/.config/superfile/theme/catppuccin-mocha-mauve.toml \
   https://raw.githubusercontent.com/catppuccin/superfile/refs/heads/main/themes/mocha/catppuccin-mocha-mauve.toml
-cp dotfiles/.config/superfile/config.toml ~/.config/superfile/config.toml
+cp configs/.config/superfile/config.toml ~/.config/superfile/config.toml
    
 # ==========================================
 # Setup tmux
@@ -322,4 +323,4 @@ mkdir -p ~/.config/tmux/plugins/catppuccin
 git clone -b v2.1.3 https://github.com/catppuccin/tmux.git ~/.config/tmux/plugins/catppuccin/tmux
 git clone https://github.com/tmux-plugins/tmux-cpu ~/.config/tmux/plugins/tmux-plugins/tmux-cpu
 git clone https://github.com/tmux-plugins/tmux-battery ~/.config/tmux/plugins/tmux-plugins/tmux-battery
-cp dotfiles/.tmux.conf ~/.tmux.conf
+cp configs/.tmux.conf ~/.tmux.conf
