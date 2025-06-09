@@ -284,6 +284,14 @@ complete -F _complete_containers ds
 # @group docker
 alias dsa='docker stop $(docker ps --all --quiet)'
 
+# @info Display container resource usage sorted by highest CPU usage
+# @group docker
+alias dtopc='docker stats --no-stream | (read -r header && echo "$header" && sort -k3 -hr)'
+
+# @info Display container resource usage sorted by highest memory usage
+# @group docker
+alias dtopm='docker stats --no-stream | (read -r header && echo "$header" && sort -k4 -hr)'
+
 # @info List volumes
 # @group docker
 alias dvls="docker volume ls"
