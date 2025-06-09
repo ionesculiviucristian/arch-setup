@@ -42,6 +42,8 @@
 - `dpsf <PATTERN>`: Filter running containers list using grep pattern
 - `ds <CONTAINER...>`: Stop one or more running containers
 - `dsa`: Stop all running containers
+- `dtopc`: Display container resource usage sorted by highest CPU usage
+- `dtopm`: Display container resource usage sorted by highest memory usage
 - `dvls`: List volumes
 - `dvlsf <PATTERN>`: Filter docker volumes
 
