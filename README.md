@@ -75,14 +75,15 @@ cp .env.example .env
 - [mgitstatus](https://github.com/fboender/multi-git-status): Show uncommitted, untracked and unpushed changes for multiple Git repos
 - [Node Version Manager](https://github.com/nvm-sh/nvm): POSIX-compliant bash script to manage multiple active node.js versions
 - [Poetry](https://python-poetry.org/): Python packaging and dependency management made easy
-- [tdrop](https://github.com/noctuid/tdrop): A Glorified WM-Independent Dropdown Creator
 - [Yay](https://github.com/Jguer/yay): Yet another Yogurt - An AUR Helper written in Go
 
 ## AUR packages
 
 - [Brave](https://aur.archlinux.org/packages/brave-bin): The browser that puts you first
+- [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme): Pixel perfect icon theme for Linux
 - [Postman](https://aur.archlinux.org/packages/postman-bin): Platform for building and using APIs management made easy
 - [Spotify](https://aur.archlinux.org/packages/spotify): Online music streaming service
+- [tdrop](https://github.com/noctuid/tdrop): A Glorified WM-Independent Dropdown Creator
 - [Visual Studio Code](https://aur.archlinux.org/packages/visual-studio-code-bin): Visual Studio Code combines the simplicity of a source code editor with powerful developer tooling, like IntelliSense code completion and debugging
 
 ## Hardware / misc
