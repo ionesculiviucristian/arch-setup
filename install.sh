@@ -245,6 +245,7 @@ echo 'eval "$(direnv hook bash)"' >> ~/.bashrc
 # Setup docker
 # ==========================================
 
+sudo mkdir /etc/docker
 sudo cp configs/etc/docker/daemon.json /etc/docker/daemon.json
 sudo systemctl start docker.service
 sudo systemctl enable docker.service

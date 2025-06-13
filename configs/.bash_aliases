@@ -97,16 +97,16 @@ function pkgi() {
 function pkgr() {
     case "$PACKAGE_MANAGER" in
         apt)
-            sudo apt purge "$@" && sudo apt autoremove
+            sudo apt purge "$@"
             ;;
         yay)
-            yay -Rns "$@" && yay -Qdtq | xargs -r yay -Rns
+            yay -Rns "$@"
             ;;
         pacman)
-            sudo pacman -Rns "$@" && pacman -Qdtq | sudo xargs -r pacman -Rns
+            sudo pacman -Rns "$@"
             ;;
         zypper)
-            sudo zypper remove "$@" && sudo zypper clean --all
+            sudo zypper remove "$@"
             ;;
         *)
             echo "Unsupported package manager"
