@@ -317,7 +317,14 @@ wget -qO \
   ~/.config/superfile/theme/catppuccin-mocha-mauve.toml \
   https://raw.githubusercontent.com/catppuccin/superfile/refs/heads/main/themes/mocha/catppuccin-mocha-mauve.toml
 cp configs/.config/superfile/config.toml ~/.config/superfile/config.toml
-   
+
+# ==========================================
+# Setup tdrop
+# ==========================================
+
+cp configs/.local/share/applications/net.local.tdrop.desktop ~/.local/share/applications/net.local.tdrop.desktop
+kwriteconfig6 --file ~/.config/kglobalshortcutsrc --group services --group net.local.tdrop.desktop --key _launch "Alt+F12"
+
 # ==========================================
 # Setup tmux
 # ==========================================
