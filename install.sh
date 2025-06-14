@@ -10,6 +10,8 @@ else
   exit 1
 fi
 
+cp ./configs/.bashrc ~/.bashrc
+
 # ==========================================
 # Create directories
 # ==========================================
@@ -19,8 +21,6 @@ mkdir -p ~/.local/share/fonts
 mkdir ~/.repos
 mkdir ~/Backups
 mkdir ~/Projects
-
-cp ./configs/.bashrc ~/.bashrc
 
 ./add_places_entry.sh /home/liviu/Backups "Backups"
 ./add_places_entry.sh /home/liviu/Projects "Projects"
