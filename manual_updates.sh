@@ -33,67 +33,68 @@ update_app_theme() {
   fi
 }
 
-cd ~/.repos/catppuccin-kde
+cd "${HOME}/.repos/catppuccin-kde"
 if ! git pull | grep -q "Already up to date."; then
   echo "Updating Catppuccin for KDE"
+  # TODO: automate final questions
   ./install.sh 1 4 2
 fi
 
-cd ~/.repos/catppuccin-fzf
+cd "${HOME}/.repos/catppuccin-fzf"
 if ! git pull | grep -q "Already up to date."; then
   echo "Updating Catppuccin for fzf"
 fi
 
-cd ~/.repos/catppuccin-grub
+cd "${HOME}/.repos/catppuccin-grub"
 if ! git pull | grep -q "Already up to date."; then
   echo "Updating Catppuccin for Grub"
-  sudo cp -r ~/.repos/catppuccin-grub/src/catppuccin-mocha-grub-theme /usr/share/grub/themes/catppuccin-mocha-grub-theme
+  sudo cp -r "${HOME}/.repos/catppuccin-grub/src/catppuccin-mocha-grub-theme" "/usr/share/grub/themes/catppuccin-mocha-grub-theme"
 fi
 
 echo "Updating Catppuccin for Tmux"
-cd ~/.config/tmux/plugins/catppuccin/tmux
+cd "${HOME}/.config/tmux/plugins/catppuccin/tmux"
 git fetch --tags
 latest_tag=$(git tag --sort=-v:refname | head -n 1)
 git checkout "${latest_tag}"
 
 update_app_theme \
-  ~/.config/atuin/themes/catppuccin-mocha-mauve.toml \
+  "${HOME}/.config/atuin/themes/catppuccin-mocha-mauve.toml" \
   https://raw.githubusercontent.com/catppuccin/atuin/refs/heads/main/themes/mocha/catppuccin-mocha-mauve.toml \
   Atuin
 
 update_app_theme \
-  ~/.config/bat/themes/Catppuccin\ Mocha.tmTheme \
+  "${HOME}/.config/bat/themes/Catppuccin Mocha.tmTheme" \
   https://github.com/catppuccin/bat/raw/main/themes/Catppuccin%20Mocha.tmTheme \
   Bat \
   bat cache --build
 
 update_app_theme \
-  ~/.config/btop/themes/catppuccin_mocha.theme \
+  "${HOME}/.config/btop/themes/catppuccin_mocha.theme" \
   https://raw.githubusercontent.com/catppuccin/btop/refs/heads/main/themes/catppuccin_mocha.theme \
   Btop
 
 update_app_theme \
-  ~/.config/kitty/themes/mocha.conf \
+  "${HOME}/.config/kitty/themes/mocha.conf" \
   https://raw.githubusercontent.com/catppuccin/kitty/refs/heads/main/themes/mocha.conf \
   Kitty
 
 update_app_theme \
-  ~/.local/share/konsole/catppuccin-mocha.colorscheme \
+  "${HOME}/.local/share/konsole/catppuccin-mocha.colorscheme" \
   https://raw.githubusercontent.com/catppuccin/konsole/refs/heads/main/themes/catppuccin-mocha.colorscheme \
   Konsole
 
 update_app_theme \
-  ~/.config/starship/themes/mocha.conf \
+  "${HOME}/.config/starship/themes/mocha.conf" \
   https://raw.githubusercontent.com/catppuccin/starship/refs/heads/main/themes/mocha.toml \
   Starship \
-  cat ~/.config/starship/config.toml ~/.config/starship/themes/mocha.conf > ~/.config/.starship.toml
+  cat "${HOME}/.config/starship/config.toml" "${HOME}/.config/starship/themes/mocha.conf" > "${HOME}/.config/.starship.toml"
 
 update_app_theme \
-  ~/.config/superfile/theme/catppuccin-mocha-mauve.toml \
+  "${HOME}/.config/superfile/theme/catppuccin-mocha-mauve.toml" \
   https://raw.githubusercontent.com/catppuccin/superfile/refs/heads/main/themes/mocha/catppuccin-mocha-mauve.toml \
   Superfile
 
-cd ~/.repos/multi-git-status
+cd "${HOME}/.repos/multi-git-status"
 if ! git pull | grep -q "Already up to date."; then
   echo "Updating multi-git-status"
   sudo make install
@@ -111,7 +112,7 @@ echo "Update manually using ble-update"
 echo "Updating Catppuccin for Lazygit"
 echo "Update manually from https://github.com/catppuccin/lazygit"
 
-echo "Updating Catppuccin for LibreOffice "
+echo "Updating Catppuccin for LibreOffice"
 echo "Update manually from https://github.com/catppuccin/libreoffice"
 
 echo "Updating Catppuccin for SDDM"
