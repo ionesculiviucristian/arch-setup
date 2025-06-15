@@ -5,7 +5,7 @@
 ```bash
 cp .env.example .env
 
-./install_hardware.sh
+./install_hardware_b450-i-aorus-pro-wifi.sh
 ./install.sh
 ./install_aliases.sh
 ```
@@ -185,10 +185,10 @@ pip install pre-commit
 pre-commit install
 ```
 
-Update github repos & themes
+Update manually installed packages
 
 ```bash
-./update_repos.sh
+./manual_updates.sh
 ```
 
 Install kitty terminfo on remote users, if need it
