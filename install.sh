@@ -33,7 +33,7 @@ mkdir "${HOME}/Projects"
 ./install_font.sh https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.tar.xz
 
 # ==========================================
-# Install official packages
+# Install packages
 # ==========================================
 
 sudo pacman -Syu --needed --noconfirm \
@@ -278,8 +278,7 @@ git clone --depth=1 https://github.com/catppuccin/kde "${HOME}/.repos/catppuccin
 
 (
   cd "${HOME}/.repos/catppuccin-kde"
-  # TODO: automate final questions
-  ./install.sh 1 4 2
+  printf "1\n4\n2\ny\ny" | ./install.sh
 )
 
 # ==========================================
