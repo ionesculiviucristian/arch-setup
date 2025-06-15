@@ -35,14 +35,26 @@ update_app_theme() {
 
 cd ~/.repos/catppuccin-kde
 if ! git pull | grep -q "Already up to date."; then
-  echo "Updating Catppuccin for KDE "
+  echo "Updating Catppuccin for KDE"
   ./install.sh 1 4 2
 fi
 
-update_app_theme \
-  ~/.local/share/konsole/catppuccin-mocha.colorscheme \
-  https://raw.githubusercontent.com/catppuccin/konsole/refs/heads/main/themes/catppuccin-mocha.colorscheme \
-  Konsole
+cd ~/.repos/catppuccin-fzf
+if ! git pull | grep -q "Already up to date."; then
+  echo "Updating Catppuccin for fzf"
+fi
+
+cd ~/.repos/catppuccin-grub
+if ! git pull | grep -q "Already up to date."; then
+  echo "Updating Catppuccin for Grub"
+  sudo cp -r ~/.repos/catppuccin-grub/src/catppuccin-mocha-grub-theme /usr/share/grub/themes/catppuccin-mocha-grub-theme
+fi
+
+echo "Updating Catppuccin for Tmux"
+cd ~/.config/tmux/plugins/catppuccin/tmux
+git fetch --tags
+latest_tag=$(git tag --sort=-v:refname | head -n 1)
+git checkout "${latest_tag}"
 
 update_app_theme \
   ~/.config/atuin/themes/catppuccin-mocha-mauve.toml \
@@ -66,6 +78,11 @@ update_app_theme \
   Kitty
 
 update_app_theme \
+  ~/.local/share/konsole/catppuccin-mocha.colorscheme \
+  https://raw.githubusercontent.com/catppuccin/konsole/refs/heads/main/themes/catppuccin-mocha.colorscheme \
+  Konsole
+
+update_app_theme \
   ~/.config/starship/themes/mocha.conf \
   https://raw.githubusercontent.com/catppuccin/starship/refs/heads/main/themes/mocha.toml \
   Starship \
@@ -75,12 +92,6 @@ update_app_theme \
   ~/.config/superfile/theme/catppuccin-mocha-mauve.toml \
   https://raw.githubusercontent.com/catppuccin/superfile/refs/heads/main/themes/mocha/catppuccin-mocha-mauve.toml \
   Superfile
-
-echo "Updating Catppuccin for Tmux"
-cd ~/.config/tmux/plugins/catppuccin/tmux
-git fetch --tags
-latest_tag=$(git tag --sort=-v:refname | head -n 1)
-git checkout "${latest_tag}"
 
 cd ~/.repos/multi-git-status
 if ! git pull | grep -q "Already up to date."; then
@@ -96,3 +107,12 @@ poetry self update
 
 echo "Updating ble.sh"
 echo "Update manually using ble-update"
+
+echo "Updating Catppuccin for Lazygit"
+echo "Update manually from https://github.com/catppuccin/lazygit"
+
+echo "Updating Catppuccin for LibreOffice "
+echo "Update manually from https://github.com/catppuccin/libreoffice"
+
+echo "Updating Catppuccin for SDDM"
+echo "Update manually from https://github.com/catppuccin/sddm"

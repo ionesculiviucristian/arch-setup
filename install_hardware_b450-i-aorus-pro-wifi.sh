@@ -4,10 +4,7 @@ set -eu
 # https://wiki.archlinux.org/title/Official_repositories#Enabling_multilib
 sudo sed -i '/\[multilib\]/,/Include =/ s/^#//' /etc/pacman.conf
 
-# ==========================================
-# Install hardware / misc
-# ==========================================
-
+# https://wiki.archlinux.org/title/NVIDIA
 sudo pacman -Syu --noconfirm \
   amd-ucode \
   dkms \
