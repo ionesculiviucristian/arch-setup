@@ -36,6 +36,7 @@ cp .env.example .env
 - [git](https://git-scm.com/): A free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency
 - [go-yq](https://github.com/mikefarah/yq): yq is a portable command-line YAML, JSON, XML, CSV, TOML and properties processor
 - [jq](https://github.com/jqlang/jq): Command-line JSON processor
+- [KCalc](https://apps.kde.org/kcalc/): KCalc has everything you would expect from a scientific calculator
 - [KeePassXC](https://keepassxc.org/): Cross-platform Password Manager
 - [kitty](https://sw.kovidgoyal.net/kitty/index.html): The fast, feature-rich, GPU based terminal emulator
 - [kpackage](https://archlinux.org/packages/extra/x86_64/kpackage/): Framework that lets applications manage user installable packages of non-binary assets
@@ -197,3 +198,5 @@ cd ~
 curl -O https://raw.githubusercontent.com/kovidgoyal/kitty/master/terminfo/kitty.terminfo
 tic -x kitty.terminfo
 ```
+
+[Wallpapers](https://ultrawidewallpapers.net/)
