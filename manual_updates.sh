@@ -36,8 +36,7 @@ update_app_theme() {
 cd "${HOME}/.repos/catppuccin-kde"
 if ! git pull | grep -q "Already up to date."; then
   echo "Updating Catppuccin for KDE"
-  # TODO: automate final questions
-  ./install.sh 1 4 2
+  printf "1\n4\n2\ny\ny" | ./install.sh
 fi
 
 cd "${HOME}/.repos/catppuccin-fzf"
