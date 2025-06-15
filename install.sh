@@ -279,6 +279,11 @@ git clone --depth=1 https://github.com/catppuccin/kde "${HOME}/.repos/catppuccin
 (
   cd "${HOME}/.repos/catppuccin-kde"
   printf "1\n4\n2\ny\ny" | ./install.sh
+
+  # cd "$HOME/.icons"
+  # curl -LOsS https://github.com/catppuccin/cursors/releases/download/v2.0.0/catppuccin-mocha-mauve-cursors.zip
+  # unzip "catppuccin-mocha-mauve-cursors.zip"
+  # rm "catppuccin-mocha-mauve-cursors.zip"
 )
 
 # ==========================================
