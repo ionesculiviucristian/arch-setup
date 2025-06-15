@@ -58,11 +58,13 @@ sudo pacman -Syu --needed --noconfirm \
   fzf \
   gimp \
   git \
+  go-yq \
   jq \
   keepassxc \
   kitty \
   kpackage \
   krita \
+  lazygit \
   less \
   libreoffice-fresh \
   linux-headers \
@@ -161,9 +163,14 @@ yay -Syu --needed --noconfirm \
 # Setup GRUB
 # ==========================================
 
+git clone https://github.com/catppuccin/grub.git ~/.repos/catppuccin-grub
+sudo cp -r ~/.repos/catppuccin-grub/src/catppuccin-mocha-grub-theme /usr/share/grub/themes/catppuccin-mocha-grub-theme
+
 sudo sed -i 's/^GRUB_DEFAULT=0/GRUB_DEFAULT=saved/' /etc/default/grub
 sudo sed -i 's/^#GRUB_SAVEDEFAULT=true/GRUB_SAVEDEFAULT=true/' /etc/default/grub
 sudo sed -i 's/^#GRUB_DISABLE_SUBMENU=y/GRUB_DISABLE_SUBMENU=y/' /etc/default/grub
+sudo sed -i 's|^#GRUB_THEME="/path/to/gfxtheme"|GRUB_THEME="/usr/share/grub/themes/catppuccin-mocha-grub-theme/theme.txt"|' /etc/default/grub
+
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 # ==========================================
@@ -228,14 +235,6 @@ cd ~/.repos/catppuccin-kde
 ./install.sh 1 4 2
 
 # ==========================================
-# Setup Papirus icon theme
-# ==========================================
-
-wget -qO- https://git.io/papirus-folders-install | sh
-kwriteconfig6 --file ~/.config/kdeglobals --group Icons --key Theme "Papirus-Dark"
-papirus-folders -C violet --theme Papirus-Dark
-
-# ==========================================
 # Setup direnv
 # ==========================================
 
@@ -252,13 +251,11 @@ sudo systemctl enable docker.service
 sudo usermod -aG docker ${USER}
 
 # ==========================================
-# Setup NVIDIA Container Toolkit
+# Setup fzf
 # ==========================================
-
-if command -v nvidia-ctk >/dev/null 2>&1; then
-    sudo nvidia-ctk runtime configure --runtime=docker
-    sudo systemctl restart docker
-fi
+ 
+git clone https://github.com/catppuccin/fzf.git ~/.repos/catppuccin-fzf
+echo 'source ~/.repos/catppuccin-fzf/themes/catppuccin-fzf-mocha.sh' >> ~/.bashrc
 
 # ==========================================
 # Setup git
@@ -287,10 +284,70 @@ kwriteconfig6 --file ~/.config/kdeglobals --group General --key TerminalService 
 echo '[ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"' >> ~/.bashrc
 
 # ==========================================
+# Setup lazygit
+# ==========================================
+
+mkdir ~/.config/lazygit
+wget -qO - https://raw.githubusercontent.com/catppuccin/lazygit/main/themes/mocha/mauve.yml \
+  | yq eval '{"gui": .}' - > ~/.config/lazygit/config.yml
+
+# ==========================================
+# Setup LibreOffice 
+# ==========================================
+
+mkdir -p ~/.config/libreoffice/4/user/config
+
+wget -qO \
+  ~/.config/libreoffice/4/user/config/catppuccin-mocha-mauve.soc \
+  https://raw.githubusercontent.com/catppuccin/libreoffice/refs/heads/main/themes/mocha/mauve/catppuccin-mocha-mauve.soc
+
+{
+  echo '<?xml version="1.0" encoding="UTF-8"?>'
+  echo '<oor:items xmlns:oor="http://openoffice.org/2001/registry" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">'
+  wget -qO - https://raw.githubusercontent.com/catppuccin/libreoffice/main/themes/mocha/mauve/catppuccin-mocha-mauve.xcu
+  echo '</oor:items>'
+} > ~/.config/libreoffice/4/user/registrymodifications.xcu
+
+# ==========================================
 # Setup mkcert
 # ==========================================
 
 mkcert -install
+
+# ==========================================
+# Setup neovim 
+# ==========================================
+
+# https://github.com/catppuccin/nvim
+
+# ==========================================
+# Setup NVIDIA Container Toolkit
+# ==========================================
+
+if command -v nvidia-ctk >/dev/null 2>&1; then
+    sudo nvidia-ctk runtime configure --runtime=docker
+    sudo systemctl restart docker
+fi
+
+# ==========================================
+# Setup OBS Studio
+# ==========================================
+ 
+# https://github.com/catppuccin/obs
+
+# ==========================================
+# Setup Papirus icon theme
+# ==========================================
+
+wget -qO- https://git.io/papirus-folders-install | sh
+kwriteconfig6 --file ~/.config/kdeglobals --group Icons --key Theme "Papirus-Dark"
+papirus-folders -C violet --theme Papirus-Dark
+
+# ==========================================
+# Setup qbittorrent
+# ==========================================
+ 
+# https://github.com/catppuccin/qbittorrent
 
 # ==========================================
 # Setup starship
@@ -334,3 +391,9 @@ git clone -b v2.1.3 https://github.com/catppuccin/tmux.git ~/.config/tmux/plugin
 git clone https://github.com/tmux-plugins/tmux-cpu ~/.config/tmux/plugins/tmux-plugins/tmux-cpu
 git clone https://github.com/tmux-plugins/tmux-battery ~/.config/tmux/plugins/tmux-plugins/tmux-battery
 cp configs/.tmux.conf ~/.tmux.conf
+
+# ==========================================
+# Setup vim 
+# ==========================================
+
+# https://github.com/catppuccin/vim
