@@ -34,11 +34,13 @@ cp .env.example .env
 - [fzf](https://github.com/junegunn/fzf): A command-line fuzzy finder
 - [Gimp](https://www.gimp.org/): The Free & Open Source Image Editor
 - [git](https://git-scm.com/): A free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency
+- [go-yq](https://github.com/mikefarah/yq): yq is a portable command-line YAML, JSON, XML, CSV, TOML and properties processor
 - [jq](https://github.com/jqlang/jq): Command-line JSON processor
 - [KeePassXC](https://keepassxc.org/): Cross-platform Password Manager
 - [kitty](https://sw.kovidgoyal.net/kitty/index.html): The fast, feature-rich, GPU based terminal emulator
 - [kpackage](https://archlinux.org/packages/extra/x86_64/kpackage/): Framework that lets applications manage user installable packages of non-binary assets
 - [Krita](https://krita.org/en/): A professional FREE and open source painting program
+- [lazygit](https://github.com/jesseduffield/lazygit): simple terminal UI for git commands
 - [less](https://www.greenwoodsoftware.com/less/): Less is a free, open-source file pager
 - [LibreOffice](https://www.libreoffice.org/): A private, free and open source office suite
 - [Linux headers](https://archlinux.org/packages/core/x86_64/linux-headers/): Headers and scripts for building modules for the Linux kernel
@@ -103,7 +105,7 @@ For a list off all available aliases, [click here to view it](./ALIASES.md) or r
 
 - [Linkclump for Firefox](https://addons.mozilla.org/en-US/firefox/addon/linkclump-for-firefox): Lets you open, copy or bookmark multiple links at the same time
 
-### Interface
+### Interface (Firefox)
 
 - [Bonjourr · Minimalist and lightweight startpage](https://addons.mozilla.org/en-US/firefox/addon/bonjourr-startpage): Improve your web browsing experience with Bonjourr, a beautiful, customizable and lightweight homepage inspired by iOS
 - [Dark Reader](https://addons.mozilla.org/en-US/firefox/addon/darkreader): Dark mode for every website
@@ -112,12 +114,12 @@ For a list off all available aliases, [click here to view it](./ALIASES.md) or r
 - [Stylus](https://addons.mozilla.org/en-US/firefox/addon/styl-us): Redesign your favorite websites with Stylus, an actively developed and community driven userstyles manager
   - [Catppuccin Userstyles](https://github.com/catppuccin/userstyles/releases/download/all-userstyles-export/import.json)
 
-### GitHub
+### GitHub (Firefox)
 
 - [Material Icons for GitHub](https://addons.mozilla.org/en-US/firefox/addon/material-icons-for-github): Replace the file/folder icons on github file browsers with icons representing the file's type and which tool it is used by
 - [Octotree - GitHub code tree](https://addons.mozilla.org/en-US/firefox/addon/octotree): GitHub on steroids
 
-### Development
+### Development (Firefox)
 
 - [Google Lighthouse](https://addons.mozilla.org/en-US/firefox/addon/google-lighthouse): Lighthouse is an open-source, automated tool for improving the performance, quality, and correctness of your web apps
 - [JSONView](https://addons.mozilla.org/en-US/firefox/addon/jsonview): View JSON documents in the browser
@@ -125,13 +127,13 @@ For a list off all available aliases, [click here to view it](./ALIASES.md) or r
 - [VisBug](https://addons.mozilla.org/en-US/firefox/addon/visbug): DevTools extension for debugging Vue.js applications
 - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools): DevTools extension for debugging Vue.js applications
 
-### YouTube
+### YouTube (Firefox)
 
 - [Enhancer for YouTube™](https://addons.mozilla.org/en-US/firefox/addon/enhancer-for-youtube): Take control of YouTube and boost your user experience!
 - [Return YouTube Dislike](https://addons.mozilla.org/en-US/firefox/addon/return-youtube-dislikes): Returns ability to see dislike statistics on youtube
 - [SponsorBlock - Skip Sponsorships on YouTube](https://addons.mozilla.org/en-US/firefox/addon/sponsorblock): Easily skip YouTube video sponsors
 
-### Misc
+### Misc (Firefox)
 
 - [Bitwarden Password Manager](https://addons.mozilla.org/en-US/firefox/addon/bitwarden-password-manager): At home, at work, or on the go, Bitwarden easily secures all your passwords, passkeys, and sensitive information
 - [uBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin): Finally, an efficient wide-spectrum content blocker
@@ -144,7 +146,7 @@ For a list off all available aliases, [click here to view it](./ALIASES.md) or r
 
 - [Linkclump](https://chromewebstore.google.com/detail/linkclump/lfpjkncokllnfokkgpkobnkbkmelfefj): Lets you open, copy or bookmark multiple links at the same time
 
-### Interface
+### Interface (Brave)
 
 - [Bonjourr · Minimalist and lightweight startpage](https://chromewebstore.google.com/detail/bonjourr-%C2%B7-minimalist-sta/dlnejlppicbjfcfcedcflplfjajinajd): Improve your web browsing experience with Bonjourr, a beautiful, customizable and lightweight homepage inspired by iOS
 - [Catppuccin Chrome Theme - Mocha](https://chromewebstore.google.com/detail/catppuccin-chrome-theme-m/bkkmolkhemgaeaeggcmfbghljjjoofoh): Soothing pastel theme for Google Chrome - Catppuccin Mocha
@@ -152,18 +154,18 @@ For a list off all available aliases, [click here to view it](./ALIASES.md) or r
 - [Stylus](https://chromewebstore.google.com/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne): Redesign your favorite websites with Stylus, an actively developed and community driven userstyles manager
   - [Catppuccin Userstyles](https://github.com/catppuccin/userstyles/releases/download/all-userstyles-export/import.json)
 
-### GitHub
+### GitHub (Brave)
 
 - [Material Icons for GitHub](https://chromewebstore.google.com/detail/material-icons-for-github/bggfcpfjbdkhfhfmkjpbhnkhnpjjeomc): Replace the file/folder icons on github file browsers with icons representing the file's type and which tool it is used by
 - [Octotree - GitHub code tree](https://chromewebstore.google.com/detail/octotree-github-code-tree/bkhaagjahfmjljalopjnoealnfndnagc): GitHub on steroids
 
-### YouTube
+### YouTube (Brave)
 
 - [Enhancer for YouTube™](https://chromewebstore.google.com/detail/enhancer-for-youtube/ponfpcnoihfmfllpaingbgckeeldkhle): Take control of YouTube and boost your user experience!
 - [Return YouTube Dislike](https://chromewebstore.google.com/detail/return-youtube-dislike/gebbhagfogifgggkldgodflihgfeippi): Returns ability to see dislike statistics on youtube
 - [SponsorBlock for YouTube - Skip Sponsorships](https://chromewebstore.google.com/detail/sponsorblock-for-youtube/mnjggcdmjocbbbhaepdhchncahnbgone): Easily skip YouTube video sponsors
 
-### Misc
+### Misc (Brave)
 
 - [Augmented Steam](https://chromewebstore.google.com/detail/augmented-steam/dnhpnfgdlenaccegplpojghhmaamnnfp): Augmented Steam is a browser extension by IsThereAnyDeal that improves your experience on the Steam platform by providing helpful information and tons of customization options
 - [Bitwarden Password Manager](https://chromewebstore.google.com/detail/bitwarden-password-manage/nngceckbapebfimnlniiiahkandclblb): At home, at work, or on the go, Bitwarden easily secures all your passwords, passkeys, and sensitive information
