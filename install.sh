@@ -60,6 +60,7 @@ sudo pacman -Syu --needed --noconfirm \
   git \
   go-yq \
   jq \
+  kcalc \
   keepassxc \
   kitty \
   kpackage \
@@ -193,6 +194,15 @@ kwriteconfig6 --file ~/.config/kwinrc --group "NightColor" --key LatitudeFixed 4
 kwriteconfig6 --file ~/.config/kwinrc --group "NightColor" --key LongitudeFixed 25.63
 kwriteconfig6 --file ~/.config/kwinrc --group "NightColor" --key Mode "Location"
 kwriteconfig6 --file ~/.config/kwinrc --group "NightColor" --key NightTemperature 3500
+
+# ==========================================
+# Setup SDDM 
+# ==========================================
+
+sudo pacman -Syu qt6-svg qt6-declarative qt5-quickcontrols2
+wget -qO- https://github.com/catppuccin/sddm/releases/download/v1.0.0/catppuccin-mocha.zip | sudo bsdtar -xvf- -C /usr/share/sddm/themes
+sudo cp configs/etc/sddm.conf /etc/sddm.conf
+sudo cp wallpapers/UltrawideWallpapersDotNet-1128.jpeg /usr/share/sddm/themes/catppuccin-mocha/backgrounds/wall.jpg
 
 # ==========================================
 # Setup atuin
