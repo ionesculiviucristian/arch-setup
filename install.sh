@@ -1,29 +1,29 @@
 #!/bin/bash
 set -eu
 
-if [ -f .env ]; then
+if [ -f ".env" ]; then
   set -a
-  source .env
+  source ".env"
   set +a
 else
   echo "Error: .env file not found!"
   exit 1
 fi
 
-cp ./configs/.bashrc ~/.bashrc
+cp "./configs/.bashrc" "${HOME}/.bashrc"
 
 # ==========================================
 # Create directories
 # ==========================================
 
-mkdir ~/.bash_aliases.d
-mkdir -p ~/.local/share/fonts
-mkdir ~/.repos
-mkdir ~/Backups
-mkdir ~/Projects
+mkdir "${HOME}/.bash_aliases.d"
+mkdir -p "${HOME}/.local/share/fonts"
+mkdir "${HOME}/.repos"
+mkdir "${HOME}/Backups"
+mkdir "${HOME}/Projects"
 
-./add_places_entry.sh /home/liviu/Backups "Backups"
-./add_places_entry.sh /home/liviu/Projects "Projects"
+./add_places_entry.sh "${HOME}/Backups" "Backups"
+./add_places_entry.sh "${HOME}/Projects" "Projects"
 
 # ==========================================
 # Install fonts
@@ -101,28 +101,35 @@ sudo pacman -Syu --needed --noconfirm \
 # Install ble.sh
 # ==========================================
 
-git clone --recursive https://github.com/akinomyoga/ble.sh.git ~/.repos/ble.sh
-cd ~/.repos/ble.sh
-make
-make INSDIR="${HOME}/.local/share/blesh" install
-touch ${HOME}/.blerc
+git clone --recursive https://github.com/akinomyoga/ble.sh.git "${HOME}/.repos/ble.sh"
 
-echo '[[ $- == *i* ]] && source "${HOME}/.local/share/blesh/ble.sh" --rcfile "${HOME}/.blerc"' >> ~/.bashrc
-echo '[[ ! ${BLE_VERSION-} ]] || ble-attach' >> ~/.bashrc
+(
+  cd "${HOME}/.repos/ble.sh"
+  make
+  make INSDIR="${HOME}/.local/share/blesh" install
+  touch "${HOME}/.blerc"
+)
+
+echo '[[ $- == *i* ]] && source "${HOME}/.local/share/blesh/ble.sh" --rcfile "${HOME}/.blerc"' >> "${HOME}/.bashrc"
+echo '[[ ! ${BLE_VERSION-} ]] || ble-attach' >> "${HOME}/.bashrc"
 
 # ==========================================
 # Install mgitstatus
 # ==========================================
 
-git clone https://github.com/fboender/multi-git-status.git ~/.repos/multi-git-status
-cd ~/.repos/multi-git-status
-sudo make install
+git clone https://github.com/fboender/multi-git-status.git "${HOME}/.repos/multi-git-status"
+
+(
+  cd "${HOME}/.repos/multi-git-status"
+  sudo make install
+)
 
 # ==========================================
 # Install nvm
 # ==========================================
 
 wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "${NVM_DIR}/nvm.sh" ] && \. "${NVM_DIR}/nvm.sh"
 
@@ -130,7 +137,9 @@ nvm install --no-progress 18
 nvm install --no-progress 20
 nvm install --no-progress 22
 nvm install --no-progress 24
+
 nvm use 24
+
 nvm install-latest-npm
 
 # ==========================================
@@ -138,15 +147,19 @@ nvm install-latest-npm
 # ==========================================
 
 curl -sSL https://install.python-poetry.org | python3 -
-echo "export PATH=${HOME}/.local/share/pypoetry/venv/bin/poetry:\$PATH" >> ~/.bashrc
+
+echo "export PATH=${HOME}/.local/share/pypoetry/venv/bin/poetry:\$PATH" >> "${HOME}/.bashrc"
 
 # ==========================================
 # Install yay
 # ==========================================
 
-git clone https://aur.archlinux.org/yay.git ~/.repos/yay
-cd ~/.repos/yay
-makepkg -si
+git clone https://aur.archlinux.org/yay.git "${HOME}/.repos/yay"
+
+(
+  cd "${HOME}/.repos/yay"
+  makepkg -si
+)
 
 # ==========================================
 # Install AUR packages
@@ -164,108 +177,137 @@ yay -Syu --needed --noconfirm \
 # Setup GRUB
 # ==========================================
 
-git clone https://github.com/catppuccin/grub.git ~/.repos/catppuccin-grub
-sudo cp -r ~/.repos/catppuccin-grub/src/catppuccin-mocha-grub-theme /usr/share/grub/themes/catppuccin-mocha-grub-theme
+git clone https://github.com/catppuccin/grub.git "${HOME}/.repos/catppuccin-grub"
 
-sudo sed -i 's/^GRUB_DEFAULT=0/GRUB_DEFAULT=saved/' /etc/default/grub
-sudo sed -i 's/^#GRUB_SAVEDEFAULT=true/GRUB_SAVEDEFAULT=true/' /etc/default/grub
-sudo sed -i 's/^#GRUB_DISABLE_SUBMENU=y/GRUB_DISABLE_SUBMENU=y/' /etc/default/grub
-sudo sed -i 's|^#GRUB_THEME="/path/to/gfxtheme"|GRUB_THEME="/usr/share/grub/themes/catppuccin-mocha-grub-theme/theme.txt"|' /etc/default/grub
+sudo cp -r "${HOME}/.repos/catppuccin-grub/src/catppuccin-mocha-grub-theme" "/usr/share/grub/themes/catppuccin-mocha-grub-theme"
 
-sudo grub-mkconfig -o /boot/grub/grub.cfg
+sudo sed -i 's/^GRUB_DEFAULT=0/GRUB_DEFAULT=saved/' "/etc/default/grub"
+sudo sed -i 's/^#GRUB_SAVEDEFAULT=true/GRUB_SAVEDEFAULT=true/' "/etc/default/grub"
+sudo sed -i 's/^#GRUB_DISABLE_SUBMENU=y/GRUB_DISABLE_SUBMENU=y/' "/etc/default/grub"
+sudo sed -i 's|^#GRUB_THEME="/path/to/gfxtheme"|GRUB_THEME="/usr/share/grub/themes/catppuccin-mocha-grub-theme/theme.txt"|' "/etc/default/grub"
+
+sudo grub-mkconfig -o "/boot/grub/grub.cfg"
 
 # ==========================================
 # Setup Konsole
 # ==========================================
 
 wget -qO \
-  ~/.local/share/konsole/catppuccin-mocha.colorscheme \
+  "${HOME}/.local/share/konsole/catppuccin-mocha.colorscheme" \
   https://raw.githubusercontent.com/catppuccin/konsole/refs/heads/main/themes/catppuccin-mocha.colorscheme
-cp configs/.local/share/konsole/Starship.profile ~/.local/share/konsole
-kwriteconfig6 --file ~/.config/konsolerc --group "Desktop Entry" --key DefaultProfile Starship.profile
+
+cp "configs/.local/share/konsole/Starship.profile" "${HOME}/.local/share/konsole"
+
+kwriteconfig6 --file "${HOME}/.config/konsolerc" --group "Desktop Entry" --key "DefaultProfile" "Starship.profile"
 
 # ==========================================
 # Setup Night Color
 # ==========================================
 
-kwriteconfig6 --file ~/.config/kwinrc --group "NightColor" --key Active true
-kwriteconfig6 --file ~/.config/kwinrc --group "NightColor" --key DayTemperature 5700
-kwriteconfig6 --file ~/.config/kwinrc --group "NightColor" --key LatitudeFixed 45.65
-kwriteconfig6 --file ~/.config/kwinrc --group "NightColor" --key LongitudeFixed 25.63
-kwriteconfig6 --file ~/.config/kwinrc --group "NightColor" --key Mode "Location"
-kwriteconfig6 --file ~/.config/kwinrc --group "NightColor" --key NightTemperature 3500
+kwriteconfig6 --file "${HOME}/.config/kwinrc" --group "NightColor" --key "Active" true
+kwriteconfig6 --file "${HOME}/.config/kwinrc" --group "NightColor" --key "DayTemperature" 5700
+kwriteconfig6 --file "${HOME}/.config/kwinrc" --group "NightColor" --key "LatitudeFixed" 45.65
+kwriteconfig6 --file "${HOME}/.config/kwinrc" --group "NightColor" --key "LongitudeFixed" 25.63
+kwriteconfig6 --file "${HOME}/.config/kwinrc" --group "NightColor" --key "Mode" "Location"
+kwriteconfig6 --file "${HOME}/.config/kwinrc" --group "NightColor" --key "NightTemperature" 3500
 
 # ==========================================
 # Setup SDDM 
 # ==========================================
 
-sudo pacman -Syu qt6-svg qt6-declarative qt5-quickcontrols2
-wget -qO- https://github.com/catppuccin/sddm/releases/download/v1.0.0/catppuccin-mocha.zip | sudo bsdtar -xvf- -C /usr/share/sddm/themes
-sudo cp configs/etc/sddm.conf /etc/sddm.conf
-sudo cp wallpapers/UltrawideWallpapersDotNet-1128.jpeg /usr/share/sddm/themes/catppuccin-mocha/backgrounds/wall.jpg
+sudo pacman -Syu --needed --noconfirm \
+  qt6-svg \
+  qt6-declarative \
+  qt5-quickcontrols2
+
+wget -qO- https://github.com/catppuccin/sddm/releases/download/v1.0.0/catppuccin-mocha.zip | sudo bsdtar -xvf- -C "/usr/share/sddm/themes"
+
+sudo sed -i \
+  -e 's/^CustomBackground="false"/CustomBackground="true"/' \
+  -e 's/^LoginBackground="false"/LoginBackground="true"/' \
+  "/usr/share/sddm/themes/catppuccin-mocha/theme.conf"
+
+sudo cp "configs/etc/sddm.conf" "/etc/sddm.conf"
+sudo cp "wallpapers/UltrawideWallpapersDotNet-1128.jpeg" "/usr/share/sddm/themes/catppuccin-mocha/backgrounds/wall.jpg"
 
 # ==========================================
 # Setup atuin
 # ==========================================
 
-mkdir -p ~/.config/atuin/themes
+mkdir -p "${HOME}/.config/atuin/themes"
+
 wget -qO \
-  ~/.config/atuin/themes/catppuccin-mocha-mauve.toml \
+  "${HOME}/.config/atuin/themes/catppuccin-mocha-mauve.toml" \
   https://raw.githubusercontent.com/catppuccin/atuin/refs/heads/main/themes/mocha/catppuccin-mocha-mauve.toml 
-cp configs/.config/atuin/config.toml ~/.config/atuin/config.toml
-echo 'eval "$(atuin init bash)"' >> ~/.bashrc
+
+cp "configs/.config/atuin/config.toml" "${HOME}/.config/atuin/config.toml"
+
+echo 'eval "$(atuin init bash)"' >> "${HOME}/.bashrc"
 
 # ==========================================
 # Setup bat
 # ==========================================
 
-mkdir -p ~/.config/bat/themes
+mkdir -p "${HOME}/.config/bat/themes"
+
 wget -qO \
-  ~/.config/bat/themes/Catppuccin\ Mocha.tmTheme \
+  "${HOME}/.config/bat/themes/Catppuccin Mocha.tmTheme" \
   https://github.com/catppuccin/bat/raw/main/themes/Catppuccin%20Mocha.tmTheme
+
 bat cache --build
-cp configs/.config/bat/config ~/.config/bat/config
+
+cp "configs/.config/bat/config" "${HOME}/.config/bat/config"
 
 # ==========================================
 # Setup btop
 # ==========================================
 
-mkdir -p ~/.config/btop/themes
+mkdir -p "${HOME}/.config/btop/themes"
+
 wget -qO \
-  ~/.config/btop/themes/catppuccin_mocha.theme \
+  "${HOME}/.config/btop/themes/catppuccin_mocha.theme" \
   https://raw.githubusercontent.com/catppuccin/btop/refs/heads/main/themes/catppuccin_mocha.theme
-cp configs/.config/btop/btop.conf ~/.config/btop/btop.conf
+
+cp "configs/.config/btop/btop.conf" "${HOME}/.config/btop/btop.conf"
 
 # ==========================================
 # Setup Catppuccin theme
 # ==========================================
 
-git clone --depth=1 https://github.com/catppuccin/kde ~/.repos/catppuccin-kde
-cd ~/.repos/catppuccin-kde
-./install.sh 1 4 2
+git clone --depth=1 https://github.com/catppuccin/kde "${HOME}/.repos/catppuccin-kde"
+
+(
+  cd "${HOME}/.repos/catppuccin-kde"
+  # TODO: automate final questions
+  ./install.sh 1 4 2
+)
 
 # ==========================================
 # Setup direnv
 # ==========================================
 
-echo 'eval "$(direnv hook bash)"' >> ~/.bashrc
+echo 'eval "$(direnv hook bash)"' >> "${HOME}/.bashrc"
 
 # ==========================================
 # Setup docker
 # ==========================================
 
-sudo mkdir /etc/docker
-sudo cp configs/etc/docker/daemon.json /etc/docker/daemon.json
+sudo mkdir "/etc/docker"
+
+sudo cp "configs/etc/docker/daemon.json" "/etc/docker/daemon.json"
+
 sudo systemctl start docker.service
 sudo systemctl enable docker.service
-sudo usermod -aG docker ${USER}
+
+sudo usermod -aG docker "${USER}"
 
 # ==========================================
 # Setup fzf
 # ==========================================
  
-git clone https://github.com/catppuccin/fzf.git ~/.repos/catppuccin-fzf
-echo 'source ~/.repos/catppuccin-fzf/themes/catppuccin-fzf-mocha.sh' >> ~/.bashrc
+git clone https://github.com/catppuccin/fzf.git "${HOME}/.repos/catppuccin-fzf"
+
+echo 'source ${HOME}/.repos/catppuccin-fzf/themes/catppuccin-fzf-mocha.sh' >> "${HOME}/.bashrc"
 
 # ==========================================
 # Setup git
@@ -284,31 +326,36 @@ git config --global user.name "${GIT_USER_NAME:-Developer}"
 # Setup kitty
 # ==========================================
 
-mkdir -p ~/.config/kitty/themes
+mkdir -p "${HOME}/.config/kitty/themes"
+
 wget -qO \
-  ~/.config/kitty/themes/mocha.conf \
+  "${HOME}/.config/kitty/themes/mocha.conf" \
   https://raw.githubusercontent.com/catppuccin/kitty/refs/heads/main/themes/mocha.conf
-cp configs/.config/kitty/kitty.conf ~/.config/kitty
-kwriteconfig6 --file ~/.config/kdeglobals --group General --key TerminalApplication "kitty"
-kwriteconfig6 --file ~/.config/kdeglobals --group General --key TerminalService "kitty.desktop"
-echo '[ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"' >> ~/.bashrc
+
+cp "configs/.config/kitty/kitty.conf" "${HOME}/.config/kitty"
+
+kwriteconfig6 --file "${HOME}/.config/kdeglobals" --group "General" --key "TerminalApplication" "kitty"
+kwriteconfig6 --file "${HOME}/.config/kdeglobals" --group "General" --key "TerminalService" "kitty.desktop"
+
+echo '[ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"' >> "${HOME}/.bashrc"
 
 # ==========================================
 # Setup lazygit
 # ==========================================
 
-mkdir ~/.config/lazygit
+mkdir "${HOME}/.config/lazygit"
+
 wget -qO - https://raw.githubusercontent.com/catppuccin/lazygit/main/themes/mocha/mauve.yml \
-  | yq eval '{"gui": .}' - > ~/.config/lazygit/config.yml
+  | yq eval '{"gui": .}' - > "${HOME}/.config/lazygit/config.yml"
 
 # ==========================================
 # Setup LibreOffice 
 # ==========================================
 
-mkdir -p ~/.config/libreoffice/4/user/config
+mkdir -p "${HOME}/.config/libreoffice/4/user/config"
 
 wget -qO \
-  ~/.config/libreoffice/4/user/config/catppuccin-mocha-mauve.soc \
+  "${HOME}/.config/libreoffice/4/user/config/catppuccin-mocha-mauve.soc" \
   https://raw.githubusercontent.com/catppuccin/libreoffice/refs/heads/main/themes/mocha/mauve/catppuccin-mocha-mauve.soc
 
 {
@@ -316,7 +363,7 @@ wget -qO \
   echo '<oor:items xmlns:oor="http://openoffice.org/2001/registry" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">'
   wget -qO - https://raw.githubusercontent.com/catppuccin/libreoffice/main/themes/mocha/mauve/catppuccin-mocha-mauve.xcu
   echo '</oor:items>'
-} > ~/.config/libreoffice/4/user/registrymodifications.xcu
+} > "${HOME}/.config/libreoffice/4/user/registrymodifications.xcu"
 
 # ==========================================
 # Setup mkcert
@@ -335,8 +382,8 @@ mkcert -install
 # ==========================================
 
 if command -v nvidia-ctk >/dev/null 2>&1; then
-    sudo nvidia-ctk runtime configure --runtime=docker
-    sudo systemctl restart docker
+  sudo nvidia-ctk runtime configure --runtime=docker
+  sudo systemctl restart docker
 fi
 
 # ==========================================
@@ -350,7 +397,9 @@ fi
 # ==========================================
 
 wget -qO- https://git.io/papirus-folders-install | sh
-kwriteconfig6 --file ~/.config/kdeglobals --group Icons --key Theme "Papirus-Dark"
+
+kwriteconfig6 --file "${HOME}/.config/kdeglobals" --group "Icons" --key "Theme" "Papirus-Dark"
+
 papirus-folders -C violet --theme Papirus-Dark
 
 # ==========================================
@@ -363,44 +412,62 @@ papirus-folders -C violet --theme Papirus-Dark
 # Setup starship
 # ==========================================
 
-mkdir -p ~/.config/starship/themes
+mkdir -p "${HOME}/.config/starship/themes"
+
 wget -qO \
-  ~/.config/starship/themes/mocha.conf \
+  "${HOME}/.config/starship/themes/mocha.conf" \
   https://raw.githubusercontent.com/catppuccin/starship/refs/heads/main/themes/mocha.toml
-cp configs/.config/starship/config.toml ~/.config/starship/config.toml
-touch ~/.config/.starship.toml
+
+cp "configs/.config/starship/config.toml" "${HOME}/.config/starship/config.toml"
+
+touch "${HOME}/.config/.starship.toml"
+
 cat \
-  ~/.config/starship/config.toml \
-  ~/.config/starship/themes/mocha.conf \
-  > ~/.config/.starship.toml
-echo 'eval "$(starship init bash)"' >> ~/.bashrc
+  "${HOME}/.config/starship/config.toml" \
+  "${HOME}/.config/starship/themes/mocha.conf" \
+  > "${HOME}/.config/.starship.toml"
+
+echo 'eval "$(starship init bash)"' >> "${HOME}/.bashrc"
 
 # ==========================================
 # Setup superfile
 # ==========================================
 
-mkdir -p ~/.config/superfile/theme
+mkdir -p "${HOME}/.config/superfile/theme"
+
 wget -qO \
-  ~/.config/superfile/theme/catppuccin-mocha-mauve.toml \
+  "${HOME}/.config/superfile/theme/catppuccin-mocha-mauve.toml" \
   https://raw.githubusercontent.com/catppuccin/superfile/refs/heads/main/themes/mocha/catppuccin-mocha-mauve.toml
-cp configs/.config/superfile/config.toml ~/.config/superfile/config.toml
+
+cp "configs/.config/superfile/config.toml" "${HOME}/.config/superfile/config.toml"
 
 # ==========================================
 # Setup tdrop
 # ==========================================
 
-cp configs/.local/share/applications/net.local.tdrop.desktop ~/.local/share/applications/net.local.tdrop.desktop
-kwriteconfig6 --file ~/.config/kglobalshortcutsrc --group services --group net.local.tdrop.desktop --key _launch "Alt+F12"
+mkdir -p "${HOME}/.local/share/applications"
+
+cp "configs/.local/share/applications/net.local.tdrop.desktop" "${HOME}/.local/share/applications/net.local.tdrop.desktop"
+
+kwriteconfig6 --file "${HOME}/.config/kglobalshortcutsrc" --group "services" --group "net.local.tdrop.desktop" --key "_launch" "Alt+F12"
+
+# ==========================================
+# Setup Thunderbird  
+# ==========================================
+
+# https://github.com/catppuccin/thunderbird
 
 # ==========================================
 # Setup tmux
 # ==========================================
 
-mkdir -p ~/.config/tmux/plugins/catppuccin
-git clone -b v2.1.3 https://github.com/catppuccin/tmux.git ~/.config/tmux/plugins/catppuccin/tmux
-git clone https://github.com/tmux-plugins/tmux-cpu ~/.config/tmux/plugins/tmux-plugins/tmux-cpu
-git clone https://github.com/tmux-plugins/tmux-battery ~/.config/tmux/plugins/tmux-plugins/tmux-battery
-cp configs/.tmux.conf ~/.tmux.conf
+mkdir -p "${HOME}/.config/tmux/plugins/catppuccin"
+
+git clone -b v2.1.3 https://github.com/catppuccin/tmux.git "${HOME}/.config/tmux/plugins/catppuccin/tmux"
+git clone https://github.com/tmux-plugins/tmux-cpu "${HOME}/.config/tmux/plugins/tmux-plugins/tmux-cpu"
+git clone https://github.com/tmux-plugins/tmux-battery "${HOME}/.config/tmux/plugins/tmux-plugins/tmux-battery"
+
+cp "configs/.tmux.conf" "${HOME}/.tmux.conf"
 
 # ==========================================
 # Setup vim 
