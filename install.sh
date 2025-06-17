@@ -330,8 +330,21 @@ git config --global difftool.vscode.cmd 'code --wait --diff $LOCAL $REMOTE'
 git config --global init.defaultBranch main
 git config --global merge.tool vscode
 git config --global mergetool.vscode.cmd 'code --wait $MERGED'
-git config --global user.email "${GIT_USER_EMAIL:-developer@mailpit.localdev}"
-git config --global user.name "${GIT_USER_NAME:-Developer}"
+
+git config --file ~/.gitconfig-personal user.name "${GIT_PERSONAL_USER_NAME:?err}"
+git config --file ~/.gitconfig-personal user.email "${GIT_PERSONAL_USER_EMAIL:?err}"
+
+git config --file ~/.gitconfig-work user.name "${GIT_WORK_USER_NAME:?err}"
+git config --file ~/.gitconfig-work user.email "${GIT_WORK_USER_EMAIL:?err}"
+
+cat <<EOF >> ~/.gitconfig
+
+[includeIf "hasconfig:remote.*.url:${GIT_PERSONAL_REMOTE:?err}:*/**"]
+    path = ~/.gitconfig-personal
+
+[includeIf "hasconfig:remote.*.url:${GIT_WORK_REMOTE:?err}:*/**"]
+    path = ~/.gitconfig-work 
+EOF
 
 # ==========================================
 # Setup kitty
