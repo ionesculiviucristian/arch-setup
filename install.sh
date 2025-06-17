@@ -41,7 +41,6 @@ sudo pacman -Syu --needed --noconfirm \
   base-devel \
   bash-completion \
   bat \
-  bitwarden \
   blender \
   broot \
   btop \
@@ -167,6 +166,7 @@ git clone https://aur.archlinux.org/yay.git "${HOME}/.repos/yay"
 # ==========================================
 
 yay -Syu --needed --noconfirm \
+  bitwarden-bin \
   brave-bin \
   papirus-icon-theme \
   postman-bin \

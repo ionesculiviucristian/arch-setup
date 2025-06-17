@@ -16,7 +16,6 @@ cp .env.example .env
 - [base-devel](https://archlinux.org/packages/core/any/base-devel): Basic tools to build Arch Linux packages
 - [bash-completion](https://github.com/scop/bash-completion): Programmable completion functions for bash
 - [bat](https://github.com/sharkdp/bat): A cat(1) clone with wings
-- [Bitwarden](https://bitwarden.com): The most trusted password manager
 - [Blender](https://www.blender.org): The free and open source 3D creation suite
 - [broot](https://dystroy.org/broot): A new way to see and navigate directory trees
 - [Btop++](https://github.com/aristocratos/btop): A monitor of resources
@@ -83,6 +82,7 @@ cp .env.example .env
 
 ## AUR packages
 
+- [Bitwarden](https://bitwarden.com): The most trusted password manager
 - [Brave](https://aur.archlinux.org/packages/brave-bin): The browser that puts you first
 - [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme): Pixel perfect icon theme for Linux
 - [Postman](https://aur.archlinux.org/packages/postman-bin): Platform for building and using APIs management made easy
