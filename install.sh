@@ -413,7 +413,9 @@ mkcert -install
 # Setup neovim 
 # ==========================================
 
-# https://github.com/catppuccin/nvim
+sudo pacman  -Syu --needed --noconfirm lua luarocks
+
+cp -r "configs/.config/nvim" "${HOME}/.config"
 
 # ==========================================
 # Setup NVIDIA Container Toolkit
@@ -511,4 +513,10 @@ cp "configs/.tmux.conf" "${HOME}/.tmux.conf"
 # Setup vim 
 # ==========================================
 
-# https://github.com/catppuccin/vim
+mkdir -p "${HOME}/.vim/colors"
+
+wget -qO \
+  "${HOME}/.vim/colors/catppuccin_mocha.vim" \
+  https://raw.githubusercontent.com/catppuccin/vim/refs/heads/main/colors/catppuccin_mocha.vim
+
+cp "configs/.vimrc" "${HOME}/.vimrc"
