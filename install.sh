@@ -6,6 +6,10 @@ if [ $# -lt 1 ]; then
   exit 1
 fi
 
+PASSWORDLESS_SUDO="/etc/sudoers.d/$(whoami)"
+
+echo "$(whoami) ALL=(ALL) NOPASSWD: ALL" | sudo tee -a ${PASSWORDLESS_SUDO}
+
 EMAIL="$1"
 
 cp "./configs/.bashrc" "${HOME}/.bashrc"
@@ -524,3 +528,5 @@ wget -qO \
   https://raw.githubusercontent.com/catppuccin/vim/refs/heads/main/colors/catppuccin_mocha.vim
 
 cp "configs/.vimrc" "${HOME}/.vimrc"
+
+sudo rm ${PASSWORDLESS_SUDO}
