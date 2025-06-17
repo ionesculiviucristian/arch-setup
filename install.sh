@@ -41,6 +41,7 @@ sudo pacman -Syu --needed --noconfirm \
   base-devel \
   bash-completion \
   bat \
+  bitwarden \
   blender \
   broot \
   btop \
@@ -148,7 +149,7 @@ nvm install-latest-npm
 
 curl -sSL https://install.python-poetry.org | python3 -
 
-echo "export PATH=${HOME}/.local/share/pypoetry/venv/bin/poetry:\$PATH" >> "${HOME}/.bashrc"
+echo 'export PATH="${HOME}/.local/share/pypoetry/venv/bin/poetry":${PATH}' >> "${HOME}/.bashrc"
 
 # ==========================================
 # Install yay
@@ -259,6 +260,12 @@ bat cache --build
 cp "configs/.config/bat/config" "${HOME}/.config/bat/config"
 
 # ==========================================
+# Setup Bitwarden
+# ==========================================
+
+echo 'export SSH_AUTH_SOCK="${HOME}/.bitwarden-ssh-agent.sock"' >> "${HOME}/.bashrc"
+
+# ==========================================
 # Setup btop
 # ==========================================
 
@@ -311,7 +318,7 @@ sudo usermod -aG docker "${USER}"
  
 git clone https://github.com/catppuccin/fzf.git "${HOME}/.repos/catppuccin-fzf"
 
-echo 'source ${HOME}/.repos/catppuccin-fzf/themes/catppuccin-fzf-mocha.sh' >> "${HOME}/.bashrc"
+echo 'source "${HOME}/.repos/catppuccin-fzf/themes/catppuccin-fzf-mocha.sh"' >> "${HOME}/.bashrc"
 
 # ==========================================
 # Setup git
