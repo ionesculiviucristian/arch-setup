@@ -41,6 +41,7 @@ sudo pacman -Syu --needed --noconfirm \
   base-devel \
   bash-completion \
   bat \
+  bitwarden-cli \
   blender \
   broot \
   btop \
