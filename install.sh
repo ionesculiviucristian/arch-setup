@@ -24,13 +24,6 @@ mkdir "${HOME}/Projects"
 ./add_places_entry.sh "${HOME}/Projects" "Projects"
 
 # ==========================================
-# Install fonts
-# ==========================================
-
-./install_font.sh https://github.com/eigilnikolajsen/commit-mono/releases/download/v1.143/CommitMono-1.143.zip
-./install_font.sh https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.tar.xz
-
-# ==========================================
 # Install packages
 # ==========================================
 
@@ -95,6 +88,13 @@ sudo pacman -Syu --needed --noconfirm \
   virtualbox-host-dkms \
   zip \
   zoxide
+
+# ==========================================
+# Install fonts
+# ==========================================
+
+./install_font.sh https://github.com/eigilnikolajsen/commit-mono/releases/download/v1.143/CommitMono-1.143.zip
+./install_font.sh https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.tar.xz
 
 # ==========================================
 # Install ble.sh
