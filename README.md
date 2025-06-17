@@ -4,7 +4,10 @@
 
 ```bash
 export BW_SESSION=$(bw login YOUR_EMAIL --raw)
-bw get item arch-linux | jq -r '.notes' > \.env
+bw get item "GPG private key" | jq -r '.notes' | gpg --import
+bw get item "GPG public key" | jq -r '.notes' | gpg --import
+bw get item arch-setup | jq -r '.notes' > \.env
+
 bw logout
 
 ./install_hardware_b450-i-aorus-pro-wifi.sh
