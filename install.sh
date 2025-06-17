@@ -1,16 +1,27 @@
 #!/bin/bash
 set -eu
 
-if [ -f ".env" ]; then
-  set -a
-  source ".env"
-  set +a
-else
-  echo "Error: .env file not found!"
+if [ $# -lt 1 ]; then
+  echo "Usage: $0 your-email@example.com"
   exit 1
 fi
 
+EMAIL="$1"
+
 cp "./configs/.bashrc" "${HOME}/.bashrc"
+
+echo "export BW_EMAIL=${EMAIL}" >> "${HOME}/.bashrc"
+source "${HOME}/.bashrc"
+
+export BW_SESSION=$(bw login ${BW_EMAIL} --method 0 --raw)
+
+bw get item "GPG private key" | jq -r '.notes' | gpg --import
+bw get item "GPG public key" | jq -r '.notes' | gpg --import
+bw get item arch-setup | jq -r '.notes' > \.env
+
+bw logout
+
+set -a && source ".env" && set +a
 
 # ==========================================
 # Create directories
