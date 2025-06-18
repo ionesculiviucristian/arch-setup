@@ -3,10 +3,9 @@
 ## Installation
 
 ```bash
-./install_hardware_b450-i-aorus-pro-wifi.sh
+./install_hardware_b450-i-aorus-pro-wifi.sh | tee install_hardware.log
 ./install.sh 2>&1 | tee install.log
-./install_aliases.sh
-./post_install.sh
+./post_install.sh your-email@example.com | tee post_install.log
 ```
 
 ## Official Arch packages
