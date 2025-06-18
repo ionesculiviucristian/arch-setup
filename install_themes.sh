@@ -3,6 +3,18 @@ set -eu
 
 cp wallpapers/* "${HOME}/.wallpapers"
 
+plasma-apply-wallpaperimage --wallpaper "${HOME}/.wallpapers/wp14259050-cyberpunk-3440x1440-wallpapers.png"
+
+kwriteconfig6 \
+  --file "${HOME}/.config/kscreenlockerrc" \
+  --group "Greeter" --group "Wallpaper" --group "org.kde.image" --group "General" \
+  --key "Image" "${HOME}/.wallpapers/wp11361931-minimalist-3440x1440-wallpapers.png"
+
+kwriteconfig6 \
+  --file "${HOME}/.config/kscreenlockerrc" \
+  --group "Greeter" --group "Wallpaper" --group "org.kde.image" --group "General" \
+  --key "PreviewImage" "${HOME}/.wallpapers/wp11361931-minimalist-3440x1440-wallpapers.png"
+
 # ==========================================
 # GRUB
 # ==========================================
@@ -103,6 +115,9 @@ git clone --depth=1 https://github.com/catppuccin/kde "${HOME}/.repos/catppuccin
   cd "${HOME}/.repos/catppuccin-kde"
   printf "1\n4\n2\ny\ny" | ./install.sh
 
+  rm -rf "${HOME}/.local/share/icons/Catppuccin-Mocha-Dark-Cursors"
+  rm -rf "${HOME}/.local/share/icons/Catppuccin-Mocha-Mauve-Cursors"
+
   # Use newer Catppuccin cursors
   rm -rf "${HOME}/.local/share/icons/catppuccin-mocha-mauve-cursors"
   wget -qO- https://github.com/catppuccin/cursors/releases/download/v2.0.0/catppuccin-mocha-mauve-cursors.zip | bsdtar -xvf- -C "${HOME}/.local/share/icons"
@@ -110,6 +125,8 @@ git clone --depth=1 https://github.com/catppuccin/kde "${HOME}/.repos/catppuccin
   if [ ! -L "${HOME}/.icons" ]; then
     ln -s "${HOME}/.local/share/icons" "${HOME}/.icons"
   fi
+
+  plasma-apply-cursortheme "catppuccin-mocha-mauve-cursors"
 )
 
 # ==========================================

@@ -215,7 +215,9 @@ kwriteconfig6 --file "${HOME}/.config/kwinrc" --group "NightColor" --key "NightT
 # Setup SDDM 
 # ==========================================
 
-sudo cp "configs/etc/sddm.conf" "/etc/sddm.conf"
+sudo mkdir -p "/etc/sddm.conf.d"
+
+sudo cp "configs/etc/sddm.conf.d/kde_settings.conf" "/etc/sddm.conf.d/kde_settings.conf"
 
 # ==========================================
 # Setup atuin
