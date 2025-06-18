@@ -70,7 +70,7 @@
 ## git
 
 - `gic [MESSAGE] {WIP}`: Stage and commit all files from current directory
-- `gica [MESSAGE] {WIP}`: Amend commit
+- `gica`: Amend commit
 - `gico <BRANCH>`: Checkout branch
 - `gicpu [MESSAGE] {WIP}`: Stage, commit and push all files from current directory
 - `gicpuf [MESSAGE] {WIP}`: Stage, commit and force push with lease all files from current directory

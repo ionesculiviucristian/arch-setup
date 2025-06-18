@@ -494,15 +494,12 @@ _complete_branches() {
 # @group git
 # @param [MESSAGE] {WIP}
 function gic() {
-    git add . && git commit -m "${1:-WIP}"
+    git add -A && git commit -m "${1:-WIP}"
 }
 
 # @info Amend commit
 # @group git
-# @param [MESSAGE] {WIP}
-function gica() {
-    git commit --amend -m "${1:-WIP}"
-}
+alias gica="git add -A && git commit --amend --no-edit"
 
 # @info Checkout branch
 # @group git
@@ -516,14 +513,14 @@ complete -o nospace -F _complete_branches gico
 # @group git
 # @param [MESSAGE] {WIP}
 function gicpu() {
-    git add . && git commit -m "${1:-WIP}" && git push
+    git add -A && git commit -m "${1:-WIP}" && git push
 }
 
 # @info Stage, commit and force push with lease all files from current directory
 # @group git
 # @param [MESSAGE] {WIP}
 function gicpuf() {
-    git add . && git commit -m "${1:-WIP}" && git push --force-with-lease
+    git add -A && git commit -m "${1:-WIP}" && git push --force-with-lease
 }
 
 # @info Download objects and refs from another repository

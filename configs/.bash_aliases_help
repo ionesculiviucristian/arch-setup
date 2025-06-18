@@ -64,7 +64,7 @@ function aliases() {
 	echo -e "  ${AC}dcul${NC} <SERVICE...>: Create, start and view output from containers"
 	echo -e "\n${GC}git${NC}\n"
 	echo -e "  ${AC}gic${NC} [MESSAGE] {WIP}: Stage and commit all files from current directory"
-	echo -e "  ${AC}gica${NC} [MESSAGE] {WIP}: Amend commit"
+	echo -e "  ${AC}gica${NC}: Amend commit"
 	echo -e "  ${AC}gico${NC} <BRANCH>: Checkout branch"
 	echo -e "  ${AC}gicpu${NC} [MESSAGE] {WIP}: Stage, commit and push all files from current directory"
 	echo -e "  ${AC}gicpuf${NC} [MESSAGE] {WIP}: Stage, commit and force push with lease all files from current directory"
