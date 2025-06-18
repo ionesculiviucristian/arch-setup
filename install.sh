@@ -73,6 +73,7 @@ sudo pacman -Syu --needed --noconfirm \
   qbittorrent \
   ripgrep \
   rsync \
+  shellcheck \
   smplayer \
   solaar \
   starship \

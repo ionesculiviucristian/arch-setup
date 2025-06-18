@@ -60,6 +60,7 @@
 - [qBittorrent](https://www.qbittorrent.org): The qBittorrent project aims to provide an open-source software alternative to µTorrent
 - [ripgrep](https://github.com/BurntSushi/ripgrep): ripgrep recursively searches directories for a regex pattern while respecting your gitignore
 - [rsync](https://rsync.samba.org): rsync is an open source utility that provides fast incremental file transfer
+- [shellcheck](https://github.com/koalaman/shellcheck): ShellCheck, a static analysis tool for shell scripts
 - [SMPlayer](https://www.smplayer.info): Free Media Player with built-in codecs
 - [solaar](https://pwr-solaar.github.io/Solaar): Solaar is a Linux manager for many Logitech keyboards, mice, and trackpads that connect wirelessly to a USB Unifying, Bolt, Lightspeed, or Nano receiver
 - [starship](https://starship.rs): The minimal, blazing-fast, and infinitely customizable prompt for any shell!
