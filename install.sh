@@ -87,6 +87,30 @@ sudo pacman -Syu --needed --noconfirm \
   zoxide
 
 # ==========================================
+# Install yay
+# ==========================================
+
+git clone https://aur.archlinux.org/yay.git "${HOME}/.repos/yay"
+
+(
+  cd "${HOME}/.repos/yay"
+  makepkg -si --needed --noconfirm
+)
+
+# ==========================================
+# Install AUR packages
+# ==========================================
+
+yay -Syu --needed --noconfirm \
+  bitwarden-bin \
+  brave-bin \
+  papirus-icon-theme \
+  postman-bin \
+  spotify \
+  tdrop \
+  visual-studio-code-bin 
+
+# ==========================================
 # Install fonts
 # ==========================================
 
@@ -151,30 +175,6 @@ nvm install-latest-npm
 curl -sSL https://install.python-poetry.org | python3 -
 
 echo 'export PATH="${HOME}/.local/share/pypoetry/venv/bin/poetry":${PATH}' >> "${HOME}/.bashrc"
-
-# ==========================================
-# Install yay
-# ==========================================
-
-git clone https://aur.archlinux.org/yay.git "${HOME}/.repos/yay"
-
-(
-  cd "${HOME}/.repos/yay"
-  makepkg -si --needed --noconfirm
-)
-
-# ==========================================
-# Install AUR packages
-# ==========================================
-
-yay -Syu --needed --noconfirm \
-  bitwarden-bin \
-  brave-bin \
-  papirus-icon-theme \
-  postman-bin \
-  spotify \
-  tdrop \
-  visual-studio-code-bin 
 
 # ==========================================
 # Setup GRUB
