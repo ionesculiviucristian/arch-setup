@@ -3,7 +3,7 @@ set -eu
 
 PASSWORDLESS_SUDO="/etc/sudoers.d/$(whoami)"
 
-echo "$(whoami) ALL=(ALL) NOPASSWD: ALL" | sudo tee -a ${PASSWORDLESS_SUDO}
+echo "$(whoami) ALL=(ALL) NOPASSWD: ALL" | sudo tee -a "${PASSWORDLESS_SUDO}"
 
 cp "./configs/.bashrc" "${HOME}/.bashrc"
 
@@ -159,7 +159,10 @@ git clone https://github.com/fboender/multi-git-status.git "${HOME}/.repos/multi
 
 wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+export NVM_DIR
+
+# shellcheck disable=SC1091
 [ -s "${NVM_DIR}/nvm.sh" ] && \. "${NVM_DIR}/nvm.sh"
 
 nvm install --no-progress 18
@@ -282,7 +285,7 @@ cp "configs/.config/kitty/kitty.conf" "${HOME}/.config/kitty"
 kwriteconfig6 --file "${HOME}/.config/kdeglobals" --group "General" --key "TerminalApplication" "kitty"
 kwriteconfig6 --file "${HOME}/.config/kdeglobals" --group "General" --key "TerminalService" "kitty.desktop"
 
-echo '[ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"' >> "${HOME}/.bashrc"
+echo '[ "${TERM}" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"' >> "${HOME}/.bashrc"
 
 # ==========================================
 # Setup mkcert
@@ -367,4 +370,4 @@ cp "configs/.vimrc" "${HOME}/.vimrc"
 
 ./install_aliases.sh
 
-sudo rm ${PASSWORDLESS_SUDO}
+sudo rm "${PASSWORDLESS_SUDO}"

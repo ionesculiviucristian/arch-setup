@@ -1,3 +1,4 @@
+# shellcheck disable=SC2148
 # ======================================
 # File system
 # ======================================
@@ -162,8 +163,9 @@ _complete_containers() {
         COMPREPLY=()
         return 0
     fi
-    local CONTAINERS=$(docker ps --format "{{.Names}}")
-    COMPREPLY=($(compgen -W "${CONTAINERS}}" -- "$2"))
+    local CONTAINERS
+    mapfile -t CONTAINERS < <(docker ps --format "{{.Names}}")
+    mapfile -t COMPREPLY < <(compgen -W "${CONTAINERS[*]}" -- "$2")
 }
 
 _complete_container() {
@@ -286,6 +288,7 @@ alias dsa='docker stop $(docker ps --all --quiet)'
 
 # @info Display container resource usage sorted by highest CPU usage
 # @group docker
+# shellcheck disable=SC2154
 alias dtopc='docker stats --no-stream | (read -r header && echo "$header" && sort -k3 -hr)'
 
 # @info Display container resource usage sorted by highest memory usage
@@ -316,8 +319,9 @@ _complete_services() {
         COMPREPLY=()
         return 0
     fi
-    local SERVICES=$(docker compose ps --services 2>/dev/null)
-    COMPREPLY=($(compgen -W "${SERVICES}" -- "$2"))
+    local SERVICES
+    mapfile -t SERVICES < <(docker compose ps --services 2>/dev/null)
+    mapfile -t COMPREPLY < <(compgen -W "${SERVICES[*]}" -- "$2")
 }
 
 _complete_service() {
@@ -402,7 +406,7 @@ complete -o nospace -F _complete_service dcexr
 # @group docker_compose
 # @param <SERVICE>
 function dci() {
-    docker inspect $(docker compose ps --quiet "$1")
+    docker inspect "$(docker compose ps --quiet "$1")"
 }
 complete -o nospace -F _complete_service dci
 
@@ -486,8 +490,9 @@ _complete_branches() {
         COMPREPLY=()
         return 0
     fi
-    local BRANCHES=$(git branch 2>/dev/null | sed 's/^[* ]*//')
-    COMPREPLY=($(compgen -W "${BRANCHES}" -- "$2"))
+    local BRANCHES
+    mapfile -t BRANCHES < <(git branch 2>/dev/null | sed 's/^[* ]*//')
+    mapfile -t COMPREPLY < <(compgen -W "${BRANCHES[*]}" -- "$2")
 }
 
 # @info Stage and commit all files from current directory
@@ -600,7 +605,7 @@ function gisq() {
 # @group git
 # @param <MESSAGE>
 function gisqa() {
-    git reset --soft $(git rev-list --max-parents=0 HEAD) && git commit --amend -m "${1:-First commit}"
+    git reset --soft "$(git rev-list --max-parents=0 HEAD)" && git commit --amend -m "${1:-First commit}"
 }
 
 # ======================================
@@ -624,8 +629,9 @@ _complete_sessions() {
         COMPREPLY=()
         return 0
     fi
-    local SESSIONS=$(tmux list-sessions 2>/dev/null | cut -d: -f1)
-    COMPREPLY=($(compgen -W "${SESSIONS}" -- "${COMP_WORDS[COMP_CWORD]}"))
+    local SESSIONS
+    mapfile -t SESSIONS < <(tmux list-sessions 2>/dev/null | cut -d: -f1)
+    mapfile -t COMPREPLY < <(compgen -W "${SESSIONS[*]}" -- "${COMP_WORDS[COMP_CWORD]}")
 }
 
 # @info Attach to a session
@@ -673,23 +679,24 @@ complete -o nospace -F _complete_sessions tns
 # ======================================
 
 _complete_projects() {
+    # shellcheck disable=SC2034
     local cur=${COMP_WORDS[COMP_CWORD]}
     COMPREPLY=()
-    pushd "${HOME}/Projects" >/dev/null
+    pushd "${HOME}/Projects" >/dev/null || return
     _filedir -d
-    popd >/dev/null
+    popd >/dev/null || return
 }
 
 # @info Set the current working directory to \`~/Projects\`
 # @group projects
-alias proj="cd ${HOME}/Projects"
+alias proj='cd "${HOME}/Projects"'
 
 # @info Create a new project in \`~/Projects\`
 # @group projects
 # @param <NAME>
 function projc() {
     mkdir -p "${HOME}/Projects/$1"
-    cd "${HOME}/Projects/$1"
+    cd "${HOME}/Projects/$1" || exit 1
     git init
 }
 
@@ -732,18 +739,20 @@ function portsf() {
 # @group misc
 # @param <FILE>
 function ppjson() {
-    jq . ${1} | bat -l json
+    jq . "${1}" | bat -l json
 }
 
 # @info Source \`~/.bashrc\`
 # @group misc
-alias src="source ${HOME}/.bashrc"
+alias src='source "${HOME}/.bashrc"'
 
 if [ -f ~/.bash_aliases_help ]; then
+    # shellcheck disable=SC1090
     . ~/.bash_aliases_help
 fi
 
 if [ -f ~/.bash_aliases_private ]; then
+    # shellcheck disable=SC1090
     . ~/.bash_aliases_private
 fi
 
@@ -752,6 +761,7 @@ ALIASES_DIR="${HOME}/.bash_aliases.d"
 if [[ -d "${ALIASES_DIR}" ]]; then
     for ALIASES_FILE in "${ALIASES_DIR}"/{,.}*.sh; do
         if [[ -f "${ALIASES_FILE}" && -r "${ALIASES_FILE}" ]]; then
+            # shellcheck disable=SC1090
             source "${ALIASES_FILE}"
         fi
     done

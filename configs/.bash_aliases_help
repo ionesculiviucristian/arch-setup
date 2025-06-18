@@ -1,3 +1,4 @@
+# shellcheck disable=SC2148
 GC='\033[0;36m'
 AC='\033[0;32m'
 NC='\033[0m'
