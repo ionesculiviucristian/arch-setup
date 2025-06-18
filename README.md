@@ -178,6 +178,8 @@ For a list off all available aliases, [read more here](./ALIASES.md) or run `ali
 
 ## Additional notes
 
+Wallpapers from [wallpapercave.com](https://wallpapercave.com/)
+
 Install pre commit hooks
 
 ```bash
@@ -198,5 +200,3 @@ cd ~
 curl -O https://raw.githubusercontent.com/kovidgoyal/kitty/master/terminfo/kitty.terminfo
 tic -x kitty.terminfo
 ```
-
-[Wallpapers](https://ultrawidewallpapers.net)

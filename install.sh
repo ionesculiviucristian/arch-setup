@@ -11,11 +11,12 @@ cp "./configs/.bashrc" "${HOME}/.bashrc"
 # Create directories
 # ==========================================
 
-mkdir "${HOME}/.bash_aliases.d"
+mkdir -p "${HOME}/.bash_aliases.d"
 mkdir -p "${HOME}/.local/share/fonts"
-mkdir "${HOME}/.repos"
-mkdir "${HOME}/Backups"
-mkdir "${HOME}/Projects"
+mkdir -p "${HOME}/.repos"
+mkdir -p "${HOME}/.wallpapers"
+mkdir -p "${HOME}/Backups"
+mkdir -p "${HOME}/Projects"
 
 ./add_places_entry.sh "${HOME}/Backups" "Backups"
 ./add_places_entry.sh "${HOME}/Projects" "Projects"
@@ -247,7 +248,7 @@ echo 'eval "$(direnv hook bash)"' >> "${HOME}/.bashrc"
 # Setup docker
 # ==========================================
 
-sudo mkdir "/etc/docker"
+sudo mkdir -p "/etc/docker"
 
 sudo cp "configs/etc/docker/daemon.json" "/etc/docker/daemon.json"
 
@@ -341,5 +342,7 @@ cp "configs/.vimrc" "${HOME}/.vimrc"
 # ==========================================
 # Post install
 # ==========================================
+
+./install_aliases.sh
 
 sudo rm ${PASSWORDLESS_SUDO}

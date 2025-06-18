@@ -1,21 +1,29 @@
 #!/bin/bash
 set -eu
 
+cp wallpapers/* "${HOME}/.wallpapers"
+
 # ==========================================
 # GRUB
 # ==========================================
 
-git clone https://github.com/catppuccin/grub.git "${HOME}/.repos/catppuccin-grub"
+rm -rf "${HOME}/.repos/catppuccin-grub"
+
+git clone -q https://github.com/catppuccin/grub.git "${HOME}/.repos/catppuccin-grub"
 
 sudo cp -r "${HOME}/.repos/catppuccin-grub/src/catppuccin-mocha-grub-theme" "/usr/share/grub/themes/catppuccin-mocha-grub-theme"
 
-sudo sed -i 's|^#GRUB_THEME="/path/to/gfxtheme"|GRUB_THEME="/usr/share/grub/themes/catppuccin-mocha-grub-theme/theme.txt"|' "/etc/default/grub"
+if ! grep -q "catppuccin-mocha-grub-theme" "/boot/grub/grub.cfg"; then
+  sudo sed -i 's|^#GRUB_THEME="/path/to/gfxtheme"|GRUB_THEME="/usr/share/grub/themes/catppuccin-mocha-grub-theme/theme.txt"|' "/etc/default/grub"
 
-sudo grub-mkconfig -o "/boot/grub/grub.cfg"
+  sudo grub-mkconfig -o "/boot/grub/grub.cfg"
+fi
 
 # ==========================================
 # Konsole
 # ==========================================
+
+mkdir -p "${HOME}/.local/share/konsole"
 
 wget -qO \
   "${HOME}/.local/share/konsole/catppuccin-mocha.colorscheme" \
@@ -37,7 +45,7 @@ sudo sed -i \
   -e 's/^LoginBackground="false"/LoginBackground="true"/' \
   "/usr/share/sddm/themes/catppuccin-mocha/theme.conf"
 
-sudo cp "wallpapers/UltrawideWallpapersDotNet-1128.jpeg" "/usr/share/sddm/themes/catppuccin-mocha/backgrounds/wall.jpg"
+sudo cp "wallpapers/wp11361931-minimalist-3440x1440-wallpapers.png" "/usr/share/sddm/themes/catppuccin-mocha/backgrounds/wall.jpg"
 
 # ==========================================
 # atuin
@@ -74,10 +82,14 @@ wget -qO \
 # ==========================================
 # fzf
 # ==========================================
- 
+
+rm -rf "${HOME}/.repos/catppuccin-fzf"
+
 git clone https://github.com/catppuccin/fzf.git "${HOME}/.repos/catppuccin-fzf"
 
-echo 'source "${HOME}/.repos/catppuccin-fzf/themes/catppuccin-fzf-mocha.sh"' >> "${HOME}/.bashrc"
+if ! grep -q "catppuccin-fzf-mocha.sh" "${HOME}/.bashrc"; then
+  echo 'source "${HOME}/.repos/catppuccin-fzf/themes/catppuccin-fzf-mocha.sh"' >> "${HOME}/.bashrc"
+fi
 
 # ==========================================
 # KDE
@@ -89,10 +101,10 @@ git clone --depth=1 https://github.com/catppuccin/kde "${HOME}/.repos/catppuccin
   cd "${HOME}/.repos/catppuccin-kde"
   printf "1\n4\n2\ny\ny" | ./install.sh
 
-  # cd "$HOME/.icons"
-  # curl -LOsS https://github.com/catppuccin/cursors/releases/download/v2.0.0/catppuccin-mocha-mauve-cursors.zip
-  # unzip "catppuccin-mocha-mauve-cursors.zip"
-  # rm "catppuccin-mocha-mauve-cursors.zip"
+  # Use newer Catppuccin cursors
+  rm -rf "${HOME}/.local/share/icons/catppuccin-mocha-mauve-cursors"
+  wget -qO- https://github.com/catppuccin/cursors/releases/download/v2.0.0/catppuccin-mocha-mauve-cursors.zip | bsdtar -xvf- -C "${HOME}/.local/share/icons"
+  ln -s "${HOME}/.local/share/icons/" "${HOME}/.icons"
 )
 
 # ==========================================
@@ -124,12 +136,14 @@ wget -qO \
   "${HOME}/.config/libreoffice/4/user/config/catppuccin-mocha-mauve.soc" \
   https://raw.githubusercontent.com/catppuccin/libreoffice/refs/heads/main/themes/mocha/mauve/catppuccin-mocha-mauve.soc
 
-{
-  echo '<?xml version="1.0" encoding="UTF-8"?>'
-  echo '<oor:items xmlns:oor="http://openoffice.org/2001/registry" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">'
-  wget -qO - https://raw.githubusercontent.com/catppuccin/libreoffice/main/themes/mocha/mauve/catppuccin-mocha-mauve.xcu
-  echo '</oor:items>'
-} > "${HOME}/.config/libreoffice/4/user/registrymodifications.xcu"
+if ! grep -q "/org.openoffice.Office.UI/ColorScheme/ColorSchemes" "${HOME}/.config/libreoffice/4/user/registrymodifications.xcu"
+  {
+    echo '<?xml version="1.0" encoding="UTF-8"?>'
+    echo '<oor:items xmlns:oor="http://openoffice.org/2001/registry" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">'
+    wget -qO - https://raw.githubusercontent.com/catppuccin/libreoffice/main/themes/mocha/mauve/catppuccin-mocha-mauve.xcu
+    echo '</oor:items>'
+  } > "${HOME}/.config/libreoffice/4/user/registrymodifications.xcu"
+fi
 
 # ==========================================
 # OBS Studio
@@ -138,7 +152,7 @@ wget -qO \
 # https://github.com/catppuccin/obs
 
 # ==========================================
-# Setup qbittorrent
+# qbittorrent
 # ==========================================
  
 # https://github.com/catppuccin/qbittorrent
@@ -152,6 +166,13 @@ mkdir -p "${HOME}/.config/starship/themes"
 wget -qO \
   "${HOME}/.config/starship/themes/mocha.conf" \
   https://raw.githubusercontent.com/catppuccin/starship/refs/heads/main/themes/mocha.toml
+
+if [ -f "${HOME}/.config/.starship.toml" ]; then
+  cat \
+    "${HOME}/.config/starship/config.toml" \
+    "${HOME}/.config/starship/themes/mocha.conf" \
+    > "${HOME}/.config/.starship.toml"
+fi
 
 # ==========================================
 # Setup superfile
@@ -175,7 +196,9 @@ wget -qO \
 
 mkdir -p "${HOME}/.config/tmux/plugins/catppuccin"
 
-git clone -b v2.1.3 https://github.com/catppuccin/tmux.git "${HOME}/.config/tmux/plugins/catppuccin/tmux"
+rm -rf "${HOME}/.config/tmux/plugins/catppuccin/tmux"
+
+git clone https://github.com/catppuccin/tmux.git "${HOME}/.config/tmux/plugins/catppuccin/tmux"
 
 # ==========================================
 # vim 
