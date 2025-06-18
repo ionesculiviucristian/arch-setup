@@ -3,7 +3,7 @@ set -eu
 
 cp wallpapers/* "${HOME}/.wallpapers"
 
-plasma-apply-wallpaperimage --wallpaper "${HOME}/.wallpapers/wp14259050-cyberpunk-3440x1440-wallpapers.png"
+plasma-apply-wallpaperimage "${HOME}/.wallpapers/wp14259050-cyberpunk-3440x1440-wallpapers.png"
 
 kwriteconfig6 \
   --file "${HOME}/.config/kscreenlockerrc" \

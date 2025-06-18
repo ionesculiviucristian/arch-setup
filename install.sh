@@ -204,7 +204,7 @@ kwriteconfig6 --file "${HOME}/.config/konsolerc" --group "Desktop Entry" --key "
 # Setup Night Color
 # ==========================================
 
-kwriteconfig6 --file "${HOME}/.config/kwinrc" --group "NightColor" --key "Active" true
+kwriteconfig6 --file "${HOME}/.config/kwinrc" --group "NightColor" --key "Active" --type "bool" true
 kwriteconfig6 --file "${HOME}/.config/kwinrc" --group "NightColor" --key "DayTemperature" 5700
 kwriteconfig6 --file "${HOME}/.config/kwinrc" --group "NightColor" --key "LatitudeFixed" 45.65
 kwriteconfig6 --file "${HOME}/.config/kwinrc" --group "NightColor" --key "LongitudeFixed" 25.63
