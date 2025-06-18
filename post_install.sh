@@ -11,7 +11,7 @@ EMAIL="$1"
 echo "export BW_EMAIL=${EMAIL}" >> "${HOME}/.bashrc"
 source "${HOME}/.bashrc"
 
-export BW_SESSION=$(bw login ${BW_EMAIL} --method 0 --raw)
+export BW_SESSION=$(bw login ${EMAIL} --method 0 --raw)
 
 bw get item "GPG private key" | jq -r '.notes' | gpg --import
 bw get item "GPG public key" | jq -r '.notes' | gpg --import

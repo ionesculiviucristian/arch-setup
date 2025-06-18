@@ -170,13 +170,15 @@ nvm use 24
 
 nvm install-latest-npm
 
+wget -qO- https://get.pnpm.io/install.sh | sh -
+
 # ==========================================
 # Install poetry
 # ==========================================
 
 wget -qO- https://install.python-poetry.org | python3 -
 
-echo 'export PATH="${HOME}/.local/share/pypoetry/venv/bin/poetry":${PATH}' >> "${HOME}/.bashrc"
+echo 'export PATH="${HOME}/.local/bin:${PATH}"' >> "${HOME}/.bashrc"
 
 # ==========================================
 # Setup GRUB

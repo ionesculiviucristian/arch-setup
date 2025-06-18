@@ -95,6 +95,8 @@ fi
 # KDE
 # ==========================================
 
+rm -rf "${HOME}/.repos/catppuccin-kde"
+
 git clone --depth=1 https://github.com/catppuccin/kde "${HOME}/.repos/catppuccin-kde"
 
 (
@@ -104,7 +106,10 @@ git clone --depth=1 https://github.com/catppuccin/kde "${HOME}/.repos/catppuccin
   # Use newer Catppuccin cursors
   rm -rf "${HOME}/.local/share/icons/catppuccin-mocha-mauve-cursors"
   wget -qO- https://github.com/catppuccin/cursors/releases/download/v2.0.0/catppuccin-mocha-mauve-cursors.zip | bsdtar -xvf- -C "${HOME}/.local/share/icons"
-  ln -s "${HOME}/.local/share/icons" "${HOME}/.icons"
+  
+  if [ ! -L "${HOME}/.icons" ]; then
+    ln -s "${HOME}/.local/share/icons" "${HOME}/.icons"
+  fi
 )
 
 # ==========================================
@@ -121,7 +126,7 @@ wget -qO \
 # lazygit
 # ==========================================
 
-mkdir "${HOME}/.config/lazygit"
+mkdir -p "${HOME}/.config/lazygit"
 
 wget -qO - https://raw.githubusercontent.com/catppuccin/lazygit/main/themes/mocha/mauve.yml \
   | yq eval '{"gui": .}' - > "${HOME}/.config/lazygit/config.yml"
@@ -136,7 +141,7 @@ wget -qO \
   "${HOME}/.config/libreoffice/4/user/config/catppuccin-mocha-mauve.soc" \
   https://raw.githubusercontent.com/catppuccin/libreoffice/refs/heads/main/themes/mocha/mauve/catppuccin-mocha-mauve.soc
 
-if ! grep -q "/org.openoffice.Office.UI/ColorScheme/ColorSchemes" "${HOME}/.config/libreoffice/4/user/registrymodifications.xcu"
+if ! grep -q "/org.openoffice.Office.UI/ColorScheme/ColorSchemes" "${HOME}/.config/libreoffice/4/user/registrymodifications.xcu"; then
   {
     echo '<?xml version="1.0" encoding="UTF-8"?>'
     echo '<oor:items xmlns:oor="http://openoffice.org/2001/registry" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">'
