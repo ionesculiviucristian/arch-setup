@@ -1,5 +1,7 @@
 # Arch x64 setup
 
+![Preview](assets/preview.png)
+
 ## Installation
 
 ```bash
