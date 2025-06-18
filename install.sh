@@ -105,8 +105,8 @@ git clone https://aur.archlinux.org/yay.git "${HOME}/.repos/yay"
 yay -Syu --needed --noconfirm \
   bitwarden-bin \
   brave-bin \
-  insomnia \
   papirus-icon-theme \
+  postman-bin \
   spotify \
   tdrop \
   visual-studio-code-bin 
