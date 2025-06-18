@@ -1,19 +1,19 @@
 #!/bin/bash
 set -eu
 
-cp wallpapers/* "${HOME}/.wallpapers"
+cp wallpapers/* "${HOME}/Pictures/Wallpapers"
 
 plasma-apply-wallpaperimage "${HOME}/.wallpapers/wp14259050-cyberpunk-3440x1440-wallpapers.png"
 
 kwriteconfig6 \
   --file "${HOME}/.config/kscreenlockerrc" \
   --group "Greeter" --group "Wallpaper" --group "org.kde.image" --group "General" \
-  --key "Image" "${HOME}/.wallpapers/wp11361931-minimalist-3440x1440-wallpapers.png"
+  --key "Image" "${HOME}/Pictures/Wallpapers/wp11361979-minimalist-3440x1440-wallpapers.png"
 
 kwriteconfig6 \
   --file "${HOME}/.config/kscreenlockerrc" \
   --group "Greeter" --group "Wallpaper" --group "org.kde.image" --group "General" \
-  --key "PreviewImage" "${HOME}/.wallpapers/wp11361931-minimalist-3440x1440-wallpapers.png"
+  --key "PreviewImage" "${HOME}/Pictures/Wallpapers/wp11361979-minimalist-3440x1440-wallpapers.png"
 
 # ==========================================
 # GRUB
