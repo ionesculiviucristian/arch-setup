@@ -4,8 +4,9 @@
 
 ```bash
 ./install_hardware_b450-i-aorus-pro-wifi.sh
-./install.sh
+./install.sh 2>&1 | tee install.log
 ./install_aliases.sh
+./post_install.sh
 ```
 
 ## Official Arch packages
