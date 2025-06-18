@@ -82,12 +82,12 @@
 ## AUR packages
 
 - [Bitwarden](https://bitwarden.com): The most trusted password manager
-- [Brave](https://aur.archlinux.org/packages/brave-bin): The browser that puts you first
+- [Brave](https://brave.com/): The browser that puts you first
+- [Insomnia](https://insomnia.rest): Debug, Design, Test, and Mock APIs
 - [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme): Pixel perfect icon theme for Linux
-- [Postman](https://aur.archlinux.org/packages/postman-bin): Platform for building and using APIs management made easy
-- [Spotify](https://aur.archlinux.org/packages/spotify): Online music streaming service
+- [Spotify](https://spotify.com): Online music streaming service
 - [tdrop](https://github.com/noctuid/tdrop): A Glorified WM-Independent Dropdown Creator
-- [Visual Studio Code](https://aur.archlinux.org/packages/visual-studio-code-bin): Visual Studio Code combines the simplicity of a source code editor with powerful developer tooling, like IntelliSense code completion and debugging
+- [Visual Studio Code](https://code.visualstudio.com): Visual Studio Code combines the simplicity of a source code editor with powerful developer tooling, like IntelliSense code completion and debugging
 
 ## Hardware / misc
 
