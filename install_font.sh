@@ -15,7 +15,7 @@ TMP_DIR=$(mktemp -d)
 FILE_NAME=$(basename "${URL}")
 FILE_PATH="${TMP_DIR}/${FILE_NAME}"
 
-wget -q "${URL}" -O "${FILE_PATH}"
+wget -qO "${URL}" "${FILE_PATH}"
 
 case "${FILE_NAME}" in
   *.zip)

@@ -104,7 +104,7 @@ git clone --depth=1 https://github.com/catppuccin/kde "${HOME}/.repos/catppuccin
   # Use newer Catppuccin cursors
   rm -rf "${HOME}/.local/share/icons/catppuccin-mocha-mauve-cursors"
   wget -qO- https://github.com/catppuccin/cursors/releases/download/v2.0.0/catppuccin-mocha-mauve-cursors.zip | bsdtar -xvf- -C "${HOME}/.local/share/icons"
-  ln -s "${HOME}/.local/share/icons/" "${HOME}/.icons"
+  ln -s "${HOME}/.local/share/icons" "${HOME}/.icons"
 )
 
 # ==========================================
@@ -167,7 +167,7 @@ wget -qO \
   "${HOME}/.config/starship/themes/mocha.conf" \
   https://raw.githubusercontent.com/catppuccin/starship/refs/heads/main/themes/mocha.toml
 
-if [ -f "${HOME}/.config/.starship.toml" ]; then
+if [ -f "${HOME}/.config/starship/config.toml" ]; then
   cat \
     "${HOME}/.config/starship/config.toml" \
     "${HOME}/.config/starship/themes/mocha.conf" \
@@ -196,7 +196,7 @@ wget -qO \
 
 mkdir -p "${HOME}/.config/tmux/plugins/catppuccin"
 
-rm -rf "${HOME}/.config/tmux/plugins/catppuccin/tmux"
+rm -rf "${HOME}/.config/tmux/plugins/catppuccin"
 
 git clone https://github.com/catppuccin/tmux.git "${HOME}/.config/tmux/plugins/catppuccin/tmux"
 

@@ -134,8 +134,9 @@ git clone --recursive https://github.com/akinomyoga/ble.sh.git "${HOME}/.repos/b
   cd "${HOME}/.repos/ble.sh"
   make
   make INSDIR="${HOME}/.local/share/blesh" install
-  touch "${HOME}/.blerc"
 )
+
+touch "${HOME}/.blerc"
 
 echo '[[ $- == *i* ]] && source "${HOME}/.local/share/blesh/ble.sh" --rcfile "${HOME}/.blerc"' >> "${HOME}/.bashrc"
 echo '[[ ! ${BLE_VERSION-} ]] || ble-attach' >> "${HOME}/.bashrc"
@@ -173,7 +174,7 @@ nvm install-latest-npm
 # Install poetry
 # ==========================================
 
-curl -sSL https://install.python-poetry.org | python3 -
+wget -qO- https://install.python-poetry.org | python3 -
 
 echo 'export PATH="${HOME}/.local/share/pypoetry/venv/bin/poetry":${PATH}' >> "${HOME}/.bashrc"
 
@@ -190,6 +191,8 @@ sudo grub-mkconfig -o "/boot/grub/grub.cfg"
 # ==========================================
 # Setup Konsole
 # ==========================================
+
+mkdir -p "${HOME}/.local/share/konsole"
 
 cp "configs/.local/share/konsole/Starship.profile" "${HOME}/.local/share/konsole"
 
@@ -216,6 +219,8 @@ sudo cp "configs/etc/sddm.conf" "/etc/sddm.conf"
 # Setup atuin
 # ==========================================
 
+mkdir -p "${HOME}/.config/atuin"
+
 cp "configs/.config/atuin/config.toml" "${HOME}/.config/atuin/config.toml"
 
 echo 'eval "$(atuin init bash)"' >> "${HOME}/.bashrc"
@@ -223,6 +228,8 @@ echo 'eval "$(atuin init bash)"' >> "${HOME}/.bashrc"
 # ==========================================
 # Setup bat
 # ==========================================
+
+mkdir -p "${HOME}/.config/bat"
 
 cp "configs/.config/bat/config" "${HOME}/.config/bat/config"
 
@@ -235,6 +242,8 @@ echo 'export SSH_AUTH_SOCK="${HOME}/.bitwarden-ssh-agent.sock"' >> "${HOME}/.bas
 # ==========================================
 # Setup btop
 # ==========================================
+
+mkdir -p "${HOME}/.config/btop"
 
 cp "configs/.config/btop/btop.conf" "${HOME}/.config/btop/btop.conf"
 
@@ -260,6 +269,8 @@ sudo usermod -aG docker "${USER}"
 # ==========================================
 # Setup kitty
 # ==========================================
+
+mkdir -p "${HOME}/.config/kitty"
 
 cp "configs/.config/kitty/kitty.conf" "${HOME}/.config/kitty"
 
@@ -295,20 +306,26 @@ fi
 # Setup starship
 # ==========================================
 
+mkdir -p "${HOME}/.config/starship"
+
 cp "configs/.config/starship/config.toml" "${HOME}/.config/starship/config.toml"
 
 touch "${HOME}/.config/.starship.toml"
 
-cat \
-  "${HOME}/.config/starship/config.toml" \
-  "${HOME}/.config/starship/themes/mocha.conf" \
-  > "${HOME}/.config/.starship.toml"
+if [ -f "${HOME}/.config/starship/themes/mocha.conf" ]; then
+  cat \
+    "${HOME}/.config/starship/config.toml" \
+    "${HOME}/.config/starship/themes/mocha.conf" \
+    > "${HOME}/.config/.starship.toml"
+fi
 
 echo 'eval "$(starship init bash)"' >> "${HOME}/.bashrc"
 
 # ==========================================
 # Setup superfile
 # ==========================================
+
+mkdir -p "${HOME}/.config/superfile"
 
 cp "configs/.config/superfile/config.toml" "${HOME}/.config/superfile/config.toml"
 
@@ -326,7 +343,7 @@ kwriteconfig6 --file "${HOME}/.config/kglobalshortcutsrc" --group "services" --g
 # Setup tmux
 # ==========================================
 
-mkdir -p "${HOME}/.config/tmux/plugins/catppuccin"
+mkdir -p "${HOME}/.config/tmux/plugins//tmux-plugins"
 
 git clone https://github.com/tmux-plugins/tmux-cpu "${HOME}/.config/tmux/plugins/tmux-plugins/tmux-cpu"
 git clone https://github.com/tmux-plugins/tmux-battery "${HOME}/.config/tmux/plugins/tmux-plugins/tmux-battery"
