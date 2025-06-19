@@ -64,7 +64,7 @@ check_file "${HOME}/.local/share/applications/net.local.tdrop.desktop"
 check_file "${HOME}/.tmux.conf"
 check_file "${HOME}/.vimrc"
 
-check_file "${HOME}/.wallpapers/wp14259050-cyberpunk-3440x1440-wallpapers.png"
+check_file "${HOME}/Pictures/Wallpapers/wp14259050-cyberpunk-3440x1440-wallpapers.png"
 check_file "${HOME}/Pictures/Wallpapers/wp11361979-minimalist-3440x1440-wallpapers.png"
 
 check_file "${HOME}/Pictures/Wallpapers/wp11361979-minimalist-3440x1440-wallpapers.png"
