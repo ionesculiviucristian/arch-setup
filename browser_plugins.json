@@ -1,0 +1,24 @@
+{
+  "brave": {
+    "name": "Brave",
+    "plugins": [
+      {
+        "description": "Improve your web browsing experience with Bonjourr, a beautiful, customizable and lightweight homepage inspired by iOS",
+        "id": "bonjourr-%C2%B7-minimalist-sta/dlnejlppicbjfcfcedcflplfjajinajd",
+        "name": "Bonjourr · Minimalist and lightweight startpage"
+      }
+    ],
+    "url": "https://chromewebstore.google.com/detail"
+  },
+  "firefox": {
+    "name": "Firefox",
+    "plugins": [
+      {
+        "description": "Improve your web browsing experience with Bonjourr, a beautiful, customizable and lightweight homepage inspired by iOS",
+        "id": "bonjourr-startpage",
+        "name": "Bonjourr · Minimalist and lightweight startpage"
+      }
+    ],
+    "url": "https://addons.mozilla.org/en-US/firefox/addon"
+  }
+}

@@ -15,6 +15,8 @@ kwriteconfig6 \
   --group "Greeter" --group "Wallpaper" --group "org.kde.image" --group "General" \
   --key "PreviewImage" "${HOME}/Pictures/Wallpapers/wp11361979-minimalist-3440x1440-wallpapers.png"
 
+# qdbus org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell.evaluateScript "$(cat kde-layout.js)"
+
 # ==========================================
 # GRUB
 # ==========================================
@@ -158,6 +160,7 @@ wget -qO \
   "${HOME}/.config/libreoffice/4/user/config/catppuccin-mocha-mauve.soc" \
   https://raw.githubusercontent.com/catppuccin/libreoffice/refs/heads/main/themes/mocha/mauve/catppuccin-mocha-mauve.soc
 
+# TODO: Only works on first setup
 if ! grep -q "/org.openoffice.Office.UI/ColorScheme/ColorSchemes" "${HOME}/.config/libreoffice/4/user/registrymodifications.xcu"; then
   {
     echo '<?xml version="1.0" encoding="UTF-8"?>'
@@ -216,7 +219,7 @@ wget -qO \
 # tmux
 # ==========================================
 
-mkdir -p "${HOME}/.config/tmux/plugins/catppuccin"
+mkdir -p "${HOME}/.config/tmux/plugins"
 
 rm -rf "${HOME}/.config/tmux/plugins/catppuccin"
 

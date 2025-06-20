@@ -1,0 +1,27 @@
+{
+  "aur": [
+    {
+      "description": "Bitwarden is the best password manager for securely storing, managing, and sharing sensitive information such as passwords, passkeys, and credit cards",
+      "label": "Bitwarden",
+      "name": "bitwarden-bin",
+      "source_url": "https://github.com/bitwarden",
+      "url": "https://bitwarden.com"
+    }
+  ],
+  "official": [
+    {
+      "description": "Sync, search and backup shell history with Atuin",
+      "label": "Atuin",
+      "name": "atuin",
+      "source_url": "https://github.com/atuinsh/atuin",
+      "url": "https://atuin.sh"
+    }
+  ],
+  "external": [
+    {
+      "description": "Bash Line Editor―a line editor written in pure Bash with syntax highlighting, auto suggestions, vim modes, etc. for Bash interactive sessions",
+      "label": "ble.sh",
+      "source_url": "https://github.com/akinomyoga/ble.sh"
+    }
+  ]
+}
