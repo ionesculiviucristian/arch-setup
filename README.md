@@ -14,6 +14,8 @@
 
 ## Official Arch packages
 
+- [~~jq~~](https://github.com/jqlang/jq): Command-line JSON processor
+- [~~KeePassXC~~](https://keepassxc.org): Cross-platform Password Manager
 - [Atuin](https://github.com/atuinsh/atuin): Magical shell history
 - [base-devel](https://archlinux.org/packages/core/any/base-devel): Basic tools to build Arch Linux packages
 - [bash-completion](https://github.com/scop/bash-completion): Programmable completion functions for bash
@@ -36,9 +38,7 @@
 - [Gimp](https://www.gimp.org): The Free & Open Source Image Editor
 - [git](https://git-scm.com): A free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency
 - [go-yq](https://github.com/mikefarah/yq): yq is a portable command-line YAML, JSON, XML, CSV, TOML and properties processor
-- [~~jq~~](https://github.com/jqlang/jq): Command-line JSON processor
 - [KCalc](https://apps.kde.org/kcalc): KCalc has everything you would expect from a scientific calculator
-- [~~KeePassXC~~](https://keepassxc.org): Cross-platform Password Manager
 - [kitty](https://sw.kovidgoyal.net/kitty/index.html): The fast, feature-rich, GPU based terminal emulator
 - [kpackage](https://archlinux.org/packages/extra/x86_64/kpackage): Framework that lets applications manage user installable packages of non-binary assets
 - [Krita](https://krita.org/en): A professional FREE and open source painting program
@@ -75,6 +75,16 @@
 - [zip](https://infozip.sourceforge.net/Zip.html): Zip is a compression and file packaging/archive utility
 - [zoxide](https://github.com/ajeetdsouza/zoxide): A smarter cd command. Supports all major shells
 
+## AUR packages
+
+- [Bitwarden](https://bitwarden.com): The most trusted password manager
+- [Brave](https://brave.com/): The browser that puts you first
+- [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme): Pixel perfect icon theme for Linux
+- [Postman](https://www.postman.com): Platform for building and using APIs management made easy
+- [Spotify](https://spotify.com): Online music streaming service
+- [tdrop](https://github.com/noctuid/tdrop): A Glorified WM-Independent Dropdown Creator
+- [Visual Studio Code](https://code.visualstudio.com): Visual Studio Code combines the simplicity of a source code editor with powerful developer tooling, like IntelliSense code completion and debugging
+
 ## External packages
 
 - [ble.sh](https://github.com/akinomyoga/ble.sh): Bash Line Editor―a line editor written in pure Bash with syntax highlighting, auto suggestions, vim modes, etc. for Bash interactive sessions
@@ -82,16 +92,6 @@
 - [Node Version Manager](https://github.com/nvm-sh/nvm): POSIX-compliant bash script to manage multiple active node.js versions
 - [Poetry](https://python-poetry.org): Python packaging and dependency management made easy
 - [Yay](https://github.com/Jguer/yay): Yet another Yogurt - An AUR Helper written in Go
-
-## AUR packages
-
-- [Bitwarden](https://bitwarden.com): The most trusted password manager
-- [Brave](https://brave.com/): The browser that puts you first
-- [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme): Pixel perfect icon theme for Linux
-- [Postman](hhttps://www.postman.com): Platform for building and using APIs management made easy
-- [Spotify](https://spotify.com): Online music streaming service
-- [tdrop](https://github.com/noctuid/tdrop): A Glorified WM-Independent Dropdown Creator
-- [Visual Studio Code](https://code.visualstudio.com): Visual Studio Code combines the simplicity of a source code editor with powerful developer tooling, like IntelliSense code completion and debugging
 
 ## Hardware / misc
 
@@ -114,10 +114,10 @@ For a list off all available aliases, [read more here](./ALIASES.md) or run `ali
 
 - [Bonjourr · Minimalist and lightweight startpage](https://addons.mozilla.org/en-US/firefox/addon/bonjourr-startpage): Improve your web browsing experience with Bonjourr, a beautiful, customizable and lightweight homepage inspired by iOS
 - [Dark Reader](https://addons.mozilla.org/en-US/firefox/addon/darkreader): Dark mode for every website
-- [Firefox Color](https://addons.mozilla.org/en-GB/firefox/addon/firefox-color): Build, save and share beautiful Firefox themes
-  - [Catppuccin Mocha - Mauve](https://addons.mozilla.org/en-GB/firefox/addon/catppuccin-mocha-mauve-git): Soothing pastel theme for Firefox (Official)
+- [Firefox Color](https://addons.mozilla.org/en-US/firefox/addon/firefox-color): Build, save and share beautiful Firefox themes
+  - [Catppuccin Mocha - Mauve](https://addons.mozilla.org/en-US/firefox/addon/catppuccin-mocha-mauve-git): Soothing pastel theme for Firefox (Official)
 - [Stylus](https://addons.mozilla.org/en-US/firefox/addon/styl-us): Redesign your favorite websites with Stylus, an actively developed and community driven userstyles manager
-  - [Catppuccin Userstyles](https://github.com/catppuccin/userstyles/releases/download/all-userstyles-export/import.json)
+  - [Catppuccin Userstyles](https://github.com/catppuccin/userstyles/releases/download/all-userstyles-export/import.json): Soothing pastel userstyles
 
 ### GitHub (Firefox)
 
@@ -157,7 +157,7 @@ For a list off all available aliases, [read more here](./ALIASES.md) or run `ali
 - [Catppuccin Chrome Theme - Mocha](https://chromewebstore.google.com/detail/catppuccin-chrome-theme-m/bkkmolkhemgaeaeggcmfbghljjjoofoh): Soothing pastel theme for Google Chrome - Catppuccin Mocha
 - [Dark Reader](https://chromewebstore.google.com/detail/dark-reader/eimadpbcbfnmbkopoojfekhnkhdbieeh): Dark mode for every website
 - [Stylus](https://chromewebstore.google.com/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne): Redesign your favorite websites with Stylus, an actively developed and community driven userstyles manager
-  - [Catppuccin Userstyles](https://github.com/catppuccin/userstyles/releases/download/all-userstyles-export/import.json)
+  - [Catppuccin Userstyles](https://github.com/catppuccin/userstyles/releases/download/all-userstyles-export/import.json): Soothing pastel userstyles
 
 ### GitHub (Brave)
 

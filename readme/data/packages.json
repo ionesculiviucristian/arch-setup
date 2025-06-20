@@ -1,0 +1,556 @@
+{
+  "aur": [
+    {
+      "description": "The most trusted password manager",
+      "label": "Bitwarden",
+      "name": "Bitwarden",
+      "source_url": "",
+      "url": "https://bitwarden.com"
+    },
+    {
+      "description": "The browser that puts you first",
+      "label": "Brave",
+      "name": "Brave",
+      "source_url": "",
+      "url": "https://brave.com/"
+    },
+    {
+      "description": "Pixel perfect icon theme for Linux",
+      "label": "Papirus",
+      "name": "Papirus",
+      "source_url": "",
+      "url": "https://github.com/PapirusDevelopmentTeam/papirus-icon-theme"
+    },
+    {
+      "description": "Platform for building and using APIs management made easy",
+      "label": "Postman",
+      "name": "Postman",
+      "source_url": "",
+      "url": "https://www.postman.com"
+    },
+    {
+      "description": "Online music streaming service",
+      "label": "Spotify",
+      "name": "Spotify",
+      "source_url": "",
+      "url": "https://spotify.com"
+    },
+    {
+      "description": "A Glorified WM-Independent Dropdown Creator",
+      "label": "tdrop",
+      "name": "tdrop",
+      "source_url": "",
+      "url": "https://github.com/noctuid/tdrop"
+    },
+    {
+      "description": "Visual Studio Code combines the simplicity of a source code editor with powerful developer tooling, like IntelliSense code completion and debugging",
+      "label": "Visual Studio Code",
+      "name": "Visual Studio Code",
+      "source_url": "",
+      "url": "https://code.visualstudio.com"
+    }
+  ],
+  "external": [
+    {
+      "description": "Bash Line Editor―a line editor written in pure Bash with syntax highlighting, auto suggestions, vim modes, etc. for Bash interactive sessions",
+      "label": "ble.sh",
+      "name": "ble.sh",
+      "source_url": "",
+      "url": "https://github.com/akinomyoga/ble.sh"
+    },
+    {
+      "description": "Show uncommitted, untracked and unpushed changes for multiple Git repos",
+      "label": "mgitstatus",
+      "name": "mgitstatus",
+      "source_url": "",
+      "url": "https://github.com/fboender/multi-git-status"
+    },
+    {
+      "description": "POSIX-compliant bash script to manage multiple active node.js versions",
+      "label": "Node Version Manager",
+      "name": "Node Version Manager",
+      "source_url": "",
+      "url": "https://github.com/nvm-sh/nvm"
+    },
+    {
+      "description": "Python packaging and dependency management made easy",
+      "label": "Poetry",
+      "name": "Poetry",
+      "source_url": "",
+      "url": "https://python-poetry.org"
+    },
+    {
+      "description": "Yet another Yogurt - An AUR Helper written in Go",
+      "label": "Yay",
+      "name": "Yay",
+      "source_url": "",
+      "url": "https://github.com/Jguer/yay"
+    }
+  ],
+  "hardware": [
+    {
+      "description": "Microcode update image for AMD CPUs",
+      "label": "AMD microcode",
+      "name": "AMD microcode",
+      "source_url": "",
+      "url": "https://gitlab.com/kernel-firmware/linux-firmware"
+    },
+    {
+      "description": "NVIDIA drivers utilities (32-bit)",
+      "label": "NVIDIA utils (32-bit)",
+      "name": "NVIDIA utils (32-bit)",
+      "source_url": "",
+      "url": "https://archlinux.org/packages/multilib/x86_64/lib32-nvidia-utils"
+    },
+    {
+      "description": "A collection of libraries and utilities enabling users to build and run GPU-accelerated containers",
+      "label": "NVIDIA Container Toolkit",
+      "name": "NVIDIA Container Toolkit",
+      "source_url": "",
+      "url": "https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/index.html"
+    },
+    {
+      "description": "NVIDIA open kernel modules - module sources",
+      "label": "NVIDIA open DKMS",
+      "name": "NVIDIA open DKMS",
+      "source_url": "",
+      "url": "https://archlinux.org/packages/extra/x86_64/nvidia-open-dkms"
+    },
+    {
+      "description": "Tool for configuring the NVIDIA graphics driver",
+      "label": "NVIDIA settings",
+      "name": "NVIDIA settings",
+      "source_url": "",
+      "url": "https://archlinux.org/packages/extra/x86_64/nvidia-settings"
+    },
+    {
+      "description": "NVIDIA drivers utilities",
+      "label": "NVIDIA utils",
+      "name": "NVIDIA utils",
+      "source_url": "",
+      "url": "https://archlinux.org/packages/extra/x86_64/nvidia-utils"
+    }
+  ],
+  "official": [
+    {
+      "description": "Command-line JSON processor",
+      "label": "~~jq~~",
+      "name": "jq",
+      "source_url": "",
+      "url": "https://github.com/jqlang/jq"
+    },
+    {
+      "description": "Cross-platform Password Manager",
+      "label": "~~KeePassXC~~",
+      "name": "KeePassXC",
+      "source_url": "",
+      "url": "https://keepassxc.org"
+    },
+    {
+      "description": "Magical shell history",
+      "label": "Atuin",
+      "name": "Atuin",
+      "source_url": "",
+      "url": "https://github.com/atuinsh/atuin"
+    },
+    {
+      "description": "Basic tools to build Arch Linux packages",
+      "label": "base-devel",
+      "name": "base-devel",
+      "source_url": "",
+      "url": "https://archlinux.org/packages/core/any/base-devel"
+    },
+    {
+      "description": "Programmable completion functions for bash",
+      "label": "bash-completion",
+      "name": "bash-completion",
+      "source_url": "",
+      "url": "https://github.com/scop/bash-completion"
+    },
+    {
+      "description": "A cat(1) clone with wings",
+      "label": "bat",
+      "name": "bat",
+      "source_url": "",
+      "url": "https://github.com/sharkdp/bat"
+    },
+    {
+      "description": "The free and open source 3D creation suite",
+      "label": "Blender",
+      "name": "Blender",
+      "source_url": "",
+      "url": "https://www.blender.org"
+    },
+    {
+      "description": "A new way to see and navigate directory trees",
+      "label": "broot",
+      "name": "broot",
+      "source_url": "",
+      "url": "https://dystroy.org/broot"
+    },
+    {
+      "description": "A monitor of resources",
+      "label": "Btop++",
+      "name": "Btop++",
+      "source_url": "",
+      "url": "https://github.com/aristocratos/btop"
+    },
+    {
+      "description": "direnv is an extension for your shell. It augments existing shells with a new feature that can load and unload environment variables depending on the current directory",
+      "label": "direnv",
+      "name": "direnv",
+      "source_url": "",
+      "url": "https://direnv.net"
+    },
+    {
+      "description": "Dynamic Kernel Modules System",
+      "label": "DKMS",
+      "name": "DKMS",
+      "source_url": "",
+      "url": "https://github.com/dell/dkms"
+    },
+    {
+      "description": "Provides network infrastructure for small networks: DNS, DHCP, router advertisement and network boot",
+      "label": "dnsmasq",
+      "name": "dnsmasq",
+      "source_url": "",
+      "url": "https://thekelleys.org.uk/dnsmasq/doc.html"
+    },
+    {
+      "description": "An open platform for developing, shipping, and running applications",
+      "label": "Docker",
+      "name": "Docker",
+      "source_url": "",
+      "url": "https://www.docker.com"
+    },
+    {
+      "description": "Define and run multi-container applications with Docker",
+      "label": "Docker Compose",
+      "name": "Docker Compose",
+      "source_url": "",
+      "url": "https://github.com/docker/compose"
+    },
+    {
+      "description": "alpm data extraction utility",
+      "label": "expac",
+      "name": "expac",
+      "source_url": "",
+      "url": "https://github.com/falconindy/expac"
+    },
+    {
+      "description": "A modern alternative to ls",
+      "label": "eza",
+      "name": "eza",
+      "source_url": "",
+      "url": "https://github.com/eza-community/eza"
+    },
+    {
+      "description": "A maintained, feature-rich and performance oriented, neofetch like system information tool",
+      "label": "fastfetch",
+      "name": "fastfetch",
+      "source_url": "",
+      "url": "https://github.com/fastfetch-cli/fastfetch"
+    },
+    {
+      "description": "A simple, fast and user-friendly alternative to 'find'",
+      "label": "fd",
+      "name": "fd",
+      "source_url": "",
+      "url": "https://github.com/sharkdp/fd"
+    },
+    {
+      "description": "The free FTP solution",
+      "label": "Filezilla",
+      "name": "Filezilla",
+      "source_url": "",
+      "url": "https://filezilla-project.org"
+    },
+    {
+      "description": "A free, Open Source web browser",
+      "label": "Firefox",
+      "name": "Firefox",
+      "source_url": "",
+      "url": "https://www.mozilla.org/en-US/firefox"
+    },
+    {
+      "description": "A command-line fuzzy finder",
+      "label": "fzf",
+      "name": "fzf",
+      "source_url": "",
+      "url": "https://github.com/junegunn/fzf"
+    },
+    {
+      "description": "The Free & Open Source Image Editor",
+      "label": "Gimp",
+      "name": "Gimp",
+      "source_url": "",
+      "url": "https://www.gimp.org"
+    },
+    {
+      "description": "A free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency",
+      "label": "git",
+      "name": "git",
+      "source_url": "",
+      "url": "https://git-scm.com"
+    },
+    {
+      "description": "yq is a portable command-line YAML, JSON, XML, CSV, TOML and properties processor",
+      "label": "go-yq",
+      "name": "go-yq",
+      "source_url": "",
+      "url": "https://github.com/mikefarah/yq"
+    },
+    {
+      "description": "KCalc has everything you would expect from a scientific calculator",
+      "label": "KCalc",
+      "name": "KCalc",
+      "source_url": "",
+      "url": "https://apps.kde.org/kcalc"
+    },
+    {
+      "description": "The fast, feature-rich, GPU based terminal emulator",
+      "label": "kitty",
+      "name": "kitty",
+      "source_url": "",
+      "url": "https://sw.kovidgoyal.net/kitty/index.html"
+    },
+    {
+      "description": "Framework that lets applications manage user installable packages of non-binary assets",
+      "label": "kpackage",
+      "name": "kpackage",
+      "source_url": "",
+      "url": "https://archlinux.org/packages/extra/x86_64/kpackage"
+    },
+    {
+      "description": "A professional FREE and open source painting program",
+      "label": "Krita",
+      "name": "Krita",
+      "source_url": "",
+      "url": "https://krita.org/en"
+    },
+    {
+      "description": "Simple terminal UI for git commands",
+      "label": "lazygit",
+      "name": "lazygit",
+      "source_url": "",
+      "url": "https://github.com/jesseduffield/lazygit"
+    },
+    {
+      "description": "Less is a free, open-source file pager",
+      "label": "less",
+      "name": "less",
+      "source_url": "",
+      "url": "https://www.greenwoodsoftware.com/less"
+    },
+    {
+      "description": "A private, free and open source office suite",
+      "label": "LibreOffice",
+      "name": "LibreOffice",
+      "source_url": "",
+      "url": "https://www.libreoffice.org"
+    },
+    {
+      "description": "Headers and scripts for building modules for the Linux kernel",
+      "label": "Linux headers",
+      "name": "Linux headers",
+      "source_url": "",
+      "url": "https://archlinux.org/packages/core/x86_64/linux-headers"
+    },
+    {
+      "description": "Headers and scripts for building modules for the LTS Linux kernel",
+      "label": "Linux LTS headers",
+      "name": "Linux LTS headers",
+      "source_url": "",
+      "url": "https://archlinux.org/packages/core/x86_64/linux-lts-headers"
+    },
+    {
+      "description": "LiSt Open Files",
+      "label": "lsof",
+      "name": "lsof",
+      "source_url": "",
+      "url": "https://github.com/lsof-org/lsof"
+    },
+    {
+      "description": "A simple zero-config tool to make locally trusted development certificates with any names you'd like",
+      "label": "mkcert",
+      "name": "mkcert",
+      "source_url": "",
+      "url": "https://github.com/FiloSottile/mkcert"
+    },
+    {
+      "description": "Disk usage analyzer with an ncurses interface",
+      "label": "ncdu",
+      "name": "ncdu",
+      "source_url": "",
+      "url": "https://dev.yorhel.nl/ncdu"
+    },
+    {
+      "description": "Hyperextensible Vim-based text editor",
+      "label": "neovim",
+      "name": "neovim",
+      "source_url": "",
+      "url": "https://neovim.io"
+    },
+    {
+      "description": "The collection of base networking utilities for Linux",
+      "label": "net-tools",
+      "name": "net-tools",
+      "source_url": "",
+      "url": "https://sourceforge.net/projects/net-tools"
+    },
+    {
+      "description": "Network Security Services (NSS) is a set of libraries designed to support cross-platform development of security-enabled client and server applications",
+      "label": "Network Security Services (NSS)",
+      "name": "Network Security Services (NSS)",
+      "source_url": "",
+      "url": "https://firefox-source-docs.mozilla.org/security/nss/index.html"
+    },
+    {
+      "description": "NTFS-3G Safe Read/Write NTFS Driver",
+      "label": "NTFS-3G",
+      "name": "NTFS-3G",
+      "source_url": "",
+      "url": "https://github.com/tuxera/ntfs-3g"
+    },
+    {
+      "description": "GPU & Accelerator process monitoring for AMD, Apple, Huawei, Intel, NVIDIA and Qualcomm",
+      "label": "nvtop",
+      "name": "nvtop",
+      "source_url": "",
+      "url": "https://github.com/Syllo/nvtop"
+    },
+    {
+      "description": "Free and open source software for video recording and live streaming",
+      "label": "OBS Studio",
+      "name": "OBS Studio",
+      "source_url": "",
+      "url": "https://obsproject.com"
+    },
+    {
+      "description": "KDE Partition Manager is a utility to help you manage the disks, partitions, and file systems on your computer",
+      "label": "KDE Partition Manager",
+      "name": "KDE Partition Manager",
+      "source_url": "",
+      "url": "https://apps.kde.org/partitionmanager"
+    },
+    {
+      "description": "The qBittorrent project aims to provide an open-source software alternative to µTorrent",
+      "label": "qBittorrent",
+      "name": "qBittorrent",
+      "source_url": "",
+      "url": "https://www.qbittorrent.org"
+    },
+    {
+      "description": "ripgrep recursively searches directories for a regex pattern while respecting your gitignore",
+      "label": "ripgrep",
+      "name": "ripgrep",
+      "source_url": "",
+      "url": "https://github.com/BurntSushi/ripgrep"
+    },
+    {
+      "description": "rsync is an open source utility that provides fast incremental file transfer",
+      "label": "rsync",
+      "name": "rsync",
+      "source_url": "",
+      "url": "https://rsync.samba.org"
+    },
+    {
+      "description": "ShellCheck, a static analysis tool for shell scripts",
+      "label": "shellcheck",
+      "name": "shellcheck",
+      "source_url": "",
+      "url": "https://github.com/koalaman/shellcheck"
+    },
+    {
+      "description": "Free Media Player with built-in codecs",
+      "label": "SMPlayer",
+      "name": "SMPlayer",
+      "source_url": "",
+      "url": "https://www.smplayer.info"
+    },
+    {
+      "description": "Solaar is a Linux manager for many Logitech keyboards, mice, and trackpads that connect wirelessly to a USB Unifying, Bolt, Lightspeed, or Nano receiver",
+      "label": "solaar",
+      "name": "solaar",
+      "source_url": "",
+      "url": "https://pwr-solaar.github.io/Solaar"
+    },
+    {
+      "description": "The minimal, blazing-fast, and infinitely customizable prompt for any shell!",
+      "label": "starship",
+      "name": "starship",
+      "source_url": "",
+      "url": "https://starship.rs"
+    },
+    {
+      "description": "superfile is a very fancy and modern terminal file manager that can complete the file operations you need!!",
+      "label": "superfile",
+      "name": "superfile",
+      "source_url": "",
+      "url": "https://superfile.netlify.app"
+    },
+    {
+      "description": "The email and productivity app that maximizes your freedoms",
+      "label": "Thunderbird",
+      "name": "Thunderbird",
+      "source_url": "",
+      "url": "https://www.thunderbird.net/en-US"
+    },
+    {
+      "description": "tmux is a terminal multiplexer",
+      "label": "tmux",
+      "name": "tmux",
+      "source_url": "",
+      "url": "https://github.com/tmux/tmux"
+    },
+    {
+      "description": "Session manager for tmux, which allows users to save and load tmux sessions through simple configuration files",
+      "label": "tmuxp",
+      "name": "tmuxp",
+      "source_url": "",
+      "url": "https://tmuxp.git-pull.com"
+    },
+    {
+      "description": "UnZip is an extraction utility for archives compressed in .zip format (also called \"zipfiles\")",
+      "label": "unzip",
+      "name": "unzip",
+      "source_url": "",
+      "url": "https://infozip.sourceforge.net/UnZip.html"
+    },
+    {
+      "description": "VirtualBox is a general-purpose full virtualization software for x86_64 hardware",
+      "label": "VirtualBox",
+      "name": "VirtualBox",
+      "source_url": "",
+      "url": "https://www.virtualbox.org"
+    },
+    {
+      "description": "Consist of device drivers and system applications that optimize the guest operating system for better performance and usability",
+      "label": "VirtualBox Guest Additions ISO",
+      "name": "VirtualBox Guest Additions ISO",
+      "source_url": "",
+      "url": "https://archlinux.org/packages/extra/any/virtualbox-guest-iso"
+    },
+    {
+      "description": "VirtualBox Host kernel modules sources",
+      "label": "VirtualBox Host DKMS",
+      "name": "VirtualBox Host DKMS",
+      "source_url": "",
+      "url": "https://archlinux.org/packages/extra/x86_64/virtualbox-host-dkms"
+    },
+    {
+      "description": "Zip is a compression and file packaging/archive utility",
+      "label": "zip",
+      "name": "zip",
+      "source_url": "",
+      "url": "https://infozip.sourceforge.net/Zip.html"
+    },
+    {
+      "description": "A smarter cd command. Supports all major shells",
+      "label": "zoxide",
+      "name": "zoxide",
+      "source_url": "",
+      "url": "https://github.com/ajeetdsouza/zoxide"
+    }
+  ]
+}

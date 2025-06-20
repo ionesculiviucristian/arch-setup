@@ -5,3 +5,7 @@ repos:
         name: Generate bash aliases help
         entry: python generate_bash_aliases_help.py
         language: system
+      - id: render-readme
+        name: Render README.md
+        entry: node ./readme/render-readme.js
+        language: system
