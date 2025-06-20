@@ -1,52 +1,52 @@
 {
   "aur": [
     {
-      "description": "The most trusted password manager",
+      "description": "Bitwarden is the best password manager for securely storing, managing, and sharing sensitive information such as passwords, passkeys, and credit cards",
       "label": "Bitwarden",
-      "name": "Bitwarden",
-      "source_url": "",
+      "name": "bitwarden-bin",
+      "source_url": "https://github.com/bitwarden",
       "url": "https://bitwarden.com"
     },
     {
-      "description": "The browser that puts you first",
+      "description": "The browser that puts you first - Block ads. Save data. And get way faster webpages. Just by switching your browser",
       "label": "Brave",
-      "name": "Brave",
-      "source_url": "",
-      "url": "https://brave.com/"
+      "name": "brave-bin",
+      "source_url": "https://github.com/brave",
+      "url": "https://brave.com"
     },
     {
       "description": "Pixel perfect icon theme for Linux",
       "label": "Papirus",
-      "name": "Papirus",
-      "source_url": "",
+      "name": "papirus-icon-theme",
+      "source_url": "https://github.com/PapirusDevelopmentTeam/papirus-icon-theme",
       "url": "https://github.com/PapirusDevelopmentTeam/papirus-icon-theme"
     },
     {
-      "description": "Platform for building and using APIs management made easy",
+      "description": "Postman is the single platform for designing, building, and scaling APIs—together",
       "label": "Postman",
-      "name": "Postman",
-      "source_url": "",
+      "name": "postman-bin",
+      "source_url": "https://github.com/postmanlabs",
       "url": "https://www.postman.com"
     },
     {
       "description": "Online music streaming service",
       "label": "Spotify",
-      "name": "Spotify",
-      "source_url": "",
+      "name": "spotify",
+      "source_url": "https://aur.archlinux.org/packages/spotify",
       "url": "https://spotify.com"
     },
     {
       "description": "A Glorified WM-Independent Dropdown Creator",
       "label": "tdrop",
       "name": "tdrop",
-      "source_url": "",
+      "source_url": "https://github.com/noctuid/tdrop",
       "url": "https://github.com/noctuid/tdrop"
     },
     {
-      "description": "Visual Studio Code combines the simplicity of a source code editor with powerful developer tooling, like IntelliSense code completion and debugging",
+      "description": "Your code editor. Redefined with AI",
       "label": "Visual Studio Code",
-      "name": "Visual Studio Code",
-      "source_url": "",
+      "name": "visual-studio-code-bin ",
+      "source_url": "https://github.com/microsoft/vscode",
       "url": "https://code.visualstudio.com"
     }
   ],
@@ -54,36 +54,36 @@
     {
       "description": "Bash Line Editor―a line editor written in pure Bash with syntax highlighting, auto suggestions, vim modes, etc. for Bash interactive sessions",
       "label": "ble.sh",
-      "name": "ble.sh",
-      "source_url": "",
+      "name": "",
+      "source_url": "https://github.com/akinomyoga/ble.sh",
       "url": "https://github.com/akinomyoga/ble.sh"
     },
     {
       "description": "Show uncommitted, untracked and unpushed changes for multiple Git repos",
       "label": "mgitstatus",
-      "name": "mgitstatus",
-      "source_url": "",
+      "name": "",
+      "source_url": "https://github.com/fboender/multi-git-status",
       "url": "https://github.com/fboender/multi-git-status"
     },
     {
       "description": "POSIX-compliant bash script to manage multiple active node.js versions",
       "label": "Node Version Manager",
-      "name": "Node Version Manager",
-      "source_url": "",
+      "name": "",
+      "source_url": "https://github.com/nvm-sh/nvm",
       "url": "https://github.com/nvm-sh/nvm"
     },
     {
       "description": "Python packaging and dependency management made easy",
       "label": "Poetry",
-      "name": "Poetry",
-      "source_url": "",
+      "name": "",
+      "source_url": "https://github.com/python-poetry/poetry",
       "url": "https://python-poetry.org"
     },
     {
       "description": "Yet another Yogurt - An AUR Helper written in Go",
       "label": "Yay",
-      "name": "Yay",
-      "source_url": "",
+      "name": "",
+      "source_url": "https://github.com/Jguer/yay",
       "url": "https://github.com/Jguer/yay"
     }
   ],
@@ -91,44 +91,44 @@
     {
       "description": "Microcode update image for AMD CPUs",
       "label": "AMD microcode",
-      "name": "AMD microcode",
-      "source_url": "",
-      "url": "https://gitlab.com/kernel-firmware/linux-firmware"
+      "name": "amd-ucode",
+      "source_url": "https://gitlab.com/kernel-firmware/linux-firmware",
+      "url": "https://archlinux.org/packages/core/any/amd-ucode"
     },
     {
       "description": "NVIDIA drivers utilities (32-bit)",
       "label": "NVIDIA utils (32-bit)",
-      "name": "NVIDIA utils (32-bit)",
-      "source_url": "",
-      "url": "https://archlinux.org/packages/multilib/x86_64/lib32-nvidia-utils"
+      "name": "lib32-nvidia-utils",
+      "source_url": "https://archlinux.org/packages/multilib/x86_64/lib32-nvidia-utils",
+      "url": "http://www.nvidia.com"
     },
     {
-      "description": "A collection of libraries and utilities enabling users to build and run GPU-accelerated containers",
+      "description": "The NVIDIA Container Toolkit is a collection of libraries and utilities enabling users to build and run GPU-accelerated containers",
       "label": "NVIDIA Container Toolkit",
-      "name": "NVIDIA Container Toolkit",
-      "source_url": "",
-      "url": "https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/index.html"
+      "name": "nvidia-container-toolkit",
+      "source_url": "https://archlinux.org/packages/extra/x86_64/nvidia-container-toolkit",
+      "url": "https://www.nvidia.com"
     },
     {
       "description": "NVIDIA open kernel modules - module sources",
       "label": "NVIDIA open DKMS",
-      "name": "NVIDIA open DKMS",
-      "source_url": "",
-      "url": "https://archlinux.org/packages/extra/x86_64/nvidia-open-dkms"
+      "name": "nvidia-open-dkms",
+      "source_url": "https://archlinux.org/packages/extra/x86_64/nvidia-open-dkms",
+      "url": "https://www.nvidia.com"
     },
     {
       "description": "Tool for configuring the NVIDIA graphics driver",
       "label": "NVIDIA settings",
-      "name": "NVIDIA settings",
-      "source_url": "",
-      "url": "https://archlinux.org/packages/extra/x86_64/nvidia-settings"
+      "name": "nvidia-settings",
+      "source_url": "https://archlinux.org/packages/extra/x86_64/nvidia-settings",
+      "url": "https://www.nvidia.com"
     },
     {
       "description": "NVIDIA drivers utilities",
       "label": "NVIDIA utils",
-      "name": "NVIDIA utils",
-      "source_url": "",
-      "url": "https://archlinux.org/packages/extra/x86_64/nvidia-utils"
+      "name": "nvidia-utils",
+      "source_url": "https://archlinux.org/packages/extra/x86_64/nvidia-utils",
+      "url": "https://www.nvidia.com"
     }
   ],
   "official": [
@@ -136,22 +136,22 @@
       "description": "Command-line JSON processor",
       "label": "~~jq~~",
       "name": "jq",
-      "source_url": "",
+      "source_url": "https://github.com/jqlang/jq",
       "url": "https://github.com/jqlang/jq"
     },
     {
-      "description": "Cross-platform Password Manager",
+      "description": "KeePassXC is a modern, secure, and open-source password manager that stores and manages your most sensitive information",
       "label": "~~KeePassXC~~",
-      "name": "KeePassXC",
-      "source_url": "",
+      "name": "keepassxc",
+      "source_url": "https://github.com/keepassxreboot/keepassxc",
       "url": "https://keepassxc.org"
     },
     {
       "description": "Magical shell history",
       "label": "Atuin",
-      "name": "Atuin",
-      "source_url": "",
-      "url": "https://github.com/atuinsh/atuin"
+      "name": "atuin",
+      "source_url": "https://github.com/atuinsh/atuin",
+      "url": "https://atuin.sh"
     },
     {
       "description": "Basic tools to build Arch Linux packages",

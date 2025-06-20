@@ -14,9 +14,9 @@
 
 ## Official Arch packages
 
-- [~~jq~~](https://github.com/jqlang/jq): Command-line JSON processor
-- [~~KeePassXC~~](https://keepassxc.org): Cross-platform Password Manager
-- [Atuin](https://github.com/atuinsh/atuin): Magical shell history
+- [~~jq~~](https://github.com/jqlang/jq): Command-line JSON processor [Source](https://github.com/jqlang/jq)
+- [~~KeePassXC~~](https://keepassxc.org): KeePassXC is a modern, secure, and open-source password manager that stores and manages your most sensitive information [Source](https://github.com/keepassxreboot/keepassxc)
+- [Atuin](https://atuin.sh): Magical shell history [Source](https://github.com/atuinsh/atuin)
 - [base-devel](https://archlinux.org/packages/core/any/base-devel): Basic tools to build Arch Linux packages
 - [bash-completion](https://github.com/scop/bash-completion): Programmable completion functions for bash
 - [bat](https://github.com/sharkdp/bat): A cat(1) clone with wings
@@ -77,30 +77,30 @@
 
 ## AUR packages
 
-- [Bitwarden](https://bitwarden.com): The most trusted password manager
-- [Brave](https://brave.com/): The browser that puts you first
-- [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme): Pixel perfect icon theme for Linux
-- [Postman](https://www.postman.com): Platform for building and using APIs management made easy
-- [Spotify](https://spotify.com): Online music streaming service
-- [tdrop](https://github.com/noctuid/tdrop): A Glorified WM-Independent Dropdown Creator
-- [Visual Studio Code](https://code.visualstudio.com): Visual Studio Code combines the simplicity of a source code editor with powerful developer tooling, like IntelliSense code completion and debugging
+- [Bitwarden](https://bitwarden.com): Bitwarden is the best password manager for securely storing, managing, and sharing sensitive information such as passwords, passkeys, and credit cards [Source](https://github.com/bitwarden)
+- [Brave](https://brave.com): The browser that puts you first - Block ads. Save data. And get way faster webpages. Just by switching your browser [Source](https://github.com/brave)
+- [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme): Pixel perfect icon theme for Linux [Source](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
+- [Postman](https://www.postman.com): Postman is the single platform for designing, building, and scaling APIs—together [Source](https://github.com/postmanlabs)
+- [Spotify](https://spotify.com): Online music streaming service [Source](https://aur.archlinux.org/packages/spotify)
+- [tdrop](https://github.com/noctuid/tdrop): A Glorified WM-Independent Dropdown Creator [Source](https://github.com/noctuid/tdrop)
+- [Visual Studio Code](https://code.visualstudio.com): Your code editor. Redefined with AI [Source](https://github.com/microsoft/vscode)
 
 ## External packages
 
-- [ble.sh](https://github.com/akinomyoga/ble.sh): Bash Line Editor―a line editor written in pure Bash with syntax highlighting, auto suggestions, vim modes, etc. for Bash interactive sessions
-- [mgitstatus](https://github.com/fboender/multi-git-status): Show uncommitted, untracked and unpushed changes for multiple Git repos
-- [Node Version Manager](https://github.com/nvm-sh/nvm): POSIX-compliant bash script to manage multiple active node.js versions
-- [Poetry](https://python-poetry.org): Python packaging and dependency management made easy
-- [Yay](https://github.com/Jguer/yay): Yet another Yogurt - An AUR Helper written in Go
+- [ble.sh](https://github.com/akinomyoga/ble.sh): Bash Line Editor―a line editor written in pure Bash with syntax highlighting, auto suggestions, vim modes, etc. for Bash interactive sessions [Source](https://github.com/akinomyoga/ble.sh)
+- [mgitstatus](https://github.com/fboender/multi-git-status): Show uncommitted, untracked and unpushed changes for multiple Git repos [Source](https://github.com/fboender/multi-git-status)
+- [Node Version Manager](https://github.com/nvm-sh/nvm): POSIX-compliant bash script to manage multiple active node.js versions [Source](https://github.com/nvm-sh/nvm)
+- [Poetry](https://python-poetry.org): Python packaging and dependency management made easy [Source](https://github.com/python-poetry/poetry)
+- [Yay](https://github.com/Jguer/yay): Yet another Yogurt - An AUR Helper written in Go [Source](https://github.com/Jguer/yay)
 
 ## Hardware / misc
 
-- [AMD microcode](https://gitlab.com/kernel-firmware/linux-firmware): Microcode update image for AMD CPUs
-- [NVIDIA utils (32-bit)](https://archlinux.org/packages/multilib/x86_64/lib32-nvidia-utils): NVIDIA drivers utilities (32-bit)
-- [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/index.html): A collection of libraries and utilities enabling users to build and run GPU-accelerated containers
-- [NVIDIA open DKMS](https://archlinux.org/packages/extra/x86_64/nvidia-open-dkms): NVIDIA open kernel modules - module sources
-- [NVIDIA settings](https://archlinux.org/packages/extra/x86_64/nvidia-settings): Tool for configuring the NVIDIA graphics driver
-- [NVIDIA utils](https://archlinux.org/packages/extra/x86_64/nvidia-utils): NVIDIA drivers utilities
+- [AMD microcode](https://archlinux.org/packages/core/any/amd-ucode): Microcode update image for AMD CPUs [Source](https://gitlab.com/kernel-firmware/linux-firmware)
+- [NVIDIA utils (32-bit)](http://www.nvidia.com): NVIDIA drivers utilities (32-bit) [Source](https://archlinux.org/packages/multilib/x86_64/lib32-nvidia-utils)
+- [NVIDIA Container Toolkit](https://www.nvidia.com): The NVIDIA Container Toolkit is a collection of libraries and utilities enabling users to build and run GPU-accelerated containers [Source](https://archlinux.org/packages/extra/x86_64/nvidia-container-toolkit)
+- [NVIDIA open DKMS](https://www.nvidia.com): NVIDIA open kernel modules - module sources [Source](https://archlinux.org/packages/extra/x86_64/nvidia-open-dkms)
+- [NVIDIA settings](https://www.nvidia.com): Tool for configuring the NVIDIA graphics driver [Source](https://archlinux.org/packages/extra/x86_64/nvidia-settings)
+- [NVIDIA utils](https://www.nvidia.com): NVIDIA drivers utilities [Source](https://archlinux.org/packages/extra/x86_64/nvidia-utils)
 
 ## Available aliases
 

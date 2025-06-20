@@ -3,25 +3,25 @@
 ## Official Arch packages
 
 <% packages.official.forEach(function(package){ -%>
-- [<%- package.label %>](<%- package.url %>): <%- package.description %>
+- <%- `[${package.label}](${package.url}): ${package.description}${package.source_url ? ` [Source](${package.source_url})` : ''}` %>
 <% }); -%>
 
 ## AUR packages
 
 <% packages.aur.forEach(function(package){ -%>
-- [<%- package.label %>](<%- package.url %>): <%- package.description %>
+- <%- `[${package.label}](${package.url}): ${package.description}${package.source_url ? ` [Source](${package.source_url})` : ''}` %>
 <% }); -%>
 
 ## External packages
 
 <% packages.external.forEach(function(package){ -%>
-- [<%- package.label %>](<%- package.url %>): <%- package.description %>
+- <%- `[${package.label}](${package.url}): ${package.description}${package.source_url ? ` [Source](${package.source_url})` : ''}` %>
 <% }); -%>
 
 ## Hardware / misc
 
 <% packages.hardware.forEach(function(package){ -%>
-- [<%- package.label %>](<%- package.url %>): <%- package.description %>
+- <%- `[${package.label}](${package.url}): ${package.description}${package.source_url ? ` [Source](${package.source_url})` : ''}` %>
 <% }); -%>
 
 ## Available aliases
