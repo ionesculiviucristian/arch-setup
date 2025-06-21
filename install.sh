@@ -18,8 +18,8 @@ mkdir -p "${HOME}/Backups"
 mkdir -p "${HOME}/Pictures/Wallpapers"
 mkdir -p "${HOME}/Projects"
 
-./add_places_entry.sh "${HOME}/Backups" "Backups"
-./add_places_entry.sh "${HOME}/Projects" "Projects"
+./scripts/add_places_entry.sh "${HOME}/Backups" "Backups"
+./scripts/add_places_entry.sh "${HOME}/Projects" "Projects"
 
 # ==========================================
 # Install packages
@@ -70,6 +70,7 @@ sudo pacman -Syu --needed --noconfirm \
   nvtop \
   obs-studio \
   partitionmanager \
+  plasma-x11-session \
   qbittorrent \
   ripgrep \
   rsync \
@@ -116,14 +117,14 @@ yay -Syu --needed --noconfirm \
 # Install fonts
 # ==========================================
 
-./install_font.sh https://github.com/eigilnikolajsen/commit-mono/releases/download/v1.143/CommitMono-1.143.zip
-./install_font.sh https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.tar.xz
+./scripts/install_font.sh https://github.com/eigilnikolajsen/commit-mono/releases/download/v1.143/CommitMono-1.143.zip
+./scripts/install_font.sh https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.tar.xz
 
 # ==========================================
 # Install themes
 # ==========================================
 
-./install_themes.sh
+./scripts/install_themes.sh
 
 # ==========================================
 # Install ble.sh
@@ -200,7 +201,7 @@ sudo grub-mkconfig -o "/boot/grub/grub.cfg"
 
 mkdir -p "${HOME}/.local/share/konsole"
 
-cp "configs/.local/share/konsole/Starship.profile" "${HOME}/.local/share/konsole"
+cp "./configs/.local/share/konsole/Starship.profile" "${HOME}/.local/share/konsole"
 
 kwriteconfig6 --file "${HOME}/.config/konsolerc" --group "Desktop Entry" --key "DefaultProfile" "Starship.profile"
 
@@ -221,7 +222,7 @@ kwriteconfig6 --file "${HOME}/.config/kwinrc" --group "NightColor" --key "NightT
 
 sudo mkdir -p "/etc/sddm.conf.d"
 
-sudo cp "configs/etc/sddm.conf.d/kde_settings.conf" "/etc/sddm.conf.d/kde_settings.conf"
+sudo cp "./configs/etc/sddm.conf.d/kde_settings.conf" "/etc/sddm.conf.d/kde_settings.conf"
 
 # ==========================================
 # Setup atuin
@@ -229,7 +230,7 @@ sudo cp "configs/etc/sddm.conf.d/kde_settings.conf" "/etc/sddm.conf.d/kde_settin
 
 mkdir -p "${HOME}/.config/atuin"
 
-cp "configs/.config/atuin/config.toml" "${HOME}/.config/atuin/config.toml"
+cp "./configs/.config/atuin/config.toml" "${HOME}/.config/atuin/config.toml"
 
 echo 'eval "$(atuin init bash)"' >> "${HOME}/.bashrc"
 
@@ -239,7 +240,7 @@ echo 'eval "$(atuin init bash)"' >> "${HOME}/.bashrc"
 
 mkdir -p "${HOME}/.config/bat"
 
-cp "configs/.config/bat/config" "${HOME}/.config/bat/config"
+cp "./configs/.config/bat/config" "${HOME}/.config/bat/config"
 
 # ==========================================
 # Setup Bitwarden
@@ -253,7 +254,7 @@ echo 'export SSH_AUTH_SOCK="${HOME}/.bitwarden-ssh-agent.sock"' >> "${HOME}/.bas
 
 mkdir -p "${HOME}/.config/btop"
 
-cp "configs/.config/btop/btop.conf" "${HOME}/.config/btop/btop.conf"
+cp "./configs/.config/btop/btop.conf" "${HOME}/.config/btop/btop.conf"
 
 # ==========================================
 # Setup direnv
@@ -267,7 +268,7 @@ echo 'eval "$(direnv hook bash)"' >> "${HOME}/.bashrc"
 
 sudo mkdir -p "/etc/docker"
 
-sudo cp "configs/etc/docker/daemon.json" "/etc/docker/daemon.json"
+sudo cp "./configs/etc/docker/daemon.json" "/etc/docker/daemon.json"
 
 sudo systemctl start docker.service
 sudo systemctl enable docker.service
@@ -280,7 +281,7 @@ sudo usermod -aG docker "${USER}"
 
 mkdir -p "${HOME}/.config/kitty"
 
-cp "configs/.config/kitty/kitty.conf" "${HOME}/.config/kitty"
+cp "./configs/.config/kitty/kitty.conf" "${HOME}/.config/kitty"
 
 kwriteconfig6 --file "${HOME}/.config/kdeglobals" --group "General" --key "TerminalApplication" "kitty"
 kwriteconfig6 --file "${HOME}/.config/kdeglobals" --group "General" --key "TerminalService" "kitty.desktop"
@@ -299,7 +300,7 @@ mkcert -install
 
 sudo pacman -Syu --needed --noconfirm luarocks
 
-cp -r "configs/.config/nvim" "${HOME}/.config"
+cp -r "./configs/.config/nvim" "${HOME}/.config"
 
 # ==========================================
 # Setup NVIDIA Container Toolkit
@@ -316,7 +317,7 @@ fi
 
 mkdir -p "${HOME}/.config/starship"
 
-cp "configs/.config/starship/config.toml" "${HOME}/.config/starship/config.toml"
+cp "./configs/.config/starship/config.toml" "${HOME}/.config/starship/config.toml"
 
 touch "${HOME}/.config/.starship.toml"
 
@@ -335,7 +336,7 @@ echo 'eval "$(starship init bash)"' >> "${HOME}/.bashrc"
 
 mkdir -p "${HOME}/.config/superfile"
 
-cp "configs/.config/superfile/config.toml" "${HOME}/.config/superfile/config.toml"
+cp "./configs/.config/superfile/config.toml" "${HOME}/.config/superfile/config.toml"
 
 # ==========================================
 # Setup tdrop
@@ -343,7 +344,7 @@ cp "configs/.config/superfile/config.toml" "${HOME}/.config/superfile/config.tom
 
 mkdir -p "${HOME}/.local/share/applications"
 
-cp "configs/.local/share/applications/net.local.tdrop.desktop" "${HOME}/.local/share/applications/net.local.tdrop.desktop"
+cp "./configs/.local/share/applications/net.local.tdrop.desktop" "${HOME}/.local/share/applications/net.local.tdrop.desktop"
 
 kwriteconfig6 --file "${HOME}/.config/kglobalshortcutsrc" --group "services" --group "net.local.tdrop.desktop" --key "_launch" "Alt+F12"
 
@@ -356,18 +357,18 @@ mkdir -p "${HOME}/.config/tmux/plugins//tmux-plugins"
 git clone https://github.com/tmux-plugins/tmux-cpu "${HOME}/.config/tmux/plugins/tmux-plugins/tmux-cpu"
 git clone https://github.com/tmux-plugins/tmux-battery "${HOME}/.config/tmux/plugins/tmux-plugins/tmux-battery"
 
-cp "configs/.tmux.conf" "${HOME}/.tmux.conf"
+cp "./configs/.tmux.conf" "${HOME}/.tmux.conf"
 
 # ==========================================
 # Setup vim 
 # ==========================================
 
-cp "configs/.vimrc" "${HOME}/.vimrc"
+cp "./configs/.vimrc" "${HOME}/.vimrc"
 
 # ==========================================
 # Post install
 # ==========================================
 
-./install_aliases.sh
+./scripts/install_aliases.sh
 
 sudo rm "${PASSWORDLESS_SUDO}"

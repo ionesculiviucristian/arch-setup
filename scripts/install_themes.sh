@@ -1,7 +1,7 @@
 #!/bin/bash
 set -eu
 
-cp wallpapers/* "${HOME}/Pictures/Wallpapers"
+cp ../wallpapers/* "${HOME}/Pictures/Wallpapers"
 
 plasma-apply-wallpaperimage "${HOME}/Pictures/Wallpapers/wp14259050-cyberpunk-3440x1440-wallpapers.png"
 
@@ -15,7 +15,12 @@ kwriteconfig6 \
   --group "Greeter" --group "Wallpaper" --group "org.kde.image" --group "General" \
   --key "PreviewImage" "${HOME}/Pictures/Wallpapers/wp11361979-minimalist-3440x1440-wallpapers.png"
 
-# qdbus org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell.evaluateScript "$(cat kde-layout.js)"
+# sudo pacman -Syu --needed --noconfirm qt5-tools
+
+# qdbus org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell.evaluateScript "$(cat ../kde-layout.js)"
+
+# rm ~/.config/plasma-org.kde.plasma.desktop-appletsrc
+# plasmashell --replace &
 
 # ==========================================
 # GRUB
@@ -59,7 +64,7 @@ sudo sed -i \
   -e 's/^LoginBackground="false"/LoginBackground="true"/' \
   "/usr/share/sddm/themes/catppuccin-mocha/theme.conf"
 
-sudo cp "wallpapers/wp11361931-minimalist-3440x1440-wallpapers.png" "/usr/share/sddm/themes/catppuccin-mocha/backgrounds/wall.jpg"
+sudo cp "${HOME}/Pictures/Wallpapers/wp11361931-minimalist-3440x1440-wallpapers.png" "/usr/share/sddm/themes/catppuccin-mocha/backgrounds/wall.jpg"
 
 # ==========================================
 # atuin

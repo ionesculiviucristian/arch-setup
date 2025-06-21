@@ -2,6 +2,8 @@
 
 ![Preview](assets/preview.png)
 
+Wallpapers from [wallpapercave.com](https://wallpapercave.com/)
+
 ## Installation
 
 ```bash
@@ -9,7 +11,13 @@
 ./install.sh 2>&1 | tee install.log
 ./post_install.sh your-email@example.com | tee post_install.log
 
-./check.sh
+./scripts/check.sh
+```
+
+Update manually installed packages
+
+```bash
+./scripts/update.sh
 ```
 
 ## Official Arch packages
@@ -180,9 +188,7 @@ For a list off all available aliases, [read more here](./ALIASES.md) or run `ali
 - [Pricy](https://chromewebstore.google.com/detail/pricy/jnpfnacconjipomhfkphknjfmcnhagpb): Pricy is your best friend when buying online
 - [QR Code Generator](https://chromewebstore.google.com/detail/qr-code-generator/afpbjjgbdimpioenaedcjgkaigggcdpp): A super handy QR Code Generator
 
-## Additional notes
-
-Wallpapers from [wallpapercave.com](https://wallpapercave.com/)
+## Development
 
 Install pre commit hooks
 
@@ -191,13 +197,7 @@ pip install pre-commit
 pre-commit install
 ```
 
-Update manually installed packages
-
-```bash
-./manual_updates.sh
-```
-
-Install kitty terminfo on remote users, if need it
+Install kitty terminfo for ssh users that don't have it
 
 ```bash
 cd ~

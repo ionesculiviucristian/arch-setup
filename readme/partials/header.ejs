@@ -2,6 +2,8 @@
 
 ![Preview](assets/preview.png)
 
+Wallpapers from [wallpapercave.com](https://wallpapercave.com/)
+
 ## Installation
 
 ```bash
@@ -9,5 +11,11 @@
 ./install.sh 2>&1 | tee install.log
 ./post_install.sh your-email@example.com | tee post_install.log
 
-./check.sh
+./scripts/check.sh
+```
+
+Update manually installed packages
+
+```bash
+./scripts/update.sh
 ```
