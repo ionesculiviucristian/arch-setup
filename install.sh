@@ -25,76 +25,8 @@ mkdir -p "${HOME}/Projects"
 # Install packages
 # ==========================================
 
-sudo pacman -Syu --needed --noconfirm \
-  atuin \
-  base-devel \
-  bash-completion \
-  bat \
-  bitwarden-cli \
-  blender \
-  broot \
-  btop \
-  btrfs-progs \
-  dbus \
-  direnv \
-  dkms \
-  dnsmasq \
-  docker \
-  docker-buildx \
-  docker-compose \
-  expac \
-  eza \
-  fastfetch \
-  fd \
-  filezilla \
-  firefox \
-  fzf \
-  gimp \
-  git \
-  go-yq \
-  imagemagick \
-  jq \
-  kcalc \
-  kitty \
-  kpackage \
-  krita \
-  lazygit \
-  less \
-  libreoffice-fresh \
-  linux-headers \
-  linux-lts-headers \
-  lsof \
-  man-db \
-  mkcert \
-  ncdu \
-  neovim \
-  net-tools \
-  nss \
-  ntfs-3g \
-  nvtop \
-  obs-studio \
-  pacman-contrib \
-  partitionmanager \
-  pigz \
-  plasma-x11-session \
-  qbittorrent \
-  ripgrep \
-  rsync \
-  shellcheck \
-  smplayer \
-  solaar \
-  starship \
-  superfile \
-  thunderbird \
-  tmux \
-  tmuxp \
-  unzip \
-  virtualbox \
-  virtualbox-guest-iso \
-  virtualbox-host-dkms \
-  xclip \
-  zip \
-  zoxide
+# shellcheck disable=SC2046
+sudo pacman -Syu --needed --noconfirm $(<"./data/lists/official.txt")
 
 # ==========================================
 # Install yay
@@ -106,14 +38,8 @@ sudo pacman -Syu --needed --noconfirm \
 # Install AUR packages
 # ==========================================
 
-yay -Syu --needed --noconfirm \
-  bitwarden-bin \
-  brave-bin \
-  papirus-icon-theme \
-  postman-bin \
-  spotify \
-  tdrop \
-  visual-studio-code-bin 
+# shellcheck disable=SC2046
+yay -Syu --needed --noconfirm $(<"./data/lists/aur.txt")
 
 # ==========================================
 # Install fonts

@@ -1,0 +1,7 @@
+bitwarden-bin
+brave-bin
+papirus-icon-theme
+postman-bin
+spotify
+tdrop
+visual-studio-code-bin 

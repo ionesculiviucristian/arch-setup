@@ -2,11 +2,9 @@ import fs from "fs";
 import ejs from "ejs";
 
 const browserPlugins = JSON.parse(
-  fs.readFileSync("./readme/data/browser_plugins.json", "utf-8")
+  fs.readFileSync("./data/browser_plugins.json", "utf-8")
 );
-const packages = JSON.parse(
-  fs.readFileSync("./readme/data/packages.json", "utf-8")
-);
+const packages = JSON.parse(fs.readFileSync("./data/packages.json", "utf-8"));
 
 const sortPackages = (a, b) => a.label.toLowerCase().localeCompare(b.label);
 const sortBrowserPlugins = (a, b) => a.name.toLowerCase().localeCompare(b.name);

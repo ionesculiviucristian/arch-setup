@@ -753,14 +753,14 @@ function ppjson() {
 # @group misc
 alias src='source "${HOME}/.bashrc"'
 
-if [ -f ~/.bash_aliases_help ]; then
-    # shellcheck disable=SC1090
-    . ~/.bash_aliases_help
+if [ -f "${HOME}/.bash_aliases_help" ]; then
+    # shellcheck disable=SC1091
+    . "${HOME}/.bash_aliases_help"
 fi
 
-if [ -f ~/.bash_aliases_private ]; then
-    # shellcheck disable=SC1090
-    . ~/.bash_aliases_private
+if [ -f "${HOME}/.bash_private_aliases" ]; then
+    # shellcheck disable=SC1091
+    . "${HOME}/.bash_private_aliases"
 fi
 
 ALIASES_DIR="${HOME}/.bash_aliases.d"

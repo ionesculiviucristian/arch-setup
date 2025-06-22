@@ -9,3 +9,7 @@ repos:
         name: Render README.md file
         entry: node ./readme/render-readme.js
         language: system
+      - id: process-packages
+        name: Process packages
+        entry: ./scripts/process_packages.sh
+        language: system

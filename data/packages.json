@@ -87,7 +87,7 @@
       "url": "https://github.com/Jguer/yay"
     }
   ],
-  "hardware": [
+  "hardware_b450-i-aorus-pro-wifi": [
     {
       "description": "Microcode update image for AMD CPUs",
       "label": "AMD microcode",

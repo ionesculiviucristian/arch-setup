@@ -14,8 +14,8 @@ source "${HOME}/.bashrc"
 BW_SESSION=$(bw login "${EMAIL}" --method 0 --raw)
 export BW_SESSION
 
-bw get item ".bash_aliases_private" | jq -r '.notes' > "${HOME}/.bash_aliases_private"
-bw get item "arch-setup" | jq -r '.notes' > \.env
+bw get item "Private bash aliases" | jq -r '.notes' > "${HOME}/.bash_private_aliases"
+bw get item "Arch setup" | jq -r '.notes' > \.env
 bw get item "GPG private key" | jq -r '.notes' | gpg --import
 bw get item "GPG public key" | jq -r '.notes' | gpg --import
 

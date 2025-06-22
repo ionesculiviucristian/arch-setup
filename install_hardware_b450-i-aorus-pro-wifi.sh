@@ -4,18 +4,8 @@ set -eu
 # https://wiki.archlinux.org/title/Official_repositories#Enabling_multilib
 sudo sed -i '/\[multilib\]/,/Include =/ s/^#//' "/etc/pacman.conf"
 
-# https://wiki.archlinux.org/title/NVIDIA
-sudo pacman -Syu --noconfirm \
-  amd-ucode \
-  cuda \
-  dkms \
-  lib32-nvidia-utils \
-  linux-headers \
-  linux-lts-headers \
-  nvidia-container-toolkit \
-  nvidia-open-dkms \
-  nvidia-settings \
-  nvidia-utils
+# shellcheck disable=SC2046
+sudo pacman -Syu --needed --noconfirm $(<"./data/lists/hardware_b450-i-aorus-pro-wifi.txt")
 
 # https://www.xp-pen.com/download/deco-03.html
 wget https://download01.xp-pen.com/file/2024/06/XPPenLinux3.4.9-240607.tar.gz
