@@ -89,6 +89,13 @@
   ],
   "hardware": [
     {
+      "description": "NVIDIA's GPU programming toolkit",
+      "label": "CUDA",
+      "name": "cuda",
+      "source_url": "https://archlinux.org/packages/extra/x86_64/cuda",
+      "url": "http://www.nvidia.com"
+    },
+    {
       "description": "Microcode update image for AMD CPUs",
       "label": "AMD microcode",
       "name": "amd-ucode",
@@ -173,6 +180,27 @@
       "name": "Blender",
       "source_url": "",
       "url": "https://www.blender.org"
+    },
+    {
+      "description": "Docker CLI plugin for extended build capabilities with BuildKit",
+      "label": "buildx",
+      "name": "docker-buildx",
+      "source_url": "https://github.com/docker/buildx",
+      "url": "https://www.docker.com"
+    },
+    {
+      "description": "Btrfs filesystem utilities",
+      "label": "btrfs-progs",
+      "name": "btrfs-progs",
+      "source_url": "https://github.com/kdave/btrfs-progs",
+      "url": "https://btrfs.readthedocs.io"
+    },
+    {
+      "description": "D-Bus is a message bus system, a simple way for applications to talk to one another",
+      "label": "D-Bus",
+      "name": "dbus",
+      "source_url": "https://gitlab.archlinux.org/archlinux/packaging/packages/dbus",
+      "url": "https://www.freedesktop.org/wiki/Software/dbus"
     },
     {
       "description": "A new way to see and navigate directory trees",
@@ -294,18 +322,18 @@
       "url": "https://github.com/mikefarah/yq"
     },
     {
+      "description": "ImageMagick is a free, open-source software suite, used for editing and manipulating digital images",
+      "label": "ImageMagick",
+      "name": "imagemagick",
+      "source_url": "https://github.com/imagemagick/imagemagick",
+      "url": "https://imagemagick.org"
+    },
+    {
       "description": "KCalc has everything you would expect from a scientific calculator",
       "label": "KCalc",
       "name": "KCalc",
       "source_url": "",
       "url": "https://apps.kde.org/kcalc"
-    },
-    {
-      "description": "KDE Partition Manager is a utility to help you manage the disks, partitions, and file systems on your computer",
-      "label": "KDE Partition Manager",
-      "name": "KDE Partition Manager",
-      "source_url": "",
-      "url": "https://apps.kde.org/partitionmanager"
     },
     {
       "description": "The fast, feature-rich, GPU based terminal emulator",
@@ -434,6 +462,27 @@
       "url": "https://obsproject.com"
     },
     {
+      "description": "KDE Partition Manager is a utility to help you manage the disks, partitions, and file systems on your computer",
+      "label": "KDE Partition Manager",
+      "name": "partitionmanager",
+      "source_url": "",
+      "url": "https://apps.kde.org/partitionmanager"
+    },
+    {
+      "description": "Contributed scripts and tools for pacman systems",
+      "label": "pacman-contrib",
+      "name": "pacman-contrib",
+      "source_url": "https://gitlab.archlinux.org/pacman/pacman-contrib",
+      "url": "https://gitlab.archlinux.org/pacman/pacman-contrib"
+    },
+    {
+      "description": "A parallel implementation of gzip for modern multi-processor, multi-core machines",
+      "label": "pigz",
+      "name": "pigz",
+      "source_url": "https://github.com/madler/pigz",
+      "url": "https://www.zlib.net/pigz"
+    },
+    {
       "description": "Plasma X11 session",
       "label": "Plasma X11 session",
       "name": "plasma-x11-session",
@@ -544,6 +593,13 @@
       "name": "VirtualBox Host DKMS",
       "source_url": "",
       "url": "https://archlinux.org/packages/extra/x86_64/virtualbox-host-dkms"
+    },
+    {
+      "description": "Command line interface to the X11 clipboard",
+      "label": "xclip",
+      "name": "xclip",
+      "source_url": "https://github.com/astrand/xclip",
+      "url": "https://github.com/astrand/xclip"
     },
     {
       "description": "Zip is a compression and file packaging/archive utility",

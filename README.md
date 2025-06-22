@@ -29,6 +29,9 @@ Update manually installed packages
 - [Blender](https://www.blender.org): The free and open source 3D creation suite
 - [broot](https://dystroy.org/broot): A new way to see and navigate directory trees
 - [Btop++](https://github.com/aristocratos/btop): A monitor of resources
+- [btrfs-progs](https://btrfs.readthedocs.io): Btrfs filesystem utilities [Source](https://github.com/kdave/btrfs-progs)
+- [buildx](https://www.docker.com): Docker CLI plugin for extended build capabilities with BuildKit [Source](https://github.com/docker/buildx)
+- [D-Bus](https://www.freedesktop.org/wiki/Software/dbus): D-Bus is a message bus system, a simple way for applications to talk to one another [Source](https://gitlab.archlinux.org/archlinux/packaging/packages/dbus)
 - [direnv](https://direnv.net): direnv is an extension for your shell. It augments existing shells with a new feature that can load and unload environment variables depending on the current directory
 - [DKMS](https://github.com/dell/dkms): Dynamic Kernel Modules System
 - [dnsmasq](https://thekelleys.org.uk/dnsmasq/doc.html): Provides network infrastructure for small networks: DNS, DHCP, router advertisement and network boot
@@ -44,6 +47,7 @@ Update manually installed packages
 - [Gimp](https://www.gimp.org): The Free & Open Source Image Editor
 - [git](https://git-scm.com): A free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency
 - [go-yq](https://github.com/mikefarah/yq): yq is a portable command-line YAML, JSON, XML, CSV, TOML and properties processor
+- [ImageMagick](https://imagemagick.org): ImageMagick is a free, open-source software suite, used for editing and manipulating digital images [Source](https://github.com/imagemagick/imagemagick)
 - [jq](https://github.com/jqlang/jq): Command-line JSON processor [Source](https://github.com/jqlang/jq)
 - [KCalc](https://apps.kde.org/kcalc): KCalc has everything you would expect from a scientific calculator
 - [KDE Partition Manager](https://apps.kde.org/partitionmanager): KDE Partition Manager is a utility to help you manage the disks, partitions, and file systems on your computer
@@ -65,6 +69,8 @@ Update manually installed packages
 - [NTFS-3G](https://github.com/tuxera/ntfs-3g): NTFS-3G Safe Read/Write NTFS Driver
 - [nvtop](https://github.com/Syllo/nvtop): GPU & Accelerator process monitoring for AMD, Apple, Huawei, Intel, NVIDIA and Qualcomm
 - [OBS Studio](https://obsproject.com): Free and open source software for video recording and live streaming
+- [pacman-contrib](https://gitlab.archlinux.org/pacman/pacman-contrib): Contributed scripts and tools for pacman systems [Source](https://gitlab.archlinux.org/pacman/pacman-contrib)
+- [pigz](https://www.zlib.net/pigz): A parallel implementation of gzip for modern multi-processor, multi-core machines [Source](https://github.com/madler/pigz)
 - [Plasma X11 session](https://archlinux.org/packages/extra/x86_64/plasma-x11-session): Plasma X11 session [Source](https://archlinux.org/packages/extra/x86_64/plasma-x11-session)
 - [qBittorrent](https://www.qbittorrent.org): The qBittorrent project aims to provide an open-source software alternative to µTorrent
 - [ripgrep](https://github.com/BurntSushi/ripgrep): ripgrep recursively searches directories for a regex pattern while respecting your gitignore
@@ -81,6 +87,7 @@ Update manually installed packages
 - [VirtualBox](https://www.virtualbox.org): VirtualBox is a general-purpose full virtualization software for x86_64 hardware
 - [VirtualBox Guest Additions ISO](https://archlinux.org/packages/extra/any/virtualbox-guest-iso): Consist of device drivers and system applications that optimize the guest operating system for better performance and usability
 - [VirtualBox Host DKMS](https://archlinux.org/packages/extra/x86_64/virtualbox-host-dkms): VirtualBox Host kernel modules sources
+- [xclip](https://github.com/astrand/xclip): Command line interface to the X11 clipboard [Source](https://github.com/astrand/xclip)
 - [zip](https://infozip.sourceforge.net/Zip.html): Zip is a compression and file packaging/archive utility
 - [zoxide](https://github.com/ajeetdsouza/zoxide): A smarter cd command. Supports all major shells
 
@@ -104,6 +111,7 @@ Update manually installed packages
 
 ## Hardware / misc
 
+- [CUDA](http://www.nvidia.com): NVIDIA's GPU programming toolkit [Source](https://archlinux.org/packages/extra/x86_64/cuda)
 - [AMD microcode](https://archlinux.org/packages/core/any/amd-ucode): Microcode update image for AMD CPUs [Source](https://gitlab.com/kernel-firmware/linux-firmware)
 - [NVIDIA utils (32-bit)](http://www.nvidia.com): NVIDIA drivers utilities (32-bit) [Source](https://archlinux.org/packages/multilib/x86_64/lib32-nvidia-utils)
 - [NVIDIA Container Toolkit](https://www.nvidia.com): The NVIDIA Container Toolkit is a collection of libraries and utilities enabling users to build and run GPU-accelerated containers [Source](https://archlinux.org/packages/extra/x86_64/nvidia-container-toolkit)

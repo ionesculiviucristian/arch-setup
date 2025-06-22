@@ -7,6 +7,7 @@ sudo sed -i '/\[multilib\]/,/Include =/ s/^#//' "/etc/pacman.conf"
 # https://wiki.archlinux.org/title/NVIDIA
 sudo pacman -Syu --noconfirm \
   amd-ucode \
+  cuda \
   dkms \
   lib32-nvidia-utils \
   linux-headers \

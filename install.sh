@@ -34,10 +34,13 @@ sudo pacman -Syu --needed --noconfirm \
   blender \
   broot \
   btop \
+  btrfs-progs \
+  dbus \
   direnv \
   dkms \
   dnsmasq \
   docker \
+  docker-buildx \
   docker-compose \
   expac \
   eza \
@@ -49,6 +52,7 @@ sudo pacman -Syu --needed --noconfirm \
   gimp \
   git \
   go-yq \
+  imagemagick \
   jq \
   kcalc \
   kitty \
@@ -60,6 +64,7 @@ sudo pacman -Syu --needed --noconfirm \
   linux-headers \
   linux-lts-headers \
   lsof \
+  man-db \
   mkcert \
   ncdu \
   neovim \
@@ -68,8 +73,9 @@ sudo pacman -Syu --needed --noconfirm \
   ntfs-3g \
   nvtop \
   obs-studio \
+  pacman-contrib \
   partitionmanager \
-  man-db \
+  pigz \
   plasma-x11-session \
   qbittorrent \
   ripgrep \
@@ -86,6 +92,7 @@ sudo pacman -Syu --needed --noconfirm \
   virtualbox \
   virtualbox-guest-iso \
   virtualbox-host-dkms \
+  xclip \
   zip \
   zoxide
 
