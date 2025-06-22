@@ -134,17 +134,10 @@
   "official": [
     {
       "description": "Command-line JSON processor",
-      "label": "~~jq~~",
+      "label": "jq",
       "name": "jq",
       "source_url": "https://github.com/jqlang/jq",
       "url": "https://github.com/jqlang/jq"
-    },
-    {
-      "description": "KeePassXC is a modern, secure, and open-source password manager that stores and manages your most sensitive information",
-      "label": "~~KeePassXC~~",
-      "name": "keepassxc",
-      "source_url": "https://github.com/keepassxreboot/keepassxc",
-      "url": "https://keepassxc.org"
     },
     {
       "description": "Magical shell history",
@@ -308,6 +301,13 @@
       "url": "https://apps.kde.org/kcalc"
     },
     {
+      "description": "KDE Partition Manager is a utility to help you manage the disks, partitions, and file systems on your computer",
+      "label": "KDE Partition Manager",
+      "name": "KDE Partition Manager",
+      "source_url": "",
+      "url": "https://apps.kde.org/partitionmanager"
+    },
+    {
       "description": "The fast, feature-rich, GPU based terminal emulator",
       "label": "kitty",
       "name": "kitty",
@@ -371,6 +371,13 @@
       "url": "https://github.com/lsof-org/lsof"
     },
     {
+      "description": "Tools for reading manual pages",
+      "label": "man-db",
+      "name": "man-db",
+      "source_url": "https://gitlab.com/man-db/man-db",
+      "url": "https://gitlab.com/man-db/man-db"
+    },
+    {
       "description": "A simple zero-config tool to make locally trusted development certificates with any names you'd like",
       "label": "mkcert",
       "name": "mkcert",
@@ -427,11 +434,11 @@
       "url": "https://obsproject.com"
     },
     {
-      "description": "KDE Partition Manager is a utility to help you manage the disks, partitions, and file systems on your computer",
-      "label": "KDE Partition Manager",
-      "name": "KDE Partition Manager",
-      "source_url": "",
-      "url": "https://apps.kde.org/partitionmanager"
+      "description": "Plasma X11 session",
+      "label": "Plasma X11 session",
+      "name": "plasma-x11-session",
+      "source_url": "https://archlinux.org/packages/extra/x86_64/plasma-x11-session",
+      "url": "https://archlinux.org/packages/extra/x86_64/plasma-x11-session"
     },
     {
       "description": "The qBittorrent project aims to provide an open-source software alternative to µTorrent",

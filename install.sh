@@ -51,7 +51,6 @@ sudo pacman -Syu --needed --noconfirm \
   go-yq \
   jq \
   kcalc \
-  keepassxc \
   kitty \
   kpackage \
   krita \
@@ -70,6 +69,7 @@ sudo pacman -Syu --needed --noconfirm \
   nvtop \
   obs-studio \
   partitionmanager \
+  man-db \
   plasma-x11-session \
   qbittorrent \
   ripgrep \

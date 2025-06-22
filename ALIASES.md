@@ -71,7 +71,8 @@
 
 - `gic [MESSAGE] {WIP}`: Stage and commit all files from current directory
 - `gica`: Amend commit
-- `gico <BRANCH>`: Checkout branch
+- `gicb <BRANCH>`: Create and checkout branch
+- `gicob <BRANCH>`: Checkout branch
 - `gicpu [MESSAGE] {WIP}`: Stage, commit and push all files from current directory
 - `gicpuf [MESSAGE] {WIP}`: Stage, commit and force push with lease all files from current directory
 - `gif`: Download objects and refs from another repository

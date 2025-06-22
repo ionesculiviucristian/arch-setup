@@ -8,9 +8,12 @@ const packages = JSON.parse(
   fs.readFileSync("./readme/data/packages.json", "utf-8")
 );
 
+const sortPackages = (a, b) => a.label.toLowerCase().localeCompare(b.label);
+const sortBrowserPlugins = (a, b) => a.name.toLowerCase().localeCompare(b.name);
+
 ejs.renderFile(
   "./readme/README.ejs",
-  { browserPlugins, packages },
+  { browserPlugins, packages, sortPackages, sortBrowserPlugins },
   {},
   function (err, str) {
     if (err) {

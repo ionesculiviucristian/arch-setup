@@ -506,13 +506,20 @@ function gic() {
 # @group git
 alias gica="git add -A && git commit --amend --no-edit"
 
+# @info Create and checkout branch
+# @group git
+# @param <BRANCH>
+function gicb() {
+    git checkout -b "$1"
+}
+
 # @info Checkout branch
 # @group git
 # @param <BRANCH>
-function gico() {
+function gicob() {
     git checkout "$1"
 }
-complete -o nospace -F _complete_branches gico
+complete -o nospace -F _complete_branches gicob
 
 # @info Stage, commit and push all files from current directory
 # @group git

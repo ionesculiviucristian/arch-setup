@@ -22,8 +22,6 @@ Update manually installed packages
 
 ## Official Arch packages
 
-- [~~jq~~](https://github.com/jqlang/jq): Command-line JSON processor [Source](https://github.com/jqlang/jq)
-- [~~KeePassXC~~](https://keepassxc.org): KeePassXC is a modern, secure, and open-source password manager that stores and manages your most sensitive information [Source](https://github.com/keepassxreboot/keepassxc)
 - [Atuin](https://atuin.sh): Magical shell history [Source](https://github.com/atuinsh/atuin)
 - [base-devel](https://archlinux.org/packages/core/any/base-devel): Basic tools to build Arch Linux packages
 - [bash-completion](https://github.com/scop/bash-completion): Programmable completion functions for bash
@@ -46,7 +44,9 @@ Update manually installed packages
 - [Gimp](https://www.gimp.org): The Free & Open Source Image Editor
 - [git](https://git-scm.com): A free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency
 - [go-yq](https://github.com/mikefarah/yq): yq is a portable command-line YAML, JSON, XML, CSV, TOML and properties processor
+- [jq](https://github.com/jqlang/jq): Command-line JSON processor [Source](https://github.com/jqlang/jq)
 - [KCalc](https://apps.kde.org/kcalc): KCalc has everything you would expect from a scientific calculator
+- [KDE Partition Manager](https://apps.kde.org/partitionmanager): KDE Partition Manager is a utility to help you manage the disks, partitions, and file systems on your computer
 - [kitty](https://sw.kovidgoyal.net/kitty/index.html): The fast, feature-rich, GPU based terminal emulator
 - [kpackage](https://archlinux.org/packages/extra/x86_64/kpackage): Framework that lets applications manage user installable packages of non-binary assets
 - [Krita](https://krita.org/en): A professional FREE and open source painting program
@@ -56,6 +56,7 @@ Update manually installed packages
 - [Linux headers](https://archlinux.org/packages/core/x86_64/linux-headers): Headers and scripts for building modules for the Linux kernel
 - [Linux LTS headers](https://archlinux.org/packages/core/x86_64/linux-lts-headers): Headers and scripts for building modules for the LTS Linux kernel
 - [lsof](https://github.com/lsof-org/lsof): LiSt Open Files
+- [man-db](https://gitlab.com/man-db/man-db): Tools for reading manual pages [Source](https://gitlab.com/man-db/man-db)
 - [mkcert](https://github.com/FiloSottile/mkcert): A simple zero-config tool to make locally trusted development certificates with any names you'd like
 - [ncdu](https://dev.yorhel.nl/ncdu): Disk usage analyzer with an ncurses interface
 - [neovim](https://neovim.io): Hyperextensible Vim-based text editor
@@ -64,7 +65,7 @@ Update manually installed packages
 - [NTFS-3G](https://github.com/tuxera/ntfs-3g): NTFS-3G Safe Read/Write NTFS Driver
 - [nvtop](https://github.com/Syllo/nvtop): GPU & Accelerator process monitoring for AMD, Apple, Huawei, Intel, NVIDIA and Qualcomm
 - [OBS Studio](https://obsproject.com): Free and open source software for video recording and live streaming
-- [KDE Partition Manager](https://apps.kde.org/partitionmanager): KDE Partition Manager is a utility to help you manage the disks, partitions, and file systems on your computer
+- [Plasma X11 session](https://archlinux.org/packages/extra/x86_64/plasma-x11-session): Plasma X11 session [Source](https://archlinux.org/packages/extra/x86_64/plasma-x11-session)
 - [qBittorrent](https://www.qbittorrent.org): The qBittorrent project aims to provide an open-source software alternative to µTorrent
 - [ripgrep](https://github.com/BurntSushi/ripgrep): ripgrep recursively searches directories for a regex pattern while respecting your gitignore
 - [rsync](https://rsync.samba.org): rsync is an open source utility that provides fast incremental file transfer
@@ -149,11 +150,11 @@ For a list off all available aliases, [read more here](./ALIASES.md) or run `ali
 ### Misc (Firefox)
 
 - [Bitwarden Password Manager](https://addons.mozilla.org/en-US/firefox/addon/bitwarden-password-manager): At home, at work, or on the go, Bitwarden easily secures all your passwords, passkeys, and sensitive information
-- [uBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin): Finally, an efficient wide-spectrum content blocker
 - [Gesturefy](https://addons.mozilla.org/en-US/firefox/addon/gesturefy): Navigate, operate, and browse faster with mouse gestures!
 - [Google Translate](https://addons.mozilla.org/en-US/firefox/addon/google-translate-right-clicks): Google Translate
 - [Offline QR Code Generator](https://addons.mozilla.org/en-US/firefox/addon/offline-qr-code-generator): This add-on allows you to quickly generate a QR code offline with the URL of the open tab or any (selected) other text!
 - [Plasma Integration](https://addons.mozilla.org/en-US/firefox/addon/plasma-integration): Multitask efficiently by controlling browser functions from the Plasma desktop
+- [uBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin): Finally, an efficient wide-spectrum content blocker
 
 ## Brave plugins
 

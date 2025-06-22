@@ -15,13 +15,6 @@ kwriteconfig6 \
   --group "Greeter" --group "Wallpaper" --group "org.kde.image" --group "General" \
   --key "PreviewImage" "${HOME}/Pictures/Wallpapers/wp11361979-minimalist-3440x1440-wallpapers.png"
 
-# sudo pacman -Syu --needed --noconfirm qt5-tools
-
-# qdbus org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell.evaluateScript "$(cat ../kde-layout.js)"
-
-# rm ~/.config/plasma-org.kde.plasma.desktop-appletsrc
-# plasmashell --replace &
-
 # ==========================================
 # GRUB
 # ==========================================
