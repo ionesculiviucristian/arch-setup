@@ -5,11 +5,11 @@ PASSWORDLESS_SUDO="/etc/sudoers.d/$(whoami)"
 
 echo "$(whoami) ALL=(ALL) NOPASSWD: ALL" | sudo tee -a "${PASSWORDLESS_SUDO}"
 
-cp "./configs/.bashrc" "${HOME}/.bashrc"
-
 # ==========================================
 # Create directories
 # ==========================================
+
+cp "./configs/.bashrc" "${HOME}/.bashrc"
 
 mkdir -p "${HOME}/.bash_aliases.d"
 mkdir -p "${HOME}/.local/share/fonts"
@@ -100,12 +100,7 @@ sudo pacman -Syu --needed --noconfirm \
 # Install yay
 # ==========================================
 
-git clone https://aur.archlinux.org/yay.git "${HOME}/.repos/yay"
-
-(
-  cd "${HOME}/.repos/yay"
-  makepkg -si --needed --noconfirm
-)
+./installers/yay.sh
 
 # ==========================================
 # Install AUR packages
@@ -134,63 +129,13 @@ yay -Syu --needed --noconfirm \
 ./scripts/install_themes.sh
 
 # ==========================================
-# Install ble.sh
+# Install external packages
 # ==========================================
 
-git clone --recursive https://github.com/akinomyoga/ble.sh.git "${HOME}/.repos/ble.sh"
-
-(
-  cd "${HOME}/.repos/ble.sh"
-  make
-  make INSDIR="${HOME}/.local/share/blesh" install
-)
-
-touch "${HOME}/.blerc"
-
-echo '[[ $- == *i* ]] && source "${HOME}/.local/share/blesh/ble.sh" --rcfile "${HOME}/.blerc"' >> "${HOME}/.bashrc"
-echo '[[ ! ${BLE_VERSION-} ]] || ble-attach' >> "${HOME}/.bashrc"
-
-# ==========================================
-# Install mgitstatus
-# ==========================================
-
-git clone https://github.com/fboender/multi-git-status.git "${HOME}/.repos/multi-git-status"
-
-(
-  cd "${HOME}/.repos/multi-git-status"
-  sudo make install
-)
-
-# ==========================================
-# Install nvm
-# ==========================================
-
-wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
-
-NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-export NVM_DIR
-
-# shellcheck disable=SC1091
-[ -s "${NVM_DIR}/nvm.sh" ] && \. "${NVM_DIR}/nvm.sh"
-
-nvm install --no-progress 18
-nvm install --no-progress 20
-nvm install --no-progress 22
-nvm install --no-progress 24
-
-nvm use 24
-
-nvm install-latest-npm
-
-wget -qO- https://get.pnpm.io/install.sh | sh -
-
-# ==========================================
-# Install poetry
-# ==========================================
-
-wget -qO- https://install.python-poetry.org | python3 -
-
-echo 'export PATH="${HOME}/.local/bin:${PATH}"' >> "${HOME}/.bashrc"
+./installers/ble.sh.sh
+./installers/multi-git-status.sh
+./installers/nvm.sh
+./installers/poetry.sh
 
 # ==========================================
 # Setup GRUB
