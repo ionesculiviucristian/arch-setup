@@ -441,6 +441,13 @@
       "url": "https://sourceforge.net/projects/net-tools"
     },
     {
+      "description": "Nmap - the Network Mapper",
+      "label": "Nmap",
+      "name": "nmap",
+      "source_url": "https://github.com/nmap/nmap",
+      "url": "https://nmap.org"
+    },
+    {
       "description": "Network Security Services (NSS) is a set of libraries designed to support cross-platform development of security-enabled client and server applications",
       "label": "Network Security Services (NSS)",
       "name": "nss",
