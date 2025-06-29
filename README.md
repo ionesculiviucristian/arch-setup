@@ -67,6 +67,7 @@ Update manually installed packages
 - [neovim](https://neovim.io): Hyperextensible Vim-based text editor [Source](https://github.com/neovim/neovim)
 - [net-tools](https://sourceforge.net/projects/net-tools): The collection of base networking utilities for Linux [Source](https://sourceforge.net/projects/net-tools)
 - [Network Security Services (NSS)](https://firefox-source-docs.mozilla.org/security/nss/index.html): Network Security Services (NSS) is a set of libraries designed to support cross-platform development of security-enabled client and server applications [Source](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS)
+- [Nmap](https://nmap.org): Nmap - the Network Mapper [Source](https://github.com/nmap/nmap)
 - [NTFS-3G](https://github.com/tuxera/ntfs-3g): NTFS-3G Safe Read/Write NTFS Driver [Source](https://github.com/tuxera/ntfs-3g)
 - [nvtop](https://github.com/Syllo/nvtop): GPU & Accelerator process monitoring for AMD, Apple, Huawei, Intel, NVIDIA and Qualcomm [Source](https://github.com/Syllo/nvtop)
 - [OBS Studio](https://obsproject.com): Free and open source software for video recording and live streaming [Source](https://github.com/obsproject/obs-studio)
@@ -101,6 +102,7 @@ Update manually installed packages
 - [Spotify](https://spotify.com): Online music streaming service [Source](https://aur.archlinux.org/packages/spotify)
 - [tdrop](https://github.com/noctuid/tdrop): A Glorified WM-Independent Dropdown Creator [Source](https://github.com/noctuid/tdrop)
 - [Visual Studio Code](https://code.visualstudio.com): Your code editor. Redefined with AI [Source](https://github.com/microsoft/vscode)
+- [Zoom](https://www.zoom.com): Video Conferencing and Web Conferencing Service [Source](https://github.com/zoom)
 
 ## External packages
 
@@ -110,8 +112,9 @@ Update manually installed packages
 - [Poetry](https://python-poetry.org): Python packaging and dependency management made easy [Source](https://github.com/python-poetry/poetry)
 - [Yay](https://github.com/Jguer/yay): Yet another Yogurt - An AUR Helper written in Go [Source](https://github.com/Jguer/yay)
 
-## Hardware / misc
+## Hardware
 
+### (Home) B450 I AORUS PRO WIFI
 - [AMD microcode](https://archlinux.org/packages/core/any/amd-ucode): Microcode update image for AMD CPUs [Source](https://gitlab.com/kernel-firmware/linux-firmware)
 - [CUDA](http://www.nvidia.com): NVIDIA's GPU programming toolkit [Source](https://archlinux.org/packages/extra/x86_64/cuda)
 - [NVIDIA utils (32-bit)](http://www.nvidia.com): NVIDIA drivers utilities (32-bit) [Source](https://archlinux.org/packages/multilib/x86_64/lib32-nvidia-utils)

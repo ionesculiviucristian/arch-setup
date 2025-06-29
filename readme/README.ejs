@@ -18,10 +18,13 @@
 - <%- `[${package.label}](${package.url}): ${package.description}${package.source_url ? ` [Source](${package.source_url})` : ''}` %>
 <% }); -%>
 
-## Hardware / misc
+## Hardware
 
-<% packages.hardware.forEach(function(package){ -%>
+<% packages.hardware.forEach(function(machine){ -%>
+### <%- machine.name %>
+<% machine.packages.forEach(function(package){ -%>
 - <%- `[${package.label}](${package.url}): ${package.description}${package.source_url ? ` [Source](${package.source_url})` : ''}` %>
+<% }); -%>
 <% }); -%>
 
 ## Available aliases
