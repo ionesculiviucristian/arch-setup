@@ -62,6 +62,7 @@ yay -Syu --needed --noconfirm $(<"./data/lists/aur.txt")
 ./installers/multi-git-status.sh
 ./installers/nvm.sh
 ./installers/poetry.sh
+./installers/pyenv.sh
 
 # ==========================================
 # Setup GRUB
