@@ -1,6 +1,7 @@
 bitwarden-bin
 brave-bin
 papirus-icon-theme
+proftpd
 postman-bin
 spotify
 tdrop

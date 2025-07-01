@@ -14,7 +14,7 @@ cp "./configs/.bashrc" "${HOME}/.bashrc"
 mkdir -p "${HOME}/.bash_aliases.d"
 mkdir -p "${HOME}/.local/share/fonts"
 mkdir -p "${HOME}/.repos"
-mkdir -p "${HOME}/Backups"
+mkdir -p "${HOME}/Backups/docker"
 mkdir -p "${HOME}/Pictures/Wallpapers"
 mkdir -p "${HOME}/Projects"
 
@@ -189,6 +189,20 @@ if command -v nvidia-ctk >/dev/null 2>&1; then
   sudo nvidia-ctk runtime configure --runtime=docker
   sudo systemctl restart docker
 fi
+
+# ==========================================
+# Setup proftpd
+# ==========================================
+
+sudo cp "./configs/etc/proftpd.conf" "/etc/proftpd.conf"
+
+echo "127.0.0.1 ftp.localdev" | sudo tee -a "/etc/hosts"
+
+sudo iptables -I INPUT 1 -p tcp -s 127.0.0.1 --dport 21 -j ACCEPT
+sudo iptables -A INPUT -p tcp --dport 21 -j DROP
+
+sudo systemctl enable proftpd.service
+sudo systemctl start proftpd.service
 
 # ==========================================
 # Setup starship

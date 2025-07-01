@@ -99,6 +99,7 @@ Update manually installed packages
 - [Brave](https://brave.com): The browser that puts you first - Block ads. Save data. And get way faster webpages. Just by switching your browser [Source](https://github.com/brave)
 - [Papirus](https://store.kde.org/p/1166289): Pixel perfect icon theme for Linux [Source](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
 - [Postman](https://www.postman.com): Postman is the single platform for designing, building, and scaling APIs—together [Source](https://github.com/postmanlabs)
+- [ProFTPD](http://www.proftpd.org): Highly configurable GPL-licensed FTP server software [Source](https://github.com/proftpd/proftpd)
 - [Spotify](https://spotify.com): Online music streaming service [Source](https://aur.archlinux.org/packages/spotify)
 - [tdrop](https://github.com/noctuid/tdrop): A Glorified WM-Independent Dropdown Creator [Source](https://github.com/noctuid/tdrop)
 - [Visual Studio Code](https://code.visualstudio.com): Your code editor. Redefined with AI [Source](https://github.com/microsoft/vscode)

@@ -22,6 +22,13 @@
       "url": "https://store.kde.org/p/1166289"
     },
     {
+      "description": "Highly configurable GPL-licensed FTP server software",
+      "label": "ProFTPD",
+      "name": "proftpd",
+      "source_url": "https://github.com/proftpd/proftpd",
+      "url": "http://www.proftpd.org"
+    },
+    {
       "description": "Postman is the single platform for designing, building, and scaling APIs—together",
       "label": "Postman",
       "name": "postman-bin",
