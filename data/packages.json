@@ -159,6 +159,13 @@
   ],
   "official": [
     {
+      "description": "Versatile, classic, complete name server software",
+      "label": "BIND 9",
+      "name": "bind",
+      "source_url": "https://gitlab.isc.org/isc-projects/bind9",
+      "url": "https://www.isc.org/bind/"
+    },
+    {
       "description": "Magical shell history",
       "label": "Atuin",
       "name": "atuin",

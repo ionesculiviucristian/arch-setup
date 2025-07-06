@@ -1,3 +1,4 @@
+bind
 atuin
 base-devel
 bash-completion

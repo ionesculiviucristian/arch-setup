@@ -26,6 +26,7 @@ Update manually installed packages
 - [base-devel](https://archlinux.org/packages/core/any/base-devel): Basic tools to build Arch Linux packages [Source](https://archlinux.org/packages/core/any/base-devel)
 - [bash-completion](https://github.com/scop/bash-completion): Programmable completion functions for bash [Source](https://github.com/scop/bash-completion)
 - [bat](https://github.com/sharkdp/bat): A cat(1) clone with wings [Source](https://github.com/sharkdp/bat)
+- [BIND 9](https://www.isc.org/bind/): Versatile, classic, complete name server software [Source](https://gitlab.isc.org/isc-projects/bind9)
 - [Bitwarden CLI](https://github.com/bitwarden/clients.git): The command line vault [Source](https://github.com/bitwarden/clients.git)
 - [Blender](https://www.blender.org): The free and open source 3D creation suite [Source](https://github.com/blender/blender)
 - [broot](https://dystroy.org/broot): A new way to see and navigate directory trees [Source](https://github.com/Canop/broot)
