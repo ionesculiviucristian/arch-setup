@@ -168,6 +168,14 @@ kwriteconfig6 --file "${HOME}/.config/kdeglobals" --group "General" --key "Termi
 echo '[ "${TERM}" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"' >> "${HOME}/.bashrc"
 
 # ==========================================
+# Setup superfile
+# ==========================================
+
+mkdir -p "${HOME}/.config/lazygit"
+
+cp "./configs/.config/lazygit/config.yml" "${HOME}/.config/lazygit/config.yml"
+
+# ==========================================
 # Setup mkcert
 # ==========================================
 
