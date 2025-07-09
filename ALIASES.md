@@ -40,6 +40,8 @@
 - `dpsa`: List all containers
 - `dpsaf <PATTERN>`: Filter all containers list using grep pattern
 - `dpsf <PATTERN>`: Filter running containers list using grep pattern
+- `dr <CONTAINER...>`: Restart one or more containers
+- `drl <CONTAINER>`: Restart and fetch the logs of a container
 - `ds <CONTAINER...>`: Stop one or more running containers
 - `dsa`: Stop all running containers
 - `dtopc`: Display container resource usage sorted by highest CPU usage
@@ -61,7 +63,7 @@
 - `dcps <SERVICE...>`: List containers
 - `dcpsf <SERVICE>`: Filter running containers list using grep pattern
 - `dcr <SERVICE...>`: Restart service containers
-- `dcrl <SERVICE...>`: Restart service containers and view output from containers
+- `dcrl <SERVICE...>`: Restart service containers and view their output
 - `dcu <SERVICE...>`: Create and start containers
 - `dcub <SERVICE...>`: Build, create and start containers
 - `dcuf <SERVICE...>`: Recreate and start containers even if their configuration and image haven't changed

@@ -229,7 +229,7 @@ function dimlsf() {
 # @group docker
 # @param <CONTAINER>
 function dl() {
-    docker logs --follow "$1"
+    docker logs --follow --tail 1000 "$1"
 }
 complete -o nospace -F _complete_container dl
 
@@ -240,6 +240,22 @@ alias dlclr='docker ps -aq | xargs --replace={} sh -c "sudo truncate --size=0 \$
 # @info List all container log files ordered by their size
 # @group docker
 alias dlsz='sudo du -ch $(docker inspect --format="{{.LogPath}}" $(docker ps --all --quiet)) | sort -h'
+
+# @info Restart one or more containers
+# @group docker
+# @param <CONTAINER...>
+function dr() {
+    docker restart "$@"
+}
+complete -F _complete_container dr
+
+# @info Restart and fetch the logs of a container
+# @group docker
+# @param <CONTAINER>
+function drl() {
+    docker restart "$1" && docker logs --follow --tail 1000 "$1"
+}
+complete -o nospace -F _complete_container drl
 
 # @info List networks
 # @group docker
@@ -441,7 +457,7 @@ function dcr() {
 }
 complete -F _complete_services dcr
 
-# @info Restart service containers and view output from containers
+# @info Restart service containers and view their output
 # @group docker_compose
 # @param <SERVICE...>
 function dcrl() {
