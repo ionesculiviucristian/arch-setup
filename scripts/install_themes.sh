@@ -54,8 +54,6 @@ wget -qO- https://github.com/catppuccin/sddm/releases/download/v1.1.0/catppuccin
 
 sudo sed -i \
   -e 's/^CustomBackground="false"/CustomBackground="true"/' \
-  -e 's/^LoginBackground="false"/LoginBackground="true"/' \
-  -e 's/^UserIcon="false"/UserIcon="true"/' \
   "/usr/share/sddm/themes/catppuccin-mocha/theme.conf"
 
 sudo cp "${HOME}/Pictures/Wallpapers/wp11361931-minimalist-3440x1440-wallpapers.png" "/usr/share/sddm/themes/catppuccin-mocha/backgrounds/wall.jpg"

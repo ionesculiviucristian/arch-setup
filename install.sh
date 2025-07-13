@@ -49,12 +49,6 @@ yay -Syu --needed --noconfirm $(<"./data/lists/aur.txt")
 ./scripts/install_font.sh https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.tar.xz
 
 # ==========================================
-# Install themes
-# ==========================================
-
-./scripts/install_themes.sh
-
-# ==========================================
 # Install external packages
 # ==========================================
 
@@ -265,6 +259,12 @@ cp "./configs/.tmux.conf" "${HOME}/.tmux.conf"
 # ==========================================
 
 cp "./configs/.vimrc" "${HOME}/.vimrc"
+
+# ==========================================
+# Install themes
+# ==========================================
+
+./scripts/install_themes.sh
 
 # ==========================================
 # Post install

@@ -117,6 +117,7 @@ Update manually installed packages
 ## Hardware
 
 ### (Home) B450 I AORUS PRO WIFI
+
 - [AMD microcode](https://archlinux.org/packages/core/any/amd-ucode): Microcode update image for AMD CPUs [Source](https://gitlab.com/kernel-firmware/linux-firmware)
 - [CUDA](http://www.nvidia.com): NVIDIA's GPU programming toolkit [Source](https://archlinux.org/packages/extra/x86_64/cuda)
 - [NVIDIA utils (32-bit)](http://www.nvidia.com): NVIDIA drivers utilities (32-bit) [Source](https://archlinux.org/packages/multilib/x86_64/lib32-nvidia-utils)

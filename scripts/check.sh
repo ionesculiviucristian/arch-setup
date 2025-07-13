@@ -7,7 +7,7 @@ reset="\e[0m"
 
 check_package() {
   local pkg="$1"
-  echo -n "Checking if packake ${pkg} is installed... "
+  echo -n "Checking if package ${pkg} is installed... "
   if command -v "${pkg}" >/dev/null 2>&1; then
     echo -e "${green}YES${reset}"
   else
