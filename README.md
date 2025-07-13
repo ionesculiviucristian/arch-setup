@@ -98,6 +98,7 @@ Update manually installed packages
 
 - [Bitwarden](https://bitwarden.com): Bitwarden is the best password manager for securely storing, managing, and sharing sensitive information such as passwords, passkeys, and credit cards [Source](https://github.com/bitwarden)
 - [Brave](https://brave.com): The browser that puts you first - Block ads. Save data. And get way faster webpages. Just by switching your browser [Source](https://github.com/brave)
+- [downgrade](https://archlinux-downgrade.github.io/downgrade): Downgrade packages in Arch Linux [Source](https://github.com/archlinux-downgrade/downgrade)
 - [Papirus](https://store.kde.org/p/1166289): Pixel perfect icon theme for Linux [Source](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
 - [Postman](https://www.postman.com): Postman is the single platform for designing, building, and scaling APIs—together [Source](https://github.com/postmanlabs)
 - [ProFTPD](http://www.proftpd.org): Highly configurable GPL-licensed FTP server software [Source](https://github.com/proftpd/proftpd)

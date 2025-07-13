@@ -1,5 +1,6 @@
 bitwarden-bin
 brave-bin
+downgrade
 papirus-icon-theme
 proftpd
 postman-bin

@@ -15,6 +15,13 @@
       "url": "https://brave.com"
     },
     {
+      "description": "Downgrade packages in Arch Linux",
+      "label": "downgrade",
+      "name": "downgrade",
+      "source_url": "https://github.com/archlinux-downgrade/downgrade",
+      "url": "https://archlinux-downgrade.github.io/downgrade"
+    },
+    {
       "description": "Pixel perfect icon theme for Linux",
       "label": "Papirus",
       "name": "papirus-icon-theme",
