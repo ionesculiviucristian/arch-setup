@@ -1,11 +1,25 @@
 {
   "aur": [
     {
+      "description": "Manage many git repos with sanity",
+      "label": "gita",
+      "name": "gita",
+      "source_url": "https://github.com/nosarthur/gita",
+      "url": "https://github.com/nosarthur/gita"
+    },
+    {
       "description": "Bitwarden is the best password manager for securely storing, managing, and sharing sensitive information such as passwords, passkeys, and credit cards",
       "label": "Bitwarden",
       "name": "bitwarden-bin",
       "source_url": "https://github.com/bitwarden",
       "url": "https://bitwarden.com"
+    },
+    {
+      "description": "Bash Line Editor―a line editor written in pure Bash with syntax highlighting, auto suggestions, vim modes, etc. for Bash interactive sessions",
+      "label": "ble.sh",
+      "name": "blesh-git",
+      "source_url": "https://github.com/akinomyoga/ble.sh",
+      "url": "https://github.com/akinomyoga/ble.sh"
     },
     {
       "description": "The browser that puts you first - Block ads. Save data. And get way faster webpages. Just by switching your browser",
@@ -73,34 +87,6 @@
   ],
   "external": [
     {
-      "description": "Bash Line Editor―a line editor written in pure Bash with syntax highlighting, auto suggestions, vim modes, etc. for Bash interactive sessions",
-      "label": "ble.sh",
-      "name": "",
-      "source_url": "https://github.com/akinomyoga/ble.sh",
-      "url": "https://github.com/akinomyoga/ble.sh"
-    },
-    {
-      "description": "Show uncommitted, untracked and unpushed changes for multiple Git repos",
-      "label": "mgitstatus",
-      "name": "",
-      "source_url": "https://github.com/fboender/multi-git-status",
-      "url": "https://github.com/fboender/multi-git-status"
-    },
-    {
-      "description": "POSIX-compliant bash script to manage multiple active node.js versions",
-      "label": "Node Version Manager",
-      "name": "",
-      "source_url": "https://github.com/nvm-sh/nvm",
-      "url": "https://github.com/nvm-sh/nvm"
-    },
-    {
-      "description": "Python packaging and dependency management made easy",
-      "label": "Poetry",
-      "name": "",
-      "source_url": "https://github.com/python-poetry/poetry",
-      "url": "https://python-poetry.org"
-    },
-    {
       "description": "Yet another Yogurt - An AUR Helper written in Go",
       "label": "Yay",
       "name": "",
@@ -165,6 +151,34 @@
     }
   ],
   "official": [
+    {
+      "description": "POSIX-compliant bash script to manage multiple active node.js versions",
+      "label": "Node Version Manager",
+      "name": "nvm",
+      "source_url": "https://github.com/nvm-sh/nvm",
+      "url": "https://github.com/nvm-sh/nvm"
+    },
+    {
+      "description": "Fast, disk space efficient package manager",
+      "label": "pnpm",
+      "name": "pnpm",
+      "source_url": "https://github.com/pnpm/pnpm",
+      "url": "https://pnpm.io"
+    },
+    {
+      "description": "Python packaging and dependency management made easy",
+      "label": "Poetry",
+      "name": "python-poetry",
+      "source_url": "https://github.com/python-poetry/poetry",
+      "url": "https://python-poetry.org"
+    },
+    {
+      "description": "Simple Python version management",
+      "label": "pyenv",
+      "name": "pyenv",
+      "source_url": "https://github.com/pyenv/pyenv",
+      "url": "https://github.com/pyenv/pyenv"
+    },
     {
       "description": "Versatile, classic, complete name server software",
       "label": "BIND 9",

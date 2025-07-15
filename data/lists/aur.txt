@@ -1,9 +1,11 @@
 bitwarden-bin
+blesh-git
 brave-bin
 downgrade
+gita
 papirus-icon-theme
-proftpd
 postman-bin
+proftpd
 spotify
 tdrop
 visual-studio-code-bin 

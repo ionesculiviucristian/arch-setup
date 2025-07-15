@@ -6,8 +6,8 @@ repos:
         entry: python generate_bash_aliases_help.py
         language: system
       - id: process-packages
-        name: Process packages
-        entry: ./scripts/process_packages.sh
+        name: Update package lists
+        entry: ./scripts/update_package_lists.sh
         language: system
       - id: render-readme
         name: Render README.md file

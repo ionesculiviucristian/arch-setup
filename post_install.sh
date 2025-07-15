@@ -2,7 +2,7 @@
 set -eu
 
 if [ $# -lt 1 ]; then
-  echo "Usage: $0 your-email@example.com"
+  echo "Usage: $0 <EMAIL>"
   exit 1
 fi
 

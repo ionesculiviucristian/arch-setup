@@ -18,8 +18,8 @@ mkdir -p "${HOME}/Backups/docker"
 mkdir -p "${HOME}/Pictures/Wallpapers"
 mkdir -p "${HOME}/Projects"
 
-./scripts/add_places_entry.sh "${HOME}/Backups" "Backups"
-./scripts/add_places_entry.sh "${HOME}/Projects" "Projects"
+./scripts/update_user_places.sh "${HOME}/Backups" "Backups"
+./scripts/update_user_places.sh "${HOME}/Projects" "Projects"
 
 # ==========================================
 # Install packages
@@ -52,7 +52,6 @@ yay -Syu --needed --noconfirm $(<"./data/lists/aur.txt")
 # Install external packages
 # ==========================================
 
-./installers/ble.sh.sh
 ./installers/multi-git-status.sh
 ./installers/nvm.sh
 ./installers/poetry.sh
@@ -105,7 +104,7 @@ mkdir -p "${HOME}/.config/atuin"
 
 cp "./configs/.config/atuin/config.toml" "${HOME}/.config/atuin/config.toml"
 
-echo 'eval "$(atuin init bash)"' >> "${HOME}/.bashrc"
+./scripts/update_bashrc.sh 'eval "$(atuin init bash)"'
 
 # ==========================================
 # Setup bat
@@ -119,7 +118,13 @@ cp "./configs/.config/bat/config" "${HOME}/.config/bat/config"
 # Setup Bitwarden
 # ==========================================
 
-echo 'export SSH_AUTH_SOCK="${HOME}/.bitwarden-ssh-agent.sock"' >> "${HOME}/.bashrc"
+./scripts/update_bashrc.sh 'export SSH_AUTH_SOCK="${HOME}/.bitwarden-ssh-agent.sock"'
+
+# ==========================================
+# Setup ble.sh
+# ==========================================
+
+sudo sed -i 's//^[[ $- == *i* ]] && source "/usr/share/blesh/ble.sh" --noattach'
 
 # ==========================================
 # Setup btop
@@ -133,7 +138,8 @@ cp "./configs/.config/btop/btop.conf" "${HOME}/.config/btop/btop.conf"
 # Setup direnv
 # ==========================================
 
-echo 'eval "$(direnv hook bash)"' >> "${HOME}/.bashrc"
+./scripts/update_bashrc.sh '# direnv' '\n'
+./scripts/update_bashrc.sh 'eval "$(direnv hook bash)"'
 
 # ==========================================
 # Setup docker
@@ -149,6 +155,12 @@ sudo systemctl enable docker.service
 sudo usermod -aG docker "${USER}"
 
 # ==========================================
+# Setup fzf
+# ==========================================
+
+./scripts/update_bashrc.sh 'eval "$(fzf --bash)"'
+
+# ==========================================
 # Setup kitty
 # ==========================================
 
@@ -159,7 +171,7 @@ cp "./configs/.config/kitty/kitty.conf" "${HOME}/.config/kitty"
 kwriteconfig6 --file "${HOME}/.config/kdeglobals" --group "General" --key "TerminalApplication" "kitty"
 kwriteconfig6 --file "${HOME}/.config/kdeglobals" --group "General" --key "TerminalService" "kitty.desktop"
 
-echo '[ "${TERM}" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"' >> "${HOME}/.bashrc"
+./scripts/update_bashrc.sh '[ "${TERM}" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"'
 
 # ==========================================
 # Setup superfile
@@ -193,6 +205,47 @@ if command -v nvidia-ctk >/dev/null 2>&1; then
 fi
 
 # ==========================================
+# Setup nvm
+# ==========================================
+
+# shellcheck disable=SC2155
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+# shellcheck disable=SC1091
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+nvm install --no-progress 18
+nvm install --no-progress 20
+nvm install --no-progress 22
+nvm install --no-progress 24
+
+nvm use 24
+
+nvm install-latest-npm
+
+# ==========================================
+# Setup pyenv
+# ==========================================
+
+./scripts/update_bashrc.sh 'export PATH="${HOME}/.local/bin:${PATH}"'
+
+# ==========================================
+# Setup pyenv
+# ==========================================
+
+./scripts/update_bashrc.sh 'export PYENV_ROOT="$HOME/.pyenv"'
+./scripts/update_bashrc.sh '[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"'
+./scripts/update_bashrc.sh 'eval "$(pyenv init - bash)"'
+
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - bash)"
+
+pyenv install 3.10
+pyenv install 3.11
+pyenv install 3.12
+pyenv install 3.13
+
+# ==========================================
 # Setup proftpd
 # ==========================================
 
@@ -223,7 +276,7 @@ if [ -f "${HOME}/.config/starship/themes/mocha.conf" ]; then
     > "${HOME}/.config/.starship.toml"
 fi
 
-echo 'eval "$(starship init bash)"' >> "${HOME}/.bashrc"
+./scripts/update_bashrc.sh 'eval "$(starship init bash)"'
 
 # ==========================================
 # Setup superfile
@@ -269,6 +322,8 @@ cp "./configs/.vimrc" "${HOME}/.vimrc"
 # ==========================================
 # Post install
 # ==========================================
+
+./scripts/update_bashrc.sh '[[ ${BLE_VERSION-} ]] && ble-attach'
 
 ./scripts/install_aliases.sh
 

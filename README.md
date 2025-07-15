@@ -69,12 +69,16 @@ Update manually installed packages
 - [net-tools](https://sourceforge.net/projects/net-tools): The collection of base networking utilities for Linux [Source](https://sourceforge.net/projects/net-tools)
 - [Network Security Services (NSS)](https://firefox-source-docs.mozilla.org/security/nss/index.html): Network Security Services (NSS) is a set of libraries designed to support cross-platform development of security-enabled client and server applications [Source](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS)
 - [Nmap](https://nmap.org): Nmap - the Network Mapper [Source](https://github.com/nmap/nmap)
+- [Node Version Manager](https://github.com/nvm-sh/nvm): POSIX-compliant bash script to manage multiple active node.js versions [Source](https://github.com/nvm-sh/nvm)
 - [NTFS-3G](https://github.com/tuxera/ntfs-3g): NTFS-3G Safe Read/Write NTFS Driver [Source](https://github.com/tuxera/ntfs-3g)
 - [nvtop](https://github.com/Syllo/nvtop): GPU & Accelerator process monitoring for AMD, Apple, Huawei, Intel, NVIDIA and Qualcomm [Source](https://github.com/Syllo/nvtop)
 - [OBS Studio](https://obsproject.com): Free and open source software for video recording and live streaming [Source](https://github.com/obsproject/obs-studio)
 - [pacman-contrib](https://gitlab.archlinux.org/pacman/pacman-contrib): Contributed scripts and tools for pacman systems [Source](https://gitlab.archlinux.org/pacman/pacman-contrib)
 - [pigz](https://www.zlib.net/pigz): A parallel implementation of gzip for modern multi-processor, multi-core machines [Source](https://github.com/madler/pigz)
 - [Plasma X11 session](https://archlinux.org/packages/extra/x86_64/plasma-x11-session): Plasma X11 session [Source](https://archlinux.org/packages/extra/x86_64/plasma-x11-session)
+- [pnpm](https://pnpm.io): Fast, disk space efficient package manager [Source](https://github.com/pnpm/pnpm)
+- [Poetry](https://python-poetry.org): Python packaging and dependency management made easy [Source](https://github.com/python-poetry/poetry)
+- [pyenv](https://github.com/pyenv/pyenv): Simple Python version management [Source](https://github.com/pyenv/pyenv)
 - [qBittorrent](https://www.qbittorrent.org): The qBittorrent project aims to provide an open-source software alternative to µTorrent [Source](https://github.com/qbittorrent/qBittorrent)
 - [ripgrep](https://github.com/BurntSushi/ripgrep): ripgrep recursively searches directories for a regex pattern while respecting your gitignore [Source](https://github.com/BurntSushi/ripgrep)
 - [rsync](https://rsync.samba.org): rsync is an open source utility that provides fast incremental file transfer [Source](https://github.com/RsyncProject/rsync)
@@ -97,8 +101,10 @@ Update manually installed packages
 ## AUR packages
 
 - [Bitwarden](https://bitwarden.com): Bitwarden is the best password manager for securely storing, managing, and sharing sensitive information such as passwords, passkeys, and credit cards [Source](https://github.com/bitwarden)
+- [ble.sh](https://github.com/akinomyoga/ble.sh): Bash Line Editor―a line editor written in pure Bash with syntax highlighting, auto suggestions, vim modes, etc. for Bash interactive sessions [Source](https://github.com/akinomyoga/ble.sh)
 - [Brave](https://brave.com): The browser that puts you first - Block ads. Save data. And get way faster webpages. Just by switching your browser [Source](https://github.com/brave)
 - [downgrade](https://archlinux-downgrade.github.io/downgrade): Downgrade packages in Arch Linux [Source](https://github.com/archlinux-downgrade/downgrade)
+- [gita](https://github.com/nosarthur/gita): Manage many git repos with sanity [Source](https://github.com/nosarthur/gita)
 - [Papirus](https://store.kde.org/p/1166289): Pixel perfect icon theme for Linux [Source](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
 - [Postman](https://www.postman.com): Postman is the single platform for designing, building, and scaling APIs—together [Source](https://github.com/postmanlabs)
 - [ProFTPD](http://www.proftpd.org): Highly configurable GPL-licensed FTP server software [Source](https://github.com/proftpd/proftpd)
@@ -109,10 +115,6 @@ Update manually installed packages
 
 ## External packages
 
-- [ble.sh](https://github.com/akinomyoga/ble.sh): Bash Line Editor―a line editor written in pure Bash with syntax highlighting, auto suggestions, vim modes, etc. for Bash interactive sessions [Source](https://github.com/akinomyoga/ble.sh)
-- [mgitstatus](https://github.com/fboender/multi-git-status): Show uncommitted, untracked and unpushed changes for multiple Git repos [Source](https://github.com/fboender/multi-git-status)
-- [Node Version Manager](https://github.com/nvm-sh/nvm): POSIX-compliant bash script to manage multiple active node.js versions [Source](https://github.com/nvm-sh/nvm)
-- [Poetry](https://python-poetry.org): Python packaging and dependency management made easy [Source](https://github.com/python-poetry/poetry)
 - [Yay](https://github.com/Jguer/yay): Yet another Yogurt - An AUR Helper written in Go [Source](https://github.com/Jguer/yay)
 
 ## Hardware

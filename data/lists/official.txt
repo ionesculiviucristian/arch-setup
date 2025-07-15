@@ -1,8 +1,8 @@
-bind
 atuin
 base-devel
 bash-completion
 bat
+bind
 bitwarden-cli
 blender
 broot
@@ -45,12 +45,16 @@ net-tools
 nmap
 nss
 ntfs-3g
+nvm
 nvtop
 obs-studio
-partitionmanager
 pacman-contrib
+partitionmanager
 pigz
 plasma-x11-session
+pnpm
+pyenv
+python-poetry
 qbittorrent
 ripgrep
 rsync
