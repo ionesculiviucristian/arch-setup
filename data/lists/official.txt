@@ -72,5 +72,6 @@ virtualbox
 virtualbox-guest-iso
 virtualbox-host-dkms
 xclip
+xmlstarlet
 zip
 zoxide

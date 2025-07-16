@@ -152,11 +152,18 @@
   ],
   "official": [
     {
+      "description": "XMLStarlet is a set of command line utilities (tools) which can be used to transform, query, validate, and edit XML documents and files",
+      "label": "XMLStarlet",
+      "name": "xmlstarlet",
+      "source_url": "https://sourceforge.net/p/xmlstar/code/ci/master/tree/",
+      "url": "https://xmlstar.sourceforge.net"
+    },
+    {
       "description": "LuaRocks is the package manager for Lua modules",
       "label": "LuaRocks",
       "name": "luarocks",
       "source_url": "https://github.com/luarocks/luarocks",
-      "url": "https://luarocks.org/"
+      "url": "https://luarocks.org"
     },
     {
       "description": "POSIX-compliant bash script to manage multiple active node.js versions",
@@ -191,7 +198,7 @@
       "label": "BIND 9",
       "name": "bind",
       "source_url": "https://gitlab.isc.org/isc-projects/bind9",
-      "url": "https://www.isc.org/bind/"
+      "url": "https://www.isc.org/bind"
     },
     {
       "description": "Magical shell history",

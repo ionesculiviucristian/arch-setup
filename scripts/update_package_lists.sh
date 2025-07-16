@@ -3,14 +3,19 @@ set -eu
 
 data_file="./data/packages.json"
 
-jq -r 'keys_unsorted[] | select(. != "external")' "${data_file}" | while read -r section; do
-  packages_file="./data/lists/${section}.txt"
+if [ ! -f "${data_file}" ]; then
+  echo "Error: ${data_file} not found"
+  exit 1
+fi
 
-  jq --arg section_name "$section" -r '
+jq -r 'keys_unsorted[] | select(. != "external")' "${data_file}" | while read -r list; do
+  list_file="./data/lists/${list}.txt"
+
+  jq --arg section_name "${list}" -r '
     .[$section_name]
     | sort_by(.name)
     | .[] | .name
-  ' "${data_file}" > "${packages_file}"
+  ' "${data_file}" > "${list_file}"
 done
 
 exit 0

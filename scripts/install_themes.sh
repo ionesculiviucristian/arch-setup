@@ -1,29 +1,34 @@
 #!/bin/bash
 set -eu
 
-cp ../wallpapers/* "${HOME}/Pictures/Wallpapers"
+wallpapers_dir="${HOME}/Pictures/Wallpapers"
 
-plasma-apply-wallpaperimage "${HOME}/Pictures/Wallpapers/wp14259050-cyberpunk-3440x1440-wallpapers.png"
+cp ../wallpapers/* "${wallpapers_dir}"
 
-kwriteconfig6 \
-  --file "${HOME}/.config/kscreenlockerrc" \
-  --group "Greeter" --group "Wallpaper" --group "org.kde.image" --group "General" \
-  --key "Image" "${HOME}/Pictures/Wallpapers/wp11361979-minimalist-3440x1440-wallpapers.png"
+plasma-apply-wallpaperimage "${wallpapers_dir}/wp14259050-cyberpunk-3440x1440-wallpapers.png"
 
 kwriteconfig6 \
   --file "${HOME}/.config/kscreenlockerrc" \
   --group "Greeter" --group "Wallpaper" --group "org.kde.image" --group "General" \
-  --key "PreviewImage" "${HOME}/Pictures/Wallpapers/wp11361979-minimalist-3440x1440-wallpapers.png"
+  --key "Image" "${wallpapers_dir}/wp11361979-minimalist-3440x1440-wallpapers.png"
+
+kwriteconfig6 \
+  --file "${HOME}/.config/kscreenlockerrc" \
+  --group "Greeter" --group "Wallpaper" --group "org.kde.image" --group "General" \
+  --key "PreviewImage" "${wallpapers_dir}/wp11361979-minimalist-3440x1440-wallpapers.png"
 
 # ==========================================
 # GRUB
 # ==========================================
 
-rm -rf "${HOME}/.repos/catppuccin-grub"
+catppuccin_grub_dir="${HOME}/.repos/catppuccin-grub"
+grub_themes_dir="/usr/share/grub/themes"
 
-git clone -q https://github.com/catppuccin/grub.git "${HOME}/.repos/catppuccin-grub"
+rm -rf "${catppuccin_grub_dir}"
 
-sudo cp -r "${HOME}/.repos/catppuccin-grub/src/catppuccin-mocha-grub-theme" "/usr/share/grub/themes/catppuccin-mocha-grub-theme"
+git clone -q https://github.com/catppuccin/grub.git "${catppuccin_grub_dir}"
+
+sudo cp -r "${catppuccin_grub_dir}/src/catppuccin-mocha-grub-theme" "${grub_themes_dir}/catppuccin-mocha-grub-theme"
 
 if ! grep -q "catppuccin-mocha-grub-theme" "/boot/grub/grub.cfg"; then
   sudo sed -i 's|^#GRUB_THEME="/path/to/gfxtheme"|GRUB_THEME="/usr/share/grub/themes/catppuccin-mocha-grub-theme/theme.txt"|' "/etc/default/grub"
@@ -35,47 +40,55 @@ fi
 # Konsole
 # ==========================================
 
-mkdir -p "${HOME}/.local/share/konsole"
+konsole_dir="${HOME}/.local/share/konsole"
+
+mkdir -p "${konsole_dir}"
 
 wget -qO \
-  "${HOME}/.local/share/konsole/catppuccin-mocha.colorscheme" \
+  "${konsole_dir}/catppuccin-mocha.colorscheme" \
   https://raw.githubusercontent.com/catppuccin/konsole/refs/heads/main/themes/catppuccin-mocha.colorscheme
 
 # ==========================================
 # SDDM 
 # ==========================================
 
+sddm_themes_dir="/usr/share/sddm/themes"
+
 sudo pacman -Syu --needed --noconfirm \
   qt6-svg \
   qt6-declarative \
   qt5-quickcontrols2
 
-wget -qO- https://github.com/catppuccin/sddm/releases/download/v1.1.0/catppuccin-mocha.zip | sudo bsdtar -xvf- -C "/usr/share/sddm/themes"
+wget -qO- https://github.com/catppuccin/sddm/releases/download/v1.1.0/catppuccin-mocha.zip | sudo bsdtar -xvf- -C "${sddm_themes_dir}"
 
 sudo sed -i \
   -e 's/^CustomBackground="false"/CustomBackground="true"/' \
-  "/usr/share/sddm/themes/catppuccin-mocha/theme.conf"
+  "${sddm_themes_dir}/catppuccin-mocha/theme.conf"
 
-sudo cp "${HOME}/Pictures/Wallpapers/wp11361931-minimalist-3440x1440-wallpapers.png" "/usr/share/sddm/themes/catppuccin-mocha/backgrounds/wall.jpg"
+sudo cp "${wallpapers_dir}/wp11361931-minimalist-3440x1440-wallpapers.png" "${sddm_themes_dir}/catppuccin-mocha/backgrounds/wall.jpg"
 
 # ==========================================
 # atuin
 # ==========================================
 
-mkdir -p "${HOME}/.config/atuin/themes"
+atuin_dir="${HOME}/.config/atuin/themes"
+
+mkdir -p "${atuin_dir}"
 
 wget -qO \
-  "${HOME}/.config/atuin/themes/catppuccin-mocha-mauve.toml" \
+  "${atuin_dir}/themes/catppuccin-mocha-mauve.toml" \
   https://raw.githubusercontent.com/catppuccin/atuin/refs/heads/main/themes/mocha/catppuccin-mocha-mauve.toml 
 
 # ==========================================
 # bat
 # ==========================================
 
-mkdir -p "${HOME}/.config/bat/themes"
+bat_themes_dir="${HOME}/.config/bat/themes"
+
+mkdir -p "${bat_themes_dir}"
 
 wget -qO \
-  "${HOME}/.config/bat/themes/Catppuccin Mocha.tmTheme" \
+  "${bat_themes_dir}/Catppuccin Mocha.tmTheme" \
   https://github.com/catppuccin/bat/raw/main/themes/Catppuccin%20Mocha.tmTheme
 
 bat cache --build
@@ -84,45 +97,50 @@ bat cache --build
 # btop
 # ==========================================
 
-mkdir -p "${HOME}/.config/btop/themes"
+btop_themes_dir="${HOME}/.config/btop/themes"
+
+mkdir -p "${btop_themes_dir}"
 
 wget -qO \
-  "${HOME}/.config/btop/themes/catppuccin_mocha.theme" \
+  "${btop_themes_dir}/catppuccin_mocha.theme" \
   https://raw.githubusercontent.com/catppuccin/btop/refs/heads/main/themes/catppuccin_mocha.theme
 
 # ==========================================
 # fzf
 # ==========================================
 
-rm -rf "${HOME}/.repos/catppuccin-fzf"
+catppuccin_fzf_dir="${HOME}/.repos/catppuccin-fzf"
 
-git clone https://github.com/catppuccin/fzf.git "${HOME}/.repos/catppuccin-fzf"
+rm -rf "${catppuccin_fzf_dir}"
 
-if ! grep -q "catppuccin-fzf-mocha.sh" "${HOME}/.bashrc"; then
-  echo 'source "${HOME}/.repos/catppuccin-fzf/themes/catppuccin-fzf-mocha.sh"' >> "${HOME}/.bashrc"
-fi
+git clone https://github.com/catppuccin/fzf.git "${catppuccin_fzf_dir}"
+
+./update_bashrc.sh 'source "${HOME}/.repos/catppuccin-fzf/themes/catppuccin-fzf-mocha.sh"'
 
 # ==========================================
 # KDE
 # ==========================================
 
-rm -rf "${HOME}/.repos/catppuccin-kde"
+catppuccin_kde_dir="${HOME}/.repos/catppuccin-fzf"
+icons_dir="${HOME}/.local/share/icons"
 
-git clone --depth=1 https://github.com/catppuccin/kde "${HOME}/.repos/catppuccin-kde"
+rm -rf "${catppuccin_kde_dir}"
+
+git clone --depth=1 https://github.com/catppuccin/kde "${catppuccin_kde_dir}"
 
 (
-  cd "${HOME}/.repos/catppuccin-kde"
+  cd "${catppuccin_kde_dir}"
   printf "1\n4\n2\ny\ny" | ./install.sh
 
-  rm -rf "${HOME}/.local/share/icons/Catppuccin-Mocha-Dark-Cursors"
-  rm -rf "${HOME}/.local/share/icons/Catppuccin-Mocha-Mauve-Cursors"
+  rm -rf "${icons_dir}/Catppuccin-Mocha-Dark-Cursors"
+  rm -rf "${icons_dir}/Catppuccin-Mocha-Mauve-Cursors"
 
   # Use newer Catppuccin cursors
-  rm -rf "${HOME}/.local/share/icons/catppuccin-mocha-mauve-cursors"
-  wget -qO- https://github.com/catppuccin/cursors/releases/download/v2.0.0/catppuccin-mocha-mauve-cursors.zip | bsdtar -xvf- -C "${HOME}/.local/share/icons"
+  rm -rf "${icons_dir}/icons/catppuccin-mocha-mauve-cursors"
+  wget -qO- https://github.com/catppuccin/cursors/releases/download/v2.0.0/catppuccin-mocha-mauve-cursors.zip | bsdtar -xvf- -C "${icons_dir}"
   
   if [ ! -L "${HOME}/.icons" ]; then
-    ln -s "${HOME}/.local/share/icons" "${HOME}/.icons"
+    ln -s "${icons_dir}" "${HOME}/.icons"
   fi
 
   plasma-apply-cursortheme "catppuccin-mocha-mauve-cursors"
@@ -132,40 +150,57 @@ git clone --depth=1 https://github.com/catppuccin/kde "${HOME}/.repos/catppuccin
 # kitty
 # ==========================================
 
-mkdir -p "${HOME}/.config/kitty/themes"
+kitty_themes_dir="${HOME}/.repos/catppuccin-fzf"
+
+mkdir -p "${kitty_themes_dir}"
 
 wget -qO \
-  "${HOME}/.config/kitty/themes/mocha.conf" \
+  "${kitty_themes_dir}/mocha.conf" \
   https://raw.githubusercontent.com/catppuccin/kitty/refs/heads/main/themes/mocha.conf
 
 # ==========================================
 # lazygit
 # ==========================================
 
-mkdir -p "${HOME}/.config/lazygit"
+lazygit_dir="${HOME}/.repos/catppuccin-fzf"
+
+mkdir -p "${lazygit_dir}"
 
 wget -qO - https://raw.githubusercontent.com/catppuccin/lazygit/main/themes/mocha/mauve.yml \
-  | yq eval-all --inplace 'select(fileIndex == 0) as $config | select(fileIndex == 1) as $res | $config | .gui.theme = ($res.theme) | .gui.authorColors = ($res.authorColors)' "${HOME}/.config/lazygit/config.yml" -
+  | yq eval-all --inplace 'select(fileIndex == 0) as $config | select(fileIndex == 1) as $res | $config | .gui.theme = ($res.theme) | .gui.authorColors = ($res.authorColors)' "${lazygit_dir}/config.yml" -
 
 # ==========================================
 # LibreOffice 
 # ==========================================
 
-mkdir -p "${HOME}/.config/libreoffice/4/user/config"
+libreoffice_user_dir="${HOME}/.config/libreoffice/4/user"
+
+mkdir -p "${libreoffice_user_dir}/config"
 
 wget -qO \
-  "${HOME}/.config/libreoffice/4/user/config/catppuccin-mocha-mauve.soc" \
+  "${libreoffice_user_dir}/config/catppuccin-mocha-mauve.soc" \
   https://raw.githubusercontent.com/catppuccin/libreoffice/refs/heads/main/themes/mocha/mauve/catppuccin-mocha-mauve.soc
 
-# TODO: Only works on first setup
-if ! grep -q "/org.openoffice.Office.UI/ColorScheme/ColorSchemes" "${HOME}/.config/libreoffice/4/user/registrymodifications.xcu"; then
+libreoffice_theme_file=$(mktemp)
+
+wget -qO \
+  "${libreoffice_theme_file}" \
+  https://raw.githubusercontent.com/catppuccin/libreoffice/main/themes/mocha/mauve/catppuccin-mocha-mauve.xcu
+
+if [ ! -f "${libreoffice_user_dir}/registrymodifications.xcu" ]; then
   {
     echo '<?xml version="1.0" encoding="UTF-8"?>'
     echo '<oor:items xmlns:oor="http://openoffice.org/2001/registry" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">'
-    wget -qO - https://raw.githubusercontent.com/catppuccin/libreoffice/main/themes/mocha/mauve/catppuccin-mocha-mauve.xcu
+    cat "${libreoffice_theme_file}"; echo
     echo '</oor:items>'
-  } > "${HOME}/.config/libreoffice/4/user/registrymodifications.xcu"
+  } > "${libreoffice_user_dir}/registrymodifications.xcu"
+else
+  # shellcheck disable=SC2086
+  sed -i \
+    "s|<item oor:path=\"\/org.openoffice.Office.UI\/ColorScheme\/ColorSchemes\">.*<\/item>|$(cat ${libreoffice_theme_file})|" \
+    "${libreoffice_user_dir}/registrymodifications.xcu"
 fi
+
 
 # ==========================================
 # OBS Studio
@@ -183,27 +218,31 @@ fi
 # starship
 # ==========================================
 
-mkdir -p "${HOME}/.config/starship/themes"
+starship_dir="${HOME}/.config/starship"
+
+mkdir -p "${starship_dir}/themes"
 
 wget -qO \
-  "${HOME}/.config/starship/themes/mocha.conf" \
+  "${starship_dir}/themes/mocha.conf" \
   https://raw.githubusercontent.com/catppuccin/starship/refs/heads/main/themes/mocha.toml
 
-if [ -f "${HOME}/.config/starship/config.toml" ]; then
+if [ -f "${starship_dir}/config.toml" ]; then
   cat \
-    "${HOME}/.config/starship/config.toml" \
-    "${HOME}/.config/starship/themes/mocha.conf" \
+    "${starship_dir}/config.toml" \
+    "${starship_dir}/themes/mocha.conf" \
     > "${HOME}/.config/.starship.toml"
 fi
 
 # ==========================================
-# Setup superfile
+# superfile
 # ==========================================
 
-mkdir -p "${HOME}/.config/superfile/theme"
+superfile_themes_dir="${HOME}/.config/superfile/theme"
+
+mkdir -p "${superfile_themes_dir}"
 
 wget -qO \
-  "${HOME}/.config/superfile/theme/catppuccin-mocha-mauve.toml" \
+  "${superfile_themes_dir}/catppuccin-mocha-mauve.toml" \
   https://raw.githubusercontent.com/catppuccin/superfile/refs/heads/main/themes/mocha/catppuccin-mocha-mauve.toml
 
 # ==========================================
@@ -216,20 +255,24 @@ wget -qO \
 # tmux
 # ==========================================
 
-mkdir -p "${HOME}/.config/tmux/plugins"
+tmux_plugins_dir="${HOME}/.config/tmux/plugins"
 
-rm -rf "${HOME}/.config/tmux/plugins/catppuccin"
+mkdir -p "${tmux_plugins_dir}"
 
-git clone https://github.com/catppuccin/tmux.git "${HOME}/.config/tmux/plugins/catppuccin/tmux"
+rm -rf "${tmux_plugins_dir}/catppuccin"
+
+git clone https://github.com/catppuccin/tmux.git "${tmux_plugins_dir}/catppuccin/tmux"
 
 # ==========================================
 # vim 
 # ==========================================
 
-mkdir -p "${HOME}/.vim/colors"
+vim_themes_dir="${HOME}/.vim/colors"
+
+mkdir -p "${vim_themes_dir}"
 
 wget -qO \
-  "${HOME}/.vim/colors/catppuccin_mocha.vim" \
+  "${vim_themes_dir}/catppuccin_mocha.vim" \
   https://raw.githubusercontent.com/catppuccin/vim/refs/heads/main/colors/catppuccin_mocha.vim
 
 # ==========================================
