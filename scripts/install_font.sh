@@ -1,35 +1,30 @@
 #!/bin/bash
 set -eu
 
-if [ $# -lt 1 ]; then
-  echo "Usage: $0 <font-url>"
-  exit 1
-fi
-
-URL="$1"
+url="$1"
 
 FONTS_DIR="${HOME}/.local/share/fonts"
 mkdir -p "${FONTS_DIR}"
-
 TMP_DIR=$(mktemp -d)
-FILE_NAME=$(basename "${URL}")
-FILE_PATH="${TMP_DIR}/${FILE_NAME}"
 
-wget -qO "${FILE_PATH}" "${URL}"
+archive=$(basename "${url}")
+archive_path="${TMP_DIR}/${archive}"
 
-case "${FILE_NAME}" in
+wget -qO "${archive_path}" "${url}"
+
+case "${archive}" in
   *.zip)
-    unzip -q "${FILE_PATH}" -d "${TMP_DIR}"
+    unzip -q "${archive_path}" -d "${TMP_DIR}"
     ;;
   *.tar.xz)
-    tar -xf "${FILE_PATH}" -C "${TMP_DIR}"
+    tar -xf "${archive_path}" -C "${TMP_DIR}"
     ;;
   *.tar.gz)
-    tar -xzf "${FILE_PATH}" -C "${TMP_DIR}"
+    tar -xzf "${archive_path}" -C "${TMP_DIR}"
     ;;
   *)
     rm -rf "${TMP_DIR}"
-    echo "Unsupported file type: ${FILE_NAME}"
+    echo "Error: Cannot extract contents from ${archive}"
     exit 1
     ;;
 esac

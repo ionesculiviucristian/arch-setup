@@ -152,6 +152,13 @@
   ],
   "official": [
     {
+      "description": "LuaRocks is the package manager for Lua modules",
+      "label": "LuaRocks",
+      "name": "luarocks",
+      "source_url": "https://github.com/luarocks/luarocks",
+      "url": "https://luarocks.org/"
+    },
+    {
       "description": "POSIX-compliant bash script to manage multiple active node.js versions",
       "label": "Node Version Manager",
       "name": "nvm",

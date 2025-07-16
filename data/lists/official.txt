@@ -37,6 +37,7 @@ libreoffice-fresh
 linux-headers
 linux-lts-headers
 lsof
+luarocks
 man-db
 mkcert
 ncdu

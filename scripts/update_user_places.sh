@@ -3,8 +3,8 @@ set -eu
 
 path="$1"
 title="$2"
-
 ID=$(date +%s)
+
 user_places_file="${HOME}/.local/share/user-places.xbel"
 
 [ ! -f "${user_places_file}" ] && echo '<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE xbel><xbel version="1.0"></xbel>' > "${user_places_file}"

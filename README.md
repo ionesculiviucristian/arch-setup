@@ -62,6 +62,7 @@ Update manually installed packages
 - [Linux headers](https://archlinux.org/packages/core/x86_64/linux-headers): Headers and scripts for building modules for the Linux kernel [Source](https://github.com/archlinux/linux)
 - [Linux LTS headers](https://archlinux.org/packages/core/x86_64/linux-lts-headers): Headers and scripts for building modules for the LTS Linux kernel [Source](https://github.com/archlinux/linux)
 - [lsof (LiSt Open Files)](https://lsof.readthedocs.io): LiSt Open Files [Source](https://github.com/lsof-org/lsof)
+- [LuaRocks](https://luarocks.org/): LuaRocks is the package manager for Lua modules [Source](https://github.com/luarocks/luarocks)
 - [man-db](https://gitlab.com/man-db/man-db): Tools for reading manual pages [Source](https://gitlab.com/man-db/man-db)
 - [mkcert](https://github.com/FiloSottile/mkcert): A simple zero-config tool to make locally trusted development certificates with any names you'd like [Source](https://github.com/FiloSottile/mkcert)
 - [NCurses Disk Usage](https://dev.yorhel.nl/ncdu): Disk usage analyzer with an ncurses interface [Source](https://g.blicky.net/ncdu.git)

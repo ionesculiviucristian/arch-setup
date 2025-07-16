@@ -49,15 +49,6 @@ yay -Syu --needed --noconfirm $(<"./data/lists/aur.txt")
 ./scripts/install_font.sh https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.tar.xz
 
 # ==========================================
-# Install external packages
-# ==========================================
-
-./installers/multi-git-status.sh
-./installers/nvm.sh
-./installers/poetry.sh
-./installers/pyenv.sh
-
-# ==========================================
 # Setup GRUB
 # ==========================================
 
@@ -124,7 +115,9 @@ cp "./configs/.config/bat/config" "${HOME}/.config/bat/config"
 # Setup ble.sh
 # ==========================================
 
-sudo sed -i 's//^[[ $- == *i* ]] && source "/usr/share/blesh/ble.sh" --noattach'
+cp "./configs/.blerc" "${HOME}/.blerc"
+
+./scripts/update_bashrc.sh '[[ $- == *i* ]] && source -- "/usr/share/blesh/ble.sh" --attach=none --rcfile "${HOME}/.blerc"'
 
 # ==========================================
 # Setup btop
@@ -138,7 +131,6 @@ cp "./configs/.config/btop/btop.conf" "${HOME}/.config/btop/btop.conf"
 # Setup direnv
 # ==========================================
 
-./scripts/update_bashrc.sh '# direnv' '\n'
 ./scripts/update_bashrc.sh 'eval "$(direnv hook bash)"'
 
 # ==========================================
@@ -191,8 +183,6 @@ mkcert -install
 # Setup neovim 
 # ==========================================
 
-sudo pacman -Syu --needed --noconfirm luarocks
-
 cp -r "./configs/.config/nvim" "${HOME}/.config"
 
 # ==========================================
@@ -223,7 +213,7 @@ nvm use 24
 nvm install-latest-npm
 
 # ==========================================
-# Setup pyenv
+# Setup Poetry
 # ==========================================
 
 ./scripts/update_bashrc.sh 'export PATH="${HOME}/.local/bin:${PATH}"'
