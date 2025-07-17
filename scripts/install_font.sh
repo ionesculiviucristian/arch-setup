@@ -3,33 +3,33 @@ set -eu
 
 url="$1"
 
-FONTS_DIR="${HOME}/.local/share/fonts"
-mkdir -p "${FONTS_DIR}"
-TMP_DIR=$(mktemp -d)
+fonts_dir="${HOME}/.local/share/fonts"
+mkdir -p "${fonts_dir}"
+tmp_dir=$(mktemp -d)
 
 archive=$(basename "${url}")
-archive_path="${TMP_DIR}/${archive}"
+archive_path="${tmp_dir}/${archive}"
 
 wget -qO "${archive_path}" "${url}"
 
 case "${archive}" in
   *.zip)
-    unzip -q "${archive_path}" -d "${TMP_DIR}"
+    unzip -q "${archive_path}" -d "${tmp_dir}"
     ;;
   *.tar.xz)
-    tar -xf "${archive_path}" -C "${TMP_DIR}"
+    tar -xf "${archive_path}" -C "${tmp_dir}"
     ;;
   *.tar.gz)
-    tar -xzf "${archive_path}" -C "${TMP_DIR}"
+    tar -xzf "${archive_path}" -C "${tmp_dir}"
     ;;
   *)
-    rm -rf "${TMP_DIR}"
+    rm -rf "${tmp_dir}"
     echo "Error: Cannot extract contents from ${archive}"
     exit 1
     ;;
 esac
 
-find "${TMP_DIR}" -type f \( -iname "*.ttf" -o -iname "*.otf" \) -exec cp {} "${FONTS_DIR}" \;
+find "${tmp_dir}" -type f \( -iname "*.ttf" -o -iname "*.otf" \) -exec cp {} "${fonts_dir}" \;
 
-rm -rf "${TMP_DIR}"
+rm -rf "${tmp_dir}"
 fc-cache -f > /dev/null

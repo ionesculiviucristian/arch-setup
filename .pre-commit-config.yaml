@@ -11,5 +11,5 @@ repos:
         language: system
       - id: render-readme
         name: Render README.md file
-        entry: node ./readme/render-readme.js
+        entry: node ./templates/readme/render-readme.js
         language: system

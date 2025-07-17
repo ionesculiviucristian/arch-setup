@@ -152,55 +152,6 @@
   ],
   "official": [
     {
-      "description": "XMLStarlet is a set of command line utilities (tools) which can be used to transform, query, validate, and edit XML documents and files",
-      "label": "XMLStarlet",
-      "name": "xmlstarlet",
-      "source_url": "https://sourceforge.net/p/xmlstar/code/ci/master/tree/",
-      "url": "https://xmlstar.sourceforge.net"
-    },
-    {
-      "description": "LuaRocks is the package manager for Lua modules",
-      "label": "LuaRocks",
-      "name": "luarocks",
-      "source_url": "https://github.com/luarocks/luarocks",
-      "url": "https://luarocks.org"
-    },
-    {
-      "description": "POSIX-compliant bash script to manage multiple active node.js versions",
-      "label": "Node Version Manager",
-      "name": "nvm",
-      "source_url": "https://github.com/nvm-sh/nvm",
-      "url": "https://github.com/nvm-sh/nvm"
-    },
-    {
-      "description": "Fast, disk space efficient package manager",
-      "label": "pnpm",
-      "name": "pnpm",
-      "source_url": "https://github.com/pnpm/pnpm",
-      "url": "https://pnpm.io"
-    },
-    {
-      "description": "Python packaging and dependency management made easy",
-      "label": "Poetry",
-      "name": "python-poetry",
-      "source_url": "https://github.com/python-poetry/poetry",
-      "url": "https://python-poetry.org"
-    },
-    {
-      "description": "Simple Python version management",
-      "label": "pyenv",
-      "name": "pyenv",
-      "source_url": "https://github.com/pyenv/pyenv",
-      "url": "https://github.com/pyenv/pyenv"
-    },
-    {
-      "description": "Versatile, classic, complete name server software",
-      "label": "BIND 9",
-      "name": "bind",
-      "source_url": "https://gitlab.isc.org/isc-projects/bind9",
-      "url": "https://www.isc.org/bind"
-    },
-    {
       "description": "Magical shell history",
       "label": "Atuin",
       "name": "atuin",
@@ -227,6 +178,13 @@
       "name": "bat",
       "source_url": "https://github.com/sharkdp/bat",
       "url": "https://github.com/sharkdp/bat"
+    },
+    {
+      "description": "Versatile, classic, complete name server software",
+      "label": "BIND 9",
+      "name": "bind",
+      "source_url": "https://gitlab.isc.org/isc-projects/bind9",
+      "url": "https://www.isc.org/bind"
     },
     {
       "description": "The command line vault",
@@ -467,6 +425,13 @@
       "url": "https://lsof.readthedocs.io"
     },
     {
+      "description": "LuaRocks is the package manager for Lua modules",
+      "label": "LuaRocks",
+      "name": "luarocks",
+      "source_url": "https://github.com/luarocks/luarocks",
+      "url": "https://luarocks.org"
+    },
+    {
       "description": "Tools for reading manual pages",
       "label": "man-db",
       "name": "man-db",
@@ -523,6 +488,13 @@
       "url": "https://github.com/tuxera/ntfs-3g"
     },
     {
+      "description": "POSIX-compliant bash script to manage multiple active node.js versions",
+      "label": "Node Version Manager",
+      "name": "nvm",
+      "source_url": "https://github.com/nvm-sh/nvm",
+      "url": "https://github.com/nvm-sh/nvm"
+    },
+    {
       "description": "GPU & Accelerator process monitoring for AMD, Apple, Huawei, Intel, NVIDIA and Qualcomm",
       "label": "nvtop",
       "name": "nvtop",
@@ -549,6 +521,27 @@
       "name": "pacman-contrib",
       "source_url": "https://gitlab.archlinux.org/pacman/pacman-contrib",
       "url": "https://gitlab.archlinux.org/pacman/pacman-contrib"
+    },
+    {
+      "description": "Fast, disk space efficient package manager",
+      "label": "pnpm",
+      "name": "pnpm",
+      "source_url": "https://github.com/pnpm/pnpm",
+      "url": "https://pnpm.io"
+    },
+    {
+      "description": "Python packaging and dependency management made easy",
+      "label": "Poetry",
+      "name": "python-poetry",
+      "source_url": "https://github.com/python-poetry/poetry",
+      "url": "https://python-poetry.org"
+    },
+    {
+      "description": "Simple Python version management",
+      "label": "pyenv",
+      "name": "pyenv",
+      "source_url": "https://github.com/pyenv/pyenv",
+      "url": "https://github.com/pyenv/pyenv"
     },
     {
       "description": "A parallel implementation of gzip for modern multi-processor, multi-core machines",
@@ -675,6 +668,13 @@
       "name": "xclip",
       "source_url": "https://github.com/astrand/xclip",
       "url": "https://github.com/astrand/xclip"
+    },
+    {
+      "description": "XMLStarlet is a set of command line utilities (tools) which can be used to transform, query, validate, and edit XML documents and files",
+      "label": "XMLStarlet",
+      "name": "xmlstarlet",
+      "source_url": "https://sourceforge.net/p/xmlstar/code/ci/master/tree/",
+      "url": "https://xmlstar.sourceforge.net"
     },
     {
       "description": "Zip is a compression and file packaging/archive utility",

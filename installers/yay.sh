@@ -1,7 +1,7 @@
 #!/bin/bash
 set -eu
 
-git clone --quiet https://aur.archlinux.org/yay.git "${HOME}/.repos/yay"
+git clone -q https://aur.archlinux.org/yay.git "${HOME}/.repos/yay"
 
 (
   cd "${HOME}/.repos/yay"

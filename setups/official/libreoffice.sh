@@ -1,0 +1,42 @@
+#!/bin/bash
+set -eu
+
+mkdir -p "${HOME}/.config/atuin"
+
+cp "./configs/.config/atuin/config.toml" "${HOME}/.config/atuin/config.toml"
+
+./scripts/update_bashrc.sh 'eval "$(atuin init bash)"'
+
+atuin_dir="${HOME}/.config/atuin/themes"
+
+mkdir -p "${atuin_dir}"
+
+libreoffice_user_dir="${HOME}/.config/libreoffice/4/user"
+
+mkdir -p "${libreoffice_user_dir}/config"
+
+wget -qO \
+  "${libreoffice_user_dir}/config/catppuccin-mocha-mauve.soc" \
+  https://raw.githubusercontent.com/catppuccin/libreoffice/refs/heads/main/themes/mocha/mauve/catppuccin-mocha-mauve.soc
+
+libreoffice_theme_file=$(mktemp)
+
+wget -qO \
+  "${libreoffice_theme_file}" \
+  https://raw.githubusercontent.com/catppuccin/libreoffice/main/themes/mocha/mauve/catppuccin-mocha-mauve.xcu
+
+if [ ! -f "${libreoffice_user_dir}/registrymodifications.xcu" ]; then
+  {
+    echo '<?xml version="1.0" encoding="UTF-8"?>'
+    echo '<oor:items xmlns:oor="http://openoffice.org/2001/registry" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">'
+    cat "${libreoffice_theme_file}"; echo
+    echo '</oor:items>'
+  } > "${libreoffice_user_dir}/registrymodifications.xcu"
+else
+  # shellcheck disable=SC2086
+  sed -i \
+    "s|<item oor:path=\"\/org.openoffice.Office.UI\/ColorScheme\/ColorSchemes\">.*<\/item>|$(cat ${libreoffice_theme_file})|" \
+    "${libreoffice_user_dir}/registrymodifications.xcu"
+fi
+
+exit 0
