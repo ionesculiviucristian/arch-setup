@@ -8,6 +8,7 @@ blender
 broot
 btop
 btrfs-progs
+cups
 dbus
 direnv
 dkms
@@ -25,6 +26,7 @@ fzf
 gimp
 git
 go-yq
+gwenview
 imagemagick
 jq
 kcalc
@@ -39,11 +41,13 @@ linux-lts-headers
 lsof
 luarocks
 man-db
+man-pages
 mkcert
 ncdu
 neovim
 net-tools
 nmap
+noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
 nss
 ntfs-3g
 nvm
@@ -57,6 +61,7 @@ pnpm
 pyenv
 python-poetry
 qbittorrent
+reflector
 ripgrep
 rsync
 shellcheck
@@ -68,6 +73,7 @@ thunderbird
 tmux
 tmuxp
 unzip
+usbutils
 virtualbox
 virtualbox-guest-iso
 virtualbox-host-dkms

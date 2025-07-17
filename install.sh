@@ -68,6 +68,7 @@ yay \
 ./setups/official/bat.sh
 ./setups/official/broot.sh
 ./setups/official/btop.sh
+./setups/official/cups.sh
 ./setups/official/direnv.sh
 ./setups/official/docker.sh
 ./setups/official/fzf.sh
@@ -82,6 +83,7 @@ yay \
 ./setups/official/poetry.sh
 ./setups/official/pyenv.sh
 ./setups/official/qBittorrent.sh
+./setups/official/reflector.sh
 ./setups/official/starship.sh
 ./setups/official/superfile.sh
 ./setups/official/tmux.sh
