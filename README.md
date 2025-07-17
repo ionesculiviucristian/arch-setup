@@ -7,7 +7,7 @@ Wallpapers from [wallpapercave.com](https://wallpapercave.com/)
 ## Installation
 
 ```bash
-./install_hardware_b450-i-aorus-pro-wifi.sh | tee install_hardware.log
+./installers/machines/b450-i-aorus-pro-wifi.sh | tee install_hardware.log
 ./install.sh | tee install.log
 ```
 
