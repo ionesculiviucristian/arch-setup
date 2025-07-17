@@ -1,16 +1,19 @@
 #!/bin/bash
 set -eu
 
+# https://github.com/aristocratos/btop?tab=readme-ov-file#configurability
+# Optional: rocm-smi-lib (optional) - AMD GPU support
+
 btop_dir="${HOME}/.config/btop"
 
 mkdir -p "${btop_dir}/themes"
 
-cp \
-  "./configs/.config/btop/btop.conf" \
-  "${btop_dir}/btop.conf"
-
 wget -qO \
   "${btop_dir}/themes/catppuccin_mocha.theme" \
   https://raw.githubusercontent.com/catppuccin/btop/refs/heads/main/themes/catppuccin_mocha.theme
+
+cp \
+  "./configs/.config/btop/btop.conf" \
+  "${btop_dir}/btop.conf"
 
 exit 0

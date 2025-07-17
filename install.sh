@@ -13,13 +13,18 @@ cp "./configs/.bashrc" "${HOME}/.bashrc"
 
 ./setups/dirs.sh
 ./setups/wallpapers.sh
+./setups/power.sh
 
 # ==========================================
 # Install official packages
 # ==========================================
 
 # shellcheck disable=SC2046
-sudo pacman -Syu --needed --noconfirm $(<"./data/lists/official.txt")
+sudo pacman \
+  -Syu \
+  --needed \
+  --noconfirm \
+  $(<"./data/lists/official.txt")
 
 # ==========================================
 # Install yay
@@ -32,7 +37,11 @@ sudo pacman -Syu --needed --noconfirm $(<"./data/lists/official.txt")
 # ==========================================
 
 # shellcheck disable=SC2046
-yay -Syu --needed --noconfirm $(<"./data/lists/aur.txt")
+yay \
+  -Syu \
+  --needed \
+  --noconfirm \
+  $(<"./data/lists/aur.txt")
 
 # ==========================================
 # Install fonts
@@ -59,6 +68,7 @@ yay -Syu --needed --noconfirm $(<"./data/lists/aur.txt")
 ./setups/official/bat.sh
 ./setups/official/broot.sh
 ./setups/official/btop.sh
+./setups/official/direnv.sh
 ./setups/official/docker.sh
 ./setups/official/fzf.sh
 ./setups/official/kitty.sh
