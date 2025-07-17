@@ -3,7 +3,7 @@ repos:
     hooks:
       - id: generate-bash-aliases-help
         name: Generate bash aliases help file
-        entry: python generate_bash_aliases_help.py
+        entry: python ./scripts/generate_bash_aliases_help.py
         language: system
       - id: process-packages
         name: Update package lists
