@@ -1,9 +1,13 @@
 #!/bin/bash
 set -eu
 
-sudo mkdir -p "/etc/docker"
+docker_dir="/etc/docker"
 
-sudo cp "./configs/etc/docker/daemon.json" "/etc/docker/daemon.json"
+sudo mkdir -p "${docker_dir}"
+
+sudo cp \
+  "./configs/etc/docker/daemon.json" \
+  "${docker_dir}/daemon.json"
 
 sudo systemctl start docker.service
 sudo systemctl enable docker.service

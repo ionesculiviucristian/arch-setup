@@ -1,16 +1,7 @@
 #!/bin/bash
 set -eu
 
-mkdir -p "${HOME}/.config/atuin"
-
-cp "./configs/.config/atuin/config.toml" "${HOME}/.config/atuin/config.toml"
-
-./scripts/update_bashrc.sh 'eval "$(atuin init bash)"'
-
-atuin_dir="${HOME}/.config/atuin/themes"
-
-mkdir -p "${atuin_dir}"
-
+libreoffice_theme_file=$(mktemp)
 libreoffice_user_dir="${HOME}/.config/libreoffice/4/user"
 
 mkdir -p "${libreoffice_user_dir}/config"
@@ -19,7 +10,6 @@ wget -qO \
   "${libreoffice_user_dir}/config/catppuccin-mocha-mauve.soc" \
   https://raw.githubusercontent.com/catppuccin/libreoffice/refs/heads/main/themes/mocha/mauve/catppuccin-mocha-mauve.soc
 
-libreoffice_theme_file=$(mktemp)
 
 wget -qO \
   "${libreoffice_theme_file}" \

@@ -1,15 +1,15 @@
 #!/bin/bash
 set -eu
 
-mkdir -p "${HOME}/.config/atuin"
+atuin_dir="${HOME}/.config/atuin"
 
-cp "./configs/.config/atuin/config.toml" "${HOME}/.config/atuin/config.toml"
+mkdir -p "${atuin_dir}/themes"
+
+cp \
+  "./configs/.config/atuin/config.toml" \
+  "${atuin_dir}/config.toml"
 
 ./scripts/update_bashrc.sh 'eval "$(atuin init bash)"'
-
-atuin_dir="${HOME}/.config/atuin/themes"
-
-mkdir -p "${atuin_dir}"
 
 wget -qO \
   "${atuin_dir}/themes/catppuccin-mocha-mauve.toml" \

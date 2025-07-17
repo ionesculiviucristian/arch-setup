@@ -1,7 +1,9 @@
 #!/bin/bash
 set -eu
 
-sudo cp "./configs/etc/proftpd.conf" "/etc/proftpd.conf"
+sudo cp \
+    "./configs/etc/proftpd.conf" \
+    "/etc/proftpd.conf"
 
 echo "127.0.0.1 ftp.localdev" | sudo tee -a "/etc/hosts"
 

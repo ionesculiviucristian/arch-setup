@@ -1,9 +1,9 @@
 #!/bin/bash
 set -eu
 
-./scripts/update_bashrc.sh 'eval "$(fzf --bash)"'
-
 catppuccin_fzf_dir="${HOME}/.repos/catppuccin-fzf"
+
+./scripts/update_bashrc.sh 'eval "$(fzf --bash)"'
 
 rm -rf "${catppuccin_fzf_dir}"
 

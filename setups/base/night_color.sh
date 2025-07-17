@@ -8,5 +8,4 @@ kwriteconfig6 --file "${HOME}/.config/kwinrc" --group "NightColor" --key "Longit
 kwriteconfig6 --file "${HOME}/.config/kwinrc" --group "NightColor" --key "Mode" "Location"
 kwriteconfig6 --file "${HOME}/.config/kwinrc" --group "NightColor" --key "NightTemperature" 3500
 
-
 exit 0

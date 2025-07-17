@@ -1,21 +1,28 @@
 #!/bin/bash
 set -eu
 
-mkdir -p "${HOME}/.config/kitty"
+kitty_dir="${HOME}/.config/kitty"
 
-cp "./configs/.config/kitty/kitty.conf" "${HOME}/.config/kitty"
+mkdir -p "${kitty_dir}/themes"
 
-kwriteconfig6 --file "${HOME}/.config/kdeglobals" --group "General" --key "TerminalApplication" "kitty"
-kwriteconfig6 --file "${HOME}/.config/kdeglobals" --group "General" --key "TerminalService" "kitty.desktop"
+cp \
+  "./configs/.config/kitty/kitty.conf" \
+  "${kitty_dir}/kitty.conf"
+
+kwriteconfig6 \
+  --file "${HOME}/.config/kdeglobals" \
+  --group "General" \
+  --key "TerminalApplication" "kitty"
+
+kwriteconfig6 \
+  --file "${HOME}/.config/kdeglobals" \
+  --group "General" \
+  --key "TerminalService" "kitty.desktop"
 
 ./scripts/update_bashrc.sh '[ "${TERM}" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"'
 
-kitty_themes_dir="${HOME}/.repos/catppuccin-fzf"
-
-mkdir -p "${kitty_themes_dir}"
-
 wget -qO \
-  "${kitty_themes_dir}/mocha.conf" \
+  "${kitty_dir}/themes/mocha.conf" \
   https://raw.githubusercontent.com/catppuccin/kitty/refs/heads/main/themes/mocha.conf
 
 exit 0

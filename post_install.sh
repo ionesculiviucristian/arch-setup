@@ -1,17 +1,17 @@
 #!/bin/bash
 set -eu
 
-if [ $# -lt 1 ]; then
-  echo "Usage: $0 <EMAIL>"
+email="$1"
+
+if [ -z "${email}" ]; then
+  echo "Error: No email provided"
   exit 1
 fi
-
-EMAIL="$1"
 
 # shellcheck disable=SC1091
 source "${HOME}/.bashrc"
 
-BW_SESSION=$(bw login "${EMAIL}" --method 0 --raw)
+BW_SESSION=$(bw login "${email}" --method 0 --raw)
 export BW_SESSION
 
 bw get item "Private bash aliases" | jq -r '.notes' > "${HOME}/.bash_private_aliases"
@@ -36,12 +36,12 @@ git config --global merge.tool vscode
 git config --global mergetool.vscode.cmd 'code --wait $MERGED'
 
 git config --file ~/.gitconfig-personal user.name "${GIT_PERSONAL_USER:?err}"
-git config --file ~/.gitconfig-personal user.email "${GIT_PERSONAL_USER_EMAIL:?err}"
+git config --file ~/.gitconfig-personal user.email "${GIT_PERSONAL_USER_email:?err}"
 git config --file ~/.gitconfig-personal user.signingkey "$(gpg --list-secret-keys --keyid-format LONG | grep '^sec' | head -n1 | awk '{print $2}' | cut -d'/' -f2)"
 git config --file ~/.gitconfig-personal commit.gpgsign true
 
 git config --file ~/.gitconfig-work user.name "${GIT_WORK_USER:?err}"
-git config --file ~/.gitconfig-work user.email "${GIT_WORK_USER_EMAIL:?err}"
+git config --file ~/.gitconfig-work user.email "${GIT_WORK_USER_email:?err}"
 
 cat <<EOF >> ~/.gitconfig
 

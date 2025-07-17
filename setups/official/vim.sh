@@ -1,11 +1,13 @@
 #!/bin/bash
 set -eu
 
-cp "./configs/.vimrc" "${HOME}/.vimrc"
-
 vim_themes_dir="${HOME}/.vim/colors"
 
 mkdir -p "${vim_themes_dir}"
+
+cp \
+  "./configs/.vimrc" \
+  "${HOME}/.vimrc"
 
 wget -qO \
   "${vim_themes_dir}/catppuccin_mocha.vim" \

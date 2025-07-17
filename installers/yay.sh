@@ -1,9 +1,11 @@
 #!/bin/bash
 set -eu
 
-git clone -q https://aur.archlinux.org/yay.git "${HOME}/.repos/yay"
+yay_dir="${HOME}/.repos/yay"
+
+git clone -q https://aur.archlinux.org/yay.git "${yay_dir}"
 
 (
-  cd "${HOME}/.repos/yay"
+  cd "${yay_dir}"
   makepkg -si --needed --noconfirm >/dev/null
 )
