@@ -10,7 +10,7 @@ const sortPackages = (a, b) => a.label.toLowerCase().localeCompare(b.label);
 const sortBrowserPlugins = (a, b) => a.name.toLowerCase().localeCompare(b.name);
 
 ejs.renderFile(
-  "./readme/README.ejs",
+  "./templates/readme/README.ejs",
   { browserPlugins, packages, sortPackages, sortBrowserPlugins },
   {},
   function (err, str) {

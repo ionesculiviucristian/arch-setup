@@ -1,32 +1,8 @@
 #!/bin/bash
 set -eu
 
-email="$1"
-
-if [ -z "${email}" ]; then
-  echo "Error: No email provided"
-  exit 1
-fi
-
-# shellcheck disable=SC1091
-source "${HOME}/.bashrc"
-
-BW_SESSION=$(bw login "${email}" --method 0 --raw)
-export BW_SESSION
-
-bw get item "Private bash aliases" | jq -r '.notes' > "${HOME}/.bash_private_aliases"
-bw get item "Arch setup" | jq -r '.notes' > "./env"
-bw get item "GPG private key" | jq -r '.notes' | gpg --import
-bw get item "GPG public key" | jq -r '.notes' | gpg --import
-
-bw logout
-
 # shellcheck disable=SC1091
 set -a && source ".env" && set +a
-
-# ==========================================
-# Setup git
-# ==========================================
 
 git config --global core.editor "code --wait --new-window"
 git config --global diff.tool vscode
@@ -51,3 +27,5 @@ cat <<EOF >> ~/.gitconfig
 [includeIf "hasconfig:remote.*.url:${GIT_WORK_REMOTE:?err}:*/**"]
     path = ~/.gitconfig-work 
 EOF
+
+exit 0

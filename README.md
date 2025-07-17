@@ -8,16 +8,7 @@ Wallpapers from [wallpapercave.com](https://wallpapercave.com/)
 
 ```bash
 ./install_hardware_b450-i-aorus-pro-wifi.sh | tee install_hardware.log
-./install.sh 2>&1 | tee install.log
-./post_install.sh your-email@example.com | tee post_install.log
-
-./scripts/check.sh
-```
-
-Update manually installed packages
-
-```bash
-./scripts/update.sh
+./install.sh | tee install.log
 ```
 
 ## Official Arch packages
@@ -208,6 +199,13 @@ For a list off all available aliases, [read more here](./ALIASES.md) or run `ali
 - [Plasma Integration](https://chromewebstore.google.com/detail/plasma-integration/cimiefiiaegbelhefglklhhakcgmhkai): Multitask efficiently by controlling browser functions from the Plasma desktop
 - [Pricy](https://chromewebstore.google.com/detail/pricy/jnpfnacconjipomhfkphknjfmcnhagpb): Pricy is your best friend when buying online
 - [QR Code Generator](https://chromewebstore.google.com/detail/qr-code-generator/afpbjjgbdimpioenaedcjgkaigggcdpp): A super handy QR Code Generator
+
+## Private setups
+
+```bash
+./setups/secrets.sh email@domain.com
+./setups/official/git.sh
+```
 
 ## Development
 
