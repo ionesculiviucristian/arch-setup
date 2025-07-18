@@ -7,7 +7,10 @@ wallpapers_dir="${HOME}/Pictures/Wallpapers"
 
 sudo mkdir -p "${sddm_conf_dir}"
 
-sudo pacman -Syu --needed --noconfirm \
+sudo pacman \
+  -Syu \
+  --needed \
+  --noconfirm \
   qt6-svg \
   qt6-declarative \
   qt5-quickcontrols2

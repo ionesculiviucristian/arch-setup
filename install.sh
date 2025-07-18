@@ -31,6 +31,7 @@ sudo pacman \
 # ==========================================
 
 ./installers/yay.sh
+./installers/papirus_folders.sh
 
 # ==========================================
 # Install AUR packages
@@ -102,8 +103,6 @@ yay \
 # ==========================================
 # Post install
 # ==========================================
-
-./installers/papirus_folders.sh
 
 ./scripts/update_bashrc.sh '[[ ${BLE_VERSION-} ]] && ble-attach'
 

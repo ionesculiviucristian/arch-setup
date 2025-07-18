@@ -5,7 +5,11 @@ set -eu
 sudo sed -i '/\[multilib\]/,/Include =/ s/^#//' "/etc/pacman.conf"
 
 # shellcheck disable=SC2046
-sudo pacman -Syu --needed --noconfirm $(<"./data/lists/hardware_b450-i-aorus-pro-wifi.txt")
+sudo pacman \
+  -Syu \
+  --needed \
+  --noconfirm \
+  $(<"./data/lists/hardware_b450-i-aorus-pro-wifi.txt")
 
 # https://www.xp-pen.com/download/deco-03.html
 wget https://download01.xp-pen.com/file/2024/06/XPPenLinux3.4.9-240607.tar.gz
