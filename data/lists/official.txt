@@ -55,11 +55,14 @@ nvtop
 obs-studio
 pacman-contrib
 partitionmanager
+perl-image-exiftool
 pigz
 plasma-x11-session
 pnpm
 pyenv
+python-pip
 python-poetry
+python-shtab
 qbittorrent
 reflector
 ripgrep

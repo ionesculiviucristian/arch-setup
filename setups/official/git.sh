@@ -1,7 +1,7 @@
 #!/bin/bash
+# shellcheck disable=SC1091
 set -eu
 
-# shellcheck disable=SC1091
 set -a && source ".env" && set +a
 
 git config --global core.editor "code --wait --new-window"

@@ -7,10 +7,6 @@ wallpapers_dir="${HOME}/Pictures/Wallpapers"
 
 sudo mkdir -p "${sddm_conf_dir}"
 
-sudo cp \
-  "./configs/etc/sddm.conf.d/kde_settings.conf" \
-  "${sddm_conf_dir}/kde_settings.conf"
-
 sudo pacman -Syu --needed --noconfirm \
   qt6-svg \
   qt6-declarative \
@@ -25,5 +21,9 @@ sudo sed -i \
 sudo cp \
   "${wallpapers_dir}/wp11361931-minimalist-3440x1440-wallpapers.png" \
   "${sddm_themes_dir}/catppuccin-mocha/backgrounds/wall.jpg"
+
+sudo cp \
+  "./configs/etc/sddm.conf.d/kde_settings.conf" \
+  "${sddm_conf_dir}/kde_settings.conf"
 
 exit 0

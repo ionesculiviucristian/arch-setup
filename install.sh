@@ -27,7 +27,7 @@ sudo pacman \
   $(<"./data/lists/official.txt")
 
 # ==========================================
-# Install yay
+# Install external packages
 # ==========================================
 
 ./installers/yay.sh
@@ -71,6 +71,7 @@ yay \
 ./setups/official/cups.sh
 ./setups/official/direnv.sh
 ./setups/official/docker.sh
+./setups/official/eza.sh
 ./setups/official/fzf.sh
 ./setups/official/kitty.sh
 ./setups/official/lazygit.sh
@@ -79,7 +80,6 @@ yay \
 ./setups/official/neovim.sh
 ./setups/official/nvm.sh
 ./setups/official/obs_studio.sh
-./setups/official/papirus_folders.sh
 ./setups/official/poetry.sh
 ./setups/official/pyenv.sh
 ./setups/official/qBittorrent.sh
@@ -88,6 +88,7 @@ yay \
 ./setups/official/superfile.sh
 ./setups/official/tmux.sh
 ./setups/official/vim.sh
+./setups/official/zoxide.sh
 
 # ==========================================
 # Setup AUR packages
@@ -101,6 +102,8 @@ yay \
 # ==========================================
 # Post install
 # ==========================================
+
+./installers/papirus_folders.sh
 
 ./scripts/update_bashrc.sh '[[ ${BLE_VERSION-} ]] && ble-attach'
 

@@ -12,7 +12,9 @@ rm -rf "${catppuccin_grub_dir}"
 
 git clone -q https://github.com/catppuccin/grub.git "${catppuccin_grub_dir}"
 
-sudo cp -r "${catppuccin_grub_dir}/src/catppuccin-mocha-grub-theme" "${grub_themes_dir}/catppuccin-mocha-grub-theme"
+sudo cp -r \
+  "${catppuccin_grub_dir}/src/catppuccin-mocha-grub-theme" \
+  "${grub_themes_dir}/catppuccin-mocha-grub-theme"
 
 if ! grep -q "catppuccin-mocha-grub-theme" "/boot/grub/grub.cfg"; then
   sudo sed -i 's|^#GRUB_THEME="/path/to/gfxtheme"|GRUB_THEME="/usr/share/grub/themes/catppuccin-mocha-grub-theme/theme.txt"|' "/etc/default/grub"

@@ -1,6 +1,9 @@
 #!/bin/bash
 set -eu
 
+# https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md#default
+# https://github.com/catppuccin/lazygit
+
 lazygit_dir="${HOME}/.config/lazygit"
 
 mkdir -p "${lazygit_dir}"

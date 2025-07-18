@@ -2,7 +2,6 @@
 set -eu
 
 # https://github.com/aristocratos/btop?tab=readme-ov-file#configurability
-# Optional: rocm-smi-lib (optional) - AMD GPU support
 
 btop_dir="${HOME}/.config/btop"
 

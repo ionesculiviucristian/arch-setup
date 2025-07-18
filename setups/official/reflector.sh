@@ -1,6 +1,8 @@
 #!/bin/bash
 set -eu
 
+# https://xyne.dev/projects/reflector/
+
 sudo cp \
   "./configs/etc/xdg/reflector/reflector.conf" \
   "/etc/xdg/reflector/reflector.conf"

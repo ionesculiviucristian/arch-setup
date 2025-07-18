@@ -1,13 +1,6 @@
 {
   "aur": [
     {
-      "description": "Manage many git repos with sanity",
-      "label": "gita",
-      "name": "gita",
-      "source_url": "https://github.com/nosarthur/gita",
-      "url": "https://github.com/nosarthur/gita"
-    },
-    {
       "description": "Bitwarden is the best password manager for securely storing, managing, and sharing sensitive information such as passwords, passkeys, and credit cards",
       "label": "Bitwarden",
       "name": "bitwarden-bin",
@@ -36,6 +29,13 @@
       "url": "https://archlinux-downgrade.github.io/downgrade"
     },
     {
+      "description": "Manage many git repos with sanity",
+      "label": "gita",
+      "name": "gita",
+      "source_url": "https://github.com/nosarthur/gita",
+      "url": "https://github.com/nosarthur/gita"
+    },
+    {
       "description": "Pixel perfect icon theme for Linux",
       "label": "Papirus",
       "name": "papirus-icon-theme",
@@ -43,18 +43,18 @@
       "url": "https://store.kde.org/p/1166289"
     },
     {
-      "description": "Highly configurable GPL-licensed FTP server software",
-      "label": "ProFTPD",
-      "name": "proftpd",
-      "source_url": "https://github.com/proftpd/proftpd",
-      "url": "http://www.proftpd.org"
-    },
-    {
       "description": "Postman is the single platform for designing, building, and scaling APIs—together",
       "label": "Postman",
       "name": "postman-bin",
       "source_url": "https://github.com/postmanlabs",
       "url": "https://www.postman.com"
+    },
+    {
+      "description": "Highly configurable GPL-licensed FTP server software",
+      "label": "ProFTPD",
+      "name": "proftpd",
+      "source_url": "https://github.com/proftpd/proftpd",
+      "url": "http://www.proftpd.org"
     },
     {
       "description": "Online music streaming service",
@@ -537,13 +537,6 @@
       "url": "https://obsproject.com"
     },
     {
-      "description": "KDE Partition Manager is a utility to help you manage the disks, partitions, and file systems on your computer",
-      "label": "KDE Partition Manager",
-      "name": "partitionmanager",
-      "source_url": "https://github.com/KDE/partitionmanager",
-      "url": "https://apps.kde.org/partitionmanager"
-    },
-    {
       "description": "Contributed scripts and tools for pacman systems",
       "label": "pacman-contrib",
       "name": "pacman-contrib",
@@ -551,25 +544,18 @@
       "url": "https://gitlab.archlinux.org/pacman/pacman-contrib"
     },
     {
-      "description": "Fast, disk space efficient package manager",
-      "label": "pnpm",
-      "name": "pnpm",
-      "source_url": "https://github.com/pnpm/pnpm",
-      "url": "https://pnpm.io"
+      "description": "KDE Partition Manager is a utility to help you manage the disks, partitions, and file systems on your computer",
+      "label": "KDE Partition Manager",
+      "name": "partitionmanager",
+      "source_url": "https://github.com/KDE/partitionmanager",
+      "url": "https://apps.kde.org/partitionmanager"
     },
     {
-      "description": "Python packaging and dependency management made easy",
-      "label": "Poetry",
-      "name": "python-poetry",
-      "source_url": "https://github.com/python-poetry/poetry",
-      "url": "https://python-poetry.org"
-    },
-    {
-      "description": "Simple Python version management",
-      "label": "pyenv",
-      "name": "pyenv",
-      "source_url": "https://github.com/pyenv/pyenv",
-      "url": "https://github.com/pyenv/pyenv"
+      "description": "Read, Write and Edit Meta Information!",
+      "label": "ExifTool",
+      "name": "perl-image-exiftool",
+      "source_url": "https://github.com/exiftool/exiftool",
+      "url": "https://exiftool.org"
     },
     {
       "description": "A parallel implementation of gzip for modern multi-processor, multi-core machines",
@@ -586,11 +572,39 @@
       "url": "https://archlinux.org/packages/extra/x86_64/plasma-x11-session"
     },
     {
-      "description": "A Python 3 module and script to retrieve and filter the latest Pacman mirror list",
-      "label": "reflector",
-      "name": "reflector",
-      "source_url": "https://xyne.dev/projects/reflector/src",
-      "url": "https://xyne.dev/projects/reflector"
+      "description": "Fast, disk space efficient package manager",
+      "label": "pnpm",
+      "name": "pnpm",
+      "source_url": "https://github.com/pnpm/pnpm",
+      "url": "https://pnpm.io"
+    },
+    {
+      "description": "Simple Python version management",
+      "label": "pyenv",
+      "name": "pyenv",
+      "source_url": "https://github.com/pyenv/pyenv",
+      "url": "https://github.com/pyenv/pyenv"
+    },
+    {
+      "description": "pip is the package installer for Python",
+      "label": "pip",
+      "name": "python-pip",
+      "source_url": "https://github.com/pypa/pip",
+      "url": "https://pip.pypa.io/en/stable"
+    },
+    {
+      "description": "Python packaging and dependency management made easy",
+      "label": "Poetry",
+      "name": "python-poetry",
+      "source_url": "https://github.com/python-poetry/poetry",
+      "url": "https://python-poetry.org"
+    },
+    {
+      "description": "Automagic shell tab completion for Python CLI applications",
+      "label": "shtab",
+      "name": "python-shtab",
+      "source_url": "https://github.com/iterative/shtab",
+      "url": "https://docs.iterative.ai/shtab"
     },
     {
       "description": "The qBittorrent project aims to provide an open-source software alternative to µTorrent",
@@ -598,6 +612,13 @@
       "name": "qbittorrent",
       "source_url": "https://github.com/qbittorrent/qBittorrent",
       "url": "https://www.qbittorrent.org"
+    },
+    {
+      "description": "A Python 3 module and script to retrieve and filter the latest Pacman mirror list",
+      "label": "reflector",
+      "name": "reflector",
+      "source_url": "https://xyne.dev/projects/reflector/src",
+      "url": "https://xyne.dev/projects/reflector"
     },
     {
       "description": "ripgrep recursively searches directories for a regex pattern while respecting your gitignore",

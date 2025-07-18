@@ -1,6 +1,9 @@
 #!/bin/bash
 set -eu
 
+# https://docs.docker.com/engine/daemon/#configuration-file
+# https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#configuring-docker
+
 docker_dir="/etc/docker"
 
 sudo mkdir -p "${docker_dir}"
