@@ -17,4 +17,6 @@ tar -xzf "XPPenLinux3.4.9-240607.tar.gz"
 sudo sh "./XPPenLinux3.4.9-240607/install.sh"
 rm -rf XPPenLinux*
 
-sudo mv "/etc/xdg/autostart/xppentablet.desktop" "/etc/xdg/autostart/xppentablet.desktop.bak"
+sudo mv \
+  "/etc/xdg/autostart/xppentablet.desktop" \
+  "/etc/xdg/autostart/xppentablet.desktop.bak"

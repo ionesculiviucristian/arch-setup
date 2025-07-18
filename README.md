@@ -117,6 +117,7 @@ Wallpapers from [wallpapercave.com](https://wallpapercave.com/)
 
 ## External packages
 
+- [Papirus Folders](https://github.com/PapirusDevelopmentTeam/papirus-folders): A script that lets you change the colors of folders in Papirus icon theme [Source](https://github.com/PapirusDevelopmentTeam/papirus-folders)
 - [Yay](https://github.com/Jguer/yay): Yet another Yogurt - An AUR Helper written in Go [Source](https://github.com/Jguer/yay)
 
 ## Hardware
@@ -209,7 +210,7 @@ For a list off all available aliases, [read more here](./ALIASES.md) or run `ali
 - [Pricy](https://chromewebstore.google.com/detail/pricy/jnpfnacconjipomhfkphknjfmcnhagpb): Pricy is your best friend when buying online
 - [QR Code Generator](https://chromewebstore.google.com/detail/qr-code-generator/afpbjjgbdimpioenaedcjgkaigggcdpp): A super handy QR Code Generator
 
-## Private setups
+## Setup private settings, keys etc.
 
 ```bash
 ./setups/secrets.sh email@domain.com
@@ -225,7 +226,7 @@ pip install pre-commit
 pre-commit install
 ```
 
-Install kitty terminfo for ssh users that don't have it
+Install kitty terminfo when using users over SSH
 
 ```bash
 cd ~

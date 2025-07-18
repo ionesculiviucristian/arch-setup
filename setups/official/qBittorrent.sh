@@ -15,4 +15,12 @@ cp \
   "configs/.config/qBittorrent/qBittorrent.conf" \
   "${qBittorrent_dir}/qBittorrent.conf"
 
+sed -i  \
+  "s|^General\\\\CustomUIThemePath=|General\\\\CustomUIThemePath=${qBittorrent_dir}/themes/catppuccin-mocha.qbtheme|" \
+  "${qBittorrent_dir}/qBittorrent.conf"
+
+sed -i  \
+  "s|^General\\\\UseCustomUITheme=false|General\\\\UseCustomUITheme=true|" \
+  "${qBittorrent_dir}/qBittorrent.conf"
+
 exit 0

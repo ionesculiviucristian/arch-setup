@@ -84,7 +84,7 @@ yay \
 ./setups/official/poetry.sh
 ./setups/official/pyenv.sh
 ./setups/official/qBittorrent.sh
-./setups/official/reflector.sh
+./setups/official/reflector.sh "${REFLECTOR_COUNTRY}"
 ./setups/official/starship.sh
 ./setups/official/superfile.sh
 ./setups/official/tmux.sh

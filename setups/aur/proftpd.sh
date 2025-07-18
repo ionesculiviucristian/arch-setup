@@ -1,9 +1,12 @@
 #!/bin/bash
 set -eu
 
-sudo cp \
-  "./configs/etc/proftpd.conf" \
-  "/etc/proftpd.conf"
+export USER="${USER}"
+# shellcheck disable=SC2155
+export GROUP="$(id -gn "${USER}")"
+
+envsubst < "./configs/etc/proftpd.conf" | \
+sudo tee "/etc/proftpd.conf" > /dev/null
 
 echo "127.0.0.1 ftp.localdev" | sudo tee -a "/etc/hosts"
 

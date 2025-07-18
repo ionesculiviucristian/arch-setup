@@ -87,6 +87,13 @@
   ],
   "external": [
     {
+      "description": "A script that lets you change the colors of folders in Papirus icon theme",
+      "label": "Papirus Folders",
+      "name": "",
+      "source_url": "https://github.com/PapirusDevelopmentTeam/papirus-folders",
+      "url": "https://github.com/PapirusDevelopmentTeam/papirus-folders"
+    },
+    {
       "description": "Yet another Yogurt - An AUR Helper written in Go",
       "label": "Yay",
       "name": "",
