@@ -1,9 +1,12 @@
 #!/bin/bash
+# shellcheck disable=SC1091
 set -eu
 
 # https://xyne.dev/projects/reflector/
 
-export COUNTRY="${1:-"Romania"}"
+set -a && source ".env" && set +a
+
+export COUNTRY="${REFLECTOR_COUNTRY}"
 
 envsubst < "./configs/etc/xdg/reflector/reflector.conf" | \
 sudo tee "/etc/xdg/reflector/reflector.conf" > /dev/null
