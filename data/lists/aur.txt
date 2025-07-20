@@ -8,5 +8,5 @@ postman-bin
 proftpd
 spotify
 tdrop
-visual-studio-code-bin 
+visual-studio-code-bin
 zoom

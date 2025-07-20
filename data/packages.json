@@ -73,7 +73,7 @@
     {
       "description": "Your code editor. Redefined with AI",
       "label": "Visual Studio Code",
-      "name": "visual-studio-code-bin ",
+      "name": "visual-studio-code-bin",
       "source_url": "https://github.com/microsoft/vscode",
       "url": "https://code.visualstudio.com"
     },
@@ -497,7 +497,7 @@
       "description": "The collection of base networking utilities for Linux",
       "label": "net-tools",
       "name": "net-tools",
-      "source_url": "https://sourceforge.net/p/net-tools/code/ci/master/tree/",
+      "source_url": "https://sourceforge.net/p/net-tools/code/ci/master/tree",
       "url": "https://net-tools.sourceforge.io"
     },
     {
@@ -585,7 +585,7 @@
       "label": "plocate",
       "name": "plocate",
       "source_url": "https://git.sesse.net/?p=plocate",
-      "url": "https://plocate.sesse.net/"
+      "url": "https://plocate.sesse.net"
     },
     {
       "description": "Plasma X11 session",
@@ -761,7 +761,7 @@
       "description": "XMLStarlet is a set of command line utilities (tools) which can be used to transform, query, validate, and edit XML documents and files",
       "label": "XMLStarlet",
       "name": "xmlstarlet",
-      "source_url": "https://sourceforge.net/p/xmlstar/code/ci/master/tree/",
+      "source_url": "https://sourceforge.net/p/xmlstar/code/ci/master/tree",
       "url": "https://xmlstar.sourceforge.net"
     },
     {
