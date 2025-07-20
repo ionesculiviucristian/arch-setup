@@ -2,6 +2,7 @@
 set -eu
 
 # https://github.com/sharkdp/bat?tab=readme-ov-file#on-arch-linux
+# https://github.com/sharkdp/bat?tab=readme-ov-file#configuration-file
 # https://github.com/catppuccin/bat?tab=readme-ov-file#usage
 
 bat_dir="${HOME}/.config/bat"

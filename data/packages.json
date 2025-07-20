@@ -169,8 +169,8 @@
       "description": "Basic tools to build Arch Linux packages",
       "label": "base-devel",
       "name": "base-devel",
-      "source_url": "https://archlinux.org/packages/core/any/base-devel",
-      "url": "https://archlinux.org/packages/core/any/base-devel"
+      "source_url": "https://gitlab.archlinux.org/archlinux/packaging/packages/base-devel",
+      "url": "https://archlinux.org"
     },
     {
       "description": "Programmable completion functions for bash",
@@ -187,7 +187,7 @@
       "url": "https://github.com/sharkdp/bat"
     },
     {
-      "description": "Versatile, classic, complete name server software",
+      "description": "BIND (Berkeley Internet Name Domain) is a complete, highly portable implementation of the Domain Name System (DNS) protocol",
       "label": "BIND 9",
       "name": "bind",
       "source_url": "https://gitlab.isc.org/isc-projects/bind9",
@@ -198,14 +198,15 @@
       "label": "Bitwarden CLI",
       "name": "bitwarden-cli",
       "source_url": "https://github.com/bitwarden/clients.git",
-      "url": "https://github.com/bitwarden/clients.git"
+      "url": "https://bitwarden.com"
     },
     {
       "description": "The free and open source 3D creation suite",
       "label": "Blender",
       "name": "blender",
       "source_url": "https://github.com/blender/blender",
-      "url": "https://www.blender.org"
+      "url": "https://www.blender.org",
+      "optional": ["hip-runtime-amd", "hiprt"]
     },
     {
       "description": "A new way to see and navigate directory trees",
@@ -219,14 +220,16 @@
       "label": "Btop++",
       "name": "btop",
       "source_url": "https://github.com/aristocratos/btop",
-      "url": "https://github.com/aristocratos/btop"
+      "url": "https://github.com/aristocratos/btop",
+      "optional": ["rocm-smi-lib"]
     },
     {
-      "description": "Btrfs filesystem utilities",
-      "label": "btrfs-progs",
+      "description": "Userspace utilities to manage btrfs filesystems",
+      "label": "BTRFS tools",
       "name": "btrfs-progs",
       "source_url": "https://github.com/kdave/btrfs-progs",
-      "url": "https://btrfs.readthedocs.io"
+      "url": "https://btrfs.readthedocs.io",
+      "optional": ["e2fsprogs"]
     },
     {
       "description": "The current standards-based, open source printing system developed by OpenPrinting for Linux® and other Unix®-like operating systems",
@@ -236,10 +239,10 @@
       "url": "https://openprinting.github.io/cups"
     },
     {
-      "description": "D-Bus is a message bus system, a simple way for applications to talk to one another",
+      "description": "D-Bus is a simple system for interprocess communication and coordination",
       "label": "D-Bus",
       "name": "dbus",
-      "source_url": "https://gitlab.archlinux.org/archlinux/packaging/packages/dbus",
+      "source_url": "https://gitlab.freedesktop.org/dbus/dbus.git",
       "url": "https://www.freedesktop.org/wiki/Software/dbus"
     },
     {
@@ -296,7 +299,7 @@
       "label": "eza",
       "name": "eza",
       "source_url": "https://github.com/eza-community/eza",
-      "url": "https://github.com/eza-community/eza"
+      "url": "https://eza.rocks"
     },
     {
       "description": "A maintained, feature-rich and performance oriented, neofetch like system information tool",
@@ -314,7 +317,7 @@
     },
     {
       "description": "The free FTP solution",
-      "label": "Filezilla",
+      "label": "FileZilla",
       "name": "filezilla",
       "source_url": "https://svn.filezilla-project.org/svn/FileZilla3/trunk",
       "url": "https://filezilla-project.org"
@@ -331,7 +334,7 @@
       "label": "fzf",
       "name": "fzf",
       "source_url": "https://github.com/junegunn/fzf",
-      "url": "https://github.com/junegunn/fzf"
+      "url": "https://junegunn.github.io/fzf"
     },
     {
       "description": "The Free & Open Source Image Editor",
@@ -352,14 +355,15 @@
       "label": "go-yq",
       "name": "go-yq",
       "source_url": "https://github.com/mikefarah/yq",
-      "url": "https://github.com/mikefarah/yq"
+      "url": "https://mikefarah.gitbook.io/yq"
     },
     {
       "description": "Image viewer by KDE",
       "label": "Gwenview",
       "name": "gwenview",
-      "source_url": "https://github.com/KDE/gwenview",
-      "url": "https://apps.kde.org/gwenview"
+      "source_url": "https://invent.kde.org/graphics/gwenview",
+      "url": "https://apps.kde.org/gwenview",
+      "optional": ["kimageformats"]
     },
     {
       "description": "ImageMagick is a free, open-source software suite, used for editing and manipulating digital images",
@@ -373,13 +377,13 @@
       "label": "jq",
       "name": "jq",
       "source_url": "https://github.com/jqlang/jq",
-      "url": "https://github.com/jqlang/jq"
+      "url": "https://jqlang.org"
     },
     {
       "description": "KCalc has everything you would expect from a scientific calculator",
       "label": "KCalc",
       "name": "kcalc",
-      "source_url": "https://github.com/KDE/kcalc",
+      "source_url": "https://invent.kde.org/utilities/kcalc",
       "url": "https://apps.kde.org/kcalc"
     },
     {
@@ -390,18 +394,19 @@
       "url": "https://sw.kovidgoyal.net/kitty/index.html"
     },
     {
-      "description": "Framework that lets applications manage user installable packages of non-binary assets",
+      "description": "This framework lets applications to manage user installable packages of non-binary assets",
       "label": "kpackage",
       "name": "kpackage",
-      "source_url": "https://gitlab.archlinux.org/archlinux/packaging/packages/kpackage",
-      "url": "https://community.kde.org/Frameworks"
+      "source_url": "https://invent.kde.org/frameworks/kpackage",
+      "url": "https://invent.kde.org/frameworks/kpackage"
     },
     {
-      "description": "A professional FREE and open source painting program",
+      "description": "Krita is a free and open source cross-platform application that offers an end-to-end solution for creating digital art files from scratch built on the KDE and Qt frameworks",
       "label": "Krita",
       "name": "krita",
-      "source_url": "https://github.com/KDE/krita",
-      "url": "https://krita.org/en"
+      "source_url": "https://invent.kde.org/graphics/krita",
+      "url": "https://krita.org/en",
+      "optional": ["kimageformats5", "poppler-qt5"]
     },
     {
       "description": "Simple terminal UI for git commands",

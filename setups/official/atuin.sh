@@ -2,6 +2,7 @@
 set -eu
 
 # https://docs.atuin.sh/guide/installation/#installing-the-shell-plugin
+# https://docs.atuin.sh/configuration/config/
 # https://github.com/catppuccin/atuin?tab=readme-ov-file#usage
 
 atuin_dir="${HOME}/.config/atuin"

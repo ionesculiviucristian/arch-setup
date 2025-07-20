@@ -2,6 +2,7 @@
 set -eu
 
 # https://github.com/aristocratos/btop?tab=readme-ov-file#configurability
+# https://github.com/catppuccin/btop
 
 btop_dir="${HOME}/.config/btop"
 
