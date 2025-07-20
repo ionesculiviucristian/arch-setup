@@ -59,6 +59,7 @@ yay \
 ./setups/base/konsole.sh
 ./setups/base/kscreenlocker.sh
 ./setups/base/night_color.sh
+./setups/base/pacman.sh
 ./setups/base/sddm.sh
 
 # ==========================================
