@@ -58,6 +58,7 @@ partitionmanager
 perl-image-exiftool
 pigz
 plasma-x11-session
+plocate
 pnpm
 pyenv
 python-pip

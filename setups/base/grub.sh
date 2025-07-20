@@ -1,6 +1,9 @@
 #!/bin/bash
 set -eu
 
+# https://www.gnu.org/software/grub/manual/grub/grub.html#Simple-configuration
+# https://github.com/catppuccin/grub
+
 catppuccin_grub_dir="${HOME}/.repos/catppuccin-grub"
 grub_themes_dir="/usr/share/grub/themes"
 

@@ -1,6 +1,8 @@
 #!/bin/bash
 set -eu
 
+# https://github.com/catppuccin/kde
+
 catppuccin_kde_dir="${HOME}/.repos/catppuccin-fzf"
 icons_dir="${HOME}/.local/share/icons"
 

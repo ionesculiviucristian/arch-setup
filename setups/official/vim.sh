@@ -1,6 +1,8 @@
 #!/bin/bash
 set -eu
 
+# https://github.com/catppuccin/vim
+
 vim_themes_dir="${HOME}/.vim/colors"
 
 mkdir -p "${vim_themes_dir}"

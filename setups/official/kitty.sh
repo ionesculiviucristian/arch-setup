@@ -19,12 +19,14 @@ cp \
 kwriteconfig6 \
   --file "${HOME}/.config/kdeglobals" \
   --group "General" \
-  --key "TerminalApplication" "kitty"
+  --key "TerminalApplication" \
+  "kitty"
 
 kwriteconfig6 \
   --file "${HOME}/.config/kdeglobals" \
   --group "General" \
-  --key "TerminalService" "kitty.desktop"
+  --key "TerminalService" \
+  "kitty.desktop"
 
 ./scripts/update_bashrc.sh '[ "${TERM}" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"'
 

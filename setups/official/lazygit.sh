@@ -8,11 +8,14 @@ lazygit_dir="${HOME}/.config/lazygit"
 
 mkdir -p "${lazygit_dir}"
 
+wget -qO \
+  "${lazygit_dir}/mocha-mauve.yml" \
+  https://raw.githubusercontent.com/catppuccin/lazygit/refs/heads/main/themes-mergable/mocha/mauve.yml
+
 cp \
   "./configs/.config/lazygit/config.yml" \
   "${lazygit_dir}/config.yml"
 
-wget -qO - https://raw.githubusercontent.com/catppuccin/lazygit/main/themes/mocha/mauve.yml \
-  | yq eval-all --inplace 'select(fileIndex == 0) as $config | select(fileIndex == 1) as $res | $config | .gui.theme = ($res.theme) | .gui.authorColors = ($res.authorColors)' "${lazygit_dir}/config.yml" -
+./scripts/update_bashrc.sh 'export LG_CONFIG_FILE="${HOME}/.config/lazygit/config.yml,${HOME}/.config/lazygit/mocha-mauve.yml"'
 
 exit 0

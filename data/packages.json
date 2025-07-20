@@ -419,7 +419,7 @@
       "description": "Less is a free, open-source file pager",
       "label": "less",
       "name": "less",
-      "source_url": "https://www.greenwoodsoftware.com/less",
+      "source_url": "https://github.com/gwsw/less",
       "url": "https://www.greenwoodsoftware.com/less"
     },
     {
@@ -476,7 +476,7 @@
       "label": "mkcert",
       "name": "mkcert",
       "source_url": "https://github.com/FiloSottile/mkcert",
-      "url": "https://github.com/FiloSottile/mkcert"
+      "url": "https://mkcert.dev"
     },
     {
       "description": "Disk usage analyzer with an ncurses interface",
@@ -490,14 +490,15 @@
       "label": "neovim",
       "name": "neovim",
       "source_url": "https://github.com/neovim/neovim",
-      "url": "https://neovim.io"
+      "url": "https://neovim.io",
+      "optional": ["python-pynvim"]
     },
     {
       "description": "The collection of base networking utilities for Linux",
       "label": "net-tools",
       "name": "net-tools",
-      "source_url": "https://sourceforge.net/projects/net-tools",
-      "url": "https://sourceforge.net/projects/net-tools"
+      "source_url": "https://sourceforge.net/p/net-tools/code/ci/master/tree/",
+      "url": "https://net-tools.sourceforge.io"
     },
     {
       "description": "Nmap - the Network Mapper",
@@ -505,6 +506,13 @@
       "name": "nmap",
       "source_url": "https://github.com/nmap/nmap",
       "url": "https://nmap.org"
+    },
+    {
+      "description": "Noto: A typeface for the world",
+      "label": "Noto fonts",
+      "name": "noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra",
+      "source_url": "https://fonts.google.com/noto",
+      "url": "https://fonts.google.com/noto"
     },
     {
       "description": "Network Security Services (NSS) is a set of libraries designed to support cross-platform development of security-enabled client and server applications",
@@ -528,13 +536,6 @@
       "url": "https://github.com/nvm-sh/nvm"
     },
     {
-      "description": "Noto: A typeface for the world",
-      "label": "Noto fonts",
-      "name": "noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra",
-      "source_url": "https://fonts.google.com/noto",
-      "url": "https://fonts.google.com/noto"
-    },
-    {
       "description": "GPU & Accelerator process monitoring for AMD, Apple, Huawei, Intel, NVIDIA and Qualcomm",
       "label": "nvtop",
       "name": "nvtop",
@@ -546,14 +547,16 @@
       "label": "OBS Studio",
       "name": "obs-studio",
       "source_url": "https://github.com/obsproject/obs-studio",
-      "url": "https://obsproject.com"
+      "url": "https://obsproject.com",
+      "optional": ["v4l2loopback-dkms"]
     },
     {
       "description": "Contributed scripts and tools for pacman systems",
       "label": "pacman-contrib",
       "name": "pacman-contrib",
       "source_url": "https://gitlab.archlinux.org/pacman/pacman-contrib",
-      "url": "https://gitlab.archlinux.org/pacman/pacman-contrib"
+      "url": "https://gitlab.archlinux.org/pacman/pacman-contrib",
+      "optional": ["diffutils"]
     },
     {
       "description": "KDE Partition Manager is a utility to help you manage the disks, partitions, and file systems on your computer",
@@ -567,7 +570,8 @@
       "label": "ExifTool",
       "name": "perl-image-exiftool",
       "source_url": "https://github.com/exiftool/exiftool",
-      "url": "https://exiftool.org"
+      "url": "https://exiftool.org",
+      "optional": ["perl-archive-zip", "perl-io-compress-brotli"]
     },
     {
       "description": "A parallel implementation of gzip for modern multi-processor, multi-core machines",
@@ -577,11 +581,18 @@
       "url": "https://www.zlib.net/pigz"
     },
     {
+      "description": "plocate is a locate(1) based on posting lists, completely replacing mlocate with a much faster (and smaller) index",
+      "label": "plocate",
+      "name": "plocate",
+      "source_url": "https://git.sesse.net/?p=plocate",
+      "url": "https://plocate.sesse.net/"
+    },
+    {
       "description": "Plasma X11 session",
       "label": "Plasma X11 session",
       "name": "plasma-x11-session",
-      "source_url": "https://archlinux.org/packages/extra/x86_64/plasma-x11-session",
-      "url": "https://archlinux.org/packages/extra/x86_64/plasma-x11-session"
+      "source_url": "https://invent.kde.org/plasma/plasma-desktop",
+      "url": "https://kde.org/plasma-desktop"
     },
     {
       "description": "Fast, disk space efficient package manager",
@@ -658,7 +669,8 @@
       "label": "SMPlayer",
       "name": "smplayer",
       "source_url": "https://github.com/smplayer-dev/smplayer",
-      "url": "https://www.smplayer.info"
+      "url": "https://www.smplayer.info",
+      "optional": ["mplayer", "smplayer-skins", "smplayer-themes"]
     },
     {
       "description": "Solaar is a Linux manager for many Logitech keyboards, mice, and trackpads that connect wirelessly to a USB Unifying, Bolt, Lightspeed, or Nano receiver",
@@ -686,7 +698,8 @@
       "label": "Thunderbird",
       "name": "thunderbird",
       "source_url": "https://github.com/thunderbird",
-      "url": "https://www.thunderbird.net"
+      "url": "https://www.thunderbird.net",
+      "optional": ["hunspell-en_us"]
     },
     {
       "description": "tmux is a terminal multiplexer",

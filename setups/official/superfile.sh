@@ -1,6 +1,7 @@
 #!/bin/bash
 set -eu
 
+# https://superfile.netlify.app/configure/superfile-config/
 # https://github.com/catppuccin/superfile
 
 superfile_dir="${HOME}/.config/superfile"

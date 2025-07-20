@@ -13,8 +13,6 @@ cp \
   "./configs/.config/starship/config.toml" \
   "${starship_dir}/config.toml"
 
-touch "${HOME}/.config/.starship.toml"
-
 wget -qO \
   "${starship_dir}/themes/mocha.conf" \
   https://raw.githubusercontent.com/catppuccin/starship/refs/heads/main/themes/mocha.toml
