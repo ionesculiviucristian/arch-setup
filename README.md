@@ -224,7 +224,7 @@ For a list off all available aliases, [read more here](./ALIASES.md) or run `ali
 Install pre commit hooks
 
 ```bash
-pip install pre-commit
+pipx install pre-commit
 pre-commit install
 ```
 
