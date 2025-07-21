@@ -62,6 +62,7 @@ plocate
 pnpm
 pyenv
 python-pip
+python-pipx
 python-poetry
 python-shtab
 qbittorrent
