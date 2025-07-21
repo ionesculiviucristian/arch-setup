@@ -5,7 +5,7 @@ set -eu
 # https://junegunn.github.io/fzf/tips/ripgrep-integration/
 # https://github.com/catppuccin/fzf
 
-./scripts/update_bashrc.sh 'eval "$(fzf --bash)"'
+# ./scripts/update_bashrc.sh 'eval "$(fzf --bash)"'
 
 catppuccin_fzf_dir="${HOME}/.repos/catppuccin-fzf"
 

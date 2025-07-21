@@ -106,7 +106,7 @@ Wallpapers from [wallpapercave.com](https://wallpapercave.com/)
 
 - [Bitwarden](https://bitwarden.com): Bitwarden is the best password manager for securely storing, managing, and sharing sensitive information such as passwords, passkeys, and credit cards [Source](https://github.com/bitwarden)
 - [ble.sh](https://github.com/akinomyoga/ble.sh): Bash Line Editor―a line editor written in pure Bash with syntax highlighting, auto suggestions, vim modes, etc. for Bash interactive sessions [Source](https://github.com/akinomyoga/ble.sh)
-- [Brave](https://brave.com): The browser that puts you first - Block ads. Save data. And get way faster webpages. Just by switching your browser [Source](https://github.com/brave)
+- [Brave](https://brave.com): The browser that puts you first - Block ads. Save data. And get way faster webpages. Just by switching your browser [Source](https://github.com/brave/brave-browser)
 - [downgrade](https://archlinux-downgrade.github.io/downgrade): Downgrade packages in Arch Linux [Source](https://github.com/archlinux-downgrade/downgrade)
 - [gita](https://github.com/nosarthur/gita): Manage many git repos with sanity [Source](https://github.com/nosarthur/gita)
 - [Papirus](https://store.kde.org/p/1166289): Pixel perfect icon theme for Linux [Source](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)

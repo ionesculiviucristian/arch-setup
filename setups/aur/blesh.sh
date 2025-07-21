@@ -2,6 +2,7 @@
 set -eu
 
 # https://github.com/akinomyoga/ble.sh?tab=readme-ov-file#13-set-up-bashrc
+# https://github.com/akinomyoga/ble.sh/blob/master/blerc.template
 
 cp \
   "./configs/.blerc" \
