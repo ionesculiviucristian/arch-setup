@@ -311,6 +311,12 @@ alias dtopc='docker stats --no-stream | (read -r header && echo "$header" && sor
 # @group docker
 alias dtopm='docker stats --no-stream | (read -r header && echo "$header" && sort -k4 -hr)'
 
+# @info Remove one or more volumes
+# @group docker
+function dvrm() {
+    docker volume rm "$@"
+}
+
 # @info List volumes
 # @group docker
 alias dvls="docker volume ls"

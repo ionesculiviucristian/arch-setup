@@ -47,6 +47,7 @@ function aliases() {
 	echo -e "  ${AC}dtopm${NC}: Display container resource usage sorted by highest memory usage"
 	echo -e "  ${AC}dvls${NC}: List volumes"
 	echo -e "  ${AC}dvlsf${NC} <PATTERN>: Filter docker volumes"
+	echo -e "  ${AC}dvrm${NC}: Remove one or more volumes"
 	echo -e "\n${GC}Docker compose${NC}\n"
 	echo -e "  ${AC}dc${NC}: Define and run multi-container applications with Docker"
 	echo -e "  ${AC}dcb${NC} <SERVICE...>: Build or rebuild services"

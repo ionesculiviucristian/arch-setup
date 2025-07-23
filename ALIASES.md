@@ -48,6 +48,7 @@
 - `dtopm`: Display container resource usage sorted by highest memory usage
 - `dvls`: List volumes
 - `dvlsf <PATTERN>`: Filter docker volumes
+- `dvrm`: Remove one or more volumes
 
 ## Docker compose
 
