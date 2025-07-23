@@ -119,4 +119,5 @@
 - `ports`: Lists listening TCP/UDP sockets
 - `portsf <PORT>`: Filter listening TCP/UDP sockets
 - `ppjson <FILE>`: Pretty prints a json file
+- `sail`: Execute Sail's commands more easily
 - `src`: Source `~/.bashrc`
