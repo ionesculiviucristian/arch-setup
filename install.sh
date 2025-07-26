@@ -12,21 +12,21 @@ echo > "./install.log"
 
 PASSWORDLESS_SUDO_FILE="/etc/sudoers.d/$(whoami)"
 
-sudo rm -f "${PASSWORDLESS_SUDO_FILE}"
+_rmf_sudo "${PASSWORDLESS_SUDO_FILE}"
 
-info_msg "Creating ${PASSWORDLESS_SUDO_FILE}" \
+inform "Creating ${PASSWORDLESS_SUDO_FILE}" \
   && echo "$(whoami) ALL=(ALL) NOPASSWD: ALL" | sudo tee "${PASSWORDLESS_SUDO_FILE}" 2>&1 | tee -a "./install.log" >/dev/null
 
-copy "./.env.example" "./.env"
+_cp "./.env.example" "./.env"
 
-setup_msg "power" && ./setups/power.sh
+inform_setup "power" && ./setups/power.sh
 
 # ==========================================
 # Install official packages
 # ==========================================
 
 # shellcheck disable=SC2046
-install_msg "official packages" && sudo pacman \
+inform_install "official packages" && sudo pacman \
   -Syu \
   --needed \
   --noconfirm \
@@ -36,24 +36,24 @@ install_msg "official packages" && sudo pacman \
 # Setup system
 # ==========================================
 
-copy "./configs/.bashrc" "${HOME}/.bashrc"
+_cp "./configs/.bashrc" "${HOME}/.bashrc"
 
-setup_msg "directories" && ./setups/dirs.sh
-setup_msg "fonts" && ./setups/fonts.sh
-setup_msg "wallpapers" && ./setups/wallpapers.sh
+inform_setup "directories" && ./setups/dirs.sh
+inform_setup "fonts" && ./setups/fonts.sh
+inform_setup "wallpapers" && ./setups/wallpapers.sh
 
 # ==========================================
 # Install external packages
 # ==========================================
 
-install_msg "yay" && ./installers/yay.sh
+inform_install "yay" && ./installers/yay.sh
 
 # ==========================================
 # Install AUR packages
 # ==========================================
 
 # shellcheck disable=SC2046
-install_msg "AUR packages" && yay \
+inform_install "AUR packages" && yay \
   -Syu \
   --needed \
   --noconfirm \
@@ -63,53 +63,53 @@ install_msg "AUR packages" && yay \
 # Setup base packages
 # ==========================================
 
-setup_msg "GRUB" && ./setups/base/grub.sh
-setup_msg "KDE" && ./setups/base/kde.sh
-setup_msg "Konsole" && ./setups/base/konsole.sh
-setup_msg "KScreenLocker" && ./setups/base/kscreenlocker.sh
-setup_msg "Night Color" && ./setups/base/night_color.sh
-setup_msg "pacman" && ./setups/base/pacman.sh
-setup_msg "SDDM" && ./setups/base/sddm.sh
+inform_setup "GRUB" && ./setups/base/grub.sh
+inform_setup "KDE" && ./setups/base/kde.sh
+inform_setup "Konsole" && ./setups/base/konsole.sh
+inform_setup "KScreenLocker" && ./setups/base/kscreenlocker.sh
+inform_setup "Night Color" && ./setups/base/night_color.sh
+inform_setup "pacman" && ./setups/base/pacman.sh
+inform_setup "SDDM" && ./setups/base/sddm.sh
 
 # ==========================================
 # Setup official packages
 # ==========================================
 
-setup_msg "Atuin" && ./setups/official/atuin.sh
-setup_msg "bat" && ./setups/official/bat.sh
-setup_msg "broot" && ./setups/official/broot.sh
-setup_msg "Btop++" && ./setups/official/btop.sh
-setup_msg "OpenPrinting CUPS" && ./setups/official/cups.sh
-setup_msg "direnv" && ./setups/official/direnv.sh
-setup_msg "Docker" && ./setups/official/docker.sh
-setup_msg "eza" && ./setups/official/eza.sh
-setup_msg "fzf" && ./setups/official/fzf.sh
-setup_msg "kitty" && ./setups/official/kitty.sh
-setup_msg "lazygit" && ./setups/official/lazygit.sh
-setup_msg "LibreOffice" && ./setups/official/libreoffice.sh
-setup_msg "mkcert" && ./setups/official/mkcert.sh
-setup_msg "neovim" && ./setups/official/neovim.sh
-setup_msg "Node Version Manager" && ./setups/official/nvm.sh
-setup_msg "OBS Studio" && ./setups/official/obs_studio.sh
-setup_msg "Poetry" && ./setups/official/poetry.sh
-setup_msg "pyenv" && ./setups/official/pyenv.sh
-setup_msg "qBittorrent" && ./setups/official/qBittorrent.sh
-setup_msg "reflector" && ./setups/official/reflector.sh
-setup_msg "Starship" && ./setups/official/starship.sh
-setup_msg "superfile" && ./setups/official/superfile.sh
-setup_msg "tmux" && ./setups/official/tmux.sh
-setup_msg "vim" && ./setups/official/vim.sh
-setup_msg "zoxide" && ./setups/official/zoxide.sh
+inform_setup "Atuin" && ./setups/official/atuin.sh
+inform_setup "bat" && ./setups/official/bat.sh
+inform_setup "broot" && ./setups/official/broot.sh
+inform_setup "Btop++" && ./setups/official/btop.sh
+inform_setup "OpenPrinting CUPS" && ./setups/official/cups.sh
+inform_setup "direnv" && ./setups/official/direnv.sh
+inform_setup "Docker" && ./setups/official/docker.sh
+inform_setup "eza" && ./setups/official/eza.sh
+inform_setup "fzf" && ./setups/official/fzf.sh
+inform_setup "kitty" && ./setups/official/kitty.sh
+inform_setup "lazygit" && ./setups/official/lazygit.sh
+inform_setup "LibreOffice" && ./setups/official/libreoffice.sh
+inform_setup "mkcert" && ./setups/official/mkcert.sh
+inform_setup "neovim" && ./setups/official/neovim.sh
+inform_setup "Node Version Manager" && ./setups/official/nvm.sh
+inform_setup "OBS Studio" && ./setups/official/obs_studio.sh
+inform_setup "Poetry" && ./setups/official/poetry.sh
+inform_setup "pyenv" && ./setups/official/pyenv.sh
+inform_setup "qBittorrent" && ./setups/official/qBittorrent.sh
+inform_setup "reflector" && ./setups/official/reflector.sh
+inform_setup "Starship" && ./setups/official/starship.sh
+inform_setup "superfile" && ./setups/official/superfile.sh
+inform_setup "tmux" && ./setups/official/tmux.sh
+inform_setup "vim" && ./setups/official/vim.sh
+inform_setup "zoxide" && ./setups/official/zoxide.sh
 
 # ==========================================
 # Setup AUR packages
 # ==========================================
 
-setup_msg "Bitwarden" && ./setups/aur/bitwarden.sh
-setup_msg "ble.sh" && ./setups/aur/blesh.sh
-setup_msg "Papirus Folders" && ./setups/aur/papirus_folders.sh
-setup_msg "ProFTPD" && ./setups/aur/proftpd.sh
-setup_msg "tdrop" && ./setups/aur/tdrop.sh
+inform_setup "Bitwarden" && ./setups/aur/bitwarden.sh
+inform_setup "ble.sh" && ./setups/aur/blesh.sh
+inform_setup "Papirus Folders" && ./setups/aur/papirus_folders.sh
+inform_setup "ProFTPD" && ./setups/aur/proftpd.sh
+inform_setup "tdrop" && ./setups/aur/tdrop.sh
 
 # ==========================================
 # Post install
@@ -117,6 +117,6 @@ setup_msg "tdrop" && ./setups/aur/tdrop.sh
 
 ./scripts/update_bashrc.sh '[[ ${BLE_VERSION-} ]] && ble-attach'
 
-setup_msg "bash" && ./setups/base/bash.sh
+inform_setup "bash" && ./setups/base/bash.sh
 
-info_msg "Removing ${PASSWORDLESS_SUDO_FILE}" && sudo rm -f "${PASSWORDLESS_SUDO_FILE}"
+inform "Removing ${PASSWORDLESS_SUDO_FILE}" && _rmf_sudo "${PASSWORDLESS_SUDO_FILE}"

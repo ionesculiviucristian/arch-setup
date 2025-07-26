@@ -1,11 +1,14 @@
 #!/bin/bash
 set -eu
 
+# shellcheck disable=SC1091
+source "./scripts/helpers.sh" 2
+
 sddm_conf_dir="/etc/sddm.conf.d"
 sddm_themes_dir="/usr/share/sddm/themes"
 wallpapers_dir="${HOME}/Pictures/Wallpapers"
 
-sudo mkdir -p "${sddm_conf_dir}"
+_mkdir_sudo "${sddm_conf_dir}"
 
 sudo pacman \
   -Syu \

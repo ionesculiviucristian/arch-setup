@@ -5,7 +5,7 @@ set -eu
 source "./scripts/helpers.sh" 2
 
 if command -v yay &>/dev/null; then
-  info_msg "yay is already installed, skipping"
+  inform "yay is already installed, skipping"
   exit 0
 fi
 

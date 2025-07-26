@@ -142,7 +142,7 @@ For a list off all available aliases, [read more here](./ALIASES.md) or run `ali
 
 ## Firefox plugins
 
-- [Linkclump for Firefox](https://addons.mozilla.org/en-US/firefox/addon/linkclump-for-firefox): Lets you open, copy or bookmark multiple links at the same time
+- [Linkclump for Firefox](https://addons.mozilla.org/en-US/firefox/addon/linkclump-for-firefox): Lets you open, _cp or bookmark multiple links at the same time
 
 ### Interface (Firefox)
 
@@ -183,7 +183,7 @@ For a list off all available aliases, [read more here](./ALIASES.md) or run `ali
 
 ## Brave plugins
 
-- [Linkclump](https://chromewebstore.google.com/detail/linkclump/lfpjkncokllnfokkgpkobnkbkmelfefj): Lets you open, copy or bookmark multiple links at the same time
+- [Linkclump](https://chromewebstore.google.com/detail/linkclump/lfpjkncokllnfokkgpkobnkbkmelfefj): Lets you open, _cp or bookmark multiple links at the same time
 
 ### Interface (Brave)
 

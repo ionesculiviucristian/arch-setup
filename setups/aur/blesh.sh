@@ -4,7 +4,10 @@ set -eu
 # https://github.com/akinomyoga/ble.sh?tab=readme-ov-file#13-set-up-bashrc
 # https://github.com/akinomyoga/ble.sh/blob/master/blerc.template
 
-cp \
+# shellcheck disable=SC1091
+source "./scripts/helpers.sh" 2
+
+_cp \
   "./configs/.blerc" \
   "${HOME}/.blerc"
 

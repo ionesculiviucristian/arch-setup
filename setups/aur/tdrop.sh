@@ -1,9 +1,12 @@
 #!/bin/bash
 set -eu
 
+# shellcheck disable=SC1091
+source "./scripts/helpers.sh" 2
+
 applications_dir="${HOME}/.local/share/applications"
 
-mkdir -p "${applications_dir}"
+_mkdir "${applications_dir}"
 
 kwriteconfig6 \
   --file "${HOME}/.config/kglobalshortcutsrc" \
@@ -12,7 +15,7 @@ kwriteconfig6 \
   --key "_launch" \
   "Alt+F12"
 
-cp \
+_cp \
   "./configs/.local/share/applications/net.local.tdrop.desktop" \
   "${applications_dir}/net.local.tdrop.desktop"
 
