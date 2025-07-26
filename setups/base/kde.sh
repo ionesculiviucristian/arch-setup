@@ -12,7 +12,7 @@ git clone -q --depth=1 https://github.com/catppuccin/kde "${catppuccin_kde_dir}"
 
 (
   cd "${catppuccin_kde_dir}"
-  printf "1\n4\n2\ny\ny" | ./install.sh
+  printf "1\n4\n2\ny\ny" | ./install.sh >dev/null
 
   rm -rf "${icons_dir}/Catppuccin-Mocha-Dark-Cursors"
   rm -rf "${icons_dir}/Catppuccin-Mocha-Mauve-Cursors"
