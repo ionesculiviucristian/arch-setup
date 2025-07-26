@@ -22,6 +22,6 @@ sudo cp -r \
 
 sudo sed -i 's|^#GRUB_THEME="/path/to/gfxtheme"|GRUB_THEME="/usr/share/grub/themes/catppuccin-mocha-grub-theme/theme.txt"|' "${grub_file}"
 
-sudo grub-mkconfig -o "/boot/grub/grub.cfg"
+sudo grub-mkconfig -o "/boot/grub/grub.cfg" >/dev/null
 
 exit 0

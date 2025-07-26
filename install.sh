@@ -17,7 +17,7 @@ info_msg "Creating ${PASSWORDLESS_SUDO_FILE}..." \
 
 copy "./.env.example" "./.env"
 
-setup_msg "Power" && ./setups/power.sh
+setup_msg "power" && ./setups/power.sh
 
 # ==========================================
 # Install official packages
