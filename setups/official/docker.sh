@@ -12,7 +12,7 @@ sudo cp \
   "./configs/etc/docker/daemon.json" \
   "${docker_dir}/daemon.json"
 
-sudo systemctl enable docker.service 2>&1 | tee "./install.log" >/dev/null
+sudo systemctl enable docker.service 2>&1 | tee -a "./install.log" >/dev/null
 sudo systemctl start docker.service
 
 sudo usermod -aG docker "${USER}"

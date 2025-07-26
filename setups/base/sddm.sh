@@ -13,14 +13,14 @@ sudo pacman \
   --noconfirm \
   qt6-svg \
   qt6-declarative \
-  qt5-quickcontrols2 2>&1 | tee "./install.log" >/dev/null
+  qt5-quickcontrols2 2>&1 | tee -a "./install.log" >/dev/null
 
 sudo rm -rf "${sddm_themes_dir}/catppuccin-mocha-mauve-sddm"
 sudo mkdir -p "${sddm_themes_dir}/catppuccin-mocha-mauve-sddm"
 
 wget -qO- \
   https://github.com/catppuccin/sddm/releases/download/v1.1.1/catppuccin-mocha-mauve-sddm.zip | \
-  sudo bsdtar -xvf- -C "${sddm_themes_dir}/catppuccin-mocha-mauve-sddm" 2>&1 | tee "./install.log" >/dev/null
+  sudo bsdtar -xvf- -C "${sddm_themes_dir}/catppuccin-mocha-mauve-sddm" 2>&1 | tee -a "./install.log" >/dev/null
 
 sudo sed -i \
   -e 's/^CustomBackground="false"/CustomBackground="true"/' \

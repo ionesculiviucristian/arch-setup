@@ -9,6 +9,6 @@ if [ -f "${HOME}/.local/share/mkcert/rootCA.pem" ] && [ -f "${HOME}/.local/share
   exit 0
 fi
 
-mkcert -install 2>&1 | tee "./install.log" >/dev/null
+mkcert -install 2>&1 | tee -a "./install.log" >/dev/null
 
 exit 0
