@@ -3,21 +3,24 @@ set -eu
 
 # https://github.com/catppuccin/tmux
 
+# shellcheck disable=SC1091
+source "./scripts/helpers.sh" 2
+
 tmux_plugins_dir="${HOME}/.config/tmux/plugins"
 
-mkdir -p "${tmux_plugins_dir}/tmux-plugins"
+_mkdir "${tmux_plugins_dir}/tmux-plugins"
 
-rm -rf "${tmux_plugins_dir}/tmux-plugins/tmux-cpu"
-rm -rf "${tmux_plugins_dir}/tmux-plugins/tmux-battery"
+_rmdir "${tmux_plugins_dir}/tmux-plugins/tmux-cpu"
+_rmdir "${tmux_plugins_dir}/tmux-plugins/tmux-battery"
 
-git clone -q https://github.com/tmux-plugins/tmux-cpu "${tmux_plugins_dir}/tmux-plugins/tmux-cpu"
-git clone -q https://github.com/tmux-plugins/tmux-battery "${tmux_plugins_dir}/tmux-plugins/tmux-battery"
+git_clone https://github.com/tmux-plugins/tmux-cpu "${tmux_plugins_dir}/tmux-plugins/tmux-cpu"
+git_clone https://github.com/tmux-plugins/tmux-battery "${tmux_plugins_dir}/tmux-plugins/tmux-battery"
 
-rm -rf "${tmux_plugins_dir}/catppuccin"
+_rmdir "${tmux_plugins_dir}/catppuccin"
 
-git clone -q https://github.com/catppuccin/tmux.git "${tmux_plugins_dir}/catppuccin/tmux"
+git_clone https://github.com/catppuccin/tmux.git "${tmux_plugins_dir}/catppuccin/tmux"
 
-cp \
+_cp \
   "./configs/.tmux.conf" \
   "${HOME}/.tmux.conf"
 

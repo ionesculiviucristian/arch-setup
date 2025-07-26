@@ -5,15 +5,18 @@ set -eu
 # https://github.com/sharkdp/bat?tab=readme-ov-file#configuration-file
 # https://github.com/catppuccin/bat?tab=readme-ov-file#usage
 
+# shellcheck disable=SC1091
+source "./scripts/helpers.sh" 2
+
 bat_dir="${HOME}/.config/bat"
 
-mkdir -p "${bat_dir}/themes"
+_mkdir "${bat_dir}/themes"
 
-wget -qO \
+download \
   "${bat_dir}/themes/Catppuccin Mocha.tmTheme" \
   https://github.com/catppuccin/bat/raw/main/themes/Catppuccin%20Mocha.tmTheme
 
-cp \
+_cp \
   "./configs/.config/bat/config" \
   "${bat_dir}/config"
 

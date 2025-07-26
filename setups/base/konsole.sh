@@ -14,7 +14,7 @@ download \
   "${konsole_dir}/catppuccin-mocha.colorscheme" \
   https://raw.githubusercontent.com/catppuccin/konsole/refs/heads/main/themes/catppuccin-mocha.colorscheme
 
-_cp \
+__cp \
   "./configs/.local/share/konsole/Starship.profile" \
   "${konsole_dir}/Starship.profile"
 

@@ -1,9 +1,12 @@
 #!/bin/bash
 set -eu
 
+# shellcheck disable=SC1091
+source "./scripts/helpers.sh" 2
+
 wallpapers_dir="${HOME}/Pictures/Wallpapers"
 
-cp \
+_cp \
   "./media/wallpapers/"* \
   "${wallpapers_dir}"
 

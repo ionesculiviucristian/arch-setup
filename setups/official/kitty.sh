@@ -4,15 +4,18 @@ set -eu
 # https://sw.kovidgoyal.net/kitty/conf/#kitty-conf
 # https://github.com/catppuccin/kitty
 
+# shellcheck disable=SC1091
+source "./scripts/helpers.sh" 2
+
 kitty_dir="${HOME}/.config/kitty"
 
-mkdir -p "${kitty_dir}/themes"
+_mkdir "${kitty_dir}/themes"
 
-wget -qO \
+download \
   "${kitty_dir}/themes/mocha.conf" \
   https://raw.githubusercontent.com/catppuccin/kitty/refs/heads/main/themes/mocha.conf
 
-cp \
+_cp \
   "./configs/.config/kitty/kitty.conf" \
   "${kitty_dir}/kitty.conf"
 

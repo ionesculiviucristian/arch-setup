@@ -4,16 +4,19 @@ set -eu
 # https://docs.docker.com/engine/daemon/#configuration-file
 # https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#configuring-docker
 
+# shellcheck disable=SC1091
+source "./scripts/helpers.sh" 2
+
 docker_dir="/etc/docker"
 
-sudo mkdir -p "${docker_dir}"
+_mkdir_sudo "${docker_dir}"
 
-sudo cp \
+_cp_sudo \
   "./configs/etc/docker/daemon.json" \
   "${docker_dir}/daemon.json"
 
-sudo systemctl enable docker.service 2>&1 | tee -a "./install.log" >/dev/null
-sudo systemctl start docker.service
+service_enable docker.service 2>&1 | tee -a "./install.log" >/dev/null
+service_start docker.service
 
 sudo usermod -aG docker "${USER}"
 

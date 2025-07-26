@@ -5,15 +5,18 @@ set -eu
 # https://docs.atuin.sh/configuration/config/
 # https://github.com/catppuccin/atuin?tab=readme-ov-file#usage
 
+# shellcheck disable=SC1091
+source "./scripts/helpers.sh" 2
+
 atuin_dir="${HOME}/.config/atuin"
 
-mkdir -p "${atuin_dir}/themes"
+_mkdir "${atuin_dir}/themes"
 
-wget -qO \
+download \
   "${atuin_dir}/themes/catppuccin-mocha-mauve.toml" \
   https://raw.githubusercontent.com/catppuccin/atuin/refs/heads/main/themes/mocha/catppuccin-mocha-mauve.toml 
 
-cp \
+_cp \
   "./configs/.config/atuin/config.toml" \
   "${atuin_dir}/config.toml"
 

@@ -38,7 +38,7 @@ _rmd() {
   rm -rf "$1"
 }
 
-_rmd_sudo() {
+_rmdir_sudo() {
   show_message "⚠️📁 Removing directory $1 using sudo ..."
   sudo rm -rf "$1"
 }

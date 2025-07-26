@@ -15,7 +15,7 @@ kwriteconfig6 \
   --key "_launch" \
   "Alt+F12"
 
-_cp \
+__cp \
   "./configs/.local/share/applications/net.local.tdrop.desktop" \
   "${applications_dir}/net.local.tdrop.desktop"
 

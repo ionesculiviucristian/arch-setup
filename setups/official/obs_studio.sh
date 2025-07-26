@@ -3,20 +3,23 @@ set -eu
 
 # https://github.com/catppuccin/obs
 
+# shellcheck disable=SC1091
+source "./scripts/helpers.sh" 2
+
 catppuccin_obs_dir="${HOME}/.repos/catppuccin-obs"
 obs_dir="${HOME}/.config/obs-studio"
 
-mkdir -p "${obs_dir}/themes"
+_mkdir "${obs_dir}/themes"
 
-rm -rf "${catppuccin_obs_dir}"
+_rmdir "${catppuccin_obs_dir}"
 
-git clone -q https://github.com/catppuccin/obs "${catppuccin_obs_dir}"
+git_clone https://github.com/catppuccin/obs "${catppuccin_obs_dir}"
 
-cp \
+_cp \
   "${catppuccin_obs_dir}/themes"/*.* \
   "${obs_dir}/themes"
 
-cp \
+_cp \
   "./configs/.config/obs-studio/user.ini" \
   "${obs_dir}/user.ini"
 
