@@ -119,4 +119,4 @@ inform_setup "tdrop" && ./setups/aur/tdrop.sh
 
 inform_setup "bash" && ./setups/base/bash.sh
 
-inform "Removing ${PASSWORDLESS_SUDO_FILE}" && _rmf_sudo "${PASSWORDLESS_SUDO_FILE}"
+_rmf_sudo "${PASSWORDLESS_SUDO_FILE}"

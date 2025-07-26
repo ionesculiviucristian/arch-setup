@@ -81,7 +81,7 @@ log() {
 
 service_enable() {
   show_message "⚡️ Enabling service $1 ..."
-  sudo systemctl enable "$1"
+  sudo systemctl enable "$1" 2>&1 | tee -a "./install.log" >/dev/null
 }
 
 service_start() {

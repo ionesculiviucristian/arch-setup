@@ -16,7 +16,7 @@ echo "127.0.0.1 ftp.localdev" | sudo tee -a "/etc/hosts" 2>&1 | tee -a "./instal
 sudo iptables -I INPUT 1 -p tcp -s 127.0.0.1 --dport 21 -j ACCEPT
 sudo iptables -A INPUT -p tcp --dport 21 -j DROP
 
-service_enable proftpd.service 2>&1 | tee -a "./install.log" >/dev/null
+service_enable proftpd.service
 service_start proftpd.service
 
 exit 0

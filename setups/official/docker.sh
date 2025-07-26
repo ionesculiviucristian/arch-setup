@@ -15,7 +15,7 @@ _cp_sudo \
   "./configs/etc/docker/daemon.json" \
   "${docker_dir}/daemon.json"
 
-service_enable docker.service 2>&1 | tee -a "./install.log" >/dev/null
+service_enable docker.service
 service_start docker.service
 
 sudo usermod -aG docker "${USER}"
