@@ -1,8 +1,6 @@
 #!/bin/bash
 set -eu
 
-wget -qO- https://git.io/papirus-folders-install | sh
-
 papirus-folders -C violet --theme Papirus-Dark
 
 kwriteconfig6 \

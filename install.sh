@@ -49,8 +49,6 @@ yay \
   --noconfirm \
   $(<"./data/lists/aur.txt")
 
-./installers/papirus_folders.sh
-
 # ==========================================
 # Install fonts
 # ==========================================
@@ -105,6 +103,7 @@ yay \
 
 ./setups/aur/bitwarden.sh
 ./setups/aur/blesh.sh
+./setups/aur/papirus_folders.sh
 ./setups/aur/proftpd.sh
 ./setups/aur/tdrop.sh
 

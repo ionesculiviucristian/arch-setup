@@ -43,6 +43,13 @@
       "url": "https://store.kde.org/p/1166289"
     },
     {
+      "description": "A script that lets you change the colors of folders in Papirus icon theme ",
+      "label": "Papirus Folders",
+      "name": "papirus-folders",
+      "source_url": "https://github.com/PapirusDevelopmentTeam/papirus-folders",
+      "url": "https://github.com/PapirusDevelopmentTeam/papirus-folders"
+    },
+    {
       "description": "Postman is the single platform for designing, building, and scaling APIs—together",
       "label": "Postman",
       "name": "postman-bin",

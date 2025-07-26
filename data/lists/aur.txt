@@ -3,6 +3,7 @@ blesh-git
 brave-bin
 downgrade
 gita
+papirus-folders
 papirus-icon-theme
 postman-bin
 proftpd
