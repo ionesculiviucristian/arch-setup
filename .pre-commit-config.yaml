@@ -6,10 +6,10 @@ repos:
         entry: python ./scripts/generate_bash_aliases_help.py
         language: system
       - id: process-packages
-        name: Update package lists
-        entry: ./scripts/update_package_lists.sh
+        name: Generate package lists
+        entry: ./scripts/generate_package_lists.sh
         language: system
       - id: render-readme
-        name: Render README.md file
-        entry: node ./templates/readme/render-readme.js
+        name: Generate README.md file
+        entry: node ./templates/readme/generate-readme.js
         language: system

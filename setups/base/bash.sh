@@ -1,6 +1,6 @@
 #!/bin/bash
 set -eu
 
-./scripts/install_aliases.sh
+./scripts/install_bash_aliases.sh
 
 exit 0
