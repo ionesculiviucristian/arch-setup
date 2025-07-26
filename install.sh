@@ -8,12 +8,14 @@ source "./scripts/helpers.sh"
 # Pre install
 # ==========================================
 
+echo > "./install.log"
+
 PASSWORDLESS_SUDO_FILE="/etc/sudoers.d/$(whoami)"
 
 sudo rm -f "${PASSWORDLESS_SUDO_FILE}"
 
 info_msg "Creating ${PASSWORDLESS_SUDO_FILE}" \
-  && echo "$(whoami) ALL=(ALL) NOPASSWD: ALL" | sudo tee "${PASSWORDLESS_SUDO_FILE}" >/dev/null
+  && echo "$(whoami) ALL=(ALL) NOPASSWD: ALL" | sudo tee "${PASSWORDLESS_SUDO_FILE}" 2>&1 | tee "./install.log"
 
 copy "./.env.example" "./.env"
 
@@ -28,7 +30,7 @@ install_msg "official packages" && sudo pacman \
   -Syu \
   --needed \
   --noconfirm \
-  $(<"./data/lists/official.txt") >/dev/null
+  $(<"./data/lists/official.txt") 2>&1 2>&1 | tee "./install.log"
 
 # ==========================================
 # Setup system
@@ -55,7 +57,7 @@ install_msg "AUR packages" && yay \
   -Syu \
   --needed \
   --noconfirm \
-  $(<"./data/lists/aur.txt") >/dev/null
+  $(<"./data/lists/aur.txt") 2>&1 | tee "./install.log"
 
 # ==========================================
 # Setup base packages

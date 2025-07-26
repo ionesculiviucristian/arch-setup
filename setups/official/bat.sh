@@ -17,6 +17,6 @@ cp \
   "./configs/.config/bat/config" \
   "${bat_dir}/config"
 
-bat cache --build >/dev/null
+bat cache --build 2>&1 | tee "./install.log"
 
 exit 0

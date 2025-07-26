@@ -7,8 +7,8 @@ Wallpapers from [wallpapercave.com](https://wallpapercave.com/)
 ## Installation
 
 ```bash
-./installers/machines/b450-i-aorus-pro-wifi.sh | tee install_hardware.log
-./install.sh | tee install.log
+./installers/machines/b450-i-aorus-pro-wifi.sh
+./install.sh
 ```
 
 ## Official Arch packages
