@@ -5,14 +5,12 @@ set -eu
 
 source "/usr/share/nvm/init-nvm.sh"
 
-nvm install --no-progress 18
-nvm install --no-progress 20
-nvm install --no-progress 22
-nvm install --no-progress 24
+nvm install --no-progress --latest-npm 18
+nvm install --no-progress --latest-npm 20
+nvm install --no-progress --latest-npm 22
+nvm install --no-progress --latest-npm 24
 
 nvm use 24
-
-nvm install-latest-npm
 
 ./scripts/update_bashrc.sh "source /usr/share/nvm/init-nvm.sh"
 
