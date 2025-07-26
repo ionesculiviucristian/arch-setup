@@ -7,9 +7,11 @@ set -eu
 # Pre install
 # ==========================================
 
-PASSWORDLESS_SUDO="/etc/sudoers.d/$(whoami)"
+PASSWORDLESS_SUDO_FILE="/etc/sudoers.d/$(whoami)"
 
-echo "$(whoami) ALL=(ALL) NOPASSWD: ALL" | sudo tee -a "${PASSWORDLESS_SUDO}"
+sudo rm -f "${PASSWORDLESS_SUDO_FILE}"
+
+echo "$(whoami) ALL=(ALL) NOPASSWD: ALL" | sudo tee "${PASSWORDLESS_SUDO_FILE}"
 
 # ==========================================
 # Install official packages
@@ -110,4 +112,4 @@ yay \
 
 ./setups/base/bash.sh
 
-sudo rm "${PASSWORDLESS_SUDO}"
+sudo rm -f "${PASSWORDLESS_SUDO_FILE}"
