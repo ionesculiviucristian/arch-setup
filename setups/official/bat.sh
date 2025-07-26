@@ -17,6 +17,6 @@ cp \
   "./configs/.config/bat/config" \
   "${bat_dir}/config"
 
-bat cache --build
+bat cache --build >/dev/null
 
 exit 0

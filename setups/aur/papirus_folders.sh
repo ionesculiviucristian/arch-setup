@@ -1,7 +1,7 @@
 #!/bin/bash
 set -eu
 
-papirus-folders -C violet --theme Papirus-Dark
+papirus-folders -C violet --theme Papirus-Dark >/dev/null
 
 kwriteconfig6 \
   --file "${HOME}/.config/kdeglobals" \

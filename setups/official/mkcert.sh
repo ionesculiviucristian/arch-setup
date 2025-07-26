@@ -1,6 +1,6 @@
 #!/bin/bash
 set -eu
 
-mkcert -install
+mkcert -install >/dev/null
 
 exit 0
