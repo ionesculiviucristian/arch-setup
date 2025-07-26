@@ -11,10 +11,6 @@ echo "$(whoami) ALL=(ALL) NOPASSWD: ALL" | sudo tee -a "${PASSWORDLESS_SUDO}"
 
 cp "./configs/.bashrc" "${HOME}/.bashrc"
 
-./setups/dirs.sh
-./setups/wallpapers.sh
-./setups/power.sh
-
 # ==========================================
 # Install official packages
 # ==========================================
@@ -25,6 +21,14 @@ sudo pacman \
   --needed \
   --noconfirm \
   $(<"./data/lists/official.txt")
+
+# ==========================================
+# Setup system
+# ==========================================
+
+./setups/dirs.sh
+./setups/wallpapers.sh
+./setups/power.sh
 
 # ==========================================
 # Install external packages
