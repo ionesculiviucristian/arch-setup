@@ -75,6 +75,7 @@ solaar
 starship
 superfile
 thunderbird
+tk
 tmux
 tmuxp
 unzip

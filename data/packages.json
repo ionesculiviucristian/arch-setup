@@ -716,6 +716,13 @@
       "optional": ["hunspell-en_us"]
     },
     {
+      "description": "Tk is a GUI toolkit for Tcl",
+      "label": "Tk toolkit",
+      "name": "tk",
+      "source_url": "https://sourceforge.net/projects/tktoolkit/files",
+      "url": "https://sourceforge.net/projects/tktoolkit"
+    },
+    {
       "description": "tmux is a terminal multiplexer",
       "label": "tmux",
       "name": "tmux",
