@@ -29,6 +29,7 @@ sudo pacman \
 cp "./configs/.bashrc" "${HOME}/.bashrc"
 
 ./setups/dirs.sh
+./setups/fonts.sh
 ./setups/wallpapers.sh
 ./setups/power.sh
 
@@ -48,12 +49,6 @@ yay \
   --needed \
   --noconfirm \
   $(<"./data/lists/aur.txt")
-
-# ==========================================
-# Install fonts
-# ==========================================
-
-./setups/fonts.sh
 
 # ==========================================
 # Setup base packages

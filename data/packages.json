@@ -36,18 +36,18 @@
       "url": "https://github.com/nosarthur/gita"
     },
     {
-      "description": "Pixel perfect icon theme for Linux",
-      "label": "Papirus",
-      "name": "papirus-icon-theme",
-      "source_url": "https://github.com/PapirusDevelopmentTeam/papirus-icon-theme",
-      "url": "https://store.kde.org/p/1166289"
-    },
-    {
       "description": "A script that lets you change the colors of folders in Papirus icon theme ",
       "label": "Papirus Folders",
       "name": "papirus-folders",
       "source_url": "https://github.com/PapirusDevelopmentTeam/papirus-folders",
       "url": "https://github.com/PapirusDevelopmentTeam/papirus-folders"
+    },
+    {
+      "description": "Pixel perfect icon theme for Linux",
+      "label": "Papirus",
+      "name": "papirus-icon-theme",
+      "source_url": "https://github.com/PapirusDevelopmentTeam/papirus-icon-theme",
+      "url": "https://store.kde.org/p/1166289"
     },
     {
       "description": "Postman is the single platform for designing, building, and scaling APIs—together",
