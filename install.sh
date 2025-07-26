@@ -1,6 +1,8 @@
 #!/bin/bash
 set -eu
 
+
+
 # ==========================================
 # Pre install
 # ==========================================
@@ -8,8 +10,6 @@ set -eu
 PASSWORDLESS_SUDO="/etc/sudoers.d/$(whoami)"
 
 echo "$(whoami) ALL=(ALL) NOPASSWD: ALL" | sudo tee -a "${PASSWORDLESS_SUDO}"
-
-cp "./configs/.bashrc" "${HOME}/.bashrc"
 
 # ==========================================
 # Install official packages
@@ -26,6 +26,8 @@ sudo pacman \
 # Setup system
 # ==========================================
 
+cp "./configs/.bashrc" "${HOME}/.bashrc"
+
 ./setups/dirs.sh
 ./setups/wallpapers.sh
 ./setups/power.sh
@@ -35,7 +37,6 @@ sudo pacman \
 # ==========================================
 
 ./installers/yay.sh
-./installers/papirus_folders.sh
 
 # ==========================================
 # Install AUR packages
@@ -47,6 +48,8 @@ yay \
   --needed \
   --noconfirm \
   $(<"./data/lists/aur.txt")
+
+./installers/papirus_folders.sh
 
 # ==========================================
 # Install fonts
