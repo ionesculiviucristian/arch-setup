@@ -50,7 +50,7 @@ _rmf() {
 
 _rmf_sudo() {
   show_message "📄 Removing file $1 using sudo..."
-  rm -f "$1"
+  sudo rm -f "$1"
 }
 
 download() {
