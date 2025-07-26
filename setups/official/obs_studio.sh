@@ -6,7 +6,7 @@ set -eu
 catppuccin_obs_dir="${HOME}/.repos/catppuccin-obs"
 obs_dir="${HOME}/.config/obs-studio"
 
-mkdir -p "${obs_dir}"
+mkdir -p "${obs_dir}/themes"
 
 rm -rf "${catppuccin_obs_dir}"
 
