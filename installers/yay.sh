@@ -3,6 +3,8 @@ set -eu
 
 yay_dir="${HOME}/.repos/yay"
 
+rm -rf "${yay_dir}"
+
 git clone -q https://aur.archlinux.org/yay.git "${yay_dir}"
 
 (
