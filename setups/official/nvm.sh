@@ -3,7 +3,7 @@
 # shellcheck disable=SC2155
 set -eu
 
-source /usr/share/nvm/init-nvm.sh
+source "/usr/share/nvm/init-nvm.sh"
 
 nvm install --no-progress 18
 nvm install --no-progress 20
