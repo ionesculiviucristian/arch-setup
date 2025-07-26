@@ -1,7 +1,7 @@
 #!/bin/bash
 set -eu
 
-papirus-folders -C violet --theme Papirus-Dark 2>&1 | tee "./install.log"
+papirus-folders -C violet --theme Papirus-Dark 2>&1 | tee "./install.log" >/dev/null
 
 kwriteconfig6 \
   --file "${HOME}/.config/kdeglobals" \
