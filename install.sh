@@ -12,7 +12,7 @@ PASSWORDLESS_SUDO_FILE="/etc/sudoers.d/$(whoami)"
 
 sudo rm -f "${PASSWORDLESS_SUDO_FILE}"
 
-info_msg "Creating ${PASSWORDLESS_SUDO_FILE}..." \
+info_msg "Creating ${PASSWORDLESS_SUDO_FILE}" \
   && echo "$(whoami) ALL=(ALL) NOPASSWD: ALL" | sudo tee "${PASSWORDLESS_SUDO_FILE}" >/dev/null
 
 copy "./.env.example" "./.env"
@@ -117,4 +117,4 @@ setup_msg "tdrop" && ./setups/aur/tdrop.sh
 
 setup_msg "bash" && ./setups/base/bash.sh
 
-info_msg "Removing ${PASSWORDLESS_SUDO_FILE}..." && sudo rm -f "${PASSWORDLESS_SUDO_FILE}"
+info_msg "Removing ${PASSWORDLESS_SUDO_FILE}" && sudo rm -f "${PASSWORDLESS_SUDO_FILE}"

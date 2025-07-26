@@ -13,7 +13,7 @@ sudo pacman \
   --noconfirm \
   qt6-svg \
   qt6-declarative \
-  qt5-quickcontrols2
+  qt5-quickcontrols2 >/dev/null
 
 sudo rm -rf "${sddm_themes_dir}/catppuccin-mocha-mauve-sddm"
 sudo mkdir -p "${sddm_themes_dir}/catppuccin-mocha-mauve-sddm"
