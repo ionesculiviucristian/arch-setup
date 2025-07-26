@@ -1,9 +1,7 @@
 #!/bin/bash
 set -eu
 
-message() {
-  echo "$1"
-}
+source "./scripts/messages.sh"
 
 # ==========================================
 # Pre install
@@ -21,10 +19,11 @@ message "Creating ${PASSWORDLESS_SUDO_FILE}..." \
 # ==========================================
 
 # shellcheck disable=SC2046
-message "Installing official packages..." && sudo pacman \
+install_msg "official packages" && sudo pacman \
   -Syu \
   --needed \
   --noconfirm \
+  --quiet \
   $(<"./data/lists/official.txt")
 
 # ==========================================
@@ -49,10 +48,11 @@ message "Installing yay..." && ./installers/yay.sh
 # ==========================================
 
 # shellcheck disable=SC2046
-message "Installing AUR packages..." && yay \
+install_msg "AUR packages" && yay \
   -Syu \
   --needed \
   --noconfirm \
+  --quiet \
   $(<"./data/lists/aur.txt")
 
 # ==========================================
