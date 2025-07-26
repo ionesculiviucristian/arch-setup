@@ -15,7 +15,7 @@ sudo sed -i 's/^GRUB_DEFAULT=0/GRUB_DEFAULT=saved/' "${grub_file}"
 sudo sed -i 's/^#GRUB_SAVEDEFAULT=true/GRUB_SAVEDEFAULT=true/' "${grub_file}"
 sudo sed -i 's/^#GRUB_DISABLE_SUBMENU=y/GRUB_DISABLE_SUBMENU=y/' "${grub_file}"
 
-_rmd "${catppuccin_grub_dir}"
+_rmdir"${catppuccin_grub_dir}"
 
 git_clone https://github.com/catppuccin/grub.git "${catppuccin_grub_dir}"
 

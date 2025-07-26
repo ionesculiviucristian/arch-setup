@@ -33,7 +33,7 @@ _mkdir_sudo() {
   sudo mkdir -p "$1"
 }
 
-_rmd() {
+_rmdir() {
   show_message "📁 Removing directory $1 ..."
   rm -rf "$1"
 }
