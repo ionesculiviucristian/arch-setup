@@ -7,7 +7,7 @@ set -eu
 # shellcheck disable=SC1091
 source "./scripts/helpers.sh" 2
 
-__cp \
+_cp \
   "./configs/.blerc" \
   "${HOME}/.blerc"
 
