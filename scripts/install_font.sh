@@ -33,7 +33,7 @@ case "${archive}" in
     ;;
 esac
 
-inform_install "$2 font"
+inform_install "${name} font"
 find "${tmp_dir}" -type f \( -iname "*.ttf" -o -iname "*.otf" \) -exec cp {} "${fonts_dir}" \;
 
 rm -rf "${tmp_dir}"
