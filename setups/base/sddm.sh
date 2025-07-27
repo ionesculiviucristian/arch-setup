@@ -21,7 +21,7 @@ sudo pacman \
 _rmdir_sudo "${sddm_themes_dir}/catppuccin-mocha-mauve-sddm"
 _mkdir_sudo "${sddm_themes_dir}/catppuccin-mocha-mauve-sddm"
 
-download_extract \
+download_extract_sudo \
   https://github.com/catppuccin/sddm/releases/download/v1.1.1/catppuccin-mocha-mauve-sddm.zip \
   "${sddm_themes_dir}/catppuccin-mocha-mauve-sddm"
 

@@ -63,6 +63,11 @@ download_extract() {
   wget -qO- "$1" | bsdtar -xvf- -C "$2" 2>&1 | tee -a "./install.log" >/dev/null
 }
 
+download_extract_sudo() {
+  show_message "📥 [SUDO] Downloading and extracting $1 to $2 ..."
+  wget -qO- "$1" | sudo bsdtar -xvf- -C "$2" 2>&1 | tee -a "./install.log" >/dev/null
+}
+
 git_clone() {
   show_message "🧬 Cloning $1 in $2..."
   git clone -q "$1" "$2"
