@@ -11,7 +11,7 @@ icons_dir="${HOME}/.local/share/icons"
 
 _rmdir "${catppuccin_kde_dir}"
 
-git clone -q --depth=1 https://github.com/catppuccin/kde "${catppuccin_kde_dir}"
+git_clone https://github.com/catppuccin/kde "${catppuccin_kde_dir}"
 
 _rmdir "${HOME}/.local/share/kpackage/generic/Catppuccin-Mocha-Mauve"
 
@@ -24,7 +24,7 @@ _rmdir "${HOME}/.local/share/kpackage/generic/Catppuccin-Mocha-Mauve"
 
   # Use newer Catppuccin cursors
   _rmdir "${icons_dir}/icons/catppuccin-mocha-mauve-cursors"
-  wget -qO- https://github.com/catppuccin/cursors/releases/download/v2.0.0/catppuccin-mocha-mauve-cursors.zip | bsdtar -xvf- -C "${icons_dir}" 2>&1 | tee -a "./install.log" >/dev/null
+  download_extract https://github.com/catppuccin/cursors/releases/download/v2.0.0/catppuccin-mocha-mauve-cursors.zip "${icons_dir}"
   
   if [ ! -L "${HOME}/.icons" ]; then
     ln -s "${icons_dir}" "${HOME}/.icons"

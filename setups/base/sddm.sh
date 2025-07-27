@@ -21,9 +21,9 @@ sudo pacman \
 _rmdir_sudo "${sddm_themes_dir}/catppuccin-mocha-mauve-sddm"
 _mkdir_sudo "${sddm_themes_dir}/catppuccin-mocha-mauve-sddm"
 
-wget -qO- \
-  https://github.com/catppuccin/sddm/releases/download/v1.1.1/catppuccin-mocha-mauve-sddm.zip | \
-  sudo bsdtar -xvf- -C "${sddm_themes_dir}/catppuccin-mocha-mauve-sddm" 2>&1 | tee -a "./install.log" >/dev/null
+download_extract \
+  https://github.com/catppuccin/sddm/releases/download/v1.1.1/catppuccin-mocha-mauve-sddm.zip \
+  "${sddm_themes_dir}/catppuccin-mocha-mauve-sddm"
 
 sudo sed -i \
   -e 's/^CustomBackground="false"/CustomBackground="true"/' \

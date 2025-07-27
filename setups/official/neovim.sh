@@ -7,7 +7,7 @@ set -eu
 # shellcheck disable=SC1091
 source "./scripts/helpers.sh" 2
 
-_cp_r \
+_cpdir \
   "./configs/.config/nvim" \
   "${HOME}/.config"
 

@@ -12,7 +12,7 @@ echo > "./install.log"
 
 PASSWORDLESS_SUDO_FILE="/etc/sudoers.d/$(whoami)"
 
-_rmf_sudo "${PASSWORDLESS_SUDO_FILE}"
+_rm_sudo "${PASSWORDLESS_SUDO_FILE}"
 
 inform "Creating ${PASSWORDLESS_SUDO_FILE}" \
   && echo "$(whoami) ALL=(ALL) NOPASSWD: ALL" | sudo tee "${PASSWORDLESS_SUDO_FILE}" 2>&1 | tee -a "./install.log" >/dev/null
@@ -119,4 +119,4 @@ inform_setup "tdrop" && ./setups/aur/tdrop.sh
 
 inform_setup "bash" && ./setups/base/bash.sh
 
-_rmf_sudo "${PASSWORDLESS_SUDO_FILE}"
+_rm_sudo "${PASSWORDLESS_SUDO_FILE}"

@@ -19,7 +19,7 @@ _rmdir "${catppuccin_grub_dir}"
 
 git_clone https://github.com/catppuccin/grub.git "${catppuccin_grub_dir}"
 
-_cp_r_sudo \
+_cpdir_sudo \
   "${catppuccin_grub_dir}/src/catppuccin-mocha-grub-theme" \
   "${grub_themes_dir}/catppuccin-mocha-grub-theme"
 

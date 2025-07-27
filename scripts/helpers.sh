@@ -9,17 +9,17 @@ _cp() {
 }
 
 _cp_sudo() {
-  show_message "⚠️📄 Copying file(s) $1 to $2 using sudo..."
+  show_message "📄 [SUDO] Copying file(s) $1 to $2 ..."
   sudo cp "$1" "$2"
 }
 
-_cp_r() {
+_cpdir() {
   show_message "📁 Copying directory $1 to $2 ..."
   cp -r "$1" "$2"
 }
 
-_cp_r_sudo() {
-  show_message "⚠️📁 Copying directory $1 to $2 using sudo..."
+_cpdir_sudo() {
+  show_message "📁 [SUDO] Copying directory $1 to $2 ..."
   sudo cp -r "$1" "$2"
 }
 
@@ -29,8 +29,18 @@ _mkdir() {
 }
 
 _mkdir_sudo() {
-  show_message "⚠️📁 Creating directory $1 using sudo..."
+  show_message "📁 [SUDO] Creating directory $1 ..."
   sudo mkdir -p "$1"
+}
+
+_rm() {
+  show_message "📄 Removing file $1 ..."
+  rm -f "$1"
+}
+
+_rm_sudo() {
+  show_message "📄 [SUDO] Removing file $1 ..."
+  sudo rm -f "$1"
 }
 
 _rmdir() {
@@ -39,23 +49,17 @@ _rmdir() {
 }
 
 _rmdir_sudo() {
-  show_message "⚠️📁 Removing directory $1 using sudo ..."
+  show_message "📁 [SUDO] Removing directory $1 ..."
   sudo rm -rf "$1"
-}
-
-_rmf() {
-  show_message "📄 Removing file $1 ..."
-  rm -f "$1"
-}
-
-_rmf_sudo() {
-  show_message "📄 Removing file $1 using sudo..."
-  sudo rm -f "$1"
 }
 
 download() {
   show_message "📥 Downloading $2 to $1 ..."
   wget -qO "$1" "$2"
+}
+
+download_extract() {
+  wget -qO- "$1" | bsdtar -xvf- -C "$2" 2>&1 | tee -a "./install.log" >/dev/null
 }
 
 git_clone() {
