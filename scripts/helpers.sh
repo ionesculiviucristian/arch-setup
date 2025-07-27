@@ -59,7 +59,7 @@ download() {
 }
 
 download_extract() {
-  show_message "📥 Downloading and extracting $2 to $1 ..."
+  show_message "📥 Downloading and extracting $1 to $2 ..."
   wget -qO- "$1" | bsdtar -xvf- -C "$2" 2>&1 | tee -a "./install.log" >/dev/null
 }
 
