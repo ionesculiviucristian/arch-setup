@@ -5,8 +5,6 @@ set -eu
 # Pre install
 # ==========================================
 
-echo > "./install.log"
-
 PASSWORDLESS_SUDO_FILE="/etc/sudoers.d/$(whoami)"
 
 sudo rm -f "${PASSWORDLESS_SUDO_FILE}"

@@ -13,5 +13,5 @@ git clone -q https://aur.archlinux.org/yay.git "${yay_dir}"
 
 (
   cd "${yay_dir}"
-  makepkg -si --needed --noconfirm | tee -a "./install.log" >/dev/null
+  makepkg -si --needed --noconfirm >/dev/null
 )
