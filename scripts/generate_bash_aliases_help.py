@@ -61,7 +61,6 @@ def get_aliases():
 
 def generate_bash_info(grouped_aliases):
     with open("./configs/.bash_aliases_help", "w") as stream:
-        stream.write("# shellcheck disable=SC2148\n")
         stream.write("GC='\\033[0;36m'\n")
         stream.write("AC='\\033[0;32m'\n")
         stream.write("NC='\\033[0m'\n\n")

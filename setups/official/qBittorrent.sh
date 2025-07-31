@@ -3,18 +3,15 @@ set -eu
 
 # https://github.com/catppuccin/qbittorrent
 
-# shellcheck disable=SC1091
-source "./scripts/helpers.sh" 2
-
 qBittorrent_dir="${HOME}/.config/qBittorrent"
 
-_mkdir "${qBittorrent_dir}/themes"
+mkdir -p "${qBittorrent_dir}/themes"
 
-download \
+wget -qO \
   "${qBittorrent_dir}/themes/catppuccin-mocha.qbtheme" \
   https://github.com/catppuccin/qbittorrent/releases/download/v2.0.1/catppuccin-mocha.qbtheme
 
-_cp \
+cp \
   "configs/.config/qBittorrent/qBittorrent.conf" \
   "${qBittorrent_dir}/qBittorrent.conf"
 

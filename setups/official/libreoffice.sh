@@ -3,19 +3,16 @@ set -eu
 
 # https://github.com/catppuccin/libreoffice
 
-# shellcheck disable=SC1091
-source "./scripts/helpers.sh" 2
-
 libreoffice_theme_file=$(mktemp)
 libreoffice_user_dir="${HOME}/.config/libreoffice/4/user"
 
-_mkdir "${libreoffice_user_dir}/config"
+mkdir -p "${libreoffice_user_dir}/config"
 
-download \
+wget -qO \
   "${libreoffice_user_dir}/config/catppuccin-mocha-mauve.soc" \
   https://raw.githubusercontent.com/catppuccin/libreoffice/refs/heads/main/themes/mocha/mauve/catppuccin-mocha-mauve.soc
 
-download \
+wget -qO \
   "${libreoffice_theme_file}" \
   https://raw.githubusercontent.com/catppuccin/libreoffice/main/themes/mocha/mauve/catppuccin-mocha-mauve.xcu
 

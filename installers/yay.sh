@@ -1,11 +1,7 @@
 #!/bin/bash
 set -eu
 
-# shellcheck disable=SC1091
-source "./scripts/helpers.sh" 2
-
 if command -v yay &>/dev/null; then
-  inform "yay is already installed, skipping"
   exit 0
 fi
 
@@ -17,5 +13,5 @@ git clone -q https://aur.archlinux.org/yay.git "${yay_dir}"
 
 (
   cd "${yay_dir}"
-  makepkg -si --needed --noconfirm 2>&1 | tee -a "./install.log" >/dev/null
+  makepkg -si --needed --noconfirm | tee -a "./install.log" >/dev/null
 )

@@ -1,9 +1,6 @@
 #!/bin/bash
 set -eu
 
-# shellcheck disable=SC1091
-source "./scripts/helpers.sh" 2
-
 email="$1"
 
 if [ -z "${email}" ]; then
@@ -11,12 +8,11 @@ if [ -z "${email}" ]; then
   exit 1
 fi
 
-# shellcheck disable=SC1091
 source "${HOME}/.bashrc"
 
 filezilla_dir="${HOME}/.config/filezilla"
 
-_mkdir "${filezilla_dir}"
+mkdir -p "${filezilla_dir}"
 
 BW_SESSION=$(bw login "${email}" --method 0 --raw)
 export BW_SESSION

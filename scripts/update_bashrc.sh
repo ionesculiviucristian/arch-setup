@@ -1,28 +1,24 @@
 #!/bin/bash
 set -eu
 
-# shellcheck disable=SC1091
-source "./scripts/helpers.sh" 2
-
-line="$1"
-pre="${2:-}"
-post="${3:-}"
+insert_new_line=${1:-true}
 
 basrc_file="${HOME}/.bashrc"
 
-if [ -z "${line}" ]; then
-  echo "Error: No line provided"
-  exit 1
+inserted_new_line=false
+
+if [ "${insert_new_line}" = false ]; then
+  inserted_new_line=true
 fi
 
-if [ ! -f "${basrc_file}" ]; then
-  echo "Error: ${basrc_file} not found"
-  exit 1
-fi
-
-if ! grep -Fxq "${line}" "${basrc_file}"; then
-  inform "Inserting line ${pre}${line}${post} in ${basrc_file}"
-  echo -e "${pre}${line}${post}" >> "${basrc_file}"
-fi
+while IFS= read -r line; do
+  if ! grep -Fxq "$line" "${basrc_file}"; then
+    if [ "${inserted_new_line}" = false ]; then
+      echo "" >> "${basrc_file}"
+      inserted_new_line=true
+    fi
+    echo "${line}" >> "${basrc_file}"
+  fi
+done
 
 exit 0

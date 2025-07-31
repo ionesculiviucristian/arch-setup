@@ -5,18 +5,15 @@ set -eu
 # https://starship.rs/config/
 # https://github.com/catppuccin/starship
 
-# shellcheck disable=SC1091
-source "./scripts/helpers.sh" 2
-
 starship_dir="${HOME}/.config/starship"
 
-_mkdir "${starship_dir}/themes"
+mkdir -p "${starship_dir}/themes"
 
-_cp \
+cp \
   "./configs/.config/starship/config.toml" \
   "${starship_dir}/config.toml"
 
-download \
+wget -qO \
   "${starship_dir}/themes/mocha.conf" \
   https://raw.githubusercontent.com/catppuccin/starship/refs/heads/main/themes/mocha.toml
 
@@ -25,6 +22,8 @@ cat \
   "${starship_dir}/themes/mocha.conf" \
   > "${HOME}/.config/.starship.toml"
 
-./scripts/update_bashrc.sh 'eval "$(starship init bash)"'
+./scripts/update_bashrc.sh << 'EOF'
+eval "$(starship init bash)"
+EOF
 
 exit 0

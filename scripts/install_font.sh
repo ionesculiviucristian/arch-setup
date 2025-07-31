@@ -1,11 +1,7 @@
 #!/bin/bash
 set -eu
 
-# shellcheck disable=SC1091
-source "./scripts/helpers.sh" 2
-
 url="$1"
-name="${2:-"unknown"}"
 
 fonts_dir="${HOME}/.local/share/fonts"
 mkdir -p "${fonts_dir}"
@@ -33,7 +29,6 @@ case "${archive}" in
     ;;
 esac
 
-inform_install "${name} font"
 find "${tmp_dir}" -type f \( -iname "*.ttf" -o -iname "*.otf" \) -exec cp {} "${fonts_dir}" \;
 
 rm -rf "${tmp_dir}"
