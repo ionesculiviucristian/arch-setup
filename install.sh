@@ -102,10 +102,10 @@ cp "/etc/bash.bashrc" "${HOME}/.bashrc"
 # Post install
 # ==========================================
 
+./setups/base/bash.sh
+
 ./scripts/update_bashrc.sh << 'EOF'
 [[ ${BLE_VERSION-} ]] && ble-attach
 EOF
-
-./setups/base/bash.sh
 
 sudo rm -f "${PASSWORDLESS_SUDO_FILE}"
