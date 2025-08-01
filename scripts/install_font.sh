@@ -9,8 +9,8 @@ if [ -z "${url}" ]; then
 fi
 
 tmp_dir=$(mktemp -d)
-archive_path="${tmp_dir}/${archive}"
 archive=$(basename "${url}")
+archive_path="${tmp_dir}/${archive}"
 fonts_dir="${HOME}/.local/share/fonts"
 
 mkdir -p "${fonts_dir}"
