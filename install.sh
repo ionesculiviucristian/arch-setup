@@ -44,7 +44,7 @@ cp "/etc/bash.bashrc" "${HOME}/.bashrc"
 # Install AUR packages
 # ==========================================
 
-./installers/official_packages.sh
+./installers/aur_packages.sh
 
 # ==========================================
 # Setup base packages

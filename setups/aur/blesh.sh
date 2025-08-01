@@ -17,7 +17,7 @@ lines=$(cat <<'EOF'
 EOF
 )
 
-if grep -Pzoq "$(printf '%s' "${lines}")" "${basrc_file}"; then
+if grep -Fq "$(printf '%s' "${lines}")" "${basrc_file}"; then
   exit 0
 fi
 
