@@ -14,7 +14,7 @@ extract_from_url() {
     exit 1
   fi
 
-  wget -qO- "${url}" | bsdtar -xvf- -C "${path}" >/dev/null
+  wget -qO- "${url}" | bsdtar -xf- -C "${path}"
 }
 
 sudo_extract_from_url() {
@@ -30,7 +30,7 @@ sudo_extract_from_url() {
     exit 1
   fi
 
-  wget -qO- "${url}" | sudo bsdtar -xvf- -C "${path}" >/dev/null
+  wget -qO- "${url}" | sudo bsdtar -xf- -C "${path}"
 }
 
 sudo_replace_text() {
@@ -55,4 +55,12 @@ sudo_replace_text() {
   sudo sed -i \
     "s${delimiter}${pattern}${delimiter}${replacement}${delimiter}" \
     "${file}"
+}
+
+is_kernel_outdated() {
+  local installed_kernel running_kernel
+  installed_kernel=$(pacman -Q linux-lts | awk '{print $2}')
+  running_kernel=$(uname -r | sed 's/-lts$//')
+
+  [[ "${running_kernel}" != *"${installed_kernel}"* ]]
 }

@@ -3,6 +3,15 @@ set -eu
 
 # [Config] http://www.proftpd.org/docs/howto/ConfigFile.html
 
+# shellcheck disable=SC1091
+source "./scripts/helpers.sh"
+
+if is_kernel_outdated; then
+  echo "ProFTPD setup must be ran manually," \
+  "after restart, because the LTS kernel got updated"
+  exit 0
+fi
+
 export USER="${USER}"
 GROUP="$(id -gn "${USER}")"
 export GROUP
