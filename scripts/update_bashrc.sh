@@ -3,7 +3,7 @@ set -eu
 
 insert_new_line=${1:-true}
 
-basrc_file="${HOME}/.bashrc"
+bashrc_file="${HOME}/.bashrc"
 
 inserted_new_line=false
 
@@ -12,12 +12,12 @@ if [ "${insert_new_line}" = false ]; then
 fi
 
 while IFS= read -r line; do
-  if ! grep -Fxq "${line}" "${basrc_file}"; then
+  if ! grep -qFx "${line}" "${bashrc_file}"; then
     if [ "${inserted_new_line}" = false ]; then
-      echo "" >> "${basrc_file}"
+      echo "" >> "${bashrc_file}"
       inserted_new_line=true
     fi
-    echo "${line}" >> "${basrc_file}"
+    echo "${line}" >> "${bashrc_file}"
   fi
 done
 

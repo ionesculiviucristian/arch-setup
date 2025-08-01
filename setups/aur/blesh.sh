@@ -4,7 +4,7 @@ set -eu
 # [bashrc] https://github.com/akinomyoga/ble.sh?tab=readme-ov-file#13-set-up-bashrc
 # [Config] https://github.com/akinomyoga/ble.sh/blob/master/blerc.template
 
-basrc_file="${HOME}/.bashrc"
+bashrc_file="${HOME}/.bashrc"
 
 cp "./configs/.blerc" "${HOME}/.blerc"
 
@@ -17,11 +17,14 @@ lines=$(cat <<'EOF'
 EOF
 )
 
-if grep -Fq "$(printf '%s' "${lines}")" "${basrc_file}"; then
-  exit 0
+if grep -F -A3 \
+  "# https://github.com/akinomyoga/ble.sh?tab=readme-ov-file#13-set-up-bashrc" \
+  "${bashrc_file}" | \
+  grep -qF "${lines}"; then
+    exit 0
 fi
 
 sed -i "/\[\[ \$- != \*i\* \]\] && return/r /dev/stdin" \
-  "${basrc_file}" <<<"${lines}"
+  "${bashrc_file}" <<<"${lines}"
 
 exit 0
