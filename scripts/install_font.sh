@@ -8,10 +8,10 @@ if [ -z "${url}" ]; then
   exit 1
 fi
 
+tmp_dir=$(mktemp -d)
 archive_path="${tmp_dir}/${archive}"
 archive=$(basename "${url}")
 fonts_dir="${HOME}/.local/share/fonts"
-tmp_dir=$(mktemp -d)
 
 mkdir -p "${fonts_dir}"
 
