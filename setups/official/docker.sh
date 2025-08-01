@@ -4,6 +4,8 @@ set -eu
 # [Config] https://docs.docker.com/engine/daemon/#configuration-file
 # [Config] https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#configuring-docker
 
+docker_dir="/etc/docker"
+
 # This seems to be the first time we setup docker.
 # Chances are that the LTS kernel got updated and that
 # will most likely raise errors when trying to start docker
@@ -18,8 +20,6 @@ if [ ! -f "${docker_dir}/daemon.json" ]; then
     exit 0
   fi
 fi
-
-docker_dir="/etc/docker"
 
 sudo mkdir -p "${docker_dir}"
 
