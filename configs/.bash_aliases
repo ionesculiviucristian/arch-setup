@@ -57,13 +57,13 @@ alias tree="eza --tree"
 # Package manager
 # ======================================
 
-if command -v apt > /dev/null; then
+if command -v apt >/dev/null; then
     PACKAGE_MANAGER="apt"
-elif command -v yay > /dev/null; then
+elif command -v yay >/dev/null; then
     PACKAGE_MANAGER="yay"
-elif command -v pacman > /dev/null; then
+elif command -v pacman >/dev/null; then
     PACKAGE_MANAGER="pacman"
-elif command -v zypper > /dev/null; then
+elif command -v zypper >/dev/null; then
     PACKAGE_MANAGER="zypper"
 else
     PACKAGE_MANAGER="" 

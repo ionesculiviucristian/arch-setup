@@ -5,16 +5,17 @@ set -eu
 
 libreoffice_theme_file=$(mktemp)
 libreoffice_user_dir="${HOME}/.config/libreoffice/4/user"
+libreoffice_theme="catppuccin-mocha-mauve"
 
 mkdir -p "${libreoffice_user_dir}/config"
 
 wget -qO \
-  "${libreoffice_user_dir}/config/catppuccin-mocha-mauve.soc" \
-  https://raw.githubusercontent.com/catppuccin/libreoffice/refs/heads/main/themes/mocha/mauve/catppuccin-mocha-mauve.soc
+  "${libreoffice_user_dir}/config/${libreoffice_theme}.soc" \
+  https://raw.githubusercontent.com/catppuccin/libreoffice/refs/heads/main/themes/mocha/mauve/${libreoffice_theme}.soc
 
 wget -qO \
   "${libreoffice_theme_file}" \
-  https://raw.githubusercontent.com/catppuccin/libreoffice/main/themes/mocha/mauve/catppuccin-mocha-mauve.xcu
+  https://raw.githubusercontent.com/catppuccin/libreoffice/main/themes/mocha/mauve/${libreoffice_theme}.xcu
 
 if [ ! -f "${libreoffice_user_dir}/registrymodifications.xcu" ]; then
   {

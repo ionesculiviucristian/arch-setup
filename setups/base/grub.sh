@@ -1,30 +1,45 @@
 #!/bin/bash
 set -eu
 
-# https://www.gnu.org/software/grub/manual/grub/grub.html#Simple-configuration
-# https://github.com/catppuccin/grub
+# [Config] https://www.gnu.org/software/grub/manual/grub/grub.html
+# [Theme] https://github.com/catppuccin/grub
+
+# shellcheck disable=SC1091
+source "./scripts/helpers.sh"
 
 catppuccin_grub_dir="${HOME}/.repos/catppuccin-grub"
 grub_file="/etc/default/grub"
+grub_theme="catppuccin-mocha-grub-theme"
 grub_themes_dir="/usr/share/grub/themes"
 
 rm -rf "${catppuccin_grub_dir}"
-sudo rm -rf "${grub_themes_dir}/catppuccin-mocha-grub-theme"
+sudo rm -rf "${grub_themes_dir}/${grub_theme}"
 
 git clone -q \
   https://github.com/catppuccin/grub.git \
   "${catppuccin_grub_dir}"
 
 sudo cp -r \
-  "${catppuccin_grub_dir}/src/catppuccin-mocha-grub-theme" \
-  "${grub_themes_dir}/catppuccin-mocha-grub-theme"
+  "${catppuccin_grub_dir}/src/${grub_theme}" \
+  "${grub_themes_dir}/${grub_theme}"
 
-sudo sed -i 's/^GRUB_DEFAULT=0/GRUB_DEFAULT=saved/' "${grub_file}"
-sudo sed -i 's/^#GRUB_SAVEDEFAULT=true/GRUB_SAVEDEFAULT=true/' "${grub_file}"
-sudo sed -i 's/^#GRUB_DISABLE_SUBMENU=y/GRUB_DISABLE_SUBMENU=y/' "${grub_file}"
-sudo sed -i \
-  's|^#GRUB_THEME="/path/to/gfxtheme"|GRUB_THEME="/usr/share/grub/themes/catppuccin-mocha-grub-theme/theme.txt"|' \
+sudo_replace_text \
+  '^GRUB_DEFAULT=0' \
+  'GRUB_DEFAULT=saved' \
   "${grub_file}"
+sudo_replace_text \
+  '^#GRUB_SAVEDEFAULT=true' \
+  'GRUB_SAVEDEFAULT=true' \
+  "${grub_file}"
+sudo_replace_text \
+  '^#GRUB_DISABLE_SUBMENU=y' \
+  'GRUB_DISABLE_SUBMENU=y' \
+  "${grub_file}"
+sudo_replace_text \
+  '^#GRUB_THEME="/path/to/gfxtheme"' \
+  "GRUB_THEME=\"${grub_themes_dir}/${grub_theme}/theme.txt\"" \
+  "${grub_file}" \
+  "|"
 
 sudo grub-mkconfig -o "/boot/grub/grub.cfg" >/dev/null
 

@@ -1,6 +1,9 @@
 #!/bin/bash
 set -eu
 
-sudo sed -i 's/^#Color/Color/' "/etc/pacman.conf"
+# shellcheck disable=SC1091
+source "./scripts/helpers.sh"
+
+sudo_replace_text '^#Color' 'Color' "/etc/pacman.conf"
 
 exit 0

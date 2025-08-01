@@ -1,8 +1,8 @@
 #!/bin/bash
 set -eu
 
-# https://dystroy.org/broot/install-br/#automatic-shell-function-installation
-# https://github.com/catppuccin/catppuccin/discussions/1848
+# [bashrc] https://dystroy.org/broot/install-br/#automatic-shell-function-installation
+# [Theme] https://github.com/catppuccin/catppuccin/issues/2840
 
 broot --install >/dev/null
 

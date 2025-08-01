@@ -3,12 +3,23 @@ set -eu
 
 path="$1"
 title="$2"
-
 id=$(date +%s)
+
+if [ -z "${path}" ]; then
+  echo "Error: Path is required"
+  exit 1
+fi
+
+if [ -z "${title}" ]; then
+  echo "Error: Title is required"
+  exit 1
+fi
 
 user_places_file="${HOME}/.local/share/user-places.xbel"
 
-[ ! -f "${user_places_file}" ] && echo '<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE xbel><xbel version="1.0"></xbel>' > "${user_places_file}"
+if [ ! -f "${user_places_file}" ]; then 
+  echo '<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE xbel><xbel version="1.0"></xbel>' > "${user_places_file}"
+fi
 
 if xmlstarlet sel -t -v "//title[text() = '${title}']" "${user_places_file}" | grep -q .; then
   exit 0

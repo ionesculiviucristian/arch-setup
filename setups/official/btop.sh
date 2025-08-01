@@ -1,16 +1,17 @@
 #!/bin/bash
 set -eu
 
-# https://github.com/aristocratos/btop?tab=readme-ov-file#configurability
-# https://github.com/catppuccin/btop
+# [Config] https://github.com/aristocratos/btop?tab=readme-ov-file#configurability
+# [Theme] https://github.com/catppuccin/btop
 
 btop_dir="${HOME}/.config/btop"
+btop_theme="catppuccin_mocha"
 
 mkdir -p "${btop_dir}/themes"
 
 wget -qO \
-  "${btop_dir}/themes/catppuccin_mocha.theme" \
-  https://raw.githubusercontent.com/catppuccin/btop/refs/heads/main/themes/catppuccin_mocha.theme
+  "${btop_dir}/themes/${btop_theme}.theme" \
+  https://raw.githubusercontent.com/catppuccin/btop/refs/heads/main/themes/${btop_theme}.theme
 
 cp \
   "./configs/.config/btop/btop.conf" \

@@ -5,6 +5,7 @@ set -eu
 source "./scripts/helpers.sh"
 
 sddm_conf_dir="/etc/sddm.conf.d"
+sddm_theme="catppuccin-mocha-mauve-sddm"
 sddm_themes_dir="/usr/share/sddm/themes"
 wallpapers_dir="${HOME}/Pictures/Wallpapers"
 
@@ -18,21 +19,22 @@ sudo pacman \
   qt6-declarative \
   qt5-quickcontrols2 >/dev/null
 
-sudo rm -rf "${sddm_themes_dir}/catppuccin-mocha-mauve-sddm"
+sudo rm -rf "${sddm_themes_dir}/${sddm_theme}"
 
-sudo mkdir -p "${sddm_themes_dir}/catppuccin-mocha-mauve-sddm"
+sudo mkdir -p "${sddm_themes_dir}/${sddm_theme}"
 
-sudo_extract_download \
-  https://github.com/catppuccin/sddm/releases/download/v1.1.1/catppuccin-mocha-mauve-sddm.zip \
-  "${sddm_themes_dir}/catppuccin-mocha-mauve-sddm"
+sudo_extract_from_url \
+  https://github.com/catppuccin/sddm/releases/download/v1.1.1/${sddm_theme}.zip \
+  "${sddm_themes_dir}/${sddm_theme}"
 
-sudo sed -i \
-  's/^CustomBackground="false"/CustomBackground="true"/' \
-  "${sddm_themes_dir}/catppuccin-mocha-mauve-sddm/theme.conf"
+sudo_replace_text \
+  '^CustomBackground="false"' \
+  'CustomBackground="true"' \
+  "${sddm_themes_dir}/${sddm_theme}/theme.conf"
 
 sudo cp \
   "${wallpapers_dir}/wp11361931-minimalist-3440x1440-wallpapers.png" \
-  "${sddm_themes_dir}/catppuccin-mocha-mauve-sddm/backgrounds/wall.png"
+  "${sddm_themes_dir}/${sddm_theme}/backgrounds/wall.png"
 
 sudo cp \
   "./configs/etc/sddm.conf.d/kde_settings.conf" \

@@ -1,8 +1,8 @@
 #!/bin/bash
 set -eu
 
-# https://docs.docker.com/engine/daemon/#configuration-file
-# https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#configuring-docker
+# [Config] https://docs.docker.com/engine/daemon/#configuration-file
+# [Config] https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#configuring-docker
 
 docker_dir="/etc/docker"
 

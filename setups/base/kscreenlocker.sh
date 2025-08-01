@@ -1,10 +1,11 @@
 #!/bin/bash
 set -eu
 
+kscreenlockerrc_file="${HOME}/.config/kscreenlockerrc"
 wallpapers_dir="${HOME}/Pictures/Wallpapers"
 
 kwriteconfig6 \
-  --file "${HOME}/.config/kscreenlockerrc" \
+  --file "${kscreenlockerrc_file}" \
   --group "Greeter" \
   --group "Wallpaper" \
   --group "org.kde.image" \
@@ -13,7 +14,7 @@ kwriteconfig6 \
   "${wallpapers_dir}/wp11361979-minimalist-3440x1440-wallpapers.png"
 
 kwriteconfig6 \
-  --file "${HOME}/.config/kscreenlockerrc" \
+  --file "${kscreenlockerrc_file}" \
   --group "Greeter" \
   --group "Wallpaper" \
   --group "org.kde.image" \

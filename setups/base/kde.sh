@@ -1,16 +1,17 @@
 #!/bin/bash
 set -eu
 
-# https://github.com/catppuccin/kde
+# [Theme] https://github.com/catppuccin/kde
 
 # shellcheck disable=SC1091
 source "./scripts/helpers.sh"
 
 catppuccin_kde_dir="${HOME}/.repos/catppuccin-fzf"
+cursors_theme="catppuccin-mocha-mauve-cursors"
 icons_dir="${HOME}/.local/share/icons"
 
 rm -rf "${catppuccin_kde_dir}"
-rm -rf "${HOME}/.local/share/kpackage/generic/Catppuccin-Mocha-Mauve"
+rm -rf "${HOME}/.local/share/kpackage/generic/Catppuccin-*"
 
 git clone -q --depth=1 \
   https://github.com/catppuccin/kde \
@@ -20,20 +21,19 @@ git clone -q --depth=1 \
   cd "${catppuccin_kde_dir}"
   printf "1\n4\n2\ny\ny" | ./install.sh >/dev/null
 
-  rm -rf "${icons_dir}/Catppuccin-Mocha-Dark-Cursors"
-  rm -rf "${icons_dir}/Catppuccin-Mocha-Mauve-Cursors"
-  rm -rf "${icons_dir}/icons/catppuccin-mocha-mauve-cursors"
+  rm -rf "${icons_dir}/Catppuccin-*"
+  rm -rf "${icons_dir}/icons/${cursors_theme}"
 
   # Use newer Catppuccin cursors
-  sudo_extract_download \
-    https://github.com/catppuccin/cursors/releases/download/v2.0.0/catppuccin-mocha-mauve-cursors.zip \
+  sudo_extract_from_url \
+    https://github.com/catppuccin/cursors/releases/download/v2.0.0/${cursors_theme}.zip \
     "${icons_dir}"
   
   if [ ! -L "${HOME}/.icons" ]; then
     ln -s "${icons_dir}" "${HOME}/.icons"
   fi
 
-  plasma-apply-cursortheme "catppuccin-mocha-mauve-cursors" >/dev/null
+  plasma-apply-cursortheme "${cursors_theme}" >/dev/null
 )
 
 exit 0

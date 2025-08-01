@@ -1,7 +1,7 @@
 #!/bin/bash
 set -eu
 
-# https://github.com/catppuccin/obs
+# [Theme] https://github.com/catppuccin/obs
 
 catppuccin_obs_dir="${HOME}/.repos/catppuccin-obs"
 obs_dir="${HOME}/.config/obs-studio"

@@ -12,7 +12,7 @@ if [ "${insert_new_line}" = false ]; then
 fi
 
 while IFS= read -r line; do
-  if ! grep -Fxq "$line" "${basrc_file}"; then
+  if ! grep -Fxq "${line}" "${basrc_file}"; then
     if [ "${inserted_new_line}" = false ]; then
       echo "" >> "${basrc_file}"
       inserted_new_line=true

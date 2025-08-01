@@ -1,6 +1,8 @@
 #!/bin/bash
 set -eu
 
+# [Config] https://github.com/PapirusDevelopmentTeam/papirus-folders?tab=readme-ov-file#script-usage
+
 papirus-folders -C violet --theme Papirus-Dark >/dev/null
 
 kwriteconfig6 \

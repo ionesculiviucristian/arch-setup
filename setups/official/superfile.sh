@@ -1,16 +1,17 @@
 #!/bin/bash
 set -eu
 
-# https://superfile.netlify.app/configure/superfile-config/
-# https://github.com/catppuccin/superfile
+# [Config] https://superfile.netlify.app/configure/superfile-config/
+# [Theme] https://github.com/catppuccin/superfile
 
 superfile_dir="${HOME}/.config/superfile"
+superfile_theme="catppuccin-mocha-mauve"
 
 mkdir -p "${superfile_dir}/theme"
 
 wget -qO \
-  "${superfile_dir}/theme/catppuccin-mocha-mauve.toml" \
-  https://raw.githubusercontent.com/catppuccin/superfile/refs/heads/main/themes/mocha/catppuccin-mocha-mauve.toml
+  "${superfile_dir}/theme/${superfile_theme}.toml" \
+  https://raw.githubusercontent.com/catppuccin/superfile/refs/heads/main/themes/mocha/${superfile_theme}.toml
 
 cp \
   "./configs/.config/superfile/config.toml" \

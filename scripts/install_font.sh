@@ -3,12 +3,17 @@ set -eu
 
 url="$1"
 
+if [ -z "${url}" ]; then
+  echo "Error: URL is required"
+  exit 1
+fi
+
+archive_path="${tmp_dir}/${archive}"
+archive=$(basename "${url}")
 fonts_dir="${HOME}/.local/share/fonts"
-mkdir -p "${fonts_dir}"
 tmp_dir=$(mktemp -d)
 
-archive=$(basename "${url}")
-archive_path="${tmp_dir}/${archive}"
+mkdir -p "${fonts_dir}"
 
 wget -qO "${archive_path}" "${url}"
 
@@ -32,4 +37,5 @@ esac
 find "${tmp_dir}" -type f \( -iname "*.ttf" -o -iname "*.otf" \) -exec cp {} "${fonts_dir}" \;
 
 rm -rf "${tmp_dir}"
-fc-cache -f > /dev/null
+
+fc-cache -f >/dev/null

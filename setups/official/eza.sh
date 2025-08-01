@@ -1,7 +1,7 @@
 #!/bin/bash
 set -eu
 
-# https://github.com/eza-community/eza?tab=readme-ov-file#custom-themes
+# [Theme] https://github.com/eza-community/eza?tab=readme-ov-file#custom-themes
 
 eza_dir="${HOME}/.config/eza"
 

@@ -4,7 +4,7 @@ set -eu
 email="$1"
 
 if [ -z "${email}" ]; then
-  echo "Error: No email provided"
+  echo "Error: E-mail is required"
   exit 1
 fi
 

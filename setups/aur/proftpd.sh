@@ -1,12 +1,14 @@
 #!/bin/bash
 set -eu
 
+# [Config] http://www.proftpd.org/docs/howto/ConfigFile.html
+
 export USER="${USER}"
 GROUP="$(id -gn "${USER}")"
 export GROUP
 
 envsubst < "./configs/etc/proftpd.conf" | \
-  sudo tee "/etc/proftpd.conf" > /dev/null
+  sudo tee "/etc/proftpd.conf" >/dev/null
 
 ./scripts/update_hosts.sh "127.0.0.1 ftp.localdev"
 
