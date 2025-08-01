@@ -4,6 +4,21 @@ set -eu
 # [Config] https://docs.docker.com/engine/daemon/#configuration-file
 # [Config] https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#configuring-docker
 
+# This seems to be the first time we setup docker.
+# Chances are that the LTS kernel got updated and that
+# will most likely raise errors when trying to start docker
+# so this script will be need to be ran manually, after restart 
+if [ ! -f "${docker_dir}/daemon.json" ]; then
+  installed_kernel=$(pacman -Q linux-lts | awk '{print $2}')
+  running_kernel=$(uname -r)
+
+  if [[ "${running_kernel}" != *"${installed_kernel}"* ]]; then
+    echo "Docker setup must be ran manually," \
+    "after restart, because the LTS kernel got updated"
+    exit 0
+  fi
+fi
+
 docker_dir="/etc/docker"
 
 sudo mkdir -p "${docker_dir}"
