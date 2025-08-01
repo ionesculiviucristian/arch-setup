@@ -1,6 +1,7 @@
 #!/bin/bash
 set -eu
 
+# shellcheck disable=SC1091
 source "./scripts/helpers.sh"
 
 sddm_conf_dir="/etc/sddm.conf.d"

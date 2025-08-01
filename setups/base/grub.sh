@@ -9,8 +9,11 @@ grub_file="/etc/default/grub"
 grub_themes_dir="/usr/share/grub/themes"
 
 rm -rf "${catppuccin_grub_dir}"
+sudo rm -rf "${grub_themes_dir}/catppuccin-mocha-grub-theme"
 
-git clone -q https://github.com/catppuccin/grub.git "${catppuccin_grub_dir}"
+git clone -q \
+  https://github.com/catppuccin/grub.git \
+  "${catppuccin_grub_dir}"
 
 sudo cp -r \
   "${catppuccin_grub_dir}/src/catppuccin-mocha-grub-theme" \

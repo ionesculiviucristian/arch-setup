@@ -3,6 +3,7 @@ set -eu
 
 # https://github.com/catppuccin/kde
 
+# shellcheck disable=SC1091
 source "./scripts/helpers.sh"
 
 catppuccin_kde_dir="${HOME}/.repos/catppuccin-fzf"
@@ -11,7 +12,9 @@ icons_dir="${HOME}/.local/share/icons"
 rm -rf "${catppuccin_kde_dir}"
 rm -rf "${HOME}/.local/share/kpackage/generic/Catppuccin-Mocha-Mauve"
 
-git clone -q https://github.com/catppuccin/kde "${catppuccin_kde_dir}"
+git clone -q --depth=1 \
+  https://github.com/catppuccin/kde \
+  "${catppuccin_kde_dir}"
 
 (
   cd "${catppuccin_kde_dir}"
