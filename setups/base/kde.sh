@@ -11,7 +11,7 @@ cursors_theme="catppuccin-mocha-mauve-cursors"
 icons_dir="${HOME}/.local/share/icons"
 
 rm -rf "${catppuccin_kde_dir}"
-rm -rf "${HOME}/.local/share/kpackage/generic/Catppuccin-*"
+rm -rf "${HOME}/.local/share/kpackage/generic/Catppuccin-"*
 
 git clone -q --depth=1 \
   https://github.com/catppuccin/kde \
@@ -21,7 +21,7 @@ git clone -q --depth=1 \
   cd "${catppuccin_kde_dir}"
   printf "1\n4\n2\ny\ny" | ./install.sh >/dev/null
 
-  rm -rf "${icons_dir}/Catppuccin-*"
+  rm -rf "${icons_dir}/Catppuccin-"*
   rm -rf "${icons_dir}/icons/${cursors_theme}"
 
   # Use newer Catppuccin cursors

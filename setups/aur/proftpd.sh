@@ -24,7 +24,7 @@ envsubst < "./configs/etc/proftpd.conf" | \
 sudo iptables -I INPUT 1 -p tcp -s 127.0.0.1 --dport 21 -j ACCEPT
 sudo iptables -A INPUT -p tcp --dport 21 -j DROP
 
-sudo systemctl enable proftpd.service
+sudo systemctl enable proftpd.service >/dev/null
 sudo systemctl start proftpd.service
 
 exit 0

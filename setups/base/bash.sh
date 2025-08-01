@@ -9,9 +9,7 @@ HISTCONTROL=ignoreboth
 HISTFILESIZE=100000
 HISTSIZE=10000
 
-if [ -f "${HOME}/.bash_aliases" ]; then
-  . "${HOME}/.bash_aliases"
-fi
+[ -f "${HOME}/.bash_aliases" ] && . "${HOME}/.bash_aliases"
 EOF
 
 ./scripts/install_bash_aliases.sh

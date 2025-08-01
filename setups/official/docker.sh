@@ -21,7 +21,7 @@ sudo cp \
   "./configs/etc/docker/daemon.json" \
   "${docker_dir}/daemon.json"
 
-sudo systemctl enable docker.service
+sudo systemctl enable docker.service >/dev/null
 sudo systemctl start docker.service
 
 sudo usermod -aG docker "${USER}"
