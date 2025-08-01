@@ -12,7 +12,7 @@ docker_dir="/etc/docker"
 # so this script will be need to be ran manually, after restart 
 if [ ! -f "${docker_dir}/daemon.json" ]; then
   installed_kernel=$(pacman -Q linux-lts | awk '{print $2}')
-  running_kernel=$(uname -r)
+  running_kernel=$(uname -r | sed 's/-lts$//')
 
   if [[ "${running_kernel}" != *"${installed_kernel}"* ]]; then
     echo "Docker setup must be ran manually," \
