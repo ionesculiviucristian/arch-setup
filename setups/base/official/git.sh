@@ -19,14 +19,14 @@ git config --global merge.tool vscode
 # shellcheck disable=SC2016
 git config --global mergetool.vscode.cmd 'code --wait $MERGED'
 
-git config --file ~/.gitconfig-personal user.name "${GIT_PERSONAL_USER:?err}"
-git config --file ~/.gitconfig-personal user.email "${GIT_PERSONAL_USER_email:?err}"
+git config --file ~/.gitconfig-personal user.name "${GIT_PERSONAL_USER_NAME:?err}"
+git config --file ~/.gitconfig-personal user.email "${GIT_PERSONAL_USER_EMAIL:?err}"
 
 git config --file ~/.gitconfig-personal user.signingkey "${gpgsign}"
 git config --file ~/.gitconfig-personal commit.gpgsign true
 
-git config --file ~/.gitconfig-work user.name "${GIT_WORK_USER:?err}"
-git config --file ~/.gitconfig-work user.email "${GIT_WORK_USER_email:?err}"
+git config --file ~/.gitconfig-work user.name "${GIT_WORK_USER_NAME:?err}"
+git config --file ~/.gitconfig-work user.email "${GIT_WORK_USER_EMAIL:?err}"
 
 cat <<EOF >> ~/.gitconfig
 

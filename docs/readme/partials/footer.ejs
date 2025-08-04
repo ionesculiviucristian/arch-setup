@@ -1,8 +1,10 @@
 ## Import Bitwarden secrets
 
+Make sure you set `BITWARDEN_EMAIL` in `.env` file before continuing
+
 ```bash
-./setups/secrets.sh
-./setups/official/git.sh
+./setups/base/secrets.sh
+./setups/base/official/git.sh
 ```
 
 ## Development
@@ -14,7 +16,7 @@ pipx install pre-commit
 pre-commit install
 ```
 
-Install kitty terminfo when connecting via SSH
+Install kitty terminfo on the remote server when connecting via SSH
 
 ```bash
 cd ~

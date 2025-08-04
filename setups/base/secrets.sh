@@ -12,7 +12,7 @@ BW_SESSION=$(bw login "${BITWARDEN_EMAIL}" --method 0 --raw)
 export BW_SESSION
 
 bw get item "Arch setup" | \
-  jq -r '.notes' > "./env"
+  jq -r '.notes' > "./.env"
 
 bw get item "Private bash aliases" | \
   jq -r '.notes' > "${HOME}/.bash_private_aliases"

@@ -167,7 +167,6 @@ This project serves as both a starting point and a living reference for managing
 - [NVIDIA settings](https://www.nvidia.com): Tool for configuring the NVIDIA graphics driver [Source](https://archlinux.org/packages/extra/x86_64/nvidia-settings)
 - [NVIDIA utils](https://www.nvidia.com): NVIDIA drivers utilities [Source](https://archlinux.org/packages/extra/x86_64/nvidia-utils)
 - [NVIDIA utils (32-bit)](http://www.nvidia.com): NVIDIA drivers utilities (32-bit) [Source](https://archlinux.org/packages/multilib/x86_64/lib32-nvidia-utils)
-- [XP-Pen](https://www.xp-pen.com): XP-Pen (Official) Linux utility for legacy XPPen Tablets [Source](https://aur.archlinux.org/packages/xppenlinux-v3)
 
 ### Official Arch packages (B450 I AORUS PRO WIFI workstation)
 
@@ -255,9 +254,11 @@ For a list off all available aliases, [read more here](./ALIASES.md) or run `ali
 
 ## Import Bitwarden secrets
 
+Make sure you set `BITWARDEN_EMAIL` in `.env` file before continuing
+
 ```bash
-./setups/secrets.sh
-./setups/official/git.sh
+./setups/base/secrets.sh
+./setups/base/official/git.sh
 ```
 
 ## Development
@@ -269,7 +270,7 @@ pipx install pre-commit
 pre-commit install
 ```
 
-Install kitty terminfo when connecting via SSH
+Install kitty terminfo on the remote server when connecting via SSH
 
 ```bash
 cd ~

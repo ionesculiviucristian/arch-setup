@@ -6,6 +6,13 @@
       "name": "proftpd",
       "source_url": "https://github.com/proftpd/proftpd",
       "url": "http://www.proftpd.org"
+    },
+    {
+      "description": "XP-Pen (Official) Linux utility for legacy XPPen Tablets",
+      "label": "XP-Pen",
+      "name": "xppenlinux-v3",
+      "source_url": "https://aur.archlinux.org/packages/xppenlinux-v3",
+      "url": "https://www.xp-pen.com"
     }
   ],
   "drivers": [
@@ -50,13 +57,6 @@
       "name": "nvidia-utils",
       "source_url": "https://archlinux.org/packages/extra/x86_64/nvidia-utils",
       "url": "https://www.nvidia.com"
-    },
-    {
-      "description": "XP-Pen (Official) Linux utility for legacy XPPen Tablets",
-      "label": "XP-Pen",
-      "name": "xppenlinux-v3",
-      "source_url": "https://aur.archlinux.org/packages/xppenlinux-v3",
-      "url": "https://www.xp-pen.com"
     }
   ],
   "official": [

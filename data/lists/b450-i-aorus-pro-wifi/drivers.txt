@@ -4,4 +4,3 @@ nvidia-container-toolkit
 nvidia-open-dkms
 nvidia-settings
 nvidia-utils
-xppenlinux-v3
