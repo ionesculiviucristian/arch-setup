@@ -7,14 +7,7 @@ Make sure you set `BITWARDEN_EMAIL` in `.env` file before continuing
 ./setups/base/official/git.sh
 ```
 
-## Development
-
-Install pre commit hooks
-
-```bash
-pipx install pre-commit
-pre-commit install
-```
+## Additional notes
 
 Install kitty terminfo on the remote server when connecting via SSH
 
@@ -22,4 +15,13 @@ Install kitty terminfo on the remote server when connecting via SSH
 cd ~
 curl -O https://raw.githubusercontent.com/kovidgoyal/kitty/master/terminfo/kitty.terminfo
 tic -x kitty.terminfo
+```
+
+## Development
+
+Install pre commit hooks
+
+```bash
+pipx install pre-commit
+pre-commit install
 ```

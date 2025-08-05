@@ -14,13 +14,14 @@ Wallpapers from [wallpapercave.com](https://wallpapercave.com/)
   - [External packages](#external-packages-base)
   - [AUR packages](#aur-packages-base)
 - [B450 I AORUS PRO WIFI workstation](#b450-i-aorus-pro-wifi-workstation)
-  - [Drivers](#drivers-b450-i-aorus-pro-wifi-workstation)
   - [Official Arch packages](#official-arch-packages-b450-i-aorus-pro-wifi-workstation)
+  - [Drivers](#drivers-b450-i-aorus-pro-wifi-workstation)
 - [Browser plugins](#browser-plugins)
   - [Brave plugins](#brave-plugins)
   - [Firefox plugins](#firefox-plugins)
 - [Available aliases](#available-aliases)
 - [Import Bitwarden secrets](#import-bitwarden-secrets)
+- [Additional notes](#additional-notes)
 - [Development](#development)
 
 ## About this project
@@ -139,6 +140,10 @@ This project serves as both a starting point and a living reference for managing
 - [Zip](https://infozip.sourceforge.net/Zip.html): Zip is a compression and file packaging/archive utility [Source](https://infozip.sourceforge.net/Zip.html)
 - [zoxide](https://github.com/ajeetdsouza/zoxide): A smarter cd command. Supports all major shells [Source](https://github.com/ajeetdsouza/zoxide)
 
+### External packages (Base)
+
+- [Yay](https://github.com/Jguer/yay): Yet another Yogurt - An AUR Helper written in Go [Source](https://github.com/Jguer/yay)
+
 ### AUR packages (Base)
 
 - [ble.sh](https://github.com/akinomyoga/ble.sh): Bash Line Editor―a line editor written in pure Bash with syntax highlighting, auto suggestions, vim modes, etc. for Bash interactive sessions [Source](https://github.com/akinomyoga/ble.sh)
@@ -152,11 +157,15 @@ This project serves as both a starting point and a living reference for managing
 - [Visual Studio Code](https://code.visualstudio.com): Your code editor. Redefined with AI [Source](https://github.com/microsoft/vscode)
 - [Zoom](https://www.zoom.com): Video Conferencing and Web Conferencing Service [Source](https://github.com/zoom)
 
-### External packages (Base)
-
-- [Yay](https://github.com/Jguer/yay): Yet another Yogurt - An AUR Helper written in Go [Source](https://github.com/Jguer/yay)
-
 ## B450 I AORUS PRO WIFI workstation
+
+### Official Arch packages (B450 I AORUS PRO WIFI workstation)
+
+- [Blender](https://www.blender.org): The free and open source 3D creation suite [Source](https://github.com/blender/blender)
+- [Gimp](https://www.gimp.org): The Free & Open Source Image Editor [Source](https://github.com/GNOME/gimp)
+- [Krita](https://krita.org/en): Krita is a free and open source cross-platform application that offers an end-to-end solution for creating digital art files from scratch built on the KDE and Qt frameworks [Source](https://invent.kde.org/graphics/krita)
+- [OBS Studio](https://obsproject.com): Free and open source software for video recording and live streaming [Source](https://github.com/obsproject/obs-studio)
+- [Solaar](https://pwr-solaar.github.io/Solaar): Solaar is a Linux manager for many Logitech keyboards, mice, and trackpads that connect wirelessly to a USB Unifying, Bolt, Lightspeed, or Nano receiver [Source](https://github.com/pwr-Solaar/Solaar)
 
 ### Drivers (B450 I AORUS PRO WIFI workstation)
 
@@ -166,14 +175,6 @@ This project serves as both a starting point and a living reference for managing
 - [NVIDIA settings](https://www.nvidia.com): Tool for configuring the NVIDIA graphics driver [Source](https://archlinux.org/packages/extra/x86_64/nvidia-settings)
 - [NVIDIA utils](https://www.nvidia.com): NVIDIA drivers utilities [Source](https://archlinux.org/packages/extra/x86_64/nvidia-utils)
 - [NVIDIA utils (32-bit)](http://www.nvidia.com): NVIDIA drivers utilities (32-bit) [Source](https://archlinux.org/packages/multilib/x86_64/lib32-nvidia-utils)
-
-### Official Arch packages (B450 I AORUS PRO WIFI workstation)
-
-- [Blender](https://www.blender.org): The free and open source 3D creation suite [Source](https://github.com/blender/blender)
-- [Gimp](https://www.gimp.org): The Free & Open Source Image Editor [Source](https://github.com/GNOME/gimp)
-- [Krita](https://krita.org/en): Krita is a free and open source cross-platform application that offers an end-to-end solution for creating digital art files from scratch built on the KDE and Qt frameworks [Source](https://invent.kde.org/graphics/krita)
-- [OBS Studio](https://obsproject.com): Free and open source software for video recording and live streaming [Source](https://github.com/obsproject/obs-studio)
-- [Solaar](https://pwr-solaar.github.io/Solaar): Solaar is a Linux manager for many Logitech keyboards, mice, and trackpads that connect wirelessly to a USB Unifying, Bolt, Lightspeed, or Nano receiver [Source](https://github.com/pwr-Solaar/Solaar)
 
 ## Browser plugins
 
@@ -260,14 +261,7 @@ Make sure you set `BITWARDEN_EMAIL` in `.env` file before continuing
 ./setups/base/official/git.sh
 ```
 
-## Development
-
-Install pre commit hooks
-
-```bash
-pipx install pre-commit
-pre-commit install
-```
+## Additional notes
 
 Install kitty terminfo on the remote server when connecting via SSH
 
@@ -275,4 +269,13 @@ Install kitty terminfo on the remote server when connecting via SSH
 cd ~
 curl -O https://raw.githubusercontent.com/kovidgoyal/kitty/master/terminfo/kitty.terminfo
 tic -x kitty.terminfo
+```
+
+## Development
+
+Install pre commit hooks
+
+```bash
+pipx install pre-commit
+pre-commit install
 ```
