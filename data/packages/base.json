@@ -1,16 +1,9 @@
 {
   "aur": [
     {
-      "description": "Bitwarden is the best password manager for securely storing, managing, and sharing sensitive information such as passwords, passkeys, and credit cards",
-      "label": "Bitwarden",
-      "name": "bitwarden-bin",
-      "source_url": "https://github.com/bitwarden",
-      "url": "https://bitwarden.com"
-    },
-    {
       "description": "Bash Line Editor―a line editor written in pure Bash with syntax highlighting, auto suggestions, vim modes, etc. for Bash interactive sessions",
       "label": "ble.sh",
-      "name": "blesh-git",
+      "name": "blesh",
       "source_url": "https://github.com/akinomyoga/ble.sh",
       "url": "https://github.com/akinomyoga/ble.sh"
     },
@@ -80,13 +73,6 @@
   ],
   "external": [
     {
-      "description": "A script that lets you change the colors of folders in Papirus icon theme",
-      "label": "Papirus Folders",
-      "name": "",
-      "source_url": "https://github.com/PapirusDevelopmentTeam/papirus-folders",
-      "url": "https://github.com/PapirusDevelopmentTeam/papirus-folders"
-    },
-    {
       "description": "Yet another Yogurt - An AUR Helper written in Go",
       "label": "Yay",
       "name": "",
@@ -131,10 +117,17 @@
       "url": "https://www.isc.org/bind"
     },
     {
+      "description": "Bitwarden is the best password manager for securely storing, managing, and sharing sensitive information such as passwords, passkeys, and credit cards",
+      "label": "Bitwarden",
+      "name": "bitwarden",
+      "source_url": "https://github.com/bitwarden/clients/tree/main/apps/desktop",
+      "url": "https://bitwarden.com"
+    },
+    {
       "description": "The command line vault",
       "label": "Bitwarden CLI",
       "name": "bitwarden-cli",
-      "source_url": "https://github.com/bitwarden/clients.git",
+      "source_url": "https://github.com/bitwarden/clients/tree/main/apps/cli",
       "url": "https://bitwarden.com"
     },
     {

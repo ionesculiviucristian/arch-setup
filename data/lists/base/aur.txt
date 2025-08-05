@@ -1,5 +1,4 @@
-bitwarden-bin
-blesh-git
+blesh
 brave-bin
 downgrade
 gita

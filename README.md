@@ -59,7 +59,8 @@ This project serves as both a starting point and a living reference for managing
 - [bash-completion](https://github.com/scop/bash-completion): Programmable completion functions for bash [Source](https://github.com/scop/bash-completion)
 - [bat](https://github.com/sharkdp/bat): A cat(1) clone with wings [Source](https://github.com/sharkdp/bat)
 - [BIND 9](https://www.isc.org/bind): BIND (Berkeley Internet Name Domain) is a complete, highly portable implementation of the Domain Name System (DNS) protocol [Source](https://gitlab.isc.org/isc-projects/bind9)
-- [Bitwarden CLI](https://bitwarden.com): The command line vault [Source](https://github.com/bitwarden/clients.git)
+- [Bitwarden](https://bitwarden.com): Bitwarden is the best password manager for securely storing, managing, and sharing sensitive information such as passwords, passkeys, and credit cards [Source](https://github.com/bitwarden/clients/tree/main/apps/desktop)
+- [Bitwarden CLI](https://bitwarden.com): The command line vault [Source](https://github.com/bitwarden/clients/tree/main/apps/cli)
 - [broot](https://dystroy.org/broot): A new way to see and navigate directory trees [Source](https://github.com/Canop/broot)
 - [Btop++](https://github.com/aristocratos/btop): A monitor of resources [Source](https://github.com/aristocratos/btop)
 - [BTRFS tools](https://btrfs.readthedocs.io): Userspace utilities to manage btrfs filesystems [Source](https://github.com/kdave/btrfs-progs)
@@ -140,7 +141,6 @@ This project serves as both a starting point and a living reference for managing
 
 ### AUR packages (Base)
 
-- [Bitwarden](https://bitwarden.com): Bitwarden is the best password manager for securely storing, managing, and sharing sensitive information such as passwords, passkeys, and credit cards [Source](https://github.com/bitwarden)
 - [ble.sh](https://github.com/akinomyoga/ble.sh): Bash Line Editor―a line editor written in pure Bash with syntax highlighting, auto suggestions, vim modes, etc. for Bash interactive sessions [Source](https://github.com/akinomyoga/ble.sh)
 - [Brave](https://brave.com): The browser that puts you first - Block ads. Save data. And get way faster webpages. Just by switching your browser [Source](https://github.com/brave/brave-browser)
 - [downgrade](https://archlinux-downgrade.github.io/downgrade): Downgrade packages in Arch Linux [Source](https://github.com/archlinux-downgrade/downgrade)
@@ -154,7 +154,6 @@ This project serves as both a starting point and a living reference for managing
 
 ### External packages (Base)
 
-- [Papirus Folders](https://github.com/PapirusDevelopmentTeam/papirus-folders): A script that lets you change the colors of folders in Papirus icon theme [Source](https://github.com/PapirusDevelopmentTeam/papirus-folders)
 - [Yay](https://github.com/Jguer/yay): Yet another Yogurt - An AUR Helper written in Go [Source](https://github.com/Jguer/yay)
 
 ## B450 I AORUS PRO WIFI workstation
