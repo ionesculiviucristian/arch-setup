@@ -278,4 +278,5 @@ Install pre commit hooks
 ```bash
 pipx install pre-commit
 pre-commit install
+npm i
 ```
