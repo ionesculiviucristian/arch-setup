@@ -60,12 +60,14 @@ fi
 # Setup official packages
 # ==========================================
 
+./setups/base/official/adguardhome.sh
 ./setups/base/official/atuin.sh
 ./setups/base/official/bat.sh
 ./setups/base/official/broot.sh
 ./setups/base/official/btop.sh
 ./setups/base/official/cups.sh
 ./setups/base/official/direnv.sh
+./setups/base/official/dnsmasq.sh
 ./setups/base/official/eza.sh
 ./setups/base/official/fzf.sh
 ./setups/base/official/kitty.sh

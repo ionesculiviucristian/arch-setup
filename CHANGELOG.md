@@ -18,3 +18,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add missing `installers/b450-i-aorus-pro-wifi/aur_packages.sh` file
 - Fix Git setup not using the correct `.env` variables
 - Fix Bitwarden `.env` secrets being written to the wrong file
+
+## [1.0.2] - 2025-08-07
+
+### Added
+
+- Add `AdGuard Home` as the primary DNS server for the system
+- Configure `dnsmasq` to handle `.localdev` domains

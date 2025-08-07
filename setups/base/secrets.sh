@@ -11,6 +11,9 @@ mkdir -p "${filezilla_dir}"
 BW_SESSION=$(bw login "${BITWARDEN_EMAIL}" --method 0 --raw)
 export BW_SESSION
 
+bw get attachment "AdGuardHome.yaml" --itemid "AdGuard Home" | \
+  sudo tee "/var/lib/adguardhome/AdGuardHome.yaml" > /dev/null
+
 bw get item "Arch setup" | \
   jq -r '.notes' > "./.env"
 
@@ -27,5 +30,7 @@ bw get item "GPG public key" | \
   jq -r '.notes' | gpg --import
 
 bw logout
+
+sudo systemctl restart adguardhome
 
 exit 0

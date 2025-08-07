@@ -1,3 +1,4 @@
+adguardhome
 atuin
 base-devel
 bash-completion

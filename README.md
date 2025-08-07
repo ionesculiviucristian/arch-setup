@@ -55,6 +55,7 @@ This project serves as both a starting point and a living reference for managing
 
 ### Official Arch packages (Base)
 
+- [AdGuard Home](https://adguard.com/en/adguard-home/overview.html): AdGuard Home is a network-wide software for blocking ads & tracking [Source](https://github.com/AdguardTeam/AdGuardHome)
 - [Atuin](https://atuin.sh): Magical shell history [Source](https://github.com/atuinsh/atuin)
 - [base-devel](https://archlinux.org): Basic tools to build Arch Linux packages [Source](https://gitlab.archlinux.org/archlinux/packaging/packages/base-devel)
 - [bash-completion](https://github.com/scop/bash-completion): Programmable completion functions for bash [Source](https://github.com/scop/bash-completion)
