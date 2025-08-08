@@ -5,6 +5,13 @@
 
 Wallpapers from [wallpapercave.com](https://wallpapercave.com/)
 
+> [!WARNING]  
+> This setup **changes your DNS**!  
+>
+> All internet queries go through **AdGuard Home** (primary DNS).  
+>
+> Local dev domains (`.localdev`) are handled by **dnsmasq**.
+
 ## Table of Contents
 
 - [About this project](#about-this-project)
