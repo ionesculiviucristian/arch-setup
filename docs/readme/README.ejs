@@ -5,19 +5,31 @@
 ### Official Arch packages (Base)
 
 <% packages["base"].official.sort(sortPackages).forEach(function(package){ -%>
-- <%- `[${package.label}](${package.url}): ${package.description}${package.source_url ? ` [Source](${package.source_url})` : ''}` %>
+- <%- `[${package.label}](${package.url}): ${package.description}` -%>
+<% if (package.source_url) { %>
+  - <%- `[Source](${package.source_url})` -%>
+<% } -%>
+
 <% }); -%>
 
 ### External packages (Base)
 
 <% packages["base"].external.sort(sortPackages).forEach(function(package){ -%>
-- <%- `[${package.label}](${package.url}): ${package.description}${package.source_url ? ` [Source](${package.source_url})` : ''}` %>
+- <%- `[${package.label}](${package.url}): ${package.description}` -%>
+<% if (package.source_url) { %>
+  - <%- `[Source](${package.source_url})` -%>
+<% } -%>
+
 <% }); -%>
 
 ### AUR packages (Base)
 
 <% packages["base"].aur.sort(sortPackages).forEach(function(package){ -%>
-- <%- `[${package.label}](${package.url}): ${package.description}${package.source_url ? ` [Source](${package.source_url})` : ''}` %>
+- <%- `[${package.label}](${package.url}): ${package.description}` -%>
+<% if (package.source_url) { %>
+  - <%- `[Source](${package.source_url})` -%>
+<% } -%>
+
 <% }); -%>
 
 ## B450 I AORUS PRO WIFI workstation
@@ -25,13 +37,21 @@
 ### Official Arch packages (B450 I AORUS PRO WIFI workstation)
 
 <% packages["b450-i-aorus-pro-wifi"].official.sort(sortPackages).forEach(function(package){ -%>
-- <%- `[${package.label}](${package.url}): ${package.description}${package.source_url ? ` [Source](${package.source_url})` : ''}` %>
+- <%- `[${package.label}](${package.url}): ${package.description}` -%>
+<% if (package.source_url) { %>
+  - <%- `[Source](${package.source_url})` -%>
+<% } -%>
+
 <% }); -%>
 
 ### Drivers (B450 I AORUS PRO WIFI workstation)
 
 <% packages["b450-i-aorus-pro-wifi"].drivers.sort(sortPackages).forEach(function(package){ -%>
-- <%- `[${package.label}](${package.url}): ${package.description}${package.source_url ? ` [Source](${package.source_url})` : ''}` %>
+- <%- `[${package.label}](${package.url}): ${package.description}` -%>
+<% if (package.source_url) { %>
+  - <%- `[Source](${package.source_url})` -%>
+<% } -%>
+
 <% }); -%>
 
 ## Browser plugins
