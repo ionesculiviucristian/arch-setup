@@ -80,6 +80,7 @@ info "  kitty" && ./setups/base/official/kitty.sh
 info "  lazygit" && ./setups/base/official/lazygit.sh
 info "  LibreOffice" && ./setups/base/official/libreoffice.sh
 info "  mkcert" && ./setups/base/official/mkcert.sh
+info "  nvim" && ./setups/base/official/nvim.sh
 info "  nvm" && ./setups/base/official/nvm.sh
 info "  OpenPrinting CUPS" && ./setups/base/official/cups.sh
 info "  poetry" && ./setups/base/official/poetry.sh
