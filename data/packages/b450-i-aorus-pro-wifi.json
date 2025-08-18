@@ -21,41 +21,41 @@
       "label": "AMD microcode",
       "name": "amd-ucode",
       "source_url": "https://gitlab.com/kernel-firmware/linux-firmware",
-      "url": "https://archlinux.org/packages/core/any/amd-ucode"
+      "url": "https://www.amd.com/en.html"
     },
     {
       "description": "NVIDIA drivers utilities (32-bit)",
       "label": "NVIDIA utils (32-bit)",
       "name": "lib32-nvidia-utils",
-      "source_url": "https://archlinux.org/packages/multilib/x86_64/lib32-nvidia-utils",
+      "source_url": "https://gitlab.archlinux.org/archlinux/packaging/packages/lib32-nvidia-utils",
       "url": "http://www.nvidia.com"
     },
     {
       "description": "The NVIDIA Container Toolkit is a collection of libraries and utilities enabling users to build and run GPU-accelerated containers",
       "label": "NVIDIA Container Toolkit",
       "name": "nvidia-container-toolkit",
-      "source_url": "https://archlinux.org/packages/extra/x86_64/nvidia-container-toolkit",
+      "source_url": "https://gitlab.archlinux.org/archlinux/packaging/packages/nvidia-container-toolkit",
       "url": "https://www.nvidia.com"
     },
     {
       "description": "NVIDIA open kernel modules - module sources",
       "label": "NVIDIA open DKMS",
       "name": "nvidia-open-dkms",
-      "source_url": "https://archlinux.org/packages/extra/x86_64/nvidia-open-dkms",
+      "source_url": "https://gitlab.archlinux.org/archlinux/packaging/packages/nvidia-utils",
       "url": "https://www.nvidia.com"
     },
     {
       "description": "Tool for configuring the NVIDIA graphics driver",
       "label": "NVIDIA settings",
       "name": "nvidia-settings",
-      "source_url": "https://archlinux.org/packages/extra/x86_64/nvidia-settings",
+      "source_url": "https://gitlab.archlinux.org/archlinux/packaging/packages/nvidia-settings",
       "url": "https://www.nvidia.com"
     },
     {
       "description": "NVIDIA drivers utilities",
       "label": "NVIDIA utils",
       "name": "nvidia-utils",
-      "source_url": "https://archlinux.org/packages/extra/x86_64/nvidia-utils",
+      "source_url": "https://gitlab.archlinux.org/archlinux/packaging/packages/nvidia-utils",
       "url": "https://www.nvidia.com"
     }
   ],

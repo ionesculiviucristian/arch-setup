@@ -61,7 +61,7 @@ This project serves as both a starting point and a living reference for managing
   - [Source](https://github.com/AdguardTeam/AdGuardHome)
 - [Atuin](https://atuin.sh): Magical shell history
   - [Source](https://github.com/atuinsh/atuin)
-- [base-devel](https://archlinux.org): Basic tools to build Arch Linux packages
+- [base-devel](https://gitlab.archlinux.org/archlinux/packaging/packages/base-devel): Basic tools to build Arch Linux packages
   - [Source](https://gitlab.archlinux.org/archlinux/packaging/packages/base-devel)
 - [bash-completion](https://github.com/scop/bash-completion): Programmable completion functions for bash
   - [Source](https://github.com/scop/bash-completion)
@@ -131,9 +131,9 @@ This project serves as both a starting point and a living reference for managing
   - [Source](https://github.com/gwsw/less)
 - [LibreOffice](https://www.libreoffice.org): A private, free and open source office suite
   - [Source](https://github.com/libreoffice)
-- [Linux headers](https://archlinux.org/packages/core/x86_64/linux-headers): Headers and scripts for building modules for the Linux kernel
+- [Linux headers](https://gitlab.archlinux.org/archlinux/packaging/packages/linux): Headers and scripts for building modules for the Linux kernel
   - [Source](https://github.com/archlinux/linux)
-- [Linux LTS headers](https://archlinux.org/packages/core/x86_64/linux-lts-headers): Headers and scripts for building modules for the LTS Linux kernel
+- [Linux LTS headers](https://gitlab.archlinux.org/archlinux/packaging/packages/linux-lts): Headers and scripts for building modules for the LTS Linux kernel
   - [Source](https://github.com/archlinux/linux)
 - [lsof (LiSt Open Files)](https://lsof.readthedocs.io): LiSt Open Files
   - [Source](https://github.com/lsof-org/lsof)
@@ -211,14 +211,14 @@ This project serves as both a starting point and a living reference for managing
   - [Source](https://github.com/tmux-python/tmuxp)
 - [UnZip](https://infozip.sourceforge.net/UnZip.html): UnZip is an extraction utility for archives compressed in .zip format (also called 'zipfiles')
   - [Source](http://infozip.sourceforge.net/UnZip.html)
-- [usbutils](https://archlinux.org/packages/core/x86_64/usbutils): A collection of USB tools to query connected USB devices
+- [usbutils](https://gitlab.archlinux.org/archlinux/packaging/packages/usbutils): A collection of USB tools to query connected USB devices
   - [Source](https://git.kernel.org/pub/scm/linux/kernel/git/gregkh/usbutils.git)
 - [VirtualBox](https://www.virtualbox.org): VirtualBox is a general-purpose full virtualization software for x86_64 hardware
   - [Source](https://github.com/Virtualbox-OSE)
 - [VirtualBox Guest Additions ISO](https://www.virtualbox.org): Consist of device drivers and system applications that optimize the guest operating system for better performance and usability
-  - [Source](https://archlinux.org/packages/extra/any/virtualbox-guest-iso)
+  - [Source](https://gitlab.archlinux.org/archlinux/packaging/packages/virtualbox-guest-iso)
 - [VirtualBox Host DKMS](https://www.virtualbox.org): VirtualBox Host kernel modules sources
-  - [Source](https://archlinux.org/packages/extra/x86_64/virtualbox-host-dkms)
+  - [Source](https://gitlab.archlinux.org/archlinux/packaging/packages/virtualbox)
 - [xclip](https://github.com/astrand/xclip): Command line interface to the X11 clipboard
   - [Source](https://github.com/astrand/xclip)
 - [XMLStarlet](https://xmlstar.sourceforge.net): XMLStarlet is a set of command line utilities (tools) which can be used to transform, query, validate, and edit XML documents and files
@@ -273,18 +273,18 @@ This project serves as both a starting point and a living reference for managing
 
 ### Drivers (B450 I AORUS PRO WIFI workstation)
 
-- [AMD microcode](https://archlinux.org/packages/core/any/amd-ucode): Microcode update image for AMD CPUs
+- [AMD microcode](https://www.amd.com/en.html): Microcode update image for AMD CPUs
   - [Source](https://gitlab.com/kernel-firmware/linux-firmware)
 - [NVIDIA Container Toolkit](https://www.nvidia.com): The NVIDIA Container Toolkit is a collection of libraries and utilities enabling users to build and run GPU-accelerated containers
-  - [Source](https://archlinux.org/packages/extra/x86_64/nvidia-container-toolkit)
+  - [Source](https://gitlab.archlinux.org/archlinux/packaging/packages/nvidia-container-toolkit)
 - [NVIDIA open DKMS](https://www.nvidia.com): NVIDIA open kernel modules - module sources
-  - [Source](https://archlinux.org/packages/extra/x86_64/nvidia-open-dkms)
+  - [Source](https://gitlab.archlinux.org/archlinux/packaging/packages/nvidia-utils)
 - [NVIDIA settings](https://www.nvidia.com): Tool for configuring the NVIDIA graphics driver
-  - [Source](https://archlinux.org/packages/extra/x86_64/nvidia-settings)
+  - [Source](https://gitlab.archlinux.org/archlinux/packaging/packages/nvidia-settings)
 - [NVIDIA utils](https://www.nvidia.com): NVIDIA drivers utilities
-  - [Source](https://archlinux.org/packages/extra/x86_64/nvidia-utils)
+  - [Source](https://gitlab.archlinux.org/archlinux/packaging/packages/nvidia-utils)
 - [NVIDIA utils (32-bit)](http://www.nvidia.com): NVIDIA drivers utilities (32-bit)
-  - [Source](https://archlinux.org/packages/multilib/x86_64/lib32-nvidia-utils)
+  - [Source](https://gitlab.archlinux.org/archlinux/packaging/packages/lib32-nvidia-utils)
 
 ## Browser plugins
 

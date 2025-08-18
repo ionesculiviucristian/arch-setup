@@ -1,0 +1,25 @@
+{
+  "drivers": [
+    {
+      "description": "Microcode update files for Intel CPUs",
+      "label": "Intel microcode",
+      "name": "intel-ucode",
+      "source_url": "https://github.com/intel/Intel-Linux-Processor-Microcode-Data-Files",
+      "url": "https://www.intel.com/content/www/us/en/homepage.html"
+    },
+    {
+      "description": "Open-source OpenGL drivers - 32-bit",
+      "label": "Mesa (32-bit)",
+      "name": "lib32-mesa",
+      "source_url": "https://gitlab.archlinux.org/archlinux/packaging/packages/lib32-mesa",
+      "url": "https://mesa3d.org"
+    },
+    {
+      "description": "Open-source OpenGL drivers",
+      "label": "Mesa",
+      "name": "mesa",
+      "source_url": "https://gitlab.archlinux.org/archlinux/packaging/packages/mesa",
+      "url": "https://mesa3d.org"
+    }
+  ]
+}

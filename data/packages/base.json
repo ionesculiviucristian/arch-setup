@@ -100,7 +100,7 @@
       "label": "base-devel",
       "name": "base-devel",
       "source_url": "https://gitlab.archlinux.org/archlinux/packaging/packages/base-devel",
-      "url": "https://archlinux.org"
+      "url": "https://gitlab.archlinux.org/archlinux/packaging/packages/base-devel"
     },
     {
       "description": "Programmable completion functions for bash",
@@ -341,14 +341,14 @@
       "label": "Linux headers",
       "name": "linux-headers",
       "source_url": "https://github.com/archlinux/linux",
-      "url": "https://archlinux.org/packages/core/x86_64/linux-headers"
+      "url": "https://gitlab.archlinux.org/archlinux/packaging/packages/linux"
     },
     {
       "description": "Headers and scripts for building modules for the LTS Linux kernel",
       "label": "Linux LTS headers",
       "name": "linux-lts-headers",
       "source_url": "https://github.com/archlinux/linux",
-      "url": "https://archlinux.org/packages/core/x86_64/linux-lts-headers"
+      "url": "https://gitlab.archlinux.org/archlinux/packaging/packages/linux-lts"
     },
     {
       "description": "LiSt Open Files",
@@ -633,7 +633,7 @@
       "label": "usbutils",
       "name": "usbutils",
       "source_url": "https://git.kernel.org/pub/scm/linux/kernel/git/gregkh/usbutils.git",
-      "url": "https://archlinux.org/packages/core/x86_64/usbutils"
+      "url": "https://gitlab.archlinux.org/archlinux/packaging/packages/usbutils"
     },
     {
       "description": "VirtualBox is a general-purpose full virtualization software for x86_64 hardware",
@@ -646,14 +646,14 @@
       "description": "Consist of device drivers and system applications that optimize the guest operating system for better performance and usability",
       "label": "VirtualBox Guest Additions ISO",
       "name": "virtualbox-guest-iso",
-      "source_url": "https://archlinux.org/packages/extra/any/virtualbox-guest-iso",
+      "source_url": "https://gitlab.archlinux.org/archlinux/packaging/packages/virtualbox-guest-iso",
       "url": "https://www.virtualbox.org"
     },
     {
       "description": "VirtualBox Host kernel modules sources",
       "label": "VirtualBox Host DKMS",
       "name": "virtualbox-host-dkms",
-      "source_url": "https://archlinux.org/packages/extra/x86_64/virtualbox-host-dkms",
+      "source_url": "https://gitlab.archlinux.org/archlinux/packaging/packages/virtualbox",
       "url": "https://www.virtualbox.org"
     },
     {
