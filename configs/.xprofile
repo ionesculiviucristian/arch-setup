@@ -1,0 +1,2 @@
+# shellcheck disable=SC2148
+setxkbmap -option caps:ctrl_modifier
