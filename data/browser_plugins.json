@@ -113,6 +113,12 @@
             "id": "qr-code-generator/afpbjjgbdimpioenaedcjgkaigggcdpp",
             "name": "QR Code Generator",
             "extra": []
+          },
+          {
+            "description": "The Hacker's Browser. Vimium provides keyboard shortcuts for navigation and control in the spirit of Vim.",
+            "id": "vimium/dbepggeogbaibhgnhhndojpepiihcmeb",
+            "name": "Vimium",
+            "extra": []
           }
         ]
       }
@@ -267,6 +273,12 @@
             "description": "Multitask efficiently by controlling browser functions from the Plasma desktop",
             "id": "plasma-integration",
             "name": "Plasma Integration",
+            "extra": []
+          },
+          {
+            "description": "The Hacker's Browser. Vimium provides keyboard shortcuts for navigation and control in the spirit of Vim.",
+            "id": "vimium-ff",
+            "name": "Vimium",
             "extra": []
           }
         ]
