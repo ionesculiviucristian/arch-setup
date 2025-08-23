@@ -2,7 +2,6 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
 	branch = "master",
-	lazy = false,
 	build = ":TSUpdate",
 	config = function()
 		require("nvim-treesitter.configs").setup({
@@ -14,6 +13,7 @@ return {
 				"javascript",
 				"json",
 				"markdown",
+				"markdown_inline",
 				"php",
 				"python",
 				"scss",
@@ -28,4 +28,5 @@ return {
 			auto_install = false,
 		})
 	end,
+	lazy = false,
 }

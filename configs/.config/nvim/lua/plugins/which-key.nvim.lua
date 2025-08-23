@@ -1,10 +1,10 @@
 -- https://github.com/folke/which-key.nvim?tab=readme-ov-file#lazynvim
 return {
 	"folke/which-key.nvim",
-	event = "VeryLazy",
 	dependencies = {
 		{ "echasnovski/mini.icons", version = "*" },
 	},
+	event = "VeryLazy",
 	keys = {
 		{
 			"<leader>?",
