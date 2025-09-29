@@ -11,7 +11,6 @@ fi
 # shellcheck disable=SC1091
 set -a && source ".env" && set +a
 
-adguardhome_dir="/var/lib/adguardhome"
 filezilla_dir="${HOME}/.config/filezilla"
 ssh_dir="${HOME}/.ssh"
 authorized_keys_file="${ssh_dir}/authorized_keys"
@@ -36,11 +35,6 @@ chmod 700 "${ssh_dir}"
 bw get item "Personal SSH key" | \
   jq -r '.sshKey.publicKey' > "${authorized_keys_file}"
 chmod 600 "${authorized_keys_file}"
-
-sudo mkdir -p "${adguardhome_dir}"
-bw get attachment "AdGuardHome.yaml" --itemid "AdGuard Home" --raw | \
-  sudo tee "/var/lib/adguardhome/AdGuardHome.yaml" >/dev/null
-sudo systemctl restart adguardhome
 
 mkdir -p "${filezilla_dir}"
 bw get item "FTP hosts" | \
