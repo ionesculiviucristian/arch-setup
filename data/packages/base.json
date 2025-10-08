@@ -182,6 +182,13 @@
       "url": "https://github.com/dell/dkms"
     },
     {
+      "description": "Dnsmasq provides network infrastructure for small networks: DNS, DHCP, router advertisement and network boot",
+      "label": "dnsmasq",
+      "name": "dnsmasq",
+      "source_url": "https://gitlab.archlinux.org/archlinux/packaging/packages/dnsmasq",
+      "url": "https://thekelleys.org.uk/dnsmasq/doc.html"
+    },
+    {
       "description": "An open platform for developing, shipping, and running applications",
       "label": "Docker",
       "name": "docker",

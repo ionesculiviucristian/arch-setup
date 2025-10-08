@@ -2,7 +2,6 @@
 set -eu
 
 # [Config] https://docs.docker.com/engine/daemon/#configuration-file
-# [Config] https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#configuring-docker
 
 sudo usermod -aG docker "${USER}"
 

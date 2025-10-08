@@ -12,6 +12,7 @@ cups
 dbus
 direnv
 dkms
+dnsmasq
 docker
 docker-buildx
 docker-compose

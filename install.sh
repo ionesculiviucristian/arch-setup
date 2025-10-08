@@ -74,6 +74,7 @@ info "  Bitwarden" && ./setups/base/official/bitwarden.sh
 info "  broot" && ./setups/base/official/broot.sh
 info "  Btop++" && ./setups/base/official/btop.sh
 info "  direnv" && ./setups/base/official/direnv.sh
+info "  dnsmasq" && ./setups/base/official/dnsmasq.sh
 info "  eza" && ./setups/base/official/eza.sh
 info "  fzf" && ./setups/base/official/fzf.sh
 info "  kitty" && ./setups/base/official/kitty.sh
