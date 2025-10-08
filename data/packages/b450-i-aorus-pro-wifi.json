@@ -24,39 +24,32 @@
       "url": "https://www.amd.com/en.html"
     },
     {
-      "description": "NVIDIA drivers utilities (32-bit)",
-      "label": "NVIDIA utils (32-bit)",
-      "name": "lib32-nvidia-utils",
-      "source_url": "https://gitlab.archlinux.org/archlinux/packaging/packages/lib32-nvidia-utils",
-      "url": "http://www.nvidia.com"
+      "description": "Open-source OpenGL drivers",
+      "label": "OpenGL drivers",
+      "name": "mesa",
+      "source_url": "https://gitlab.archlinux.org/archlinux/packaging/packages/mesa",
+      "url": "https://www.mesa3d.org"
     },
     {
-      "description": "The NVIDIA Container Toolkit is a collection of libraries and utilities enabling users to build and run GPU-accelerated containers",
-      "label": "NVIDIA Container Toolkit",
-      "name": "nvidia-container-toolkit",
-      "source_url": "https://gitlab.archlinux.org/archlinux/packaging/packages/nvidia-container-toolkit",
-      "url": "https://www.nvidia.com"
+      "description": "Open-source OpenGL drivers - 32-bit",
+      "label": "OpenGL drivers (32-bit)",
+      "name": "lib32-mesa",
+      "source_url": "https://gitlab.archlinux.org/archlinux/packaging/packages/lib32-mesa",
+      "url": "https://www.mesa3d.org"
     },
     {
-      "description": "NVIDIA open kernel modules - module sources",
-      "label": "NVIDIA open DKMS",
-      "name": "nvidia-open-dkms",
-      "source_url": "https://gitlab.archlinux.org/archlinux/packaging/packages/nvidia-utils",
-      "url": "https://www.nvidia.com"
+      "description": "Open-source Vulkan driver for AMD GPUs",
+      "label": "Vulkan driver for AMD GPUs",
+      "name": "vulkan-radeon",
+      "source_url": "https://gitlab.archlinux.org/archlinux/packaging/packages/mesa",
+      "url": "https://www.mesa3d.org"
     },
     {
-      "description": "Tool for configuring the NVIDIA graphics driver",
-      "label": "NVIDIA settings",
-      "name": "nvidia-settings",
-      "source_url": "https://gitlab.archlinux.org/archlinux/packaging/packages/nvidia-settings",
-      "url": "https://www.nvidia.com"
-    },
-    {
-      "description": "NVIDIA drivers utilities",
-      "label": "NVIDIA utils",
-      "name": "nvidia-utils",
-      "source_url": "https://gitlab.archlinux.org/archlinux/packaging/packages/nvidia-utils",
-      "url": "https://www.nvidia.com"
+      "description": "Open-source Vulkan driver for AMD GPUs - 32-bit",
+      "label": "Vulkan driver for AMD GPUs (32-bit)",
+      "name": "lib32-vulkan-radeon",
+      "source_url": "https://gitlab.archlinux.org/archlinux/packaging/packages/lib32-mesa",
+      "url": "https://www.mesa3d.org"
     }
   ],
   "official": [

@@ -272,16 +272,14 @@ This project serves as both a starting point and a living reference for managing
 
 - [AMD microcode](https://www.amd.com/en.html): Microcode update image for AMD CPUs
   - [Source](https://gitlab.com/kernel-firmware/linux-firmware)
-- [NVIDIA Container Toolkit](https://www.nvidia.com): The NVIDIA Container Toolkit is a collection of libraries and utilities enabling users to build and run GPU-accelerated containers
-  - [Source](https://gitlab.archlinux.org/archlinux/packaging/packages/nvidia-container-toolkit)
-- [NVIDIA open DKMS](https://www.nvidia.com): NVIDIA open kernel modules - module sources
-  - [Source](https://gitlab.archlinux.org/archlinux/packaging/packages/nvidia-utils)
-- [NVIDIA settings](https://www.nvidia.com): Tool for configuring the NVIDIA graphics driver
-  - [Source](https://gitlab.archlinux.org/archlinux/packaging/packages/nvidia-settings)
-- [NVIDIA utils](https://www.nvidia.com): NVIDIA drivers utilities
-  - [Source](https://gitlab.archlinux.org/archlinux/packaging/packages/nvidia-utils)
-- [NVIDIA utils (32-bit)](http://www.nvidia.com): NVIDIA drivers utilities (32-bit)
-  - [Source](https://gitlab.archlinux.org/archlinux/packaging/packages/lib32-nvidia-utils)
+- [OpenGL drivers](https://www.mesa3d.org): Open-source OpenGL drivers
+  - [Source](https://gitlab.archlinux.org/archlinux/packaging/packages/mesa)
+- [OpenGL drivers (32-bit)](https://www.mesa3d.org): Open-source OpenGL drivers - 32-bit
+  - [Source](https://gitlab.archlinux.org/archlinux/packaging/packages/lib32-mesa)
+- [Vulkan driver for AMD GPUs](https://www.mesa3d.org): Open-source Vulkan driver for AMD GPUs
+  - [Source](https://gitlab.archlinux.org/archlinux/packaging/packages/mesa)
+- [Vulkan driver for AMD GPUs (32-bit)](https://www.mesa3d.org): Open-source Vulkan driver for AMD GPUs - 32-bit
+  - [Source](https://gitlab.archlinux.org/archlinux/packaging/packages/lib32-mesa)
 
 ## Browser plugins
 
