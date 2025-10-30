@@ -84,8 +84,6 @@ This project serves as both a starting point and a living reference for managing
   - [Source](https://github.com/direnv/direnv)
 - [DKMS](https://github.com/dell/dkms): Dynamic Kernel Modules System
   - [Source](https://github.com/dell/dkms)
-- [dnsmasq](https://thekelleys.org.uk/dnsmasq/doc.html): Dnsmasq provides network infrastructure for small networks: DNS, DHCP, router advertisement and network boot
-  - [Source](https://gitlab.archlinux.org/archlinux/packaging/packages/dnsmasq)
 - [Docker](https://www.docker.com): An open platform for developing, shipping, and running applications
   - [Source](https://github.com/docker)
 - [Docker Compose](https://www.docker.com): Define and run multi-container applications with Docker
