@@ -80,6 +80,7 @@ info "  fzf" && ./setups/base/official/fzf.sh
 info "  kitty" && ./setups/base/official/kitty.sh
 info "  lazygit" && ./setups/base/official/lazygit.sh
 info "  LibreOffice" && ./setups/base/official/libreoffice.sh
+info "  miniconda" && ./setups/base/official/miniconda.sh
 info "  mkcert" && ./setups/base/official/mkcert.sh
 info "  nvim" && ./setups/base/official/nvim.sh
 info "  nvm" && ./setups/base/official/nvm.sh
