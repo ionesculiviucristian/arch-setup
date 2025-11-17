@@ -261,6 +261,20 @@ complete -o nospace -F _complete_container drl
 # @group docker
 alias dnls="docker network ls"
 
+# @info Remove one or more networks
+# @group docker
+# @param <NETWORK...>
+function dnrm() {
+    docker network rm "$@"
+}
+
+# @info Remove all networks
+# @group docker
+function dnrma() {
+    # shellcheck disable=SC2046
+    docker network rm $(docker network ls -q --filter type=custom)
+}
+
 # @info Filter docker networks
 # @group docker
 # @param <PATTERN>
@@ -313,8 +327,16 @@ alias dtopm='docker stats --no-stream | (read -r header && echo "$header" && sor
 
 # @info Remove one or more volumes
 # @group docker
+# @param <NETWORK...>
 function dvrm() {
     docker volume rm "$@"
+}
+
+# @info Remove all volumes
+# @group docker
+function dvrma() {
+    # shellcheck disable=SC2046
+    docker volume rm $(docker volume ls -q)
 }
 
 # @info List volumes

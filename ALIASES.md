@@ -36,6 +36,8 @@
 - `dlsz`: List all container log files ordered by their size
 - `dnls`: List networks
 - `dnlsf <PATTERN>`: Filter docker networks
+- `dnrm <NETWORK...>`: Remove one or more networks
+- `dnrma`: Remove all networks
 - `dps`: List running containers
 - `dpsa`: List all containers
 - `dpsaf <PATTERN>`: Filter all containers list using grep pattern
@@ -48,7 +50,8 @@
 - `dtopm`: Display container resource usage sorted by highest memory usage
 - `dvls`: List volumes
 - `dvlsf <PATTERN>`: Filter docker volumes
-- `dvrm`: Remove one or more volumes
+- `dvrm <NETWORK...>`: Remove one or more volumes
+- `dvrma`: Remove all volumes
 
 ## Docker compose
 
