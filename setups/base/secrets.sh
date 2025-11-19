@@ -36,6 +36,9 @@ bw get item "Personal SSH key" | \
   jq -r '.sshKey.publicKey' > "${authorized_keys_file}"
 chmod 600 "${authorized_keys_file}"
 
+bw get item "SSH config" | \
+  jq -r '.notes' > "${ssh_dir}/config"
+
 mkdir -p "${filezilla_dir}"
 bw get item "FTP hosts" | \
   jq -r '.notes' > "${filezilla_dir}/sitemanager.xml"
