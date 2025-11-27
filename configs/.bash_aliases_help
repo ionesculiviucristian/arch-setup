@@ -109,6 +109,5 @@ function aliases() {
 	echo -e "  ${AC}ports${NC}: Lists listening TCP/UDP sockets"
 	echo -e "  ${AC}portsf${NC} <PORT>: Filter listening TCP/UDP sockets"
 	echo -e "  ${AC}ppjson${NC} <FILE>: Pretty prints a json file"
-	echo -e "  ${AC}sail${NC}: Execute Sail's commands more easily"
 	echo -e "  ${AC}src${NC}: Source \`~/.bashrc\`"
 }

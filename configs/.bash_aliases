@@ -793,10 +793,6 @@ function ppjson() {
     jq . "${1}" | bat -l json
 }
 
-# @info Execute Sail's commands more easily
-# @group misc
-alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
-
 # @info Source \`~/.bashrc\`
 # @group misc
 alias src='source "${HOME}/.bashrc"'
