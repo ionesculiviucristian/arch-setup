@@ -1,14 +1,21 @@
 #!/bin/bash
 set -eu
 
-mkdir -p "${HOME}/miniconda3"
+miniconda_dir="${HOME}/miniconda3"
+
+mkdir -p "${miniconda_dir}"
 
 wget \
   https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh \
-  -O "${HOME}/miniconda3/miniconda.sh"
+  -O "${miniconda_dir}/miniconda.sh"
 
-bash "${HOME}/miniconda3/miniconda.sh" -b -u -p "${HOME}/miniconda3"
+bash "${miniconda_dir}/miniconda.sh" -b -u -p "${miniconda_dir}"
 
-rm "${HOME}/miniconda3/miniconda.sh"
+rm "${miniconda_dir}/miniconda.sh"
+
+# shellcheck disable=SC1091
+source "${miniconda_dir}/bin/activate"
+
+conda init --all
 
 exit 0
