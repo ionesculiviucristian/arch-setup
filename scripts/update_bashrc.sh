@@ -40,11 +40,9 @@ if grep -qF "${entry_start}" "${bashrc_file}"; then
   ' "${bashrc_file}" > "${tmp_file}" && mv "${tmp_file}" "${bashrc_file}"
 else
   {
-    echo ""
     echo "${entry_start}"
     echo "${entry}"
-    echo "${entry_end}"
-    echo ""
+    echo "${entry_end}"$'\n'
   } >> "${bashrc_file}"
 fi
 
