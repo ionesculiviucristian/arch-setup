@@ -3,7 +3,7 @@ set -eu
 
 # [Config] https://www.gnu.org/software/bash/manual/bash.html
 
-./scripts/update_bashrc.sh <<EOF
+./scripts/update_bashrc.sh "bash" <<EOF
 shopt -u histappend
 HISTCONTROL=ignoreboth
 HISTFILESIZE=100000

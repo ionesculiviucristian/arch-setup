@@ -23,7 +23,7 @@ cat \
   "${starship_dir}/themes/${starship_theme}.conf" \
   > "${HOME}/.config/.starship.toml"
 
-./scripts/update_bashrc.sh << 'EOF'
+./scripts/update_bashrc.sh "starship" << 'EOF'
 # https://github.com/starship/starship?tab=readme-ov-file#step-2-set-up-your-shell-to-use-starship
 eval "$(starship init bash)"
 EOF

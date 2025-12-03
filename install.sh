@@ -110,7 +110,7 @@ info "  tdrop" && ./setups/base/aur/tdrop.sh
 
 info "Setup bash..." && ./setups/base/system/bash.sh
 
-./scripts/update_bashrc.sh << 'EOF'
+./scripts/update_bashrc.sh "blesh" << 'EOF'
 [[ ${BLE_VERSION-} ]] && ble-attach
 EOF
 

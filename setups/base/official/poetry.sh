@@ -7,7 +7,7 @@ export PATH="${HOME}/.local/bin:${PATH}"
 
 poetry completions bash >> "${HOME}/.bash_completion"
 
-./scripts/update_bashrc.sh << 'EOF'
+./scripts/update_bashrc.sh "poetry" << 'EOF'
 export PATH="${HOME}/.local/bin:${PATH}"
 EOF
 

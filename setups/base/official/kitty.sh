@@ -30,7 +30,7 @@ kwriteconfig6 \
   --key "TerminalService" \
   "kitty.desktop"
 
-./scripts/update_bashrc.sh << 'EOF'
+./scripts/update_bashrc.sh "kitty" << 'EOF'
 # https://sw.kovidgoyal.net/kitty/kittens/ssh/
 [ "${TERM}" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
 EOF

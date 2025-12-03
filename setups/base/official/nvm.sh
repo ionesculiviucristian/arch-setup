@@ -13,7 +13,7 @@ nvm use 24 >/dev/null
 
 npm install -g npm-check-updates
 
-./scripts/update_bashrc.sh << 'EOF'
+./scripts/update_bashrc.sh "nvm" << 'EOF'
 source /usr/share/nvm/init-nvm.sh
 EOF
 

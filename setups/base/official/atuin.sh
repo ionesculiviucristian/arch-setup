@@ -18,7 +18,7 @@ cp \
   "./configs/.config/atuin/config.toml" \
   "${atuin_dir}/config.toml"
 
-./scripts/update_bashrc.sh << 'EOF'
+./scripts/update_bashrc.sh "atuin" << 'EOF'
 # https://docs.atuin.sh/guide/installation/#installing-the-shell-plugin
 eval "$(atuin init bash)"
 EOF
