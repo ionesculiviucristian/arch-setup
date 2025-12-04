@@ -40,6 +40,14 @@ sudo_replace_text \
   "GRUB_THEME=\"${grub_themes_dir}/${grub_theme}/theme.txt\"" \
   "${grub_file}" \
   "|"
+sudo_replace_text \
+  '^GRUB_CMDLINE_LINUX_DEFAULT=".*"$' \
+  'GRUB_CMDLINE_LINUX_DEFAULT="quiet splash ipv6.disable=1 loglevel=3"' \
+  "${grub_file}"
+sudo_replace_text \
+  '^#GRUB_DISABLE_OS_PROBER=false' \
+  'GRUB_DISABLE_OS_PROBER=false' \
+  "${grub_file}"
 
 sudo grub-mkconfig -o "/boot/grub/grub.cfg" >/dev/null
 
