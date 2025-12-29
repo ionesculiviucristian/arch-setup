@@ -4,14 +4,13 @@ set -eu
 # [Config] https://superfile.netlify.app/configure/superfile-config/
 # [Theme] https://github.com/catppuccin/superfile
 
-superfile_dir="${HOME}/.config/superfile"
-superfile_theme="catppuccin-mocha-mauve"
+# shellcheck source=../_config.sh
+source "./setups/base/_config.sh"
 
-mkdir -p "${superfile_dir}/theme"
+# shellcheck source=../../../themes/base/aur/superfile.sh
+source "./themes/base/aur/superfile.sh"
 
-wget -qO \
-  "${superfile_dir}/theme/${superfile_theme}.toml" \
-  https://raw.githubusercontent.com/catppuccin/superfile/refs/heads/main/themes/mocha/${superfile_theme}.toml
+install_superfile_theme
 
 cp \
   "./configs/.config/superfile/config.toml" \

@@ -5,15 +5,10 @@ set -eu
 # [Config] https://junegunn.github.io/fzf/tips/ripgrep-integration/
 # [Theme] https://github.com/catppuccin/fzf
 
-# ./scripts/update_bashrc.sh << 'EOF'
-# eval "$(fzf --bash)"
-# EOF
+# shellcheck source=../../../themes/base/official/fzf.sh
+source "./themes/base/official/fzf.sh"
 
-catppuccin_fzf_dir="${HOME}/.repos/catppuccin-fzf"
-
-rm -rf "${catppuccin_fzf_dir}"
-
-git clone -q https://github.com/catppuccin/fzf.git "${catppuccin_fzf_dir}"
+install_fzf_theme
 
 ./scripts/update_bashrc.sh "fzf" << 'EOF'
 # https://github.com/junegunn/fzf?tab=readme-ov-file#setting-up-shell-integration

@@ -1,11 +1,12 @@
 #!/bin/bash
 set -eu
 
+# shellcheck source=../../setups/base/_config.sh
+source "./setups/base/_config.sh"
+
 if command -v yay &>/dev/null; then
   exit 0
 fi
-
-yay_dir="${HOME}/.repos/yay"
 
 rm -rf "${yay_dir}"
 

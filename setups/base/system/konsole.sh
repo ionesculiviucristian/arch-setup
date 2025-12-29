@@ -3,15 +3,13 @@ set -eu
 
 # [Theme] https://github.com/catppuccin/konsole
 
-konsole_dir="${HOME}/.local/share/konsole"
-konsole_profile="Starship.profile"
-konsole_theme="catppuccin-mocha.colorscheme"
+# shellcheck source=../_config.sh
+source "./setups/base/_config.sh"
 
-mkdir -p "${konsole_dir}"
+# shellcheck source=../../../themes/base/system/konsole.sh
+source "./themes/base/system/konsole.sh"
 
-wget -qO \
-  "${konsole_dir}/${konsole_theme}" \
-  https://raw.githubusercontent.com/catppuccin/konsole/refs/heads/main/themes/${konsole_theme}
+install_konsole_theme
 
 cp \
   "./configs/.local/share/konsole/${konsole_profile}" \

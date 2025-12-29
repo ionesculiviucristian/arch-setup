@@ -1,7 +1,8 @@
 #!/bin/bash
 set -eu
 
-kwinrc_file="${HOME}/.config/kwinrc"
+# shellcheck source=../_config.sh
+source "./setups/base/_config.sh"
 
 kwriteconfig6 \
   --file "${kwinrc_file}" \

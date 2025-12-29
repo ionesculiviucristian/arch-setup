@@ -1,7 +1,8 @@
 #!/bin/bash
 set -eu
 
-tmux_plugins_dir="${HOME}/.tmux/plugins"
+# shellcheck source=../_config.sh
+source "./setups/base/_config.sh"
 
 rm -rf "${tmux_plugins_dir}"
 

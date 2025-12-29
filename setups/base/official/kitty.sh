@@ -4,15 +4,13 @@ set -eu
 # [Config] https://sw.kovidgoyal.net/kitty/conf/#kitty-conf
 # [Theme] https://github.com/catppuccin/kitty
 
-kdeglobals_file="${HOME}/.config/kdeglobals"
-kitty_dir="${HOME}/.config/kitty"
-kitty_theme="mocha"
+# shellcheck source=../_config.sh
+source "./setups/base/_config.sh"
 
-mkdir -p "${kitty_dir}/themes"
+# shellcheck source=../../../themes/base/official/kitty.sh
+source "./themes/base/official/kitty.sh"
 
-wget -qO \
-  "${kitty_dir}/themes/${kitty_theme}.conf" \
-  https://raw.githubusercontent.com/catppuccin/kitty/refs/heads/main/themes/${kitty_theme}.conf
+install_kitty_theme
 
 cp \
   "./configs/.config/kitty/kitty.conf" \

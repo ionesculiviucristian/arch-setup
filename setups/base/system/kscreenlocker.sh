@@ -1,8 +1,8 @@
 #!/bin/bash
 set -eu
 
-kscreenlockerrc_file="${HOME}/.config/kscreenlockerrc"
-wallpapers_dir="${HOME}/Pictures/Wallpapers"
+# shellcheck source=../_config.sh
+source "./setups/base/_config.sh"
 
 kwriteconfig6 \
   --file "${kscreenlockerrc_file}" \

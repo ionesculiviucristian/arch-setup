@@ -4,13 +4,13 @@ set -eu
 # [Config] https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md#default
 # [Theme] https://github.com/catppuccin/lazygit
 
-lazygit_dir="${HOME}/.config/lazygit"
+# shellcheck source=../_config.sh
+source "./setups/base/_config.sh"
 
-mkdir -p "${lazygit_dir}"
+# shellcheck source=../../../themes/base/official/lazygit.sh
+source "./themes/base/official/lazygit.sh"
 
-wget -qO \
-  "${lazygit_dir}/mocha-mauve.yml" \
-  https://raw.githubusercontent.com/catppuccin/lazygit/refs/heads/main/themes-mergable/mocha/mauve.yml
+install_lazygit_theme
 
 cp \
   "./configs/.config/lazygit/config.yml" \

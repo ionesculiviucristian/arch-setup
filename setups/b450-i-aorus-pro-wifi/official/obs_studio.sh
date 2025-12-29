@@ -3,18 +3,13 @@ set -eu
 
 # [Theme] https://github.com/catppuccin/obs
 
-catppuccin_obs_dir="${HOME}/.repos/catppuccin-obs"
-obs_dir="${HOME}/.config/obs-studio"
+# shellcheck source=../_config.sh
+source "./setups/b450-i-aorus-pro-wifi/_config.sh"
 
-mkdir -p "${obs_dir}/themes"
+# shellcheck source=../../../themes/b450-i-aorus-pro-wifi/official/obs.sh
+source "./themes/b450-i-aorus-pro-wifi/official/obs.sh"
 
-rm -rf "${catppuccin_obs_dir}"
-
-git clone -q https://github.com/catppuccin/obs "${catppuccin_obs_dir}"
-
-cp \
-  "${catppuccin_obs_dir}/themes"/*.* \
-  "${obs_dir}/themes"
+install_obs_theme
 
 cp \
   "./configs/.config/obs-studio/user.ini" \

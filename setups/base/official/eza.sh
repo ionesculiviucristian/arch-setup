@@ -3,12 +3,9 @@ set -eu
 
 # [Theme] https://github.com/eza-community/eza?tab=readme-ov-file#custom-themes
 
-eza_dir="${HOME}/.config/eza"
+# shellcheck source=../../../themes/base/official/eza.sh
+source "./themes/base/official/eza.sh"
 
-mkdir -p "${eza_dir}"
-
-wget -qO \
-  "${eza_dir}/theme.yml" \
-  https://raw.githubusercontent.com/eza-community/eza-themes/refs/heads/main/themes/catppuccin.yml 
+install_eza_theme
 
 exit 0

@@ -5,14 +5,13 @@ set -eu
 # [Config] https://docs.atuin.sh/configuration/config/
 # [Theme] https://github.com/catppuccin/atuin?tab=readme-ov-file#usage
 
-atuin_dir="${HOME}/.config/atuin"
-atuin_theme="catppuccin-mocha-mauve"
+# shellcheck source=../_config.sh
+source "./setups/base/_config.sh"
 
-mkdir -p "${atuin_dir}/themes"
+# shellcheck source=../../../themes/base/official/atuin.sh
+source "./themes/base/official/atuin.sh"
 
-wget -qO \
-  "${atuin_dir}/themes/${atuin_theme}.toml" \
-  https://raw.githubusercontent.com/catppuccin/atuin/refs/heads/main/themes/mocha/${atuin_theme}.toml 
+install_atuin_theme
 
 cp \
   "./configs/.config/atuin/config.toml" \

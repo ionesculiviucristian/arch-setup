@@ -3,9 +3,10 @@ set -eu
 
 # [Config] https://docs.docker.com/engine/daemon/#configuration-file
 
-sudo usermod -aG docker "${USER}"
+# shellcheck source=../_config.sh
+source "./setups/base/_config.sh"
 
-docker_dir="/etc/docker"
+sudo usermod -aG docker "${USER}"
 
 sudo mkdir -p "${docker_dir}"
 

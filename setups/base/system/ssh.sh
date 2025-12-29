@@ -1,10 +1,11 @@
 #!/bin/bash
 set -eu
 
+# shellcheck source=../_config.sh
+source "./setups/base/_config.sh"
+
 # shellcheck disable=SC1091
 source "./scripts/installer.sh"
-
-sshd_config_file="/etc/ssh/sshd_config"
 
 sudo_replace_text \
   '^#Port 22' \

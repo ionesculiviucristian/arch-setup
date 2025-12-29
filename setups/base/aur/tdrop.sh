@@ -1,7 +1,8 @@
 #!/bin/bash
 set -eu
 
-applications_dir="${HOME}/.local/share/applications"
+# shellcheck source=../_config.sh
+source "./setups/base/_config.sh"
 
 mkdir -p "${applications_dir}"
 

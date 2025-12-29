@@ -4,14 +4,13 @@ set -eu
 # [Config] https://github.com/aristocratos/btop?tab=readme-ov-file#configurability
 # [Theme] https://github.com/catppuccin/btop
 
-btop_dir="${HOME}/.config/btop"
-btop_theme="catppuccin_mocha"
+# shellcheck source=../_config.sh
+source "./setups/base/_config.sh"
 
-mkdir -p "${btop_dir}/themes"
+# shellcheck source=../../../themes/base/official/btop.sh
+source "./themes/base/official/btop.sh"
 
-wget -qO \
-  "${btop_dir}/themes/${btop_theme}.theme" \
-  https://raw.githubusercontent.com/catppuccin/btop/refs/heads/main/themes/${btop_theme}.theme
+install_btop_theme
 
 cp \
   "./configs/.config/btop/btop.conf" \

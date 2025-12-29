@@ -1,7 +1,8 @@
 #!/bin/bash
 set -eu
 
-miniconda_dir="${HOME}/miniconda3"
+# shellcheck source=../_config.sh
+source "./setups/base/_config.sh"
 
 mkdir -p "${miniconda_dir}"
 

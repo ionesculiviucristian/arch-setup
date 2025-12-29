@@ -4,7 +4,8 @@ set -eu
 # [bashrc] https://github.com/akinomyoga/ble.sh?tab=readme-ov-file#13-set-up-bashrc
 # [Config] https://github.com/akinomyoga/ble.sh/blob/master/blerc.template
 
-bashrc_file="${HOME}/.bashrc"
+# shellcheck source=../_config.sh
+source "./setups/base/_config.sh"
 
 cp "./configs/.blerc" "${HOME}/.blerc"
 

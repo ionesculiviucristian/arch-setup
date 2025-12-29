@@ -4,24 +4,16 @@ set -eu
 # [Config] https://www.gnu.org/software/grub/manual/grub/grub.html
 # [Theme] https://github.com/catppuccin/grub
 
+# shellcheck source=../_config.sh
+source "./setups/base/_config.sh"
+
 # shellcheck disable=SC1091
 source "./scripts/installer.sh"
 
-catppuccin_grub_dir="${HOME}/.repos/catppuccin-grub"
-grub_file="/etc/default/grub"
-grub_theme="catppuccin-mocha-grub-theme"
-grub_themes_dir="/usr/share/grub/themes"
+# shellcheck source=../../../themes/base/system/grub.sh
+source "./themes/base/system/grub.sh"
 
-rm -rf "${catppuccin_grub_dir}"
-sudo rm -rf "${grub_themes_dir}/${grub_theme}"
-
-git clone -q \
-  https://github.com/catppuccin/grub.git \
-  "${catppuccin_grub_dir}"
-
-sudo cp -r \
-  "${catppuccin_grub_dir}/src/${grub_theme}" \
-  "${grub_themes_dir}/${grub_theme}"
+install_grub_theme
 
 sudo_replace_text \
   '^GRUB_DEFAULT=0' \

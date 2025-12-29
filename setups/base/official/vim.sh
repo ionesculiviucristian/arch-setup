@@ -3,13 +3,10 @@ set -eu
 
 # [Theme] https://github.com/catppuccin/vim
 
-vim_themes_dir="${HOME}/.vim/colors"
+# shellcheck source=../../../themes/base/official/vim.sh
+source "./themes/base/official/vim.sh"
 
-mkdir -p "${vim_themes_dir}"
-
-wget -qO \
-  "${vim_themes_dir}/catppuccin_mocha.vim" \
-  https://raw.githubusercontent.com/catppuccin/vim/refs/heads/main/colors/catppuccin_mocha.vim
+install_vim_theme
 
 cp "./configs/.vimrc" "${HOME}/.vimrc"
 

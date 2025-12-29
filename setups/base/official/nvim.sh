@@ -1,7 +1,8 @@
 #!/bin/bash
 set -eu
 
-nvim_dir="${HOME}/.config/nvim"
+# shellcheck source=../_config.sh
+source "./setups/base/_config.sh"
 
 mkdir -p "${nvim_dir}"
 

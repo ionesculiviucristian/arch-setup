@@ -4,18 +4,16 @@ set -eu
 # [Config] https://github.com/sharkdp/bat?tab=readme-ov-file#configuration-file
 # [Theme] https://github.com/catppuccin/bat?tab=readme-ov-file#usage
 
-bat_dir="${HOME}/.config/bat"
+# shellcheck source=../_config.sh
+source "./setups/base/_config.sh"
 
-mkdir -p "${bat_dir}/themes"
+# shellcheck source=../../../themes/base/official/bat.sh
+source "./themes/base/official/bat.sh"
 
-wget -qO \
-  "${bat_dir}/themes/Catppuccin Mocha.tmTheme" \
-  https://github.com/catppuccin/bat/raw/main/themes/Catppuccin%20Mocha.tmTheme
+install_bat_theme
 
 cp \
   "./configs/.config/bat/config" \
   "${bat_dir}/config"
-
-bat cache --build >/dev/null
 
 exit 0
