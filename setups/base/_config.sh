@@ -76,6 +76,8 @@ export kscreenlockerrc_file="${HOME}/.config/kscreenlockerrc"
 
 export kwinrc_file="${HOME}/.config/kwinrc"
 
+export pacman_config_file="/etc/pacman.conf"
+
 export sddm_conf_dir="/etc/sddm.conf.d"
 export sddm_theme="catppuccin-mocha-mauve-sddm"
 export sddm_themes_dir="/usr/share/sddm/themes"

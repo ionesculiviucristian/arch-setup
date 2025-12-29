@@ -1,7 +1,7 @@
 # Arch setup
 
 | [![Preview 1](./assets/preview1.png)](./assets/preview1.png) | [![Preview 2](./assets/preview2.png)](./assets/preview2.png) | [![Preview 3](./assets/preview3.png)](./assets/preview3.png) |
-|:---:|:---:|:---:|
+|:------------------------------------------------------------:|:------------------------------------------------------------:|:------------------------------------------------------------:|
 
 Wallpapers from [wallpapercave.com](https://wallpapercave.com/)
 
