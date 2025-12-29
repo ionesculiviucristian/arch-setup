@@ -42,7 +42,7 @@ sudo_replace_text \
   "|"
 sudo_replace_text \
   '^GRUB_CMDLINE_LINUX_DEFAULT=".*"$' \
-  'GRUB_CMDLINE_LINUX_DEFAULT="quiet splash ipv6.disable=1 loglevel=3"' \
+  'GRUB_CMDLINE_LINUX_DEFAULT="ipv6.disable=1 loglevel=4"' \
   "${grub_file}"
 sudo_replace_text \
   '^#GRUB_DISABLE_OS_PROBER=false' \
