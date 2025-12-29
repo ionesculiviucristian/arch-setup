@@ -58,6 +58,8 @@ This project serves as both a starting point and a living reference for managing
 
 - [Atuin](https://atuin.sh): Magical shell history
   - [Source](https://github.com/atuinsh/atuin)
+- [bandwhich](https://github.com/imsnif/bandwhich/): Terminal bandwidth utilization tool
+  - [Source](https://github.com/imsnif/bandwhich/)
 - [base-devel](https://gitlab.archlinux.org/archlinux/packaging/packages/base-devel): Basic tools to build Arch Linux packages
   - [Source](https://gitlab.archlinux.org/archlinux/packaging/packages/base-devel)
 - [bash-completion](https://github.com/scop/bash-completion): Programmable completion functions for bash
@@ -82,6 +84,8 @@ This project serves as both a starting point and a living reference for managing
   - [Source](https://gitlab.freedesktop.org/dbus/dbus.git)
 - [direnv](https://direnv.net): direnv is an extension for your shell. It augments existing shells with a new feature that can load and unload environment variables depending on the current directory
   - [Source](https://github.com/direnv/direnv)
+- [dive](https://github.com/wagoodman/dive/): A tool for exploring each layer in a docker image
+  - [Source](https://github.com/wagoodman/dive/)
 - [DKMS](https://github.com/dell/dkms): Dynamic Kernel Modules System
   - [Source](https://github.com/dell/dkms)
 - [Docker](https://www.docker.com): An open platform for developing, shipping, and running applications
@@ -106,6 +110,8 @@ This project serves as both a starting point and a living reference for managing
   - [Source](https://github.com/junegunn/fzf)
 - [git](https://git-scm.com): A free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency
   - [Source](https://github.com/git/git)
+- [GitHub CLI](https://cli.github.com/): GitHub's official command line tool
+  - [Source](https://github.com/cli/cli/)
 - [go-yq](https://mikefarah.gitbook.io/yq): yq is a portable command-line YAML, JSON, XML, CSV, TOML and properties processor
   - [Source](https://github.com/mikefarah/yq)
 - [Gwenview](https://apps.kde.org/gwenview): Image viewer by KDE
@@ -158,6 +164,8 @@ This project serves as both a starting point and a living reference for managing
   - [Source](https://github.com/tuxera/ntfs-3g)
 - [nvtop](https://github.com/Syllo/nvtop): GPU & Accelerator process monitoring for AMD, Apple, Huawei, Intel, NVIDIA and Qualcomm
   - [Source](https://github.com/Syllo/nvtop)
+- [Okular](https://apps.kde.org/okular/): Okular is a universal document viewer developed by KDE. Okular works on multiple platforms, including but not limited to Linux, Windows, Mac OS X, *BSD, etc.
+  - [Source](https://gitlab.archlinux.org/archlinux/packaging/packages/okular)
 - [OpenPrinting CUPS](https://openprinting.github.io/cups): The current standards-based, open source printing system developed by OpenPrinting for Linux® and other Unix®-like operating systems
   - [Source](https://github.com/openprinting/cups)
 - [pacman-contrib](https://gitlab.archlinux.org/pacman/pacman-contrib): Contributed scripts and tools for pacman systems
@@ -176,6 +184,8 @@ This project serves as both a starting point and a living reference for managing
   - [Source](https://github.com/pnpm/pnpm)
 - [Poetry](https://python-poetry.org): Python packaging and dependency management made easy
   - [Source](https://github.com/python-poetry/poetry)
+- [procs](https://github.com/dalance/procs/): A modern replacement for ps written in Rust
+  - [Source](https://github.com/dalance/procs/)
 - [pyenv](https://github.com/pyenv/pyenv): Simple Python version management
   - [Source](https://github.com/pyenv/pyenv)
 - [qBittorrent](https://www.qbittorrent.org): The qBittorrent project aims to provide an open-source software alternative to µTorrent
@@ -202,6 +212,8 @@ This project serves as both a starting point and a living reference for managing
   - [Source](https://github.com/thunderbird)
 - [Tk toolkit](https://sourceforge.net/projects/tktoolkit): Tk is a GUI toolkit for Tcl
   - [Source](https://sourceforge.net/projects/tktoolkit/files)
+- [tldr](https://github.com/tldr-pages/tldr-python-client/): Command line client for tldr, a collection of simplified man pages
+  - [Source](https://github.com/tldr-pages/tldr-python-client/)
 - [tmux](https://github.com/tmux/tmux): tmux is a terminal multiplexer
   - [Source](https://github.com/tmux/tmux)
 - [tmuxp](https://tmuxp.git-pull.com): Session manager for tmux, which allows users to save and load tmux sessions through simple configuration files

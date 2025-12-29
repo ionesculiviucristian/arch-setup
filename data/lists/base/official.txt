@@ -1,4 +1,5 @@
 atuin
+bandwhich
 base-devel
 bash-completion
 bat
@@ -11,6 +12,7 @@ btrfs-progs
 cups
 dbus
 direnv
+dive
 dkms
 docker
 docker-buildx
@@ -23,6 +25,7 @@ filezilla
 firefox
 fzf
 git
+github-cli
 go-yq
 gwenview
 imagemagick
@@ -48,6 +51,7 @@ nss
 ntfs-3g
 nvm
 nvtop
+okular
 pacman-contrib
 partitionmanager
 perl-image-exiftool
@@ -55,6 +59,7 @@ pigz
 plasma-x11-session
 plocate
 pnpm
+procs
 pyenv
 python-pip
 python-pipx
@@ -71,6 +76,7 @@ starship
 superfile
 thunderbird
 tk
+tldr
 tmux
 tmuxp
 unzip

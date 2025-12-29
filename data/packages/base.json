@@ -103,6 +103,13 @@
       "url": "https://github.com/scop/bash-completion"
     },
     {
+      "description": "Terminal bandwidth utilization tool",
+      "label": "bandwhich",
+      "name": "bandwhich",
+      "source_url": "https://github.com/imsnif/bandwhich/",
+      "url": "https://github.com/imsnif/bandwhich/"
+    },
+    {
       "description": "A cat(1) clone with wings",
       "label": "bat",
       "name": "bat",
@@ -173,6 +180,13 @@
       "name": "direnv",
       "source_url": "https://github.com/direnv/direnv",
       "url": "https://direnv.net"
+    },
+    {
+      "description": "A tool for exploring each layer in a docker image",
+      "label": "dive",
+      "name": "dive",
+      "source_url": "https://github.com/wagoodman/dive/",
+      "url": "https://github.com/wagoodman/dive/"
     },
     {
       "description": "Dynamic Kernel Modules System",
@@ -257,6 +271,13 @@
       "name": "git",
       "source_url": "https://github.com/git/git",
       "url": "https://git-scm.com"
+    },
+    {
+      "description": "GitHub's official command line tool",
+      "label": "GitHub CLI",
+      "name": "github-cli",
+      "source_url": "https://github.com/cli/cli/",
+      "url": "https://cli.github.com/"
     },
     {
       "description": "yq is a portable command-line YAML, JSON, XML, CSV, TOML and properties processor",
@@ -436,6 +457,13 @@
       "url": "https://github.com/Syllo/nvtop"
     },
     {
+      "description": "Okular is a universal document viewer developed by KDE. Okular works on multiple platforms, including but not limited to Linux, Windows, Mac OS X, *BSD, etc.",
+      "label": "Okular",
+      "name": "okular",
+      "source_url": "https://gitlab.archlinux.org/archlinux/packaging/packages/okular",
+      "url": "https://apps.kde.org/okular/"
+    },
+    {
       "description": "Contributed scripts and tools for pacman systems",
       "label": "pacman-contrib",
       "name": "pacman-contrib",
@@ -485,6 +513,13 @@
       "name": "pnpm",
       "source_url": "https://github.com/pnpm/pnpm",
       "url": "https://pnpm.io"
+    },
+    {
+      "description": "A modern replacement for ps written in Rust",
+      "label": "procs",
+      "name": "procs",
+      "source_url": "https://github.com/dalance/procs/",
+      "url": "https://github.com/dalance/procs/"
     },
     {
       "description": "Simple Python version management",
@@ -584,6 +619,13 @@
       "name": "superfile",
       "source_url": "https://github.com/yorukot/superfile",
       "url": "https://superfile.netlify.app"
+    },
+    {
+      "description": "Command line client for tldr, a collection of simplified man pages",
+      "label": "tldr",
+      "name": "tldr",
+      "source_url": "https://github.com/tldr-pages/tldr-python-client/",
+      "url": "https://github.com/tldr-pages/tldr-python-client/"
     },
     {
       "description": "The email and productivity app that maximizes your freedoms",
