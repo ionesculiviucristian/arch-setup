@@ -657,6 +657,13 @@
       "url": "https://tmuxp.git-pull.com"
     },
     {
+      "description": "Library and header file for applications that use libunrar",
+      "label": "unrar",
+      "name": "unrar",
+      "source_url": "https://gitlab.archlinux.org/archlinux/packaging/packages/unrar",
+      "url": "https://www.rarlab.com/rar_add.htm"
+    },
+    {
       "description": "UnZip is an extraction utility for archives compressed in .zip format (also called 'zipfiles')",
       "label": "UnZip",
       "name": "unzip",

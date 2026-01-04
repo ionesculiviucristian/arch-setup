@@ -79,6 +79,7 @@ tk
 tldr
 tmux
 tmuxp
+unrar
 unzip
 usbutils
 virtualbox

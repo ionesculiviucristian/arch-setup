@@ -218,6 +218,8 @@ This project serves as both a starting point and a living reference for managing
   - [Source](https://github.com/tmux/tmux)
 - [tmuxp](https://tmuxp.git-pull.com): Session manager for tmux, which allows users to save and load tmux sessions through simple configuration files
   - [Source](https://github.com/tmux-python/tmuxp)
+- [unrar](https://www.rarlab.com/rar_add.htm): Library and header file for applications that use libunrar
+  - [Source](https://gitlab.archlinux.org/archlinux/packaging/packages/unrar)
 - [UnZip](https://infozip.sourceforge.net/UnZip.html): UnZip is an extraction utility for archives compressed in .zip format (also called 'zipfiles')
   - [Source](http://infozip.sourceforge.net/UnZip.html)
 - [usbutils](https://gitlab.archlinux.org/archlinux/packaging/packages/usbutils): A collection of USB tools to query connected USB devices
