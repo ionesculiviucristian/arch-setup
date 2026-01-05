@@ -9,5 +9,5 @@ install_eza_theme() {
 
   wget -qO \
     "${eza_dir}/theme.yml" \
-    "https://raw.githubusercontent.com/eza-community/eza-themes/refs/heads/main/themes/catppuccin-mocha.yml"
+    "https://raw.githubusercontent.com/eza-community/eza-themes/refs/heads/main/themes/${eza_theme}.yml"
 }

@@ -7,6 +7,7 @@ export atuin_dir="${HOME}/.config/atuin"
 export atuin_theme="catppuccin-mocha-mauve"
 
 export bat_dir="${HOME}/.config/bat"
+export bat_theme="Catppuccin%20Mocha"
 
 export broot_dir="${HOME}/.config/broot"
 export broot_theme="catppuccin-mocha-mauve"
@@ -17,6 +18,7 @@ export btop_theme="catppuccin_mocha"
 export docker_dir="/etc/docker"
 
 export eza_dir="${HOME}/.config/eza"
+export eza_theme="catppuccin-mocha"
 
 export catppuccin_fzf_dir="${HOME}/.repos/catppuccin-fzf"
 
@@ -40,6 +42,7 @@ export starship_theme="mocha"
 
 export tmux_plugins_dir="${HOME}/.tmux/plugins"
 
+export vim_theme="catppuccin_mocha"
 export vim_themes_dir="${HOME}/.vim/colors"
 
 # AUR packages config

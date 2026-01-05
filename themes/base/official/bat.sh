@@ -9,7 +9,7 @@ install_bat_theme() {
 
   wget -qO \
     "${bat_dir}/themes/Catppuccin Mocha.tmTheme" \
-    "https://github.com/catppuccin/bat/raw/main/themes/Catppuccin%20Mocha.tmTheme"
+    "https://github.com/catppuccin/bat/raw/main/themes/${bat_theme}.tmTheme"
 
   bat cache --build >/dev/null
 }

@@ -51,10 +51,10 @@ info "  Yay" && ./installers/base/yay.sh
 info "Installing AUR packages..." && ./installers/base/aur_packages.sh
 
 # ==========================================
-# Setup base packages
+# Setup system packages
 # ==========================================
 
-info "Setup base packages..."
+info "Setup system packages..."
 info "  GRUB" && ./setups/base/system/grub.sh
 info "  KDE" && ./setups/base/system/kde.sh
 info "  Konsole" && ./setups/base/system/konsole.sh
