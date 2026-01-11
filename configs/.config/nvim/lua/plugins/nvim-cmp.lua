@@ -123,8 +123,10 @@ return {
 		-- https://github.com/neovim/nvim-lspconfig/tree/master/lua/lspconfig/configs
 		local servers = {
 			"bashls",
+			"cssls",
 			"docker_compose_language_service",
 			"dockerls",
+			"emmet_ls",
 			"html",
 			"intelephense",
 			"jsonls",

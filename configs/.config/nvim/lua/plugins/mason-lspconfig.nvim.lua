@@ -12,9 +12,11 @@ return {
 		-- https://github.com/mason-org/mason-registry/tree/main/packages
 		ensure_installed = {
 			"bashls", -- bash-language-server
+			"cssls", -- css-lsp
 			"docker_compose_language_service", -- docker-compose-language-service
 			"docker_language_server", -- docker-language-server
 			"dockerls", -- dockerfile-language-server
+			"emmet_ls", -- emmet-ls
 			"html", -- html-lsp
 			"intelephense", -- intelephense
 			"jsonls", -- json-lsp
