@@ -133,15 +133,14 @@ return {
 			"tailwindcss",
 		}
 
-		local lspconfig = require("lspconfig")
-
 		for _, server in ipairs(servers) do
-			lspconfig[server].setup({
+			vim.lsp.config(server, {
 				capabilities = capabilities,
 			})
+			vim.lsp.enable(server)
 		end
 
-		lspconfig.ts_ls.setup({
+		vim.lsp.config("ts_ls", {
 			capabilities = capabilities,
 			filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
 			init_options = {
@@ -155,8 +154,9 @@ return {
 				},
 			},
 		})
+		vim.lsp.enable("ts_ls")
 
-		lspconfig.volar.setup({
+		vim.lsp.config("vue_ls", {
 			capabilities = capabilities,
 			settings = {
 				vue = {
@@ -170,5 +170,6 @@ return {
 				},
 			},
 		})
+		vim.lsp.enable("vue_ls")
 	end,
 }
