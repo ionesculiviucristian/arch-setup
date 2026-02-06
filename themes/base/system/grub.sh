@@ -11,7 +11,7 @@ install_grub_theme() {
   rm -rf "${catppuccin_grub_dir}"
   sudo rm -rf "${grub_themes_dir}/${grub_theme}"
 
-  git clone -q \
+  git clone -q --depth=1 \
     https://github.com/catppuccin/grub.git \
     "${catppuccin_grub_dir}"
 

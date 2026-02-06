@@ -16,7 +16,7 @@ cp \
   "./configs/.config/lazygit/config.yml" \
   "${lazygit_dir}/config.yml"
 
-./scripts/update_bashrc.sh "lazygit" << 'EOF'
+./scripts/update_bashrc.sh "lazygit" <<'EOF'
 # https://github.com/catppuccin/lazygit?tab=readme-ov-file#if-you-want-to-use-our-preset
 export LG_CONFIG_FILE="${HOME}/.config/lazygit/config.yml,${HOME}/.config/lazygit/mocha-mauve.yml"
 EOF

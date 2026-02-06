@@ -22,9 +22,10 @@ install_libreoffice_theme() {
     {
       echo '<?xml version="1.0" encoding="UTF-8"?>'
       echo '<oor:items xmlns:oor="http://openoffice.org/2001/registry" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">'
-      cat "${libreoffice_theme_file}"; echo
+      cat "${libreoffice_theme_file}"
+      echo
       echo '</oor:items>'
-    } > "${libreoffice_user_dir}/registrymodifications.xcu"
+    } >"${libreoffice_user_dir}/registrymodifications.xcu"
   else
     # shellcheck disable=SC2086
     sed -i \

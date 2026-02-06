@@ -21,6 +21,7 @@ Wallpapers from [wallpapercave.com](https://wallpapercave.com/)
   - [Firefox plugins](#firefox-plugins)
 - [Available aliases](#available-aliases)
 - [Import Bitwarden secrets](#import-bitwarden-secrets)
+- [Mounts](#mounts)
 - [Setup SSH](#setup-ssh)
 - [Additional notes](#additional-notes)
 - [Development](#development)
@@ -62,6 +63,8 @@ This project serves as both a starting point and a living reference for managing
   - [Source](https://github.com/imsnif/bandwhich/)
 - [base-devel](https://gitlab.archlinux.org/archlinux/packaging/packages/base-devel): Basic tools to build Arch Linux packages
   - [Source](https://gitlab.archlinux.org/archlinux/packaging/packages/base-devel)
+- [Bash Language Server](https://gitlab.archlinux.org/archlinux/packaging/packages/bash-language-server): A language server for Bash
+  - [Source](https://github.com/bash-lsp/bash-language-server)
 - [bash-completion](https://github.com/scop/bash-completion): Programmable completion functions for bash
   - [Source](https://github.com/scop/bash-completion)
 - [bat](https://github.com/sharkdp/bat): A cat(1) clone with wings
@@ -112,6 +115,8 @@ This project serves as both a starting point and a living reference for managing
   - [Source](https://github.com/git/git)
 - [GitHub CLI](https://cli.github.com/): GitHub's official command line tool
   - [Source](https://github.com/cli/cli/)
+- [Go](https://go.dev/): Build simple, secure, scalable systems with Go
+  - [Source](https://github.com/golang/go/)
 - [go-yq](https://mikefarah.gitbook.io/yq): yq is a portable command-line YAML, JSON, XML, CSV, TOML and properties processor
   - [Source](https://github.com/mikefarah/yq)
 - [Gwenview](https://apps.kde.org/gwenview): Image viewer by KDE
@@ -134,10 +139,6 @@ This project serves as both a starting point and a living reference for managing
   - [Source](https://github.com/gwsw/less)
 - [LibreOffice](https://www.libreoffice.org): A private, free and open source office suite
   - [Source](https://github.com/libreoffice)
-- [Linux headers](https://gitlab.archlinux.org/archlinux/packaging/packages/linux): Headers and scripts for building modules for the Linux kernel
-  - [Source](https://github.com/archlinux/linux)
-- [Linux LTS headers](https://gitlab.archlinux.org/archlinux/packaging/packages/linux-lts): Headers and scripts for building modules for the LTS Linux kernel
-  - [Source](https://github.com/archlinux/linux)
 - [lsof (LiSt Open Files)](https://lsof.readthedocs.io): LiSt Open Files
   - [Source](https://github.com/lsof-org/lsof)
 - [man-db](https://gitlab.com/man-db/man-db): Tools for reading manual pages
@@ -198,6 +199,8 @@ This project serves as both a starting point and a living reference for managing
   - [Source](https://github.com/RsyncProject/rsync)
 - [rustup](https://rust-lang.github.io/rustup): rustup installs The Rust Programming Language from the official release channels, enabling you to easily switch between stable, beta, and nightly compilers and keep them updated
   - [Source](https://github.com/rust-lang/rustup)
+- [sh](https://gitlab.archlinux.org/archlinux/packaging/packages/shfmt): A shell parser, formatter, and interpreter with bash support; includes shfmt
+  - [Source](https://github.com/mvdan/sh/)
 - [ShellCheck](https://github.com/koalaman/shellcheck): ShellCheck, a static analysis tool for shell scripts
   - [Source](https://github.com/koalaman/shellcheck)
 - [shtab](https://docs.iterative.ai/shtab): Automagic shell tab completion for Python CLI applications
@@ -254,6 +257,14 @@ This project serves as both a starting point and a living reference for managing
   - [Source](https://github.com/archlinux-downgrade/downgrade)
 - [gita](https://github.com/nosarthur/gita): Manage many git repos with sanity
   - [Source](https://github.com/nosarthur/gita)
+- [NordVPN](https://nordvpn.com/): The best VPN service for a free, open internet
+  - [Source](https://nordvpn.com/)
+- [NordVPN GUI](https://nordvpn.com/): NordVPN Linux client
+  - [Source](https://github.com/NordSecurity/nordvpn-linux)
+- [OneDrive](https://abraunegg.github.io/): OneDrive Client for Linux
+  - [Source](https://github.com/abraunegg/onedrive/)
+- [OneDriveGUI](https://github.com/bpozdena/OneDriveGUI/): A simple GUI for OneDrive Linux client with multi-account support
+  - [Source](https://github.com/bpozdena/OneDriveGUI/)
 - [Papirus](https://store.kde.org/p/1166289): Pixel perfect icon theme for Linux
   - [Source](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
 - [Papirus Folders](https://github.com/PapirusDevelopmentTeam/papirus-folders): A script that lets you change the colors of folders in Papirus icon theme
@@ -381,6 +392,15 @@ For a list off all available aliases, [read more here](./ALIASES.md) or run `ali
 ./setups/base/official/git.sh
 ```
 
+## Mounts
+
+```bash
+# Mounts should be used only when `mounts.json` is configured
+./setups/base/mounts.sh
+./setups/base/aur/onedrive.sh
+./setups/base/aur/onedrive-gui.sh
+```
+
 ## Setup SSH
 
 ```bash
@@ -402,4 +422,47 @@ tic -x kitty.terminfo
 
 ```bash
 npm i
+```
+
+### VirtualBox setup
+
+#### Host
+
+```bash
+vm="arch"
+
+vm_dir="$(VBoxManage showvminfo "${vm}" --machinereadable | grep CfgFile | cut -d'"' -f2 | xargs dirname)" 
+
+serial="WGS3TEKD"
+
+VBoxManage createmedium disk --filename "${vm_dir}/hdd.vdi" --size 20480
+
+VBoxManage storageattach "${vm}" \
+  --storagectl "SATA" \
+  --port 1 \
+  --type hdd \
+  --medium "${vm_dir}/hdd.vdi"
+
+VBoxManage setextradata "${vm}" \
+  "VBoxInternal/Devices/ahci/0/Config/Port1/SerialNumber" \
+  "${serial}"
+```
+
+#### Guest
+
+```bash
+sudo pacman -Syu git firefox virtualbox-guest-utils
+sudo systemctl enable --now vboxservice.service
+sudo usermod -aG vboxsf "${USER}"
+
+sudo parted /dev/sdb mklabel gpt
+sudo parted /dev/sdb mkpart primary ntfs 0% 100%
+
+sudo mkfs.ntfs -f /dev/sdb1
+
+lsblk -no NAME,SERIAL
+
+# Create after the HDD is mounted
+mkdir -p "/mnt/hdd/Tests/Books/"
+mkdir -p "/mnt/hdd/Tests/Pictures/"
 ```

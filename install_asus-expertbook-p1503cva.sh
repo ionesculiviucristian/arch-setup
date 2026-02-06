@@ -2,12 +2,12 @@
 set -eu
 
 exec 1>install_asus-expertbook-p1503cva.log
-exec 2>errors_asus-expertbook-p1503cva.log
+exec 2>install_errors_asus-expertbook-p1503cva.log
 
 # shellcheck disable=SC1091
 source "./scripts/installer.sh"
 
-trap disable_passwordless_sudo EXIT
+trap 'enable_kernel_updates; disable_passwordless_sudo' EXIT
 
 # ==========================================
 # Pre install
@@ -16,6 +16,7 @@ trap disable_passwordless_sudo EXIT
 info "Starting installation..."
 
 enable_passwordless_sudo
+disable_kernel_updates
 
 # ==========================================
 # Install drivers

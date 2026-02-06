@@ -8,7 +8,9 @@ rm -rf "${tmux_plugins_dir}"
 
 mkdir -p "${tmux_plugins_dir}"
 
-git clone https://github.com/tmux-plugins/tpm "${tmux_plugins_dir}/tpm"
+git clone --depth=1 \
+  https://github.com/tmux-plugins/tpm \
+  "${tmux_plugins_dir}/tpm"
 
 cp "./configs/.tmux.conf" "${HOME}/.tmux.conf"
 

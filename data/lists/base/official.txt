@@ -2,6 +2,7 @@ atuin
 bandwhich
 base-devel
 bash-completion
+bash-language-server
 bat
 bind
 bitwarden
@@ -26,6 +27,7 @@ firefox
 fzf
 git
 github-cli
+go
 go-yq
 gwenview
 imagemagick
@@ -36,8 +38,6 @@ kpackage
 lazygit
 less
 libreoffice-fresh
-linux-headers
-linux-lts-headers
 lsof
 man-db
 man-pages
@@ -71,6 +71,7 @@ ripgrep
 rsync
 rustup
 shellcheck
+shfmt
 smplayer
 starship
 superfile

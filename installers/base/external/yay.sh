@@ -1,7 +1,7 @@
 #!/bin/bash
 set -eu
 
-# shellcheck source=../../setups/base/_config.sh
+# shellcheck source=../../../setups/base/_config.sh
 source "./setups/base/_config.sh"
 
 if command -v yay &>/dev/null; then
@@ -10,7 +10,9 @@ fi
 
 rm -rf "${yay_dir}"
 
-git clone -q https://aur.archlinux.org/yay.git "${yay_dir}"
+git clone -q --depth=1 \
+  https://aur.archlinux.org/yay.git \
+  "${yay_dir}"
 
 (
   cd "${yay_dir}"

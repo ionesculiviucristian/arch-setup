@@ -2,6 +2,10 @@ blesh-git
 brave-bin
 downgrade
 gita
+nordvpn-bin
+nordvpn-gui
+onedrive-abraunegg
+onedrivegui
 papirus-folders
 papirus-icon-theme
 postman-bin

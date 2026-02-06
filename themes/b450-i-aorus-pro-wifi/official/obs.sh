@@ -9,7 +9,8 @@ install_obs_theme() {
 
   rm -rf "${catppuccin_obs_dir}"
 
-  git clone -q https://github.com/catppuccin/obs "${catppuccin_obs_dir}"
+  git clone -q --depth=1 https://github.com/catppuccin/obs \
+    "${catppuccin_obs_dir}"
 
   cp \
     "${catppuccin_obs_dir}/themes"/*.* \

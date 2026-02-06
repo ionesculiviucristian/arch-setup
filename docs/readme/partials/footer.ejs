@@ -6,6 +6,15 @@
 ./setups/base/official/git.sh
 ```
 
+## Mounts
+
+```bash
+# Mounts should be used only when `mounts.json` is configured
+./setups/base/mounts.sh
+./setups/base/aur/onedrive.sh
+./setups/base/aur/onedrive-gui.sh
+```
+
 ## Setup SSH
 
 ```bash
@@ -27,4 +36,47 @@ tic -x kitty.terminfo
 
 ```bash
 npm i
+```
+
+### VirtualBox setup
+
+#### Host
+
+```bash
+vm="arch"
+
+vm_dir="$(VBoxManage showvminfo "${vm}" --machinereadable | grep CfgFile | cut -d'"' -f2 | xargs dirname)" 
+
+serial="WGS3TEKD"
+
+VBoxManage createmedium disk --filename "${vm_dir}/hdd.vdi" --size 20480
+
+VBoxManage storageattach "${vm}" \
+  --storagectl "SATA" \
+  --port 1 \
+  --type hdd \
+  --medium "${vm_dir}/hdd.vdi"
+
+VBoxManage setextradata "${vm}" \
+  "VBoxInternal/Devices/ahci/0/Config/Port1/SerialNumber" \
+  "${serial}"
+```
+
+#### Guest
+
+```bash
+sudo pacman -Syu git firefox virtualbox-guest-utils
+sudo systemctl enable --now vboxservice.service
+sudo usermod -aG vboxsf "${USER}"
+
+sudo parted /dev/sdb mklabel gpt
+sudo parted /dev/sdb mkpart primary ntfs 0% 100%
+
+sudo mkfs.ntfs -f /dev/sdb1
+
+lsblk -no NAME,SERIAL
+
+# Create after the HDD is mounted
+mkdir -p "/mnt/hdd/Tests/Books/"
+mkdir -p "/mnt/hdd/Tests/Pictures/"
 ```

@@ -11,13 +11,15 @@ source "./setups/base/_config.sh"
 # shellcheck source=../../../themes/base/official/starship.sh
 source "./themes/base/official/starship.sh"
 
+mkdir -p "${starship_dir}"
+
 cp \
   "./configs/.config/starship/config.toml" \
   "${starship_dir}/config.toml"
 
 install_starship_theme
 
-./scripts/update_bashrc.sh "starship" << 'EOF'
+./scripts/update_bashrc.sh "starship" <<'EOF'
 # https://github.com/starship/starship?tab=readme-ov-file#step-2-set-up-your-shell-to-use-starship
 eval "$(starship init bash)"
 EOF

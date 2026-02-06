@@ -17,8 +17,8 @@ fi
 
 user_places_file="${HOME}/.local/share/user-places.xbel"
 
-if [ ! -f "${user_places_file}" ]; then 
-  echo '<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE xbel><xbel version="1.0"></xbel>' > "${user_places_file}"
+if [ ! -f "${user_places_file}" ]; then
+  echo '<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE xbel><xbel version="1.0"></xbel>' >"${user_places_file}"
 fi
 
 if xmlstarlet sel -t -v "//title[text() = '${title}']" "${user_places_file}" | grep -q .; then

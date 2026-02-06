@@ -4,10 +4,11 @@ set -eu
 # shellcheck disable=SC1091
 set -a && source ".env" && set +a
 
-gpgsign=$(gpg \
-  --list-secret-keys \
-  --keyid-format LONG | \
-  grep '^sec' | head -n1 | awk '{print $2}' | cut -d'/' -f2
+gpgsign=$(
+  gpg \
+    --list-secret-keys \
+    --keyid-format LONG |
+    grep '^sec' | head -n1 | awk '{print $2}' | cut -d'/' -f2
 )
 
 git config --global core.editor "code --wait --new-window"
@@ -28,7 +29,7 @@ git config --file ~/.gitconfig-personal commit.gpgsign true
 git config --file ~/.gitconfig-work user.name "${GIT_WORK_USER_NAME:?err}"
 git config --file ~/.gitconfig-work user.email "${GIT_WORK_USER_EMAIL:?err}"
 
-cat <<EOF >> ~/.gitconfig
+cat <<EOF >>~/.gitconfig
 
 [includeIf "hasconfig:remote.*.url:${GIT_PERSONAL_REMOTE:?err}:*/**"]
     path = ~/.gitconfig-personal

@@ -9,7 +9,8 @@ source "./setups/base/_config.sh"
 
 cp "./configs/.blerc" "${HOME}/.blerc"
 
-lines=$(cat <<'EOF'
+lines=$(
+  cat <<'EOF'
 
 # https://github.com/akinomyoga/ble.sh?tab=readme-ov-file#13-set-up-bashrc
 [[ $- == *i* ]] && source -- "/usr/share/blesh/ble.sh" \
@@ -20,9 +21,9 @@ EOF
 
 if grep -F -A3 \
   "# https://github.com/akinomyoga/ble.sh?tab=readme-ov-file#13-set-up-bashrc" \
-  "${bashrc_file}" | \
+  "${bashrc_file}" |
   grep -qF "${lines}"; then
-    exit 0
+  exit 0
 fi
 
 sed -i "/\[\[ \$- != \*i\* \]\] && return/r /dev/stdin" \

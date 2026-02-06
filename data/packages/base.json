@@ -29,6 +29,34 @@
       "url": "https://github.com/nosarthur/gita"
     },
     {
+      "description": "The best VPN service for a free, open internet",
+      "label": "NordVPN",
+      "name": "nordvpn-bin",
+      "source_url": "https://nordvpn.com/",
+      "url": "https://nordvpn.com/"
+    },
+    {
+      "description": "NordVPN Linux client",
+      "label": "NordVPN GUI",
+      "name": "nordvpn-gui",
+      "source_url": "https://github.com/NordSecurity/nordvpn-linux",
+      "url": "https://nordvpn.com/"
+    },
+    {
+      "description": "OneDrive Client for Linux",
+      "label": "OneDrive",
+      "name": "onedrive-abraunegg",
+      "source_url": "https://github.com/abraunegg/onedrive/",
+      "url": "https://abraunegg.github.io/"
+    },
+    {
+      "description": "A simple GUI for OneDrive Linux client with multi-account support",
+      "label": "OneDriveGUI",
+      "name": "onedrivegui",
+      "source_url": "https://github.com/bpozdena/OneDriveGUI/",
+      "url": "https://github.com/bpozdena/OneDriveGUI/"
+    },
+    {
       "description": "A script that lets you change the colors of folders in Papirus icon theme",
       "label": "Papirus Folders",
       "name": "papirus-folders",
@@ -75,7 +103,7 @@
     {
       "description": "Yet another Yogurt - An AUR Helper written in Go",
       "label": "Yay",
-      "name": "",
+      "name": null,
       "source_url": "https://github.com/Jguer/yay",
       "url": "https://github.com/Jguer/yay"
     }
@@ -101,6 +129,13 @@
       "name": "bash-completion",
       "source_url": "https://github.com/scop/bash-completion",
       "url": "https://github.com/scop/bash-completion"
+    },
+    {
+      "description": "A language server for Bash",
+      "label": "Bash Language Server",
+      "name": "bash-language-server",
+      "source_url": "https://github.com/bash-lsp/bash-language-server",
+      "url": "https://gitlab.archlinux.org/archlinux/packaging/packages/bash-language-server"
     },
     {
       "description": "Terminal bandwidth utilization tool",
@@ -280,6 +315,13 @@
       "url": "https://cli.github.com/"
     },
     {
+      "description": "Build simple, secure, scalable systems with Go",
+      "label": "Go",
+      "name": "go",
+      "source_url": "https://github.com/golang/go/",
+      "url": "https://go.dev/"
+    },
+    {
       "description": "yq is a portable command-line YAML, JSON, XML, CSV, TOML and properties processor",
       "label": "go-yq",
       "name": "go-yq",
@@ -349,20 +391,6 @@
       "name": "libreoffice-fresh",
       "source_url": "https://github.com/libreoffice",
       "url": "https://www.libreoffice.org"
-    },
-    {
-      "description": "Headers and scripts for building modules for the Linux kernel",
-      "label": "Linux headers",
-      "name": "linux-headers",
-      "source_url": "https://github.com/archlinux/linux",
-      "url": "https://gitlab.archlinux.org/archlinux/packaging/packages/linux"
-    },
-    {
-      "description": "Headers and scripts for building modules for the LTS Linux kernel",
-      "label": "Linux LTS headers",
-      "name": "linux-lts-headers",
-      "source_url": "https://github.com/archlinux/linux",
-      "url": "https://gitlab.archlinux.org/archlinux/packaging/packages/linux-lts"
     },
     {
       "description": "LiSt Open Files",
@@ -590,6 +618,13 @@
       "name": "rustup",
       "source_url": "https://github.com/rust-lang/rustup",
       "url": "https://rust-lang.github.io/rustup"
+    },
+    {
+      "description": "A shell parser, formatter, and interpreter with bash support; includes shfmt",
+      "label": "sh",
+      "name": "shfmt",
+      "source_url": "https://github.com/mvdan/sh/",
+      "url": "https://gitlab.archlinux.org/archlinux/packaging/packages/shfmt"
     },
     {
       "description": "ShellCheck, a static analysis tool for shell scripts",

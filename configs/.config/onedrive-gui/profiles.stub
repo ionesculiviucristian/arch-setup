@@ -1,0 +1,5 @@
+[Default]
+config_file = $HOME/.config/onedrive/config
+auto_sync = True
+account_type = Personal
+free_space =

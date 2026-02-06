@@ -37,7 +37,6 @@ sudo_replace_text \
   'UsePAM no' \
   "${sshd_config_file}"
 
-sudo systemctl enable sshd.service
-sudo systemctl start sshd.service
+sudo systemctl enable --now sshd.service
 
 exit 0

@@ -1,0 +1,3 @@
+classify_as_big_delete = "10"
+check_nomount = "true"
+notify_file_actions = "true"

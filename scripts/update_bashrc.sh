@@ -37,13 +37,13 @@ if grep -qF "${entry_start}" "${bashrc_file}"; then
     p==0 {
       print;
     }
-  ' "${bashrc_file}" > "${tmp_file}" && mv "${tmp_file}" "${bashrc_file}"
+  ' "${bashrc_file}" >"${tmp_file}" && mv "${tmp_file}" "${bashrc_file}"
 else
   {
     echo "${entry_start}"
     echo "${entry}"
     echo "${entry_end}"$'\n'
-  } >> "${bashrc_file}"
+  } >>"${bashrc_file}"
 fi
 
 exit 0

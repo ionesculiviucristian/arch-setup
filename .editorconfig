@@ -1,5 +1,9 @@
 root = true
 
+[*.sh]
+indent_style = space
+indent_size = 2
+
 [*.lua]
 indent_style = tab
 indent_size = 2

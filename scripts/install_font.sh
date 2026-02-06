@@ -18,20 +18,20 @@ mkdir -p "${fonts_dir}"
 wget -qO "${archive_path}" "${url}"
 
 case "${archive}" in
-  *.zip)
-    unzip -q "${archive_path}" -d "${tmp_dir}"
-    ;;
-  *.tar.xz)
-    tar -xf "${archive_path}" -C "${tmp_dir}"
-    ;;
-  *.tar.gz)
-    tar -xzf "${archive_path}" -C "${tmp_dir}"
-    ;;
-  *)
-    rm -rf "${tmp_dir}"
-    echo "Error: Cannot extract contents from ${archive}"
-    exit 1
-    ;;
+*.zip)
+  unzip -q "${archive_path}" -d "${tmp_dir}"
+  ;;
+*.tar.xz)
+  tar -xf "${archive_path}" -C "${tmp_dir}"
+  ;;
+*.tar.gz)
+  tar -xzf "${archive_path}" -C "${tmp_dir}"
+  ;;
+*)
+  rm -rf "${tmp_dir}"
+  echo "Error: Cannot extract contents from ${archive}"
+  exit 1
+  ;;
 esac
 
 find "${tmp_dir}" -type f \( -iname "*.ttf" -o -iname "*.otf" \) -exec cp {} "${fonts_dir}" \;

@@ -20,6 +20,11 @@ export docker_dir="/etc/docker"
 export eza_dir="${HOME}/.config/eza"
 export eza_theme="catppuccin-mocha"
 
+export filezilla_dir="${HOME}/.config/filezilla"
+
+export git_scope_dir="${HOME}/.config/git-scope"
+
+# fzf
 export catppuccin_fzf_dir="${HOME}/.repos/catppuccin-fzf"
 
 export kitty_dir="${HOME}/.config/kitty"
@@ -37,6 +42,8 @@ export nvim_dir="${HOME}/.config/nvim"
 export qBittorrent_dir="${HOME}/.config/qBittorrent"
 export qBittorrent_theme="catppuccin-mocha"
 
+export ssh_dir="${HOME}/.ssh"
+
 export starship_dir="${HOME}/.config/starship"
 export starship_theme="mocha"
 
@@ -46,6 +53,9 @@ export vim_theme="catppuccin_mocha"
 export vim_themes_dir="${HOME}/.vim/colors"
 
 # AUR packages config
+
+export onedrive_dir="${HOME}/.config/onedrive"
+export onedrive_gui_dir="${HOME}/.config/onedrive-gui"
 
 export superfile_dir="${HOME}/.config/superfile"
 export superfile_theme="catppuccin-mocha-mauve"

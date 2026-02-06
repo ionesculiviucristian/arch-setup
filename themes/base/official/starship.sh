@@ -14,5 +14,5 @@ install_starship_theme() {
   cat \
     "${starship_dir}/config.toml" \
     "${starship_dir}/themes/${starship_theme}.conf" \
-    > "${HOME}/.config/.starship.toml"
+    >"${HOME}/.config/.starship.toml"
 }

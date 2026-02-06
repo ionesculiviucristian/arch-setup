@@ -1,0 +1,30 @@
+{
+  "onedrive": [
+    {
+      "source": "/mnt/hdd/Tests/Books/",
+      "destination": "${HOME}/OneDrive/Tests/Books/",
+      "type": "none",
+      "options": "bind,x-systemd.requires=/mnt/hdd,x-systemd.after=/mnt/hdd,nofail",
+      "dump": 0,
+      "check": 0
+    },
+    {
+      "source": "/mnt/hdd/Tests/Pictures/",
+      "destination": "${HOME}/OneDrive/Tests/Pictures/",
+      "type": "none",
+      "options": "bind,x-systemd.requires=/mnt/hdd,x-systemd.after=/mnt/hdd,nofail",
+      "dump": 0,
+      "check": 0
+    }
+  ],
+  "system": [
+    {
+      "source": "SERIAL:WGS3TEKD:1",
+      "destination": "/mnt/hdd",
+      "type": "ntfs3",
+      "options": "defaults,uid=1000,gid=1000,umask=022,nofail",
+      "dump": 0,
+      "check": 0
+    }
+  ]
+}

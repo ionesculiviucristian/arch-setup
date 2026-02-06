@@ -21,8 +21,8 @@ install_sddm_theme() {
   sudo mkdir -p "${sddm_themes_dir}/${sddm_theme}"
 
   wget -qO- \
-    "https://github.com/catppuccin/sddm/releases/download/v1.1.2/${sddm_theme}.zip" \
-    | sudo bsdtar -xf- -C "${sddm_themes_dir}/${sddm_theme}" --strip-components=1
+    "https://github.com/catppuccin/sddm/releases/download/v1.1.2/${sddm_theme}.zip" |
+    sudo bsdtar -xf- -C "${sddm_themes_dir}/${sddm_theme}" --strip-components=1
 
   sudo_replace_text \
     '^CustomBackground="false"' \

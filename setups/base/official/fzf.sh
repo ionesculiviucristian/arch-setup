@@ -10,7 +10,7 @@ source "./themes/base/official/fzf.sh"
 
 install_fzf_theme
 
-./scripts/update_bashrc.sh "fzf" << 'EOF'
+./scripts/update_bashrc.sh "fzf" <<'EOF'
 # https://github.com/junegunn/fzf?tab=readme-ov-file#setting-up-shell-integration
 source "${HOME}/.repos/catppuccin-fzf/themes/catppuccin-fzf-mocha.sh"
 EOF
