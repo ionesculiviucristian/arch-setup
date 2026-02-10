@@ -1,0 +1,7 @@
+description: "Broot is a better way to navigate directories, find files, and launch commands"
+label: "broot"
+name: "broot"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/broot/"
+source_url: "https://github.com/Canop/broot/"
+url: "https://dystroy.org/broot/"

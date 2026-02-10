@@ -1,0 +1,7 @@
+description: "Highly configurable GPL-licensed FTP server software"
+label: "ProFTPD"
+name: "proftpd"
+repository: "aur"
+repository_url: "https://aur.archlinux.org/packages/proftpd"
+source_url: "https://github.com/proftpd/proftpd/"
+url: "http://www.proftpd.org/"

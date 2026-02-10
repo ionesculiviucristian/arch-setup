@@ -1,0 +1,7 @@
+description: "OneDrive Client for Linux"
+label: "OneDrive"
+name: "onedrive-abraunegg"
+repository: "aur"
+repository_url: "https://aur.archlinux.org/packages/onedrive-abraunegg"
+source_url: "https://github.com/abraunegg/onedrive/"
+url: "https://abraunegg.github.io/"

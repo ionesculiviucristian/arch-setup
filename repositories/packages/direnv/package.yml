@@ -1,0 +1,7 @@
+description: "direnv is an extension for your shell. It augments existing shells with a new feature that can load and unload environment variables depending on the current directory"
+label: "direnv"
+name: "direnv"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/direnv/"
+source_url: "https://github.com/direnv/direnv/"
+url: "https://direnv.net/"

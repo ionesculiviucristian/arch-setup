@@ -1,0 +1,7 @@
+description: "Open-source Vulkan driver for AMD GPUs"
+label: "Vulkan driver for AMD GPUs"
+name: "vulkan-radeon"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/vulkan-radeon/"
+source_url: "https://gitlab.archlinux.org/archlinux/packaging/packages/mesa/"
+url: "https://www.mesa3d.org/"

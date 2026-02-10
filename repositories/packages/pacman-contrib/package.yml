@@ -1,0 +1,8 @@
+description: "Contributed scripts and tools for pacman systems"
+label: "pacman-contrib"
+name: "pacman-contrib"
+optional: ""
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/pacman-contrib/"
+source_url: "https://gitlab.archlinux.org/pacman/pacman-contrib/"
+url: null

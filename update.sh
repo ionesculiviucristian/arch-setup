@@ -1,11 +1,15 @@
 #!/bin/bash
 set -eu
 
+root_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
 exec 1>update_base.log
 exec 2>update_errors_base.log
 
-# shellcheck disable=SC1091
-source "./scripts/installer.sh"
+# shellcheck source=scripts/installer.sh
+source "${root_dir}/scripts/installer.sh"
+# shellcheck source=scripts/packages.sh
+source "${root_dir}/scripts/packages.sh"
 
 trap disable_passwordless_sudo EXIT
 
@@ -28,7 +32,7 @@ info "Updating official & AUR packages..." && yay -Syu
 # ==========================================
 
 info "Updating external packages..."
-info "  git-scope" && installers/base/external/git-scope.sh
+run_package_scripts base install
 
 # ==========================================
 # Update themes
@@ -36,7 +40,7 @@ info "  git-scope" && installers/base/external/git-scope.sh
 
 info "Updating themes..."
 
-themes/base/update.sh
+"${root_dir}/os/setup_theme.sh"
 
 # ==========================================
 # Post update

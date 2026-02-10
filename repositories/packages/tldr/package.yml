@@ -1,0 +1,7 @@
+description: "Command line client for tldr, a collection of simplified man pages"
+label: "tldr"
+name: "tldr"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/tldr/"
+source_url: "https://github.com/tldr-pages/tldr-python-client/"
+url: "https://pypi.org/project/tldr/"

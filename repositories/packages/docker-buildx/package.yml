@@ -1,0 +1,7 @@
+description: "Docker CLI plugin for extended build capabilities with BuildKit"
+label: "buildx"
+name: "docker-buildx"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/docker-buildx/"
+source_url: "https://github.com/docker/buildx/"
+url: "https://www.docker.com/"

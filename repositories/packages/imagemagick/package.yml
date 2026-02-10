@@ -1,0 +1,7 @@
+description: "ImageMagick is a free, open-source software suite, used for editing and manipulating digital images"
+label: "ImageMagick"
+name: "imagemagick"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/imagemagick/"
+source_url: "https://github.com/imagemagick/imagemagick/"
+url: "https://imagemagick.org/"

@@ -1,0 +1,7 @@
+description: "Miniconda is a free, miniature installation of Anaconda Distribution that includes only conda, Python, the packages they both depend on, and a small number of other useful packages"
+label: "Miniconda"
+name: "miniconda"
+repository: "external"
+repository_url: null
+source_url: "https://github.com/conda/conda/"
+url: "https://docs.anaconda.com/miniconda/"

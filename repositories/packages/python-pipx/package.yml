@@ -1,0 +1,7 @@
+description: "Install and Run Python Applications in Isolated Environments"
+label: "pipx"
+name: "python-pipx"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/python-pipx/"
+source_url: "https://github.com/pypa/pipx/"
+url: "https://pipx.pypa.io/"

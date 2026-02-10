@@ -1,0 +1,7 @@
+description: "The current standards-based, open source printing system developed by OpenPrinting for Linux® and other Unix®-like operating systems"
+label: "OpenPrinting CUPS"
+name: "cups"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/cups/"
+source_url: "https://github.com/openprinting/cups/"
+url: "https://openprinting.github.io/cups/"

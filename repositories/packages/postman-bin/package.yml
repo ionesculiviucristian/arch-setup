@@ -1,0 +1,7 @@
+description: "Unify API design, testing, documentation, monitoring, and discovery on one platform that integrates with the rest of your stack, including every major gateway and Git solution"
+label: "Postman"
+name: "postman-bin"
+repository: "aur"
+repository_url: "https://aur.archlinux.org/packages/postman-bin"
+source_url: "https://github.com/postmanlabs/"
+url: "https://www.postman.com/"

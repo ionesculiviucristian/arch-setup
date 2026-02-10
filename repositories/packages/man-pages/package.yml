@@ -1,0 +1,7 @@
+description: "The Linux man-pages project documents the Linux kernel and C library interfaces that are employed by user-space programs"
+label: "man-pages"
+name: "man-pages"
+repository: "core"
+repository_url: "https://archlinux.org/packages/core/x86_64/man-pages/"
+source_url: "https://git.kernel.org/pub/scm/docs/man-pages/man-pages.git/"
+url: "https://www.kernel.org/doc/man-pages/"

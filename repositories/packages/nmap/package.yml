@@ -1,0 +1,7 @@
+description: 'Nmap ("Network Mapper") is a free and open source utility for network discovery and security auditing'
+label: "Nmap"
+name: "nmap"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/nmap/"
+source_url: "https://github.com/nmap/nmap/"
+url: "https://nmap.org/"

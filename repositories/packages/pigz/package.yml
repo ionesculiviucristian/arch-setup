@@ -1,0 +1,7 @@
+description: "A parallel implementation of gzip for modern multi-processor, multi-core machines"
+label: "pigz"
+name: "pigz"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/pigz/"
+source_url: "https://github.com/madler/pigz/"
+url: "https://www.zlib.net/pigz/"

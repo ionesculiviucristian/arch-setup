@@ -1,0 +1,7 @@
+description: "Microcode update image for AMD CPUs"
+label: "AMD CPU microcode"
+name: "amd-ucode"
+repository: "core"
+repository_url: "https://archlinux.org/packages/core/x86_64/amd-ucode/"
+source_url: "https://gitlab.com/kernel-firmware/linux-firmware/-/tree/main/amd-ucode?ref_type=heads"
+url: "https://www.amd.com/en.html"

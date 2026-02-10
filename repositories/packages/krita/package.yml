@@ -1,0 +1,7 @@
+description: "Krita is a free and open source cross-platform application that offers an end-to-end solution for creating digital art files from scratch built on the KDE and Qt frameworks"
+label: "Krita"
+name: "krita"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/krita/"
+source_url: "https://invent.kde.org/graphics/krita/"
+url: "https://krita.org/en/"

@@ -1,11 +1,15 @@
 #!/bin/bash
 set -eu
 
+root_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
 exec 1>install_b450-i-aorus-pro-wifi.log
 exec 2>install_errors_b450-i-aorus-pro-wifi.log
 
-# shellcheck disable=SC1091
-source "./scripts/installer.sh"
+# shellcheck source=scripts/installer.sh
+source "${root_dir}/scripts/installer.sh"
+# shellcheck source=scripts/packages.sh
+source "${root_dir}/scripts/packages.sh"
 
 trap 'enable_kernel_updates; disable_passwordless_sudo' EXIT
 
@@ -22,34 +26,35 @@ disable_kernel_updates
 # Install official packages
 # ==========================================
 
+_t=$SECONDS
 info "Installing official packages..."
-./installers/b450-i-aorus-pro-wifi/official_packages.sh
+# shellcheck disable=SC2046
+sudo pacman \
+  -Syu \
+  --needed \
+  --noconfirm \
+  $(get_packages_by_repo b450-i-aorus-pro-wifi core extra multilib) >/dev/null
+info "Installing official packages done in $(( SECONDS - _t ))s"
 
 # ==========================================
 # Install AUR packages
 # ==========================================
 
+_t=$SECONDS
 info "Installing AUR packages..."
-./installers/b450-i-aorus-pro-wifi/aur_packages.sh
+# shellcheck disable=SC2046
+yay \
+  -Syu \
+  --needed \
+  --noconfirm \
+  $(get_packages_by_repo b450-i-aorus-pro-wifi aur) >/dev/null
+info "Installing AUR packages done in $(( SECONDS - _t ))s"
 
 # ==========================================
-# Setup official packages
+# Setup packages
 # ==========================================
 
-info "Setup official packages..."
-info "  OBS Studio" && ./setups/b450-i-aorus-pro-wifi/official/obs_studio.sh
-
-# ==========================================
-# Setup AUR packages
-# ==========================================
-
-info "Setup AUR packages..."
-info "  ProFTPD" && ./setups/b450-i-aorus-pro-wifi/aur/proftpd.sh
-
-# ==========================================
-# Install drivers
-# ==========================================
-
-info "Installing drivers..." && ./installers/b450-i-aorus-pro-wifi/drivers.sh
+info "Setup packages..."
+run_package_scripts b450-i-aorus-pro-wifi setup
 
 exit 0

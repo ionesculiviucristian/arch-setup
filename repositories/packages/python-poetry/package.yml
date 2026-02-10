@@ -1,0 +1,7 @@
+description: "Python packaging and dependency management made easy"
+label: "Poetry"
+name: "python-poetry"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/python-poetry/"
+source_url: "https://github.com/python-poetry/poetry/"
+url: "https://python-poetry.org/"

@@ -1,0 +1,7 @@
+description: "Terminal emulator by KDE"
+label: "Konsole"
+name: "konsole"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/konsole/"
+source_url: "https://github.com/KDE/konsole/"
+url: "https://konsole.kde.org/"

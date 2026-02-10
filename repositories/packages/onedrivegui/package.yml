@@ -1,0 +1,7 @@
+description: "A simple GUI for OneDrive Linux client with multi-account support"
+label: "OneDriveGUI"
+name: "onedrivegui"
+repository: "aur"
+repository_url: "https://aur.archlinux.org/packages/onedrivegui"
+source_url: "https://github.com/bpozdena/OneDriveGUI/"
+url: "https://github.com/bpozdena/OneDriveGUI/"

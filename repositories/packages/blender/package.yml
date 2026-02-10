@@ -1,0 +1,7 @@
+description: "The free and open source 3D creation suite"
+label: "Blender"
+name: "blender"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/blender/"
+source_url: "https://github.com/blender/blender/"
+url: "https://www.blender.org/"

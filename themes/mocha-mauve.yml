@@ -1,0 +1,7 @@
+name: "Catppuccin mocha mauve"
+flavour: "mocha"
+accent: "mauve"
+wallpapers:
+  greeter: "wp11361979-minimalist-3440x1440-wallpapers.png"
+  kde: "wp14259050-cyberpunk-3440x1440-wallpapers.png"
+  sddm: "wp11361931-minimalist-3440x1440-wallpapers.png"

@@ -9,16 +9,17 @@ Wallpapers from [wallpapercave.com](https://wallpapercave.com/)
 
 - [About this project](#about-this-project)
 - [Installation](#installation)
-- [Base workstation](#base-workstation)
-  - [Official Arch packages](#official-arch-packages-base)
-  - [External packages](#external-packages-base)
-  - [AUR packages](#aur-packages-base)
-- [B450 I AORUS PRO WIFI workstation](#b450-i-aorus-pro-wifi-workstation)
-  - [Official Arch packages](#official-arch-packages-b450-i-aorus-pro-wifi-workstation)
-  - [Drivers](#drivers-b450-i-aorus-pro-wifi-workstation)
-- [Browser plugins](#browser-plugins)
-  - [Brave plugins](#brave-plugins)
-  - [Firefox plugins](#firefox-plugins)
+<% const anchorCounts = {}; function anchor(label) { const slug = label.toLowerCase().replace(/ /g, '-'); anchorCounts[slug] = (anchorCounts[slug] || 0) + 1; return anchorCounts[slug] === 1 ? slug : slug + '-' + (anchorCounts[slug] - 1); } -%>
+- [Profiles](#profiles)
+<% profiles.forEach(function(profile) { -%>
+  - [<%- profile.label %>](#<%- anchor(profile.label) %>)
+<% profile.groups.forEach(function(group) { -%>
+    - [<%- group.label %>](#<%- anchor(group.label) %>)
+<% }); -%>
+<% if (profile.plugins.length > 0) { -%>
+    - [Browser plugins](#<%- anchor('Browser plugins') %>)
+<% } -%>
+<% }); -%>
 - [Available aliases](#available-aliases)
 - [Import Bitwarden secrets](#import-bitwarden-secrets)
 - [Mounts](#mounts)
@@ -32,11 +33,11 @@ This is a personal Arch Linux setup designed to streamline the installation and 
 
 The repository includes:
 
-- Automated setup scripts for clean installs  
-- Curated lists of essential Arch, AUR, and external packages  
-- Workstation-specific configurations (e.g., B450 I AORUS PRO WIFI)  
-- Theming, aliases, and plugin selections for browsers and terminals  
-- Support for private dotfiles and secure secrets setup  
+- Automated setup scripts for clean installs
+- Curated lists of essential Arch, AUR, and external packages
+- Workstation-specific configurations (e.g., B450 I AORUS PRO WIFI)
+- Theming, aliases, and plugin selections for browsers and terminals
+- Support for private dotfiles and secure secrets setup
 
 This project serves as both a starting point and a living reference for managing and maintaining a reliable Arch-based workstation.
 
@@ -52,3 +53,4 @@ This project serves as both a starting point and a living reference for managing
 # Setup B450 I AORUS PRO WIFI workstation
 ./install_b450-i-aorus-pro-wifi/install.sh
 ```
+

@@ -1,0 +1,7 @@
+description: "KDE Partition Manager is a utility to help you manage the disks, partitions, and file systems on your computer"
+label: "KDE Partition Manager"
+name: "partitionmanager"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/partitionmanager/"
+source_url: "https://github.com/KDE/partitionmanager/"
+url: "https://apps.kde.org/partitionmanager/"

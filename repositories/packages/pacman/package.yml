@@ -1,0 +1,7 @@
+description: "A library-based package manager with dependency support"
+label: "pacman"
+name: "pacman"
+repository: "core"
+repository_url: "https://archlinux.org/packages/core/x86_64/pacman/"
+source_url: "https://gitlab.archlinux.org/pacman/pacman/"
+url: "https://archlinux.org/pacman/"

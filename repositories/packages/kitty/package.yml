@@ -1,0 +1,7 @@
+description: "The fast, feature-rich, GPU based terminal emulator"
+label: "kitty"
+name: "kitty"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/kitty/"
+source_url: "https://github.com/kovidgoyal/kitty/"
+url: "https://sw.kovidgoyal.net/kitty/index.html"

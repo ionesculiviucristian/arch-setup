@@ -1,0 +1,7 @@
+description: "NTFS-3G Safe Read/Write NTFS Driver"
+label: "NTFS-3G"
+name: "ntfs-3g"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/ntfs-3g/"
+source_url: "https://github.com/tuxera/ntfs-3g/"
+url: "https://www.tuxera.com/"

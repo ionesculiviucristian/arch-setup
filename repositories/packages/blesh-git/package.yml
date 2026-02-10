@@ -1,0 +1,7 @@
+description: "Bash Line Editor―a line editor written in pure Bash with syntax highlighting, auto suggestions, vim modes, etc. for Bash interactive sessions"
+label: "ble.sh"
+name: "blesh-git"
+repository: "aur"
+repository_url: "https://aur.archlinux.org/packages/blesh-git"
+source_url: "https://github.com/akinomyoga/ble.sh"
+url: "https://github.com/akinomyoga/ble.sh"

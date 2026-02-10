@@ -1,0 +1,7 @@
+description: "Get lightning-fast installation speeds and a smarter, safer way to manage dependencies"
+label: "pnpm"
+name: "pnpm"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/pnpm/"
+source_url: "https://github.com/pnpm/pnpm/"
+url: "https://pnpm.io/"

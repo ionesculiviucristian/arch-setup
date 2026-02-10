@@ -1,0 +1,7 @@
+description: "A Glorified WM-Independent Dropdown Creator"
+label: "tdrop"
+name: "tdrop"
+repository: "aur"
+repository_url: "https://aur.archlinux.org/packages/tdrop"
+source_url: "https://github.com/noctuid/tdrop/"
+url: null

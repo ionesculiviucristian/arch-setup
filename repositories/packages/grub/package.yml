@@ -1,0 +1,7 @@
+description: "GNU GRand Unified Bootloader (2)"
+label: "GRUB"
+name: "grub"
+repository: "core"
+repository_url: "https://archlinux.org/packages/core/x86_64/grub/"
+source_url: "https://git.savannah.gnu.org/cgit/grub.git"
+url: "https://www.gnu.org/software/grub/"

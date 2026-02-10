@@ -1,11 +1,7 @@
 # shellcheck disable=SC2148
 # Generate bash aliases help file
 python "./scripts/generate_bash_aliases_help.py" && \
-  git add "./configs/.bash_aliases_help"
-
-# Generate package lists
-./scripts/generate_package_lists.sh && \
-  git add "./data/lists" -- "*.txt"
+  git add "./repositories/packages/bash/config/.bash_aliases_help"
 
 # Generate README.md file
 node "./scripts/generate-readme.js" && \

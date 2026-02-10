@@ -1,0 +1,7 @@
+description: "Fix at-risk passwords and stay safe online with Bitwarden, the best password manager for securely managing and sharing sensitive information"
+label: "Bitwarden"
+name: "bitwarden"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/bitwarden/"
+source_url: "https://github.com/bitwarden/clients/tree/main/apps/desktop/"
+url: "https://bitwarden.com/"
