@@ -1,0 +1,7 @@
+description: "Tools for reading manual pages"
+label: "man-db"
+name: "man-db"
+repository: "core"
+repository_url: "https://archlinux.org/packages/core/x86_64/man-db/"
+source_url: "https://gitlab.com/man-db/man-db/"
+url: "https://gitlab.com/man-db/man-db/"

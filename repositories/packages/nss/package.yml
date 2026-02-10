@@ -1,0 +1,7 @@
+description: "Network Security Services (NSS) is a set of libraries designed to support cross-platform development of security-enabled client and server applications"
+label: "Network Security Services (NSS)"
+name: "nss"
+repository: "core"
+repository_url: "https://archlinux.org/packages/core/x86_64/nss/"
+source_url: "https://gitlab.archlinux.org/archlinux/packaging/packages/nss/"
+url: "https://firefox-source-docs.mozilla.org/security/nss/index.html"

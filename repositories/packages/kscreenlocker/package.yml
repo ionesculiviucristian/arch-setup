@@ -1,0 +1,7 @@
+description: "Library and components for secure lock screen architecture"
+label: "KScreenLocker"
+name: "kscreenlocker"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/kscreenlocker/"
+source_url: "https://invent.kde.org/plasma/kscreenlocker/"
+url: "https://kde.org/"

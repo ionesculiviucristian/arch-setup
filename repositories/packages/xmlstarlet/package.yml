@@ -1,0 +1,7 @@
+description: "XMLStarlet is a set of command line utilities (tools) which can be used to transform, query, validate, and edit XML documents and files"
+label: "XMLStarlet"
+name: "xmlstarlet"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/xmlstarlet/"
+source_url: "https://sourceforge.net/p/xmlstar/code/ci/master/tree/"
+url: "https://xmlstar.sourceforge.net/"

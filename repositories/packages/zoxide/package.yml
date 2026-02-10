@@ -1,0 +1,7 @@
+description: "A smarter cd command. Supports all major shells"
+label: "zoxide"
+name: "zoxide"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/zoxide/"
+source_url: "https://github.com/ajeetdsouza/zoxide/"
+url: "https://crates.io/crates/zoxide/"

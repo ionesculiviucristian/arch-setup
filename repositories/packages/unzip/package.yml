@@ -1,0 +1,7 @@
+description: "UnZip is an extraction utility for archives compressed in .zip format (also called 'zipfiles')"
+label: "UnZip"
+name: "unzip"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/unzip/"
+source_url: "http://infozip.sourceforge.net/UnZip.html"
+url: "https://infozip.sourceforge.net/UnZip.html"

@@ -1,0 +1,7 @@
+description: "Sync, search and backup shell history with Atuin"
+label: "Atuin"
+name: "atuin"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/atuin/"
+source_url: "https://github.com/atuinsh/atuin/"
+url: "https://atuin.sh/"

@@ -1,0 +1,7 @@
+description: "Noto: A typeface for the world"
+label: "Noto fonts"
+name: "noto-fonts-extra"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/noto-fonts-extra/"
+source_url: "https://gitlab.archlinux.org/archlinux/packaging/packages/noto-fonts/"
+url: "https://fonts.google.com/noto/"

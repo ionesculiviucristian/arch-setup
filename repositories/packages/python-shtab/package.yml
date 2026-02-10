@@ -1,0 +1,7 @@
+description: "Automagic shell tab completion for Python CLI applications"
+label: "shtab"
+name: "python-shtab"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/python-shtab/"
+source_url: "https://github.com/iterative/shtab/"
+url: "https://docs.iterative.ai/shtab/"

@@ -1,0 +1,7 @@
+description: "jq is a lightweight and flexible command-line JSON processor"
+label: "jq"
+name: "jq"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/jq/"
+source_url: "https://github.com/jqlang/jq/"
+url: "https://jqlang.org/"

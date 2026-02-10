@@ -1,0 +1,7 @@
+description: "GPU & Accelerator process monitoring for AMD, Apple, Huawei, Intel, NVIDIA and Qualcomm"
+label: "nvtop"
+name: "nvtop"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/nvtop/"
+source_url: "https://github.com/Syllo/nvtop/"
+url: null

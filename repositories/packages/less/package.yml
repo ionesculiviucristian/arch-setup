@@ -1,0 +1,7 @@
+description: "Less is a free, open-source file pager"
+label: "less"
+name: "less"
+repository: "core"
+repository_url: "https://archlinux.org/packages/core/x86_64/less/"
+source_url: "https://github.com/gwsw/less/"
+url: "https://www.greenwoodsoftware.com/less/"

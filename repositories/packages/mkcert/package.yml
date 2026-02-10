@@ -1,0 +1,7 @@
+description: "A simple zero-config tool to make locally trusted development certificates with any names you'd like"
+label: "mkcert"
+name: "mkcert"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/mkcert/"
+source_url: "https://github.com/FiloSottile/mkcert/"
+url: "https://mkcert.dev/"

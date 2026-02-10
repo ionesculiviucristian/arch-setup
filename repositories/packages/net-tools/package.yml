@@ -1,0 +1,7 @@
+description: "net-tools, the collection of base networking utilities for Linux"
+label: "net-tools"
+name: "net-tools"
+repository: "core"
+repository_url: "https://archlinux.org/packages/core/x86_64/net-tools/"
+source_url: "https://sourceforge.net/p/net-tools/code/ci/master/tree/"
+url: "https://net-tools.sourceforge.io/"

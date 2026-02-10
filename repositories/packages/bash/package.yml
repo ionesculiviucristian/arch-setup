@@ -1,0 +1,7 @@
+description: "The GNU Bourne Again shell"
+label: "Bash"
+name: "bash"
+repository: "core"
+repository_url: "https://archlinux.org/packages/core/x86_64/bash/"
+source_url: "https://git.savannah.gnu.org/cgit/bash.git/"
+url: "https://www.gnu.org/software/bash/"

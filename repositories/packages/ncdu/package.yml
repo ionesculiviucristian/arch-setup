@@ -1,0 +1,7 @@
+description: "Ncdu is a disk usage analyzer with a text-mode user interface"
+label: "NCurses Disk Usage"
+name: "ncdu"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/ncdu/"
+source_url: "https://g.blicky.net/ncdu.git/"
+url: "https://dev.yorhel.nl/ncdu/"

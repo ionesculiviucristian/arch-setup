@@ -1,0 +1,7 @@
+description: "A script that lets you change the colors of folders in Papirus icon theme"
+label: "Papirus Folders"
+name: "papirus-folders"
+repository: "aur"
+repository_url: "https://aur.archlinux.org/packages/papirus-folders/"
+source_url: "https://github.com/PapirusDevelopmentTeam/papirus-folders/"
+url: null

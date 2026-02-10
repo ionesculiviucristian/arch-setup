@@ -1,0 +1,7 @@
+description: "7-Zip is a file archiver with a high compression ratio"
+label: "7-Zip"
+name: "7zip"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/7zip/"
+source_url: "https://github.com/ip7z/7zip/"
+url: "https://www.7-zip.org/"

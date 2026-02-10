@@ -1,0 +1,7 @@
+description: "Yet another Yogurt - An AUR Helper written in Go"
+label: "Yay"
+name: "yay"
+repository: "external"
+repository_url: null
+source_url: "https://github.com/Jguer/yay/"
+url: null

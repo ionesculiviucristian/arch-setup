@@ -1,0 +1,7 @@
+description: "A Python 3 module and script to retrieve and filter the latest Pacman mirror list"
+label: "reflector"
+name: "reflector"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/reflector/"
+source_url: "https://xyne.dev/projects/reflector/src/"
+url: "https://xyne.dev/projects/reflector/"

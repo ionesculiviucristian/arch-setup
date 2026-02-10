@@ -1,0 +1,7 @@
+description: "NordVPN Linux client"
+label: "NordVPN GUI"
+name: "nordvpn-gui"
+repository: "aur"
+repository_url: "https://aur.archlinux.org/packages/nordvpn-gui/"
+source_url: "https://github.com/NordSecurity/nordvpn-linux/"
+url: "https://nordvpn.com/"

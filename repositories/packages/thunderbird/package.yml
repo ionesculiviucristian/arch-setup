@@ -1,0 +1,7 @@
+description: "Free Your Inbox - Meet Thunderbird, the email and productivity app that maximizes your freedoms"
+label: "Thunderbird"
+name: "thunderbird"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/thunderbird/"
+source_url: "https://github.com/thunderbird/"
+url: "https://www.thunderbird.net/"

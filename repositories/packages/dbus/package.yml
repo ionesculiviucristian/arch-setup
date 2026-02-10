@@ -1,0 +1,7 @@
+description: "D-Bus is a message bus system, a simple way for applications to talk to one another"
+label: "D-Bus"
+name: "dbus"
+repository: "core"
+repository_url: "https://archlinux.org/packages/core/x86_64/dbus/"
+source_url: "https://gitlab.freedesktop.org/dbus/dbus.git/"
+url: "https://www.freedesktop.org/wiki/Software/dbus/"

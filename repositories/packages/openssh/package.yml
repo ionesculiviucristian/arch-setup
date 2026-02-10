@@ -1,0 +1,7 @@
+description: "SSH protocol implementation for remote login, command execution and file transfer"
+label: "OpenSSH"
+name: "openssh"
+repository: "core"
+repository_url: "https://archlinux.org/packages/core/x86_64/openssh/"
+source_url: "https://github.com/openssh/openssh-portable/"
+url: "https://www.openssh.com/"

@@ -1,0 +1,7 @@
+description: "A tool for exploring each layer in a docker image"
+label: "dive"
+name: "dive"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/dive/"
+source_url: "https://github.com/wagoodman/dive/"
+url: "https://github.com/wagoodman/dive/"

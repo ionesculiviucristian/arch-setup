@@ -1,0 +1,7 @@
+description: "XP-Pen (Official) Linux utility for legacy XPPen Tablets"
+label: "XP-Pen utility"
+name: "xppenlinux-v3"
+repository: "aur"
+repository_url: "https://aur.archlinux.org/packages/xppenlinux-v3/"
+source_url: "https://aur.archlinux.org/cgit/aur.git/tree/PKGBUILD?h=xppenlinux-v3"
+url: "https://www.xp-pen.com/"

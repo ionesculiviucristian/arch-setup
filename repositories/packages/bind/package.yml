@@ -1,0 +1,7 @@
+description: "BIND (Berkeley Internet Name Domain) is a complete, highly portable implementation of the Domain Name System (DNS) protocol"
+label: "BIND 9"
+name: "bind"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/bind/"
+source_url: "https://gitlab.isc.org/isc-projects/bind9/"
+url: "https://www.isc.org/bind/"

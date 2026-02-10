@@ -1,0 +1,7 @@
+description: "The Bitwarden CLI is a powerful, full-featured command-line interface (CLI) tool to access and manage a Bitwarden vault"
+label: "Bitwarden CLI"
+name: "bitwarden-cli"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/bitwarden-cli/"
+source_url: "https://github.com/bitwarden/clients/tree/main/apps/cli/"
+url: "https://bitwarden.com/"

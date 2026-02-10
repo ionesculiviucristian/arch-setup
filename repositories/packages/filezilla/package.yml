@@ -1,0 +1,7 @@
+description: "The free FTP solution"
+label: "FileZilla"
+name: "filezilla"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/filezilla/"
+source_url: "https://svn.filezilla-project.org/svn/FileZilla3/trunk/"
+url: "https://filezilla-project.org/"

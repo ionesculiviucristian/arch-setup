@@ -1,0 +1,7 @@
+description: "Tk is a GUI toolkit for Tcl"
+label: "Tk toolkit"
+name: "tk"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/tk/"
+source_url: "https://core.tcl-lang.org/tk/timeline?y=ci"
+url: "https://core.tcl-lang.org/index.html"

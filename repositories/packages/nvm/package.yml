@@ -1,0 +1,7 @@
+description: "Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions"
+label: "Node Version Manager"
+name: "nvm"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/nvm/"
+source_url: "https://github.com/nvm-sh/nvm/"
+url: null

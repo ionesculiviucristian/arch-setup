@@ -1,0 +1,7 @@
+description: "Build simple, secure, scalable systems with Go"
+label: "Go"
+name: "go"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/go/"
+source_url: "https://github.com/golang/go/"
+url: "https://go.dev/"

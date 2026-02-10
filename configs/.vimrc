@@ -1,3 +1,0 @@
-colorscheme catppuccin_mocha
-set termguicolors
-syntax enable

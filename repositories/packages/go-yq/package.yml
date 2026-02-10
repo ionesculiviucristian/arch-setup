@@ -1,0 +1,7 @@
+description: "A lightweight and portable command-line YAML, JSON, INI and XML processor"
+label: "go-yq"
+name: "go-yq"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/go-yq/"
+source_url: "https://github.com/mikefarah/yq/"
+url: "https://mikefarah.gitbook.io/yq/"

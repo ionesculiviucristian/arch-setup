@@ -1,0 +1,7 @@
+description: "Read, Write and Edit Meta Information!"
+label: "ExifTool"
+name: "perl-image-exiftool"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/perl-image-exiftool/"
+source_url: "https://github.com/exiftool/exiftool/"
+url: "https://exiftool.org/"

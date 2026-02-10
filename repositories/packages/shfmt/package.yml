@@ -1,0 +1,7 @@
+description: "A shell parser, formatter, and interpreter with bash support; includes shfmt"
+label: "sh"
+name: "shfmt"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/shfmt/"
+source_url: "https://github.com/mvdan/sh/"
+url: "https://pkg.go.dev/mvdan.cc/sh/v3/"

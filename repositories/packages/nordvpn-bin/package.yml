@@ -1,0 +1,7 @@
+description: "The best VPN service for a free, open internet"
+label: "NordVPN"
+name: "nordvpn-bin"
+repository: "aur"
+repository_url: "https://aur.archlinux.org/packages/nordvpn-bin"
+source_url: "https://nordvpn.com/"
+url: "https://nordvpn.com/"
