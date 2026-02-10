@@ -1,0 +1,7 @@
+description: "alpm data extraction utility"
+label: "expac"
+name: "expac"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/expac/"
+source_url: "https://github.com/falconindy/expac/"
+url: "https://github.com/falconindy/expac/"

@@ -1,0 +1,7 @@
+description: "A collection of USB tools to query connected USB devices"
+label: "usbutils"
+name: "usbutils"
+repository: "core"
+repository_url: "https://archlinux.org/packages/core/x86_64/usbutils/"
+source_url: "https://git.kernel.org/pub/scm/linux/kernel/git/gregkh/usbutils.git/"
+url: "https://gitlab.archlinux.org/archlinux/packaging/packages/usbutils/"

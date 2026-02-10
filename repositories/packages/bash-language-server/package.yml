@@ -1,0 +1,7 @@
+description: "A language server for Bash"
+label: "Bash Language Server"
+name: "bash-language-server"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/bash-language-server/"
+source_url: "https://github.com/bash-lsp/bash-language-server/"
+url: "https://github.com/bash-lsp/bash-language-server/"

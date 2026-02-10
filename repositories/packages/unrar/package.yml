@@ -1,0 +1,7 @@
+description: "Library and header file for applications that use libunrar"
+label: "unrar"
+name: "unrar"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/unrar/"
+source_url: "https://gitlab.archlinux.org/archlinux/packaging/packages/unrar/"
+url: "https://www.rarlab.com/rar_add.htm"

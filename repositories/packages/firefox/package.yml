@@ -1,0 +1,7 @@
+description: "A free, Open Source web browser"
+label: "Firefox"
+name: "firefox"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/firefox/"
+source_url: "https://github.com/mozilla-firefox/firefox/"
+url: "https://www.mozilla.org/en-US/firefox/"

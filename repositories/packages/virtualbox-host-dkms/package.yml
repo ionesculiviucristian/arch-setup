@@ -1,0 +1,7 @@
+description: "VirtualBox Host kernel modules sources"
+label: "VirtualBox Host DKMS"
+name: "virtualbox-host-dkms"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/virtualbox-host-dkms/"
+source_url: "https://gitlab.archlinux.org/archlinux/packaging/packages/virtualbox/"
+url: "https://www.virtualbox.org/"

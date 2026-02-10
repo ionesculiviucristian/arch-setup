@@ -1,0 +1,7 @@
+description: "A cat(1) clone with wings"
+label: "bat"
+name: "bat"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/bat/"
+source_url: "https://github.com/sharkdp/bat/"
+url: "https://github.com/sharkdp/bat/"

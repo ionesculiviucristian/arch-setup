@@ -1,0 +1,12 @@
+name: "ASUS ExpertBook P1503CVA"
+theme: "mocha-mauve"
+drivers:
+  - intel-ucode:
+      install: true
+      priority: "normal"
+  - lib32-mesa:
+      install: true
+      priority: "normal"
+  - mesa:
+      install: true
+      priority: "normal"

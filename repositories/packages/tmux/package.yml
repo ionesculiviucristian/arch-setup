@@ -1,0 +1,7 @@
+description: "tmux is a terminal multiplexer: it enables a number of terminals to be created, accessed, and controlled from a single screen. tmux may be detached from a screen and continue running in the background, then later reattached"
+label: "tmux"
+name: "tmux"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/tmux/"
+source_url: "https://github.com/tmux/tmux/"
+url: null

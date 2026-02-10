@@ -1,0 +1,7 @@
+description: "Command line interface to the X11 clipboard"
+label: "xclip"
+name: "xclip"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/xclip/"
+source_url: "https://github.com/astrand/xclip/"
+url: "https://github.com/astrand/xclip/"

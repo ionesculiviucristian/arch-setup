@@ -1,0 +1,7 @@
+description: "This framework lets applications to manage user installable packages of non-binary assets"
+label: "kpackage"
+name: "kpackage"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/kpackage/"
+source_url: "https://invent.kde.org/frameworks/kpackage/"
+url: "https://invent.kde.org/frameworks/kpackage/"

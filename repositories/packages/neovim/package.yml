@@ -1,0 +1,8 @@
+description: "Hyperextensible Vim-based text editor"
+label: "neovim"
+name: "neovim"
+optional: ""
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/neovim/"
+source_url: "https://github.com/neovim/neovim"
+url: "https://neovim.io"

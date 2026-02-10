@@ -1,0 +1,7 @@
+description: "A simple, fast and user-friendly alternative to 'find'"
+label: "fd"
+name: "fd"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/fd/"
+source_url: "https://github.com/sharkdp/fd/"
+url: "https://github.com/sharkdp/fd/"

@@ -1,0 +1,7 @@
+description: "The Ayatana Indicators project is the continuation of Application Indicators and System Indicators, two technologies developed by Canonical Ltd. for the Unity7 desktop"
+label: "Ayatana Application Indicator (Shared Library)"
+name: "libayatana-appindicator"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/libayatana-appindicator/"
+source_url: "https://github.com/AyatanaIndicators/libayatana-appindicator/"
+url: null

@@ -1,0 +1,7 @@
+description: "rsync is an open source utility that provides fast incremental file transfer"
+label: "rsync"
+name: "rsync"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/rsync/"
+source_url: "https://github.com/RsyncProject/rsync/"
+url: "https://rsync.samba.org/"

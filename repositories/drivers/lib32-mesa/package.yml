@@ -1,0 +1,7 @@
+description: "Open-source OpenGL drivers - 32-bit"
+label: "OpenGL drivers (32-bit)"
+name: "lib32-mesa"
+repository: "multilib"
+repository_url: "https://archlinux.org/packages/multilib/x86_64/lib32-mesa/"
+source_url: "https://gitlab.archlinux.org/archlinux/packaging/packages/lib32-mesa/"
+url: "https://www.mesa3d.org/"

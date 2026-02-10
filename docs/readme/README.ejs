@@ -1,91 +1,42 @@
 <%- include('partials/header.ejs'); -%>
 
-## Base workstation
+## Profiles
 
-### Official Arch packages (Base)
+<% profiles.forEach(function(profile) { -%>
+### <%- profile.label %>
 
-<% packages["base"].official.sort(sortPackages).forEach(function(package){ -%>
-- <%- `[${package.label}](${package.url}): ${package.description}` -%>
-<% if (package.source_url) { %>
-  - <%- `[Source](${package.source_url})` -%>
+<% profile.groups.forEach(function(group) { -%>
+#### <%- group.label %>
+
+<% group.packages.sort(sortByLabel).forEach(function(pkg) { -%>
+- [<%- pkg.label %>](<%- pkg.url %>): <%- pkg.description %>
+<% if (pkg.source_url) { %>  - [Source](<%- pkg.source_url %>)
 <% } -%>
-
 <% }); -%>
 
-### External packages (Base)
+<% }); -%>
+<% if (profile.plugins.length > 0) { -%>
+#### Browser plugins
 
-<% packages["base"].external.sort(sortPackages).forEach(function(package){ -%>
-- <%- `[${package.label}](${package.url}): ${package.description}` -%>
-<% if (package.source_url) { %>
-  - <%- `[Source](${package.source_url})` -%>
+<% profile.plugins.forEach(function(browser) { -%>
+##### <%- browser.package.label %> plugins
+
+<% browser.categories.forEach(function(category) { -%>
+###### <%- category.label %>
+
+<% category.plugins.sort(sortByName).forEach(function(plugin) { -%>
+- [<%- plugin.name %>](<%- browser.url %>/<%- plugin.id %>): <%- plugin.description %>
+<% (plugin.extra || []).sort(sortByName).forEach(function(extra) { -%>
+  - [<%- extra.name %>](<%- extra.url || `${browser.url}/${extra.id}` %>): <%- extra.description %>
+<% }); -%>
+<% }); -%>
+
+<% }); -%>
+<% }); -%>
 <% } -%>
-
-<% }); -%>
-
-### AUR packages (Base)
-
-<% packages["base"].aur.sort(sortPackages).forEach(function(package){ -%>
-- <%- `[${package.label}](${package.url}): ${package.description}` -%>
-<% if (package.source_url) { %>
-  - <%- `[Source](${package.source_url})` -%>
-<% } -%>
-
-<% }); -%>
-
-## B450 I AORUS PRO WIFI workstation
-
-### Official Arch packages (B450 I AORUS PRO WIFI workstation)
-
-<% packages["b450-i-aorus-pro-wifi"].official.sort(sortPackages).forEach(function(package){ -%>
-- <%- `[${package.label}](${package.url}): ${package.description}` -%>
-<% if (package.source_url) { %>
-  - <%- `[Source](${package.source_url})` -%>
-<% } -%>
-
-<% }); -%>
-
-### Drivers (B450 I AORUS PRO WIFI workstation)
-
-<% packages["b450-i-aorus-pro-wifi"].drivers.sort(sortPackages).forEach(function(package){ -%>
-- <%- `[${package.label}](${package.url}): ${package.description}` -%>
-<% if (package.source_url) { %>
-  - <%- `[Source](${package.source_url})` -%>
-<% } -%>
-
-<% }); -%>
-
-## Browser plugins
-
-### Brave plugins
-
-- [Linkclump](https://chromewebstore.google.com/detail/linkclump/lfpjkncokllnfokkgpkobnkbkmelfefj): Lets you open, cp or bookmark multiple links at the same time
-
-<% browserPlugins.brave.categories.forEach(function(category){ -%>
-### <%- category.label %> (Brave)
-
-<% category.plugins.sort(sortBrowserPlugins).forEach(function(plugin){ -%>
-- [<%- plugin.name %>](<%- browserPlugins.brave.url %>/<%- plugin.id %>): <%- plugin.description %>
-<% plugin.extra.sort(sortBrowserPlugins).forEach(function(extra){ -%>
-  - [<%- extra.name %>](<%- extra.url || `${browserPlugins.brave.url}/${extra.id}` %>): <%- extra.description %>
-<% }); -%>
-<% }); %>
-<% }); -%>
-### Firefox plugins
-
-- [Linkclump for Firefox](https://addons.mozilla.org/en-US/firefox/addon/linkclump-for-firefox): Lets you open, cp or bookmark multiple links at the same time
-
-<% browserPlugins.firefox.categories.forEach(function(category){ -%>
-### <%- category.label %> (Firefox)
-
-<% category.plugins.sort(sortBrowserPlugins).forEach(function(plugin){ -%>
-- [<%- plugin.name %>](<%- browserPlugins.firefox.url %>/<%- plugin.id %>): <%- plugin.description %>
-<% plugin.extra.sort(sortBrowserPlugins).forEach(function(extra){ -%>
-  - [<%- extra.name %>](<%- extra.url || `${browserPlugins.firefox.url}/${extra.id}` %>): <%- extra.description %>
-<% }); -%>
-<% }); %>
 <% }); -%>
 ## Available aliases
 
-For a list off all available aliases, [read more here](./ALIASES.md) or run `aliases` after installation
+For a list off all available aliases, [read more here](./docs/ALIASES.md) or run `aliases` after installation
 
 <%- include('partials/footer.ejs'); -%>

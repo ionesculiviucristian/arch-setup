@@ -1,6 +1,8 @@
 #!/bin/bash
 set -eu
 
+root_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+
 info() {
   echo "$@" >/dev/tty
 }
@@ -108,7 +110,7 @@ disable_passwordless_sudo() {
 
 read_mounts() {
   local key=$1
-  jq -c ".${key}[]" "./mounts.json"
+  jq -c ".${key}[]" "${root_dir}/mounts.json"
 }
 
 read_mount_field() {

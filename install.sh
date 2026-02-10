@@ -1,14 +1,18 @@
 #!/bin/bash
 set -eu
 
+root_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
 exec 1>install_base.log
 exec 2>install_errors_base.log
 
-# shellcheck disable=SC1091
-source "./scripts/installer.sh"
+# shellcheck source=scripts/installer.sh
+source "${root_dir}/scripts/installer.sh"
+# shellcheck source=scripts/packages.sh
+source "${root_dir}/scripts/packages.sh"
 
 # Usage: ./install.sh [phase...]
-# Phases: pre, packages, resources, external, aur, system-setups, official-setups, aur-setups, post
+# Phases: pre, packages, resources, external, aur, system-setups, setups, themes, post
 _phases=("${@}")
 phase() { [[ ${#_phases[@]} -eq 0 ]] || [[ " ${_phases[*]} " == *" $1 "* ]]; }
 
@@ -21,14 +25,14 @@ info "Starting installation..."
 enable_passwordless_sudo
 disable_kernel_updates
 
-[ ! -f "./.env" ] && cp "./.env.example" "./.env"
+[ ! -f "${root_dir}/.env" ] && cp "${root_dir}/.env.example" "${root_dir}/.env"
 
 # ==========================================
 # Pre install
 # ==========================================
 
 if phase pre; then
-  timed "Setup system" ./setups/base/system.sh
+  timed "Setup system" "${root_dir}/os/setup.sh"
 fi
 
 # ==========================================
@@ -36,7 +40,15 @@ fi
 # ==========================================
 
 if phase packages; then
-  timed "Installing official packages" ./installers/base/official_packages.sh
+  _t=$SECONDS
+  info "Installing official packages..."
+  # shellcheck disable=SC2046
+  sudo pacman \
+    -Syu \
+    --needed \
+    --noconfirm \
+    $(get_packages_by_repo base core extra multilib) >/dev/null
+  info "Installing official packages done in $(( SECONDS - _t ))s"
 fi
 
 # ==========================================
@@ -46,9 +58,9 @@ fi
 if phase resources; then
   _t=$SECONDS
   info "Setup system resources..."
-  info "  Creating directories" && ./setups/base/dirs.sh
-  info "  Installing fonts" && ./setups/base/fonts.sh
-  info "  Copying wallpapers" && ./setups/base/wallpapers.sh
+  info "  Creating directories" && "${root_dir}/os/scripts/setup_directories.sh"
+  info "  Installing fonts" && "${root_dir}/os/scripts/install_fonts.sh"
+  info "  Copying wallpapers" && "${root_dir}/os/scripts/setup_wallpapers.sh"
   info "Setup system resources done in $(( SECONDS - _t ))s"
 fi
 
@@ -59,8 +71,7 @@ fi
 if phase external; then
   _t=$SECONDS
   info "Installing external packages..."
-  info "  git-scope" && installers/base/external/git-scope.sh
-  info "  Yay" && ./installers/base/external/yay.sh
+  run_package_scripts base install
   info "Installing external packages done in $(( SECONDS - _t ))s"
 fi
 
@@ -69,7 +80,15 @@ fi
 # ==========================================
 
 if phase aur; then
-  timed "Installing AUR packages" ./installers/base/aur_packages.sh
+  _t=$SECONDS
+  info "Installing AUR packages..."
+  # shellcheck disable=SC2046
+  yay \
+    -Syu \
+    --needed \
+    --noconfirm \
+    $(get_packages_by_repo base aur) >/dev/null
+  info "Installing AUR packages done in $(( SECONDS - _t ))s"
 fi
 
 # ==========================================
@@ -79,65 +98,30 @@ fi
 if phase system-setups; then
   _t=$SECONDS
   info "Setup system packages..."
-  info "  GRUB" && ./setups/base/system/grub.sh
-  info "  KDE" && ./setups/base/system/kde.sh
-  info "  Konsole" && ./setups/base/system/konsole.sh
-  info "  KScreenLocker" && ./setups/base/system/kscreenlocker.sh
-  info "  Night Color" && ./setups/base/system/night_color.sh
-  info "  pacman" && ./setups/base/system/pacman.sh
-  info "  SDDM" && ./setups/base/system/sddm.sh
+  info "  Night Color" && "${root_dir}/os/scripts/setup_night_color.sh"
   info "Setup system packages done in $(( SECONDS - _t ))s"
 fi
 
 # ==========================================
-# Setup official packages
+# Setup packages
 # ==========================================
 
-if phase official-setups; then
+if phase setups; then
   _t=$SECONDS
-  info "Setup official packages..."
-  info "  Atuin" && ./setups/base/official/atuin.sh
-  info "  bat" && ./setups/base/official/bat.sh
-  info "  Bitwarden" && ./setups/base/official/bitwarden.sh
-  info "  broot" && ./setups/base/official/broot.sh
-  info "  Btop++" && ./setups/base/official/btop.sh
-  info "  direnv" && ./setups/base/official/direnv.sh
-  info "  eza" && ./setups/base/official/eza.sh
-  info "  fzf" && ./setups/base/official/fzf.sh
-  info "  Go" && ./setups/base/official/go.sh
-  info "  kitty" && ./setups/base/official/kitty.sh
-  info "  lazygit" && ./setups/base/official/lazygit.sh
-  info "  LibreOffice" && ./setups/base/official/libreoffice.sh
-  info "  miniconda" && ./setups/base/official/miniconda.sh
-  info "  mkcert" && ./setups/base/official/mkcert.sh
-  info "  nvim" && ./setups/base/official/nvim.sh
-  info "  nvm" && ./setups/base/official/nvm.sh
-  info "  OpenPrinting CUPS" && ./setups/base/official/cups.sh
-  info "  poetry" && ./setups/base/official/poetry.sh
-  info "  pyenv" && ./setups/base/official/pyenv.sh
-  info "  qBittorrent" && ./setups/base/official/qBittorrent.sh
-  info "  reflector" && ./setups/base/official/reflector.sh
-  info "  rustup" && ./setups/base/official/rustup.sh
-  info "  Starship" && ./setups/base/official/starship.sh
-  info "  superfile" && ./setups/base/official/superfile.sh
-  info "  tmux" && ./setups/base/official/tmux.sh
-  info "  vim" && ./setups/base/official/vim.sh
-  info "  zoxide" && ./setups/base/official/zoxide.sh
-  info "Setup official packages done in $(( SECONDS - _t ))s"
+  info "Setup packages..."
+  run_package_scripts base setup
+  info "Setup packages done in $(( SECONDS - _t ))s"
 fi
 
 # ==========================================
-# Setup AUR packages
+# Setup themes
 # ==========================================
 
-if phase aur-setups; then
+if phase themes; then
   _t=$SECONDS
-  info "Setup AUR packages..."
-  info "  ble.sh" && ./setups/base/aur/blesh.sh
-  info "  NordVPN" && ./setups/base/aur/nordvpn.sh
-  info "  Papirus Folders" && ./setups/base/aur/papirus_folders.sh
-  info "  tdrop" && ./setups/base/aur/tdrop.sh
-  info "Setup AUR packages done in $(( SECONDS - _t ))s"
+  info "Setup themes..."
+  "${root_dir}/os/setup_theme.sh"
+  info "Setup themes done in $(( SECONDS - _t ))s"
 fi
 
 # ==========================================
@@ -146,17 +130,16 @@ fi
 
 if phase post; then
   _t=$SECONDS
-  info "Setup bash..."
-  ./setups/base/system/bash.sh
+  info "Finalizing bash..."
 
-  ./scripts/update_bashrc.sh "blesh" <<'EOF'
+  "${root_dir}/scripts/update_bashrc.sh" "blesh" <<'EOF'
 [[ ${BLE_VERSION-} ]] && ble-attach
 EOF
-  info "Setup bash done in $(( SECONDS - _t ))s"
+  info "Finalizing bash done in $(( SECONDS - _t ))s"
 fi
 
 info "Installation finished in $(( SECONDS - install_start ))s"
 
-info "After reboot run ${PWD}/setups/base/post_reboot.sh"
+info "After reboot run ${root_dir}/repositories/packages/docker/setup.sh"
 
 exit 0

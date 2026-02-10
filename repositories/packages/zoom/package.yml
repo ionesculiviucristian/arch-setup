@@ -1,0 +1,7 @@
+description: "Video Conferencing and Web Conferencing Service"
+label: "Zoom"
+name: "zoom"
+repository: "aur"
+repository_url: "https://aur.archlinux.org/packages/zoom/"
+source_url: "https://github.com/zoom/"
+url: "https://www.zoom.com/"

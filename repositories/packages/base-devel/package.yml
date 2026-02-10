@@ -1,0 +1,7 @@
+description: "Basic tools to build Arch Linux packages"
+label: "base-devel"
+name: "base-devel"
+repository: "core"
+repository_url: "https://archlinux.org/packages/core/x86_64/base-devel/"
+source_url: "https://gitlab.archlinux.org/archlinux/packaging/packages/base-devel/"
+url: "https://archlinux.org/"

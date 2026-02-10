@@ -1,0 +1,7 @@
+description: "Microcode update files for Intel CPUs"
+label: "Intel CPU microcode"
+name: "intel-ucode"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/intel-ucode/"
+source_url: "https://github.com/intel/Intel-Linux-Processor-Microcode-Data-Files/"
+url: "https://www.intel.com/content/www/us/en/homepage.html"

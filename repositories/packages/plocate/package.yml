@@ -1,0 +1,7 @@
+description: "plocate is a locate(1) based on posting lists, completely replacing mlocate with a much faster (and smaller) index"
+label: "plocate"
+name: "plocate"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/plocate/"
+source_url: "https://git.sesse.net/?p=plocate"
+url: "https://plocate.sesse.net/"

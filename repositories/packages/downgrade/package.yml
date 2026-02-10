@@ -1,0 +1,7 @@
+description: "Downgrade packages in Arch Linux"
+label: "downgrade"
+name: "downgrade"
+repository: "aur"
+repository_url: "https://aur.archlinux.org/packages/downgrade/"
+source_url: "https://github.com/archlinux-downgrade/downgrade/"
+url: "https://archlinux-downgrade.github.io/downgrade/"

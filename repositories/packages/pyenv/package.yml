@@ -1,0 +1,7 @@
+description: "Simple Python version management"
+label: "pyenv"
+name: "pyenv"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/pyenv/"
+source_url: "https://github.com/pyenv/pyenv/"
+url: null

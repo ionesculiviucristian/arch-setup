@@ -1,0 +1,7 @@
+description: "LibreOffice is a private, free and open source office suite"
+label: "LibreOffice"
+name: "libreoffice-fresh"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/libreoffice-fresh/"
+source_url: "https://github.com/libreoffice/"
+url: "https://www.libreoffice.org/"

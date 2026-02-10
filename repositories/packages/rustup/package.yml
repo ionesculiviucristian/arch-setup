@@ -1,0 +1,7 @@
+description: "rustup installs The Rust Programming Language from the official release channels, enabling you to easily switch between stable, beta, and nightly compilers and keep them updated"
+label: "rustup"
+name: "rustup"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/rustup/"
+source_url: "https://github.com/rust-lang/rustup/"
+url: "https://rust-lang.github.io/rustup/"

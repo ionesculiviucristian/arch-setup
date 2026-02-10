@@ -1,0 +1,99 @@
+url: "https://addons.mozilla.org/en-US/firefox/addon"
+categories:
+  - name: "interface"
+    label: "Interface"
+    plugins:
+      - name: "Firefox Color"
+        description: "Build, save and share beautiful Firefox themes"
+        id: "firefox-color"
+        extra:
+          - name: "Catppuccin Mocha - Mauve"
+            description: "Soothing pastel theme for Firefox (Official)"
+            id: "catppuccin-mocha-mauve-git"
+      - name: "Stylus"
+        description: "Redesign your favorite websites with Stylus, an actively developed and community driven userstyles manager"
+        id: "styl-us"
+        extra:
+          - name: "Catppuccin Userstyles"
+            description: "Soothing pastel userstyles"
+            url: "https://github.com/catppuccin/userstyles/releases/download/all-userstyles-export/import.json"
+  - name: "github"
+    label: "GitHub"
+    plugins:
+      - name: "Material Icons for GitHub"
+        description: "Replace the file/folder icons on github file browsers with icons representing the file's type and which tool it is used by"
+        id: "material-icons-for-github"
+        extra: []
+      - name: "Octotree - GitHub code tree"
+        description: "GitHub on steroids"
+        id: "octotree"
+        extra: []
+  - name: "development"
+    label: "Development"
+    plugins:
+      - name: "Google Lighthouse"
+        description: "Lighthouse is an open-source, automated tool for improving the performance, quality, and correctness of your web apps"
+        id: "google-lighthouse"
+        extra: []
+      - name: "JSONView"
+        description: "View JSON documents in the browser"
+        id: "jsonview"
+        extra: []
+      - name: "React Developer Tools"
+        description: "React Developer Tools is a tool that allows you to inspect a React tree, including the component hierarchy, props, state, and more"
+        id: "react-devtools"
+        extra: []
+      - name: "VisBug"
+        description: "DevTools extension for debugging Vue.js applications"
+        id: "visbug"
+        extra: []
+      - name: "Vue.js devtools"
+        description: "DevTools extension for debugging Vue.js applications"
+        id: "vue-js-devtools"
+        extra: []
+  - name: "youtube"
+    label: "YouTube"
+    plugins:
+      - name: "Enhancer for YouTube\u2122"
+        description: "Take control of YouTube and boost your user experience!"
+        id: "enhancer-for-youtube"
+        extra: []
+      - name: "Return YouTube Dislike"
+        description: "Returns ability to see dislike statistics on youtube"
+        id: "return-youtube-dislikes"
+        extra: []
+      - name: "SponsorBlock - Skip Sponsorships on YouTube"
+        description: "Easily skip YouTube video sponsors"
+        id: "sponsorblock"
+        extra: []
+  - name: "misc"
+    label: "Misc"
+    plugins:
+      - name: "Bitwarden Password Manager"
+        description: "At home, at work, or on the go, Bitwarden easily secures all your passwords, passkeys, and sensitive information"
+        id: "bitwarden-password-manager"
+        extra: []
+      - name: "uBlock Origin"
+        description: "Finally, an efficient wide-spectrum content blocker"
+        id: "ublock-origin"
+        extra: []
+      - name: "Gesturefy"
+        description: "Navigate, operate, and browse faster with mouse gestures!"
+        id: "gesturefy"
+        extra: []
+      - name: "Google Translate"
+        description: "Google Translate"
+        id: "google-translate-right-clicks"
+        extra: []
+      - name: "Offline QR Code Generator"
+        description: "This add-on allows you to quickly generate a QR code offline with the URL of the open tab or any (selected) other text!"
+        id: "offline-qr-code-generator"
+        extra: []
+      - name: "Plasma Integration"
+        description: "Multitask efficiently by controlling browser functions from the Plasma desktop"
+        id: "plasma-integration"
+        extra: []
+      - name: "Vimium"
+        description: "The Hacker's Browser. Vimium provides keyboard shortcuts for navigation and control in the spirit of Vim."
+        id: "vimium-ff"
+        extra: []

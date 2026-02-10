@@ -1,0 +1,7 @@
+description: "Open-source OpenGL drivers"
+label: "OpenGL drivers"
+name: "mesa"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/mesa/"
+source_url: "https://gitlab.archlinux.org/archlinux/packaging/packages/mesa/"
+url: "https://www.mesa3d.org/"

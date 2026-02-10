@@ -1,0 +1,7 @@
+description: "ripgrep recursively searches directories for a regex pattern while respecting your gitignore"
+label: "ripgrep"
+name: "ripgrep"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/ripgrep/"
+source_url: "https://github.com/BurntSushi/ripgrep/"
+url: null

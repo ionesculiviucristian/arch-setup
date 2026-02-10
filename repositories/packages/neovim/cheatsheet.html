@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neovim Setup Cheatsheet</title>
+<style>
+  :root {
+    --crust: #11111b;
+    --mantle: #181825;
+    --base: #1e1e2e;
+    --surface0: #313244;
+    --surface1: #45475a;
+    --text: #cdd6f4;
+    --subtext: #a6adc8;
+    --blue: #89b4fa;
+    --green: #a6e3a1;
+    --mauve: #cba6f7;
+    --peach: #fab387;
+    --red: #f38ba8;
+    --yellow: #f9e2af;
+    --teal: #94e2d5;
+    --pink: #f5c2e7;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: var(--crust);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  h1 {
+    color: var(--blue);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 2px solid var(--surface1);
+    padding-bottom: 0.5rem;
+  }
+  h1 small {
+    color: var(--subtext);
+    font-size: 0.9rem;
+    font-weight: normal;
+  }
+  h2 {
+    color: var(--mauve);
+    font-size: 1.3rem;
+    margin: 2rem 0 1rem;
+  }
+  p.intro {
+    color: var(--subtext);
+    margin-bottom: 1.5rem;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 1.5rem;
+  }
+  .card {
+    background: var(--base);
+    border: 1px solid var(--surface0);
+    border-radius: 10px;
+    padding: 1.25rem;
+  }
+  .card h3 {
+    font-size: 1.05rem;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .card h3 .icon { font-size: 1.2rem; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th {
+    text-align: left;
+    color: var(--subtext);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.25rem 0.5rem;
+    border-bottom: 1px solid var(--surface0);
+  }
+  td {
+    padding: 0.35rem 0.5rem;
+    font-size: 0.9rem;
+    border-bottom: 1px solid var(--surface0);
+  }
+  tr:last-child td { border-bottom: none; }
+  kbd {
+    background: var(--surface0);
+    border: 1px solid var(--surface1);
+    border-radius: 4px;
+    padding: 0.1em 0.45em;
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-size: 0.85em;
+    white-space: nowrap;
+  }
+  .leader { color: var(--blue); }
+  .note {
+    background: var(--mantle);
+    border-left: 3px solid var(--yellow);
+    padding: 0.75rem 1rem;
+    border-radius: 0 6px 6px 0;
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    color: var(--subtext);
+  }
+  .note strong { color: var(--yellow); }
+  code {
+    background: var(--surface0);
+    padding: 0.1em 0.4em;
+    border-radius: 3px;
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-size: 0.85em;
+  }
+  footer {
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--surface0);
+    color: var(--surface1);
+    font-size: 0.8rem;
+    text-align: center;
+  }
+
+  .color-blue { color: var(--blue); }
+  .color-green { color: var(--green); }
+  .color-mauve { color: var(--mauve); }
+  .color-peach { color: var(--peach); }
+  .color-red { color: var(--red); }
+  .color-yellow { color: var(--yellow); }
+  .color-teal { color: var(--teal); }
+  .color-pink { color: var(--pink); }
+</style>
+</head>
+<body>
+
+<h1>Neovim Cheatsheet <small>&mdash; Leader key is <kbd>Space</kbd></small></h1>
+<p class="intro">Quick reference for this Neovim configuration. Press <kbd>Space</kbd> and wait to see all available keybindings via which-key.</p>
+
+<div class="note">
+  <strong>Tip:</strong> Press <kbd>Space</kbd> <kbd>?</kbd> to show all buffer-local keymaps. Start typing any <kbd>Space</kbd> combo and which-key will show you what's available.
+</div>
+
+<h2>Basics</h2>
+<div class="grid">
+
+  <div class="card">
+    <h3><span class="icon color-blue">i</span> Vim Modes</h3>
+    <table>
+      <tr><th>Key</th><th>Action</th></tr>
+      <tr><td><kbd>i</kbd></td><td>Enter Insert mode (type text)</td></tr>
+      <tr><td><kbd>Esc</kbd></td><td>Return to Normal mode</td></tr>
+      <tr><td><kbd>v</kbd></td><td>Enter Visual mode (select text)</td></tr>
+      <tr><td><kbd>V</kbd></td><td>Visual Line mode (select lines)</td></tr>
+      <tr><td><kbd>:</kbd></td><td>Enter Command mode</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3><span class="icon color-green">W</span> Files &amp; Buffers</h3>
+    <table>
+      <tr><th>Key</th><th>Action</th></tr>
+      <tr><td><kbd>:w</kbd></td><td>Save current file</td></tr>
+      <tr><td><kbd>:q</kbd></td><td>Quit (close window)</td></tr>
+      <tr><td><kbd>:wq</kbd></td><td>Save and quit</td></tr>
+      <tr><td><kbd>:q!</kbd></td><td>Quit without saving</td></tr>
+      <tr><td><kbd>Space</kbd> <kbd>n</kbd></td><td>Next buffer</td></tr>
+      <tr><td><kbd>Space</kbd> <kbd>p</kbd></td><td>Previous buffer</td></tr>
+      <tr><td><kbd>Space</kbd> <kbd>x</kbd></td><td>Close current buffer</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3><span class="icon color-mauve">M</span> Movement</h3>
+    <table>
+      <tr><th>Key</th><th>Action</th></tr>
+      <tr><td><kbd>h</kbd> <kbd>j</kbd> <kbd>k</kbd> <kbd>l</kbd></td><td>Left, Down, Up, Right</td></tr>
+      <tr><td><kbd>w</kbd> / <kbd>b</kbd></td><td>Next / previous word</td></tr>
+      <tr><td><kbd>0</kbd> / <kbd>$</kbd></td><td>Start / end of line</td></tr>
+      <tr><td><kbd>gg</kbd> / <kbd>G</kbd></td><td>Top / bottom of file</td></tr>
+      <tr><td><kbd>{</kbd> / <kbd>}</kbd></td><td>Previous / next paragraph</td></tr>
+      <tr><td><kbd>Ctrl</kbd>+<kbd>u</kbd> / <kbd>d</kbd></td><td>Half page up / down</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3><span class="icon color-peach">E</span> Editing</h3>
+    <table>
+      <tr><th>Key</th><th>Action</th></tr>
+      <tr><td><kbd>dd</kbd></td><td>Delete (cut) line</td></tr>
+      <tr><td><kbd>yy</kbd></td><td>Yank (copy) line</td></tr>
+      <tr><td><kbd>p</kbd></td><td>Paste after cursor</td></tr>
+      <tr><td><kbd>u</kbd></td><td>Undo</td></tr>
+      <tr><td><kbd>Ctrl</kbd>+<kbd>r</kbd></td><td>Redo</td></tr>
+      <tr><td><kbd>Space</kbd> <kbd>y</kbd></td><td>Yank to system clipboard</td></tr>
+      <tr><td><kbd>gc</kbd></td><td>Toggle comment (select + gc, or gcc for line)</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3><span class="icon color-teal">/</span> Search</h3>
+    <table>
+      <tr><th>Key</th><th>Action</th></tr>
+      <tr><td><kbd>/text</kbd></td><td>Search forward for "text"</td></tr>
+      <tr><td><kbd>?text</kbd></td><td>Search backward for "text"</td></tr>
+      <tr><td><kbd>n</kbd> / <kbd>N</kbd></td><td>Next / previous match</td></tr>
+      <tr><td><kbd>*</kbd></td><td>Search word under cursor</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3><span class="icon color-pink">S</span> Surround (nvim-surround)</h3>
+    <table>
+      <tr><th>Key</th><th>Action</th></tr>
+      <tr><td><kbd>ys</kbd><em>motion</em><em>char</em></td><td>Add surround (e.g. <kbd>ysiw"</kbd> wraps word in quotes)</td></tr>
+      <tr><td><kbd>ds</kbd><em>char</em></td><td>Delete surround (e.g. <kbd>ds"</kbd>)</td></tr>
+      <tr><td><kbd>cs</kbd><em>old</em><em>new</em></td><td>Change surround (e.g. <kbd>cs"'</kbd>)</td></tr>
+    </table>
+  </div>
+
+</div>
+
+<h2>File Explorer &amp; Finder (snacks.nvim)</h2>
+<div class="grid">
+
+  <div class="card">
+    <h3><span class="icon color-blue">D</span> Explorer</h3>
+    <table>
+      <tr><th>Key</th><th>Action</th></tr>
+      <tr><td><kbd>Space</kbd> <kbd>e</kbd></td><td>Toggle file explorer sidebar</td></tr>
+      <tr><td><kbd>Space</kbd> <kbd>F</kbd></td><td>Reveal current file in explorer</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3><span class="icon color-green">P</span> Picker (Fuzzy Finder)</h3>
+    <table>
+      <tr><th>Key</th><th>Action</th></tr>
+      <tr><td><kbd>Space</kbd> <kbd>f</kbd> <kbd>f</kbd></td><td>Find files by name</td></tr>
+      <tr><td><kbd>Space</kbd> <kbd>f</kbd> <kbd>g</kbd></td><td>Grep (search text in all files)</td></tr>
+      <tr><td><kbd>Space</kbd> <kbd>f</kbd> <kbd>b</kbd></td><td>List open buffers</td></tr>
+      <tr><td><kbd>Space</kbd> <kbd>f</kbd> <kbd>h</kbd></td><td>Search help pages</td></tr>
+    </table>
+  </div>
+
+</div>
+
+<h2>Terminal</h2>
+<div class="grid">
+  <div class="card">
+    <h3><span class="icon color-yellow">></span> Floating Terminal</h3>
+    <table>
+      <tr><th>Key</th><th>Action</th></tr>
+      <tr><td><kbd>Ctrl</kbd>+<kbd>\</kbd></td><td>Toggle floating terminal (works in normal &amp; terminal mode)</td></tr>
+    </table>
+  </div>
+</div>
+
+<h2>Code Intelligence (LSP)</h2>
+<div class="grid">
+
+  <div class="card">
+    <h3><span class="icon color-mauve">L</span> LSP Navigation</h3>
+    <table>
+      <tr><th>Key</th><th>Action</th></tr>
+      <tr><td><kbd>K</kbd></td><td>Hover info (type, docs) for symbol under cursor</td></tr>
+      <tr><td><kbd>gd</kbd></td><td>Go to definition</td></tr>
+      <tr><td><kbd>gD</kbd></td><td>Go to declaration</td></tr>
+      <tr><td><kbd>gr</kbd></td><td>List references</td></tr>
+      <tr><td><kbd>gi</kbd></td><td>Go to implementation</td></tr>
+      <tr><td><kbd>]]</kbd> / <kbd>[[</kbd></td><td>Jump to next / previous word reference</td></tr>
+    </table>
+    <div class="note"><strong>Note:</strong> These are Neovim's built-in LSP keybindings (0.11+). They work automatically when a language server is attached.</div>
+  </div>
+
+  <div class="card">
+    <h3><span class="icon color-peach">A</span> LSP Actions</h3>
+    <table>
+      <tr><th>Key</th><th>Action</th></tr>
+      <tr><td><kbd>grn</kbd></td><td>Rename symbol</td></tr>
+      <tr><td><kbd>gra</kbd></td><td>Code action (quick fix, refactor)</td></tr>
+      <tr><td><kbd>grr</kbd></td><td>List references</td></tr>
+    </table>
+    <div class="note"><strong>Format on save</strong> is enabled automatically via conform.nvim (Prettier, Black, etc.).</div>
+  </div>
+
+  <div class="card">
+    <h3><span class="icon color-teal">C</span> Autocompletion (blink.cmp)</h3>
+    <table>
+      <tr><th>Key</th><th>Action</th></tr>
+      <tr><td><kbd>Tab</kbd></td><td>Select next suggestion / jump in snippet</td></tr>
+      <tr><td><kbd>Shift</kbd>+<kbd>Tab</kbd></td><td>Select previous suggestion / jump back in snippet</td></tr>
+      <tr><td><kbd>Enter</kbd></td><td>Accept selected suggestion</td></tr>
+      <tr><td><kbd>Ctrl</kbd>+<kbd>Space</kbd></td><td>Trigger completion manually</td></tr>
+      <tr><td><kbd>Ctrl</kbd>+<kbd>e</kbd></td><td>Dismiss completion menu</td></tr>
+    </table>
+    <div class="note"><strong>Note:</strong> Completions appear automatically as you type. Cmdline completion works in <kbd>:</kbd> command mode too.</div>
+  </div>
+
+</div>
+
+<h2>Diagnostics &amp; Trouble</h2>
+<div class="grid">
+
+  <div class="card">
+    <h3><span class="icon color-red">!</span> Diagnostics</h3>
+    <table>
+      <tr><th>Key</th><th>Action</th></tr>
+      <tr><td><kbd>Space</kbd> <kbd>x</kbd> <kbd>x</kbd></td><td>Toggle all diagnostics panel</td></tr>
+      <tr><td><kbd>Space</kbd> <kbd>x</kbd> <kbd>X</kbd></td><td>Toggle current buffer diagnostics only</td></tr>
+      <tr><td><kbd>Space</kbd> <kbd>c</kbd> <kbd>s</kbd></td><td>Toggle symbols outline</td></tr>
+      <tr><td><kbd>Space</kbd> <kbd>c</kbd> <kbd>l</kbd></td><td>Toggle LSP definitions/references panel</td></tr>
+      <tr><td><kbd>Space</kbd> <kbd>x</kbd> <kbd>L</kbd></td><td>Toggle location list</td></tr>
+      <tr><td><kbd>Space</kbd> <kbd>x</kbd> <kbd>Q</kbd></td><td>Toggle quickfix list</td></tr>
+    </table>
+    <div class="note"><strong>Tip:</strong> Use <code>:lua vim.diagnostic.open_float()</code> to see the full error message for the current line.</div>
+  </div>
+
+</div>
+
+<h2>Code Folding (nvim-ufo)</h2>
+<div class="grid">
+  <div class="card">
+    <h3><span class="icon color-yellow">F</span> Folds</h3>
+    <table>
+      <tr><th>Key</th><th>Action</th></tr>
+      <tr><td><kbd>za</kbd></td><td>Toggle fold under cursor</td></tr>
+      <tr><td><kbd>zR</kbd></td><td>Open all folds</td></tr>
+      <tr><td><kbd>zM</kbd></td><td>Close all folds</td></tr>
+      <tr><td><kbd>zo</kbd> / <kbd>zc</kbd></td><td>Open / close single fold</td></tr>
+    </table>
+  </div>
+</div>
+
+<h2>Git</h2>
+<div class="grid">
+  <div class="card">
+    <h3><span class="icon color-peach">G</span> Git Integration</h3>
+    <table>
+      <tr><th>Key</th><th>Action</th></tr>
+      <tr><td><code>:DiffviewOpen</code></td><td>Open diff view for all changes</td></tr>
+      <tr><td><code>:DiffviewClose</code></td><td>Close diff view</td></tr>
+      <tr><td><code>:DiffviewFileHistory %</code></td><td>File history for current file</td></tr>
+    </table>
+    <div class="note"><strong>Gitsigns</strong> shows added/modified/deleted lines in the gutter automatically.</div>
+  </div>
+</div>
+
+<h2>Plugin Management</h2>
+<div class="grid">
+  <div class="card">
+    <h3><span class="icon color-blue">P</span> Lazy.nvim</h3>
+    <table>
+      <tr><th>Command</th><th>Action</th></tr>
+      <tr><td><code>:Lazy</code></td><td>Open plugin manager UI</td></tr>
+      <tr><td><code>:Lazy update</code></td><td>Update all plugins</td></tr>
+      <tr><td><code>:Lazy sync</code></td><td>Install missing + clean removed plugins</td></tr>
+      <tr><td><code>:Mason</code></td><td>Open LSP/formatter/linter installer</td></tr>
+      <tr><td><code>:LspInfo</code></td><td>Show attached language servers</td></tr>
+    </table>
+  </div>
+</div>
+
+<footer>
+  Catppuccin Mocha theme &middot; Config at <code>~/.config/nvim/</code>
+</footer>
+
+</body>
+</html>

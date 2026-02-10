@@ -1,0 +1,7 @@
+description: "Your code editor. Redefined with AI"
+label: "Visual Studio Code"
+name: "visual-studio-code-bin"
+repository: "aur"
+repository_url: "https://aur.archlinux.org/packages/visual-studio-code-bin"
+source_url: "https://github.com/microsoft/vscode/"
+url: "https://code.visualstudio.com/"

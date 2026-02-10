@@ -1,0 +1,7 @@
+description: "Dynamic Kernel Modules System"
+label: "DKMS"
+name: "dkms"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/dkms/"
+source_url: "https://github.com/dell/dkms/"
+url: "https://github.com/dell/dkms/"

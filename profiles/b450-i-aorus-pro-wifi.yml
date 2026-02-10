@@ -1,0 +1,44 @@
+name: "B450 I AORUS PRO WIFI"
+theme: "mocha-mauve"
+drivers:
+  - amd-ucode:
+      install: true
+      priority: "normal"
+  - lib32-mesa:
+      install: true
+      priority: "normal"
+  - lib32-vulkan-radeon:
+      install: true
+      priority: "normal"
+  - mesa:
+      install: true
+      priority: "normal"
+  - vulkan-radeon:
+      install: true
+      priority: "normal"
+  - xppenlinux-v3:
+      install: true
+      priority: "normal"
+packages:
+  - blender:
+      install: true
+      priority: "normal"
+  - gimp:
+      install: true
+      priority: "normal"
+  - krita:
+      install: true
+      priority: "normal"
+  - libayatana-appindicator:
+      install: true
+      priority: "normal"
+  - obs-studio:
+      install: true
+      priority: "normal"
+      themes: true
+  - proftpd:
+      install: true
+      priority: "normal"
+  - solaar:
+      install: true
+      priority: "normal"

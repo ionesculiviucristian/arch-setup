@@ -1,0 +1,7 @@
+description: "Finds bugs in your shell scripts."
+label: "ShellCheck"
+name: "shellcheck"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/shellcheck/"
+source_url: "https://github.com/koalaman/shellcheck/"
+url: "https://www.shellcheck.net/"

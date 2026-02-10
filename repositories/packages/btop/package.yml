@@ -1,0 +1,7 @@
+description: "A monitor of resources"
+label: "Btop++"
+name: "btop"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/btop/"
+source_url: "https://github.com/aristocratos/btop/"
+url: "https://github.com/aristocratos/btop/"

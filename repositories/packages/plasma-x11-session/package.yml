@@ -1,0 +1,7 @@
+description: "Plasma X11 session"
+label: "Plasma X11 session"
+name: "plasma-x11-session"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/plasma-x11-session/"
+source_url: "https://invent.kde.org/plasma/plasma-desktop/"
+url: "https://kde.org/plasma-desktop/"

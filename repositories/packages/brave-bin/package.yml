@@ -1,0 +1,7 @@
+description: "The browser that puts you first - Block ads. Save data. And get way faster webpages. Just by switching your browser"
+label: "Brave"
+name: "brave-bin"
+repository: "aur"
+repository_url: "https://aur.archlinux.org/packages/brave-bin/"
+source_url: "https://github.com/brave/brave-browser/"
+url: "https://brave.com/"

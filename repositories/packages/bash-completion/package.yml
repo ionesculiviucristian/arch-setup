@@ -1,0 +1,7 @@
+description: "Programmable completion functions for bash"
+label: "bash-completion"
+name: "bash-completion"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/bash-completion/"
+source_url: "https://github.com/scop/bash-completion/"
+url: "https://github.com/scop/bash-completion/"

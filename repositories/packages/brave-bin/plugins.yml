@@ -1,0 +1,77 @@
+url: "https://chromewebstore.google.com/detail"
+categories:
+  - name: "interface"
+    label: "Interface"
+    plugins:
+      - name: "Catppuccin Chrome Theme - Mocha"
+        description: "Soothing pastel theme for Google Chrome - Catppuccin Mocha"
+        id: "catppuccin-chrome-theme-m/bkkmolkhemgaeaeggcmfbghljjjoofoh"
+        extra: []
+      - name: "Stylus"
+        description: "Redesign your favorite websites with Stylus, an actively developed and community driven userstyles manager"
+        id: "stylus/clngdbkpkpeebahjckkjfobafhncgmne"
+        extra:
+          - name: "Catppuccin Userstyles"
+            description: "Soothing pastel userstyles"
+            url: "https://github.com/catppuccin/userstyles/releases/download/all-userstyles-export/import.json"
+  - name: "github"
+    label: "GitHub"
+    plugins:
+      - name: "Material Icons for GitHub"
+        description: "Replace the file/folder icons on github file browsers with icons representing the file's type and which tool it is used by"
+        id: "material-icons-for-github/bggfcpfjbdkhfhfmkjpbhnkhnpjjeomc"
+        extra: []
+      - name: "Octotree - GitHub code tree"
+        description: "GitHub on steroids"
+        id: "octotree-github-code-tree/bkhaagjahfmjljalopjnoealnfndnagc"
+        extra: []
+  - name: "youtube"
+    label: "YouTube"
+    plugins:
+      - name: "Enhancer for YouTube\u2122"
+        description: "Take control of YouTube and boost your user experience!"
+        id: "enhancer-for-youtube/ponfpcnoihfmfllpaingbgckeeldkhle"
+        extra: []
+      - name: "Return YouTube Dislike"
+        description: "Returns ability to see dislike statistics on youtube"
+        id: "return-youtube-dislike/gebbhagfogifgggkldgodflihgfeippi"
+        extra: []
+      - name: "SponsorBlock for YouTube - Skip Sponsorships"
+        description: "Easily skip YouTube video sponsors"
+        id: "sponsorblock-for-youtube/mnjggcdmjocbbbhaepdhchncahnbgone"
+        extra: []
+  - name: "misc"
+    label: "Misc"
+    plugins:
+      - name: "Augmented Steam"
+        description: "Augmented Steam is a browser extension by IsThereAnyDeal that improves your experience on the Steam platform by providing helpful information and tons of customization options"
+        id: "augmented-steam/dnhpnfgdlenaccegplpojghhmaamnnfp"
+        extra: []
+      - name: "Bitwarden Password Manager"
+        description: "At home, at work, or on the go, Bitwarden easily secures all your passwords, passkeys, and sensitive information"
+        id: "bitwarden-password-manage/nngceckbapebfimnlniiiahkandclblb"
+        extra: []
+      - name: "CrxMouse: Mouse Gestures"
+        description: "Boost browsing productivity with mouse gestures! Super Drag, Wheel & more for effortless navigation"
+        id: "crxmouse-mouse-gestures/jlgkpaicikihijadgifklkbpdajbkhjo"
+        extra: []
+      - name: "Google Translate"
+        description: "Google Translate"
+        id: "google-translate/aapbdbdomjkkjkaonfhkkikfgjllcleb"
+        extra: []
+      - name: "Plasma Integration"
+        description: "Multitask efficiently by controlling browser functions from the Plasma desktop"
+        id: "plasma-integration/cimiefiiaegbelhefglklhhakcgmhkai"
+        extra: []
+      - name: "Pricy"
+        description: "Pricy is your best friend when buying online"
+        id: "pricy/jnpfnacconjipomhfkphknjfmcnhagpb"
+        extra: []
+      - name: "QR Code Generator"
+        description: "A super handy QR Code Generator"
+        id: "qr-code-generator/afpbjjgbdimpioenaedcjgkaigggcdpp"
+        extra: []
+      - name: "Vimium"
+        description: "The Hacker's Browser. Vimium provides keyboard shortcuts for navigation and control in the spirit of Vim."
+        id: "vimium/dbepggeogbaibhgnhhndojpepiihcmeb"
+        extra: []

@@ -1,0 +1,7 @@
+description: "pip is the package installer for Python"
+label: "pip"
+name: "python-pip"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/python-pip/"
+source_url: "https://github.com/pypa/pip/"
+url: "https://pip.pypa.io/en/stable/"
