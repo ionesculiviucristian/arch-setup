@@ -1,14 +1,14 @@
 #!/bin/bash
 set -eu
 
-root_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)"
+package_dir="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
 
-obs_dir="${HOME}/.config/obs-studio"
+obs_config_dir="${HOME}/.config/obs-studio"
 
-mkdir -p "${obs_dir}"
+mkdir -p "${obs_config_dir}"
 
 cp \
-  "${root_dir}/repositories/packages/obs-studio/config/user.ini" \
-  "${obs_dir}/user.ini"
+  "${package_dir}/config/user.ini" \
+  "${obs_config_dir}/user.ini"
 
 exit 0

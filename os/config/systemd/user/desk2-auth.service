@@ -1,0 +1,6 @@
+[Unit]
+Description=Password dialog before switching to KWin desktop 2
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/share/kwin/scripts/desk2-lock/contents/bin/desk2-auth.py

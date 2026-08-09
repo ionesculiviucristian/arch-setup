@@ -12,9 +12,9 @@ flavour="$1"
 # accent="$2"
 
 catppuccin_obs_dir="${HOME}/.repos/catppuccin-obs"
-obs_dir="${HOME}/.config/obs-studio"
+obs_config_dir="${HOME}/.config/obs-studio"
 
-mkdir -p "${obs_dir}/themes"
+mkdir -p "${obs_config_dir}/themes"
 
 rm -rf "${catppuccin_obs_dir}"
 
@@ -23,10 +23,10 @@ git clone -q --depth=1 https://github.com/catppuccin/obs \
 
 cp \
   "${catppuccin_obs_dir}/themes"/*.* \
-  "${obs_dir}/themes"
+  "${obs_config_dir}/themes"
 
 sed -i \
   "s/^Theme=.*/Theme=com.obsproject.Catppuccin.${flavour^}/" \
-  "${obs_dir}/user.ini"
+  "${obs_config_dir}/user.ini"
 
 exit 0

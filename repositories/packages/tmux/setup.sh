@@ -1,7 +1,7 @@
 #!/bin/bash
 set -eu
 
-root_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)"
+package_dir="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
 
 tmux_plugins_dir="${HOME}/.tmux/plugins"
 
@@ -13,7 +13,7 @@ git clone --depth=1 \
   https://github.com/tmux-plugins/tpm \
   "${tmux_plugins_dir}/tpm"
 
-cp "${root_dir}/repositories/packages/tmux/config/.tmux.conf" "${HOME}/.tmux.conf"
+cp "${package_dir}/config/.tmux.conf" "${HOME}/.tmux.conf"
 
 "${HOME}/.tmux/plugins/tpm/bin/install_plugins"
 

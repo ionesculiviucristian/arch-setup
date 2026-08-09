@@ -1,11 +1,12 @@
 #!/bin/bash
 set -eu
 
-root_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)"
+package_dir="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
+root_dir="${package_dir%/repositories/*}"
 
-# shellcheck source=../../../scripts/bitwarden.sh
-source "${root_dir}/scripts/bitwarden.sh"
+# shellcheck source=SCRIPTDIR/../../../scripts/secrets.sh
+source "${root_dir}/scripts/secrets.sh"
 
-read_bitwarden_entry "Private bash aliases" >"${HOME}/.bash_private_aliases"
+read_secret "Private bash aliases" >"${HOME}/.bash_private_aliases"
 
 exit 0

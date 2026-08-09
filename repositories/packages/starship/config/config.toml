@@ -1,6 +1,6 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
-palette = ""
+# palette = ""
 
 [character]
 error_symbol = "[[󰄛](red) ❯](peach)"

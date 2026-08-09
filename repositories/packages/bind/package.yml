@@ -1,4 +1,4 @@
-description: "BIND (Berkeley Internet Name Domain) is a complete, highly portable implementation of the Domain Name System (DNS) protocol"
+description: "Versatile, classic, complete name server software"
 label: "BIND 9"
 name: "bind"
 repository: "extra"

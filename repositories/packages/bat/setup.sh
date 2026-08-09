@@ -2,15 +2,22 @@
 set -eu
 
 # [config] https://github.com/sharkdp/bat?tab=readme-ov-file#configuration-file
+# [shell] https://github.com/sharkdp/bat?tab=readme-ov-file#man
 
-root_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)"
+package_dir="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
+root_dir="${package_dir%/repositories/*}"
 
-bat_dir="${HOME}/.config/bat"
+bat_config_dir="${HOME}/.config/bat"
 
-mkdir -p "${bat_dir}"
+mkdir -p "${bat_config_dir}"
 
 cp \
-  "${root_dir}/repositories/packages/bat/config/config" \
-  "${bat_dir}/config"
+  "${package_dir}/config/config" \
+  "${bat_config_dir}/config"
+
+"${root_dir}/scripts/setup_shell.sh" \
+  --package "bat" \
+  --priority "20" \
+  "${package_dir}/bashrc.sh"
 
 exit 0

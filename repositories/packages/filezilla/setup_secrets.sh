@@ -1,14 +1,15 @@
 #!/bin/bash
 set -eu
 
-root_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)"
+package_dir="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
+root_dir="${package_dir%/repositories/*}"
 
-# shellcheck source=../../../scripts/bitwarden.sh
-source "${root_dir}/scripts/bitwarden.sh"
+# shellcheck source=SCRIPTDIR/../../../scripts/secrets.sh
+source "${root_dir}/scripts/secrets.sh"
 
-filezilla_dir="${HOME}/.config/filezilla"
+filezilla_config_dir="${HOME}/.config/filezilla"
 
-mkdir -p "${filezilla_dir}"
-read_bitwarden_entry "FTP hosts" >"${filezilla_dir}/sitemanager.xml"
+mkdir -p "${filezilla_config_dir}"
+read_secret "FTP hosts" >"${filezilla_config_dir}/sitemanager.xml"
 
 exit 0

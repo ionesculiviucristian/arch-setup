@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/arch-setup/schemas/profile.schema.json",
+  "title": "Profile",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["name", "theme"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Profile's label"
+    },
+    "theme": {
+      "type": "string",
+      "description": "Theme file name from ./themes without extension"
+    },
+    "packages": {
+      "type": "array",
+      "description": "Packages from ./repositories/packages",
+      "items": { "$ref": "#/$defs/entry" }
+    },
+    "drivers": {
+      "type": "array",
+      "description": "Drivers from ./repositories/drivers",
+      "items": { "$ref": "#/$defs/entry" }
+    }
+  },
+  "$defs": {
+    "entry": {
+      "type": "object",
+      "minProperties": 1,
+      "maxProperties": 1,
+      "additionalProperties": { "$ref": "#/$defs/options" }
+    },
+    "options": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["install", "priority"],
+      "properties": {
+        "install": { "type": "boolean" },
+        "priority": { "enum": ["highest", "high", "normal"] },
+        "secrets": {
+          "type": "boolean",
+          "description": "Package has a setup_secrets.sh script"
+        },
+        "themes": {
+          "type": "boolean",
+          "description": "Package has a setup_theme.sh script"
+        }
+      }
+    }
+  }
+}

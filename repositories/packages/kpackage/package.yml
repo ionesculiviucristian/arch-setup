@@ -4,4 +4,4 @@ name: "kpackage"
 repository: "extra"
 repository_url: "https://archlinux.org/packages/extra/x86_64/kpackage/"
 source_url: "https://invent.kde.org/frameworks/kpackage/"
-url: "https://invent.kde.org/frameworks/kpackage/"
+url: null

@@ -3,5 +3,5 @@ label: "Zip"
 name: "zip"
 repository: "extra"
 repository_url: "https://archlinux.org/packages/extra/x86_64/zip/"
-source_url: "https://infozip.sourceforge.net/Zip.html"
+source_url: null
 url: "https://infozip.sourceforge.net/Zip.html"

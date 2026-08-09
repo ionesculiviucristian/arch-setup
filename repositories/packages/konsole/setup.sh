@@ -1,7 +1,7 @@
 #!/bin/bash
 set -eu
 
-root_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)"
+package_dir="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
 
 konsole_dir="${HOME}/.local/share/konsole"
 konsole_profile="Starship.profile"
@@ -9,7 +9,7 @@ konsole_profile="Starship.profile"
 mkdir -p "${konsole_dir}"
 
 cp \
-  "${root_dir}/repositories/packages/konsole/config/${konsole_profile}" \
+  "${package_dir}/config/${konsole_profile}" \
   "${konsole_dir}/${konsole_profile}"
 
 kwriteconfig6 \

@@ -11,21 +11,18 @@ fi
 flavour="$1"
 # accent="$2"
 
-qBittorrent_dir="${HOME}/.config/qBittorrent"
+qBittorrent_config_dir="${HOME}/.config/qBittorrent"
 qBittorrent_theme="catppuccin-${flavour}"
 
-mkdir -p "${qBittorrent_dir}/themes"
+mkdir -p "${qBittorrent_config_dir}/themes"
 
 wget -qO \
-  "${qBittorrent_dir}/themes/${qBittorrent_theme}.qbtheme" \
+  "${qBittorrent_config_dir}/themes/${qBittorrent_theme}.qbtheme" \
   "https://github.com/catppuccin/qbittorrent/releases/download/v2.0.1/${qBittorrent_theme}.qbtheme"
 
 sed -i \
-  "s|^General\\\\CustomUIThemePath=.*|General\\\\CustomUIThemePath=${qBittorrent_dir}/themes/${qBittorrent_theme}.qbtheme|" \
-  "${qBittorrent_dir}/qBittorrent.conf"
-
-sed -i \
-  "s|^General\\\\UseCustomUITheme=.*|General\\\\UseCustomUITheme=true|" \
-  "${qBittorrent_dir}/qBittorrent.conf"
+  -e "s|^General\\\\CustomUIThemePath=.*|General\\\\CustomUIThemePath=${qBittorrent_config_dir}/themes/${qBittorrent_theme}.qbtheme|" \
+  -e "s|^General\\\\UseCustomUITheme=.*|General\\\\UseCustomUITheme=true|" \
+  "${qBittorrent_config_dir}/qBittorrent.conf"
 
 exit 0

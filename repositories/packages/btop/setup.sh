@@ -3,14 +3,14 @@ set -eu
 
 # [config] https://github.com/aristocratos/btop?tab=readme-ov-file#configurability
 
-root_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)"
+package_dir="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
 
-btop_dir="${HOME}/.config/btop"
+btop_config_dir="${HOME}/.config/btop"
 
-mkdir -p "${btop_dir}"
+mkdir -p "${btop_config_dir}"
 
 cp \
-  "${root_dir}/repositories/packages/btop/config/btop.conf" \
-  "${btop_dir}/btop.conf"
+  "${package_dir}/config/btop.conf" \
+  "${btop_config_dir}/btop.conf"
 
 exit 0

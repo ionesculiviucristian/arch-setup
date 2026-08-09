@@ -1,14 +1,14 @@
 #!/bin/bash
 set -eu
 
-root_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)"
+package_dir="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
 
 applications_dir="${HOME}/.local/share/applications"
 
 mkdir -p "${applications_dir}"
 
 cp \
-  "${root_dir}/repositories/packages/tdrop/config/net.local.tdrop.desktop" \
+  "${package_dir}/config/net.local.tdrop.desktop" \
   "${applications_dir}/net.local.tdrop.desktop"
 
 kwriteconfig6 \

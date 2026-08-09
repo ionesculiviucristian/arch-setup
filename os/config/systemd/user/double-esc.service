@@ -1,0 +1,12 @@
+[Unit]
+Description=Double Escape runs the KnobDeskFocus KWin action
+PartOf=graphical-session.target
+After=graphical-session.target
+
+[Service]
+ExecStart=%h/.local/share/kwin/scripts/knob-desk-focus/contents/bin/double-esc
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=graphical-session.target

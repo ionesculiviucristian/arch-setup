@@ -64,21 +64,21 @@ This project serves as both a starting point and a living reference for managing
 
 - [Intel CPU microcode](https://www.intel.com/content/www/us/en/homepage.html): Microcode update files for Intel CPUs
   - [Source](https://github.com/intel/Intel-Linux-Processor-Microcode-Data-Files/)
-- [OpenGL drivers](https://www.mesa3d.org/): Open-source OpenGL drivers
-  - [Source](https://gitlab.archlinux.org/archlinux/packaging/packages/mesa/)
-- [OpenGL drivers (32-bit)](https://www.mesa3d.org/): Open-source OpenGL drivers - 32-bit
-  - [Source](https://gitlab.archlinux.org/archlinux/packaging/packages/lib32-mesa/)
+- [OpenGL drivers](https://mesa3d.org/): Open-source OpenGL drivers
+  - [Source](https://gitlab.freedesktop.org/mesa/mesa/)
+- [OpenGL drivers (32-bit)](https://mesa3d.org/): Open-source OpenGL drivers - 32-bit
+  - [Source](https://gitlab.freedesktop.org/mesa/mesa/)
 
 ### B450 I AORUS PRO WIFI
 
 #### Official Arch packages
 
-- [Ayatana Application Indicator (Shared Library)](): The Ayatana Indicators project is the continuation of Application Indicators and System Indicators, two technologies developed by Canonical Ltd. for the Unity7 desktop
+- [Ayatana Application Indicator (Shared Library)](): Ayatana Application Indicators Shared Library
   - [Source](https://github.com/AyatanaIndicators/libayatana-appindicator/)
-- [Blender](https://www.blender.org/): The free and open source 3D creation suite
-  - [Source](https://github.com/blender/blender/)
+- [Blender](https://www.blender.org/): The free and open source 3D creation software
+  - [Source](https://projects.blender.org/blender/blender/)
 - [Gimp](https://www.gimp.org/): The Free & Open Source Image Editor
-  - [Source](https://github.com/GNOME/gimp/)
+  - [Source](https://gitlab.gnome.org/GNOME/gimp/)
 - [Krita](https://krita.org/en/): Krita is a free and open source cross-platform application that offers an end-to-end solution for creating digital art files from scratch built on the KDE and Qt frameworks
   - [Source](https://invent.kde.org/graphics/krita/)
 - [OBS Studio](https://obsproject.com/): Free and open source software for video recording and live streaming
@@ -94,75 +94,76 @@ This project serves as both a starting point and a living reference for managing
 #### Drivers
 
 - [AMD CPU microcode](https://www.amd.com/en.html): Microcode update image for AMD CPUs
-  - [Source](https://gitlab.com/kernel-firmware/linux-firmware/-/tree/main/amd-ucode?ref_type=heads)
-- [OpenGL drivers](https://www.mesa3d.org/): Open-source OpenGL drivers
-  - [Source](https://gitlab.archlinux.org/archlinux/packaging/packages/mesa/)
-- [OpenGL drivers (32-bit)](https://www.mesa3d.org/): Open-source OpenGL drivers - 32-bit
-  - [Source](https://gitlab.archlinux.org/archlinux/packaging/packages/lib32-mesa/)
-- [Vulkan driver for AMD GPUs](https://www.mesa3d.org/): Open-source Vulkan driver for AMD GPUs
-  - [Source](https://gitlab.archlinux.org/archlinux/packaging/packages/mesa/)
-- [Vulkan driver for AMD GPUs (32-bit)](https://www.mesa3d.org/): Open-source Vulkan driver for AMD GPUs - 32-bit
-  - [Source](https://gitlab.archlinux.org/archlinux/packaging/packages/lib32-mesa/)
+  - [Source](https://gitlab.com/kernel-firmware/linux-firmware/-/tree/main/amd-ucode/)
+- [OpenGL drivers](https://mesa3d.org/): Open-source OpenGL drivers
+  - [Source](https://gitlab.freedesktop.org/mesa/mesa/)
+- [OpenGL drivers (32-bit)](https://mesa3d.org/): Open-source OpenGL drivers - 32-bit
+  - [Source](https://gitlab.freedesktop.org/mesa/mesa/)
+- [Vulkan driver for AMD GPUs](https://mesa3d.org/): Open-source Vulkan driver for AMD GPUs
+  - [Source](https://gitlab.freedesktop.org/mesa/mesa/)
+- [Vulkan driver for AMD GPUs (32-bit)](https://mesa3d.org/): Open-source Vulkan driver for AMD GPUs - 32-bit
+  - [Source](https://gitlab.freedesktop.org/mesa/mesa/)
 - [XP-Pen utility](https://www.xp-pen.com/): XP-Pen (Official) Linux utility for legacy XPPen Tablets
-  - [Source](https://aur.archlinux.org/cgit/aur.git/tree/PKGBUILD?h=xppenlinux-v3)
 
 ### Base
 
 #### Official Arch packages
 
-- [Atuin](https://atuin.sh/): Sync, search and backup shell history with Atuin
+- [Atuin](https://atuin.sh/): Making your terminal magical - Sync, search, and back up your shell history with end-to-end encryption. Ask Atuin AI for help without leaving your prompt
   - [Source](https://github.com/atuinsh/atuin/)
-- [bandwhich](https://archlinux.org/): Terminal bandwidth utilization tool
+- [bandwhich](): Terminal bandwidth utilization tool
   - [Source](https://github.com/imsnif/bandwhich/)
 - [base-devel](https://archlinux.org/): Basic tools to build Arch Linux packages
   - [Source](https://gitlab.archlinux.org/archlinux/packaging/packages/base-devel/)
 - [Bash](https://www.gnu.org/software/bash/): The GNU Bourne Again shell
-  - [Source](https://git.savannah.gnu.org/cgit/bash.git/)
-- [Bash Language Server](https://github.com/bash-lsp/bash-language-server/): A language server for Bash
+  - [Source](https://cgit.git.savannah.gnu.org/cgit/bash.git/)
+- [Bash Language Server](): A language server for Bash
   - [Source](https://github.com/bash-lsp/bash-language-server/)
-- [bash-completion](https://github.com/scop/bash-completion/): Programmable completion functions for bash
+- [bash-completion](): Programmable completion functions for bash
   - [Source](https://github.com/scop/bash-completion/)
-- [bat](https://github.com/sharkdp/bat/): A cat(1) clone with wings
+- [bat](): A cat(1) clone with syntax highlighting and Git integration.
   - [Source](https://github.com/sharkdp/bat/)
-- [BIND 9](https://www.isc.org/bind/): BIND (Berkeley Internet Name Domain) is a complete, highly portable implementation of the Domain Name System (DNS) protocol
+- [BIND 9](https://www.isc.org/bind/): Versatile, classic, complete name server software
   - [Source](https://gitlab.isc.org/isc-projects/bind9/)
-- [Bitwarden](https://bitwarden.com/): Fix at-risk passwords and stay safe online with Bitwarden, the best password manager for securely managing and sharing sensitive information
+- [Bitwarden](https://bitwarden.com/): The most trusted password manager - Secure every login for people, agents, and machines
   - [Source](https://github.com/bitwarden/clients/tree/main/apps/desktop/)
 - [Bitwarden CLI](https://bitwarden.com/): The Bitwarden CLI is a powerful, full-featured command-line interface (CLI) tool to access and manage a Bitwarden vault
   - [Source](https://github.com/bitwarden/clients/tree/main/apps/cli/)
 - [broot](https://dystroy.org/broot/): Broot is a better way to navigate directories, find files, and launch commands
   - [Source](https://github.com/Canop/broot/)
-- [Btop++](https://github.com/aristocratos/btop/): A monitor of resources
+- [Btop++](): Resource monitor that shows usage and stats for processor, memory, disks, network and processes
   - [Source](https://github.com/aristocratos/btop/)
+- [BTRFS maintenance](): Scripts for btrfs maintenance tasks like periodic scrub, balance, trim or defrag on selected mountpoints or directories
+  - [Source](https://github.com/kdave/btrfsmaintenance/)
 - [BTRFS tools](https://btrfs.readthedocs.io/en/latest/): Userspace utilities to manage btrfs filesystems
   - [Source](https://github.com/kdave/btrfs-progs/)
 - [buildx](https://www.docker.com/): Docker CLI plugin for extended build capabilities with BuildKit
   - [Source](https://github.com/docker/buildx/)
 - [D-Bus](https://www.freedesktop.org/wiki/Software/dbus/): D-Bus is a message bus system, a simple way for applications to talk to one another
-  - [Source](https://gitlab.freedesktop.org/dbus/dbus.git/)
+  - [Source](https://gitlab.freedesktop.org/dbus/dbus/)
 - [direnv](https://direnv.net/): direnv is an extension for your shell. It augments existing shells with a new feature that can load and unload environment variables depending on the current directory
   - [Source](https://github.com/direnv/direnv/)
-- [dive](https://github.com/wagoodman/dive/): A tool for exploring each layer in a docker image
+- [dive](): A tool for exploring each layer in a docker image
   - [Source](https://github.com/wagoodman/dive/)
-- [DKMS](https://github.com/dell/dkms/): Dynamic Kernel Modules System
-  - [Source](https://github.com/dell/dkms/)
+- [DKMS](): Dynamic Kernel Module System
+  - [Source](https://github.com/dkms-project/dkms/)
 - [Docker](https://www.docker.com/): The Docker CLI
   - [Source](https://github.com/docker/cli/)
 - [Docker Compose](https://www.docker.com/): Define and run multi-container applications with Docker
   - [Source](https://github.com/docker/compose/)
 - [ExifTool](https://exiftool.org/): Read, Write and Edit Meta Information!
   - [Source](https://github.com/exiftool/exiftool/)
-- [expac](https://github.com/falconindy/expac/): alpm data extraction utility
+- [expac](): alpm data extraction utility
   - [Source](https://github.com/falconindy/expac/)
 - [eza](https://eza.rocks/): A modern alternative to ls
   - [Source](https://github.com/eza-community/eza/)
-- [fastfetch](https://github.com/fastfetch-cli/fastfetch/): A maintained, feature-rich and performance oriented, neofetch like system information tool
+- [fastfetch](): A maintained, feature-rich and performance oriented, neofetch like system information tool
   - [Source](https://github.com/fastfetch-cli/fastfetch/)
-- [fd](https://github.com/sharkdp/fd/): A simple, fast and user-friendly alternative to 'find'
+- [fd](): A simple, fast and user-friendly alternative to 'find'
   - [Source](https://github.com/sharkdp/fd/)
 - [FileZilla](https://filezilla-project.org/): The free FTP solution
   - [Source](https://svn.filezilla-project.org/svn/FileZilla3/trunk/)
-- [Firefox](https://www.mozilla.org/en-US/firefox/): A free, Open Source web browser
+- [Firefox](https://www.firefox.com/): A free, Open Source web browser
   - [Source](https://github.com/mozilla-firefox/firefox/)
 - [fzf](https://junegunn.github.io/fzf/): A command-line fuzzy finder
   - [Source](https://github.com/junegunn/fzf/)
@@ -172,10 +173,10 @@ This project serves as both a starting point and a living reference for managing
   - [Source](https://github.com/cli/cli/)
 - [Go](https://go.dev/): Build simple, secure, scalable systems with Go
   - [Source](https://github.com/golang/go/)
-- [go-yq](https://mikefarah.gitbook.io/yq/): A lightweight and portable command-line YAML, JSON, INI and XML processor
+- [go-yq](https://mikefarah.gitbook.io/yq): A lightweight and portable command-line YAML, JSON, INI and XML processor
   - [Source](https://github.com/mikefarah/yq/)
 - [GRUB](https://www.gnu.org/software/grub/): GNU GRand Unified Bootloader (2)
-  - [Source](https://git.savannah.gnu.org/cgit/grub.git)
+  - [Source](https://cgit.git.savannah.gnu.org/cgit/grub.git/)
 - [Gwenview](https://apps.kde.org/gwenview/): Image viewer by KDE
   - [Source](https://invent.kde.org/graphics/gwenview/)
 - [ImageMagick](https://imagemagick.org/): ImageMagick is a free, open-source software suite, used for editing and manipulating digital images
@@ -184,59 +185,61 @@ This project serves as both a starting point and a living reference for managing
   - [Source](https://github.com/jqlang/jq/)
 - [KCalc](https://apps.kde.org/kcalc/): KCalc has everything you would expect from a scientific calculator
   - [Source](https://invent.kde.org/utilities/kcalc/)
+- [KDE Connect](https://kdeconnect.kde.org/): Enabling communication between all your devices
+  - [Source](https://invent.kde.org/network/kdeconnect-kde/)
 - [KDE Partition Manager](https://apps.kde.org/partitionmanager/): KDE Partition Manager is a utility to help you manage the disks, partitions, and file systems on your computer
-  - [Source](https://github.com/KDE/partitionmanager/)
-- [kitty](https://sw.kovidgoyal.net/kitty/index.html): The fast, feature-rich, GPU based terminal emulator
+  - [Source](https://invent.kde.org/system/partitionmanager/)
+- [kitty](https://sw.kovidgoyal.net/kitty/): The fast, feature-rich, GPU based terminal emulator
   - [Source](https://github.com/kovidgoyal/kitty/)
-- [Konsole](https://konsole.kde.org/): Terminal emulator by KDE
-  - [Source](https://github.com/KDE/konsole/)
-- [kpackage](https://invent.kde.org/frameworks/kpackage/): This framework lets applications to manage user installable packages of non-binary assets
+- [Konsole](https://apps.kde.org/konsole/): Terminal emulator by KDE
+  - [Source](https://invent.kde.org/utilities/konsole/)
+- [kpackage](): This framework lets applications to manage user installable packages of non-binary assets
   - [Source](https://invent.kde.org/frameworks/kpackage/)
 - [KScreenLocker](https://kde.org/): Library and components for secure lock screen architecture
   - [Source](https://invent.kde.org/plasma/kscreenlocker/)
-- [lazygit](https://github.com/jesseduffield/lazygit/): Simple terminal UI for git commands
+- [lazygit](): Simple terminal UI for git commands
   - [Source](https://github.com/jesseduffield/lazygit/)
 - [less](https://www.greenwoodsoftware.com/less/): Less is a free, open-source file pager
   - [Source](https://github.com/gwsw/less/)
 - [LibreOffice](https://www.libreoffice.org/): LibreOffice is a private, free and open source office suite
-  - [Source](https://github.com/libreoffice/)
-- [lsof](https://lsof.readthedocs.io/): LiSt Open Files
+  - [Source](https://git.libreoffice.org/core/)
+- [lsof](https://lsof.readthedocs.io/en/latest/): LiSt Open Files
   - [Source](https://github.com/lsof-org/lsof/)
-- [man-db](https://gitlab.com/man-db/man-db/): Tools for reading manual pages
+- [man-db](https://man-db.nongnu.org/): Tools for reading manual pages
   - [Source](https://gitlab.com/man-db/man-db/)
 - [man-pages](https://www.kernel.org/doc/man-pages/): The Linux man-pages project documents the Linux kernel and C library interfaces that are employed by user-space programs
   - [Source](https://git.kernel.org/pub/scm/docs/man-pages/man-pages.git/)
-- [mkcert](https://mkcert.dev/): A simple zero-config tool to make locally trusted development certificates with any names you'd like
+- [mkcert](): A simple zero-config tool to make locally trusted development certificates with any names you'd like
   - [Source](https://github.com/FiloSottile/mkcert/)
-- [NCurses Disk Usage](https://dev.yorhel.nl/ncdu/): Ncdu is a disk usage analyzer with a text-mode user interface
-  - [Source](https://g.blicky.net/ncdu.git/)
-- [neovim](https://neovim.io): Hyperextensible Vim-based text editor
-  - [Source](https://github.com/neovim/neovim)
+- [NCurses Disk Usage](https://dev.yorhel.nl/ncdu): Ncdu is a disk usage analyzer with a text-mode user interface
+  - [Source](https://code.blicky.net/yorhel/ncdu/)
+- [neovim](https://neovim.io/): Hyperextensible Vim-based text editor
+  - [Source](https://github.com/neovim/neovim/)
 - [net-tools](https://net-tools.sourceforge.io/): net-tools, the collection of base networking utilities for Linux
   - [Source](https://sourceforge.net/p/net-tools/code/ci/master/tree/)
 - [Network Security Services (NSS)](https://firefox-source-docs.mozilla.org/security/nss/index.html): Network Security Services (NSS) is a set of libraries designed to support cross-platform development of security-enabled client and server applications
-  - [Source](https://gitlab.archlinux.org/archlinux/packaging/packages/nss/)
+  - [Source](https://github.com/mozilla/nss/)
 - [Nmap](https://nmap.org/): Nmap ("Network Mapper") is a free and open source utility for network discovery and security auditing
-  - [Source](https://github.com/nmap/nmap/)
+  - [Source](https://svn.nmap.org/nmap/)
 - [Node Version Manager](): Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions
   - [Source](https://github.com/nvm-sh/nvm/)
-- [Noto fonts](https://fonts.google.com/noto/): Noto: A typeface for the world
-  - [Source](https://gitlab.archlinux.org/archlinux/packaging/packages/noto-fonts/)
-- [Noto fonts](https://fonts.google.com/noto/): Noto: A typeface for the world
-  - [Source](https://gitlab.archlinux.org/archlinux/packaging/packages/noto-fonts-cjk/)
-- [Noto fonts](https://fonts.google.com/noto/): Noto: A typeface for the world
-  - [Source](https://gitlab.archlinux.org/archlinux/packaging/packages/noto-fonts-emoji)
-- [Noto fonts](https://fonts.google.com/noto/): Noto: A typeface for the world
-  - [Source](https://gitlab.archlinux.org/archlinux/packaging/packages/noto-fonts/)
+- [Noto fonts](https://fonts.google.com/noto): Noto: A typeface for the world
+  - [Source](https://github.com/notofonts/notofonts.github.io/)
+- [Noto fonts](https://fonts.google.com/noto): Noto: A typeface for the world
+  - [Source](https://github.com/notofonts/noto-cjk/)
+- [Noto fonts](https://fonts.google.com/noto): Noto: A typeface for the world
+  - [Source](https://github.com/googlefonts/noto-emoji/)
+- [Noto fonts](https://fonts.google.com/noto): Noto: A typeface for the world
+  - [Source](https://github.com/notofonts/notofonts.github.io/)
 - [NTFS-3G](https://www.tuxera.com/): NTFS-3G Safe Read/Write NTFS Driver
   - [Source](https://github.com/tuxera/ntfs-3g/)
 - [nvtop](): GPU & Accelerator process monitoring for AMD, Apple, Huawei, Intel, NVIDIA and Qualcomm
   - [Source](https://github.com/Syllo/nvtop/)
 - [Okular](https://apps.kde.org/okular/): Okular is a universal document viewer developed by KDE. Okular works on multiple platforms, including but not limited to Linux, Windows, Mac OS X, *BSD, etc.
-  - [Source](https://gitlab.archlinux.org/archlinux/packaging/packages/okular/)
+  - [Source](https://invent.kde.org/graphics/okular/)
 - [OpenPrinting CUPS](https://openprinting.github.io/cups/): The current standards-based, open source printing system developed by OpenPrinting for Linux® and other Unix®-like operating systems
   - [Source](https://github.com/openprinting/cups/)
-- [OpenSSH](https://www.openssh.com/): SSH protocol implementation for remote login, command execution and file transfer
+- [OpenSSH](https://www.openssh.org/): SSH protocol implementation for remote login, command execution and file transfer
   - [Source](https://github.com/openssh/openssh-portable/)
 - [pacman](https://archlinux.org/pacman/): A library-based package manager with dependency support
   - [Source](https://gitlab.archlinux.org/pacman/pacman/)
@@ -246,10 +249,8 @@ This project serves as both a starting point and a living reference for managing
   - [Source](https://github.com/madler/pigz/)
 - [pip](https://pip.pypa.io/en/stable/): pip is the package installer for Python
   - [Source](https://github.com/pypa/pip/)
-- [pipx](https://pipx.pypa.io/): Install and Run Python Applications in Isolated Environments
+- [pipx](https://pipx.pypa.io/stable/): Install and Run Python Applications in Isolated Environments
   - [Source](https://github.com/pypa/pipx/)
-- [Plasma X11 session](https://kde.org/plasma-desktop/): Plasma X11 session
-  - [Source](https://invent.kde.org/plasma/plasma-desktop/)
 - [plocate](https://plocate.sesse.net/): plocate is a locate(1) based on posting lists, completely replacing mlocate with a much faster (and smaller) index
   - [Source](https://git.sesse.net/?p=plocate)
 - [pnpm](https://pnpm.io/): Get lightning-fast installation speeds and a smarter, safer way to manage dependencies
@@ -268,16 +269,16 @@ This project serves as both a starting point and a living reference for managing
   - [Source](https://github.com/BurntSushi/ripgrep/)
 - [rsync](https://rsync.samba.org/): rsync is an open source utility that provides fast incremental file transfer
   - [Source](https://github.com/RsyncProject/rsync/)
-- [rustup](https://rust-lang.github.io/rustup/): rustup installs The Rust Programming Language from the official release channels, enabling you to easily switch between stable, beta, and nightly compilers and keep them updated
+- [rustup](https://rustup.rs/): The Rust toolchain installer
   - [Source](https://github.com/rust-lang/rustup/)
 - [SDDM](): QML based X11 and Wayland display manager
   - [Source](https://github.com/sddm/sddm/)
-- [sh](https://pkg.go.dev/mvdan.cc/sh/v3/): A shell parser, formatter, and interpreter with bash support; includes shfmt
+- [sh](https://pkg.go.dev/mvdan.cc/sh/v3): A shell parser, formatter, and interpreter with bash and zsh support; includes shfmt
   - [Source](https://github.com/mvdan/sh/)
 - [ShellCheck](https://www.shellcheck.net/): Finds bugs in your shell scripts.
   - [Source](https://github.com/koalaman/shellcheck/)
-- [shtab](https://docs.iterative.ai/shtab/): Automagic shell tab completion for Python CLI applications
-  - [Source](https://github.com/iterative/shtab/)
+- [shtab](https://tqdm.github.io/shtab/): Automagic shell tab completion for Python CLI applications
+  - [Source](https://github.com/tqdm/shtab/)
 - [SMPlayer](https://www.smplayer.info/): Free Media Player with built-in codecs
   - [Source](https://github.com/smplayer-dev/smplayer/)
 - [Starship](https://starship.rs/): The minimal, blazing-fast, and infinitely customizable prompt for any shell!
@@ -285,75 +286,69 @@ This project serves as both a starting point and a living reference for managing
 - [superfile](https://superfile.dev/): superfile is a very fancy and modern terminal file manager that can complete the file operations you need!!
   - [Source](https://github.com/yorukot/superfile/)
 - [Thunderbird](https://www.thunderbird.net/): Free Your Inbox - Meet Thunderbird, the email and productivity app that maximizes your freedoms
-  - [Source](https://github.com/thunderbird/)
-- [Tk toolkit](https://core.tcl-lang.org/index.html): Tk is a GUI toolkit for Tcl
-  - [Source](https://core.tcl-lang.org/tk/timeline?y=ci)
+  - [Source](https://github.com/thunderbird/thunderbird-desktop/)
+- [Tk toolkit](https://www.tcl-lang.org/): Tk is a GUI toolkit for Tcl
+  - [Source](https://core.tcl-lang.org/tk/home)
 - [tldr](https://pypi.org/project/tldr/): Command line client for tldr, a collection of simplified man pages
   - [Source](https://github.com/tldr-pages/tldr-python-client/)
-- [tmux](): tmux is a terminal multiplexer: it enables a number of terminals to be created, accessed, and controlled from a single screen. tmux may be detached from a screen and continue running in the background, then later reattached
+- [tmux](https://github.com/tmux/tmux/wiki): tmux is a terminal multiplexer: it enables a number of terminals to be created, accessed, and controlled from a single screen. tmux may be detached from a screen and continue running in the background, then later reattached
   - [Source](https://github.com/tmux/tmux/)
 - [tmuxp](https://tmuxp.git-pull.com/): Session manager for tmux, which allows users to save and load tmux sessions through simple configuration files
   - [Source](https://github.com/tmux-python/tmuxp/)
-- [unrar](https://www.rarlab.com/rar_add.htm): Library and header file for applications that use libunrar
-  - [Source](https://gitlab.archlinux.org/archlinux/packaging/packages/unrar/)
+- [unrar](https://www.rarlab.com/rar_add.htm): The RAR uncompression program
 - [UnZip](https://infozip.sourceforge.net/UnZip.html): UnZip is an extraction utility for archives compressed in .zip format (also called 'zipfiles')
-  - [Source](http://infozip.sourceforge.net/UnZip.html)
-- [usbutils](https://gitlab.archlinux.org/archlinux/packaging/packages/usbutils/): A collection of USB tools to query connected USB devices
+- [usbutils](): A collection of USB tools to query connected USB devices
   - [Source](https://git.kernel.org/pub/scm/linux/kernel/git/gregkh/usbutils.git/)
 - [Vim](https://www.vim.org/): Vim is a highly configurable text editor built to make creating and changing any kind of text very efficient. It is included as "vi" with most UNIX systems and with Apple OS X
   - [Source](https://github.com/vim/vim/)
 - [VirtualBox](https://www.virtualbox.org/): VirtualBox is a general-purpose full virtualization software for x86_64 hardware
-  - [Source](https://github.com/Virtualbox-OSE/)
+  - [Source](https://github.com/VirtualBox/virtualbox/)
 - [VirtualBox Guest Additions ISO](https://www.virtualbox.org/): Consist of device drivers and system applications that optimize the guest operating system for better performance and usability
-  - [Source](https://gitlab.archlinux.org/archlinux/packaging/packages/virtualbox-guest-iso/)
+  - [Source](https://github.com/VirtualBox/virtualbox/)
 - [VirtualBox Host DKMS](https://www.virtualbox.org/): VirtualBox Host kernel modules sources
-  - [Source](https://gitlab.archlinux.org/archlinux/packaging/packages/virtualbox/)
-- [xclip](https://github.com/astrand/xclip/): Command line interface to the X11 clipboard
+  - [Source](https://github.com/VirtualBox/virtualbox/)
+- [xclip](): Command line interface to the X11 clipboard
   - [Source](https://github.com/astrand/xclip/)
-- [XMLStarlet](https://xmlstar.sourceforge.net/): XMLStarlet is a set of command line utilities (tools) which can be used to transform, query, validate, and edit XML documents and files
+- [XMLStarlet](https://xmlstarlet.github.io/): XMLStarlet is a set of command line utilities (tools) which can be used to transform, query, validate, and edit XML documents and files
   - [Source](https://sourceforge.net/p/xmlstar/code/ci/master/tree/)
 - [Zip](https://infozip.sourceforge.net/Zip.html): Zip is a compression and file packaging/archive utility
-  - [Source](https://infozip.sourceforge.net/Zip.html)
-- [zoxide](https://crates.io/crates/zoxide/): A smarter cd command. Supports all major shells
+- [zoxide](https://crates.io/crates/zoxide): A smarter cd command. Supports all major shells
   - [Source](https://github.com/ajeetdsouza/zoxide/)
 
 #### External packages
 
-- [Miniconda](https://docs.anaconda.com/miniconda/): Miniconda is a free, miniature installation of Anaconda Distribution that includes only conda, Python, the packages they both depend on, and a small number of other useful packages
-  - [Source](https://github.com/conda/conda/)
-- [Yay](): Yet another Yogurt - An AUR Helper written in Go
+- [Miniconda](https://www.anaconda.com/docs/getting-started/concepts/anaconda-or-miniconda): Miniconda is a free, miniature installation of Anaconda Distribution that includes only conda, Python, the packages they both depend on, and a small number of other useful packages
+- [Yay](https://jguer.github.io/yay/): Yet another Yogurt - An AUR Helper written in Go
   - [Source](https://github.com/Jguer/yay/)
 
 #### AUR packages
 
-- [ble.sh](https://github.com/akinomyoga/ble.sh): Bash Line Editor―a line editor written in pure Bash with syntax highlighting, auto suggestions, vim modes, etc. for Bash interactive sessions
-  - [Source](https://github.com/akinomyoga/ble.sh)
+- [ble.sh](): Bash Line Editor―a line editor written in pure Bash with syntax highlighting, auto suggestions, vim modes, etc. for Bash interactive sessions
+  - [Source](https://github.com/akinomyoga/ble.sh/)
 - [Brave](https://brave.com/): The browser that puts you first - Block ads. Save data. And get way faster webpages. Just by switching your browser
   - [Source](https://github.com/brave/brave-browser/)
 - [downgrade](https://archlinux-downgrade.github.io/downgrade/): Downgrade packages in Arch Linux
   - [Source](https://github.com/archlinux-downgrade/downgrade/)
-- [gita](https://github.com/nosarthur/gita/): Manage many git repos with sanity
-  - [Source](https://github.com/nosarthur/gita)
+- [gita](): Manage many git repos with sanity
+  - [Source](https://github.com/nosarthur/gita/)
 - [NordVPN](https://nordvpn.com/): The best VPN service for a free, open internet
-  - [Source](https://nordvpn.com/)
+  - [Source](https://github.com/NordSecurity/nordvpn-linux/)
 - [NordVPN GUI](https://nordvpn.com/): NordVPN Linux client
   - [Source](https://github.com/NordSecurity/nordvpn-linux/)
 - [OneDrive](https://abraunegg.github.io/): OneDrive Client for Linux
   - [Source](https://github.com/abraunegg/onedrive/)
-- [OneDriveGUI](https://github.com/bpozdena/OneDriveGUI/): A simple GUI for OneDrive Linux client with multi-account support
+- [OneDriveGUI](): A GUI for Linux OneDrive Client with multi-account support
   - [Source](https://github.com/bpozdena/OneDriveGUI/)
 - [Papirus](https://store.kde.org/p/1166289/): Pixel perfect icon theme for Linux
   - [Source](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/)
 - [Papirus Folders](): A script that lets you change the colors of folders in Papirus icon theme
   - [Source](https://github.com/PapirusDevelopmentTeam/papirus-folders/)
 - [Postman](https://www.postman.com/): Unify API design, testing, documentation, monitoring, and discovery on one platform that integrates with the rest of your stack, including every major gateway and Git solution
-  - [Source](https://github.com/postmanlabs/)
 - [tdrop](): A Glorified WM-Independent Dropdown Creator
   - [Source](https://github.com/noctuid/tdrop/)
 - [Visual Studio Code](https://code.visualstudio.com/): Your code editor. Redefined with AI
   - [Source](https://github.com/microsoft/vscode/)
 - [Zoom](https://www.zoom.com/): Video Conferencing and Web Conferencing Service
-  - [Source](https://github.com/zoom/)
 
 #### Browser plugins
 

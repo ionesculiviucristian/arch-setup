@@ -1,0 +1,7 @@
+description: "Enabling communication between all your devices"
+label: "KDE Connect"
+name: "kdeconnect"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/x86_64/kdeconnect/"
+source_url: "https://invent.kde.org/network/kdeconnect-kde/"
+url: "https://kdeconnect.kde.org/"

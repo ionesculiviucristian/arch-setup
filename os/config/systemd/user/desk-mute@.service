@@ -1,0 +1,6 @@
+[Unit]
+Description=Mute or unmute the audio of desktop 2 apps (%i)
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/share/kwin/scripts/knob-desk-focus/contents/bin/desk-mute.py %i

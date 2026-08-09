@@ -15,6 +15,9 @@ cp "/etc/bash.bashrc" "${HOME}/.bashrc"
 "${root_dir}/os/scripts/install_fonts.sh"
 "${root_dir}/os/scripts/setup_wallpapers.sh"
 "${root_dir}/os/scripts/setup_night_color.sh"
+"${root_dir}/os/scripts/setup_kwin_scripts.sh"
+"${root_dir}/os/scripts/setup_kernel_modules.sh"
+"${root_dir}/os/scripts/setup_journald.sh"
 "${root_dir}/os/scripts/setup_mounts.sh"
 
 exit 0

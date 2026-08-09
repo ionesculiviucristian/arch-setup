@@ -3,9 +3,10 @@ set -eu
 
 # [config] https://www.gnu.org/software/grub/manual/grub/grub.html#Configuration
 
-root_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)"
+package_dir="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
+root_dir="${package_dir%/repositories/*}"
 
-# shellcheck source=../../../scripts/installer.sh
+# shellcheck source=SCRIPTDIR/../../../scripts/installer.sh
 source "${root_dir}/scripts/installer.sh"
 
 grub_file="/etc/default/grub"
@@ -23,8 +24,8 @@ sudo_replace_text \
   'GRUB_DISABLE_SUBMENU=y' \
   "${grub_file}"
 sudo_replace_text \
-  '^GRUB_CMDLINE_LINUX_DEFAULT=".*"$' \
-  'GRUB_CMDLINE_LINUX_DEFAULT="ipv6.disable=1 loglevel=4"' \
+  '^\(GRUB_CMDLINE_LINUX_DEFAULT=".*\)loglevel=[0-9]\+' \
+  '\1loglevel=4' \
   "${grub_file}"
 sudo_replace_text \
   '^#GRUB_DISABLE_OS_PROBER=false' \

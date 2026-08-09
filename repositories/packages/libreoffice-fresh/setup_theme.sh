@@ -11,34 +11,37 @@ fi
 flavour="$1"
 accent="$2"
 
-libreoffice_user_dir="${HOME}/.config/libreoffice/4/user"
+libreoffice_config_dir="${HOME}/.config/libreoffice/4/user"
 libreoffice_theme="catppuccin-${flavour}-${accent}"
 
-mkdir -p "${libreoffice_user_dir}/config"
+mkdir -p "${libreoffice_config_dir}/config"
 
 local_theme_file=$(mktemp)
 
 wget -qO \
-  "${libreoffice_user_dir}/config/${libreoffice_theme}.soc" \
+  "${libreoffice_config_dir}/config/${libreoffice_theme}.soc" \
   "https://raw.githubusercontent.com/catppuccin/libreoffice/refs/heads/main/themes/${flavour}/${accent}/${libreoffice_theme}.soc"
 
 wget -qO \
   "${local_theme_file}" \
   "https://raw.githubusercontent.com/catppuccin/libreoffice/main/themes/${flavour}/${accent}/${libreoffice_theme}.xcu"
 
-if [ ! -f "${libreoffice_user_dir}/registrymodifications.xcu" ]; then
+if [ ! -f "${libreoffice_config_dir}/registrymodifications.xcu" ]; then
   {
     echo '<?xml version="1.0" encoding="UTF-8"?>'
     echo '<oor:items xmlns:oor="http://openoffice.org/2001/registry" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">'
     cat "${local_theme_file}"
     echo
     echo '</oor:items>'
-  } >"${libreoffice_user_dir}/registrymodifications.xcu"
+  } >"${libreoffice_config_dir}/registrymodifications.xcu"
 else
-  # shellcheck disable=SC2086
+  echo >>"${local_theme_file}"
   sed -i \
-    "s|<item oor:path=\"\/org.openoffice.Office.UI\/ColorScheme\/ColorSchemes\">.*<\/item>|$(cat ${local_theme_file})|" \
-    "${libreoffice_user_dir}/registrymodifications.xcu"
+    -e '\|^<item oor:path="/org.openoffice.Office.UI/ColorScheme/ColorSchemes">|{' \
+    -e "r ${local_theme_file}" \
+    -e 'd' \
+    -e '}' \
+    "${libreoffice_config_dir}/registrymodifications.xcu"
 fi
 
 rm -f "${local_theme_file}"

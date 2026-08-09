@@ -1,10 +1,11 @@
 #!/bin/bash
 set -eu
 
-root_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)"
+package_dir="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
+root_dir="${package_dir%/repositories/*}"
 
-# shellcheck source=../../../scripts/bitwarden.sh
-source "${root_dir}/scripts/bitwarden.sh"
+# shellcheck source=SCRIPTDIR/../../../scripts/secrets.sh
+source "${root_dir}/scripts/secrets.sh"
 
 ssh_dir="${HOME}/.ssh"
 ssh_authorized_keys_file="${ssh_dir}/authorized_keys"
@@ -13,10 +14,10 @@ ssh_config_file="${ssh_dir}/config"
 mkdir -p "${ssh_dir}"
 chmod 700 "${ssh_dir}"
 
-read_bitwarden_entry "Personal SSH key" ".sshKey.publicKey" >"${ssh_authorized_keys_file}"
+read_secret "Personal SSH key" "ssh_public_key" >"${ssh_authorized_keys_file}"
 chmod 600 "${ssh_authorized_keys_file}"
 
-read_bitwarden_entry "SSH config" >"${ssh_config_file}"
+read_secret "SSH config" >"${ssh_config_file}"
 chmod 600 "${ssh_config_file}"
 
 exit 0

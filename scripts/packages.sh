@@ -38,7 +38,7 @@ get_packages_by_repo() {
   fi
 
   local entries
-  entries=$(yq -r '(.packages // [])[] , (.drivers // [])[]' "${profile}")
+  entries=$(yq -r '((.packages // [])[], (.drivers // [])[]) | to_entries[] | select(.value.install) | .key' "${profile}")
 
   for entry in ${entries}; do
     local pkg_dir
@@ -75,7 +75,7 @@ run_package_scripts() {
   fi
 
   local entries
-  entries=$(yq -r '(.packages // [])[] , (.drivers // [])[]' "${profile}")
+  entries=$(yq -r '((.packages // [])[], (.drivers // [])[]) | to_entries[] | select(.value.install) | .key' "${profile}")
 
   for entry in ${entries}; do
     local pkg_dir

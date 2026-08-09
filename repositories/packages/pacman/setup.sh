@@ -3,9 +3,10 @@ set -eu
 
 # [config] https://wiki.archlinux.org/title/Pacman
 
-root_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)"
+package_dir="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
+root_dir="${package_dir%/repositories/*}"
 
-# shellcheck source=../../../scripts/installer.sh
+# shellcheck source=SCRIPTDIR/../../../scripts/installer.sh
 source "${root_dir}/scripts/installer.sh"
 
 pacman_config_file="/etc/pacman.conf"

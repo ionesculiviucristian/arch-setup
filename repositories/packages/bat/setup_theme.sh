@@ -11,19 +11,19 @@ fi
 flavour="$1"
 # accent="$2"
 
-bat_dir="${HOME}/.config/bat"
+bat_config_dir="${HOME}/.config/bat"
 bat_theme="Catppuccin ${flavour^}"
 
-mkdir -p "${bat_dir}/themes"
+mkdir -p "${bat_config_dir}/themes"
 
 wget -qO \
-  "${bat_dir}/themes/${bat_theme// /%20}.tmTheme" \
+  "${bat_config_dir}/themes/${bat_theme}.tmTheme" \
   "https://github.com/catppuccin/bat/raw/main/themes/${bat_theme// /%20}.tmTheme"
 
 bat cache --build >/dev/null
 
 sed -i \
   "s/^--theme=.*/--theme=\"${bat_theme}\"/" \
-  "${bat_dir}/config"
+  "${bat_config_dir}/config"
 
 exit 0

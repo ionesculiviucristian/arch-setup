@@ -11,13 +11,13 @@ fi
 flavour="$1"
 accent="$2"
 
-eza_dir="${HOME}/.config/eza"
+eza_config_dir="${HOME}/.config/eza"
 eza_theme="catppuccin-${flavour}-${accent}"
 
-mkdir -p "${eza_dir}"
+mkdir -p "${eza_config_dir}"
 
 wget -qO \
-  "${eza_dir}/theme.yml" \
+  "${eza_config_dir}/theme.yml" \
   "https://raw.githubusercontent.com/catppuccin/eza/refs/heads/main/themes/${flavour}/${eza_theme}.yml"
 
 exit 0

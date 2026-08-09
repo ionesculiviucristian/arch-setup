@@ -50,7 +50,7 @@
 - `dtopm`: Display container resource usage sorted by highest memory usage
 - `dvls`: List volumes
 - `dvlsf <PATTERN>`: Filter docker volumes
-- `dvrm <NETWORK...>`: Remove one or more volumes
+- `dvrm <VOLUME...>`: Remove one or more volumes
 - `dvrma`: Remove all volumes
 
 ## Docker compose
@@ -65,7 +65,7 @@
 - `dci <SERVICE>`: Return low-level information on Docker objects
 - `dcl <SERVICE...>`: View output from containers
 - `dcps <SERVICE...>`: List containers
-- `dcpsf <SERVICE>`: Filter running containers list using grep pattern
+- `dcpsf <PATTERN>`: Filter running containers list using grep pattern
 - `dcr <SERVICE...>`: Restart service containers
 - `dcrl <SERVICE...>`: Restart service containers and view their output
 - `dcu <SERVICE...>`: Create and start containers
@@ -77,8 +77,8 @@
 
 - `gic [MESSAGE] {WIP}`: Stage and commit all files from current directory
 - `gica`: Amend commit
-- `gicb <BRANCH>`: Create and checkout branch
-- `gicob <BRANCH>`: Checkout branch
+- `gicb <BRANCH>`: Create and switch to branch
+- `gicob <BRANCH>`: Switch to branch
 - `gicpu [MESSAGE] {WIP}`: Stage, commit and push all files from current directory
 - `gicpuf [MESSAGE] {WIP}`: Stage, commit and force push with lease all files from current directory
 - `gif`: Download objects and refs from another repository
@@ -90,16 +90,16 @@
 - `gipu`: Update remote refs along with associated objects
 - `gipuf`: Force update with lease remote refs along with associated objects
 - `girb <OLD BRANCH> <NEW BRANCH>`: Rename branch
-- `girh <SHA1>`: Hard reset current HEAD to the specified state
+- `girh [SHA1] {HEAD}`: Hard reset current HEAD to the specified state
 - `gis`: Stash the changes in a dirty working directory away
 - `gisp`: Remove a single stashed state from the stash list and apply it on top of the current working tree state
 - `gisq <SHA1> <MESSAGE>`: Squash commits
-- `gisqa <MESSAGE>`: Squashes ALL commits of the current branch
+- `gisqa [MESSAGE] {First commit}`: Squashes ALL commits of the current branch
 
 ## poetry
 
 - `poi`: Install project dependencies
-- `pos`: Spawn a shell within the virtual environment
+- `pos`: Activate the virtual environment in the current shell
 
 ## tmux
 
@@ -112,16 +112,12 @@
 ## Projects
 
 - `proj`: Set the current working directory to `~/Projects`
-- `proj_new <NAME>`: Create a new project in `~/Projects`
-- `proj_open <NAME>`: Open a project found in `~/Projects` with code editor
-- `proj_status`: Show git status for all registered repos
-- `proj_sync`: Register all projects in `~/Projects` with gita
 
 ## Misc
 
 - `backup`: Backup files from current directory to `~/Backups`
 - `logs`: Tail all journal entries
-- `logsb`: View all journal entries since last boot
+- `logsb [BOOT] {-1}`: View all journal entries of a boot, relative to the current one
 - `ports`: Lists listening TCP/UDP sockets
 - `portsf <PORT>`: Filter listening TCP/UDP sockets
 - `ppjson <FILE>`: Pretty prints a json file

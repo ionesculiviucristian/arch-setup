@@ -3,5 +3,5 @@ label: "Postman"
 name: "postman-bin"
 repository: "aur"
 repository_url: "https://aur.archlinux.org/packages/postman-bin"
-source_url: "https://github.com/postmanlabs/"
+source_url: null
 url: "https://www.postman.com/"

@@ -12,9 +12,10 @@ flavour="$1"
 accent="$2"
 wallpaper="$3"
 
-root_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)"
+package_dir="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
+root_dir="${package_dir%/repositories/*}"
 
-# shellcheck source=../../../scripts/installer.sh
+# shellcheck source=SCRIPTDIR/../../../scripts/installer.sh
 source "${root_dir}/scripts/installer.sh"
 
 sddm_conf_dir="/etc/sddm.conf.d"
@@ -49,11 +50,8 @@ sudo cp \
   "${sddm_themes_dir}/${sddm_theme}/backgrounds/wall.png"
 
 sudo sed -i \
-  "s/^Current=.*/Current=${sddm_theme}/" \
-  "${sddm_conf_dir}/kde_settings.conf"
-
-sudo sed -i \
-  "s/^CursorTheme=.*/CursorTheme=${sddm_cursors_theme}/" \
+  -e "s/^Current=.*/Current=${sddm_theme}/" \
+  -e "s/^CursorTheme=.*/CursorTheme=${sddm_cursors_theme}/" \
   "${sddm_conf_dir}/kde_settings.conf"
 
 exit 0

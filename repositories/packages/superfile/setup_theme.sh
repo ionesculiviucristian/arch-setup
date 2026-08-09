@@ -11,17 +11,17 @@ fi
 flavour="$1"
 accent="$2"
 
-superfile_dir="${HOME}/.config/superfile"
+superfile_config_dir="${HOME}/.config/superfile"
 superfile_theme="catppuccin-${flavour}-${accent}"
 
-mkdir -p "${superfile_dir}/theme"
+mkdir -p "${superfile_config_dir}/theme"
 
 wget -qO \
-  "${superfile_dir}/theme/${superfile_theme}.toml" \
+  "${superfile_config_dir}/theme/${superfile_theme}.toml" \
   "https://raw.githubusercontent.com/catppuccin/superfile/refs/heads/main/themes/${flavour}/${superfile_theme}.toml"
 
 sed -i \
   "s/^theme=.*/theme=\"${superfile_theme}\"/" \
-  "${superfile_dir}/config.toml"
+  "${superfile_config_dir}/config.toml"
 
 exit 0

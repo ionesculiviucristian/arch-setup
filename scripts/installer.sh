@@ -10,7 +10,7 @@ info() {
 timed() {
   local label=$1
   shift
-  local start=$SECONDS
+  local start=${SECONDS}
   info "${label}..."
   "$@"
   info "${label} done in $(( SECONDS - start ))s"
@@ -66,6 +66,11 @@ sudo_replace_text() {
     echo "Error: File is required"
     exit 1
   fi
+  if ! sudo grep -q -- "${pattern}" "${file}" &&
+    ! sudo grep -qxF -- "${replacement}" "${file}"; then
+    echo "Error: Pattern '${pattern}' not found in ${file}"
+    exit 1
+  fi
 
   sudo sed -i \
     "s${delimiter}${pattern}${delimiter}${replacement}${delimiter}" \
@@ -78,8 +83,8 @@ disable_kernel_updates() {
   sudo pacman -Sy >/dev/null
 
   for kernel in linux linux-lts; do
-    if pacman -Q "$kernel" &>/dev/null; then
-      pkgs+=("$kernel" "${kernel}-headers")
+    if pacman -Q "${kernel}" &>/dev/null; then
+      pkgs+=("${kernel}" "${kernel}-headers")
       sudo pacman -S --needed --noconfirm "${kernel}-headers" >/dev/null
     fi
   done
@@ -116,5 +121,5 @@ read_mounts() {
 read_mount_field() {
   local entry=$1
   local field=$2
-  echo "${entry}" | jq -r ".${field}"
+  echo "${entry}" | jq -r ".${field} // empty"
 }

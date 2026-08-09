@@ -11,19 +11,21 @@ fi
 flavour="$1"
 accent="$2"
 
-root_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)"
+package_dir="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
+root_dir="${package_dir%/repositories/*}"
 
-lazygit_dir="${HOME}/.config/lazygit"
+lazygit_config_dir="${HOME}/.config/lazygit"
 lazygit_theme="${flavour}-${accent}"
 
-mkdir -p "${lazygit_dir}"
+mkdir -p "${lazygit_config_dir}"
 
 wget -qO \
-  "${lazygit_dir}/${lazygit_theme}.yml" \
+  "${lazygit_config_dir}/${lazygit_theme}.yml" \
   "https://raw.githubusercontent.com/catppuccin/lazygit/refs/heads/main/themes-mergable/${flavour}/${accent}.yml"
 
-"${root_dir}/scripts/update_bashrc.sh" "lazygit" <<EOF
-export LG_CONFIG_FILE="\${HOME}/.config/lazygit/config.yml,\${HOME}/.config/lazygit/${lazygit_theme}.yml"
-EOF
+"${root_dir}/scripts/setup_shell.sh" \
+  --package "lazygit" \
+  --priority "50" \
+  <<<"export LG_CONFIG_FILE=\"\${HOME}/.config/lazygit/config.yml,\${HOME}/.config/lazygit/${lazygit_theme}.yml\""
 
 exit 0

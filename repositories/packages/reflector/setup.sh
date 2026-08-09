@@ -3,14 +3,15 @@ set -eu
 
 # [config] https://xyne.dev/projects/reflector/
 
-root_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)"
+package_dir="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
+root_dir="${package_dir%/repositories/*}"
 
-# shellcheck source=../../../.env
+# shellcheck source=SCRIPTDIR/../../../.env.example
 set -a && source "${root_dir}/.env" && set +a
 
 export COUNTRY="${REFLECTOR_COUNTRY}"
 
-envsubst <"${root_dir}/repositories/packages/reflector/config/reflector.conf.stub" |
+envsubst <"${package_dir}/config/reflector.conf.stub" |
   sudo tee "/etc/xdg/reflector/reflector.conf" >/dev/null
 
 sudo systemctl enable --now reflector.timer

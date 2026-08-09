@@ -1,9 +1,10 @@
 #!/bin/bash
 set -eu
 
-root_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)"
+package_dir="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
+root_dir="${package_dir%/repositories/*}"
 
-# shellcheck source=../../../.env
+# shellcheck source=SCRIPTDIR/../../../.env.example
 set -a && source "${root_dir}/.env" && set +a
 
 gpgsign=$(

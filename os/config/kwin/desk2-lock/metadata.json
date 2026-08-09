@@ -1,0 +1,11 @@
+{
+    "KPlugin": {
+        "Id": "desk2-lock",
+        "Name": "Desktop 2 lock",
+        "Description": "Ask for the password before switching to desktop 2",
+        "Version": "1.0"
+    },
+    "X-Plasma-API": "javascript",
+    "X-Plasma-API-Minimum-Version": "6.0",
+    "KPackageStructure": "KWin/Script"
+}

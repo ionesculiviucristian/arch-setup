@@ -1,14 +1,14 @@
 #!/bin/bash
 set -eu
 
-root_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)"
+package_dir="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
 
 sddm_conf_dir="/etc/sddm.conf.d"
 
 sudo mkdir -p "${sddm_conf_dir}"
 
 sudo cp \
-  "${root_dir}/repositories/packages/sddm/config/kde_settings.conf" \
+  "${package_dir}/config/kde_settings.conf" \
   "${sddm_conf_dir}/kde_settings.conf"
 
 exit 0

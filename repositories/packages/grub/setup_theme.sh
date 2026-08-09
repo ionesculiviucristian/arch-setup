@@ -11,9 +11,10 @@ fi
 flavour="$1"
 # accent="$2"
 
-root_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)"
+package_dir="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
+root_dir="${package_dir%/repositories/*}"
 
-# shellcheck source=../../../scripts/installer.sh
+# shellcheck source=SCRIPTDIR/../../../scripts/installer.sh
 source "${root_dir}/scripts/installer.sh"
 
 grub_file="/etc/default/grub"

@@ -1,3 +1,3 @@
-colorscheme
+colorscheme default
 set termguicolors
 syntax enable

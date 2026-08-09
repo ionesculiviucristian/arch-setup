@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/arch-setup/schemas/plugins.schema.json",
+  "title": "Browser plugins",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["url", "categories"],
+  "properties": {
+    "url": {
+      "type": "string",
+      "description": "Store base URL; plugin ids are appended to it"
+    },
+    "categories": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/category" }
+    }
+  },
+  "$defs": {
+    "category": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "label", "plugins"],
+      "properties": {
+        "name": { "type": "string" },
+        "label": { "type": "string" },
+        "plugins": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/plugin" }
+        }
+      }
+    },
+    "plugin": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "description", "id", "extra"],
+      "properties": {
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "id": { "type": "string" },
+        "extra": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/extra" }
+        }
+      }
+    },
+    "extra": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "description"],
+      "oneOf": [{ "required": ["id"] }, { "required": ["url"] }],
+      "properties": {
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "id": { "type": "string" },
+        "url": { "type": "string" }
+      }
+    }
+  }
+}

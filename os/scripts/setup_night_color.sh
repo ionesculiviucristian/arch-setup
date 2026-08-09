@@ -32,7 +32,7 @@ kwriteconfig6 \
   --file "${kwinrc_file}" \
   --group "NightColor" \
   --key "Mode" \
-  "Location"
+  0
 
 kwriteconfig6 \
   --file "${kwinrc_file}" \

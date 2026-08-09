@@ -3,14 +3,14 @@ set -eu
 
 # [config] https://superfile.dev/configure/superfile-config/
 
-root_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)"
+package_dir="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
 
-superfile_dir="${HOME}/.config/superfile"
+superfile_config_dir="${HOME}/.config/superfile"
 
-mkdir -p "${superfile_dir}"
+mkdir -p "${superfile_config_dir}"
 
 cp \
-  "${root_dir}/repositories/packages/superfile/config/config.toml" \
-  "${superfile_dir}/config.toml"
+  "${package_dir}/config/config.toml" \
+  "${superfile_config_dir}/config.toml"
 
 exit 0

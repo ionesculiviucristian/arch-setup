@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/arch-setup/schemas/theme.schema.json",
+  "title": "Theme",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["name", "flavour", "accent", "wallpapers"],
+  "properties": {
+    "name": { "type": "string" },
+    "flavour": { "enum": ["latte", "frappe", "macchiato", "mocha"] },
+    "accent": {
+      "enum": [
+        "rosewater",
+        "flamingo",
+        "pink",
+        "mauve",
+        "red",
+        "maroon",
+        "peach",
+        "yellow",
+        "green",
+        "teal",
+        "sky",
+        "sapphire",
+        "blue",
+        "lavender"
+      ]
+    },
+    "wallpapers": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["greeter", "kde", "sddm"],
+      "properties": {
+        "greeter": { "type": "string" },
+        "kde": { "type": "string" },
+        "sddm": { "type": "string" }
+      }
+    }
+  }
+}

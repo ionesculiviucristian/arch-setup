@@ -3,9 +3,10 @@ set -eu
 
 # [config] https://github.com/abraunegg/onedrive/blob/master/config
 
-root_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)"
+package_dir="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
+root_dir="${package_dir%/repositories/*}"
 
-# shellcheck source=../../../scripts/installer.sh
+# shellcheck source=SCRIPTDIR/../../../scripts/installer.sh
 source "${root_dir}/scripts/installer.sh"
 
 if [ ! -f "${root_dir}/mounts.json" ]; then
@@ -13,19 +14,19 @@ if [ ! -f "${root_dir}/mounts.json" ]; then
   exit 0
 fi
 
-onedrive_dir="${HOME}/.config/onedrive"
+onedrive_config_dir="${HOME}/.config/onedrive"
 
-mkdir -p "${onedrive_dir}"
+mkdir -p "${onedrive_config_dir}"
 
 mkdir -p "${HOME}/OneDrive"
 
 "${root_dir}/scripts/update_user_places.sh" "${HOME}/OneDrive" "OneDrive"
 
 cp \
-  "${root_dir}/repositories/packages/onedrive-abraunegg/config/config" \
-  "${onedrive_dir}/config"
+  "${package_dir}/config/config" \
+  "${onedrive_config_dir}/config"
 
-onedrive_sync_list="${onedrive_dir}/sync_list"
+onedrive_sync_list="${onedrive_config_dir}/sync_list"
 : >"${onedrive_sync_list}"
 
 while read -r entry; do

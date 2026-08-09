@@ -3,23 +3,20 @@ set -eu
 
 # [config] https://www.gnu.org/software/bash/manual/bash.html
 
-root_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)"
+package_dir="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
+root_dir="${package_dir%/repositories/*}"
 
 cp \
-  "${root_dir}/repositories/packages/bash/config/.bash_aliases" \
+  "${package_dir}/config/.bash_aliases" \
   "${HOME}/.bash_aliases"
 
 cp \
-  "${root_dir}/repositories/packages/bash/config/.bash_aliases_help" \
+  "${package_dir}/config/.bash_aliases_help" \
   "${HOME}/.bash_aliases_help"
 
-"${root_dir}/scripts/update_bashrc.sh" "bash" <<EOF
-shopt -u histappend
-HISTCONTROL=ignoreboth
-HISTFILESIZE=100000
-HISTSIZE=10000
-
-[ -f "\${HOME}/.bash_aliases" ] && . "\${HOME}/.bash_aliases"
-EOF
+"${root_dir}/scripts/setup_shell.sh" \
+  --package "bash" \
+  --priority "10" \
+  "${package_dir}/bashrc.sh"
 
 exit 0

@@ -51,6 +51,9 @@ packages:
   - btrfs-progs:
       install: true
       priority: "normal"
+  - btrfsmaintenance:
+      install: true
+      priority: "normal"
   - cups:
       install: true
       priority: "normal"
@@ -131,6 +134,9 @@ packages:
       install: true
       priority: "high"
   - kcalc:
+      install: true
+      priority: "normal"
+  - kdeconnect:
       install: true
       priority: "normal"
   - kitty:
@@ -249,9 +255,6 @@ packages:
       install: true
       priority: "normal"
   - pigz:
-      install: true
-      priority: "normal"
-  - plasma-x11-session:
       install: true
       priority: "normal"
   - plocate:

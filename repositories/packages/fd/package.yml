@@ -4,4 +4,4 @@ name: "fd"
 repository: "extra"
 repository_url: "https://archlinux.org/packages/extra/x86_64/fd/"
 source_url: "https://github.com/sharkdp/fd/"
-url: "https://github.com/sharkdp/fd/"
+url: null

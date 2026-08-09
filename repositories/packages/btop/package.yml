@@ -1,7 +1,7 @@
-description: "A monitor of resources"
+description: "Resource monitor that shows usage and stats for processor, memory, disks, network and processes"
 label: "Btop++"
 name: "btop"
 repository: "extra"
 repository_url: "https://archlinux.org/packages/extra/x86_64/btop/"
 source_url: "https://github.com/aristocratos/btop/"
-url: "https://github.com/aristocratos/btop/"
+url: null

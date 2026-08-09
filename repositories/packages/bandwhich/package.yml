@@ -4,4 +4,4 @@ name: "bandwhich"
 repository: "extra"
 repository_url: "https://archlinux.org/packages/extra/x86_64/bandwhich/"
 source_url: "https://github.com/imsnif/bandwhich/"
-url: "https://archlinux.org/"
+url: null

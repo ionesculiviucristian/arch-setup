@@ -1,7 +1,7 @@
 #!/bin/bash
 set -eu
 
-root_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)"
+package_dir="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
 
 miniconda_dir="${HOME}/miniconda3"
 
@@ -16,7 +16,7 @@ bash "${miniconda_dir}/miniconda.sh" -b -u -p "${miniconda_dir}"
 rm "${miniconda_dir}/miniconda.sh"
 
 cp \
-  "${root_dir}/repositories/packages/miniconda/config/.condarc" \
+  "${package_dir}/config/.condarc" \
   "${HOME}/.condarc"
 
 # shellcheck disable=SC1091

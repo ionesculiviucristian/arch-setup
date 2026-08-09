@@ -1,8 +1,8 @@
 #!/bin/bash
 set -eu
 
-# [shell] https://github.com/junegunn/fzf?tab=readme-ov-file#setting-up-shell-integration
 # [theme] https://github.com/catppuccin/fzf?tab=readme-ov-file#usage
+# [shell] https://github.com/junegunn/fzf?tab=readme-ov-file#setting-up-shell-integration
 
 if [ $# -ne 2 ]; then
   echo "Usage: $0 <flavour> <accent>"
@@ -12,7 +12,8 @@ fi
 flavour="$1"
 # accent="$2"
 
-root_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)"
+package_dir="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
+root_dir="${package_dir%/repositories/*}"
 
 catppuccin_fzf_dir="${HOME}/.repos/catppuccin-fzf"
 
@@ -22,8 +23,9 @@ git clone -q --depth=1 \
   https://github.com/catppuccin/fzf.git \
   "${catppuccin_fzf_dir}"
 
-"${root_dir}/scripts/update_bashrc.sh" "fzf" <<EOF
-source "\${HOME}/.repos/catppuccin-fzf/themes/catppuccin-fzf-${flavour}.sh"
-EOF
+"${root_dir}/scripts/setup_shell.sh" \
+  --package "fzf" \
+  --priority "50" \
+  <<<"source \"\${HOME}/.repos/catppuccin-fzf/themes/catppuccin-fzf-${flavour}.sh\""
 
 exit 0

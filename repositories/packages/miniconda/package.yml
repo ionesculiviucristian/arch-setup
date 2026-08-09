@@ -3,5 +3,5 @@ label: "Miniconda"
 name: "miniconda"
 repository: "external"
 repository_url: null
-source_url: "https://github.com/conda/conda/"
-url: "https://docs.anaconda.com/miniconda/"
+source_url: null
+url: "https://www.anaconda.com/docs/getting-started/concepts/anaconda-or-miniconda"

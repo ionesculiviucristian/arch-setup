@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/arch-setup/schemas/mounts.schema.json",
+  "title": "Mounts",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "onedrive": {
+      "type": "array",
+      "description": "Bind mounts into the OneDrive folder",
+      "items": { "$ref": "#/$defs/mount" }
+    },
+    "system": {
+      "type": "array",
+      "description": "System mounts written to /etc/fstab",
+      "items": { "$ref": "#/$defs/mount" }
+    }
+  },
+  "$defs": {
+    "mount": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source", "destination", "type", "options"],
+      "properties": {
+        "source": {
+          "type": "string",
+          "description": "Path, or SERIAL:<disk serial>:<partition number>"
+        },
+        "destination": {
+          "type": "string",
+          "description": "Mount point; ${HOME} is expanded for onedrive mounts"
+        },
+        "type": { "type": "string" },
+        "options": { "type": "string" },
+        "dump": { "type": "integer", "default": 0 },
+        "check": { "type": "integer", "enum": [0, 1, 2], "default": 0 }
+      }
+    }
+  }
+}

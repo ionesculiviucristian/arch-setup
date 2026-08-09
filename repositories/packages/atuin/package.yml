@@ -1,4 +1,4 @@
-description: "Sync, search and backup shell history with Atuin"
+description: "Making your terminal magical - Sync, search, and back up your shell history with end-to-end encryption. Ask Atuin AI for help without leaving your prompt"
 label: "Atuin"
 name: "atuin"
 repository: "extra"

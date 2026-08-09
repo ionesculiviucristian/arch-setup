@@ -2,6 +2,6 @@ description: "Solaar is a Linux manager for many Logitech keyboards, mice, and t
 label: "Solaar"
 name: "solaar"
 repository: "extra"
-repository_url: "https://archlinux.org/packages/extra/x86_64/solaar/"
+repository_url: "https://archlinux.org/packages/extra/any/solaar/"
 source_url: "https://github.com/pwr-Solaar/Solaar/"
 url: "https://pwr-solaar.github.io/Solaar/"

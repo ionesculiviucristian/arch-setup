@@ -4,4 +4,4 @@ name: "tmux"
 repository: "extra"
 repository_url: "https://archlinux.org/packages/extra/x86_64/tmux/"
 source_url: "https://github.com/tmux/tmux/"
-url: null
+url: "https://github.com/tmux/tmux/wiki"

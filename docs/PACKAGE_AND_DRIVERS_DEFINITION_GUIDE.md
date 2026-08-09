@@ -28,9 +28,10 @@ source_url: "" # Package's source code URL
 url: "" # Package's official webpage URL
 ```
 
-- `description`: should use the package's official webpage description if available or fallback to that of the source code's webpage
-- `source_url`: if there is no official source of the package then building source from `https://gitlab.archlinux.org/` should be used
-- `url`: if the package has no official URL then it will be set to `null`
+- `description`: taken from the first source where it is found, in this order: the package's official webpage, the source code repository's description, the arch repository's description
+- `repository_url`: uses the package's real architecture from the arch repository website (`x86_64` or `any`); if the package is not in an arch repository then it will be set to `null`
+- `source_url`: the real upstream source code (not a mirror); if the package has no official source code then it will be set to `null`
+- `url`: the package's own official webpage; if the package has no official webpage (only a source code repository) then it will be set to `null`
 
 ### `setup.sh` mandatory workflow
 
@@ -46,7 +47,8 @@ set -eu
 
 ```
 
-- `root_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)"` is always defined and used when copying files from the packages's folder (mostly for config files)
+- `package_dir="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"` is always defined and used for files from the package's own folder (mostly config files)
+- `root_dir="${package_dir%/repositories/*}"` is defined only when the script needs files outside the package (`scripts/`, `.env`, `mounts.json`)
 - always make sure the package's required directories are created before:
 
 ```bash
@@ -54,5 +56,14 @@ package_dir="${HOME}/.config/package"
 mkdir -p "${package_dir}"
 ```
 
-- `"${root_dir}/scripts/update_bashrc.sh"` is used last if any shell integration is need it
+- shell integration goes in `bashrc.sh` at the package's root and is installed last with `scripts/setup_shell.sh` (the last argument is the file; omit it and pipe stdin for dynamic content), which writes `~/.bashrc.d/<priority>-<name>.sh`:
+
+```bash
+"${root_dir}/scripts/setup_shell.sh" \
+  --package "package" \
+  --priority "50" \
+  "${package_dir}/bashrc.sh"
+```
+
+  - priorities: `10` bash, `20` env / PATH, `50` tool integrations, `80` atuin, `90` prompt, `99` ble.sh attach
 - scripts will use the redundant `exit 0` when finished

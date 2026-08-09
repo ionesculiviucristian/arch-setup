@@ -1,12 +1,14 @@
 #!/bin/bash
 set -eu
 
-# [shell] https://bitwarden.com/help/ssh-agent/#configure-bitwarden-ssh-agent
+# [shell] https://bitwarden.com/help/ssh-agent/#configure-your-system-to-use-bitwarden-ssh-agent
 
-root_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)"
+package_dir="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
+root_dir="${package_dir%/repositories/*}"
 
-"${root_dir}/scripts/update_bashrc.sh" "bitwarden" <<'EOF'
-export SSH_AUTH_SOCK="${HOME}/.bitwarden-ssh-agent.sock"
-EOF
+"${root_dir}/scripts/setup_shell.sh" \
+  --package "bitwarden" \
+  --priority "20" \
+  "${package_dir}/bashrc.sh"
 
 exit 0

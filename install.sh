@@ -12,13 +12,13 @@ source "${root_dir}/scripts/installer.sh"
 source "${root_dir}/scripts/packages.sh"
 
 # Usage: ./install.sh [phase...]
-# Phases: pre, packages, resources, external, aur, system-setups, setups, themes, post
-_phases=("${@}")
+# Phases: pre, packages, resources, external, aur, system-setups, setups, themes
+_phases=("$@")
 phase() { [[ ${#_phases[@]} -eq 0 ]] || [[ " ${_phases[*]} " == *" $1 "* ]]; }
 
 trap 'enable_kernel_updates; disable_passwordless_sudo' EXIT
 
-install_start=$SECONDS
+install_start=${SECONDS}
 
 info "Starting installation..."
 
@@ -40,7 +40,7 @@ fi
 # ==========================================
 
 if phase packages; then
-  _t=$SECONDS
+  _t=${SECONDS}
   info "Installing official packages..."
   # shellcheck disable=SC2046
   sudo pacman \
@@ -56,7 +56,7 @@ fi
 # ==========================================
 
 if phase resources; then
-  _t=$SECONDS
+  _t=${SECONDS}
   info "Setup system resources..."
   info "  Creating directories" && "${root_dir}/os/scripts/setup_directories.sh"
   info "  Installing fonts" && "${root_dir}/os/scripts/install_fonts.sh"
@@ -69,7 +69,7 @@ fi
 # ==========================================
 
 if phase external; then
-  _t=$SECONDS
+  _t=${SECONDS}
   info "Installing external packages..."
   run_package_scripts base install
   info "Installing external packages done in $(( SECONDS - _t ))s"
@@ -80,7 +80,7 @@ fi
 # ==========================================
 
 if phase aur; then
-  _t=$SECONDS
+  _t=${SECONDS}
   info "Installing AUR packages..."
   # shellcheck disable=SC2046
   yay \
@@ -96,7 +96,7 @@ fi
 # ==========================================
 
 if phase system-setups; then
-  _t=$SECONDS
+  _t=${SECONDS}
   info "Setup system packages..."
   info "  Night Color" && "${root_dir}/os/scripts/setup_night_color.sh"
   info "Setup system packages done in $(( SECONDS - _t ))s"
@@ -107,7 +107,7 @@ fi
 # ==========================================
 
 if phase setups; then
-  _t=$SECONDS
+  _t=${SECONDS}
   info "Setup packages..."
   run_package_scripts base setup
   info "Setup packages done in $(( SECONDS - _t ))s"
@@ -118,24 +118,10 @@ fi
 # ==========================================
 
 if phase themes; then
-  _t=$SECONDS
+  _t=${SECONDS}
   info "Setup themes..."
   "${root_dir}/os/setup_theme.sh"
   info "Setup themes done in $(( SECONDS - _t ))s"
-fi
-
-# ==========================================
-# Post install
-# ==========================================
-
-if phase post; then
-  _t=$SECONDS
-  info "Finalizing bash..."
-
-  "${root_dir}/scripts/update_bashrc.sh" "blesh" <<'EOF'
-[[ ${BLE_VERSION-} ]] && ble-attach
-EOF
-  info "Finalizing bash done in $(( SECONDS - _t ))s"
 fi
 
 info "Installation finished in $(( SECONDS - install_start ))s"

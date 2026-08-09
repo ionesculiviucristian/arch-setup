@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/arch-setup/schemas/package.schema.json",
+  "title": "Package",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "description",
+    "label",
+    "name",
+    "repository",
+    "repository_url",
+    "source_url",
+    "url"
+  ],
+  "properties": {
+    "description": {
+      "type": "string",
+      "description": "Package's description from its official webpage, or from its source code webpage"
+    },
+    "label": {
+      "type": "string",
+      "description": "Package's label"
+    },
+    "name": {
+      "type": "string",
+      "description": "Package's name used by pacman or yay during installation"
+    },
+    "repository": {
+      "enum": ["core", "extra", "multilib", "aur", "external"],
+      "description": "Repository type from the arch repository website"
+    },
+    "repository_url": {
+      "type": ["string", "null"],
+      "description": "Package's URL from the arch repository website; null if there is none"
+    },
+    "source_url": {
+      "type": ["string", "null"],
+      "description": "Package's official source code URL; null if there is none"
+    },
+    "url": {
+      "type": ["string", "null"],
+      "description": "Package's official webpage URL; null if there is none"
+    }
+  }
+}

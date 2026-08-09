@@ -11,17 +11,17 @@ fi
 flavour="$1"
 # accent="$2"
 
-kitty_dir="${HOME}/.config/kitty"
+kitty_config_dir="${HOME}/.config/kitty"
 kitty_theme="${flavour}"
 
-mkdir -p "${kitty_dir}/themes"
+mkdir -p "${kitty_config_dir}/themes"
 
 wget -qO \
-  "${kitty_dir}/themes/${kitty_theme}.conf" \
+  "${kitty_config_dir}/themes/${kitty_theme}.conf" \
   "https://raw.githubusercontent.com/catppuccin/kitty/refs/heads/main/themes/${kitty_theme}.conf"
 
 sed -i \
   "s|^#\? *include.*themes/.*|include ~/.config/kitty/themes/${kitty_theme}.conf|" \
-  "${kitty_dir}/kitty.conf"
+  "${kitty_config_dir}/kitty.conf"
 
 exit 0

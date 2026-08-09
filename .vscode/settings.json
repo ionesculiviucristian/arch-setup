@@ -1,0 +1,15 @@
+{
+  "stylua.targetReleaseVersion": "latest",
+  "yaml.schemas": {
+    "./schemas/package.schema.json": "repositories/*/*/package.yml",
+    "./schemas/plugins.schema.json": "repositories/*/*/plugins.yml",
+    "./schemas/profile.schema.json": "profiles/*.yml",
+    "./schemas/theme.schema.json": "themes/*.yml"
+  },
+  "json.schemas": [
+    {
+      "fileMatch": ["/mounts.json", "/mounts.example.json"],
+      "url": "./schemas/mounts.schema.json"
+    }
+  ]
+}

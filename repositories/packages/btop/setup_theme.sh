@@ -11,17 +11,17 @@ fi
 flavour="$1"
 # accent="$2"
 
-btop_dir="${HOME}/.config/btop"
+btop_config_dir="${HOME}/.config/btop"
 btop_theme="catppuccin_${flavour}"
 
-mkdir -p "${btop_dir}/themes"
+mkdir -p "${btop_config_dir}/themes"
 
 wget -qO \
-  "${btop_dir}/themes/${btop_theme}.theme" \
+  "${btop_config_dir}/themes/${btop_theme}.theme" \
   "https://raw.githubusercontent.com/catppuccin/btop/refs/heads/main/themes/${btop_theme}.theme"
 
 sed -i \
   "s/^color_theme = .*/color_theme = \"${btop_theme}\"/" \
-  "${btop_dir}/btop.conf"
+  "${btop_config_dir}/btop.conf"
 
 exit 0

@@ -11,22 +11,22 @@ fi
 flavour="$1"
 # accent="$2"
 
-starship_dir="${HOME}/.config/starship"
+starship_config_dir="${HOME}/.config/starship"
 starship_theme="${flavour}"
 
-mkdir -p "${starship_dir}/themes"
+mkdir -p "${starship_config_dir}/themes"
 
 wget -qO \
-  "${starship_dir}/themes/${starship_theme}.toml" \
+  "${starship_config_dir}/themes/${starship_theme}.toml" \
   "https://raw.githubusercontent.com/catppuccin/starship/refs/heads/main/themes/${starship_theme}.toml"
 
 cat \
-  "${starship_dir}/config.toml" \
-  "${starship_dir}/themes/${starship_theme}.toml" \
+  "${starship_config_dir}/config.toml" \
+  "${starship_config_dir}/themes/${starship_theme}.toml" \
   >"${HOME}/.config/.starship.toml"
 
 sed -i \
-  "s/^palette = .*/palette = \"catppuccin_${flavour}\"/" \
-  "${starship_dir}/config.toml"
+  "s/^#\? *palette = .*/palette = \"catppuccin_${flavour}\"/" \
+  "${starship_config_dir}/config.toml"
 
 exit 0

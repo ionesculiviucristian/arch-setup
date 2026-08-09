@@ -26,7 +26,7 @@ disable_kernel_updates
 # Install official packages
 # ==========================================
 
-_t=$SECONDS
+_t=${SECONDS}
 info "Installing official packages..."
 # shellcheck disable=SC2046
 sudo pacman \
@@ -40,7 +40,7 @@ info "Installing official packages done in $(( SECONDS - _t ))s"
 # Install AUR packages
 # ==========================================
 
-_t=$SECONDS
+_t=${SECONDS}
 info "Installing AUR packages..."
 # shellcheck disable=SC2046
 yay \

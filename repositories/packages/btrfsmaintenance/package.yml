@@ -1,0 +1,7 @@
+description: "Scripts for btrfs maintenance tasks like periodic scrub, balance, trim or defrag on selected mountpoints or directories"
+label: "BTRFS maintenance"
+name: "btrfsmaintenance"
+repository: "extra"
+repository_url: "https://archlinux.org/packages/extra/any/btrfsmaintenance/"
+source_url: "https://github.com/kdave/btrfsmaintenance/"
+url: null

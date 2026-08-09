@@ -3,18 +3,20 @@ set -eu
 
 # [Default config] https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md#default
 
-root_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)"
+package_dir="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
+root_dir="${package_dir%/repositories/*}"
 
-lazygit_dir="${HOME}/.config/lazygit"
+lazygit_config_dir="${HOME}/.config/lazygit"
 
-mkdir -p "${lazygit_dir}"
+mkdir -p "${lazygit_config_dir}"
 
 cp \
-  "${root_dir}/repositories/packages/lazygit/config/config.yml" \
-  "${lazygit_dir}/config.yml"
+  "${package_dir}/config/config.yml" \
+  "${lazygit_config_dir}/config.yml"
 
-"${root_dir}/scripts/update_bashrc.sh" "lazygit" <<'EOF'
-export LG_CONFIG_FILE="${HOME}/.config/lazygit/config.yml"
-EOF
+"${root_dir}/scripts/setup_shell.sh" \
+  --package "lazygit" \
+  --priority "50" \
+  "${package_dir}/bashrc.sh"
 
 exit 0

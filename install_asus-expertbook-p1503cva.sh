@@ -26,7 +26,7 @@ disable_kernel_updates
 # Install drivers
 # ==========================================
 
-_t=$SECONDS
+_t=${SECONDS}
 info "Installing drivers..."
 # shellcheck disable=SC2046
 sudo pacman \
