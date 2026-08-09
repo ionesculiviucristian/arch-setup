@@ -20,4 +20,6 @@ export PYENV_ROOT="$HOME/.pyenv"
 eval "$(pyenv init - bash)"
 EOF
 
+#export PYTHONPYCACHEPREFIX="$HOME/.cache/python"
+
 exit 0
