@@ -1,20 +1,33 @@
 #!/bin/bash
 set -eu
 
-# [config] https://wiki.archlinux.org/title/Pacman
+# @see [config](https://wiki.archlinux.org/title/Pacman)
 
-root_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)"
+package_dir="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
+root_dir="${package_dir%/repositories/*}"
 
-# shellcheck source=../../../scripts/installer.sh
-source "${root_dir}/scripts/installer.sh"
+# shellcheck source=SCRIPTDIR/../../../lib/index.sh
+source "${root_dir}/lib/index.sh"
 
 pacman_config_file="/etc/pacman.conf"
 
-sudo_replace_text '^#Color' 'Color' "${pacman_config_file}"
-sudo_replace_text '^#VerbosePkgLists' 'VerbosePkgLists' "${pacman_config_file}"
+file::replace_text --sudo \
+  '^#Color' \
+  'Color' \
+  "${pacman_config_file}"
 
-if ! sudo grep -q '^ILoveCandy' "${pacman_config_file}"; then
-  sudo sed -i '/^VerbosePkgLists/a ILoveCandy' "${pacman_config_file}"
-fi
+file::replace_text --sudo \
+  '^#VerbosePkgLists' \
+  'VerbosePkgLists' \
+  "${pacman_config_file}"
+
+file::insert_after --sudo \
+  '^VerbosePkgLists' \
+  'ILoveCandy' \
+  "${pacman_config_file}"
+
+sudo install -D -m 644 \
+  "${package_dir}/config/makepkg.conf" \
+  "/etc/makepkg.conf.d/arch-setup.conf"
 
 exit 0

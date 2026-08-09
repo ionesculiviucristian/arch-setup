@@ -1,0 +1,7 @@
+label: "xpadneo"
+description: "Advanced Linux Driver for Xbox One Wireless Gamepad"
+url: "https://atar-axis.github.io/xpadneo/"
+source:
+  url: "https://github.com/atar-axis/xpadneo/"
+repository:
+  url: "https://aur.archlinux.org/packages/xpadneo-dkms"

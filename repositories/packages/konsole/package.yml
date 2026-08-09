@@ -1,7 +1,12 @@
-description: "Terminal emulator by KDE"
 label: "Konsole"
-name: "konsole"
-repository: "extra"
-repository_url: "https://archlinux.org/packages/extra/x86_64/konsole/"
-source_url: "https://github.com/KDE/konsole/"
-url: "https://konsole.kde.org/"
+description: "KDE terminal emulator"
+url: "https://apps.kde.org/konsole/"
+source:
+  url: "https://invent.kde.org/utilities/konsole/"
+repository:
+  url: "https://archlinux.org/packages/extra/x86_64/konsole/"
+  optional_dependency_for:
+    - package: "dolphin"
+      reason: "terminal panel"
+    - package: "kate"
+      reason: "open a terminal in Kate"

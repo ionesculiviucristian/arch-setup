@@ -1,0 +1,7 @@
+label: "liquidctl"
+description: "Cross-platform CLI and Python drivers for AIO liquid coolers and other devices"
+url: null
+source:
+  url: "https://github.com/liquidctl/liquidctl/"
+repository:
+  url: "https://archlinux.org/packages/extra/any/liquidctl/"

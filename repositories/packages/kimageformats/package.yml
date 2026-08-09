@@ -1,0 +1,12 @@
+label: "KImageFormats"
+description: "Image format plugins for Qt 6"
+url: "https://develop.kde.org/products/frameworks/"
+source:
+  url: "https://invent.kde.org/frameworks/kimageformats/"
+repository:
+  url: "https://archlinux.org/packages/extra/x86_64/kimageformats/"
+  optional_dependency_for:
+    - package: "gwenview"
+      reason: "support for xcf, exr, psd, and more image formats"
+    - package: "krita"
+      reason: "PSD support"

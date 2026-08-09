@@ -5,7 +5,7 @@ if command -v yay &>/dev/null; then
   exit 0
 fi
 
-yay_dir="${HOME}/.repos/yay"
+yay_dir="${HOME}/.cache/arch-setup/yay"
 
 rm -rf "${yay_dir}"
 

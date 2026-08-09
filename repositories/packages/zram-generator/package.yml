@@ -1,0 +1,7 @@
+label: "zram-generator"
+description: "Systemd unit generator for zram devices"
+url: null
+source:
+  url: "https://github.com/systemd/zram-generator/"
+repository:
+  url: "https://archlinux.org/packages/extra/x86_64/zram-generator/"

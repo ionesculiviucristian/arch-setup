@@ -1,7 +1,7 @@
-description: "LiSt Open Files"
 label: "lsof"
-name: "lsof"
-repository: "extra"
-repository_url: "https://archlinux.org/packages/extra/x86_64/lsof/"
-source_url: "https://github.com/lsof-org/lsof/"
-url: "https://lsof.readthedocs.io/"
+description: "Lists open files for running Unix processes"
+url: "https://lsof.readthedocs.io/en/latest/"
+source:
+  url: "https://github.com/lsof-org/lsof/"
+repository:
+  url: "https://archlinux.org/packages/extra/x86_64/lsof/"

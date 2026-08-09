@@ -1,7 +1,10 @@
-description: "A command-line fuzzy finder"
 label: "fzf"
-name: "fzf"
-repository: "extra"
-repository_url: "https://archlinux.org/packages/extra/x86_64/fzf/"
-source_url: "https://github.com/junegunn/fzf/"
+description: "Command-line fuzzy finder"
 url: "https://junegunn.github.io/fzf/"
+source:
+  url: "https://github.com/junegunn/fzf/"
+repository:
+  url: "https://archlinux.org/packages/extra/x86_64/fzf/"
+  optional_dependency_for:
+    - package: "zoxide"
+      reason: "for interactive selection"

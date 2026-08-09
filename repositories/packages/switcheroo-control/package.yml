@@ -1,0 +1,7 @@
+label: "switcheroo-control"
+description: "D-Bus service to check the availability of dual-GPU"
+url: null
+source:
+  url: "https://gitlab.freedesktop.org/hadess/switcheroo-control/"
+repository:
+  url: "https://archlinux.org/packages/extra/x86_64/switcheroo-control/"

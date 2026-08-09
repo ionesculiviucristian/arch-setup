@@ -1,0 +1,7 @@
+label: "NVIDIA open kernel modules"
+description: "NVIDIA open kernel modules - module sources"
+url: "https://www.nvidia.com/en-us/"
+source:
+  url: "https://github.com/NVIDIA/open-gpu-kernel-modules/"
+repository:
+  url: "https://archlinux.org/packages/extra/x86_64/nvidia-open-dkms/"

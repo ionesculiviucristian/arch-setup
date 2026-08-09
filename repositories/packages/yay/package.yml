@@ -1,7 +1,7 @@
-description: "Yet another Yogurt - An AUR Helper written in Go"
 label: "Yay"
-name: "yay"
-repository: "external"
-repository_url: null
-source_url: "https://github.com/Jguer/yay/"
-url: null
+description: "Yet another yogurt. Pacman wrapper and AUR helper written in go."
+url: "https://jguer.github.io/yay/"
+source:
+  url: "https://github.com/Jguer/yay/"
+repository:
+  url: "https://aur.archlinux.org/packages/yay"

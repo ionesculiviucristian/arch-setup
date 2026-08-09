@@ -1,0 +1,12 @@
+label: "Noto fonts Emoji"
+description: "Google Noto Color Emoji font"
+url: "https://fonts.google.com/noto"
+source:
+  url: "https://github.com/googlefonts/noto-emoji/"
+repository:
+  url: "https://archlinux.org/packages/extra/any/noto-fonts-emoji/"
+  optional_dependency_for:
+    - package: "noto-fonts"
+      reason: "Emoji characters"
+    - package: "zoom"
+      reason: "emojis"

@@ -1,0 +1,7 @@
+label: "go-yq"
+description: "Portable command-line YAML processor"
+url: "https://mikefarah.gitbook.io/yq"
+source:
+  url: "https://github.com/mikefarah/yq/"
+repository:
+  url: "https://archlinux.org/packages/extra/x86_64/go-yq/"

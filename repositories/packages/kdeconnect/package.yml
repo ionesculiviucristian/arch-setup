@@ -1,0 +1,7 @@
+label: "KDE Connect"
+description: "Adds communication between KDE and your smartphone"
+url: "https://kdeconnect.kde.org/"
+source:
+  url: "https://invent.kde.org/network/kdeconnect-kde/"
+repository:
+  url: "https://archlinux.org/packages/extra/x86_64/kdeconnect/"

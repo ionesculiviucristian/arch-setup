@@ -1,0 +1,10 @@
+label: "KDE Graphics Thumbnailers"
+description: "Thumbnailers for various graphics file formats"
+url: "https://apps.kde.org/kdegraphics_thumbnailers/"
+source:
+  url: "https://invent.kde.org/graphics/kdegraphics-thumbnailers/"
+repository:
+  url: "https://archlinux.org/packages/extra/x86_64/kdegraphics-thumbnailers/"
+  optional_dependency_for:
+    - package: "dolphin"
+      reason: "PDF and PS thumbnails"

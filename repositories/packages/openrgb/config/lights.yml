@@ -1,0 +1,27 @@
+colours:
+  amber: "ffbb00"
+  blue: "0000ff"
+  cyan: "00ffff"
+  deeppink: "ff0080"
+  green: "00ff00"
+  ice: "aaddff"
+  lime: "88ff00"
+  magenta: "ff00ff"
+  orange: "ff8800"
+  pink: "ff40a0"
+  purple: "8800ff"
+  red: "ff0000"
+  teal: "00ff88"
+  warm: "ff9944"
+  white: "ffffff"
+  yellow: "ffff00"
+default_colour: "ff8800"
+liquidctl:
+  - channel: "led"
+    device: "NZXT Smart Device"
+    rainbow: "spectrum-wave"
+openrgb:
+  mode: "direct"
+  types:
+    - "DRAM"
+    - "Motherboard"

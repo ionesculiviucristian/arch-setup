@@ -1,0 +1,7 @@
+label: "AnyDesk"
+description: "The Fast Remote Desktop Application"
+url: "https://anydesk.com/"
+source:
+  url: null
+repository:
+  url: "https://aur.archlinux.org/packages/anydesk-bin"

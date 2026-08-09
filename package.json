@@ -1,10 +1,12 @@
 {
   "devDependencies": {
-    "@commitlint/cli": "^20.4.1",
-    "@commitlint/config-conventional": "^20.4.1",
-    "ejs": "^4.0.1",
+    "@commitlint/cli": "^21.2.4",
+    "@commitlint/config-conventional": "^21.2.4",
+    "ajv": "^8.20.0",
+    "ajv-formats": "^3.0.1",
+    "ejs": "^7.0.2",
     "husky": "^9.1.7",
-    "js-yaml": "^4.1.1"
+    "js-yaml": "^5.5.0"
   },
   "scripts": {
     "prepare": "husky"

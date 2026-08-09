@@ -1,14 +1,15 @@
 #!/bin/bash
 set -eu
 
-root_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)"
+package_dir="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
+root_dir="${package_dir%/repositories/*}"
 
-nvim_dir="${HOME}/.config/nvim"
+# shellcheck source=SCRIPTDIR/../../../lib/index.sh
+source "${root_dir}/lib/index.sh"
 
-mkdir -p "${nvim_dir}"
-
-cp -r \
-  "${root_dir}/repositories/packages/neovim/config/"* \
-  "${nvim_dir}"
+bash::install_bashrc \
+  --package "neovim" \
+  --priority "20" \
+  "${package_dir}/bashrc.sh"
 
 exit 0

@@ -1,7 +1,10 @@
-description: "plocate is a locate(1) based on posting lists, completely replacing mlocate with a much faster (and smaller) index"
 label: "plocate"
-name: "plocate"
-repository: "extra"
-repository_url: "https://archlinux.org/packages/extra/x86_64/plocate/"
-source_url: "https://git.sesse.net/?p=plocate"
+description: "Alternative to locate, faster and compatible with mlocate's database."
 url: "https://plocate.sesse.net/"
+source:
+  url: "https://git.sesse.net/?p=plocate"
+repository:
+  url: "https://archlinux.org/packages/extra/x86_64/plocate/"
+  optional_dependency_for:
+    - package: "pacman-contrib"
+      reason: "faster mlocate alternative"

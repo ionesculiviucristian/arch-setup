@@ -1,0 +1,7 @@
+label: "LACT"
+description: "Linux GPU Configuration Tool"
+url: null
+source:
+  url: "https://github.com/ilya-zlobintsev/LACT/"
+repository:
+  url: "https://archlinux.org/packages/extra/x86_64/lact/"

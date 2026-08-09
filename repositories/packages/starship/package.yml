@@ -1,7 +1,7 @@
-description: "The minimal, blazing-fast, and infinitely customizable prompt for any shell!"
 label: "Starship"
-name: "starship"
-repository: "extra"
-repository_url: "https://archlinux.org/packages/extra/x86_64/starship/"
-source_url: "https://github.com/starship/starship/"
+description: "The cross-shell prompt for astronauts"
 url: "https://starship.rs/"
+source:
+  url: "https://github.com/starship/starship/"
+repository:
+  url: "https://archlinux.org/packages/extra/x86_64/starship/"

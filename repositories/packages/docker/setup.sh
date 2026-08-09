@@ -1,20 +1,19 @@
 #!/bin/bash
 set -eu
 
-# [config] https://docs.docker.com/engine/daemon/#configuration-file
+# @see [config](https://docs.docker.com/engine/daemon/#configuration-file)
 
-root_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)"
+package_dir="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
 
 docker_dir="/etc/docker"
 
-sudo mkdir -p "${docker_dir}"
-
-sudo cp \
-  "${root_dir}/repositories/packages/docker/config/daemon.json" \
+sudo install -D -m 644 \
+  "${package_dir}/config/daemon.json" \
   "${docker_dir}/daemon.json"
 
 sudo usermod -aG docker "${USER}"
 
-sudo systemctl enable --now docker.service
+sudo systemctl enable docker.service
+sudo systemctl restart docker.service
 
 exit 0

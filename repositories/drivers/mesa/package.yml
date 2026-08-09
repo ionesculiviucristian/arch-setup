@@ -1,7 +1,10 @@
-description: "Open-source OpenGL drivers"
 label: "OpenGL drivers"
-name: "mesa"
-repository: "extra"
-repository_url: "https://archlinux.org/packages/extra/x86_64/mesa/"
-source_url: "https://gitlab.archlinux.org/archlinux/packaging/packages/mesa/"
-url: "https://www.mesa3d.org/"
+description: "Open-source OpenGL drivers"
+url: "https://mesa3d.org/"
+source:
+  url: "https://gitlab.freedesktop.org/mesa/mesa/"
+repository:
+  url: "https://archlinux.org/packages/extra/x86_64/mesa/"
+  optional_dependency_for:
+    - package: "obs-studio"
+      reason: "hardware encoding"

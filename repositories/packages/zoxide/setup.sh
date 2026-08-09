@@ -1,12 +1,17 @@
 #!/bin/bash
 set -eu
 
-# [shell] https://github.com/ajeetdsouza/zoxide?tab=readme-ov-file#installation
+# @see [shell](https://github.com/ajeetdsouza/zoxide?tab=readme-ov-file#installation)
 
-root_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)"
+package_dir="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
+root_dir="${package_dir%/repositories/*}"
 
-"${root_dir}/scripts/update_bashrc.sh" "zoxide" <<'EOF'
-eval "$(zoxide init bash)"
-EOF
+# shellcheck source=SCRIPTDIR/../../../lib/index.sh
+source "${root_dir}/lib/index.sh"
+
+bash::install_bashrc \
+  --package "zoxide" \
+  --priority "50" \
+  "${package_dir}/bashrc.sh"
 
 exit 0

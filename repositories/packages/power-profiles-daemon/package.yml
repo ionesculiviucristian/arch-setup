@@ -1,0 +1,7 @@
+label: "power-profiles-daemon"
+description: "Makes power profiles handling available over D-Bus"
+url: null
+source:
+  url: "https://gitlab.freedesktop.org/upower/power-profiles-daemon/"
+repository:
+  url: "https://archlinux.org/packages/extra/x86_64/power-profiles-daemon/"

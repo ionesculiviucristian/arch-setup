@@ -1,0 +1,7 @@
+label: "BTRFS maintenance"
+description: "Btrfs maintenance scripts"
+url: null
+source:
+  url: "https://github.com/kdave/btrfsmaintenance/"
+repository:
+  url: "https://archlinux.org/packages/extra/any/btrfsmaintenance/"

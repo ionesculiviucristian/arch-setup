@@ -1,0 +1,7 @@
+label: "NVIDIA utilities"
+description: "NVIDIA drivers utilities"
+url: "https://www.nvidia.com/en-us/"
+source:
+  url: null
+repository:
+  url: "https://archlinux.org/packages/extra/x86_64/nvidia-utils/"

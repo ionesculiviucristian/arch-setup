@@ -1,1 +1,2 @@
-theme=""
+ignore_missing_fields = true
+theme = "catppuccin-mocha"

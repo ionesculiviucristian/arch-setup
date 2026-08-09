@@ -1,8 +1,14 @@
 # shellcheck disable=SC2148
-# Generate bash aliases help file
-python "./scripts/generate_bash_aliases_help.py" && \
-  git add "./repositories/packages/bash/config/.bash_aliases_help"
+set -e
 
-# Generate README.md file
-node "./scripts/generate-readme.js" && \
-  git add "README.md"
+git diff --cached --name-only --diff-filter=ACMR -z -- '*.sh' | xargs -0 -r shellcheck -x
+git diff --cached --name-only --diff-filter=ACMR -z -- '*.sh' | xargs -0 -r shfmt -d -i 2
+git diff --cached --name-only --diff-filter=ACMR -z -- '*.sh' | xargs -0 -r -n 1 bash -n
+
+node "./scripts/validate-schemas.js"
+
+python "./scripts/generate_bash_aliases_help.py"
+git add "./repositories/packages/bash/config/.bash_aliases_help"
+
+node "./scripts/generate-readme.js"
+git add "README.md" ./profiles/*/README.md

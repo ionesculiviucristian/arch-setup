@@ -1,0 +1,7 @@
+label: "NVIDIA utilities (32-bit)"
+description: "NVIDIA drivers utilities (32-bit)"
+url: "https://www.nvidia.com/en-us/"
+source:
+  url: null
+repository:
+  url: "https://archlinux.org/packages/multilib/x86_64/lib32-nvidia-utils/"

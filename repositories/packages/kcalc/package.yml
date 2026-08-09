@@ -1,7 +1,7 @@
-description: "KCalc has everything you would expect from a scientific calculator"
 label: "KCalc"
-name: "kcalc"
-repository: "extra"
-repository_url: "https://archlinux.org/packages/extra/x86_64/kcalc/"
-source_url: "https://invent.kde.org/utilities/kcalc/"
+description: "Scientific Calculator"
 url: "https://apps.kde.org/kcalc/"
+source:
+  url: "https://invent.kde.org/utilities/kcalc/"
+repository:
+  url: "https://archlinux.org/packages/extra/x86_64/kcalc/"

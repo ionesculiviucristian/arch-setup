@@ -1,0 +1,7 @@
+label: "Papirus"
+description: "Pixel perfect icon theme for Linux"
+url: "https://store.kde.org/p/1166289/"
+source:
+  url: "https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/"
+repository:
+  url: "https://aur.archlinux.org/packages/papirus-icon-theme-git"

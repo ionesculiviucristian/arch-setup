@@ -1,7 +1,7 @@
-description: "The qBittorrent project aims to provide an open-source software alternative to µTorrent"
 label: "qBittorrent"
-name: "qbittorrent"
-repository: "extra"
-repository_url: "https://archlinux.org/packages/extra/x86_64/qbittorrent/"
-source_url: "https://github.com/qbittorrent/qBittorrent/"
+description: "An advanced BitTorrent client programmed in C++, based on Qt toolkit and libtorrent-rasterbar"
 url: "https://www.qbittorrent.org/"
+source:
+  url: "https://github.com/qbittorrent/qBittorrent/"
+repository:
+  url: "https://archlinux.org/packages/extra/x86_64/qbittorrent/"

@@ -1,0 +1,7 @@
+label: "Dolphin"
+description: "KDE File Manager"
+url: "https://apps.kde.org/dolphin/"
+source:
+  url: "https://invent.kde.org/system/dolphin/"
+repository:
+  url: "https://archlinux.org/packages/extra/x86_64/dolphin/"

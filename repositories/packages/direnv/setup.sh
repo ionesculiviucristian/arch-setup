@@ -1,12 +1,17 @@
 #!/bin/bash
 set -eu
 
-# [shell] https://github.com/direnv/direnv/blob/master/docs/hook.md#bash
+# @see [shell](https://github.com/direnv/direnv/blob/master/docs/hook.md#bash)
 
-root_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)"
+package_dir="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
+root_dir="${package_dir%/repositories/*}"
 
-"${root_dir}/scripts/update_bashrc.sh" "direnv" <<'EOF'
-eval "$(direnv hook bash)"
-EOF
+# shellcheck source=SCRIPTDIR/../../../lib/index.sh
+source "${root_dir}/lib/index.sh"
+
+bash::install_bashrc \
+  --package "direnv" \
+  --priority "50" \
+  "${package_dir}/bashrc.sh"
 
 exit 0

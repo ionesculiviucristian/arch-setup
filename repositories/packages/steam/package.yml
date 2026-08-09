@@ -1,0 +1,7 @@
+label: "Steam"
+description: "Valve's digital software delivery system"
+url: "https://steampowered.com/"
+source:
+  url: null
+repository:
+  url: "https://archlinux.org/packages/multilib/x86_64/steam/"

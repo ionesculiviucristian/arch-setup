@@ -1,7 +1,12 @@
-description: "The GNU Bourne Again shell"
 label: "Bash"
-name: "bash"
-repository: "core"
-repository_url: "https://archlinux.org/packages/core/x86_64/bash/"
-source_url: "https://git.savannah.gnu.org/cgit/bash.git/"
+description: "The GNU Bourne Again shell"
 url: "https://www.gnu.org/software/bash/"
+source:
+  url: "https://cgit.git.savannah.gnu.org/cgit/bash.git/"
+repository:
+  url: "https://archlinux.org/packages/core/x86_64/bash/"
+  optional_dependency_for:
+    - package: "openssh"
+      reason: "for ssh-copy-id and findssl.sh"
+    - package: "usbutils"
+      reason: "for usb-devices"

@@ -1,0 +1,7 @@
+label: "HeadsetControl"
+description: "Sidetone control and battery readout for gaming headsets"
+url: null
+source:
+  url: "https://github.com/Sapd/HeadsetControl/"
+repository:
+  url: "https://archlinux.org/packages/extra/x86_64/headsetcontrol/"

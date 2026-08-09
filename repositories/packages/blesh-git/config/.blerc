@@ -1,3 +1,7 @@
 ble-import -d integration/fzf-completion
 ble-import -d integration/fzf-key-bindings
 ble-import -d integration/fzf-git
+ble-import -d integration/fzf-menu -C '
+  bleopt integration_fzf_menu_enabled=
+  ble-bind -m emacs -f S-TAB fzf-menu-complete
+'

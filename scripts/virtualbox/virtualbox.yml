@@ -1,0 +1,26 @@
+display:
+  accelerate_3d: false
+  graphics_controller: vmsvga
+  vram_mib: 128
+general:
+  clipboard: bidirectional
+  drag_and_drop: bidirectional
+  name: arch
+guest:
+  password: password
+  user: arch
+snapshot: clean
+storage:
+  disks:
+    - serial: VBOXSYSTEM01
+      size_mib: 131072
+      type: system
+    - directories:
+        - Tests/Books
+        - Tests/Pictures
+      serial: VBOXDATA01
+      size_mib: 20480
+      type: ntfs
+system:
+  cpus: 4
+  memory_mib: 8192

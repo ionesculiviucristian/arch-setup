@@ -1,8 +1,10 @@
-description: "Userspace utilities to manage btrfs filesystems"
 label: "BTRFS tools"
-name: "btrfs-progs"
-optional: ""
-repository: "core"
-repository_url: "https://archlinux.org/packages/core/x86_64/btrfs-progs/"
-source_url: "https://github.com/kdave/btrfs-progs/"
+description: "Btrfs filesystem utilities"
 url: "https://btrfs.readthedocs.io/en/latest/"
+source:
+  url: "https://github.com/kdave/btrfs-progs/"
+repository:
+  url: "https://archlinux.org/packages/core/x86_64/btrfs-progs/"
+  optional_dependency_for:
+    - package: "docker"
+      reason: "btrfs backend support"

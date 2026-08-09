@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/arch-setup/schemas/profile.schema.json",
+  "title": "Profile",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["name"],
+  "properties": {
+    "name": { "type": "string" },
+    "packages": { "$ref": "#/$defs/entries" },
+    "drivers": { "$ref": "#/$defs/entries" }
+  },
+  "$defs": {
+    "entries": {
+      "type": "object",
+      "additionalProperties": { "$ref": "#/$defs/options" }
+    },
+    "options": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "properties": {
+        "priority": { "enum": ["highest", "high"] },
+        "themes": { "const": true }
+      }
+    }
+  }
+}

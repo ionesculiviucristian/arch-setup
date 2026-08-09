@@ -1,7 +1,7 @@
-description: "Manage many git repos with sanity"
 label: "gita"
-name: "gita"
-repository: "aur"
-repository_url: "https://aur.archlinux.org/packages/gita"
-source_url: "https://github.com/nosarthur/gita"
-url: "https://github.com/nosarthur/gita/"
+description: "Command-line tool to manage multiple git repos"
+url: null
+source:
+  url: "https://github.com/nosarthur/gita/"
+repository:
+  url: "https://aur.archlinux.org/packages/gita"

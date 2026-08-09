@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/arch-setup/schemas/virtualbox.schema.json",
+  "title": "VirtualBox VM",
+  "$defs": {
+    "disk": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["serial", "size_mib", "type"],
+      "properties": {
+        "directories": {
+          "type": "array",
+          "description": "Directories created in the formatted disk, relative to its root, as mount sources for mounts.json",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "serial": { "type": "string", "minLength": 1, "description": "Serial reported for the disk, matched by SERIAL:<serial>:<partition> in mounts.json" },
+        "size_mib": { "type": "integer", "minimum": 1024 },
+        "type": {
+          "enum": ["system", "ntfs"],
+          "description": "system is installed by archinstall and takes everything after the 1 GiB EFI partition; any other type is one partition formatted with that filesystem"
+        }
+      }
+    }
+  },
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["display", "general", "guest", "snapshot", "storage", "system"],
+  "properties": {
+    "display": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["accelerate_3d", "graphics_controller", "vram_mib"],
+      "properties": {
+        "accelerate_3d": { "type": "boolean" },
+        "graphics_controller": { "enum": ["vmsvga", "vboxsvga", "vboxvga"] },
+        "vram_mib": { "type": "integer", "minimum": 16, "maximum": 256 }
+      }
+    },
+    "general": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["clipboard", "drag_and_drop", "name"],
+      "properties": {
+        "clipboard": { "enum": ["disabled", "hosttoguest", "guesttohost", "bidirectional"] },
+        "drag_and_drop": { "enum": ["disabled", "hosttoguest", "guesttohost", "bidirectional"] },
+        "name": { "type": "string", "minLength": 1 }
+      }
+    },
+    "guest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["password", "user"],
+      "properties": {
+        "password": { "type": "string", "minLength": 1, "description": "Password of the guest user and of root, used by archinstall and Guest Control" },
+        "user": { "type": "string", "pattern": "^[a-z_][a-z0-9_-]*$", "description": "Guest user with passwordless sudo" }
+      }
+    },
+    "snapshot": { "type": "string", "minLength": 1, "description": "Snapshot taken after the install and restored by virtualbox-test.sh" },
+    "storage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["disks"],
+      "properties": {
+        "disks": {
+          "type": "array",
+          "description": "Dynamic disks, attached to the SATA ports in order, so the first one is /dev/sda in the guest",
+          "minItems": 1,
+          "prefixItems": [
+            {
+              "$ref": "#/$defs/disk",
+              "properties": { "type": { "const": "system" } },
+              "not": { "required": ["directories"] }
+            }
+          ],
+          "items": { "$ref": "#/$defs/disk" }
+        }
+      }
+    },
+    "system": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["cpus", "memory_mib"],
+      "properties": {
+        "cpus": { "type": "integer", "minimum": 1 },
+        "memory_mib": { "type": "integer", "minimum": 2048 }
+      }
+    }
+  }
+}

@@ -28,6 +28,10 @@ categories:
         description: "GitHub on steroids"
         id: "octotree"
         extra: []
+      - name: "Refined GitHub"
+        description: "Simplifies the GitHub interface and adds many useful features"
+        id: "refined-github-"
+        extra: []
   - name: "development"
     label: "Development"
     plugins:
@@ -44,7 +48,7 @@ categories:
         id: "react-devtools"
         extra: []
       - name: "VisBug"
-        description: "DevTools extension for debugging Vue.js applications"
+        description: "Open source browser design tools"
         id: "visbug"
         extra: []
       - name: "Vue.js devtools"
@@ -54,6 +58,10 @@ categories:
   - name: "youtube"
     label: "YouTube"
     plugins:
+      - name: "DeArrow"
+        description: "Crowdsourcing titles and thumbnails to be descriptive and not sensational"
+        id: "dearrow"
+        extra: []
       - name: "Enhancer for YouTube\u2122"
         description: "Take control of YouTube and boost your user experience!"
         id: "enhancer-for-youtube"
@@ -77,13 +85,9 @@ categories:
         description: "Finally, an efficient wide-spectrum content blocker"
         id: "ublock-origin"
         extra: []
-      - name: "Gesturefy"
-        description: "Navigate, operate, and browse faster with mouse gestures!"
-        id: "gesturefy"
-        extra: []
-      - name: "Google Translate"
-        description: "Google Translate"
-        id: "google-translate-right-clicks"
+      - name: "To Google Translate"
+        description: "Right-click a section of text and click the Translate icon next to it to text translate or listen to it in your language"
+        id: "to-google-translate"
         extra: []
       - name: "Offline QR Code Generator"
         description: "This add-on allows you to quickly generate a QR code offline with the URL of the open tab or any (selected) other text!"

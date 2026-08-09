@@ -1,0 +1,7 @@
+label: "kmod"
+description: "Linux kernel module management tools and library"
+url: null
+source:
+  url: "https://git.kernel.org/pub/scm/utils/kernel/kmod/kmod.git/"
+repository:
+  url: "https://archlinux.org/packages/core/x86_64/kmod/"

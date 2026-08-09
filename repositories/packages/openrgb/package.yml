@@ -1,0 +1,7 @@
+label: "OpenRGB"
+description: "Open source RGB lighting control that doesn't depend on manufacturer software"
+url: "https://openrgb.org/"
+source:
+  url: "https://gitlab.com/CalcProgrammer1/OpenRGB/"
+repository:
+  url: "https://archlinux.org/packages/extra/x86_64/openrgb/"

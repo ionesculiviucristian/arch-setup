@@ -1,7 +1,7 @@
-description: "Zip is a compression and file packaging/archive utility"
-label: "Zip"
-name: "zip"
-repository: "extra"
-repository_url: "https://archlinux.org/packages/extra/x86_64/zip/"
-source_url: "https://infozip.sourceforge.net/Zip.html"
+label: "zip"
+description: "Compressor/archiver for creating and modifying zipfiles"
 url: "https://infozip.sourceforge.net/Zip.html"
+source:
+  url: null
+repository:
+  url: "https://archlinux.org/packages/extra/x86_64/zip/"

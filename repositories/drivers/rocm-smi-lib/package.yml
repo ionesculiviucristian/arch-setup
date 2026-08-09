@@ -1,0 +1,10 @@
+label: "ROCm SMI library"
+description: "ROCm System Management Interface Library"
+url: "https://rocm.docs.amd.com/projects/rocm_smi_lib/en/latest/"
+source:
+  url: "https://github.com/ROCm/rocm-systems/"
+repository:
+  url: "https://archlinux.org/packages/extra/x86_64/rocm-smi-lib/"
+  optional_dependency_for:
+    - package: "btop"
+      reason: "AMD GPU support"

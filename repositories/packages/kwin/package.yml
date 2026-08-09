@@ -1,0 +1,7 @@
+label: "KWin"
+description: "An easy to use, but flexible, Wayland compositor"
+url: "https://kde.org/plasma-desktop/"
+source:
+  url: "https://invent.kde.org/plasma/kwin/"
+repository:
+  url: "https://archlinux.org/packages/extra/x86_64/kwin/"

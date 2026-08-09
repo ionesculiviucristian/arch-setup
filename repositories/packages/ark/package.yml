@@ -1,0 +1,7 @@
+label: "Ark"
+description: "Archiving Tool"
+url: "https://apps.kde.org/ark/"
+source:
+  url: "https://invent.kde.org/utilities/ark/"
+repository:
+  url: "https://archlinux.org/packages/extra/x86_64/ark/"

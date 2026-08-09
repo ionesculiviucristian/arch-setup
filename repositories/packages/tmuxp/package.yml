@@ -1,7 +1,7 @@
-description: "Session manager for tmux, which allows users to save and load tmux sessions through simple configuration files"
 label: "tmuxp"
-name: "tmuxp"
-repository: "extra"
-repository_url: "https://archlinux.org/packages/extra/x86_64/tmuxp/"
-source_url: "https://github.com/tmux-python/tmuxp/"
+description: "Tmux session manager built on libtmux"
 url: "https://tmuxp.git-pull.com/"
+source:
+  url: "https://github.com/tmux-python/tmuxp/"
+repository:
+  url: "https://archlinux.org/packages/extra/any/tmuxp/"

@@ -1,0 +1,8 @@
+device: "NZXT Smart Device"
+fans:
+  - channel: "fan1"
+    name: "Front intake (2x, splitter)"
+    speed: 40
+  - channel: "fan2"
+    name: "Rear exhaust"
+    speed: 50

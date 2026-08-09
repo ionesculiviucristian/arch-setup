@@ -1,0 +1,7 @@
+label: "SoftHSM"
+description: "Software PKCS#11 store"
+url: "https://www.softhsm.org/"
+source:
+  url: "https://github.com/softhsm/SoftHSMv2/"
+repository:
+  url: "https://archlinux.org/packages/extra/x86_64/softhsm/"

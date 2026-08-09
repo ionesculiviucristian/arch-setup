@@ -1,0 +1,7 @@
+label: "Discord"
+description: "All-in-one voice and text chat for gamers"
+url: "https://discord.com/"
+source:
+  url: null
+repository:
+  url: "https://archlinux.org/packages/extra/x86_64/discord/"

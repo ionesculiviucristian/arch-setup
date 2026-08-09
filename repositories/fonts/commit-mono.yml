@@ -1,0 +1,8 @@
+label: "Commit Mono Font"
+description: "Commit Mono is an anonymous and neutral coding font focused on creating a better reading experience"
+url: "https://commitmono.com/"
+source:
+  url: "https://github.com/eigilnikolajsen/commit-mono/"
+  release_asset_pattern: "^CommitMono-[0-9.]+\\.zip$"
+repository:
+  url: null

@@ -1,0 +1,11 @@
+[Unit]
+Description=Fixed fan speeds from /etc/liquidctl-fans.yml
+After=multi-user.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/local/bin/liquidctl-fans
+
+[Install]
+WantedBy=multi-user.target

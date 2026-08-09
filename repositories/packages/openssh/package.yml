@@ -1,7 +1,10 @@
-description: "SSH protocol implementation for remote login, command execution and file transfer"
 label: "OpenSSH"
-name: "openssh"
-repository: "core"
-repository_url: "https://archlinux.org/packages/core/x86_64/openssh/"
-source_url: "https://github.com/openssh/openssh-portable/"
-url: "https://www.openssh.com/"
+description: "SSH protocol implementation for remote login, command execution and file transfer"
+url: "https://www.openssh.org/"
+source:
+  url: "https://github.com/openssh/openssh-portable/"
+repository:
+  url: "https://archlinux.org/packages/core/x86_64/openssh/"
+  optional_dependency_for:
+    - package: "git"
+      reason: "ssh transport and crypto"

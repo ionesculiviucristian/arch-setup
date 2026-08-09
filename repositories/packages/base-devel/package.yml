@@ -1,7 +1,10 @@
-description: "Basic tools to build Arch Linux packages"
 label: "base-devel"
-name: "base-devel"
-repository: "core"
-repository_url: "https://archlinux.org/packages/core/x86_64/base-devel/"
-source_url: "https://gitlab.archlinux.org/archlinux/packaging/packages/base-devel/"
+description: "Basic tools to build Arch Linux packages"
 url: "https://archlinux.org/"
+source:
+  url: "https://gitlab.archlinux.org/archlinux/packaging/packages/base-devel/"
+repository:
+  url: "https://archlinux.org/packages/core/any/base-devel/"
+  optional_dependency_for:
+    - package: "pacman"
+      reason: "required to use makepkg"

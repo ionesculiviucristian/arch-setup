@@ -1,7 +1,7 @@
-description: "Free Media Player with built-in codecs"
 label: "SMPlayer"
-name: "smplayer"
-repository: "extra"
-repository_url: "https://archlinux.org/packages/extra/x86_64/smplayer/"
-source_url: "https://github.com/smplayer-dev/smplayer/"
+description: "Media player with built-in codecs that can play virtually all video and audio formats"
 url: "https://www.smplayer.info/"
+source:
+  url: "https://github.com/smplayer-dev/smplayer/"
+repository:
+  url: "https://archlinux.org/packages/extra/x86_64/smplayer/"

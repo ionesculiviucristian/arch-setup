@@ -1,0 +1,8 @@
+label: "JetBrainsMono Nerd Font"
+description: "JetBrains Mono: a typeface made for developers"
+url: "https://www.nerdfonts.com/"
+source:
+  url: "https://github.com/ryanoasis/nerd-fonts/"
+  release_asset: "JetBrainsMono.tar.xz"
+repository:
+  url: null

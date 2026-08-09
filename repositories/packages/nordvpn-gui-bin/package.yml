@@ -1,0 +1,7 @@
+label: "NordVPN GUI"
+description: "GUI for NordVPN"
+url: "https://nordvpn.com/"
+source:
+  url: "https://github.com/NordSecurity/nordvpn-linux/"
+repository:
+  url: "https://aur.archlinux.org/packages/nordvpn-gui-bin"

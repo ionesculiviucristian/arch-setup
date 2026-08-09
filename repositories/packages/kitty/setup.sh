@@ -1,18 +1,32 @@
 #!/bin/bash
 set -eu
 
-# [config] https://sw.kovidgoyal.net/kitty/conf/#kitty-conf
+# @see [config](https://sw.kovidgoyal.net/kitty/conf/#kitty-conf)
 
-root_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)"
+package_dir="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
+root_dir="${package_dir%/repositories/*}"
 
-kitty_dir="${HOME}/.config/kitty"
+# shellcheck source=SCRIPTDIR/../../../lib/index.sh
+source "${root_dir}/lib/index.sh"
+
+applications_dir="${HOME}/.local/share/applications"
+kitty_config_dir="${HOME}/.config/kitty"
 kdeglobals_file="${HOME}/.config/kdeglobals"
 
-mkdir -p "${kitty_dir}"
+install -D -m 644 \
+  "${package_dir}/config/kitty.conf" \
+  "${kitty_config_dir}/kitty.conf"
 
-cp \
-  "${root_dir}/repositories/packages/kitty/config/kitty.conf" \
-  "${kitty_dir}/kitty.conf"
+install -D -m 644 \
+  "${package_dir}/config/net.local.quick-access-terminal.desktop" \
+  "${applications_dir}/net.local.quick-access-terminal.desktop"
+
+kwriteconfig6 \
+  --file "${HOME}/.config/kglobalshortcutsrc" \
+  --group "services" \
+  --group "net.local.quick-access-terminal.desktop" \
+  --key "_launch" \
+  "Alt+F12"
 
 kwriteconfig6 \
   --file "${kdeglobals_file}" \
@@ -26,8 +40,9 @@ kwriteconfig6 \
   --key "TerminalService" \
   "kitty.desktop"
 
-"${root_dir}/scripts/update_bashrc.sh" "kitty" <<'EOF'
-[ "${TERM}" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
-EOF
+bash::install_bashrc \
+  --package "kitty" \
+  --priority "50" \
+  "${package_dir}/bashrc.sh"
 
 exit 0

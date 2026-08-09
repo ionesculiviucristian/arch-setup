@@ -1,6 +1,9 @@
 name: "Catppuccin mocha mauve"
 flavour: "mocha"
 accent: "mauve"
+icons:
+  color: "violet"
+  theme: "Papirus-Dark"
 wallpapers:
   greeter: "wp11361979-minimalist-3440x1440-wallpapers.png"
   kde: "wp14259050-cyberpunk-3440x1440-wallpapers.png"

@@ -1,51 +1,71 @@
 #!/bin/bash
 set -eu
 
+# @description Update the official, AUR (including -git) and external packages, the fonts and the tools of the packages with an update.sh.
+# @option --themes Apply the themes after the update
+# @option --debug Print debug messages, same as ARCH_SETUP_DEBUG=1
+
 root_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-exec 1>update_base.log
-exec 2>update_errors_base.log
+# shellcheck source=lib/index.sh
+source "${root_dir}/lib/index.sh"
 
-# shellcheck source=scripts/installer.sh
-source "${root_dir}/scripts/installer.sh"
-# shellcheck source=scripts/packages.sh
-source "${root_dir}/scripts/packages.sh"
+if [[ " $* " == *" --debug "* ]]; then
+  export ARCH_SETUP_DEBUG=1
+fi
 
-trap disable_passwordless_sudo EXIT
+installer::redirect_logs update base
+
+trap sudoers::disable_passwordless EXIT
 
 # ==========================================
 # Pre update
 # ==========================================
 
-info "Starting update..."
+log::info "Starting update..."
 
-enable_passwordless_sudo
+sudoers::enable_passwordless
 
 # ==========================================
 # Update official & AUR packages
 # ==========================================
 
-info "Updating official & AUR packages..." && yay -Syu
+log::info "Updating official & AUR packages..." && yay -Syu --devel --noconfirm
+installer::install_requirements
 
 # ==========================================
-# Update external packages
+# Update fonts
 # ==========================================
 
-info "Updating external packages..."
-run_package_scripts base install
+log::info "Updating fonts..."
+font::install_external
+
+# ==========================================
+# Update package tools
+# ==========================================
+
+log::info "Updating package tools..."
+for pkg_dir in $(profile::installed_dirs); do
+  if [ -x "${pkg_dir}/update.sh" ]; then
+    log::info "  $(yq -r '.label' "${pkg_dir}/package.yml")"
+    "${pkg_dir}/update.sh"
+  fi
+done
 
 # ==========================================
 # Update themes
 # ==========================================
 
-info "Updating themes..."
-
-"${root_dir}/os/setup_theme.sh"
+if [[ " $* " == *" --themes "* ]]; then
+  log::info "Updating themes..."
+  theme::apply
+  grub::update_config
+fi
 
 # ==========================================
 # Post update
 # ==========================================
 
-info "Update finished"
+log::info "Update finished"
 
 exit 0

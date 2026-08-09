@@ -1,0 +1,10 @@
+[Unit]
+Description=Restore the RGB lighting saved with lights --persistent
+After=graphical-session.target
+
+[Service]
+Type=oneshot
+ExecStart=%h/.bash_aliases.d/lights.sh restore
+
+[Install]
+WantedBy=graphical-session.target

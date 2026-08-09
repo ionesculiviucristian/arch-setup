@@ -1,0 +1,9 @@
+# <%- profile.label %>
+
+<% if (profile.name === "base") { -%>
+Installed on every machine with `./install.sh`.
+<% } else { -%>
+Installed on top of the [base profile](../base/README.md) with `./install.sh <%- profile.name %>`.
+<% } -%>
+
+<%- include('partials/packages.ejs', { profile, level: 2 }); -%>

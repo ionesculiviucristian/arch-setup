@@ -1,7 +1,7 @@
 #!/bin/bash
 set -eu
 
-# [config] https://wiki.archlinux.org/title/CUPS
+# @see [config](https://wiki.archlinux.org/title/CUPS)
 
 sudo systemctl enable --now cups.service
 

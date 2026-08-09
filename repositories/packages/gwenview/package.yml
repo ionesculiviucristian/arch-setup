@@ -1,7 +1,7 @@
-description: "Image viewer by KDE"
 label: "Gwenview"
-name: "gwenview"
-repository: "extra"
-repository_url: "https://archlinux.org/packages/extra/x86_64/gwenview/"
-source_url: "https://invent.kde.org/graphics/gwenview/"
+description: "A fast and easy to use image viewer"
 url: "https://apps.kde.org/gwenview/"
+source:
+  url: "https://invent.kde.org/graphics/gwenview/"
+repository:
+  url: "https://archlinux.org/packages/extra/x86_64/gwenview/"

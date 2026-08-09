@@ -1,4 +1,10 @@
+enter_accept = true
+history_filter = ["^cd$", "^clear$", "^exit$", "^ls$"]
+invert = true
 style = "full"
 
 [theme]
-name = ""
+name = "default"
+
+[ui]
+columns = ["exit", "duration", "time", { type = "directory", width = 25 }, "command"]

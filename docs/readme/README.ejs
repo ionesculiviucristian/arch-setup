@@ -3,40 +3,18 @@
 ## Profiles
 
 <% profiles.forEach(function(profile) { -%>
-### <%- profile.label %>
-
-<% profile.groups.forEach(function(group) { -%>
-#### <%- group.label %>
-
-<% group.packages.sort(sortByLabel).forEach(function(pkg) { -%>
-- [<%- pkg.label %>](<%- pkg.url %>): <%- pkg.description %>
-<% if (pkg.source_url) { %>  - [Source](<%- pkg.source_url %>)
+<% if (profile.name === "base") { -%>
+- [<%- profile.label %>](./profiles/<%- profile.name %>/README.md): `./install.sh`, installed on every machine
+<% } else { -%>
+- [<%- profile.label %>](./profiles/<%- profile.name %>/README.md): `./install.sh <%- profile.name %>`, on top of the base profile
 <% } -%>
 <% }); -%>
 
-<% }); -%>
-<% if (profile.plugins.length > 0) { -%>
-#### Browser plugins
+### <%- base.label %>
 
-<% profile.plugins.forEach(function(browser) { -%>
-##### <%- browser.package.label %> plugins
-
-<% browser.categories.forEach(function(category) { -%>
-###### <%- category.label %>
-
-<% category.plugins.sort(sortByName).forEach(function(plugin) { -%>
-- [<%- plugin.name %>](<%- browser.url %>/<%- plugin.id %>): <%- plugin.description %>
-<% (plugin.extra || []).sort(sortByName).forEach(function(extra) { -%>
-  - [<%- extra.name %>](<%- extra.url || `${browser.url}/${extra.id}` %>): <%- extra.description %>
-<% }); -%>
-<% }); -%>
-
-<% }); -%>
-<% }); -%>
-<% } -%>
-<% }); -%>
+<%- include('partials/packages.ejs', { profile: base, level: 4 }); -%>
 ## Available aliases
 
-For a list off all available aliases, [read more here](./docs/ALIASES.md) or run `aliases` after installation
+Run `aliases` after installation for a list of all available aliases.
 
 <%- include('partials/footer.ejs'); -%>

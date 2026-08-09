@@ -1,7 +1,10 @@
-description: "Consist of device drivers and system applications that optimize the guest operating system for better performance and usability"
 label: "VirtualBox Guest Additions ISO"
-name: "virtualbox-guest-iso"
-repository: "extra"
-repository_url: "https://archlinux.org/packages/extra/x86_64/virtualbox-guest-iso/"
-source_url: "https://gitlab.archlinux.org/archlinux/packaging/packages/virtualbox-guest-iso/"
-url: "https://www.virtualbox.org/"
+description: "The official VirtualBox Guest Additions ISO image"
+url: "https://www.virtualbox.org/manual/topics/guestadditions.html"
+source:
+  url: "https://github.com/VirtualBox/virtualbox/"
+repository:
+  url: "https://archlinux.org/packages/extra/any/virtualbox-guest-iso/"
+  optional_dependency_for:
+    - package: "virtualbox"
+      reason: "Guest Additions CD image"

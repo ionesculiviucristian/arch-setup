@@ -1,114 +1,97 @@
 import re
+import sys
 from collections import defaultdict
 
-group_labels = {
-    "docker_compose": "Docker compose",
-    "docker": "Docker",
-    "files": "File system",
-    "git": "git",
-    "misc": "Misc",
-    "pkgmgr": "Packages manager",
-    "poetry": "poetry",
-    "projects": "Projects",
-    "tmux": "tmux",
-}
+ALIASES_FILE = "./repositories/packages/bash/config/.bash_aliases"
+ARG_PATTERN = re.compile(r"\$(\d+|@) \S+ (\S+)(?: \(optional(?:, default: (.+))?\))?")
+
+
+def parse_arg(text):
+    matches = ARG_PATTERN.fullmatch(text)
+    if not matches:
+        return None
+    position, name, default = matches.groups()
+    return {
+        "name": name,
+        "variadic": position == "@",
+        "optional": "(optional" in text,
+        "default": default,
+    }
 
 
 def get_aliases():
     aliases = []
-    with open("./repositories/packages/bash/config/.bash_aliases") as stream:
-        alias = {}
-        line_no = 1
-        for line in stream:
+    errors = []
+    section = None
+    alias = {}
+    with open(ALIASES_FILE) as stream:
+        for line_no, line in enumerate(stream, start=1):
             line = line.strip()
-            if "# @info" in line:
-                alias["info"] = line.replace("# @info", "").strip()
-            elif "# @group" in line:
-                alias["group"] = line.replace("# @group", "").strip()
-            elif "# @param" in line:
-                param = {}
-                required_matches = re.search("<(.*?)>", line)
-                optional_matches = re.search("\\[(.*?)\\]", line)
-                if not required_matches and not optional_matches:
-                    print(f"Invalid param in line {line_no}")
+            if line.startswith("# @section "):
+                section = line.removeprefix("# @section ").strip()
+            elif line.startswith("# @description "):
+                alias["description"] = line.removeprefix("# @description ").strip()
+            elif line.startswith("# @arg "):
+                arg = parse_arg(line.removeprefix("# @arg ").strip())
+                if not arg:
+                    errors.append(f"Invalid @arg in line {line_no}")
                     continue
-                if required_matches:
-                    param["name"] = required_matches[1]
-                    param["required"] = True
-                elif optional_matches:
-                    param["name"] = optional_matches[1]
-                    param["required"] = False
-                    default_matches = re.search("{(.*?)}", line)
-                    param["default"] = default_matches[1] if default_matches else None
-                alias["params"] = [*alias["params"], param] if "params" in alias else [param]
-            elif line.startswith("alias") or line.startswith("function"):
-                # Skip undocumented aliases
-                if len(alias.keys()) == 0:
+                alias.setdefault("args", []).append(arg)
+            elif line.startswith(("alias", "function")):
+                if "description" not in alias:
+                    alias = {}
                     continue
-                if set({"info", "group"}).issubset(alias.keys()):
-                    matches = re.search("alias (.*?)=", line) or re.search("function (.*?)\\(", line)
-                    if matches:
-                        alias["name"] = matches[1]
-                        aliases.append(alias)
-                    else:
-                        print(f"No alias found in line {line_no}")
+                matches = re.search("alias (.*?)=", line) or re.search(r"function (.*?)\(", line)
+                if not matches:
+                    errors.append(f"No alias found in line {line_no}")
+                elif not section:
+                    errors.append(f"Alias in line {line_no} has no @section")
                 else:
-                    print(f"Alias in line {line_no} has incomplete metadata")
+                    aliases.append({**alias, "name": matches[1], "section": section})
                 alias = {}
-            line_no += 1
+    if errors:
+        sys.exit("\n".join(errors))
     return aliases
+
+
+def format_usage(alias):
+    usage = alias["name"]
+    for arg in alias.get("args", []):
+        name = f"{arg['name']}..." if arg["variadic"] else arg["name"]
+        usage += f" [{name}]" if arg["optional"] else f" <{name}>"
+    return usage
+
+
+def format_description(alias):
+    defaults = [f"{arg['name']}: {arg['default']}" for arg in alias.get("args", []) if arg["default"]]
+    if not defaults:
+        return alias["description"]
+    return f"{alias['description']} (default {', '.join(defaults)})"
 
 
 def generate_bash_info(grouped_aliases):
     with open("./repositories/packages/bash/config/.bash_aliases_help", "w") as stream:
+        stream.write("# shellcheck shell=bash\n")
         stream.write("GC='\\033[0;36m'\n")
         stream.write("AC='\\033[0;32m'\n")
         stream.write("NC='\\033[0m'\n\n")
         stream.write("function aliases() {\n")
-        for group in grouped_aliases:
-            label = group_labels[group] if group in group_labels else "Aliases group"
-            stream.write(f'\techo -e "\\n${{GC}}{label}${{NC}}\\n"\n')
-            for alias in grouped_aliases[group]:
-                params = ""
-                for param in alias["params"] if "params" in alias else []:
-                    if param["required"]:
-                        params += f" <{param['name']}>"
-                    else:
-                        params += f" [{param['name']}]"
-                        if param["default"]:
-                            params += f" {{{param['default']}}}"
-                stream.write(f"\techo -e \"  ${{AC}}{alias['name']}${{NC}}{params}: {alias['info']}\"\n")
+        for section, aliases in grouped_aliases.items():
+            stream.write(f'\techo -e "\\n${{GC}}{section}${{NC}}\\n"\n')
+            for alias in aliases:
+                name, _, params = format_usage(alias).partition(" ")
+                params = f" {params}" if params else ""
+                stream.write(f"\techo -e \"  ${{AC}}{name}${{NC}}{params}: {format_description(alias)}\"\n")
         stream.write("}\n")
 
 
-def generate_md_info(grouped_aliases):
-    with open("./docs/ALIASES.md", "w") as stream:
-        stream.write("# Aliases\n")
-        for group in grouped_aliases:
-            label = group_labels[group] if group in group_labels else "Aliases group"
-            stream.write(f"\n## {label}\n\n")
-            for alias in grouped_aliases[group]:
-                params = ""
-                for param in alias["params"] if "params" in alias else []:
-                    if param["required"]:
-                        params += f" <{param['name']}>"
-                    else:
-                        params += f" [{param['name']}]"
-                        if param["default"]:
-                            params += f" {{{param['default']}}}"
-                info = alias["info"].replace(r"\`", "`")
-                stream.write(f"- `{alias['name']}{params}`: {info}\n")
-
-
 def generate_info():
-    aliases = get_aliases()
     grouped_aliases = defaultdict(list)
-    for alias in aliases:
-        grouped_aliases[alias["group"]].append(alias)
-    for key in grouped_aliases:
-        grouped_aliases[key] = sorted(grouped_aliases[key], key=lambda x: x["name"])
+    for alias in get_aliases():
+        grouped_aliases[alias["section"]].append(alias)
+    for section in grouped_aliases:
+        grouped_aliases[section].sort(key=lambda alias: alias["name"])
     generate_bash_info(grouped_aliases)
-    generate_md_info(grouped_aliases)
 
 
 if __name__ == "__main__":

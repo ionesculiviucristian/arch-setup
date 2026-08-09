@@ -1,20 +1,23 @@
 #!/bin/bash
 set -eu
 
-root_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)"
+package_dir="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
 
 tmux_plugins_dir="${HOME}/.tmux/plugins"
-
-rm -rf "${tmux_plugins_dir}"
+tpm_dir="${tmux_plugins_dir}/tpm"
 
 mkdir -p "${tmux_plugins_dir}"
 
-git clone --depth=1 \
-  https://github.com/tmux-plugins/tpm \
-  "${tmux_plugins_dir}/tpm"
+if [ ! -d "${tpm_dir}" ]; then
+  git clone -q --depth=1 \
+    https://github.com/tmux-plugins/tpm \
+    "${tpm_dir}"
+fi
 
-cp "${root_dir}/repositories/packages/tmux/config/.tmux.conf" "${HOME}/.tmux.conf"
+install -D -m 644 \
+  "${package_dir}/config/.tmux.conf" \
+  "${HOME}/.tmux.conf"
 
-"${HOME}/.tmux/plugins/tpm/bin/install_plugins"
+"${tpm_dir}/bin/install_plugins"
 
 exit 0

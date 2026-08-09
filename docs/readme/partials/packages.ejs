@@ -1,0 +1,44 @@
+<% profile.groups.forEach(function(group) { -%>
+<%- '#'.repeat(level) %> <%- group.label %>
+
+<% group.packages.sort(sortByLabel).forEach(function(pkg) { -%>
+<% if (pkg.url) { -%>
+- [<%- pkg.label %>](<%- pkg.url %>)<% if (pkg.source.url) { %> \[[source](<%- pkg.source.url %>)\]<% } %>: <%- pkg.description %>
+<% } else if (pkg.source.url) { -%>
+- [<%- pkg.label %>](<%- pkg.source.url %>): <%- pkg.description %>
+<% } else { -%>
+- <%- pkg.label %>: <%- pkg.description %>
+<% } -%>
+<% const dependencies = (optionalDependencies[pkg.name] || []).sort(sortByLabel); -%>
+<% if (dependencies.length > 0) { -%>
+  - Optional dependencies:
+<% dependencies.forEach(function(dependency) { -%>
+<% if (dependency.url || dependency.source.url) { -%>
+    - [<%- dependency.label %>](<%- dependency.url || dependency.source.url %>): <%- dependency.reason %>
+<% } else { -%>
+    - <%- dependency.label %>: <%- dependency.reason %>
+<% } -%>
+<% }); -%>
+<% } -%>
+<% }); -%>
+
+<% }); -%>
+<% if (profile.plugins.length > 0) { -%>
+<%- '#'.repeat(level) %> Browser plugins
+
+<% profile.plugins.forEach(function(browser) { -%>
+<%- '#'.repeat(level + 1) %> <%- browser.package.label %>
+
+<% browser.categories.forEach(function(category) { -%>
+<%- '#'.repeat(level + 2) %> <%- category.label %>
+
+<% category.plugins.sort(sortByName).forEach(function(plugin) { -%>
+- [<%- plugin.name %>](<%- browser.url %>/<%- plugin.id %>): <%- plugin.description %>
+<% (plugin.extra || []).sort(sortByName).forEach(function(extra) { -%>
+  - [<%- extra.name %>](<%- extra.url || `${browser.url}/${extra.id}` %>): <%- extra.description %>
+<% }); -%>
+<% }); -%>
+
+<% }); -%>
+<% }); -%>
+<% } -%>

@@ -1,7 +1,7 @@
-description: "Free and open source software for video recording and live streaming"
 label: "OBS Studio"
-name: "obs-studio"
-repository: "extra"
-repository_url: "https://archlinux.org/packages/extra/x86_64/obs-studio/"
-source_url: "https://github.com/obsproject/obs-studio/"
+description: "Free, open source software for live streaming and recording"
 url: "https://obsproject.com/"
+source:
+  url: "https://github.com/obsproject/obs-studio/"
+repository:
+  url: "https://archlinux.org/packages/extra/x86_64/obs-studio/"

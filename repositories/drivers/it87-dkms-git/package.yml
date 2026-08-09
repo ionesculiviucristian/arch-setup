@@ -1,0 +1,7 @@
+label: "it87"
+description: "Linux Driver for ITE LPC chips"
+url: null
+source:
+  url: "https://github.com/frankcrawford/it87/"
+repository:
+  url: "https://aur.archlinux.org/packages/it87-dkms-git"

@@ -1,1 +1,3 @@
---theme=""
+--italic-text=always
+--map-syntax=".blerc:Bourne Again Shell (bash)"
+--theme="auto"

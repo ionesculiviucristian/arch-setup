@@ -1,0 +1,10 @@
+label: "ntfsprogs"
+description: "NTFS userspace utilities"
+url: "https://www.tuxera.com/"
+source:
+  url: "https://github.com/tuxera/ntfs-3g/"
+repository:
+  url: "https://archlinux.org/packages/extra/x86_64/ntfsprogs/"
+  optional_dependency_for:
+    - package: "ntfs-3g"
+      reason: "userspace utilities"

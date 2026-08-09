@@ -1,7 +1,12 @@
-description: "A free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency"
 label: "git"
-name: "git"
-repository: "extra"
-repository_url: "https://archlinux.org/packages/extra/x86_64/git/"
-source_url: "https://github.com/git/git/"
+description: "the fast distributed version control system"
 url: "https://git-scm.com/"
+source:
+  url: "https://github.com/git/git/"
+repository:
+  url: "https://archlinux.org/packages/extra/x86_64/git/"
+  optional_dependency_for:
+    - package: "github-cli"
+      reason: "To interact with repositories"
+    - package: "kate"
+      reason: "git-blame plugin"

@@ -1,17 +1,20 @@
 #!/bin/bash
 set -eu
 
-root_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)"
+package_dir="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
 
-onedrive_gui_dir="${HOME}/.config/onedrive-gui"
+onedrive_gui_config_dir="${HOME}/.config/onedrive-gui"
+autostart_dir="${HOME}/.config/autostart"
 
-mkdir -p "${onedrive_gui_dir}"
+install -D -m 644 \
+  "${package_dir}/config/gui_settings" \
+  "${onedrive_gui_config_dir}/gui_settings"
 
-cp \
-  "${root_dir}/repositories/packages/onedrivegui/config/gui_settings" \
-  "${onedrive_gui_dir}/gui_settings"
+envsubst <"${package_dir}/config/profiles.stub" \
+  >"${onedrive_gui_config_dir}/profiles"
 
-envsubst <"${root_dir}/repositories/packages/onedrivegui/config/profiles.stub" \
-  >"${onedrive_gui_dir}/profiles"
+install -D -m 644 \
+  "/usr/share/applications/onedrivegui.desktop" \
+  "${autostart_dir}/OneDriveGUI.desktop"
 
 exit 0

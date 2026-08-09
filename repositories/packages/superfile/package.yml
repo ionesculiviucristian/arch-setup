@@ -1,7 +1,7 @@
-description: "superfile is a very fancy and modern terminal file manager that can complete the file operations you need!!"
 label: "superfile"
-name: "superfile"
-repository: "extra"
-repository_url: "https://archlinux.org/packages/extra/x86_64/superfile/"
-source_url: "https://github.com/yorukot/superfile/"
+description: "Pretty fancy and modern terminal file manager"
 url: "https://superfile.dev/"
+source:
+  url: "https://github.com/yorukot/superfile/"
+repository:
+  url: "https://archlinux.org/packages/extra/x86_64/superfile/"

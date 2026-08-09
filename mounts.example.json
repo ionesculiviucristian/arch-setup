@@ -19,7 +19,7 @@
   ],
   "system": [
     {
-      "source": "SERIAL:WGS3TEKD:1",
+      "source": "SERIAL:VBOXDATA01:1",
       "destination": "/mnt/hdd",
       "type": "ntfs3",
       "options": "defaults,uid=1000,gid=1000,umask=022,nofail",

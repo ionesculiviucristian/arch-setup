@@ -1,0 +1,5 @@
+github.com/a-h/templ/cmd/templ@latest
+github.com/air-verse/air@latest
+github.com/google/go-jsonnet/cmd/jsonnet@latest
+github.com/jsonnet-bundler/jsonnet-bundler/cmd/jb@latest
+golang.org/x/tools/gopls@latest

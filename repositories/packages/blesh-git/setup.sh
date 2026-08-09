@@ -1,32 +1,33 @@
 #!/bin/bash
 set -eu
 
-# [shell] https://github.com/akinomyoga/ble.sh?tab=readme-ov-file#13-set-up-bashrc
-# [config] https://github.com/akinomyoga/ble.sh/blob/master/blerc.template
+# @see [config](https://github.com/akinomyoga/ble.sh/blob/master/blerc.template)
+# @see [shell](https://github.com/akinomyoga/ble.sh?tab=readme-ov-file#13-set-up-bashrc)
 
-root_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)"
+package_dir="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
+root_dir="${package_dir%/repositories/*}"
+
+# shellcheck source=SCRIPTDIR/../../../lib/index.sh
+source "${root_dir}/lib/index.sh"
 
 bashrc_file="${HOME}/.bashrc"
 
-cp "${root_dir}/repositories/packages/blesh-git/config/.blerc" "${HOME}/.blerc"
+install -D -m 644 \
+  "${package_dir}/config/.blerc" \
+  "${HOME}/.blerc"
 
-lines=$(
-  cat <<'EOF'
+blesh_line="[[ \$- == *i* ]] && source -- /usr/share/blesh/ble.sh --attach=none"
 
-[[ $- == *i* ]] && source -- "/usr/share/blesh/ble.sh" \
-  --attach=none \
-  --rcfile "${HOME}/.blerc"
-EOF
-)
-
-if grep -F -A3 \
-  "# https://github.com/akinomyoga/ble.sh?tab=readme-ov-file#13-set-up-bashrc" \
-  "${bashrc_file}" |
-  grep -qF "${lines}"; then
-  exit 0
+if ! grep -qF "/usr/share/blesh/ble.sh" "${bashrc_file}"; then
+  file::insert_after \
+    '^\[\[ \$- != \*i\* \]\] && return' \
+    "${blesh_line}" \
+    "${bashrc_file}"
 fi
 
-sed -i "/\[\[ \$- != \*i\* \]\] && return/r /dev/stdin" \
-  "${bashrc_file}" <<<"${lines}"
+bash::install_bashrc \
+  --package "blesh" \
+  --priority "99" \
+  "${package_dir}/bashrc.sh"
 
 exit 0

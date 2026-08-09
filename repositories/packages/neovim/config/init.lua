@@ -1,5 +1,0 @@
-require("options")
-require("keymaps")
-require("main")
-require("plugins_options")
-require("plugins_keymaps")

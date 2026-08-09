@@ -1,0 +1,7 @@
+label: "Telegram"
+description: "Official Telegram Desktop client"
+url: "https://desktop.telegram.org/"
+source:
+  url: "https://github.com/telegramdesktop/tdesktop/"
+repository:
+  url: "https://archlinux.org/packages/extra/x86_64/telegram-desktop/"

@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/arch-setup/schemas/mounts.schema.json",
+  "title": "Mounts",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "onedrive": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/mount" }
+    },
+    "system": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/mount" }
+    }
+  },
+  "$defs": {
+    "mount": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source", "destination", "type", "options"],
+      "properties": {
+        "source": { "type": "string" },
+        "destination": { "type": "string" },
+        "type": { "type": "string" },
+        "options": { "type": "string" },
+        "dump": { "type": "integer", "default": 0 },
+        "check": { "type": "integer", "enum": [0, 1, 2], "default": 0 }
+      }
+    }
+  }
+}

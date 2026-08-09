@@ -1,0 +1,7 @@
+label: "Kate"
+description: "Advanced text editor"
+url: "https://apps.kde.org/kate/"
+source:
+  url: "https://invent.kde.org/utilities/kate/"
+repository:
+  url: "https://archlinux.org/packages/extra/x86_64/kate/"

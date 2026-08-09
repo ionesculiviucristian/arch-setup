@@ -1,5 +1,6 @@
 .env
 *.log
 mounts.json
+vm-logs/
 
 node_modules/

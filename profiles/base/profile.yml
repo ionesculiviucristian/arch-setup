@@ -1,0 +1,141 @@
+name: "Base"
+packages:
+  7zip:
+  anydesk-bin:
+  ark:
+  atuin:
+    themes: true
+  bandwhich:
+  base-devel:
+    priority: "highest"
+  bash:
+    priority: "high"
+  bash-completion:
+  bash-language-server:
+  bat:
+    themes: true
+  bind:
+  blesh-git:
+  brave-bin:
+  broot:
+    themes: true
+  btop:
+    themes: true
+  btrfs-progs:
+  btrfsmaintenance:
+  cups:
+  dbus:
+  direnv:
+  dkms:
+    priority: "high"
+  docker:
+  docker-buildx:
+  docker-compose:
+  dolphin:
+  downgrade:
+  expac:
+  eza:
+    themes: true
+  fastfetch:
+  fd:
+  ffmpegthumbs:
+  filezilla:
+  firefox:
+  fwupd:
+  fzf:
+    themes: true
+  git:
+    priority: "highest"
+  gita:
+  github-cli:
+  go:
+    priority: "high"
+  grub:
+    themes: true
+  gwenview:
+  iotop-c:
+  kate:
+  kcalc:
+  kdeconnect:
+  kdegraphics-thumbnailers:
+  kimageformats:
+  kitty:
+    themes: true
+  konsole:
+    themes: true
+  kpackage:
+  kscreenlocker:
+    themes: true
+  kwin:
+  lazygit:
+    themes: true
+  less:
+  libreoffice-fresh:
+    themes: true
+  lsof:
+  man-db:
+  man-pages:
+  mise:
+    priority: "high"
+  ncdu:
+  neovim:
+    themes: true
+  nmap:
+  nordvpn-bin:
+  nordvpn-gui-bin:
+  ntfs-3g:
+  ntfsprogs:
+  nvtop:
+  okular:
+  onedrive-abraunegg:
+  onedrivegui:
+  openssh:
+  pacman:
+    priority: "high"
+  pacman-contrib:
+  papirus-folders:
+    themes: true
+  papirus-icon-theme-git:
+  partitionmanager:
+  perl-image-exiftool:
+  pigz:
+  plocate:
+  pnpm:
+  postman-bin:
+  procs:
+  python-shtab:
+  qt6-imageformats:
+  reflector:
+    priority: "high"
+  ripgrep:
+  rsync:
+  sddm:
+    themes: true
+  shellcheck:
+  shfmt:
+  sshfs:
+  starship:
+    themes: true
+  superfile:
+    themes: true
+  systemd:
+  thunderbird:
+  tldr:
+  tmux:
+    themes: true
+  tmuxp:
+  ufw:
+  unrar:
+  unzip:
+  usbutils:
+  uv:
+  vim:
+    themes: true
+  visual-studio-code-bin:
+  wl-clipboard:
+  yay:
+    priority: "highest"
+  zip:
+  zoom:
+  zoxide:
+  zram-generator:

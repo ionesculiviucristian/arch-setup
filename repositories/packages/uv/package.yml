@@ -1,0 +1,7 @@
+label: "uv"
+description: "An extremely fast Python package installer and resolver written in Rust"
+url: "https://docs.astral.sh/uv/"
+source:
+  url: "https://github.com/astral-sh/uv/"
+repository:
+  url: "https://archlinux.org/packages/extra/x86_64/uv/"

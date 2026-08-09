@@ -1,0 +1,7 @@
+label: "systemd"
+description: "system and service manager"
+url: "https://systemd.io/"
+source:
+  url: "https://github.com/systemd/systemd/"
+repository:
+  url: "https://archlinux.org/packages/core/x86_64/systemd/"

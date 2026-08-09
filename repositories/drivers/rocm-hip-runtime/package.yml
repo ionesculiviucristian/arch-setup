@@ -1,0 +1,7 @@
+label: "ROCm HIP runtime"
+description: "Packages to run HIP applications on the AMD platform"
+url: "https://rocm.docs.amd.com/en/latest/"
+source:
+  url: "https://github.com/ROCm/clr/"
+repository:
+  url: "https://archlinux.org/packages/extra/any/rocm-hip-runtime/"

@@ -1,7 +1,7 @@
-description: "VirtualBox is a general-purpose full virtualization software for x86_64 hardware"
 label: "VirtualBox"
-name: "virtualbox"
-repository: "extra"
-repository_url: "https://archlinux.org/packages/extra/x86_64/virtualbox/"
-source_url: "https://github.com/Virtualbox-OSE/"
+description: "Powerful x86 virtualization for enterprise as well as home use"
 url: "https://www.virtualbox.org/"
+source:
+  url: "https://github.com/VirtualBox/virtualbox/"
+repository:
+  url: "https://archlinux.org/packages/extra/x86_64/virtualbox/"

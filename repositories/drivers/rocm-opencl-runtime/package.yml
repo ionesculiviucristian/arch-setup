@@ -1,0 +1,7 @@
+label: "ROCm OpenCL runtime"
+description: "OpenCL implementation for AMD"
+url: "https://rocm.docs.amd.com/en/latest/"
+source:
+  url: "https://github.com/ROCm/clr/"
+repository:
+  url: "https://archlinux.org/packages/extra/x86_64/rocm-opencl-runtime/"

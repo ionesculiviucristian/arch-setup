@@ -1,21 +1,24 @@
 #!/bin/bash
 set -eu
 
-# [config] https://docs.atuin.sh/cli/configuration/config/
-# [shell] https://docs.atuin.sh/cli/guide/installation/#__tabbed_2_2
+# @see [config](https://docs.atuin.sh/latest/configuration/config/)
+# @see [shell](https://docs.atuin.sh/latest/guide/installation/#__tabbed_2_2)
 
-root_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)"
+package_dir="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
+root_dir="${package_dir%/repositories/*}"
 
-atuin_dir="${HOME}/.config/atuin"
+# shellcheck source=SCRIPTDIR/../../../lib/index.sh
+source "${root_dir}/lib/index.sh"
 
-mkdir -p "${atuin_dir}"
+atuin_config_dir="${HOME}/.config/atuin"
 
-cp \
-  "${root_dir}/repositories/packages/atuin/config/config.toml" \
-  "${atuin_dir}/config.toml"
+install -D -m 644 \
+  "${package_dir}/config/config.toml" \
+  "${atuin_config_dir}/config.toml"
 
-"${root_dir}/scripts/update_bashrc.sh" "atuin" <<'EOF'
-eval "$(atuin init bash)"
-EOF
+bash::install_bashrc \
+  --package "atuin" \
+  --priority "80" \
+  "${package_dir}/bashrc.sh"
 
 exit 0

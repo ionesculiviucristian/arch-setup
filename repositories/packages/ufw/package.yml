@@ -1,0 +1,7 @@
+label: "ufw"
+description: "Uncomplicated and easy to use CLI tool for managing a netfilter firewall"
+url: "https://launchpad.net/ufw"
+source:
+  url: "https://git.launchpad.net/ufw/"
+repository:
+  url: "https://archlinux.org/packages/extra/any/ufw/"

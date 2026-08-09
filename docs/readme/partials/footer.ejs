@@ -1,42 +1,40 @@
-## Import Bitwarden secrets
-
-```bash
-# Make sure you understand what this setup does before running it
-./setups/base/secrets.sh bitwarden@mail.com
-./setups/base/official/git.sh
-```
-
 ## Mounts
 
+Mounts are optional and configured in `mounts.json` (start from `mounts.example.json`); without it they are skipped.
+
+- `system`: `/etc/fstab` entries, added by `os/setup.sh`; a source is a directory, `UUID=<uuid>` or `SERIAL:<serial>:<partition>`
+- `onedrive`: bind mounts into `~/OneDrive`, added by the `onedrive-abraunegg` setup together with its `sync_list`
+
 ```bash
-# Mounts should be used only when `mounts.json` is configured
-./setups/base/mounts.sh
-./setups/base/aur/onedrive.sh
-./setups/base/aur/onedrive-gui.sh
+./install.sh base pre
+./repositories/packages/onedrive-abraunegg/setup.sh
 ```
 
 ## Setup SSH
 
+The `openssh` setup runs with the base packages: it enables `sshd`, disables root login and password authentication. Add your key to `~/.ssh/authorized_keys` before relying on it.
+
 ```bash
-# Make sure you understand what this setup does before running it
-./setups/base/system/ssh.sh
+./repositories/packages/openssh/setup.sh
 ```
 
 ## Additional notes
 
-Install kitty terminfo on the remote server when connecting via SSH
+Copy the kitty terminfo to a remote server before connecting via SSH
 
 ```bash
-cd ~
-curl -O https://raw.githubusercontent.com/kovidgoyal/kitty/master/terminfo/kitty.terminfo
-tic -x kitty.terminfo
+infocmp -a xterm-kitty | ssh <host> tic -x -o \~/.terminfo /dev/stdin
 ```
+
+Or connect with `kitten ssh <host>`, which copies it automatically.
 
 ## Development
 
 ```bash
 npm i
 ```
+
+`npm i` installs the git hooks: pre-commit runs shellcheck, shfmt and `bash -n` on the staged `.sh` files, validates every yml/json against `schemas/` and regenerates the READMEs and `.bash_aliases_help`; commit-msg runs commitlint. Repository rules for contributors and agents are in [`AGENTS.md`](./AGENTS.md).
 
 ### VirtualBox setup
 
@@ -47,7 +45,7 @@ vm="arch"
 
 vm_dir="$(VBoxManage showvminfo "${vm}" --machinereadable | grep CfgFile | cut -d'"' -f2 | xargs dirname)" 
 
-serial="WGS3TEKD"
+serial="VBOXDATA01"
 
 VBoxManage createmedium disk --filename "${vm_dir}/hdd.vdi" --size 20480
 
@@ -80,3 +78,31 @@ lsblk -no NAME,SERIAL
 mkdir -p "/mnt/hdd/Tests/Books/"
 mkdir -p "/mnt/hdd/Tests/Pictures/"
 ```
+
+#### Automated test
+
+`scripts/virtualbox-test.sh --create <iso>` creates the VM from `scripts/virtualbox/virtualbox.yml`, installs Arch unattended and takes the `clean` snapshot. The config is grouped like the VirtualBox settings pages, `general`, `system`, `display` and `storage`, plus `guest` (user and password of the user and root) and `snapshot`; EFI and NAT are fixed.
+
+`storage.disks` is attached to the SATA ports in order, so the first disk is `/dev/sda` and must be the one with `type: system`, which archinstall installs on. Every other disk gets one GPT partition formatted with its `type` and the `directories` it lists, as mount sources for `mounts.json`. Each disk reports its `serial` to the guest, so a `SERIAL:<serial>:<partition>` entry of `mounts.json` resolves in the VM exactly as it does on the real machine.
+
+The install is driven by cloud-init from the ISO: a `CIDATA` seed passes `scripts/virtualbox/archinstall/user_configuration.json` (the [archinstall requirements](#archinstall-requirements) plus the Guest Additions from `virtualbox-guest-utils` and `ntfsprogs` for the formatting), the first 5 servers of the host `/etc/pacman.d/mirrorlist`, the commands that prepare the other disks and the guest user with passwordless sudo.
+
+```bash
+scripts/virtualbox-test.sh --create ~/Downloads/archlinux-2026.11.01-x86_64.iso
+
+# Another VM, e.g. to compare graphics controllers: a copy of virtualbox.yml with another name and graphics_controller
+scripts/virtualbox-test.sh --config scripts/virtualbox/virtualbox-vboxsvga.yml --create ~/Downloads/archlinux-2026.11.01-x86_64.iso
+```
+
+Every run of `scripts/virtualbox-test.sh` restores `clean`, copies the working tree (uncommitted changes included) to `~/Projects/arch-setup` in the guest, installs `mounts.example.json` as its `mounts.json`, runs `install.sh` with the arguments after `--` and copies the logs to `vm-logs/<vm>-<date>/`. The host `mounts.json` is never copied, so the VM mounts only the disks of `storage.disks`:
+
+```bash
+scripts/virtualbox-test.sh
+scripts/virtualbox-test.sh -- base setups --debug
+scripts/virtualbox-test.sh -- base --themes
+scripts/virtualbox-test.sh --keep -- b450-i-aorus-pro-wifi
+```
+
+`install.sh` runs over Guest Control, which has no session bus of its own, so every command first takes the environment of the Plasma session the guest logs into (`scripts/virtualbox/session.sh`); without it `plasma-apply-lookandfeel` and the other theme tools abort.
+
+`--config` defaults to `scripts/virtualbox/virtualbox.yml`; `--keep` leaves the VM running to inspect it.

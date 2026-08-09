@@ -1,7 +1,7 @@
-description: "A modern replacement for ps written in Rust"
 label: "procs"
-name: "procs"
-repository: "extra"
-repository_url: "https://archlinux.org/packages/extra/x86_64/procs/"
-source_url: "https://github.com/dalance/procs/"
+description: "A modern replacement for ps written in Rust"
 url: null
+source:
+  url: "https://github.com/dalance/procs/"
+repository:
+  url: "https://archlinux.org/packages/extra/x86_64/procs/"

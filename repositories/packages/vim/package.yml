@@ -1,7 +1,12 @@
-description: 'Vim is a highly configurable text editor built to make creating and changing any kind of text very efficient. It is included as "vi" with most UNIX systems and with Apple OS X'
 label: "Vim"
-name: "vim"
-repository: "extra"
-repository_url: "https://archlinux.org/packages/extra/x86_64/vim/"
-source_url: "https://github.com/vim/vim/"
+description: "Vi Improved, a highly configurable, improved version of the vi text editor"
 url: "https://www.vim.org/"
+source:
+  url: "https://github.com/vim/vim/"
+repository:
+  url: "https://archlinux.org/packages/extra/x86_64/vim/"
+  optional_dependency_for:
+    - package: "fzf"
+      reason: "plugin"
+    - package: "pacman-contrib"
+      reason: "default diff program for pacdiff"

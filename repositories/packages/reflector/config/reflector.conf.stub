@@ -2,4 +2,4 @@
 --protocol https
 --country $COUNTRY
 --latest 15
---sort age
+--sort rate

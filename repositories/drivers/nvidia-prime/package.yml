@@ -1,0 +1,7 @@
+label: "NVIDIA PRIME"
+description: "NVIDIA Prime Render Offload configuration and utilities"
+url: null
+source:
+  url: "https://gitlab.archlinux.org/archlinux/packaging/packages/nvidia-prime/"
+repository:
+  url: "https://archlinux.org/packages/extra/any/nvidia-prime/"

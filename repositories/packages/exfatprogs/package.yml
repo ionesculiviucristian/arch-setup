@@ -1,0 +1,7 @@
+label: "exfatprogs"
+description: "exFAT filesystem userspace utilities for the Linux Kernel exfat driver"
+url: null
+source:
+  url: "https://github.com/exfatprogs/exfatprogs/"
+repository:
+  url: "https://archlinux.org/packages/extra/x86_64/exfatprogs/"

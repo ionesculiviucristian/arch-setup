@@ -1,0 +1,15 @@
+{
+  "yaml.schemas": {
+    "./schemas/package.schema.json": ["repositories/*/*/package.yml", "repositories/fonts/*.yml", "repositories/requirements/*.yml"],
+    "./schemas/plugins.schema.json": "repositories/*/*/plugins.yml",
+    "./schemas/profile.schema.json": "profiles/*/profile.yml",
+    "./schemas/theme.schema.json": "themes/*.yml",
+    "./schemas/virtualbox.schema.json": "scripts/virtualbox/*.yml"
+  },
+  "json.schemas": [
+    {
+      "fileMatch": ["/mounts.json", "/mounts.example.json"],
+      "url": "./schemas/mounts.schema.json"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+label: "Tor Browser Launcher"
+description: "Securely and easily download, verify, install, and launch Tor Browser in Linux"
+url: null
+source:
+  url: "https://github.com/torproject/torbrowser-launcher/"
+repository:
+  url: "https://archlinux.org/packages/extra/any/torbrowser-launcher/"

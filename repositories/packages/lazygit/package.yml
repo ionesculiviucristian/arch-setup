@@ -1,7 +1,7 @@
-description: "Simple terminal UI for git commands"
 label: "lazygit"
-name: "lazygit"
-repository: "extra"
-repository_url: "https://archlinux.org/packages/extra/x86_64/lazygit/"
-source_url: "https://github.com/jesseduffield/lazygit/"
-url: "https://github.com/jesseduffield/lazygit/"
+description: "Simple terminal UI for git commands"
+url: null
+source:
+  url: "https://github.com/jesseduffield/lazygit/"
+repository:
+  url: "https://archlinux.org/packages/extra/x86_64/lazygit/"

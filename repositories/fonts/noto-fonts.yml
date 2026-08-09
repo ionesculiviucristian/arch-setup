@@ -1,0 +1,7 @@
+label: "Noto fonts"
+description: "Google Noto TTF fonts"
+url: "https://fonts.google.com/noto"
+source:
+  url: "https://github.com/notofonts/notofonts.github.io/"
+repository:
+  url: "https://archlinux.org/packages/extra/any/noto-fonts/"

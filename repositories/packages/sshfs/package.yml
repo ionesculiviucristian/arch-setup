@@ -1,0 +1,10 @@
+label: "SSHFS"
+description: "FUSE client based on the SSH File Transfer Protocol"
+url: null
+source:
+  url: "https://github.com/libfuse/sshfs/"
+repository:
+  url: "https://archlinux.org/packages/extra/x86_64/sshfs/"
+  optional_dependency_for:
+    - package: "kdeconnect"
+      reason: "remote filesystem browser"

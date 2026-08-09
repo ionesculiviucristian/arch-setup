@@ -1,21 +1,17 @@
 #!/bin/bash
 set -eu
 
-# [config] https://starship.rs/config/
-# [shell] https://github.com/starship/starship?tab=readme-ov-file#step-2-set-up-your-shell-to-use-starship
+# @see [shell](https://github.com/starship/starship?tab=readme-ov-file#step-2-set-up-your-shell-to-use-starship)
 
-root_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)"
+package_dir="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
+root_dir="${package_dir%/repositories/*}"
 
-starship_dir="${HOME}/.config/starship"
+# shellcheck source=SCRIPTDIR/../../../lib/index.sh
+source "${root_dir}/lib/index.sh"
 
-mkdir -p "${starship_dir}"
-
-cp \
-  "${root_dir}/repositories/packages/starship/config/config.toml" \
-  "${starship_dir}/config.toml"
-
-"${root_dir}/scripts/update_bashrc.sh" "starship" <<'EOF'
-eval "$(starship init bash)"
-EOF
+bash::install_bashrc \
+  --package "starship" \
+  --priority "90" \
+  "${package_dir}/bashrc.sh"
 
 exit 0

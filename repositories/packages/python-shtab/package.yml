@@ -1,7 +1,10 @@
-description: "Automagic shell tab completion for Python CLI applications"
 label: "shtab"
-name: "python-shtab"
-repository: "extra"
-repository_url: "https://archlinux.org/packages/extra/x86_64/python-shtab/"
-source_url: "https://github.com/iterative/shtab/"
-url: "https://docs.iterative.ai/shtab/"
+description: "Automagic shell tab completion for Python CLI applications"
+url: "https://tqdm.github.io/shtab/"
+source:
+  url: "https://github.com/tqdm/shtab/"
+repository:
+  url: "https://archlinux.org/packages/extra/any/python-shtab/"
+  optional_dependency_for:
+    - package: "tmuxp"
+      reason: "for workspace completion and import"

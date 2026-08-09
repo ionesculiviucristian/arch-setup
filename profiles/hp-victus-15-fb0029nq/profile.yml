@@ -1,0 +1,14 @@
+name: "HP Victus 15-fb0029nq"
+drivers:
+  amd-ucode:
+  lib32-mesa:
+  lib32-nvidia-utils:
+  lib32-vulkan-radeon:
+  mesa:
+  nvidia-open-dkms:
+  nvidia-prime:
+  nvidia-utils:
+  vulkan-radeon:
+packages:
+  power-profiles-daemon:
+  switcheroo-control:

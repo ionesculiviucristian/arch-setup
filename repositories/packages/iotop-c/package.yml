@@ -1,0 +1,7 @@
+label: "iotop-c"
+description: "A top utility for IO"
+url: null
+source:
+  url: "https://github.com/Tomas-M/iotop/"
+repository:
+  url: "https://archlinux.org/packages/extra/x86_64/iotop-c/"

@@ -1,0 +1,10 @@
+label: "Noto fonts Extra"
+description: "Google Noto TTF fonts - additional variants"
+url: "https://fonts.google.com/noto"
+source:
+  url: "https://github.com/notofonts/notofonts.github.io/"
+repository:
+  url: "https://archlinux.org/packages/extra/any/noto-fonts-extra/"
+  optional_dependency_for:
+    - package: "noto-fonts"
+      reason: "additional variants (condensed, semi-bold, extra-light)"

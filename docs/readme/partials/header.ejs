@@ -11,17 +11,14 @@ Wallpapers from [wallpapercave.com](https://wallpapercave.com/)
 - [Installation](#installation)
 <% const anchorCounts = {}; function anchor(label) { const slug = label.toLowerCase().replace(/ /g, '-'); anchorCounts[slug] = (anchorCounts[slug] || 0) + 1; return anchorCounts[slug] === 1 ? slug : slug + '-' + (anchorCounts[slug] - 1); } -%>
 - [Profiles](#profiles)
-<% profiles.forEach(function(profile) { -%>
-  - [<%- profile.label %>](#<%- anchor(profile.label) %>)
-<% profile.groups.forEach(function(group) { -%>
+  - [<%- base.label %>](#<%- anchor(base.label) %>)
+<% base.groups.forEach(function(group) { -%>
     - [<%- group.label %>](#<%- anchor(group.label) %>)
 <% }); -%>
-<% if (profile.plugins.length > 0) { -%>
+<% if (base.plugins.length > 0) { -%>
     - [Browser plugins](#<%- anchor('Browser plugins') %>)
 <% } -%>
-<% }); -%>
 - [Available aliases](#available-aliases)
-- [Import Bitwarden secrets](#import-bitwarden-secrets)
 - [Mounts](#mounts)
 - [Setup SSH](#setup-ssh)
 - [Additional notes](#additional-notes)
@@ -37,20 +34,50 @@ The repository includes:
 - Curated lists of essential Arch, AUR, and external packages
 - Workstation-specific configurations (e.g., B450 I AORUS PRO WIFI)
 - Theming, aliases, and plugin selections for browsers and terminals
-- Support for private dotfiles and secure secrets setup
 
 This project serves as both a starting point and a living reference for managing and maintaining a reliable Arch-based workstation.
 
 ## Installation
 
+### archinstall requirements
+
+The scripts expect a system installed with `archinstall` using these choices:
+
+- **Bootloader:** GRUB
+- **Disk layout:** btrfs
+- **Swap:** zram
+- **Kernels:** `linux` and `linux-lts`
+- **Profile:** Desktop, KDE Plasma, with the SDDM greeter
+- **Graphics driver:** the one for the machine's GPU (AMD / NVIDIA open kernel)
+- **Audio:** PipeWire
+- **Network configuration:** NetworkManager
+- **Additional packages:** `linux-headers linux-lts-headers`, required by the DKMS drivers; archinstall adds them by itself only with the NVIDIA open kernel driver
+
+### Install
+
 ```bash
-# Setup base workstation
+# Base workstation, installed on every machine
 ./install.sh
 
-# Post reboot setup
-./setups/base/post_reboot.sh
+# Only some phases: pre, packages, external, aur, setups, resources, themes (pre and resources are base only)
+./install.sh base packages setups
 
-# Setup B450 I AORUS PRO WIFI workstation
-./install_b450-i-aorus-pro-wifi/install.sh
+# Machine profile, on top of base
+./install.sh b450-i-aorus-pro-wifi
+./install.sh hp-victus-15-fb0029nq
+
+# Only some phases of a machine profile
+./install.sh b450-i-aorus-pro-wifi setups
+
+# Update official, AUR (including -git) and external packages, fonts, tmux plugins, Go tools and mise tools
+./update.sh
+
+# Themes are optional: add --themes to any of the above, or run only the themes phase
+./install.sh --themes
+./update.sh --themes
+./install.sh base themes
 ```
 
+- `.env` is created from `.env.example` on the first run (theme, reflector country, night color)
+- logs are written to `install_<profile>.log` and `install_errors_<profile>.log` in the repository root
+- debug messages (package lists, scripts run, downloads, fstab entries) are enabled with `--debug` on `install.sh` and `update.sh`, or with `ARCH_SETUP_DEBUG=1`; they are printed and also written to `install_<profile>.log` / `update_base.log`, next to the command output

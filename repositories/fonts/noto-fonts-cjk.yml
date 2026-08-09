@@ -1,0 +1,10 @@
+label: "Noto fonts CJK"
+description: "Google Noto CJK fonts"
+url: "https://fonts.google.com/noto"
+source:
+  url: "https://github.com/notofonts/noto-cjk/"
+repository:
+  url: "https://archlinux.org/packages/extra/any/noto-fonts-cjk/"
+  optional_dependency_for:
+    - package: "noto-fonts"
+      reason: "CJK characters"

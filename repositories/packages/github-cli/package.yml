@@ -1,7 +1,7 @@
-description: "GitHub's official command line tool"
 label: "GitHub CLI"
-name: "github-cli"
-repository: "extra"
-repository_url: "https://archlinux.org/packages/extra/x86_64/github-cli/"
-source_url: "https://github.com/cli/cli/"
+description: "The GitHub CLI"
 url: "https://cli.github.com/"
+source:
+  url: "https://github.com/cli/cli/"
+repository:
+  url: "https://archlinux.org/packages/extra/x86_64/github-cli/"

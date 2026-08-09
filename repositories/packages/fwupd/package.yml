@@ -1,0 +1,7 @@
+label: "fwupd"
+description: "Simple daemon to allow session software to update firmware"
+url: "https://fwupd.org/"
+source:
+  url: "https://github.com/fwupd/fwupd/"
+repository:
+  url: "https://archlinux.org/packages/extra/x86_64/fwupd/"

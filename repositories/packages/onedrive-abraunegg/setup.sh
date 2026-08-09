@@ -1,54 +1,91 @@
 #!/bin/bash
 set -eu
 
-# [config] https://github.com/abraunegg/onedrive/blob/master/config
+# @see [config](https://github.com/abraunegg/onedrive/blob/master/config)
 
-root_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)"
+package_dir="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
+root_dir="${package_dir%/repositories/*}"
 
-# shellcheck source=../../../scripts/installer.sh
-source "${root_dir}/scripts/installer.sh"
+# shellcheck source=SCRIPTDIR/../../../lib/index.sh
+source "${root_dir}/lib/index.sh"
 
-if [ ! -f "${root_dir}/mounts.json" ]; then
-  info "mounts.json not found, skipping OneDrive mounts"
+if [ -z "$(file::find "mounts.json")" ]; then
+  log::info "mounts.json not found, skipping OneDrive mounts"
   exit 0
 fi
 
-onedrive_dir="${HOME}/.config/onedrive"
-
-mkdir -p "${onedrive_dir}"
+onedrive_config_dir="${HOME}/.config/onedrive"
 
 mkdir -p "${HOME}/OneDrive"
 
-"${root_dir}/scripts/update_user_places.sh" "${HOME}/OneDrive" "OneDrive"
+kde::add_user_place "${HOME}/OneDrive" "OneDrive"
 
-cp \
-  "${root_dir}/repositories/packages/onedrive-abraunegg/config/config" \
-  "${onedrive_dir}/config"
+onedrive_config_file="${onedrive_config_dir}/config"
+onedrive_sync_list="${onedrive_config_dir}/sync_list"
 
-onedrive_sync_list="${onedrive_dir}/sync_list"
-: >"${onedrive_sync_list}"
+sync_list_draft=$(mktemp)
+trap 'rm -f "${sync_list_draft}"' EXIT
+
+needs_resync=false
+
+if [ ! -f "${onedrive_config_dir}/items.sqlite3" ]; then
+  needs_resync=true
+fi
+
+if ! cmp -s "${package_dir}/config/config" "${onedrive_config_file}"; then
+  needs_resync=true
+fi
+
+install -D -m 644 \
+  "${package_dir}/config/config" \
+  "${onedrive_config_file}"
 
 while read -r entry; do
-  src=$(read_mount_field "${entry}" "source" | envsubst)
-  dest=$(read_mount_field "${entry}" "destination" | envsubst)
-  options=$(read_mount_field "${entry}" "options")
+  src=$(mounts::field "${entry}" "source" | envsubst)
+  dest=$(mounts::field "${entry}" "destination" | envsubst)
+  options=$(mounts::field "${entry}" "options")
 
   if [ ! -e "${src}" ]; then
-    info "Source ${src} does not exist, skipping"
+    log::info "Source ${src} does not exist, skipping"
     continue
   fi
 
-  echo "${dest#"${HOME}/OneDrive/"}" >>"${onedrive_sync_list}"
+  echo "${dest#"${HOME}/OneDrive/"}" >>"${sync_list_draft}"
 
   mkdir -p "${dest}"
-  touch "${dest}/.nosync"
 
-  "${root_dir}/scripts/create_fstab_entry.sh" "${src}" "${dest}" "none" "${options}"
-done < <(read_mounts "onedrive")
+  if ! mountpoint -q "${dest}"; then
+    touch "${dest}/.nosync"
+  fi
+
+  fstab::add_entry \
+    "${src}" \
+    "${dest}" \
+    "none" \
+    "${options}"
+done < <(mounts::list "onedrive")
+
+if [ ! -s "${sync_list_draft}" ]; then
+  log::info "No OneDrive source is available, keeping the current sync_list"
+  exit 0
+fi
+
+if ! cmp -s "${sync_list_draft}" "${onedrive_sync_list}"; then
+  needs_resync=true
+  install -D -m 644 \
+    "${sync_list_draft}" \
+    "${onedrive_sync_list}"
+fi
 
 sudo systemctl daemon-reload
 sudo mount -a
 
-echo "Y" | onedrive --sync --resync
+if [ "${needs_resync}" = "true" ]; then
+  if [ -s "${onedrive_config_dir}/refresh_token" ]; then
+    echo "Y" | onedrive --sync --resync
+  else
+    log::info "  Authorise OneDrive, then run 'onedrive --sync --resync'"
+  fi
+fi
 
 exit 0

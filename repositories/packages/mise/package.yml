@@ -1,0 +1,7 @@
+label: "mise"
+description: "The front-end to your dev env"
+url: "https://mise.jdx.dev/"
+source:
+  url: "https://github.com/jdx/mise/"
+repository:
+  url: "https://archlinux.org/packages/extra/x86_64/mise/"

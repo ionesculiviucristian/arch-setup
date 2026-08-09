@@ -1,7 +1,7 @@
-description: "The Free & Open Source Image Editor"
 label: "Gimp"
-name: "gimp"
-repository: "extra"
-repository_url: "https://archlinux.org/packages/extra/x86_64/gimp/"
-source_url: "https://github.com/GNOME/gimp/"
+description: "GNU Image Manipulation Program"
 url: "https://www.gimp.org/"
+source:
+  url: "https://gitlab.gnome.org/GNOME/gimp/"
+repository:
+  url: "https://archlinux.org/packages/extra/x86_64/gimp/"

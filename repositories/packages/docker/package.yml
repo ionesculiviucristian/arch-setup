@@ -1,7 +1,7 @@
-description: "The Docker CLI"
 label: "Docker"
-name: "docker"
-repository: "extra"
-repository_url: "https://archlinux.org/packages/extra/x86_64/docker/"
-source_url: "https://github.com/docker/cli/"
+description: "Pack, ship and run any application as a lightweight container"
 url: "https://www.docker.com/"
+source:
+  url: "https://github.com/docker/cli/"
+repository:
+  url: "https://archlinux.org/packages/extra/x86_64/docker/"

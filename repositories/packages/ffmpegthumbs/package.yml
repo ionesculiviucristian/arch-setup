@@ -1,0 +1,10 @@
+label: "FFmpegThumbs"
+description: "FFmpeg-based thumbnail creator for video files"
+url: "https://apps.kde.org/ffmpegthumbs/"
+source:
+  url: "https://invent.kde.org/multimedia/ffmpegthumbs/"
+repository:
+  url: "https://archlinux.org/packages/extra/x86_64/ffmpegthumbs/"
+  optional_dependency_for:
+    - package: "dolphin"
+      reason: "video thumbnails"
