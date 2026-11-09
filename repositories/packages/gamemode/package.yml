@@ -1,0 +1,7 @@
+label: "GameMode"
+description: "A daemon/lib combo that allows games to request a set of optimisations be temporarily applied to the host OS"
+url: null
+source:
+  url: "https://github.com/FeralInteractive/gamemode/"
+repository:
+  url: "https://archlinux.org/packages/extra/x86_64/gamemode/"

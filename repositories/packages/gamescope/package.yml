@@ -1,0 +1,7 @@
+label: "gamescope"
+description: "SteamOS session compositing window manager"
+url: null
+source:
+  url: "https://github.com/ValveSoftware/gamescope/"
+repository:
+  url: "https://archlinux.org/packages/extra/x86_64/gamescope/"

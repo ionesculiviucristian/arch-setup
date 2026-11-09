@@ -14,7 +14,9 @@ grub::add_parameters() {
   local parameter
 
   for parameter in "$@"; do
-    if ! sudo grep -Eq "^GRUB_CMDLINE_LINUX_DEFAULT=.*[\" ]${parameter}[\" ]" "${grub_file}"; then
+    if ! sudo grep -Eq \
+      "^GRUB_CMDLINE_LINUX(_DEFAULT)?=.*[\" ]${parameter}[\" ]" \
+      "${grub_file}"; then
       file::replace_text --sudo \
         '^GRUB_CMDLINE_LINUX_DEFAULT="\(.*\)"' \
         "GRUB_CMDLINE_LINUX_DEFAULT=\"\1 ${parameter}\"" \

@@ -100,7 +100,7 @@ Every run of `scripts/virtualbox-test.sh` restores `clean`, copies the working t
 scripts/virtualbox-test.sh
 scripts/virtualbox-test.sh -- base setups --debug
 scripts/virtualbox-test.sh -- base --themes
-scripts/virtualbox-test.sh --keep -- b450-i-aorus-pro-wifi
+scripts/virtualbox-test.sh --keep -- machine-b450-i-aorus-pro-wifi
 ```
 
 `install.sh` runs over Guest Control, which has no session bus of its own, so every command first takes the environment of the Plasma session the guest logs into (`scripts/virtualbox/session.sh`); without it `plasma-apply-lookandfeel` and the other theme tools abort.

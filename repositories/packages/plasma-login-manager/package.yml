@@ -1,0 +1,7 @@
+label: "Plasma Login Manager"
+description: "Plasma Login Manager"
+url: "https://kde.org/plasma-desktop/"
+source:
+  url: "https://invent.kde.org/plasma/plasma-login-manager/"
+repository:
+  url: "https://archlinux.org/packages/extra/x86_64/plasma-login-manager/"

@@ -45,7 +45,7 @@ The scripts expect a system installed with `archinstall` using these choices:
 - **Disk layout:** btrfs
 - **Swap:** zram
 - **Kernels:** `linux` and `linux-lts`
-- **Profile:** Desktop, KDE Plasma, with the SDDM greeter
+- **Profile:** Desktop, KDE Plasma, with the Plasma Login Manager greeter
 - **Graphics driver:** the one for the machine's GPU (AMD / NVIDIA open kernel)
 - **Audio:** PipeWire
 - **Network configuration:** NetworkManager
@@ -59,18 +59,19 @@ This repository is public, so a clean install clones it without authenticating t
 sudo pacman -S --needed git
 git clone https://github.com/ionesculiviucristian/arch-setup.git ~/Projects/arch-setup
 ~/Projects/arch-setup/install.sh
-~/Projects/arch-setup/install.sh b450-i-aorus-pro-wifi
+~/Projects/arch-setup/install.sh machine-b450-i-aorus-pro-wifi
 ```
 
 The machine profiles install Bitwarden, whose SSH agent holds the key that the private layer is cloned with. Unlock the vault, turn the SSH agent on in the application settings, then:
 
 ```bash
-git clone git@github.com:ionesculiviucristian/arch-setup-private.git ~/Projects/arch-setup-private
-~/Projects/arch-setup-private/install.sh
+git clone git@github.com:ionesculiviucristian/arch-setup-private.git \
+  ~/Projects/arch-setup/profiles/machine-b450-i-aorus-pro-wifi-private
+./install.sh machine-b450-i-aorus-pro-wifi-private
 ```
 
 - the GitHub password and its two-factor code are never needed: the key in the vault is the authentication, and the `git@github.com` remotes reach it through the `SSH_AUTH_SOCK` that the `bitwarden` setup writes to `~/.bashrc.d`
-- the machine profile has to run before the private layer, because `bitwarden` is listed in the machine profiles and not in base
+- the machine profile has to run first, because `bitwarden` is listed in the machine profiles and not in base; afterwards the private profile includes it, so the one command above installs the whole chain
 - `arch-setup-private` carries its own instructions for importing the secrets
 
 ### Install
@@ -79,15 +80,18 @@ git clone git@github.com:ionesculiviucristian/arch-setup-private.git ~/Projects/
 # Base workstation, installed on every machine
 ./install.sh
 
-# Only some phases: pre, packages, external, aur, setups, resources, themes (pre and resources are base only)
+# Layers, each on top of base
+./install.sh development
+./install.sh multimedia
+./install.sh gaming
+
+# Machine profile: installs the layers it includes first, then its own packages and drivers
+./install.sh machine-b450-i-aorus-pro-wifi
+./install.sh machine-hp-victus-15-fb0029nq
+
+# Only some phases: pre, packages, external, aur, setups, resources, themes (pre and resources run when base is in the chain)
 ./install.sh base packages setups
-
-# Machine profile, on top of base
-./install.sh b450-i-aorus-pro-wifi
-./install.sh hp-victus-15-fb0029nq
-
-# Only some phases of a machine profile
-./install.sh b450-i-aorus-pro-wifi setups
+./install.sh machine-b450-i-aorus-pro-wifi setups
 
 # Update official, AUR (including -git) and external packages, fonts, tmux plugins, Go tools and mise tools
 ./update.sh
@@ -105,14 +109,18 @@ git clone git@github.com:ionesculiviucristian/arch-setup-private.git ~/Projects/
 ## Profiles
 
 - [Base](./profiles/base/README.md): `./install.sh`, installed on every machine
-- [B450 I AORUS PRO WIFI](./profiles/b450-i-aorus-pro-wifi/README.md): `./install.sh b450-i-aorus-pro-wifi`, on top of the base profile
-- [HP Victus 15-fb0029nq](./profiles/hp-victus-15-fb0029nq/README.md): `./install.sh hp-victus-15-fb0029nq`, on top of the base profile
+- [Development](./profiles/development/README.md): `./install.sh development`, which installs base first
+- [Gaming](./profiles/gaming/README.md): `./install.sh gaming`, which installs base first
+- [Multimedia](./profiles/multimedia/README.md): `./install.sh multimedia`, which installs base first
+- [B450 I AORUS PRO WIFI](./profiles/machine-b450-i-aorus-pro-wifi/README.md): `./install.sh machine-b450-i-aorus-pro-wifi`, which installs base, development, multimedia, gaming first
+- [HP Victus 15-fb0029nq](./profiles/machine-hp-victus-15-fb0029nq/README.md): `./install.sh machine-hp-victus-15-fb0029nq`, which installs base, development first
 
 ### Base
 
 #### Official Arch packages
 
 - [7-Zip](https://www.7-zip.org/) \[[source](https://github.com/ip7z/7zip/)\]: File archiver for extremely high compression
+- [Archive::Zip](https://search.cpan.org/dist/Archive-Zip/) \[[source](https://github.com/redhotpenguin/perl-Archive-Zip/)\]: Provide a perl interface to ZIP archive files
 - [Ark](https://apps.kde.org/ark/) \[[source](https://invent.kde.org/utilities/ark/)\]: Archiving Tool
   - Optional dependencies:
     - [7-Zip](https://www.7-zip.org/): 7Z format support
@@ -123,12 +131,6 @@ git clone git@github.com:ionesculiviucristian/arch-setup-private.git ~/Projects/
 - [Bash](https://www.gnu.org/software/bash/) \[[source](https://cgit.git.savannah.gnu.org/cgit/bash.git/)\]: The GNU Bourne Again shell
   - Optional dependencies:
     - [bash-completion](https://github.com/scop/bash-completion/): for tab completion
-- [Bash Language Server](https://github.com/bash-lsp/bash-language-server/): Bash language server implementation based on Tree Sitter and its grammar for Bash
-  - Optional dependencies:
-    - [bash-completion](https://github.com/scop/bash-completion/): for CLI args completion
-    - [man-db](https://man-db.nongnu.org/): for documentation via manual pages
-    - [sh](https://pkg.go.dev/mvdan.cc/sh/v3): for formatting support
-    - [ShellCheck](https://www.shellcheck.net/): for linting support
 - [bash-completion](https://github.com/scop/bash-completion/): Programmable completion for the bash shell
 - [bat](https://github.com/sharkdp/bat/): Cat clone with syntax highlighting and git integration
 - [BIND 9](https://www.isc.org/bind/) \[[source](https://gitlab.isc.org/isc-projects/bind9/)\]: A complete, highly portable implementation of the DNS protocol
@@ -138,20 +140,14 @@ git clone git@github.com:ionesculiviucristian/arch-setup-private.git ~/Projects/
     - [ROCm SMI library](https://rocm.docs.amd.com/projects/rocm_smi_lib/en/latest/): AMD GPU support
 - [BTRFS maintenance](https://github.com/kdave/btrfsmaintenance/): Btrfs maintenance scripts
 - [BTRFS tools](https://btrfs.readthedocs.io/en/latest/) \[[source](https://github.com/kdave/btrfs-progs/)\]: Btrfs filesystem utilities
-- [buildx](https://www.docker.com/) \[[source](https://github.com/docker/buildx/)\]: Docker CLI plugin for extended build capabilities with BuildKit
-- [direnv](https://direnv.net/) \[[source](https://github.com/direnv/direnv/)\]: A shell extension that manages your environment
-- [Docker](https://www.docker.com/) \[[source](https://github.com/docker/cli/)\]: Pack, ship and run any application as a lightweight container
-  - Optional dependencies:
-    - [BTRFS tools](https://btrfs.readthedocs.io/en/latest/): btrfs backend support
-    - [buildx](https://www.docker.com/): extended build capabilities
-    - [pigz](https://www.zlib.net/pigz/): parallel gzip compressor support
-- [Docker Compose](https://www.docker.com/) \[[source](https://github.com/docker/compose/)\]: Fast, isolated development environments using Docker
 - [Dolphin](https://apps.kde.org/dolphin/) \[[source](https://invent.kde.org/system/dolphin/)\]: KDE File Manager
   - Optional dependencies:
     - [FFmpegThumbs](https://apps.kde.org/ffmpegthumbs/): video thumbnails
     - [KDE Graphics Thumbnailers](https://apps.kde.org/kdegraphics_thumbnailers/): PDF and PS thumbnails
     - [Konsole](https://apps.kde.org/konsole/): terminal panel
 - [ExifTool](https://exiftool.org/) \[[source](https://github.com/exiftool/exiftool/)\]: Read and write EXIF information
+  - Optional dependencies:
+    - [Archive::Zip](https://search.cpan.org/dist/Archive-Zip/): Support for zip files, including epub
 - [expac](https://github.com/falconindy/expac/): alpm data (pacman database) extraction utility
 - [eza](https://eza.rocks/) \[[source](https://github.com/eza-community/eza/)\]: A modern replacement for ls (community fork of exa)
 - [fastfetch](https://github.com/fastfetch-cli/fastfetch/): A feature-rich and performance oriented neofetch like system information tool
@@ -159,7 +155,6 @@ git clone git@github.com:ionesculiviucristian/arch-setup-private.git ~/Projects/
     - [ImageMagick](https://imagemagick.org/): Image output using sixel or kitty graphics protocol
 - [fd](https://github.com/sharkdp/fd/): Simple, fast and user-friendly alternative to find
 - [FFmpegThumbs](https://apps.kde.org/ffmpegthumbs/) \[[source](https://invent.kde.org/multimedia/ffmpegthumbs/)\]: FFmpeg-based thumbnail creator for video files
-- [FileZilla](https://filezilla-project.org/) \[[source](https://svn.filezilla-project.org/svn/FileZilla3/trunk/)\]: Fast and reliable FTP, FTPS and SFTP client
 - [Firefox](https://www.firefox.com/) \[[source](https://github.com/mozilla-firefox/firefox/)\]: Fast, Private & Safe Web Browser
 - [fwupd](https://fwupd.org/) \[[source](https://github.com/fwupd/fwupd/)\]: Simple daemon to allow session software to update firmware
 - [fzf](https://junegunn.github.io/fzf/) \[[source](https://github.com/junegunn/fzf/)\]: Command-line fuzzy finder
@@ -171,12 +166,9 @@ git clone git@github.com:ionesculiviucristian/arch-setup-private.git ~/Projects/
     - [less](https://www.greenwoodsoftware.com/less/): the default pager for git
     - [man-db](https://man-db.nongnu.org/): show help with `git command --help`
     - [OpenSSH](https://www.openssh.org/): ssh transport and crypto
-- [GitHub CLI](https://cli.github.com/) \[[source](https://github.com/cli/cli/)\]: The GitHub CLI
-  - Optional dependencies:
-    - [git](https://git-scm.com/): To interact with repositories
-- [Go](https://go.dev/) \[[source](https://github.com/golang/go/)\]: Core compiler tools for the Go programming language
 - [GRUB](https://www.gnu.org/software/grub/) \[[source](https://cgit.git.savannah.gnu.org/cgit/grub.git/)\]: GNU GRand Unified Bootloader (2)
 - [Gwenview](https://apps.kde.org/gwenview/) \[[source](https://invent.kde.org/graphics/gwenview/)\]: A fast and easy to use image viewer
+- [ImageMagick](https://imagemagick.org/) \[[source](https://github.com/ImageMagick/ImageMagick/)\]: An image viewing/manipulation program
 - [iotop-c](https://github.com/Tomas-M/iotop/): A top utility for IO
 - [Kate](https://apps.kde.org/kate/) \[[source](https://invent.kde.org/utilities/kate/)\]: Advanced text editor
   - Optional dependencies:
@@ -197,24 +189,20 @@ git clone git@github.com:ionesculiviucristian/arch-setup-private.git ~/Projects/
 - [kpackage](https://invent.kde.org/frameworks/kpackage/): Framework that lets applications manage user installable packages of non-binary assets
 - [KScreenLocker](https://invent.kde.org/plasma/kscreenlocker/): Library and components for secure lock screen architecture
 - [KWin](https://kde.org/plasma-desktop/) \[[source](https://invent.kde.org/plasma/kwin/)\]: An easy to use, but flexible, Wayland compositor
-- [lazygit](https://github.com/jesseduffield/lazygit/): Simple terminal UI for git commands
 - [less](https://www.greenwoodsoftware.com/less/) \[[source](https://github.com/gwsw/less/)\]: A terminal based program for viewing text files
 - [LibreOffice](https://www.libreoffice.org/) \[[source](https://git.libreoffice.org/core/)\]: LibreOffice branch which contains new features and program enhancements
 - [lsof](https://lsof.readthedocs.io/en/latest/) \[[source](https://github.com/lsof-org/lsof/)\]: Lists open files for running Unix processes
 - [man-db](https://man-db.nongnu.org/) \[[source](https://gitlab.com/man-db/man-db/)\]: A utility for reading man pages
 - [man-pages](https://www.kernel.org/doc/man-pages/) \[[source](https://git.kernel.org/pub/scm/docs/man-pages/man-pages.git/)\]: Linux man pages
-- [mise](https://mise.jdx.dev/) \[[source](https://github.com/jdx/mise/)\]: The front-end to your dev env
-  - Optional dependencies:
-    - [bash-completion](https://github.com/scop/bash-completion/): bash completion support
+- [mpv](https://mpv.io/) \[[source](https://github.com/mpv-player/mpv/)\]: a free, open source, and cross-platform media player
+- [nawk](https://github.com/onetrueawk/awk/): The one, true implementation of AWK
 - [NCurses Disk Usage](https://dev.yorhel.nl/ncdu) \[[source](https://code.blicky.net/yorhel/ncdu/)\]: Disk usage analyzer with an ncurses interface
-- [neovim](https://neovim.io/) \[[source](https://github.com/neovim/neovim/)\]: Fork of Vim aiming to improve user experience, plugins, and GUIs
-  - Optional dependencies:
-    - [wl-clipboard](https://github.com/bugaevc/wl-clipboard/): for clipboard support on wayland (see :help clipboard)
 - [Nmap](https://nmap.org/) \[[source](https://svn.nmap.org/nmap/)\]: Utility for network discovery and security auditing
 - [NTFS-3G](https://www.tuxera.com/) \[[source](https://github.com/tuxera/ntfs-3g/)\]: NTFS FUSE driver
   - Optional dependencies:
     - [ntfsprogs](https://www.tuxera.com/): userspace utilities
 - [ntfsprogs](https://www.tuxera.com/) \[[source](https://github.com/tuxera/ntfs-3g/)\]: NTFS userspace utilities
+- [nvme-cli](https://github.com/linux-nvme/nvme-cli/): NVM-Express user space tooling for Linux
 - [nvtop](https://github.com/Syllo/nvtop/): GPUs process monitoring for AMD, Intel and NVIDIA
 - [Okular](https://apps.kde.org/okular/) \[[source](https://invent.kde.org/graphics/okular/)\]: Document Viewer
   - Optional dependencies:
@@ -232,18 +220,14 @@ git clone git@github.com:ionesculiviucristian/arch-setup-private.git ~/Projects/
     - [plocate](https://plocate.sesse.net/): faster mlocate alternative
     - [Vim](https://www.vim.org/): default diff program for pacdiff
 - [pigz](https://www.zlib.net/pigz/) \[[source](https://github.com/madler/pigz/)\]: Parallel implementation of the gzip file compressor
+- [Plasma Login Manager](https://kde.org/plasma-desktop/) \[[source](https://invent.kde.org/plasma/plasma-login-manager/)\]: Plasma Login Manager
 - [plocate](https://plocate.sesse.net/) \[[source](https://git.sesse.net/?p=plocate)\]: Alternative to locate, faster and compatible with mlocate's database.
-- [pnpm](https://pnpm.io/) \[[source](https://github.com/pnpm/pnpm/)\]: Fast, disk space efficient package manager
 - [procs](https://github.com/dalance/procs/): A modern replacement for ps written in Rust
 - [reflector](https://xyne.dev/projects/reflector/) \[[source](https://xyne.dev/projects/reflector/src/)\]: A Python 3 module and script to retrieve and filter the latest Pacman mirror list.
   - Optional dependencies:
     - [rsync](https://rsync.samba.org/): rate rsync mirrors
 - [ripgrep](https://github.com/BurntSushi/ripgrep/): A search tool that combines the usability of ag with the raw speed of grep
 - [rsync](https://rsync.samba.org/) \[[source](https://github.com/RsyncProject/rsync/)\]: A fast and versatile file copying tool for remote and local files
-- [SDDM](https://github.com/sddm/sddm/): QML based X11 and Wayland display manager
-- [sh](https://pkg.go.dev/mvdan.cc/sh/v3) \[[source](https://github.com/mvdan/sh/)\]: Format shell programs
-- [ShellCheck](https://www.shellcheck.net/) \[[source](https://github.com/koalaman/shellcheck/)\]: Shell script analysis tool
-- [shtab](https://tqdm.github.io/shtab/) \[[source](https://github.com/tqdm/shtab/)\]: Automagic shell tab completion for Python CLI applications
 - [SSHFS](https://github.com/libfuse/sshfs/): FUSE client based on the SSH File Transfer Protocol
 - [Starship](https://starship.rs/) \[[source](https://github.com/starship/starship/)\]: The cross-shell prompt for astronauts
 - [superfile](https://superfile.dev/) \[[source](https://github.com/yorukot/superfile/)\]: Pretty fancy and modern terminal file manager
@@ -253,16 +237,12 @@ git clone git@github.com:ionesculiviucristian/arch-setup-private.git ~/Projects/
 - [Thunderbird](https://www.thunderbird.net/) \[[source](https://github.com/thunderbird/thunderbird-desktop/)\]: Standalone mail and news reader from mozilla.org
 - [tldr](https://pypi.org/project/tldr/) \[[source](https://github.com/tldr-pages/tldr-python-client/)\]: Command line client for tldr, a collection of simplified man pages.
 - [tmux](https://github.com/tmux/tmux/wiki) \[[source](https://github.com/tmux/tmux/)\]: Terminal multiplexer
-- [tmuxp](https://tmuxp.git-pull.com/) \[[source](https://github.com/tmux-python/tmuxp/)\]: Tmux session manager built on libtmux
-  - Optional dependencies:
-    - [shtab](https://tqdm.github.io/shtab/): for workspace completion and import
 - [ufw](https://launchpad.net/ufw) \[[source](https://git.launchpad.net/ufw/)\]: Uncomplicated and easy to use CLI tool for managing a netfilter firewall
 - [unrar](https://www.rarlab.com/rar_add.htm): The RAR uncompression program
 - [unzip](https://infozip.sourceforge.net/UnZip.html): For extracting and viewing files in .zip archives
 - [usbutils](https://git.kernel.org/pub/scm/linux/kernel/git/gregkh/usbutils.git/about/): A collection of USB tools to query connected USB devices
   - Optional dependencies:
     - [Bash](https://www.gnu.org/software/bash/): for usb-devices
-- [uv](https://docs.astral.sh/uv/) \[[source](https://github.com/astral-sh/uv/)\]: An extremely fast Python package installer and resolver written in Rust
 - [Vim](https://www.vim.org/) \[[source](https://github.com/vim/vim/)\]: Vi Improved, a highly configurable, improved version of the vi text editor
 - [wl-clipboard](https://github.com/bugaevc/wl-clipboard/): Command-line copy/paste utilities for Wayland
 - [zip](https://infozip.sourceforge.net/Zip.html): Compressor/archiver for creating and modifying zipfiles
@@ -275,19 +255,15 @@ git clone git@github.com:ionesculiviucristian/arch-setup-private.git ~/Projects/
 
 - [AnyDesk](https://anydesk.com/): The Fast Remote Desktop Application
 - [ble.sh](https://github.com/akinomyoga/ble.sh/): Bash Line Editor (ble.sh) -- a replacement for Bash's line editor with enhanced features
+  - Optional dependencies:
+    - [nawk](https://github.com/onetrueawk/awk/): for faster processing
 - [Brave](https://brave.com/) \[[source](https://github.com/brave/brave-browser/)\]: Web browser that blocks ads and trackers by default (binary release)
   - Optional dependencies:
     - [OpenPrinting CUPS](https://openprinting.github.io/cups/): Printer support
 - [downgrade](https://archlinux-downgrade.github.io/downgrade/) \[[source](https://github.com/archlinux-downgrade/downgrade/)\]: Bash script for downgrading one or more packages to a version in your cache or the A.L.A.
-- [gita](https://github.com/nosarthur/gita/): Command-line tool to manage multiple git repos
-- [NordVPN](https://nordvpn.com/) \[[source](https://github.com/NordSecurity/nordvpn-linux/)\]: NordVPN CLI tool for Linux
-- [NordVPN GUI](https://nordvpn.com/) \[[source](https://github.com/NordSecurity/nordvpn-linux/)\]: GUI for NordVPN
-- [OneDrive](https://abraunegg.github.io/) \[[source](https://github.com/abraunegg/onedrive/)\]: Free OneDrive client written in D - abraunegg's fork
-- [OneDriveGUI](https://github.com/bpozdena/OneDriveGUI/): A simple GUI for OneDrive Linux client, with multi-account support.
 - [Papirus](https://store.kde.org/p/1166289/) \[[source](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/)\]: Pixel perfect icon theme for Linux
 - [Papirus Folders](https://github.com/PapirusDevelopmentTeam/papirus-folders/): Allows changing the color of folders in Papirus icon theme and its forks
-- [Postman](https://www.postman.com/product/): Build, test, and document your APIs faster
-- [Visual Studio Code](https://code.visualstudio.com/) \[[source](https://github.com/microsoft/vscode/)\]: Visual Studio Code (vscode): Editor for building and debugging modern web and cloud applications (official binary version)
+- [uosc](https://github.com/tomasklaen/uosc/): Feature-rich minimalist proximity-based UI for MPV player.
 - [Yay](https://jguer.github.io/yay/) \[[source](https://github.com/Jguer/yay/)\]: Yet another yogurt. Pacman wrapper and AUR helper written in go.
 - [Zoom](https://www.zoom.com/): Video Conferencing and Web Conferencing Service
   - Optional dependencies:
@@ -488,7 +464,7 @@ Every run of `scripts/virtualbox-test.sh` restores `clean`, copies the working t
 scripts/virtualbox-test.sh
 scripts/virtualbox-test.sh -- base setups --debug
 scripts/virtualbox-test.sh -- base --themes
-scripts/virtualbox-test.sh --keep -- b450-i-aorus-pro-wifi
+scripts/virtualbox-test.sh --keep -- machine-b450-i-aorus-pro-wifi
 ```
 
 `install.sh` runs over Guest Control, which has no session bus of its own, so every command first takes the environment of the Plasma session the guest logs into (`scripts/virtualbox/session.sh`); without it `plasma-apply-lookandfeel` and the other theme tools abort.

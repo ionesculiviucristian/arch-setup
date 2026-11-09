@@ -44,7 +44,8 @@ request::extract() {
   archive=$(mktemp)
 
   local status=0
-  wget -qO "${archive}" "${url}" && bsdtar -xf "${archive}" -C "${path}" || status=$?
+  wget -qO "${archive}" "${url}" &&
+    bsdtar -xf "${archive}" -C "${path}" || status=$?
 
   rm -f "${archive}"
   return "${status}"

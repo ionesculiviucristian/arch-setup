@@ -17,7 +17,8 @@ fstab::add_entry() {
   local dump=${5:-0}
   local check=${6:-0}
 
-  if [ -z "${src}" ] || [ -z "${dest}" ] || [ -z "${type}" ] || [ -z "${options}" ]; then
+  if [ -z "${src}" ] || [ -z "${dest}" ] ||
+    [ -z "${type}" ] || [ -z "${options}" ]; then
     log::error "${usage}"
     return 2
   fi
@@ -28,7 +29,8 @@ fstab::add_entry() {
     serial=$(echo "${src}" | cut -d: -f2)
     partition=$(echo "${src}" | cut -d: -f3)
 
-    dev_names=$(lsblk --nodeps --noheadings --output NAME,SERIAL | awk -v serial="${serial}" '$2 == serial { print $1 }')
+    dev_names=$(lsblk --nodeps --noheadings --output NAME,SERIAL |
+      awk -v serial="${serial}" '$2 == serial { print $1 }')
 
     if [ -z "${dev_names}" ]; then
       log::error "Device with serial '${serial}' not found. Is it plugged in?"
@@ -40,7 +42,10 @@ fstab::add_entry() {
       return 1
     fi
 
-    part_uuid=$(lsblk --list --noheadings --output UUID,PARTN "/dev/${dev_names}" | awk -v partition="${partition}" '$2 == partition { print $1 }')
+    part_uuid=$(
+      lsblk --list --noheadings --output UUID,PARTN "/dev/${dev_names}" |
+        awk -v partition="${partition}" '$2 == partition { print $1 }'
+    )
 
     if [ -z "${part_uuid}" ]; then
       log::error "Could not find UUID on partition ${partition} of ${dev_names}. Is it formatted?"
@@ -68,16 +73,16 @@ fstab::add_entry() {
   esac
 
   local fstab_file="/etc/fstab"
-  local src_escaped dest_escaped
-  src_escaped=$(printf '%s' "${src}" | sed 's/ /\\040/g; s/\t/\\011/g')
-  dest_escaped=$(printf '%s' "${dest}" | sed 's/ /\\040/g; s/\t/\\011/g')
+  local src_esc dest_esc
+  src_esc=$(printf '%s' "${src}" | sed 's/ /\\040/g; s/\t/\\011/g')
+  dest_esc=$(printf '%s' "${dest}" | sed 's/ /\\040/g; s/\t/\\011/g')
 
-  local fstab_entry="${src_escaped}  ${dest_escaped}  ${type}  ${options}  ${dump}  ${check}"
+  local entry="${src_esc}  ${dest_esc}  ${type}  ${options}  ${dump}  ${check}"
 
-  if grep -qF "${src_escaped}  ${dest_escaped}" "${fstab_file}"; then
-    log::debug "fstab entry already present: ${src_escaped} ${dest_escaped}"
+  if grep -qF "${src_esc}  ${dest_esc}" "${fstab_file}"; then
+    log::debug "fstab entry already present: ${src_esc} ${dest_esc}"
   else
-    log::debug "Adding fstab entry: ${fstab_entry}"
-    echo "${fstab_entry}" | sudo tee -a "${fstab_file}" >/dev/null
+    log::debug "Adding fstab entry: ${entry}"
+    echo "${entry}" | sudo tee -a "${fstab_file}" >/dev/null
   fi
 }

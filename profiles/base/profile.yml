@@ -11,7 +11,6 @@ packages:
   bash:
     priority: "high"
   bash-completion:
-  bash-language-server:
   bat:
     themes: true
   bind:
@@ -24,11 +23,6 @@ packages:
   btrfs-progs:
   btrfsmaintenance:
   cups:
-  direnv:
-    priority: "high"
-  docker:
-  docker-buildx:
-  docker-compose:
   dolphin:
   downgrade:
   expac:
@@ -37,20 +31,16 @@ packages:
   fastfetch:
   fd:
   ffmpegthumbs:
-  filezilla:
   firefox:
   fwupd:
   fzf:
     themes: true
   git:
     priority: "highest"
-  gita:
-  github-cli:
-  go:
-    priority: "high"
   grub:
     themes: true
   gwenview:
+  imagemagick:
   iotop-c:
   kate:
   kcalc:
@@ -64,28 +54,22 @@ packages:
   kscreenlocker:
     themes: true
   kwin:
-  lazygit:
-    themes: true
   less:
   libreoffice-fresh:
     themes: true
   lsof:
   man-db:
   man-pages:
-  mise:
-    priority: "high"
+  mpv:
+  mpv-uosc:
+  nawk:
   ncdu:
-  neovim:
-    themes: true
   nmap:
-  nordvpn-bin:
-  nordvpn-gui-bin:
   ntfs-3g:
   ntfsprogs:
+  nvme-cli:
   nvtop:
   okular:
-  onedrive-abraunegg:
-  onedrivegui:
   openssh:
   pacman:
     priority: "high"
@@ -94,21 +78,17 @@ packages:
     themes: true
   papirus-icon-theme-git:
   partitionmanager:
+  perl-archive-zip:
   perl-image-exiftool:
   pigz:
+  plasma-login-manager:
+    themes: true
   plocate:
-  pnpm:
-  postman-bin:
   procs:
-  python-shtab:
   reflector:
     priority: "high"
   ripgrep:
   rsync:
-  sddm:
-    themes: true
-  shellcheck:
-  shfmt:
   sshfs:
   starship:
     themes: true
@@ -119,15 +99,12 @@ packages:
   tldr:
   tmux:
     themes: true
-  tmuxp:
   ufw:
   unrar:
   unzip:
   usbutils:
-  uv:
   vim:
     themes: true
-  visual-studio-code-bin:
   wl-clipboard:
   yay:
     priority: "highest"

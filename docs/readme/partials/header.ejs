@@ -47,7 +47,7 @@ The scripts expect a system installed with `archinstall` using these choices:
 - **Disk layout:** btrfs
 - **Swap:** zram
 - **Kernels:** `linux` and `linux-lts`
-- **Profile:** Desktop, KDE Plasma, with the SDDM greeter
+- **Profile:** Desktop, KDE Plasma, with the Plasma Login Manager greeter
 - **Graphics driver:** the one for the machine's GPU (AMD / NVIDIA open kernel)
 - **Audio:** PipeWire
 - **Network configuration:** NetworkManager
@@ -61,18 +61,19 @@ This repository is public, so a clean install clones it without authenticating t
 sudo pacman -S --needed git
 git clone https://github.com/ionesculiviucristian/arch-setup.git ~/Projects/arch-setup
 ~/Projects/arch-setup/install.sh
-~/Projects/arch-setup/install.sh b450-i-aorus-pro-wifi
+~/Projects/arch-setup/install.sh machine-b450-i-aorus-pro-wifi
 ```
 
 The machine profiles install Bitwarden, whose SSH agent holds the key that the private layer is cloned with. Unlock the vault, turn the SSH agent on in the application settings, then:
 
 ```bash
-git clone git@github.com:ionesculiviucristian/arch-setup-private.git ~/Projects/arch-setup-private
-~/Projects/arch-setup-private/install.sh
+git clone git@github.com:ionesculiviucristian/arch-setup-private.git \
+  ~/Projects/arch-setup/profiles/machine-b450-i-aorus-pro-wifi-private
+./install.sh machine-b450-i-aorus-pro-wifi-private
 ```
 
 - the GitHub password and its two-factor code are never needed: the key in the vault is the authentication, and the `git@github.com` remotes reach it through the `SSH_AUTH_SOCK` that the `bitwarden` setup writes to `~/.bashrc.d`
-- the machine profile has to run before the private layer, because `bitwarden` is listed in the machine profiles and not in base
+- the machine profile has to run first, because `bitwarden` is listed in the machine profiles and not in base; afterwards the private profile includes it, so the one command above installs the whole chain
 - `arch-setup-private` carries its own instructions for importing the secrets
 
 ### Install
@@ -81,15 +82,18 @@ git clone git@github.com:ionesculiviucristian/arch-setup-private.git ~/Projects/
 # Base workstation, installed on every machine
 ./install.sh
 
-# Only some phases: pre, packages, external, aur, setups, resources, themes (pre and resources are base only)
+# Layers, each on top of base
+./install.sh development
+./install.sh multimedia
+./install.sh gaming
+
+# Machine profile: installs the layers it includes first, then its own packages and drivers
+./install.sh machine-b450-i-aorus-pro-wifi
+./install.sh machine-hp-victus-15-fb0029nq
+
+# Only some phases: pre, packages, external, aur, setups, resources, themes (pre and resources run when base is in the chain)
 ./install.sh base packages setups
-
-# Machine profile, on top of base
-./install.sh b450-i-aorus-pro-wifi
-./install.sh hp-victus-15-fb0029nq
-
-# Only some phases of a machine profile
-./install.sh b450-i-aorus-pro-wifi setups
+./install.sh machine-b450-i-aorus-pro-wifi setups
 
 # Update official, AUR (including -git) and external packages, fonts, tmux plugins, Go tools and mise tools
 ./update.sh

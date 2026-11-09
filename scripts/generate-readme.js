@@ -25,8 +25,26 @@ const readDefinition = (filePath) => {
   };
 };
 
+// Profiles whose folder is gitignored stay out of the generated docs
+const isPrivate = (name) => name.endsWith("-private");
+
+const profileDirs = fs
+  .readdirSync("./profiles", { withFileTypes: true })
+  .filter((entry) => entry.isDirectory() && !isPrivate(entry.name))
+  .map((entry) => path.join("./profiles", entry.name));
+
+// A profile can own the definitions of its machine-specific packages
+const repositoryBases = [
+  ...profileDirs,
+  ".",
+].flatMap((root) =>
+  ["repositories/packages", "repositories/drivers"]
+    .map((base) => path.join(root, base))
+    .filter((base) => fs.existsSync(base)),
+);
+
 const resolvePackageDir = (name) => {
-  for (const base of ["./repositories/packages", "./repositories/drivers"]) {
+  for (const base of repositoryBases) {
     const dir = path.join(base, name);
     if (fs.existsSync(dir)) return dir;
   }
@@ -50,7 +68,7 @@ const readDefinitions = (dir) =>
 const fonts = readDefinitions("./repositories/fonts");
 const requirements = readDefinitions("./repositories/requirements");
 
-const packageDefinitions = ["./repositories/packages", "./repositories/drivers"]
+const packageDefinitions = repositoryBases
   .flatMap((base) =>
     fs.readdirSync(base).map((dir) => path.join(base, dir, "package.yml"))
   )
@@ -68,13 +86,16 @@ for (const meta of [...packageDefinitions, ...fonts, ...requirements]) {
 }
 
 // Load all profiles
-const profileNames = fs
-  .readdirSync("./profiles", { withFileTypes: true })
-  .filter((entry) => entry.isDirectory())
-  .map((entry) => entry.name)
-  .sort(
-    (a, b) => Number(b === "base") - Number(a === "base") || a.localeCompare(b),
-  );
+// base, then the layers, then the profiles that include one
+const profileRank = (name) => {
+  if (name === "base") return 0;
+  const includes = readYaml(`./profiles/${name}/profile.yml`).includes || [];
+  return includes.some((include) => include !== "base") ? 2 : 1;
+};
+
+const profileNames = profileDirs
+  .map((dir) => path.basename(dir))
+  .sort((a, b) => profileRank(a) - profileRank(b) || a.localeCompare(b));
 
 const profiles = profileNames.map((name) => {
   const profile = readYaml(`./profiles/${name}/profile.yml`);
@@ -130,6 +151,7 @@ const profiles = profileNames.map((name) => {
   return {
     name,
     label: profile.name || name,
+    includes: profile.includes || [],
     groups,
     plugins,
   };
@@ -143,8 +165,11 @@ const sortByName = (a, b) =>
 const base = profiles.find((profile) => profile.name === "base");
 const helpers = { optionalDependencies, sortByLabel, sortByName };
 
-const render = async (template, data, output) =>
-  fs.writeFileSync(output, await ejs.renderFile(template, { ...helpers, ...data }), "utf-8");
+const render = async (template, data, output) => {
+  const markdown = await ejs.renderFile(template, { ...helpers, ...data });
+
+  fs.writeFileSync(output, markdown.replace(/\n{2,}$/, "\n"), "utf-8");
+};
 
 await render("./docs/readme/README.ejs", { base, profiles }, "README.md");
 

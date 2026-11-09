@@ -6,7 +6,7 @@
 <% if (profile.name === "base") { -%>
 - [<%- profile.label %>](./profiles/<%- profile.name %>/README.md): `./install.sh`, installed on every machine
 <% } else { -%>
-- [<%- profile.label %>](./profiles/<%- profile.name %>/README.md): `./install.sh <%- profile.name %>`, on top of the base profile
+- [<%- profile.label %>](./profiles/<%- profile.name %>/README.md): `./install.sh <%- profile.name %>`, which installs <%- profile.includes.join(", ") %> first
 <% } -%>
 <% }); -%>
 

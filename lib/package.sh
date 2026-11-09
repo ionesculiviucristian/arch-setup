@@ -1,6 +1,7 @@
 # shellcheck shell=bash
 
-# @description Print a definition's repository: core, extra, multilib, aur or external.
+# @description Print a definition's repository: core, extra, multilib, aur
+# or external.
 # @arg $1 string Path to the definition .yml
 # @exitcode 1 Unknown repository.url
 package::repository_type() {
@@ -53,19 +54,17 @@ package::name() {
   fi
 }
 
-# @description Print the folder of a package or driver.
+# @description Print the folder of a package or driver definition, from the
+# first repository that has it.
 # @arg $1 string Package or driver folder name
 # @internal
 package::_dir() {
-  local name=$1
-  local dir base
+  local yml
+  yml=$(file::find \
+    "repositories/packages/$1/package.yml" \
+    "repositories/drivers/$1/package.yml")
 
-  for dir in "${arch_setup_dirs[@]:?}"; do
-    for base in "${dir}/repositories/packages" "${dir}/repositories/drivers"; do
-      if [ -d "${base}/${name}" ]; then
-        echo "${base}/${name}"
-        return
-      fi
-    done
-  done
+  if [ -n "${yml}" ]; then
+    dirname "${yml}"
+  fi
 }

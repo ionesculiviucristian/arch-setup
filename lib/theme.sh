@@ -1,7 +1,7 @@
 # shellcheck shell=bash
 
 # @description Print a value of the THEME from .env.
-# @arg $1 string yq path in the theme file, e.g. .wallpapers.sddm
+# @arg $1 string yq path in the theme file, e.g. .wallpapers.login
 # @exitcode 1 THEME missing from .env
 theme::get() {
   local usage="Usage: theme::get <yq path>"
@@ -31,16 +31,14 @@ theme::apply() {
   local failed=()
 
   log::info "  OS"
-  "${arch_setup_dir:?}/os/setup-theme.sh" "${flavour}" "${accent}" || failed+=("os")
+  "${arch_setup_dir:?}/os/setup-theme.sh" "${flavour}" "${accent}" ||
+    failed+=("os")
 
-  local pkg_dir script
+  local pkg
 
-  for pkg_dir in $(profile::installed_dirs --themes); do
-    script="${pkg_dir}/setup-theme.sh"
-    if [ -x "${script}" ]; then
-      log::info "  $(yq -r '.label' "${pkg_dir}/package.yml")"
-      "${script}" "${flavour}" "${accent}" || failed+=("${pkg_dir##*/}")
-    fi
+  for pkg in $(profile::installed_packages --themes); do
+    profile::run_script "${pkg}" setup-theme "${flavour}" "${accent}" ||
+      failed+=("${pkg}")
   done
 
   if [ ${#failed[@]} -gt 0 ]; then

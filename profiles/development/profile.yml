@@ -1,0 +1,29 @@
+name: "Development"
+includes:
+  - "base"
+packages:
+  bash-language-server:
+  direnv:
+    priority: "high"
+  docker:
+  docker-buildx:
+  docker-compose:
+  filezilla:
+  gita:
+  github-cli:
+  go:
+    priority: "high"
+  lazygit:
+    themes: true
+  mise:
+    priority: "high"
+  neovim:
+    themes: true
+  pnpm:
+  postman-bin:
+  python-shtab:
+  shellcheck:
+  shfmt:
+  tmuxp:
+  uv:
+  visual-studio-code-bin:

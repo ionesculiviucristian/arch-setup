@@ -27,7 +27,10 @@ font::install_external() {
         return 1
       fi
 
-      archive_url=$(ASSET_REGEX=${pattern} yq -p=json -r '[.assets[] | select(.name | test(env(ASSET_REGEX)))][0].browser_download_url // ""' <<<"${release}")
+      archive_url=$(ASSET_REGEX=${pattern} yq -p=json -r '
+        [.assets[] | select(.name | test(env(ASSET_REGEX)))][0]
+        | .browser_download_url // ""
+      ' <<<"${release}")
 
       if [ -z "${archive_url}" ]; then
         log::error "No asset matching ${pattern} in ${api_url}"
@@ -38,8 +41,8 @@ font::install_external() {
     tmp_dir=$(mktemp -d)
     request::extract "${archive_url}" "${tmp_dir}"
 
-    find "${tmp_dir}" -type f \( -iname "*.ttf" -o -iname "*.otf" \) \
-      -exec install -D -m 644 --target-directory "${HOME}/.local/share/fonts" {} +
+    find "${tmp_dir}" -type f \( -iname "*.ttf" -o -iname "*.otf" \) -exec \
+      install -D -m 644 --target-directory "${HOME}/.local/share/fonts" {} +
 
     rm -rf "${tmp_dir}"
   done

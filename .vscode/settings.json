@@ -1,7 +1,15 @@
 {
+  "files.associations": {
+    "**/repositories/packages/*/config/config": "properties"
+  },
   "yaml.schemas": {
-    "./schemas/package.schema.json": ["repositories/*/*/package.yml", "repositories/fonts/*.yml", "repositories/requirements/*.yml"],
-    "./schemas/plugins.schema.json": "repositories/*/*/plugins.yml",
+    "./schemas/package.schema.json": [
+      "repositories/*/*/package.yml",
+      "repositories/fonts/*.yml",
+      "repositories/requirements/*.yml",
+      "profiles/*/repositories/*/*/package.yml"
+    ],
+    "./schemas/plugins.schema.json": ["repositories/*/*/plugins.yml", "profiles/*/repositories/*/*/plugins.yml"],
     "./schemas/profile.schema.json": "profiles/*/profile.yml",
     "./schemas/theme.schema.json": "themes/*.yml",
     "./schemas/virtualbox.schema.json": "scripts/virtualbox/*.yml"

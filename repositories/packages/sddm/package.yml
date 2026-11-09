@@ -1,7 +1,0 @@
-label: "SDDM"
-description: "QML based X11 and Wayland display manager"
-url: null
-source:
-  url: "https://github.com/sddm/sddm/"
-repository:
-  url: "https://archlinux.org/packages/extra/x86_64/sddm/"

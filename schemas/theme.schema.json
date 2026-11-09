@@ -38,11 +38,11 @@
     "wallpapers": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["greeter", "kde", "sddm"],
+      "required": ["greeter", "kde", "login"],
       "properties": {
         "greeter": { "type": "string" },
         "kde": { "type": "string" },
-        "sddm": { "type": "string" }
+        "login": { "type": "string" }
       }
     }
   }

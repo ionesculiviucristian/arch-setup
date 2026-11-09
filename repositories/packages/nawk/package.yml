@@ -1,0 +1,10 @@
+label: "nawk"
+description: "The one, true implementation of AWK"
+url: null
+source:
+  url: "https://github.com/onetrueawk/awk/"
+repository:
+  url: "https://archlinux.org/packages/extra/x86_64/nawk/"
+  optional_dependency_for:
+    - package: "blesh-git"
+      reason: "for faster processing"

@@ -1,0 +1,9 @@
+name: "Gaming"
+includes:
+  - "base"
+packages:
+  gamemode:
+  gamescope:
+  lib32-gamemode:
+  python-vdf:
+  steam:

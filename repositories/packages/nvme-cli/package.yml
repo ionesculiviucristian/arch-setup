@@ -1,0 +1,7 @@
+label: "nvme-cli"
+description: "NVM-Express user space tooling for Linux"
+url: null
+source:
+  url: "https://github.com/linux-nvme/nvme-cli/"
+repository:
+  url: "https://archlinux.org/packages/extra/x86_64/nvme-cli/"

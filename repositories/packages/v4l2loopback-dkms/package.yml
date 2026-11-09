@@ -1,0 +1,10 @@
+label: "v4l2loopback"
+description: "v4l2-loopback device - module sources"
+url: null
+source:
+  url: "https://github.com/umlaeute/v4l2loopback/"
+repository:
+  url: "https://archlinux.org/packages/extra/any/v4l2loopback-dkms/"
+  optional_dependency_for:
+    - package: "obs-studio"
+      reason: "virtual camera support"

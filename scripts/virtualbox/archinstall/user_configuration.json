@@ -91,7 +91,7 @@
   },
   "profile_config": {
     "gfx_driver": "VirtualBox (open-source)",
-    "greeter": "sddm",
+    "greeter": "plasma-login-manager",
     "profile": {
       "details": ["KDE Plasma"],
       "main": "Desktop"

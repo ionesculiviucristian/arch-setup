@@ -1,8 +1,30 @@
 # shellcheck shell=bash
 
-# @description Print a variable from the .env of every repository, this one first and the ones installed on top after, so they can override it.
+# @description Load the .env of this repository and, when
+# ARCH_SETUP_PROFILE is set, the .env of that profile on top of it.
+# @noargs
+env::load() {
+  arch_setup_env_files=("${arch_setup_dir:?}/.env")
+
+  if [ -n "${ARCH_SETUP_PROFILE:-}" ]; then
+    arch_setup_env_files+=(
+      "${arch_setup_dir}/profiles/${ARCH_SETUP_PROFILE}/.env"
+    )
+  fi
+
+  local file
+
+  for file in "${arch_setup_env_files[@]}"; do
+    if [ -f "${file}" ]; then
+      # shellcheck source=SCRIPTDIR/../.env.example
+      source "${file}"
+    fi
+  done
+}
+
+# @description Print a variable loaded by env::load.
 # @arg $1 string Variable name
-# @exitcode 1 Variable missing from every .env
+# @exitcode 1 Variable missing or empty
 env::get() {
   local usage="Usage: env::get <name>"
   local name=${1:-}
@@ -12,29 +34,10 @@ env::get() {
     return 2
   fi
 
-  local value
-  value=$(
-    local dir
-
-    if [ -f "${arch_setup_dir:?}/.env" ]; then
-      # shellcheck source=SCRIPTDIR/../.env.example
-      source "${arch_setup_dir}/.env"
-    fi
-
-    for dir in "${arch_setup_dirs[@]:?}"; do
-      if [ "${dir}" != "${arch_setup_dir}" ] && [ -f "${dir}/.env" ]; then
-        # shellcheck source=/dev/null
-        source "${dir}/.env"
-      fi
-    done
-
-    echo "${!name:-}"
-  )
-
-  if [ -z "${value}" ]; then
-    log::error "${name} missing from the .env of ${arch_setup_dirs[*]}"
+  if [ -z "${!name:-}" ]; then
+    log::error "${name} missing from ${arch_setup_env_files[*]:?}"
     return 1
   fi
 
-  echo "${value}"
+  printf '%s\n' "${!name}"
 }

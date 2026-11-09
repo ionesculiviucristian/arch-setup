@@ -3,18 +3,17 @@
 # @description Allow sudo without a password.
 # @noargs
 sudoers::enable_passwordless() {
-  # shellcheck disable=SC2155
-  local passwordless_sudo_file="/etc/sudoers.d/$(whoami)"
+  local user file
+  user=$(whoami)
+  file="/etc/sudoers.d/${user}"
 
-  sudo rm -f "${passwordless_sudo_file}"
+  sudo rm -f "${file}"
 
-  echo "$(whoami) ALL=(ALL) NOPASSWD: ALL" |
-    sudo tee "${passwordless_sudo_file}" >/dev/null
+  echo "${user} ALL=(ALL) NOPASSWD: ALL" | sudo tee "${file}" >/dev/null
 }
 
 # @description Require the sudo password again.
 # @noargs
 sudoers::disable_passwordless() {
-  # shellcheck disable=SC2155
   sudo rm -f "/etc/sudoers.d/$(whoami)"
 }

@@ -1,23 +1,56 @@
 # shellcheck shell=bash
 
-# @description Print the path of a file from the first repository that has it.
-# @arg $1 string Path relative to a repository root, e.g. mounts.json
+# @description Print paths from the first repository that has one, the
+# repositories being searched in the order of arch_setup_dirs and the paths
+# in the order they are given; a path can be a glob.
+# @option --all Print every match instead of only the first one
+# @option --dir Match directories instead of files
+# @arg $@ string Paths relative to a repository root, e.g. mounts.json
 file::find() {
-  local usage="Usage: file::find <path>"
-  local path=${1:-}
+  local usage="Usage: file::find [--all] [--dir] <path>..."
+  local all=false
+  local dirs=false
 
-  if [ -z "${path}" ]; then
+  while [ $# -gt 0 ]; do
+    case "$1" in
+    --all)
+      all=true
+      shift
+      ;;
+    --dir)
+      dirs=true
+      shift
+      ;;
+    -*)
+      log::error "${usage}"
+      return 2
+      ;;
+    *)
+      break
+      ;;
+    esac
+  done
+
+  if [ $# -eq 0 ]; then
     log::error "${usage}"
     return 2
   fi
 
-  local dir
+  local dir path match
 
   for dir in "${arch_setup_dirs[@]:?}"; do
-    if [ -f "${dir}/${path}" ]; then
-      echo "${dir}/${path}"
-      return
-    fi
+    for path in "$@"; do
+      while IFS= read -r match; do
+        if [ "${dirs}" = true ]; then
+          [ -d "${match}" ] || continue
+        else
+          [ -f "${match}" ] || continue
+        fi
+
+        echo "${match}"
+        [ "${all}" = true ] || return 0
+      done < <(compgen -G "${dir}/${path}" || true)
+    done
   done
 }
 
@@ -73,7 +106,8 @@ file::replace_text() {
     "${file}"
 }
 
-# @description Insert a line after the first line matching a regex, unless the line is already there.
+# @description Insert a line after the first line matching a regex, unless
+# the line is already there.
 # @option --sudo Run as root
 # @arg $1 string sed regex of the anchor line
 # @arg $2 string Line to insert

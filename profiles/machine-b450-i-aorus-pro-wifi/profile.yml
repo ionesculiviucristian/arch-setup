@@ -1,0 +1,44 @@
+name: "B450 I AORUS PRO WIFI"
+includes:
+  - "base"
+  - "development"
+  - "multimedia"
+  - "gaming"
+drivers:
+  amd-ucode:
+  it87-dkms-git:
+  lib32-mesa:
+  lib32-vulkan-radeon:
+  mesa:
+  rocm-hip-runtime:
+  rocm-opencl-runtime:
+  rocm-smi-lib:
+  vulkan-radeon:
+  xpadneo-dkms:
+  xppenlinux-v3:
+packages:
+  baloo:
+  bitwarden:
+  bitwarden-cli:
+  discord:
+  exfatprogs:
+  headsetcontrol:
+  kmod:
+  lact:
+  libayatana-appindicator:
+  liquidctl:
+  nordvpn-bin:
+  nordvpn-gui-bin:
+  ntfysh-bin:
+  onedrive-abraunegg:
+  onedrivegui:
+  openrgb:
+  qbittorrent:
+    themes: true
+  softhsm:
+  solaar:
+  telegram-desktop:
+  torbrowser-launcher:
+  virtualbox:
+  virtualbox-guest-iso:
+  virtualbox-host-dkms:

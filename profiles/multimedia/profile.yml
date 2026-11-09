@@ -1,0 +1,10 @@
+name: "Multimedia"
+includes:
+  - "base"
+packages:
+  blender:
+  gimp:
+  krita:
+  obs-studio:
+    themes: true
+  v4l2loopback-dkms:

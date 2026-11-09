@@ -1,0 +1,10 @@
+label: "Archive::Zip"
+description: "Provide a perl interface to ZIP archive files"
+url: "https://search.cpan.org/dist/Archive-Zip/"
+source:
+  url: "https://github.com/redhotpenguin/perl-Archive-Zip/"
+repository:
+  url: "https://archlinux.org/packages/extra/any/perl-archive-zip/"
+  optional_dependency_for:
+    - package: "perl-image-exiftool"
+      reason: "Support for zip files, including epub"
