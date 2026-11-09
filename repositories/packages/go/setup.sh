@@ -9,7 +9,7 @@ root_dir="${package_dir%/repositories/*}"
 # shellcheck source=SCRIPTDIR/../../../lib/index.sh
 source "${root_dir}/lib/index.sh"
 
-"${package_dir}/update.sh"
+"${package_dir}/install-go-tools.sh"
 
 bash::install_bashrc \
   --package "go" \

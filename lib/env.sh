@@ -1,6 +1,7 @@
 # shellcheck shell=bash
 
-# @description Print a variable from the .env of every repository, this one first and the ones installed on top after, so they can override it.
+# @description Print a variable from the .env of every repository, this one
+# first and the ones installed on top after, so they can override it.
 # @arg $1 string Variable name
 # @exitcode 1 Variable missing from every .env
 env::get() {

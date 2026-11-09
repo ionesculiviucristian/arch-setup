@@ -9,4 +9,10 @@ if [ -n "${session_pid}" ]; then
     export "${variable?}"
   done < <(tr '\0' '\n' </proc/"${session_pid}"/environ |
     grep -E '^(DBUS_SESSION_BUS_ADDRESS|DISPLAY|WAYLAND_DISPLAY|XDG_CURRENT_DESKTOP|XDG_RUNTIME_DIR|XDG_SESSION_TYPE)=')
+else
+  runtime_dir="/run/user/$(id -u)"
+
+  if [ -d "${runtime_dir}" ]; then
+    export XDG_RUNTIME_DIR="${runtime_dir}"
+  fi
 fi

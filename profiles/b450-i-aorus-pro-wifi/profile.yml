@@ -32,7 +32,6 @@ packages:
   python-vdf:
   qbittorrent:
     themes: true
-  smplayer:
   softhsm:
   solaar:
   steam:

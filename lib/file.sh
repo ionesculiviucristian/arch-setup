@@ -73,7 +73,8 @@ file::replace_text() {
     "${file}"
 }
 
-# @description Insert a line after the first line matching a regex, unless the line is already there.
+# @description Insert a line after the first line matching a regex, unless
+# the line is already there.
 # @option --sudo Run as root
 # @arg $1 string sed regex of the anchor line
 # @arg $2 string Line to insert

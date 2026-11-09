@@ -1,0 +1,7 @@
+label: "uosc"
+description: "Feature-rich minimalist proximity-based UI for MPV player."
+url: null
+source:
+  url: "https://github.com/tomasklaen/uosc/"
+repository:
+  url: "https://aur.archlinux.org/packages/mpv-uosc"

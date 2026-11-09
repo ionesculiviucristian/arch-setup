@@ -4,9 +4,10 @@ Arch Linux workstation setup: profiles list packages and drivers, each with its 
 
 ## Layout
 
-- `install.sh [profile] [phases...] [--themes]` runs `profiles/<profile>/install.sh` (default `base`); every profile installer takes the phases `packages`, `external`, `aur`, `setups`, `themes` (base also `pre`, `resources`); every installer starts with `installer::start`, which records this folder in `~/.local/state/arch-setup/dir` for the repositories installed on top and the repository being installed in `~/.local/state/arch-setup/repositories`, read back by `lib/index.sh`, and ends with `installer::finish` (`lib/installer.sh`); `update.sh [--themes]` updates the packages, the fonts and runs the `update.sh` of every installed package; themes are applied only with `--themes` (or the `themes` phase)
+- `install.sh [profile] [phases...] [--themes]` runs `profiles/<profile>/install.sh` (default `base`); every profile installer takes the phases `packages`, `external`, `aur`, `setups`, `themes` (base also `pre`, `resources`); every installer starts with `installer::start`, which records this folder in `~/.local/state/arch-setup/dir` for the repositories installed on top and the repository being installed in `~/.local/state/arch-setup/repositories`, read back by `lib/index.sh`, and ends with `installer::finish` (`lib/installer.sh`); `update.sh [profile] [--themes]` updates the packages, the fonts and runs the `update.sh` of every installed package and of the given profile's own package folders (default `base`); themes are applied only with `--themes` (or the `themes` phase)
 - `profiles/<name>/profile.yml` (`packages:`, `drivers:`) and `profiles/<name>/install.sh`; `base` is installed on every machine, machine profiles go on top
-- `repositories/{packages,drivers}/<name>/`: `package.yml`, `setup.sh`, `setup-theme.sh`, `install.sh` (bootstrap of packages that pacman/yay cannot install, e.g. yay), `update.sh` (updates what pacman/yay do not: plugins, language tools), `bashrc.sh`, `config/`
+- `profiles/<name>/packages/<package>/` holds the machine-specific scripts of a package (`setup.sh`, `config/`), run by `profile::run_scripts` after the ones of the profile's own entries; the package keeps its `package.yml` in `repositories/`, and the target does not have to belong to this profile, so a `base` package is tuned here instead of in the shared definition
+- `repositories/{packages,drivers}/<name>/`: `package.yml`, `setup.sh`, `setup-theme.sh`, `install.sh` (bootstrap of packages that pacman/yay cannot install, e.g. yay), `update.sh` (updates what pacman/yay do not: plugins, language tools), `bashrc.sh`, `config/`; these stay machine-neutral
 - `repositories/fonts/*.yml`, `repositories/requirements/*.yml` (file name is the pacman name, read before `yq` exists)
 - `lib/` shared functions, `os/` system setup (`config/`, `media/`), `themes/*.yml`, `schemas/` (JSON schemas for every yml)
 - generated, never edited by hand: `README.md` and `profiles/<name>/README.md` (`scripts/generate-readme.js`, `docs/readme/`) and `.bash_aliases_help` (`scripts/generate_bash_aliases_help.py`); the husky pre-commit hook regenerates them
@@ -33,7 +34,7 @@ Arch Linux workstation setup: profiles list packages and drivers, each with its 
 ## `lib/`
 
 - one file per domain, functions named `<file>::<function>`; internal ones are `<file>::_<function>` and marked `@internal`
-- shdoc comments: one-line `@description`, `@arg`/`@option`/`@stdin`, `@exitcode` only for real errors
+- shdoc comments: `@description`, `@arg`/`@option`/`@stdin`, `@exitcode` only for real errors; comment lines wrap at 80 characters
 - public functions print `Usage: ...` with `log::error` and return `2` on missing or wrong arguments, return `1` on errors, never `exit`
 - no unused functions and no functions called from a single place
 - functions use `arch_setup_dir` (set by `lib/index.sh`), never the caller's `root_dir`; the definitions, the profiles and the files a repository owns (`.env`, `mounts.json`) are looked up in every root of `arch_setup_dirs` (`package::_dir`, `profile::_file`, `file::find`), so a repository installed on top of this one, like arch-setup-private, prepends itself and keeps using the same `lib/`

@@ -49,15 +49,7 @@ bash::install_bashrc() {
     return 2
   fi
 
-  local bashrc_file="${HOME}/.bashrc"
-  local bashrc_dir="${HOME}/.bashrc.d"
-
-  # shellcheck disable=SC2016
-  local loader='for f in "${HOME}"/.bashrc.d/*.sh; do [ -r "${f}" ] && . "${f}"; done; unset f'
-
-  grep -qxF "${loader}" "${bashrc_file}" || printf '\n%s\n' "${loader}" >>"${bashrc_file}"
-
   install -D -m 644 \
     "${file}" \
-    "${bashrc_dir}/${priority}-${package}.sh"
+    "${HOME}/.bashrc.d/${priority}-${package}.sh"
 }

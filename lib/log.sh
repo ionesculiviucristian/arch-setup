@@ -1,12 +1,14 @@
 # shellcheck shell=bash
 
-# @description Print a message to the output saved as fd 3 before the log redirection.
+# @description Print a message to the output saved as fd 3 before the log
+# redirection.
 # @arg $@ string Message
 log::info() {
   echo "$@" >&3
 }
 
-# @description Print a debug message to fd 3 and to the log file on fd 4 when ARCH_SETUP_DEBUG is 1.
+# @description Print a debug message to fd 3 and to the log file on fd 4
+# when ARCH_SETUP_DEBUG is 1.
 # @arg $@ string Message
 log::debug() {
   if [ "${ARCH_SETUP_DEBUG:-}" = "1" ]; then

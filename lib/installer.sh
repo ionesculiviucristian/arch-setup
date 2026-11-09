@@ -4,7 +4,9 @@ installer_phases=()
 installer_themes=false
 installer_start=${SECONDS}
 
-# @description Send stdout and stderr to <prefix>_<name>.log and <prefix>_errors_<name>.log in the root of the repository being installed, and debug messages on fd 4 to <prefix>_<name>.log.
+# @description Send stdout and stderr to <prefix>_<name>.log and
+# <prefix>_errors_<name>.log in the root of the repository being installed,
+# and debug messages on fd 4 to <prefix>_<name>.log.
 # @arg $1 string Log prefix, e.g. install or update
 # @arg $2 string Log name, e.g. the profile
 installer::redirect_logs() {
@@ -39,9 +41,12 @@ installer::install_requirements() {
   sudo pacman -Syu --needed --noconfirm "${packages[@]}" >/dev/null
 }
 
-# @description Start an installation: read the phases, redirect the logs, allow sudo without a password, hold the kernels and install the requirements.
+# @description Start an installation: read the phases, redirect the logs,
+# allow sudo without a password, hold the kernels and install the
+# requirements.
 # @arg $1 string Profile folder name
-# @arg $@ string Phases: pre, packages, external, aur, setups, resources, themes, and --themes, --debug (optional, default: all but themes)
+# @arg $@ string Phases: pre, packages, external, aur, setups, resources,
+# themes, and --themes, --debug (optional, default: all but themes)
 installer::start() {
   local usage="Usage: install.sh [profile] [pre|packages|external|aur|setups|resources|themes...] [--themes] [--debug]"
   local profile=${1:-}
@@ -116,7 +121,8 @@ installer::start() {
   done
 }
 
-# @description Check if a phase runs: all of them when none was given, themes only with --themes or by name.
+# @description Check if a phase runs: all of them when none was given,
+# themes only with --themes or by name.
 # @arg $1 string Phase name
 installer::phase_enabled() {
   local usage="Usage: installer::phase_enabled <phase>"
@@ -216,7 +222,8 @@ installer::install_profile() {
   fi
 }
 
-# @description Finish an installation: apply the themes when asked and regenerate the GRUB config.
+# @description Finish an installation: apply the themes when asked and
+# regenerate the GRUB config.
 # @noargs
 installer::finish() {
   local start

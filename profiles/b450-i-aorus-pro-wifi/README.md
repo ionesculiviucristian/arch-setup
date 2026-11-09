@@ -24,7 +24,6 @@ Installed on top of the [base profile](../base/README.md) with `./install.sh b45
 - [OpenRGB](https://openrgb.org/) \[[source](https://gitlab.com/CalcProgrammer1/OpenRGB/)\]: Open source RGB lighting control that doesn't depend on manufacturer software
 - [python-vdf](https://github.com/solsticegamestudios/vdf/): Library for working with Valve's VDF text format
 - [qBittorrent](https://www.qbittorrent.org/) \[[source](https://github.com/qbittorrent/qBittorrent/)\]: An advanced BitTorrent client programmed in C++, based on Qt toolkit and libtorrent-rasterbar
-- [SMPlayer](https://www.smplayer.info/) \[[source](https://github.com/smplayer-dev/smplayer/)\]: Media player with built-in codecs that can play virtually all video and audio formats
 - [SoftHSM](https://www.softhsm.org/) \[[source](https://github.com/softhsm/SoftHSMv2/)\]: Software PKCS#11 store
 - [Solaar](https://pwr-solaar.github.io/Solaar/) \[[source](https://github.com/pwr-Solaar/Solaar/)\]: Linux device manager for a wide range of Logitech devices
 - [Steam](https://steampowered.com/): Valve's digital software delivery system

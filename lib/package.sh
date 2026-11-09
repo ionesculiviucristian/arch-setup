@@ -1,6 +1,7 @@
 # shellcheck shell=bash
 
-# @description Print a definition's repository: core, extra, multilib, aur or external.
+# @description Print a definition's repository: core, extra, multilib, aur
+# or external.
 # @arg $1 string Path to the definition .yml
 # @exitcode 1 Unknown repository.url
 package::repository_type() {

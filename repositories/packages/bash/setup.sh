@@ -17,6 +17,12 @@ install -D -m 644 \
   "${package_dir}/config/.bash_aliases_help" \
   "${HOME}/.bash_aliases_help"
 
+# Sources every ~/.bashrc.d/*.sh snippet, in file name order.
+# shellcheck disable=SC2016
+loader='for f in "${HOME}"/.bashrc.d/*.sh; do [ -r "${f}" ] && . "${f}"; done; unset f'
+
+grep -qxF "${loader}" "${HOME}/.bashrc" || printf '\n%s\n' "${loader}" >>"${HOME}/.bashrc"
+
 bash::install_bashrc \
   --package "bash" \
   --priority "10" \
