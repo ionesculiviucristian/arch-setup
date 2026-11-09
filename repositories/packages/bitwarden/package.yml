@@ -1,0 +1,7 @@
+label: "Bitwarden"
+description: "A secure and free password manager for all of your devices"
+url: "https://bitwarden.com/"
+source:
+  url: "https://github.com/bitwarden/clients/tree/main/apps/desktop/"
+repository:
+  url: "https://archlinux.org/packages/extra/x86_64/bitwarden/"

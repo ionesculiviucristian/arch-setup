@@ -1,0 +1,7 @@
+label: "Bitwarden CLI"
+description: "The command line vault"
+url: "https://bitwarden.com/"
+source:
+  url: "https://github.com/bitwarden/clients/tree/main/apps/cli/"
+repository:
+  url: null

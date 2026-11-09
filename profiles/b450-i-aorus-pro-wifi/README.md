@@ -5,6 +5,7 @@ Installed on top of the [base profile](../base/README.md) with `./install.sh b45
 ## Official Arch packages
 
 - [Ayatana Application Indicator (Shared Library)](https://github.com/AyatanaIndicators/libayatana-appindicator/): Ayatana Application Indicators shared library
+- [Bitwarden](https://bitwarden.com/) \[[source](https://github.com/bitwarden/clients/tree/main/apps/desktop/)\]: A secure and free password manager for all of your devices
 - [Blender](https://www.blender.org/) \[[source](https://projects.blender.org/blender/blender/)\]: A fully integrated 3D graphics creation suite
 - [Discord](https://discord.com/): All-in-one voice and text chat for gamers
 - [exfatprogs](https://github.com/exfatprogs/exfatprogs/): exFAT filesystem userspace utilities for the Linux Kernel exfat driver
@@ -12,20 +13,15 @@ Installed on top of the [base profile](../base/README.md) with `./install.sh b45
   - Optional dependencies:
     - [bash-completion](https://github.com/scop/bash-completion/): for bash completion support
 - [HeadsetControl](https://github.com/Sapd/HeadsetControl/): Sidetone control and battery readout for gaming headsets
-- [i2c-tools](https://git.kernel.org/pub/scm/utils/i2c-tools/i2c-tools.git/): Heterogeneous set of I2C tools for Linux that used to be part of lm-sensors
 - [ImageMagick](https://imagemagick.org/) \[[source](https://github.com/ImageMagick/ImageMagick/)\]: An image viewing/manipulation program
 - [kmod](https://git.kernel.org/pub/scm/utils/kernel/kmod/kmod.git/): Linux kernel module management tools and library
 - [Krita](https://krita.org/en/) \[[source](https://invent.kde.org/graphics/krita/)\]: Edit and paint images
-  - Optional dependencies:
-    - [KImageFormats](https://develop.kde.org/products/frameworks/): PSD support
 - [LACT](https://github.com/ilya-zlobintsev/LACT/): Linux GPU Configuration Tool
 - [liquidctl](https://github.com/liquidctl/liquidctl/): Cross-platform CLI and Python drivers for AIO liquid coolers and other devices
 - [OBS Studio](https://obsproject.com/) \[[source](https://github.com/obsproject/obs-studio/)\]: Free, open source software for live streaming and recording
   - Optional dependencies:
     - [OpenGL drivers](https://mesa3d.org/): hardware encoding
 - [OpenRGB](https://openrgb.org/) \[[source](https://gitlab.com/CalcProgrammer1/OpenRGB/)\]: Open source RGB lighting control that doesn't depend on manufacturer software
-  - Optional dependencies:
-    - [i2c-tools](https://git.kernel.org/pub/scm/utils/i2c-tools/i2c-tools.git/): mainboard & RAM access
 - [python-vdf](https://github.com/solsticegamestudios/vdf/): Library for working with Valve's VDF text format
 - [qBittorrent](https://www.qbittorrent.org/) \[[source](https://github.com/qbittorrent/qBittorrent/)\]: An advanced BitTorrent client programmed in C++, based on Qt toolkit and libtorrent-rasterbar
 - [SMPlayer](https://www.smplayer.info/) \[[source](https://github.com/smplayer-dev/smplayer/)\]: Media player with built-in codecs that can play virtually all video and audio formats
@@ -39,6 +35,10 @@ Installed on top of the [base profile](../base/README.md) with `./install.sh b45
     - [VirtualBox Guest Additions ISO](https://www.virtualbox.org/manual/topics/guestadditions.html): Guest Additions CD image
 - [VirtualBox Guest Additions ISO](https://www.virtualbox.org/manual/topics/guestadditions.html) \[[source](https://github.com/VirtualBox/virtualbox/)\]: The official VirtualBox Guest Additions ISO image
 - [VirtualBox Host DKMS](https://www.virtualbox.org/) \[[source](https://github.com/VirtualBox/virtualbox/)\]: VirtualBox Host kernel modules sources
+
+## External packages
+
+- [Bitwarden CLI](https://bitwarden.com/) \[[source](https://github.com/bitwarden/clients/tree/main/apps/cli/)\]: The command line vault
 
 ## AUR packages
 

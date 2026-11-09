@@ -4,8 +4,13 @@ Installed on top of the [base profile](../base/README.md) with `./install.sh hp-
 
 ## Official Arch packages
 
+- [Bitwarden](https://bitwarden.com/) \[[source](https://github.com/bitwarden/clients/tree/main/apps/desktop/)\]: A secure and free password manager for all of your devices
 - [power-profiles-daemon](https://gitlab.freedesktop.org/upower/power-profiles-daemon/): Makes power profiles handling available over D-Bus
 - [switcheroo-control](https://gitlab.freedesktop.org/hadess/switcheroo-control/): D-Bus service to check the availability of dual-GPU
+
+## External packages
+
+- [Bitwarden CLI](https://bitwarden.com/) \[[source](https://github.com/bitwarden/clients/tree/main/apps/cli/)\]: The command line vault
 
 ## Drivers
 

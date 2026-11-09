@@ -53,6 +53,28 @@ The scripts expect a system installed with `archinstall` using these choices:
 - **Network configuration:** NetworkManager
 - **Additional packages:** `linux-headers linux-lts-headers`, required by the DKMS drivers; archinstall adds them by itself only with the NVIDIA open kernel driver
 
+### Get the repositories
+
+This repository is public, so a clean install clones it without authenticating to anything:
+
+```bash
+sudo pacman -S --needed git
+git clone https://github.com/ionesculiviucristian/arch-setup.git ~/Projects/arch-setup
+~/Projects/arch-setup/install.sh
+~/Projects/arch-setup/install.sh b450-i-aorus-pro-wifi
+```
+
+The machine profiles install Bitwarden, whose SSH agent holds the key that the private layer is cloned with. Unlock the vault, turn the SSH agent on in the application settings, then:
+
+```bash
+git clone git@github.com:ionesculiviucristian/arch-setup-private.git ~/Projects/arch-setup-private
+~/Projects/arch-setup-private/install.sh
+```
+
+- the GitHub password and its two-factor code are never needed: the key in the vault is the authentication, and the `git@github.com` remotes reach it through the `SSH_AUTH_SOCK` that the `bitwarden` setup writes to `~/.bashrc.d`
+- the machine profile has to run before the private layer, because `bitwarden` is listed in the machine profiles and not in base
+- `arch-setup-private` carries its own instructions for importing the secrets
+
 ### Install
 
 ```bash

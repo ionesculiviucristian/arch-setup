@@ -24,9 +24,7 @@ packages:
   btrfs-progs:
   btrfsmaintenance:
   cups:
-  dbus:
   direnv:
-  dkms:
     priority: "high"
   docker:
   docker-buildx:
@@ -58,7 +56,6 @@ packages:
   kcalc:
   kdeconnect:
   kdegraphics-thumbnailers:
-  kimageformats:
   kitty:
     themes: true
   konsole:
@@ -104,7 +101,6 @@ packages:
   postman-bin:
   procs:
   python-shtab:
-  qt6-imageformats:
   reflector:
     priority: "high"
   ripgrep:

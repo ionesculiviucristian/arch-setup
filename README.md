@@ -51,6 +51,28 @@ The scripts expect a system installed with `archinstall` using these choices:
 - **Network configuration:** NetworkManager
 - **Additional packages:** `linux-headers linux-lts-headers`, required by the DKMS drivers; archinstall adds them by itself only with the NVIDIA open kernel driver
 
+### Get the repositories
+
+This repository is public, so a clean install clones it without authenticating to anything:
+
+```bash
+sudo pacman -S --needed git
+git clone https://github.com/ionesculiviucristian/arch-setup.git ~/Projects/arch-setup
+~/Projects/arch-setup/install.sh
+~/Projects/arch-setup/install.sh b450-i-aorus-pro-wifi
+```
+
+The machine profiles install Bitwarden, whose SSH agent holds the key that the private layer is cloned with. Unlock the vault, turn the SSH agent on in the application settings, then:
+
+```bash
+git clone git@github.com:ionesculiviucristian/arch-setup-private.git ~/Projects/arch-setup-private
+~/Projects/arch-setup-private/install.sh
+```
+
+- the GitHub password and its two-factor code are never needed: the key in the vault is the authentication, and the `git@github.com` remotes reach it through the `SSH_AUTH_SOCK` that the `bitwarden` setup writes to `~/.bashrc.d`
+- the machine profile has to run before the private layer, because `bitwarden` is listed in the machine profiles and not in base
+- `arch-setup-private` carries its own instructions for importing the secrets
+
 ### Install
 
 ```bash
@@ -117,9 +139,7 @@ The scripts expect a system installed with `archinstall` using these choices:
 - [BTRFS maintenance](https://github.com/kdave/btrfsmaintenance/): Btrfs maintenance scripts
 - [BTRFS tools](https://btrfs.readthedocs.io/en/latest/) \[[source](https://github.com/kdave/btrfs-progs/)\]: Btrfs filesystem utilities
 - [buildx](https://www.docker.com/) \[[source](https://github.com/docker/buildx/)\]: Docker CLI plugin for extended build capabilities with BuildKit
-- [D-Bus](https://www.freedesktop.org/wiki/Software/dbus/) \[[source](https://gitlab.freedesktop.org/dbus/dbus/)\]: Freedesktop.org message bus system
 - [direnv](https://direnv.net/) \[[source](https://github.com/direnv/direnv/)\]: A shell extension that manages your environment
-- [DKMS](https://github.com/dkms-project/dkms/): Dynamic Kernel Modules System
 - [Docker](https://www.docker.com/) \[[source](https://github.com/docker/cli/)\]: Pack, ship and run any application as a lightweight container
   - Optional dependencies:
     - [BTRFS tools](https://btrfs.readthedocs.io/en/latest/): btrfs backend support
@@ -136,7 +156,6 @@ The scripts expect a system installed with `archinstall` using these choices:
 - [eza](https://eza.rocks/) \[[source](https://github.com/eza-community/eza/)\]: A modern replacement for ls (community fork of exa)
 - [fastfetch](https://github.com/fastfetch-cli/fastfetch/): A feature-rich and performance oriented neofetch like system information tool
   - Optional dependencies:
-    - [D-Bus](https://www.freedesktop.org/wiki/Software/dbus/): Bluetooth, Player & Media detection
     - [ImageMagick](https://imagemagick.org/): Image output using sixel or kitty graphics protocol
 - [fd](https://github.com/sharkdp/fd/): Simple, fast and user-friendly alternative to find
 - [FFmpegThumbs](https://apps.kde.org/ffmpegthumbs/) \[[source](https://invent.kde.org/multimedia/ffmpegthumbs/)\]: FFmpeg-based thumbnail creator for video files
@@ -158,9 +177,6 @@ The scripts expect a system installed with `archinstall` using these choices:
 - [Go](https://go.dev/) \[[source](https://github.com/golang/go/)\]: Core compiler tools for the Go programming language
 - [GRUB](https://www.gnu.org/software/grub/) \[[source](https://cgit.git.savannah.gnu.org/cgit/grub.git/)\]: GNU GRand Unified Bootloader (2)
 - [Gwenview](https://apps.kde.org/gwenview/) \[[source](https://invent.kde.org/graphics/gwenview/)\]: A fast and easy to use image viewer
-  - Optional dependencies:
-    - [KImageFormats](https://develop.kde.org/products/frameworks/): support for xcf, exr, psd, and more image formats
-    - [Qt 6 Image Formats](https://www.qt.io): support for tiff, webp, and more image formats
 - [iotop-c](https://github.com/Tomas-M/iotop/): A top utility for IO
 - [Kate](https://apps.kde.org/kate/) \[[source](https://invent.kde.org/utilities/kate/)\]: Advanced text editor
   - Optional dependencies:
@@ -174,7 +190,6 @@ The scripts expect a system installed with `archinstall` using these choices:
     - [SSHFS](https://github.com/libfuse/sshfs/): remote filesystem browser
 - [KDE Graphics Thumbnailers](https://apps.kde.org/kdegraphics_thumbnailers/) \[[source](https://invent.kde.org/graphics/kdegraphics-thumbnailers/)\]: Thumbnailers for various graphics file formats
 - [KDE Partition Manager](https://apps.kde.org/partitionmanager/) \[[source](https://invent.kde.org/system/partitionmanager/)\]: A KDE utility that allows you to manage disks, partitions, and file systems
-- [KImageFormats](https://develop.kde.org/products/frameworks/) \[[source](https://invent.kde.org/frameworks/kimageformats/)\]: Image format plugins for Qt 6
 - [kitty](https://sw.kovidgoyal.net/kitty/) \[[source](https://github.com/kovidgoyal/kitty/)\]: A modern, hackable, featureful, OpenGL-based terminal emulator
   - Optional dependencies:
     - [ImageMagick](https://imagemagick.org/): viewing images with icat
@@ -220,7 +235,6 @@ The scripts expect a system installed with `archinstall` using these choices:
 - [plocate](https://plocate.sesse.net/) \[[source](https://git.sesse.net/?p=plocate)\]: Alternative to locate, faster and compatible with mlocate's database.
 - [pnpm](https://pnpm.io/) \[[source](https://github.com/pnpm/pnpm/)\]: Fast, disk space efficient package manager
 - [procs](https://github.com/dalance/procs/): A modern replacement for ps written in Rust
-- [Qt 6 Image Formats](https://www.qt.io) \[[source](https://code.qt.io/cgit/qt/qtimageformats.git/)\]: Plugins for additional image formats: TIFF, MNG, TGA, WBMP
 - [reflector](https://xyne.dev/projects/reflector/) \[[source](https://xyne.dev/projects/reflector/src/)\]: A Python 3 module and script to retrieve and filter the latest Pacman mirror list.
   - Optional dependencies:
     - [rsync](https://rsync.samba.org/): rate rsync mirrors

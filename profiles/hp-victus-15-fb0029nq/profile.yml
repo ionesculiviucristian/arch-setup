@@ -10,5 +10,7 @@ drivers:
   nvidia-utils:
   vulkan-radeon:
 packages:
+  bitwarden:
+  bitwarden-cli:
   power-profiles-daemon:
   switcheroo-control:
