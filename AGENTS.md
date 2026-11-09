@@ -4,9 +4,10 @@ Arch Linux workstation setup: profiles list packages and drivers, each with its 
 
 ## Layout
 
-- `install.sh [profile] [phases...] [--themes]` runs `profiles/<profile>/install.sh` (default `base`); every profile installer takes the phases `packages`, `external`, `aur`, `setups`, `themes` (base also `pre`, `resources`); every installer starts with `installer::start`, which records this folder in `~/.local/state/arch-setup/dir` for the repositories installed on top and the repository being installed in `~/.local/state/arch-setup/repositories`, read back by `lib/index.sh`, and ends with `installer::finish` (`lib/installer.sh`); `update.sh [--themes]` updates the packages, the fonts and runs the `update.sh` of every installed package; themes are applied only with `--themes` (or the `themes` phase)
+- `install.sh [profile] [phases...] [--themes]` runs `profiles/<profile>/install.sh` (default `base`); every profile installer takes the phases `packages`, `external`, `aur`, `setups`, `themes` (base also `pre`, `resources`); every installer starts with `installer::start` and ends with `installer::finish` (`lib/installer.sh`); `update.sh [profile] [--themes]` updates the packages, the fonts and runs the `update.sh` of every installed package (default `base`, used only to name the logs); themes are applied only with `--themes` (or the `themes` phase)
 - `profiles/<name>/profile.yml` (`packages:`, `drivers:`) and `profiles/<name>/install.sh`; `base` is installed on every machine, machine profiles go on top
-- `repositories/{packages,drivers}/<name>/`: `package.yml`, `setup.sh`, `setup-theme.sh`, `install.sh` (bootstrap of packages that pacman/yay cannot install, e.g. yay), `update.sh` (updates what pacman/yay do not: plugins, language tools), `bashrc.sh`, `config/`
+- `profiles/<name>/repositories/{packages,drivers}/<name>/` holds the definitions a profile owns, for a package whose scripts or config are machine-specific; the folder has the same shape as the shared one and the package is listed in that `profile.yml`; a profile folder ending in `-private` is gitignored by `profiles/.gitignore`, so a private profile is cloned there, keeps its own git repository and runs with `./install.sh <name>-private`; it owns its `install.sh`, `profile.yml`, `.env` and the data files its packages read, and reuses `lib/` instead of shipping any
+- `repositories/{packages,drivers}/<name>/`: `package.yml`, `setup.sh`, `setup-theme.sh`, `install.sh` (bootstrap of packages that pacman/yay cannot install, e.g. yay), `update.sh` (updates what pacman/yay do not: plugins, language tools), `bashrc.sh`, `config/`; these stay machine-neutral
 - `repositories/fonts/*.yml`, `repositories/requirements/*.yml` (file name is the pacman name, read before `yq` exists)
 - `lib/` shared functions, `os/` system setup (`config/`, `media/`), `themes/*.yml`, `schemas/` (JSON schemas for every yml)
 - generated, never edited by hand: `README.md` and `profiles/<name>/README.md` (`scripts/generate-readme.js`, `docs/readme/`) and `.bash_aliases_help` (`scripts/generate_bash_aliases_help.py`); the husky pre-commit hook regenerates them
@@ -23,7 +24,7 @@ Arch Linux workstation setup: profiles list packages and drivers, each with its 
 ## Scripts
 
 - `#!/bin/bash`, `set -eu`, end with `exit 0`; references go after `set -eu` as `# @see [config](url)` with generic labels (`config`, `shell`, `theme`, `wiki`)
-- `package_dir` is always defined; `root_dir="${package_dir%/repositories/*}"` only when files outside the package are needed; `lib/` is loaded with `source "${root_dir}/lib/index.sh"` and a `# shellcheck source=` directive
+- `package_dir` is always defined; `root_dir="${package_dir%/repositories/*}"` only when files outside the package are needed, `root_dir="${package_dir%/profiles/*}"` for a package a profile owns; `lib/` is loaded with `source "${root_dir}/lib/index.sh"` and a `# shellcheck source=` directive
 - static config files live in `config/`, never in heredocs; copy files with `install -D -m 644` (`-m 755` for executables, `sudo` for system paths); `cp -r` only for directories, `mkdir -p` only before downloads or clones
 - text substitutions use `file::replace_text`, shell integration uses `bash::install_bashrc` (priorities: `10` bash, `20` env/PATH, `50` tools, `80` atuin, `90` prompt, `99` ble.sh)
 - `setup-theme.sh` receives `<flavour> <accent>` and reads anything else with `theme::get`
@@ -33,10 +34,11 @@ Arch Linux workstation setup: profiles list packages and drivers, each with its 
 ## `lib/`
 
 - one file per domain, functions named `<file>::<function>`; internal ones are `<file>::_<function>` and marked `@internal`
-- shdoc comments: one-line `@description`, `@arg`/`@option`/`@stdin`, `@exitcode` only for real errors
+- shdoc comments: `@description`, `@arg`/`@option`/`@stdin`, `@exitcode` only for real errors; comment lines wrap at 80 characters
 - public functions print `Usage: ...` with `log::error` and return `2` on missing or wrong arguments, return `1` on errors, never `exit`
 - no unused functions and no functions called from a single place
-- functions use `arch_setup_dir` (set by `lib/index.sh`), never the caller's `root_dir`; the definitions, the profiles and the files a repository owns (`.env`, `mounts.json`) are looked up in every root of `arch_setup_dirs` (`package::_dir`, `profile::_file`, `file::find`), so a repository installed on top of this one, like arch-setup-private, prepends itself and keeps using the same `lib/`
+- functions use `arch_setup_dir` (set by `lib/index.sh`), never the caller's `root_dir`; `arch_setup_dirs` holds the repository roots, every `profiles/*/repositories` first and `arch_setup_dir` last, so no state is kept outside the repository
+- `file::find` is the only place that walks `arch_setup_dirs`; a definition and the files a repository owns (`.env`, `mounts.json`) come from the first root that has them, so a profile overrides them, while `profile::run_script` runs a package's script from every root that has it, `arch_setup_dir` first, so a profile adds to the shared script instead of replacing it
 
 ## Verification
 

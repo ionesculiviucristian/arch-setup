@@ -23,4 +23,3 @@ Installed on top of the [base profile](../base/README.md) with `./install.sh hp-
 - [OpenGL drivers (32-bit)](https://mesa3d.org/) \[[source](https://gitlab.freedesktop.org/mesa/mesa/)\]: Open-source OpenGL drivers - 32-bit
 - [Vulkan driver for AMD GPUs](https://mesa3d.org/) \[[source](https://gitlab.freedesktop.org/mesa/mesa/)\]: Open-source Vulkan driver for AMD GPUs
 - [Vulkan driver for AMD GPUs (32-bit)](https://mesa3d.org/) \[[source](https://gitlab.freedesktop.org/mesa/mesa/)\]: Open-source Vulkan driver for AMD GPUs - 32-bit
-

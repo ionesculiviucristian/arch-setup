@@ -1,0 +1,7 @@
+label: "Baloo"
+description: "A framework for searching and managing metadata"
+url: "https://develop.kde.org/products/frameworks/"
+source:
+  url: "https://invent.kde.org/frameworks/baloo/"
+repository:
+  url: "https://archlinux.org/packages/extra/x86_64/baloo/"

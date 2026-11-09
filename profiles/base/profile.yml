@@ -74,6 +74,7 @@ packages:
   man-pages:
   mise:
     priority: "high"
+  mpv-uosc:
   ncdu:
   neovim:
     themes: true

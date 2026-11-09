@@ -1,16 +1,15 @@
 # shellcheck shell=bash
 
 arch_setup_dir="$(dirname "$(dirname "$(realpath "${BASH_SOURCE[0]}")")")"
-arch_setup_dirs=("${arch_setup_dir}")
-arch_setup_repositories_file="${HOME}/.local/state/arch-setup/repositories"
+arch_setup_dirs=()
 
-if [ -r "${arch_setup_repositories_file}" ]; then
-  while IFS= read -r arch_setup_repository; do
-    if [ -d "${arch_setup_repository}" ] && [[ " ${arch_setup_dirs[*]} " != *" ${arch_setup_repository} "* ]]; then
-      arch_setup_dirs+=("${arch_setup_repository}")
-    fi
-  done <"${arch_setup_repositories_file}"
-fi
+for arch_setup_repository in "${arch_setup_dir}"/profiles/*/repositories; do
+  if [ -d "${arch_setup_repository}" ]; then
+    arch_setup_dirs+=("${arch_setup_repository%/repositories}")
+  fi
+done
+
+arch_setup_dirs+=("${arch_setup_dir}")
 
 { true >&3; } 2>/dev/null || exec 3>&1
 { true >&4; } 2>/dev/null || exec 4>/dev/null

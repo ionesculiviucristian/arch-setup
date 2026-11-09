@@ -1,7 +1,0 @@
-label: "SMPlayer"
-description: "Media player with built-in codecs that can play virtually all video and audio formats"
-url: "https://www.smplayer.info/"
-source:
-  url: "https://github.com/smplayer-dev/smplayer/"
-repository:
-  url: "https://archlinux.org/packages/extra/x86_64/smplayer/"

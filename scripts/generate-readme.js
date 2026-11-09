@@ -25,8 +25,26 @@ const readDefinition = (filePath) => {
   };
 };
 
+// Profiles whose folder is gitignored stay out of the generated docs
+const isPrivate = (name) => name.endsWith("-private");
+
+const profileDirs = fs
+  .readdirSync("./profiles", { withFileTypes: true })
+  .filter((entry) => entry.isDirectory() && !isPrivate(entry.name))
+  .map((entry) => path.join("./profiles", entry.name));
+
+// A profile can own the definitions of its machine-specific packages
+const repositoryBases = [
+  ...profileDirs,
+  ".",
+].flatMap((root) =>
+  ["repositories/packages", "repositories/drivers"]
+    .map((base) => path.join(root, base))
+    .filter((base) => fs.existsSync(base)),
+);
+
 const resolvePackageDir = (name) => {
-  for (const base of ["./repositories/packages", "./repositories/drivers"]) {
+  for (const base of repositoryBases) {
     const dir = path.join(base, name);
     if (fs.existsSync(dir)) return dir;
   }
@@ -50,7 +68,7 @@ const readDefinitions = (dir) =>
 const fonts = readDefinitions("./repositories/fonts");
 const requirements = readDefinitions("./repositories/requirements");
 
-const packageDefinitions = ["./repositories/packages", "./repositories/drivers"]
+const packageDefinitions = repositoryBases
   .flatMap((base) =>
     fs.readdirSync(base).map((dir) => path.join(base, dir, "package.yml"))
   )
@@ -68,10 +86,8 @@ for (const meta of [...packageDefinitions, ...fonts, ...requirements]) {
 }
 
 // Load all profiles
-const profileNames = fs
-  .readdirSync("./profiles", { withFileTypes: true })
-  .filter((entry) => entry.isDirectory())
-  .map((entry) => entry.name)
+const profileNames = profileDirs
+  .map((dir) => path.basename(dir))
   .sort(
     (a, b) => Number(b === "base") - Number(a === "base") || a.localeCompare(b),
   );
@@ -143,8 +159,11 @@ const sortByName = (a, b) =>
 const base = profiles.find((profile) => profile.name === "base");
 const helpers = { optionalDependencies, sortByLabel, sortByName };
 
-const render = async (template, data, output) =>
-  fs.writeFileSync(output, await ejs.renderFile(template, { ...helpers, ...data }), "utf-8");
+const render = async (template, data, output) => {
+  const markdown = await ejs.renderFile(template, { ...helpers, ...data });
+
+  fs.writeFileSync(output, markdown.replace(/\n{2,}$/, "\n"), "utf-8");
+};
 
 await render("./docs/readme/README.ejs", { base, profiles }, "README.md");
 

@@ -33,14 +33,11 @@ theme::apply() {
   log::info "  OS"
   "${arch_setup_dir:?}/os/setup-theme.sh" "${flavour}" "${accent}" || failed+=("os")
 
-  local pkg_dir script
+  local pkg
 
-  for pkg_dir in $(profile::installed_dirs --themes); do
-    script="${pkg_dir}/setup-theme.sh"
-    if [ -x "${script}" ]; then
-      log::info "  $(yq -r '.label' "${pkg_dir}/package.yml")"
-      "${script}" "${flavour}" "${accent}" || failed+=("${pkg_dir##*/}")
-    fi
+  for pkg in $(profile::installed_packages --themes); do
+    profile::run_script "${pkg}" setup-theme "${flavour}" "${accent}" ||
+      failed+=("${pkg}")
   done
 
   if [ ${#failed[@]} -gt 0 ]; then

@@ -1,0 +1,7 @@
+label: "mpv"
+description: "a free, open source, and cross-platform media player"
+url: "https://mpv.io/"
+source:
+  url: "https://github.com/mpv-player/mpv/"
+repository:
+  url: "https://archlinux.org/packages/extra/x86_64/mpv/"

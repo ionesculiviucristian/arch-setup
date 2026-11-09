@@ -11,4 +11,6 @@ python "./scripts/generate_bash_aliases_help.py"
 git add "./repositories/packages/bash/config/.bash_aliases_help"
 
 node "./scripts/generate-readme.js"
-git add "README.md" ./profiles/*/README.md
+git add "README.md"
+git ls-files --modified --others --exclude-standard -z -- "./profiles/*/README.md" |
+  xargs -0 -r git add

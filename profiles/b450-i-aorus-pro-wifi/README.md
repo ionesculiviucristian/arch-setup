@@ -5,6 +5,7 @@ Installed on top of the [base profile](../base/README.md) with `./install.sh b45
 ## Official Arch packages
 
 - [Ayatana Application Indicator (Shared Library)](https://github.com/AyatanaIndicators/libayatana-appindicator/): Ayatana Application Indicators shared library
+- [Baloo](https://develop.kde.org/products/frameworks/) \[[source](https://invent.kde.org/frameworks/baloo/)\]: A framework for searching and managing metadata
 - [Bitwarden](https://bitwarden.com/) \[[source](https://github.com/bitwarden/clients/tree/main/apps/desktop/)\]: A secure and free password manager for all of your devices
 - [Blender](https://www.blender.org/) \[[source](https://projects.blender.org/blender/blender/)\]: A fully integrated 3D graphics creation suite
 - [Discord](https://discord.com/): All-in-one voice and text chat for gamers
@@ -18,13 +19,13 @@ Installed on top of the [base profile](../base/README.md) with `./install.sh b45
 - [Krita](https://krita.org/en/) \[[source](https://invent.kde.org/graphics/krita/)\]: Edit and paint images
 - [LACT](https://github.com/ilya-zlobintsev/LACT/): Linux GPU Configuration Tool
 - [liquidctl](https://github.com/liquidctl/liquidctl/): Cross-platform CLI and Python drivers for AIO liquid coolers and other devices
+- [mpv](https://mpv.io/) \[[source](https://github.com/mpv-player/mpv/)\]: a free, open source, and cross-platform media player
 - [OBS Studio](https://obsproject.com/) \[[source](https://github.com/obsproject/obs-studio/)\]: Free, open source software for live streaming and recording
   - Optional dependencies:
     - [OpenGL drivers](https://mesa3d.org/): hardware encoding
 - [OpenRGB](https://openrgb.org/) \[[source](https://gitlab.com/CalcProgrammer1/OpenRGB/)\]: Open source RGB lighting control that doesn't depend on manufacturer software
 - [python-vdf](https://github.com/solsticegamestudios/vdf/): Library for working with Valve's VDF text format
 - [qBittorrent](https://www.qbittorrent.org/) \[[source](https://github.com/qbittorrent/qBittorrent/)\]: An advanced BitTorrent client programmed in C++, based on Qt toolkit and libtorrent-rasterbar
-- [SMPlayer](https://www.smplayer.info/) \[[source](https://github.com/smplayer-dev/smplayer/)\]: Media player with built-in codecs that can play virtually all video and audio formats
 - [SoftHSM](https://www.softhsm.org/) \[[source](https://github.com/softhsm/SoftHSMv2/)\]: Software PKCS#11 store
 - [Solaar](https://pwr-solaar.github.io/Solaar/) \[[source](https://github.com/pwr-Solaar/Solaar/)\]: Linux device manager for a wide range of Logitech devices
 - [Steam](https://steampowered.com/): Valve's digital software delivery system
@@ -57,4 +58,3 @@ Installed on top of the [base profile](../base/README.md) with `./install.sh b45
 - [Vulkan driver for AMD GPUs (32-bit)](https://mesa3d.org/) \[[source](https://gitlab.freedesktop.org/mesa/mesa/)\]: Open-source Vulkan driver for AMD GPUs - 32-bit
 - [XP-Pen utility](https://www.xp-pen.com/): XP-Pen (Official) Linux utility for legacy XPPen Tablets
 - [xpadneo](https://atar-axis.github.io/xpadneo/) \[[source](https://github.com/atar-axis/xpadneo/)\]: Advanced Linux Driver for Xbox One Wireless Gamepad
-

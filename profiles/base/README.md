@@ -179,6 +179,7 @@ Installed on every machine with `./install.sh`.
 - [Papirus](https://store.kde.org/p/1166289/) \[[source](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/)\]: Pixel perfect icon theme for Linux
 - [Papirus Folders](https://github.com/PapirusDevelopmentTeam/papirus-folders/): Allows changing the color of folders in Papirus icon theme and its forks
 - [Postman](https://www.postman.com/product/): Build, test, and document your APIs faster
+- [uosc](https://github.com/tomasklaen/uosc/): Feature-rich minimalist proximity-based UI for MPV player.
 - [Visual Studio Code](https://code.visualstudio.com/) \[[source](https://github.com/microsoft/vscode/)\]: Visual Studio Code (vscode): Editor for building and debugging modern web and cloud applications (official binary version)
 - [Yay](https://jguer.github.io/yay/) \[[source](https://github.com/Jguer/yay/)\]: Yet another yogurt. Pacman wrapper and AUR helper written in go.
 - [Zoom](https://www.zoom.com/): Video Conferencing and Web Conferencing Service
@@ -273,4 +274,3 @@ Installed on every machine with `./install.sh`.
 - [To Google Translate](https://addons.mozilla.org/en-US/firefox/addon/to-google-translate): Right-click a section of text and click the Translate icon next to it to text translate or listen to it in your language
 - [uBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin): Finally, an efficient wide-spectrum content blocker
 - [Vimium](https://addons.mozilla.org/en-US/firefox/addon/vimium-ff): The Hacker's Browser. Vimium provides keyboard shortcuts for navigation and control in the spirit of Vim.
-
